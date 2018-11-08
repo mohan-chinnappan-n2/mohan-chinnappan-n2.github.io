@@ -1,0 +1,20 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Product ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Product Name,Name,FALSE,--,--,null,string,FALSE,TRUE
+Product Code,ProductCode,TRUE,--,--,null,string,FALSE,TRUE
+Product Description,Description,TRUE,--,--,null,textarea,FALSE,TRUE
+Active,IsActive,FALSE,--,--,null,boolean,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Product Family,Family,TRUE,"[ ""None"" ]",--,null,picklist,FALSE,TRUE
+External Data Source ID,ExternalDataSourceId,TRUE,--,"[ ""ExternalDataSource"" ]",null,reference,FALSE,TRUE
+External ID,ExternalId,TRUE,--,--,null,string,FALSE,TRUE
+Display URL,DisplayUrl,TRUE,--,--,null,url,FALSE,TRUE
+Quantity Unit Of Measure,QuantityUnitOfMeasure,TRUE,"[ ""Each"" ]",--,null,picklist,FALSE,TRUE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Product SKU,StockKeepingUnit,TRUE,--,--,null,string,FALSE,TRUE

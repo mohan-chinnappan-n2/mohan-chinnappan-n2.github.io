@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="MainCtrl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FSC Data Model - Person  </title>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/navbar-green.css">
+</head>
+
+<body >
+
+  <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)">FSC Data Model </a>
+      </div>
+  
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="model-pa.html">Person Account</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav">
+            <li ><a href="model.html">Individual</a></li>
+          </ul>
+          <ul class="nav navbar-nav">
+              <li ><a href="/">Main</a></li>
+            </ul>
+
+  
+        <div class="inner-addon right-addon navbar-form navbar-right">
+          <i class="glyphicon glyphicon-search"></i>
+          <input type="text" class="form-control" placeholder="Search" />
+        </div>
+  
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown ">
+            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Help <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="./help.html">Help Topics</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+<div style="padding-left: 30px;">
+<p style='font-size: 18px;'><i class="glyphicon glyphicon-question-sign"></i> Click on any Entity to view the details: Fields, Picklist, Relationships<hr/>
+<img src="img/datamodel-person-account-1.png" usemap="#image-map">
+<map name="image-map">
+    <area target="_blank" alt="Account" title="Account" href="csv-viewer_fsc.html?f=Account" coords="535,23,715,521" shape="rect">
+    <area target="_blank" alt="AssetsAndLiabilities" title="AssetsAndLiabilities" href="csv-viewer_fsc.html?f=FinServ__AssetsAndLiabilities__c" coords="175,77,136,37" shape="rect">
+
+    <area target="_blank" alt="FinancialAccountRoles" title="FinancialAccountRoles" href="csv-viewer_fsc.html?f=FinServ__FinancialAccountRole__c" coords="384,141,267,64" shape="rect">
+ 
+ 
+    <area target="_blank" alt="ChargesAndFees" title="ChargesAndFees" href="csv-viewer_fsc.html?f=FinServ__ChargesAndFees__c" coords="109,134,70,94" shape="rect">
+    <area target="_blank" alt="FinancialAccount" title="FinancialAccount" href="csv-viewer_fsc.html?f=FinServ__FinancialAccount__c" coords="227,277,188,237" shape="rect">
+    <area target="_blank" alt="Card" title="Card" href="csv-viewer_fsc.html?f=FinServ__Card__c" coords="341,288,395,327" shape="rect">
+    <area target="_blank" alt="Revenue" title="Revenue" href="csv-viewer_fsc.html?f=FinServ__Revenue__c" coords="354,168,386,201" shape="rect">
+    <area target="_blank" alt="FinancialHolding" title="FinancialHolding" href="csv-viewer_fsc.html?f=FinServ__FinancialHolding__c" coords="95,453,56,413" shape="rect">
+    <area target="_blank" alt="FinancialAccountTransaction" title="FinancialAccountTransaction" href="csv-viewer_fsc.html?f=FinServ__FinancialAccountTransaction__c" coords="217,457,178,417" shape="rect">
+
+    <area target="_blank" alt="BillingStatement" title="BillingStatement" href="csv-viewer_fsc.html?f=FinServ__BillingStatement__c" coords="341,429,374,464" shape="rect">
+    <area target="_blank" alt="Securities" title="Securities" href="csv-viewer_fsc.html?f=FinServ__Securities__c" coords="97,566,58,526" shape="rect">
+    <area target="_blank" alt="Opportunity" title="Opportunity" href="csv-viewer_fsc.html?f=Opportunity" coords="974,36,1007,71" shape="rect">
+    <area target="_blank" alt="Lead" title="Lead" href="csv-viewer_fsc.html?f=Lead" coords="977,117,1010,152" shape="rect">
+    <area target="_blank" alt="IdentificationDocument" title="IdentificationDocument" href="csv-viewer_fsc.html?f=FinServ__IdentificationDocument__c" coords="976,196,1009,231" shape="rect">
+
+    <area target="_blank" alt="FinancialGoal" title="FinancialGoal" href="csv-viewer_fsc.html?f=FinServ__FinancialGoal__c" coords="978,281,1011,316" shape="rect">
+    <area target="_blank" alt="Contact" title="Contact" href="csv-viewer_fsc.html?f=Contact" coords="944,363,977,398" shape="rect">
+    <area target="_blank" alt="Education" title="Education" href="csv-viewer_fsc.html?f=FinServ__Education__c" coords="948,427,981,462" shape="rect">
+    <area target="_blank" alt="Employment" title="Employment" href="csv-viewer_fsc.html?f=FinServ__Employment__c" coords="868,536,901,571" shape="rect">
+    <area target="_blank" alt="Group" title="Group" href="csv-viewer_fsc.html?f=Group" coords="609,604,642,639" shape="rect">
+
+</map>
+
+
+<h4>Key Points</h4>
+FSC represents a person using one of two models: 
+      <table class="table table-bordered table-hover table-striped">
+        <tr>
+          <th>Person account model</th>
+          <th>Individual account model</th>
+          <tr>
+            <td>
+
+          <ul>
+              <li> Use the <b>Person account record type</b> when a client is <b> a person</b> </li>
+              <li> For some organizations, the person account model provides better support for <b> business to consumer activities</b> <hr/> </li>
+              <li> Person accounts store information about individual people by combining certain account and contact fields into a single record</li>
+               <li>Person accounts are accounts that can also be used as contacts in many situations <hr/></li>
+               <li>
+                 <b>Account</b>:
+                 Represents all aspects of the person. Data includes personhood details,
+                  such as birth date or tax ID number, and dealings with your organization, such as review frequency or service tier<br/>
+                  Related to opportunities, cases, and other Salesforce transactions as well as events, tasks, calls, and other Salesforce communications
+               </li>
+              
+            </ul>
+            </td>
+             <td>
+            <ul>
+            <li>
+                Use the <b> Individual record type</b> when a client is<b> a business or an institution</b> <hr/> 
+            </li>
+            <li>
+                <b>Account</b>:  Represents aspects of the person that pertain to dealings with your organization,
+                 such as review frequency or service tier. <br/>
+                Related to opportunities, cases, and other Salesforce transactions<hr/>
+            </li>
+            <li>
+              <b>Contact</b>:
+              Represents aspects of the person that pertain to personhood regardless of the person’s relationship with your organization,
+               such as birth date or tax ID number<br/>
+               Related to events, tasks, calls, and other Salesforce communications
+
+            </li>
+            </ul>
+            </td>
+
+
+        </tr>
+      </table>
+
+     
+      
+
+</ul>
+
+
+<h4>Demo</h4>
+<img src="img/fsc-datamodel-1.gif" alt="">
+
+<h4>References</h4>
+<ul>
+  <li>
+    <a target="_blank" href="https://mohan-chinnappan-n.github.io/sfdc/finserv-cloud.html#/9">FSC Entities Details</a>
+  </li>
+  <li>
+      <a target="_blank" href="https://resources.docs.salesforce.com/212/latest/en-us/sfdc/pdf/salesforce_B2C_implementation_guide.pdf">Setting Up Person Accounts</a> 
+  </li>
+  <li>
+    <a href=" https://developer.salesforce.com/docs/atlas.en-us.financial_services_cloud_admin_guide.meta/financial_services_cloud_admin_guide/fsc_admin_data_model_person_overview.htm">
+      How Is a Person Modeled?
+    </a>
+  </li>
+</ul>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,4 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Job ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Job Name,Name,FALSE,--,--,null,string,FALSE,FALSE
+Type,JobType,TRUE,"[ ""1"" , ""3"" , ""4"" , ""7"" , ""8"" , ""9"" , ""A"" ]",--,null,picklist,FALSE,FALSE

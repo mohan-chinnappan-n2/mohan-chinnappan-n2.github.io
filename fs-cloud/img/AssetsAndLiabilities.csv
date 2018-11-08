@@ -1,0 +1,25 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Owner ID,OwnerId,FALSE,--,"[ ""Group"", ""User"" ]",Owner,reference,FALSE,TRUE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Asset or Liability Name,Name,TRUE,--,--,null,string,FALSE,TRUE
+Record Type ID,RecordTypeId,TRUE,--,"[ ""RecordType"" ]",RecordType,reference,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Activity Date,LastActivityDate,TRUE,--,--,null,date,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Amount,FinServ__Amount__c,TRUE,--,--,null,currency,FALSE,TRUE
+Source,FinServ__AssetsAndLiabilitiesSource__c,TRUE,"[ ""Yodlee"" , ""Manual Entry"" ]",--,null,picklist,FALSE,TRUE
+Type,FinServ__AssetsAndLiabilitiesType__c,TRUE,"[ ""Auto Loan"" , ""Mortgage"" , ""Other"" , ""Personal Loan"" , ""Real Estate"" , ""Equipment"" , ""Automobile"" , ""Collection"" , ""Gold"" , ""Jewelry"" , ""Cash"" ]",--,null,picklist,FALSE,TRUE
+Description,FinServ__Description__c,TRUE,--,--,null,textarea,FALSE,TRUE
+Financial Account,FinServ__FinancialAccount__c,TRUE,--,"[ ""FinServ__FinancialAccount__c"" ]",FinServ__FinancialAccount__r,reference,FALSE,TRUE
+Household,FinServ__Household__c,TRUE,--,"[ ""Account"" ]",FinServ__Household__r,reference,FALSE,TRUE
+Joint Owner,FinServ__JointOwner__c,TRUE,--,"[ ""Account"" ]",FinServ__JointOwner__r,reference,FALSE,TRUE
+Owner Type,FinServ__OwnerType__c,TRUE,--,--,null,string,FALSE,TRUE
+Ownership,FinServ__Ownership__c,TRUE,"[ ""Individual"" , ""Joint"" , ""Trust"" ]",--,null,picklist,FALSE,TRUE
+Primary Owner,FinServ__PrimaryOwner__c,FALSE,--,"[ ""Account"" ]",FinServ__PrimaryOwner__r,reference,FALSE,TRUE
+Source System ID,FinServ__SourceSystemId__c,TRUE,--,--,null,string,FALSE,TRUE

@@ -1,0 +1,12 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Business Process ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Name,Name,FALSE,--,--,null,string,FALSE,TRUE
+Namespace Prefix,NamespacePrefix,TRUE,--,--,null,string,FALSE,FALSE
+Description,Description,TRUE,--,--,null,string,FALSE,TRUE
+Entity Enumeration Or ID,TableEnumOrId,FALSE,"[ ""Case"" , ""Lead"" , ""Opportunity"" , ""Solution"" ]",--,null,picklist,FALSE,FALSE
+Active,IsActive,FALSE,--,--,null,boolean,FALSE,TRUE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE

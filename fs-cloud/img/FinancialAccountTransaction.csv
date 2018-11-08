@@ -1,0 +1,27 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Owner ID,OwnerId,FALSE,--,"[ ""Group"", ""User"" ]",Owner,reference,FALSE,TRUE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Transaction Name,Name,FALSE,--,--,null,string,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Amount,FinServ__Amount__c,FALSE,--,--,null,currency,FALSE,TRUE
+Billing Statement,FinServ__BillingStatements__c,TRUE,--,"[ ""FinServ__BillingStatement__c"" ]",FinServ__BillingStatements__r,reference,FALSE,TRUE
+Card Account ID,FinServ__CardAccountID__c,TRUE,--,--,null,string,FALSE,TRUE
+Description,FinServ__Description__c,TRUE,--,--,null,string,FALSE,TRUE
+Financial Account,FinServ__FinancialAccount__c,TRUE,--,"[ ""FinServ__FinancialAccount__c"" ]",FinServ__FinancialAccount__r,reference,FALSE,TRUE
+Merchant Category Code (MCCode),FinServ__MerchantCategoryCode__c,TRUE,--,--,null,string,FALSE,TRUE
+Post Date,FinServ__PostDate__c,TRUE,--,--,null,datetime,FALSE,TRUE
+Running Balance,FinServ__RunningBalance__c,TRUE,--,--,null,currency,FALSE,TRUE
+Source System ID,FinServ__SourceSystemId__c,TRUE,--,--,null,string,FALSE,TRUE
+Source Transaction Type,FinServ__SourceTransactionType__c,TRUE,--,--,null,string,FALSE,TRUE
+Transaction Date,FinServ__TransactionDate__c,FALSE,--,--,null,datetime,FALSE,TRUE
+Transaction Id,FinServ__TransactionId__c,TRUE,--,--,null,string,TRUE,TRUE
+Transaction Status,FinServ__TransactionStatus__c,TRUE,"[ ""Pending"" , ""Posted"" ]",--,null,picklist,FALSE,TRUE
+Transaction Sub-type,FinServ__TransactionSubtype__c,TRUE,"[ ""Cash Deposit"" , ""On-Us Check Deposit"" , ""Transit Check Deposit"" , ""Foreign Cash Deposit"" , ""Bill Payment"" , ""EFT"" , ""ATM Deposit"" , ""ATM Withdrawal"" , ""POS withdrawal"" , ""Misc. Credit"" , ""Misc. Debit"" , ""Loan Payment"" , ""Mortgage Payment"" , ""Credit Card Payment"" , ""Credit Card Cash Advance"" , ""Internal Funds Transfer"" , ""Reversal"" , ""Interest Earned"" , ""Fee"" , ""Merchant Charge"" ]",--,null,picklist,FALSE,TRUE
+Transaction Type,FinServ__TransactionType__c,TRUE,"[ ""Credit"" , ""Debit"" ]",--,null,picklist,FALSE,TRUE

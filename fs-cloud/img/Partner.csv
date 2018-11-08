@@ -1,0 +1,14 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Partner ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Opportunity ID,OpportunityId,TRUE,--,"[ ""Opportunity"" ]",Opportunity,reference,FALSE,FALSE
+Account From ID,AccountFromId,TRUE,--,"[ ""Account"" ]",AccountFrom,reference,FALSE,FALSE
+Account To ID,AccountToId,FALSE,--,"[ ""Account"" ]",AccountTo,reference,FALSE,FALSE
+Role,Role,TRUE,"[ ""Advertiser"" , ""Agency"" , ""Broker"" , ""Consultant"" , ""Dealer"" , ""Developer"" , ""Distributor"" , ""Institution"" , ""Lender"" , ""System Integrator"" , ""VAR/Reseller"" ]",--,null,picklist,FALSE,FALSE
+Primary,IsPrimary,FALSE,--,--,null,boolean,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Reverse Partner ID,ReversePartnerId,TRUE,--,"[ ""Partner"" ]",null,reference,FALSE,FALSE

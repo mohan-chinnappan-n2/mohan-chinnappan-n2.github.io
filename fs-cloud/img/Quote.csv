@@ -1,0 +1,73 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Quote ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Owner ID,OwnerId,FALSE,--,"[ ""Group"", ""User"" ]",Owner,reference,FALSE,TRUE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Quote Name,Name,FALSE,--,--,null,string,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Opportunity ID,OpportunityId,FALSE,--,"[ ""Opportunity"" ]",Opportunity,reference,FALSE,TRUE
+Price Book ID,Pricebook2Id,TRUE,--,"[ ""Pricebook2"" ]",Pricebook2,reference,FALSE,TRUE
+Contact ID,ContactId,TRUE,--,"[ ""Contact"" ]",Contact,reference,FALSE,TRUE
+Quote Number,QuoteNumber,FALSE,--,--,null,string,FALSE,FALSE
+Syncing,IsSyncing,FALSE,--,--,null,boolean,FALSE,FALSE
+Shipping and Handling,ShippingHandling,TRUE,--,--,null,currency,FALSE,TRUE
+Tax,Tax,TRUE,--,--,null,currency,FALSE,TRUE
+Status,Status,TRUE,"[ ""Draft"" , ""Needs Review"" , ""In Review"" , ""Approved"" , ""Rejected"" , ""Presented"" , ""Accepted"" , ""Denied"" ]",--,null,picklist,FALSE,TRUE
+Expiration Date,ExpirationDate,TRUE,--,--,null,date,FALSE,TRUE
+Description,Description,TRUE,--,--,null,textarea,FALSE,TRUE
+Subtotal,Subtotal,TRUE,--,--,null,currency,FALSE,FALSE
+Total Price,TotalPrice,TRUE,--,--,null,currency,FALSE,FALSE
+Line Items,LineItemCount,TRUE,--,--,null,int,FALSE,FALSE
+Bill To Street,BillingStreet,TRUE,--,--,null,textarea,FALSE,TRUE
+Bill To City,BillingCity,TRUE,--,--,null,string,FALSE,TRUE
+Bill To State/Province,BillingState,TRUE,--,--,null,string,FALSE,TRUE
+Bill To Zip/Postal Code,BillingPostalCode,TRUE,--,--,null,string,FALSE,TRUE
+Bill To Country,BillingCountry,TRUE,--,--,null,string,FALSE,TRUE
+Bill To Latitude,BillingLatitude,TRUE,--,--,null,double,FALSE,TRUE
+Bill To Longitude,BillingLongitude,TRUE,--,--,null,double,FALSE,TRUE
+Bill To Geocode Accuracy,BillingGeocodeAccuracy,TRUE,"[ ""Address"" , ""NearAddress"" , ""Block"" , ""Street"" , ""ExtendedZip"" , ""Zip"" , ""Neighborhood"" , ""City"" , ""County"" , ""State"" , ""Unknown"" ]",--,null,picklist,FALSE,TRUE
+Bill To,BillingAddress,TRUE,--,--,null,address,FALSE,FALSE
+Ship To Street,ShippingStreet,TRUE,--,--,null,textarea,FALSE,TRUE
+Ship To City,ShippingCity,TRUE,--,--,null,string,FALSE,TRUE
+Ship To State/Province,ShippingState,TRUE,--,--,null,string,FALSE,TRUE
+Ship To Zip/Postal Code,ShippingPostalCode,TRUE,--,--,null,string,FALSE,TRUE
+Ship To Country,ShippingCountry,TRUE,--,--,null,string,FALSE,TRUE
+Ship To Latitude,ShippingLatitude,TRUE,--,--,null,double,FALSE,TRUE
+Ship To Longitude,ShippingLongitude,TRUE,--,--,null,double,FALSE,TRUE
+Ship To Geocode Accuracy,ShippingGeocodeAccuracy,TRUE,"[ ""Address"" , ""NearAddress"" , ""Block"" , ""Street"" , ""ExtendedZip"" , ""Zip"" , ""Neighborhood"" , ""City"" , ""County"" , ""State"" , ""Unknown"" ]",--,null,picklist,FALSE,TRUE
+Ship To,ShippingAddress,TRUE,--,--,null,address,FALSE,FALSE
+Quote To Street,QuoteToStreet,TRUE,--,--,null,textarea,FALSE,TRUE
+Quote To City,QuoteToCity,TRUE,--,--,null,string,FALSE,TRUE
+Quote To State/Province,QuoteToState,TRUE,--,--,null,string,FALSE,TRUE
+Quote To Zip/Postal Code,QuoteToPostalCode,TRUE,--,--,null,string,FALSE,TRUE
+Quote To Country,QuoteToCountry,TRUE,--,--,null,string,FALSE,TRUE
+Quote To Latitude,QuoteToLatitude,TRUE,--,--,null,double,FALSE,TRUE
+Quote To Longitude,QuoteToLongitude,TRUE,--,--,null,double,FALSE,TRUE
+Quote To Geocode Accuracy,QuoteToGeocodeAccuracy,TRUE,"[ ""Address"" , ""NearAddress"" , ""Block"" , ""Street"" , ""ExtendedZip"" , ""Zip"" , ""Neighborhood"" , ""City"" , ""County"" , ""State"" , ""Unknown"" ]",--,null,picklist,FALSE,TRUE
+Quote To,QuoteToAddress,TRUE,--,--,null,address,FALSE,FALSE
+Additional To Street,AdditionalStreet,TRUE,--,--,null,textarea,FALSE,TRUE
+Additional To City,AdditionalCity,TRUE,--,--,null,string,FALSE,TRUE
+Additional To State/Province,AdditionalState,TRUE,--,--,null,string,FALSE,TRUE
+Additional To Zip/Postal Code,AdditionalPostalCode,TRUE,--,--,null,string,FALSE,TRUE
+Additional To Country,AdditionalCountry,TRUE,--,--,null,string,FALSE,TRUE
+Additional To Latitude,AdditionalLatitude,TRUE,--,--,null,double,FALSE,TRUE
+Additional To Longitude,AdditionalLongitude,TRUE,--,--,null,double,FALSE,TRUE
+Additional To Geocode Accuracy,AdditionalGeocodeAccuracy,TRUE,"[ ""Address"" , ""NearAddress"" , ""Block"" , ""Street"" , ""ExtendedZip"" , ""Zip"" , ""Neighborhood"" , ""City"" , ""County"" , ""State"" , ""Unknown"" ]",--,null,picklist,FALSE,TRUE
+Additional To,AdditionalAddress,TRUE,--,--,null,address,FALSE,FALSE
+Bill To Name,BillingName,TRUE,--,--,null,string,FALSE,TRUE
+Ship To Name,ShippingName,TRUE,--,--,null,string,FALSE,TRUE
+Quote To Name,QuoteToName,TRUE,--,--,null,string,FALSE,TRUE
+Additional To Name,AdditionalName,TRUE,--,--,null,string,FALSE,TRUE
+Email,Email,TRUE,--,--,null,email,FALSE,TRUE
+Phone,Phone,TRUE,--,--,null,phone,FALSE,TRUE
+Fax,Fax,TRUE,--,--,null,phone,FALSE,TRUE
+Contract ID,ContractId,TRUE,--,"[ ""Contract"" ]",Contract,reference,FALSE,TRUE
+Account ID,AccountId,TRUE,--,"[ ""Account"" ]",Account,reference,FALSE,FALSE
+Discount,Discount,TRUE,--,--,null,percent,FALSE,FALSE
+Grand Total,GrandTotal,TRUE,--,--,null,currency,FALSE,FALSE
+CanCreateQuoteLineItems,CanCreateQuoteLineItems,FALSE,--,--,null,boolean,FALSE,FALSE

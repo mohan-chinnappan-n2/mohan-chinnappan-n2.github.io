@@ -1,0 +1,25 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","Id","Record ID","id",18,false,"[]",,false,false,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","OwnerId","Owner ID","reference",18,false,"[""Group"",""User""]","Owner",false,true,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","Name","Asset or Liability Name","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","RecordTypeId","Record Type ID","reference",18,true,"[""RecordType""]","RecordType",false,true,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","LastActivityDate","Last Activity Date","date",0,true,"[]",,false,false,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","LastViewedDate","Last Viewed Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","LastReferencedDate","Last Referenced Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","FinServ__Amount__c","Amount","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","FinServ__AssetsAndLiabilitiesSource__c","Source","picklist",255,true,"[]",,false,true,,"[""Yodlee"",""Manual Entry""]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","FinServ__AssetsAndLiabilitiesType__c","Type","picklist",255,true,"[]",,false,true,,"[""Auto Loan"",""Mortgage"",""Other"",""Personal Loan"",""Real Estate"",""Equipment"",""Automobile"",""Collection"",""Gold"",""Jewelry"",""Cash""]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","FinServ__Description__c","Description","textarea",255,true,"[]",,false,true,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","FinServ__FinancialAccount__c","Financial Account","reference",18,true,"[""FinServ__FinancialAccount__c""]","FinServ__FinancialAccount__r",false,true,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","FinServ__Household__c","Household","reference",18,true,"[""Account""]","FinServ__Household__r",false,true,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","FinServ__JointOwner__c","Joint Owner","reference",18,true,"[""Account""]","FinServ__JointOwner__r",false,true,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","FinServ__OwnerType__c","Owner Type","string",18,true,"[]",,false,true,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","FinServ__Ownership__c","Ownership","picklist",255,true,"[]",,false,true,,"[""Individual"",""Joint"",""Trust""]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","FinServ__PrimaryOwner__c","Primary Owner","reference",18,false,"[""Account""]","FinServ__PrimaryOwner__r",false,true,,"[]",false
+"FinServ__AssetsAndLiabilities__c","Assets and Liabilities","FinServ__SourceSystemId__c","Source System ID","string",100,true,"[]",,false,true,,"[]",true

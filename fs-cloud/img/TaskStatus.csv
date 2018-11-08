@@ -1,0 +1,12 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Task Status Value ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Master Label,MasterLabel,TRUE,--,--,null,string,FALSE,FALSE
+Api Name,ApiName,FALSE,--,--,null,string,FALSE,FALSE
+Sort Order,SortOrder,TRUE,--,--,null,int,FALSE,FALSE
+Is Default,IsDefault,FALSE,--,--,null,boolean,FALSE,FALSE
+Is Closed,IsClosed,FALSE,--,--,null,boolean,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE

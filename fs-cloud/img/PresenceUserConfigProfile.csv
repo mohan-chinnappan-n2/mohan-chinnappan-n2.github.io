@@ -1,0 +1,10 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"PresenceUserConfigProfile","Presence Configuration for Profile","Id","Presence Configuration for Profile ID","id",18,false,"[]",,false,false,,"[]",false
+"PresenceUserConfigProfile","Presence Configuration for Profile","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"PresenceUserConfigProfile","Presence Configuration for Profile","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"PresenceUserConfigProfile","Presence Configuration for Profile","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"PresenceUserConfigProfile","Presence Configuration for Profile","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"PresenceUserConfigProfile","Presence Configuration for Profile","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"PresenceUserConfigProfile","Presence Configuration for Profile","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"PresenceUserConfigProfile","Presence Configuration for Profile","PresenceUserConfigId","Presence Configuration ID","reference",18,false,"[""PresenceUserConfig""]","PresenceUserConfig",false,false,,"[]",false
+"PresenceUserConfigProfile","Presence Configuration for Profile","ProfileId","Profile ID","reference",18,true,"[""Profile""]","Profile",true,false,,"[]",false

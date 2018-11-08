@@ -1,0 +1,19 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Owner ID,OwnerId,FALSE,--,"[ ""Group"", ""User"" ]",Owner,reference,FALSE,TRUE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Contact Relation Name,Name,FALSE,--,--,null,string,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Active,FinServ__Active__c,FALSE,--,--,null,boolean,FALSE,TRUE
+Contact,FinServ__Contact__c,TRUE,--,"[ ""Contact"" ]",FinServ__Contact__r,reference,FALSE,TRUE
+End Date,FinServ__EndDate__c,TRUE,--,--,null,date,FALSE,TRUE
+External ID,FinServ__ExternalId__c,TRUE,--,--,null,string,TRUE,TRUE
+InverseRelationship,FinServ__InverseRelationship__c,TRUE,--,"[ ""FinServ__ContactContactRelation__c"" ]",FinServ__InverseRelationship__r,reference,FALSE,TRUE
+Related Contact,FinServ__RelatedContact__c,TRUE,--,"[ ""Contact"" ]",FinServ__RelatedContact__r,reference,FALSE,TRUE
+Related Role,FinServ__Role__c,FALSE,--,"[ ""FinServ__ReciprocalRole__c"" ]",FinServ__Role__r,reference,FALSE,TRUE
+Source System ID,FinServ__SourceSystemId__c,TRUE,--,--,null,string,FALSE,TRUE
+Start Date,FinServ__StartDate__c,TRUE,--,--,null,date,FALSE,TRUE

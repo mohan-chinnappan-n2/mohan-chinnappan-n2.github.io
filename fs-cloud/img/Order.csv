@@ -1,0 +1,46 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Order ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Owner ID,OwnerId,FALSE,--,"[ ""Group"", ""User"" ]",Owner,reference,FALSE,TRUE
+Contract ID,ContractId,TRUE,--,"[ ""Contract"" ]",Contract,reference,FALSE,TRUE
+Account ID,AccountId,TRUE,--,"[ ""Account"" ]",Account,reference,FALSE,TRUE
+Price Book ID,Pricebook2Id,TRUE,--,"[ ""Pricebook2"" ]",Pricebook2,reference,FALSE,TRUE
+Order ID,OriginalOrderId,TRUE,--,"[ ""Order"" ]",OriginalOrder,reference,FALSE,FALSE
+Order Start Date,EffectiveDate,FALSE,--,--,null,date,FALSE,TRUE
+Order End Date,EndDate,TRUE,--,--,null,date,FALSE,TRUE
+Reduction Order,IsReductionOrder,FALSE,--,--,null,boolean,FALSE,FALSE
+Status,Status,FALSE,"[ ""Draft"" , ""Activated"" ]",--,null,picklist,FALSE,TRUE
+Description,Description,TRUE,--,--,null,textarea,FALSE,TRUE
+Customer Authorized By ID,CustomerAuthorizedById,TRUE,--,"[ ""Contact"" ]",CustomerAuthorizedBy,reference,FALSE,TRUE
+Company Authorized By ID,CompanyAuthorizedById,TRUE,--,"[ ""User"" ]",CompanyAuthorizedBy,reference,FALSE,TRUE
+Order Type,Type,TRUE,--,--,null,picklist,FALSE,TRUE
+Billing Street,BillingStreet,TRUE,--,--,null,textarea,FALSE,TRUE
+Billing City,BillingCity,TRUE,--,--,null,string,FALSE,TRUE
+Billing State/Province,BillingState,TRUE,--,--,null,string,FALSE,TRUE
+Billing Zip/Postal Code,BillingPostalCode,TRUE,--,--,null,string,FALSE,TRUE
+Billing Country,BillingCountry,TRUE,--,--,null,string,FALSE,TRUE
+Billing Latitude,BillingLatitude,TRUE,--,--,null,double,FALSE,TRUE
+Billing Longitude,BillingLongitude,TRUE,--,--,null,double,FALSE,TRUE
+Billing Geocode Accuracy,BillingGeocodeAccuracy,TRUE,"[ ""Address"" , ""NearAddress"" , ""Block"" , ""Street"" , ""ExtendedZip"" , ""Zip"" , ""Neighborhood"" , ""City"" , ""County"" , ""State"" , ""Unknown"" ]",--,null,picklist,FALSE,TRUE
+Billing Address,BillingAddress,TRUE,--,--,null,address,FALSE,FALSE
+Shipping Street,ShippingStreet,TRUE,--,--,null,textarea,FALSE,TRUE
+Shipping City,ShippingCity,TRUE,--,--,null,string,FALSE,TRUE
+Shipping State/Province,ShippingState,TRUE,--,--,null,string,FALSE,TRUE
+Shipping Zip/Postal Code,ShippingPostalCode,TRUE,--,--,null,string,FALSE,TRUE
+Shipping Country,ShippingCountry,TRUE,--,--,null,string,FALSE,TRUE
+Shipping Latitude,ShippingLatitude,TRUE,--,--,null,double,FALSE,TRUE
+Shipping Longitude,ShippingLongitude,TRUE,--,--,null,double,FALSE,TRUE
+Shipping Geocode Accuracy,ShippingGeocodeAccuracy,TRUE,"[ ""Address"" , ""NearAddress"" , ""Block"" , ""Street"" , ""ExtendedZip"" , ""Zip"" , ""Neighborhood"" , ""City"" , ""County"" , ""State"" , ""Unknown"" ]",--,null,picklist,FALSE,TRUE
+Shipping Address,ShippingAddress,TRUE,--,--,null,address,FALSE,FALSE
+Activated Date,ActivatedDate,TRUE,--,--,null,datetime,FALSE,TRUE
+Activated By ID,ActivatedById,TRUE,--,"[ ""User"" ]",ActivatedBy,reference,FALSE,TRUE
+Status Category,StatusCode,FALSE,"[ ""D"" , ""A"" , ""C"" , ""E"" ]",--,null,picklist,FALSE,TRUE
+Order Number,OrderNumber,FALSE,--,--,null,string,FALSE,FALSE
+Order Amount,TotalAmount,FALSE,--,--,null,currency,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE

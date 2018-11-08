@@ -1,0 +1,17 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Role ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Name,Name,FALSE,--,--,null,string,FALSE,TRUE
+Parent Role ID,ParentRoleId,TRUE,--,"[ ""UserRole"" ]",null,reference,FALSE,TRUE
+Description,RollupDescription,TRUE,--,--,null,string,FALSE,TRUE
+Opportunity Access Level for Account Owner,OpportunityAccessForAccountOwner,FALSE,"[ ""None"" , ""Read"" , ""Edit"" ]",--,null,picklist,FALSE,TRUE
+Case Access Level for Account Owner,CaseAccessForAccountOwner,TRUE,"[ ""None"" , ""Read"" , ""Edit"" ]",--,null,picklist,FALSE,TRUE
+Contact Access Level for Account Owner,ContactAccessForAccountOwner,TRUE,"[ ""None"" , ""Read"" , ""Edit"" ]",--,null,picklist,FALSE,FALSE
+User ID,ForecastUserId,TRUE,--,"[ ""User"" ]",null,reference,FALSE,TRUE
+May Forecast Manager Share,MayForecastManagerShare,FALSE,--,--,null,boolean,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Developer Name,DeveloperName,TRUE,--,--,null,string,FALSE,TRUE
+Account ID,PortalAccountId,TRUE,--,"[ ""Account"" ]",null,reference,FALSE,FALSE
+Portal Type,PortalType,TRUE,"[ ""None"" , ""CustomerPortal"" , ""Partner"" ]",--,null,picklist,FALSE,FALSE
+User ID,PortalAccountOwnerId,TRUE,--,"[ ""User"" ]",null,reference,FALSE,FALSE

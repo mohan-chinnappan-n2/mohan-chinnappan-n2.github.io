@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="MainCtrl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Data Model - Task and Event </title>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../../css/navbar-green.css">
+</head>
+
+<body >
+
+  <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)">SFDC Data Model </a>
+      </div>
+  
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav">
+                <li ><a href="/">Main</a></li>
+              </ul>
+
+              <ul class="nav navbar-nav">
+                  <li class="active"><a href="model-task-event.html">Task & Event</a></li>
+                </ul>
+          <ul class="nav navbar-nav">
+              <li class="nactive"><a href="model-sales.html">Sales</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="nactive"><a href="model-sfdc.html">Sharing</a></li>
+              </ul>
+              <ul class="nav navbar-nav">
+                <li class="nactive"><a href="model-profile-perm.html">Profile and Permission</a></li>
+              </ul>
+              <ul class="nav navbar-nav">
+                <li class="nactive"><a href="model-recordtype.html">RecordType</a></li>
+              </ul>
+
+       <div class="inner-addon right-addon navbar-form navbar-right">
+          <i class="glyphicon glyphicon-search"></i>
+          <input type="text" class="form-control" placeholder="Search" />
+        </div>
+  
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown ">
+            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Help <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="./help.html">Help Topics</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+
+<div style="padding-left: 30px;"
+<p style='font-size: 20px;'><i class="glyphicon glyphicon-question-sign"></i> Click on any Entity to view the details: Fields, Picklist, Relationships</p>
+<img src="img/tasks-events.png" usemap="#image-map">
+<map name="image-map">
+
+    <area target="_blank" alt="Lead" title="Lead" href="csv-viewer.html?f=Lead" coords="324,1,436,74" shape="rect">
+    <area target="_blank" alt="Contact" title="Contact" href="csv-viewer.html?f=Contact" coords="514,0,647,77" shape="rect">
+  
+
+    <area target="_blank" alt="Task" title="Task" href="csv-viewer.html?f=Task" coords="250,185,406,310" shape="rect">
+    <area target="_blank" alt="Event" title="Event" href="csv-viewer.html?f=Event" coords="500,182,656,307" shape="rect">
+    <area target="_blank" alt="EventRelation" title="EventRelation" href="csv-viewer.html?f=EventRelation" coords="775,204,887,280" shape="rect">
+   
+  
+    <area target="_blank" alt="TaskStatus" title="TaskStatus" href="csv-viewer.html?f=TaskStatus" coords="0,58,114,129" shape="rect">
+    <area target="_blank" alt="TaskPriority" title="TaskPriority" href="csv-viewer.html?f=TaskPriority" coords="2,144,112,205" shape="rect">
+     
+   
+    
+    <area target="_blank" alt="Account" title="Account" href="csv-viewer.html?f=Account" coords="178,520,259,586" shape="rect">
+    <area target="_blank" alt="Campaign" title="Campaign" href="csv-viewer.html?f=Campaign" coords="89,521,170,587" shape="rect">
+    <area target="_blank" alt="Opportunity" title="Opportunity" href="csv-viewer.html?f=Opportunity" coords="272,519,361,588" shape="rect">
+    <area target="_blank" alt="Case" title="Case" href="csv-viewer.html?f=Case" coords="374,518,431,588" shape="rect">
+    <area target="_blank" alt="Asset" title="Asset" href="csv-viewer.html?f=Asset" coords="450,516,507,586" shape="rect">
+
+   <area target="_blank" alt="Contract" title="Contract" href="csv-viewer.html?f=Contract" coords="527,519,596,590" shape="rect">
+
+   
+
+   <area target="_blank" alt="Solution" title="Solution" href="csv-viewer.html?f=Solution" coords="697,518,788,589" shape="rect">
+   <area target="_blank" alt="Product2" title="Product2" href="csv-viewer.html?f=Product2" coords="605,519,686,588" shape="rect">
+   
+
+
+  </map>
+
+
+<hr/>
+
+<h4>References</h4>
+<ul>
+  <li>
+    <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/data_model.htm">
+      SOAP API developer guide - Data Model
+    </a>
+  </li>
+</ul>
+</div>
+
+</body>
+</html>
+

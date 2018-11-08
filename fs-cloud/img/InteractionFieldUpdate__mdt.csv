@@ -1,0 +1,10 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Custom Metadata Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Custom Metadata Record Name,DeveloperName,FALSE,--,--,null,string,FALSE,FALSE
+Label,MasterLabel,FALSE,--,--,null,string,FALSE,FALSE
+Master Language,Language,FALSE,"[ ""en_US"" , ""de"" , ""es"" , ""fr"" , ""it"" , ""ja"" , ""sv"" , ""ko"" , ""zh_TW"" , ""zh_CN"" , ""pt_BR"" , ""nl_NL"" , ""da"" , ""th"" , ""fi"" , ""ru"" , ""es_MX"" , ""no"" ]",--,null,picklist,FALSE,FALSE
+Namespace Prefix,NamespacePrefix,TRUE,--,--,null,string,FALSE,FALSE
+Label,Label,TRUE,--,--,null,string,FALSE,FALSE
+Qualified API Name,QualifiedApiName,TRUE,--,--,null,string,FALSE,FALSE
+Record Type Name,FinServ__RecordTypeName__c,TRUE,--,--,null,string,FALSE,FALSE
+Object Name,FinServ__SObject__c,FALSE,--,--,null,string,FALSE,FALSE

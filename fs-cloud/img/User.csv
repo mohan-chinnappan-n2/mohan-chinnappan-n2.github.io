@@ -1,0 +1,156 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+User ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Username,Username,FALSE,--,--,null,string,FALSE,TRUE
+Last Name,LastName,FALSE,--,--,null,string,FALSE,TRUE
+First Name,FirstName,TRUE,--,--,null,string,FALSE,TRUE
+Middle Name,MiddleName,TRUE,--,--,null,string,FALSE,TRUE
+Suffix,Suffix,TRUE,--,--,null,string,FALSE,TRUE
+Full Name,Name,FALSE,--,--,null,string,FALSE,FALSE
+Company Name,CompanyName,TRUE,--,--,null,string,FALSE,TRUE
+Division,Division,TRUE,--,--,null,string,FALSE,TRUE
+Department,Department,TRUE,--,--,null,string,FALSE,TRUE
+Title,Title,TRUE,--,--,null,string,FALSE,TRUE
+Street,Street,TRUE,--,--,null,textarea,FALSE,TRUE
+City,City,TRUE,--,--,null,string,FALSE,TRUE
+State/Province,State,TRUE,--,--,null,string,FALSE,TRUE
+Zip/Postal Code,PostalCode,TRUE,--,--,null,string,FALSE,TRUE
+Country,Country,TRUE,--,--,null,string,FALSE,TRUE
+Latitude,Latitude,TRUE,--,--,null,double,FALSE,TRUE
+Longitude,Longitude,TRUE,--,--,null,double,FALSE,TRUE
+Geocode Accuracy,GeocodeAccuracy,TRUE,"[ ""Address"" , ""NearAddress"" , ""Block"" , ""Street"" , ""ExtendedZip"" , ""Zip"" , ""Neighborhood"" , ""City"" , ""County"" , ""State"" , ""Unknown"" ]",--,null,picklist,FALSE,TRUE
+Address,Address,TRUE,--,--,null,address,FALSE,FALSE
+Email,Email,FALSE,--,--,null,email,FALSE,TRUE
+AutoBcc,EmailPreferencesAutoBcc,FALSE,--,--,null,boolean,FALSE,TRUE
+AutoBccStayInTouch,EmailPreferencesAutoBccStayInTouch,FALSE,--,--,null,boolean,FALSE,TRUE
+StayInTouchReminder,EmailPreferencesStayInTouchReminder,FALSE,--,--,null,boolean,FALSE,TRUE
+Email Sender Address,SenderEmail,TRUE,--,--,null,email,FALSE,TRUE
+Email Sender Name,SenderName,TRUE,--,--,null,string,FALSE,TRUE
+Email Signature,Signature,TRUE,--,--,null,textarea,FALSE,TRUE
+Stay-in-Touch Email Subject,StayInTouchSubject,TRUE,--,--,null,string,FALSE,TRUE
+Stay-in-Touch Email Signature,StayInTouchSignature,TRUE,--,--,null,textarea,FALSE,TRUE
+Stay-in-Touch Email Note,StayInTouchNote,TRUE,--,--,null,string,FALSE,TRUE
+Phone,Phone,TRUE,--,--,null,phone,FALSE,TRUE
+Fax,Fax,TRUE,--,--,null,phone,FALSE,TRUE
+Mobile,MobilePhone,TRUE,--,--,null,phone,FALSE,TRUE
+Alias,Alias,FALSE,--,--,null,string,FALSE,TRUE
+Nickname,CommunityNickname,FALSE,--,--,null,string,FALSE,TRUE
+User Photo badge text overlay,BadgeText,TRUE,--,--,null,string,FALSE,FALSE
+Active,IsActive,FALSE,--,--,null,boolean,FALSE,TRUE
+Time Zone,TimeZoneSidKey,FALSE,"[ ""Pacific/Kiritimati"" , ""Pacific/Enderbury"" , ""Pacific/Tongatapu"" , ""Pacific/Chatham"" , ""Asia/Kamchatka"" , ""Pacific/Auckland"" , ""Pacific/Fiji"" , ""Pacific/Guadalcanal"" , ""Pacific/Norfolk"" , ""Australia/Lord_Howe"" , ""Australia/Brisbane"" , ""Australia/Sydney"" , ""Australia/Adelaide"" , ""Australia/Darwin"" , ""Asia/Seoul"" , ""Asia/Tokyo"" , ""Asia/Hong_Kong"" , ""Asia/Kuala_Lumpur"" , ""Asia/Manila"" , ""Asia/Shanghai"" , ""Asia/Singapore"" , ""Asia/Taipei"" , ""Australia/Perth"" , ""Asia/Bangkok"" , ""Asia/Ho_Chi_Minh"" , ""Asia/Jakarta"" , ""Asia/Rangoon"" , ""Asia/Dhaka"" , ""Asia/Kathmandu"" , ""Asia/Colombo"" , ""Asia/Kolkata"" , ""Asia/Karachi"" , ""Asia/Tashkent"" , ""Asia/Yekaterinburg"" , ""Asia/Kabul"" , ""Asia/Tehran"" , ""Asia/Baku"" , ""Asia/Dubai"" , ""Asia/Tbilisi"" , ""Asia/Yerevan"" , ""Africa/Nairobi"" , ""Asia/Baghdad"" , ""Asia/Beirut"" , ""Asia/Jerusalem"" , ""Asia/Kuwait"" , ""Asia/Riyadh"" , ""Europe/Athens"" , ""Europe/Bucharest"" , ""Europe/Helsinki"" , ""Europe/Istanbul"" , ""Europe/Minsk"" , ""Europe/Moscow"" , ""Africa/Cairo"" , ""Africa/Johannesburg"" , ""Europe/Amsterdam"" , ""Europe/Berlin"" , ""Europe/Brussels"" , ""Europe/Paris"" , ""Europe/Prague"" , ""Europe/Rome"" , ""Africa/Algiers"" , ""Africa/Casablanca"" , ""Europe/Dublin"" , ""Europe/Lisbon"" , ""Europe/London"" , ""America/Scoresbysund"" , ""Atlantic/Azores"" , ""GMT"" , ""Atlantic/Cape_Verde"" , ""Atlantic/South_Georgia"" , ""America/St_Johns"" , ""America/Argentina/Buenos_Aires"" , ""America/Halifax"" , ""America/Sao_Paulo"" , ""Atlantic/Bermuda"" , ""America/Caracas"" , ""America/Indiana/Indianapolis"" , ""America/New_York"" , ""America/Puerto_Rico"" , ""America/Santiago"" , ""America/Bogota"" , ""America/Chicago"" , ""America/Lima"" , ""America/Mexico_City"" , ""America/Panama"" , ""America/Denver"" , ""America/El_Salvador"" , ""America/Mazatlan"" , ""America/Los_Angeles"" , ""America/Phoenix"" , ""America/Tijuana"" , ""America/Anchorage"" , ""Pacific/Pitcairn"" , ""America/Adak"" , ""Pacific/Gambier"" , ""Pacific/Marquesas"" , ""Pacific/Honolulu"" , ""Pacific/Niue"" , ""Pacific/Pago_Pago"" ]",--,null,picklist,FALSE,TRUE
+Role ID,UserRoleId,TRUE,--,"[ ""UserRole"" ]",UserRole,reference,FALSE,TRUE
+Locale,LocaleSidKey,FALSE,"[ ""sq_AL"" , ""ar_DZ"" , ""ar_BH"" , ""ar_EG"" , ""ar_IQ"" , ""ar_JO"" , ""ar_KW"" , ""ar_LB"" , ""ar_LY"" , ""ar_MA"" , ""ar_OM"" , ""ar_QA"" , ""ar_SA"" , ""ar_SD"" , ""ar_SY"" , ""ar_TN"" , ""ar_AE"" , ""ar_YE"" , ""hy_AM"" , ""az_AZ"" , ""bn_BD"" , ""eu_ES"" , ""be_BY"" , ""bs_BA"" , ""bg_BG"" , ""my_MM"" , ""ca_ES"" , ""zh_CN_PINYIN"" , ""zh_CN_STROKE"" , ""zh_CN"" , ""zh_HK_STROKE"" , ""zh_HK"" , ""zh_MO"" , ""zh_SG"" , ""zh_TW_STROKE"" , ""zh_TW"" , ""hr_HR"" , ""cs_CZ"" , ""da_DK"" , ""nl_AW"" , ""nl_BE"" , ""nl_NL"" , ""nl_SR"" , ""dz_BT"" , ""en_AG"" , ""en_AU"" , ""en_BS"" , ""en_BB"" , ""en_BZ"" , ""en_BM"" , ""en_BW"" , ""en_CM"" , ""en_CA"" , ""en_KY"" , ""en_ER"" , ""en_FK"" , ""en_FJ"" , ""en_GM"" , ""en_GH"" , ""en_GI"" , ""en_GY"" , ""en_HK"" , ""en_IN"" , ""en_ID"" , ""en_IE"" , ""en_JM"" , ""en_KE"" , ""en_LR"" , ""en_MG"" , ""en_MW"" , ""en_MY"" , ""en_MU"" , ""en_NA"" , ""en_NZ"" , ""en_NG"" , ""en_PK"" , ""en_PG"" , ""en_PH"" , ""en_RW"" , ""en_WS"" , ""en_SC"" , ""en_SL"" , ""en_SG"" , ""en_SX"" , ""en_SB"" , ""en_ZA"" , ""en_SH"" , ""en_SZ"" , ""en_TZ"" , ""en_TO"" , ""en_TT"" , ""en_UG"" , ""en_GB"" , ""en_US"" , ""en_VU"" , ""et_EE"" , ""fi_FI"" , ""fr_BE"" , ""fr_CA"" , ""fr_KM"" , ""fr_FR"" , ""fr_GN"" , ""fr_HT"" , ""fr_LU"" , ""fr_MR"" , ""fr_MC"" , ""fr_CH"" , ""fr_WF"" , ""ka_GE"" , ""de_AT"" , ""de_BE"" , ""de_DE"" , ""de_LU"" , ""de_CH"" , ""el_GR"" , ""iw_IL"" , ""hi_IN"" , ""hu_HU"" , ""is_IS"" , ""in_ID"" , ""ga_IE"" , ""it_IT"" , ""it_CH"" , ""ja_JP"" , ""kk_KZ"" , ""km_KH"" , ""ko_KP"" , ""ko_KR"" , ""ky_KG"" , ""lo_LA"" , ""lv_LV"" , ""lt_LT"" , ""lu_CD"" , ""lb_LU"" , ""mk_MK"" , ""ms_BN"" , ""ms_MY"" , ""mt_MT"" , ""sh_ME"" , ""ne_NP"" , ""no_NO"" , ""ps_AF"" , ""fa_IR"" , ""pl_PL"" , ""pt_AO"" , ""pt_BR"" , ""pt_CV"" , ""pt_MZ"" , ""pt_PT"" , ""pt_ST"" , ""ro_MD"" , ""ro_RO"" , ""rm_CH"" , ""rn_BI"" , ""ru_RU"" , ""sr_BA"" , ""sh_BA"" , ""sh_CS"" , ""sr_CS"" , ""sr_RS"" , ""sk_SK"" , ""sl_SI"" , ""so_DJ"" , ""so_SO"" , ""es_AR"" , ""es_BO"" , ""es_CL"" , ""es_CO"" , ""es_CR"" , ""es_CU"" , ""es_DO"" , ""es_EC"" , ""es_SV"" , ""es_GT"" , ""es_HN"" , ""es_MX"" , ""es_NI"" , ""es_PA"" , ""es_PY"" , ""es_PE"" , ""es_PR"" , ""es_ES"" , ""es_US"" , ""es_UY"" , ""es_VE"" , ""sv_SE"" , ""tl_PH"" , ""tg_TJ"" , ""ta_IN"" , ""ta_LK"" , ""th_TH"" , ""ti_ET"" , ""tr_TR"" , ""uk_UA"" , ""ur_PK"" , ""uz_LATN_UZ"" , ""vi_VN"" , ""cy_GB"" , ""yo_BJ"" ]",--,null,picklist,FALSE,TRUE
+Info Emails,ReceivesInfoEmails,FALSE,--,--,null,boolean,FALSE,TRUE
+Admin Info Emails,ReceivesAdminInfoEmails,FALSE,--,--,null,boolean,FALSE,TRUE
+Email Encoding,EmailEncodingKey,FALSE,"[ ""UTF-8"" , ""ISO-8859-1"" , ""Shift_JIS"" , ""ISO-2022-JP"" , ""EUC-JP"" , ""ks_c_5601-1987"" , ""Big5"" , ""GB2312"" , ""Big5-HKSCS"" , ""x-SJIS_0213"" ]",--,null,picklist,FALSE,TRUE
+Profile ID,ProfileId,FALSE,--,"[ ""Profile"" ]",Profile,reference,FALSE,TRUE
+User Type,UserType,TRUE,"[ ""Standard"" , ""PowerPartner"" , ""PowerCustomerSuccess"" , ""CustomerSuccess"" , ""Guest"" , ""CspLitePortal"" , ""CsnOnly"" , ""SelfService"" ]",--,null,picklist,FALSE,FALSE
+Language,LanguageLocaleKey,FALSE,"[ ""en_US"" , ""de"" , ""es"" , ""fr"" , ""it"" , ""ja"" , ""sv"" , ""ko"" , ""zh_TW"" , ""zh_CN"" , ""pt_BR"" , ""nl_NL"" , ""da"" , ""th"" , ""fi"" , ""ru"" , ""es_MX"" , ""no"" ]",--,null,picklist,FALSE,TRUE
+Employee Number,EmployeeNumber,TRUE,--,--,null,string,FALSE,TRUE
+Delegated Approver ID,DelegatedApproverId,TRUE,--,"[ ""Group"", ""User"" ]",null,reference,FALSE,TRUE
+Manager ID,ManagerId,TRUE,--,"[ ""User"" ]",Manager,reference,FALSE,TRUE
+Last Login,LastLoginDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Password Change or Reset,LastPasswordChangeDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Offline Edition Trial Expiration Date,OfflineTrialExpirationDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Sales Anywhere Trial Expiration Date,OfflinePdaTrialExpirationDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Marketing User,UserPermissionsMarketingUser,FALSE,--,--,null,boolean,FALSE,TRUE
+Offline User,UserPermissionsOfflineUser,FALSE,--,--,null,boolean,FALSE,TRUE
+AvantGo User,UserPermissionsAvantgoUser,FALSE,--,--,null,boolean,FALSE,TRUE
+Auto-login To Call Center,UserPermissionsCallCenterAutoLogin,FALSE,--,--,null,boolean,FALSE,TRUE
+Apex Mobile User,UserPermissionsMobileUser,FALSE,--,--,null,boolean,FALSE,TRUE
+Salesforce CRM Content User,UserPermissionsSFContentUser,FALSE,--,--,null,boolean,FALSE,TRUE
+Flow User,UserPermissionsInteractionUser,FALSE,--,--,null,boolean,FALSE,TRUE
+Service Cloud User,UserPermissionsSupportUser,FALSE,--,--,null,boolean,FALSE,TRUE
+Allow Forecasting,ForecastEnabled,FALSE,--,--,null,boolean,FALSE,TRUE
+ActivityRemindersPopup,UserPreferencesActivityRemindersPopup,FALSE,--,--,null,boolean,FALSE,TRUE
+EventRemindersCheckboxDefault,UserPreferencesEventRemindersCheckboxDefault,FALSE,--,--,null,boolean,FALSE,TRUE
+TaskRemindersCheckboxDefault,UserPreferencesTaskRemindersCheckboxDefault,FALSE,--,--,null,boolean,FALSE,TRUE
+ReminderSoundOff,UserPreferencesReminderSoundOff,FALSE,--,--,null,boolean,FALSE,TRUE
+DisableAllFeedsEmail,UserPreferencesDisableAllFeedsEmail,FALSE,--,--,null,boolean,FALSE,TRUE
+DisableFollowersEmail,UserPreferencesDisableFollowersEmail,FALSE,--,--,null,boolean,FALSE,TRUE
+DisableProfilePostEmail,UserPreferencesDisableProfilePostEmail,FALSE,--,--,null,boolean,FALSE,TRUE
+DisableChangeCommentEmail,UserPreferencesDisableChangeCommentEmail,FALSE,--,--,null,boolean,FALSE,TRUE
+DisableLaterCommentEmail,UserPreferencesDisableLaterCommentEmail,FALSE,--,--,null,boolean,FALSE,TRUE
+DisProfPostCommentEmail,UserPreferencesDisProfPostCommentEmail,FALSE,--,--,null,boolean,FALSE,TRUE
+ApexPagesDeveloperMode,UserPreferencesApexPagesDeveloperMode,FALSE,--,--,null,boolean,FALSE,TRUE
+HideCSNGetChatterMobileTask,UserPreferencesHideCSNGetChatterMobileTask,FALSE,--,--,null,boolean,FALSE,TRUE
+DisableMentionsPostEmail,UserPreferencesDisableMentionsPostEmail,FALSE,--,--,null,boolean,FALSE,TRUE
+DisMentionsCommentEmail,UserPreferencesDisMentionsCommentEmail,FALSE,--,--,null,boolean,FALSE,TRUE
+HideCSNDesktopTask,UserPreferencesHideCSNDesktopTask,FALSE,--,--,null,boolean,FALSE,TRUE
+HideChatterOnboardingSplash,UserPreferencesHideChatterOnboardingSplash,FALSE,--,--,null,boolean,FALSE,TRUE
+HideSecondChatterOnboardingSplash,UserPreferencesHideSecondChatterOnboardingSplash,FALSE,--,--,null,boolean,FALSE,TRUE
+DisCommentAfterLikeEmail,UserPreferencesDisCommentAfterLikeEmail,FALSE,--,--,null,boolean,FALSE,TRUE
+DisableLikeEmail,UserPreferencesDisableLikeEmail,FALSE,--,--,null,boolean,FALSE,TRUE
+SortFeedByComment,UserPreferencesSortFeedByComment,FALSE,--,--,null,boolean,FALSE,TRUE
+DisableMessageEmail,UserPreferencesDisableMessageEmail,FALSE,--,--,null,boolean,FALSE,TRUE
+DisableBookmarkEmail,UserPreferencesDisableBookmarkEmail,FALSE,--,--,null,boolean,FALSE,TRUE
+DisableSharePostEmail,UserPreferencesDisableSharePostEmail,FALSE,--,--,null,boolean,FALSE,TRUE
+EnableAutoSubForFeeds,UserPreferencesEnableAutoSubForFeeds,FALSE,--,--,null,boolean,FALSE,TRUE
+DisableFileShareNotificationsForApi,UserPreferencesDisableFileShareNotificationsForApi,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowTitleToExternalUsers,UserPreferencesShowTitleToExternalUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowManagerToExternalUsers,UserPreferencesShowManagerToExternalUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowEmailToExternalUsers,UserPreferencesShowEmailToExternalUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowWorkPhoneToExternalUsers,UserPreferencesShowWorkPhoneToExternalUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowMobilePhoneToExternalUsers,UserPreferencesShowMobilePhoneToExternalUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowFaxToExternalUsers,UserPreferencesShowFaxToExternalUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowStreetAddressToExternalUsers,UserPreferencesShowStreetAddressToExternalUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowCityToExternalUsers,UserPreferencesShowCityToExternalUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowStateToExternalUsers,UserPreferencesShowStateToExternalUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowPostalCodeToExternalUsers,UserPreferencesShowPostalCodeToExternalUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowCountryToExternalUsers,UserPreferencesShowCountryToExternalUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowProfilePicToGuestUsers,UserPreferencesShowProfilePicToGuestUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowTitleToGuestUsers,UserPreferencesShowTitleToGuestUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowCityToGuestUsers,UserPreferencesShowCityToGuestUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowStateToGuestUsers,UserPreferencesShowStateToGuestUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowPostalCodeToGuestUsers,UserPreferencesShowPostalCodeToGuestUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowCountryToGuestUsers,UserPreferencesShowCountryToGuestUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+HideS1BrowserUI,UserPreferencesHideS1BrowserUI,FALSE,--,--,null,boolean,FALSE,TRUE
+DisableEndorsementEmail,UserPreferencesDisableEndorsementEmail,FALSE,--,--,null,boolean,FALSE,TRUE
+PathAssistantCollapsed,UserPreferencesPathAssistantCollapsed,FALSE,--,--,null,boolean,FALSE,TRUE
+CacheDiagnostics,UserPreferencesCacheDiagnostics,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowEmailToGuestUsers,UserPreferencesShowEmailToGuestUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowManagerToGuestUsers,UserPreferencesShowManagerToGuestUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowWorkPhoneToGuestUsers,UserPreferencesShowWorkPhoneToGuestUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowMobilePhoneToGuestUsers,UserPreferencesShowMobilePhoneToGuestUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowFaxToGuestUsers,UserPreferencesShowFaxToGuestUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+ShowStreetAddressToGuestUsers,UserPreferencesShowStreetAddressToGuestUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+LightningExperiencePreferred,UserPreferencesLightningExperiencePreferred,FALSE,--,--,null,boolean,FALSE,TRUE
+PreviewLightning,UserPreferencesPreviewLightning,FALSE,--,--,null,boolean,FALSE,TRUE
+LightningConsolePreferred,UserPreferencesLightningConsolePreferred,FALSE,--,--,null,boolean,FALSE,TRUE
+HideEndUserOnboardingAssistantModal,UserPreferencesHideEndUserOnboardingAssistantModal,FALSE,--,--,null,boolean,FALSE,TRUE
+HideLightningMigrationModal,UserPreferencesHideLightningMigrationModal,FALSE,--,--,null,boolean,FALSE,TRUE
+HideSfxWelcomeMat,UserPreferencesHideSfxWelcomeMat,FALSE,--,--,null,boolean,FALSE,TRUE
+HideBiggerPhotoCallout,UserPreferencesHideBiggerPhotoCallout,FALSE,--,--,null,boolean,FALSE,TRUE
+GlobalNavBarWTShown,UserPreferencesGlobalNavBarWTShown,FALSE,--,--,null,boolean,FALSE,TRUE
+GlobalNavGridMenuWTShown,UserPreferencesGlobalNavGridMenuWTShown,FALSE,--,--,null,boolean,FALSE,TRUE
+CreateLEXAppsWTShown,UserPreferencesCreateLEXAppsWTShown,FALSE,--,--,null,boolean,FALSE,TRUE
+FavoritesWTShown,UserPreferencesFavoritesWTShown,FALSE,--,--,null,boolean,FALSE,TRUE
+RecordHomeSectionCollapseWTShown,UserPreferencesRecordHomeSectionCollapseWTShown,FALSE,--,--,null,boolean,FALSE,TRUE
+RecordHomeReservedWTShown,UserPreferencesRecordHomeReservedWTShown,FALSE,--,--,null,boolean,FALSE,TRUE
+FavoritesShowTopFavorites,UserPreferencesFavoritesShowTopFavorites,FALSE,--,--,null,boolean,FALSE,TRUE
+ExcludeMailAppAttachments,UserPreferencesExcludeMailAppAttachments,FALSE,--,--,null,boolean,FALSE,TRUE
+Contact ID,ContactId,TRUE,--,"[ ""Contact"" ]",Contact,reference,FALSE,FALSE
+Account ID,AccountId,TRUE,--,"[ ""Account"" ]",Account,reference,FALSE,FALSE
+Call Center ID,CallCenterId,TRUE,--,"[ ""CallCenter"" ]",null,reference,FALSE,TRUE
+Extension,Extension,TRUE,--,--,null,phone,FALSE,TRUE
+SAML Federation ID,FederationIdentifier,TRUE,--,--,null,string,FALSE,TRUE
+About Me,AboutMe,TRUE,--,--,null,textarea,FALSE,TRUE
+Url for full-sized Photo,FullPhotoUrl,TRUE,--,--,null,url,FALSE,FALSE
+Photo,SmallPhotoUrl,TRUE,--,--,null,url,FALSE,FALSE
+Show external indicator,IsExtIndicatorVisible,FALSE,--,--,null,boolean,FALSE,FALSE
+Out of office message,OutOfOfficeMessage,TRUE,--,--,null,string,FALSE,FALSE
+Url for medium profile photo,MediumPhotoUrl,TRUE,--,--,null,url,FALSE,FALSE
+Chatter Email Highlights Frequency,DigestFrequency,FALSE,"[ ""D"" , ""W"" , ""N"" ]",--,null,picklist,FALSE,TRUE
+Default Notification Frequency when Joining Groups,DefaultGroupNotificationFrequency,FALSE,"[ ""P"" , ""D"" , ""W"" , ""N"" ]",--,null,picklist,FALSE,TRUE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Url for banner photo,BannerPhotoUrl,TRUE,--,--,null,url,FALSE,FALSE
+Url for IOS banner photo,SmallBannerPhotoUrl,TRUE,--,--,null,url,FALSE,FALSE
+Url for Android banner photo,MediumBannerPhotoUrl,TRUE,--,--,null,url,FALSE,FALSE
+Has Profile Photo,IsProfilePhotoActive,FALSE,--,--,null,boolean,FALSE,FALSE
+FSC Analytics Permissions,FinServWaveExt__WavePermissions__c,TRUE,--,--,null,string,FALSE,TRUE
+Referrer Score,FinServ__ReferrerScore__c,TRUE,--,--,null,double,FALSE,TRUE

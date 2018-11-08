@@ -1,0 +1,17 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Event Relation ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Relation ID,RelationId,FALSE,--,"[ ""Account"", ""Asset"", ""AssetRelationship"", ""Campaign"", ""Case"", ""Contact"", ""Contract"", ""FinServ__AccountAccountRelation__c"", ""FinServ__Alert__c"", ""FinServ__AssetsAndLiabilities__c"", ""FinServ__B2CLeadCompanyNameConfig__c"", ""FinServ__BillingStatement__c"", ""FinServ__Card__c"", ""FinServ__ChargesAndFees__c"", ""FinServ__ContactContactRelation__c"", ""FinServ__Education__c"", ""FinServ__Employment__c"", ""FinServ__FinancialAccountRole__c"", ""FinServ__FinancialAccountTransaction__c"", ""FinServ__FinancialAccount__c"", ""FinServ__FinancialGoal__c"", ""FinServ__FinancialHolding__c"", ""FinServ__IdentificationDocument__c"", ""FinServ__IndustriesAppConfig__c"", ""FinServ__LifeEvent__c"", ""FinServ__ReciprocalRole__c"", ""FinServ__Revenue__c"", ""FinServ__RollupByLookupConfig__c"", ""FinServ__RollupByLookupFilterCriteria__c"", ""FinServ__Securities__c"", ""FinServ__UsePersonAccount__c"", ""FinServ__WealthAppConfig__c"", ""FinServ__individualExcludedFields__c"", ""Lead"", ""Opportunity"", ""Order"", ""Product2"", ""Quote"", ""Solution"", ""User"" ]",Relation,reference,FALSE,FALSE
+Event ID,EventId,FALSE,--,"[ ""Event"" ]",Event,reference,FALSE,FALSE
+Is What,IsWhat,FALSE,--,--,null,boolean,FALSE,FALSE
+Is Parent,IsParent,FALSE,--,--,null,boolean,FALSE,TRUE
+Is Invitee,IsInvitee,FALSE,--,--,null,boolean,FALSE,TRUE
+Account ID,AccountId,TRUE,--,"[ ""Account"" ]",Account,reference,FALSE,FALSE
+Status,Status,TRUE,"[ ""New"" , ""Declined"" , ""Accepted"" , ""Uninvited"" , ""Maybe"" ]",--,null,picklist,FALSE,TRUE
+Response Date,RespondedDate,TRUE,--,--,null,datetime,FALSE,TRUE
+Response,Response,TRUE,--,--,null,string,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE

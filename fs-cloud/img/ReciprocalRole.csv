@@ -1,0 +1,18 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Owner ID,OwnerId,FALSE,--,"[ ""Group"", ""User"" ]",Owner,reference,FALSE,TRUE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Role,Name,TRUE,--,--,null,string,FALSE,TRUE
+Record Type ID,RecordTypeId,TRUE,--,"[ ""RecordType"" ]",RecordType,reference,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Create Inverse Role,FinServ__CreateInverseRole__c,FALSE,--,--,null,boolean,FALSE,TRUE
+InverseRelationship,FinServ__InverseRelationship__c,TRUE,--,"[ ""FinServ__ReciprocalRole__c"" ]",FinServ__InverseRelationship__r,reference,FALSE,TRUE
+Inverse Role,FinServ__InverseRole__c,FALSE,--,--,null,string,FALSE,TRUE
+Relationship Type,FinServ__RelationshipType__c,TRUE,"[ ""All"" , ""Contact Contact Relation"" , ""Account Account Relation"" ]",--,null,picklist,FALSE,TRUE
+Source System ID,FinServ__SourceSystemId__c,TRUE,--,--,null,string,FALSE,TRUE

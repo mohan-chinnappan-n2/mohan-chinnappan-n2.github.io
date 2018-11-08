@@ -1,0 +1,28 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"FinServ__FinancialHolding__c","Financial Holding","Id","Record ID","id",18,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","Name","Financial Holding Name","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","LastActivityDate","Last Activity Date","date",0,true,"[]",,false,false,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","LastViewedDate","Last Viewed Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","LastReferencedDate","Last Referenced Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__FinancialAccount__c","Financial Account","reference",18,false,"[""FinServ__FinancialAccount__c""]","FinServ__FinancialAccount__r",false,false,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__AssetCategoryName__c","Asset Category Name","picklist",255,true,"[]",,false,true,,"[""Large Growth"",""Large Value"",""Large Blend"",""Small Growth"",""Small Value"",""Small Blend"",""Mid-Cap Growth"",""Mid-Cap Value"",""Mid-Cap Blend""]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__AssetCategory__c","Asset Category","picklist",255,true,"[]",,false,true,,"[""U.S. Equity"",""Sector Equity"",""Allocation"",""International Equity"",""Alternative"",""Commodities"",""Taxable Bond"",""Municipal Bond""]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__AssetClass__c","Asset Class","picklist",255,true,"[]",,false,true,,"[""Equities"",""Fixed Income"",""Cash Equivalents"",""Alternative Investments""]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__GainLoss__c","Gain/Loss","currency",0,true,"[]",,false,true,"Change in value since purchase.","[]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__Household__c","Household","reference",18,true,"[""Account""]","FinServ__Household__r",false,true,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__LastUpdated__c","Last Updated","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__MarketValue__c","Market Value","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__PercentChange__c","Percent Change","percent",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__Price__c","Price","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__PrimaryOwner__c","Primary Owner","reference",18,true,"[""Account""]","FinServ__PrimaryOwner__r",false,true,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__PurchasePrice__c","Purchase Price","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__Securities__c","Symbol","reference",18,true,"[""FinServ__Securities__c""]","FinServ__Securities__r",false,true,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__Shares__c","Shares","double",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__SourceSystemId__c","Source System ID","string",100,true,"[]",,false,true,,"[]",true
+"FinServ__FinancialHolding__c","Financial Holding","FinServ__Symbol__c","Symbol","string",1300,true,"[]",,false,false,,"[]",false

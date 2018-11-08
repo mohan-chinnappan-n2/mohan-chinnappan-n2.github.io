@@ -1,0 +1,31 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Name,Name,FALSE,--,--,null,string,FALSE,FALSE
+Record Type ID,RecordTypeId,TRUE,--,"[ ""RecordType"" ]",RecordType,reference,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Financial Account,FinServ__FinancialAccount__c,FALSE,--,"[ ""FinServ__FinancialAccount__c"" ]",FinServ__FinancialAccount__r,reference,FALSE,FALSE
+Balance Transfers,FinServ__BalanceTransfers__c,TRUE,--,--,null,currency,FALSE,TRUE
+Billing Period End,FinServ__BillingPeriodEnd__c,TRUE,--,--,null,date,FALSE,TRUE
+Billing Period Start,FinServ__BillingPeriodStart__c,TRUE,--,--,null,date,FALSE,TRUE
+Cash Advances,FinServ__CashAdvances__c,TRUE,--,--,null,currency,FALSE,TRUE
+Deposits,FinServ__Deposits__c,TRUE,--,--,null,currency,FALSE,TRUE
+Ending Balance,FinServ__EndingBalance__c,TRUE,--,--,null,currency,FALSE,TRUE
+Fees Charged,FinServ__FeesCharged__c,TRUE,--,--,null,currency,FALSE,TRUE
+Interest This Period,FinServ__InterestThisPeriod__c,TRUE,--,--,null,currency,FALSE,TRUE
+Interest YTD,FinServ__InterestYTD__c,TRUE,--,--,null,currency,FALSE,TRUE
+Last Payment Date,FinServ__LastPaymentDate__c,TRUE,--,--,null,date,FALSE,TRUE
+Minimum Payment Due,FinServ__MinimumPaymentDue__c,TRUE,--,--,null,currency,FALSE,TRUE
+Other Credits,FinServ__OtherCredits__c,TRUE,--,--,null,currency,FALSE,TRUE
+Past Due Amount,FinServ__PastDueAmount__c,TRUE,--,--,null,currency,FALSE,TRUE
+Payment Due Date,FinServ__PaymentDueDate__c,TRUE,--,--,null,date,FALSE,TRUE
+Payments,FinServ__Payments__c,TRUE,--,--,null,currency,FALSE,TRUE
+Previous Balance,FinServ__PreviousBalance__c,TRUE,--,--,null,currency,FALSE,TRUE
+Purchases,FinServ__Purchases__c,TRUE,--,--,null,currency,FALSE,TRUE
+Source System ID,FinServ__SourceSystemId__c,TRUE,--,--,null,string,FALSE,TRUE
+Statement Date,FinServ__StatementDate__c,TRUE,--,--,null,date,FALSE,TRUE
+Withdrawals,FinServ__Withdrawals__c,TRUE,--,--,null,currency,FALSE,TRUE

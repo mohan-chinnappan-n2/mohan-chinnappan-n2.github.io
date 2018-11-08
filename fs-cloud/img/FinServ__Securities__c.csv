@@ -1,0 +1,22 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"FinServ__Securities__c","Securities","Id","Record ID","id",18,false,"[]",,false,false,,"[]",false
+"FinServ__Securities__c","Securities","OwnerId","Owner ID","reference",18,false,"[""Group"",""User""]","Owner",false,true,,"[]",false
+"FinServ__Securities__c","Securities","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"FinServ__Securities__c","Securities","Name","Symbol","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__Securities__c","Securities","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__Securities__c","Securities","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"FinServ__Securities__c","Securities","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__Securities__c","Securities","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"FinServ__Securities__c","Securities","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__Securities__c","Securities","LastViewedDate","Last Viewed Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__Securities__c","Securities","LastReferencedDate","Last Referenced Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__Securities__c","Securities","FinServ__CUSIP__c","CUSIP","string",9,true,"[]",,false,true,,"[]",false
+"FinServ__Securities__c","Securities","FinServ__Exchange__c","Exchange","picklist",255,true,"[]",,false,true,,"[""NYSE"",""NASDAQ""]",false
+"FinServ__Securities__c","Securities","FinServ__LastUpdated__c","Last Updated","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__Securities__c","Securities","FinServ__Price__c","Price","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__Securities__c","Securities","FinServ__SecuritiesName__c","Securities Name","string",150,false,"[]",,true,true,,"[]",true
+"FinServ__Securities__c","Securities","FinServ__SecurityId__c","Security ID","string",32,true,"[]",,false,true,,"[]",false
+"FinServ__Securities__c","Securities","FinServ__SourceSystemId__c","Source System ID","string",100,true,"[]",,false,true,,"[]",true
+"FinServ__Securities__c","Securities","FinServ__AssetCategoryName__c","Asset Category Name","picklist",255,true,"[]",,false,true,,"[""Large Growth"",""Large Value"",""Large Blend"",""Small Growth"",""Small Value"",""Small Blend"",""Mid-Cap Growth"",""Mid-Cap Value"",""Mid-Cap Blend""]",false
+"FinServ__Securities__c","Securities","FinServ__AssetCategory__c","Asset Category","picklist",255,true,"[]",,false,true,,"[""U.S. Equity"",""Sector Equity"",""Allocation"",""International Equity"",""Alternative"",""Commodities"",""Taxable Bond"",""Municipal Bond""]",false
+"FinServ__Securities__c","Securities","FinServ__AssetClass__c","Asset Class","picklist",255,true,"[]",,false,true,,"[""Equities"",""Fixed Income"",""Cash Equivalents"",""Alternative Investments""]",false

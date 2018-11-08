@@ -1,0 +1,49 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Contract ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Account ID,AccountId,FALSE,--,"[ ""Account"" ]",Account,reference,FALSE,TRUE
+Price Book ID,Pricebook2Id,TRUE,--,"[ ""Pricebook2"" ]",Pricebook2,reference,FALSE,TRUE
+Owner Expiration Notice,OwnerExpirationNotice,TRUE,"[ ""15"" , ""30"" , ""45"" , ""60"" , ""90"" , ""120"" ]",--,null,picklist,FALSE,TRUE
+Contract Start Date,StartDate,TRUE,--,--,null,date,FALSE,TRUE
+Contract End Date,EndDate,TRUE,--,--,null,date,FALSE,FALSE
+Billing Street,BillingStreet,TRUE,--,--,null,textarea,FALSE,TRUE
+Billing City,BillingCity,TRUE,--,--,null,string,FALSE,TRUE
+Billing State/Province,BillingState,TRUE,--,--,null,string,FALSE,TRUE
+Billing Zip/Postal Code,BillingPostalCode,TRUE,--,--,null,string,FALSE,TRUE
+Billing Country,BillingCountry,TRUE,--,--,null,string,FALSE,TRUE
+Billing Latitude,BillingLatitude,TRUE,--,--,null,double,FALSE,TRUE
+Billing Longitude,BillingLongitude,TRUE,--,--,null,double,FALSE,TRUE
+Billing Geocode Accuracy,BillingGeocodeAccuracy,TRUE,"[ ""Address"" , ""NearAddress"" , ""Block"" , ""Street"" , ""ExtendedZip"" , ""Zip"" , ""Neighborhood"" , ""City"" , ""County"" , ""State"" , ""Unknown"" ]",--,null,picklist,FALSE,TRUE
+Billing Address,BillingAddress,TRUE,--,--,null,address,FALSE,FALSE
+Shipping Street,ShippingStreet,TRUE,--,--,null,textarea,FALSE,TRUE
+Shipping City,ShippingCity,TRUE,--,--,null,string,FALSE,TRUE
+Shipping State/Province,ShippingState,TRUE,--,--,null,string,FALSE,TRUE
+Shipping Zip/Postal Code,ShippingPostalCode,TRUE,--,--,null,string,FALSE,TRUE
+Shipping Country,ShippingCountry,TRUE,--,--,null,string,FALSE,TRUE
+Shipping Latitude,ShippingLatitude,TRUE,--,--,null,double,FALSE,TRUE
+Shipping Longitude,ShippingLongitude,TRUE,--,--,null,double,FALSE,TRUE
+Shipping Geocode Accuracy,ShippingGeocodeAccuracy,TRUE,"[ ""Address"" , ""NearAddress"" , ""Block"" , ""Street"" , ""ExtendedZip"" , ""Zip"" , ""Neighborhood"" , ""City"" , ""County"" , ""State"" , ""Unknown"" ]",--,null,picklist,FALSE,TRUE
+Shipping Address,ShippingAddress,TRUE,--,--,null,address,FALSE,FALSE
+Contract Term,ContractTerm,TRUE,--,--,null,int,FALSE,TRUE
+Owner ID,OwnerId,FALSE,--,"[ ""User"" ]",Owner,reference,FALSE,TRUE
+Status,Status,FALSE,"[ ""In Approval Process"" , ""Activated"" , ""Draft"" ]",--,null,picklist,FALSE,TRUE
+Company Signed By ID,CompanySignedId,TRUE,--,"[ ""User"" ]",CompanySigned,reference,FALSE,TRUE
+Company Signed Date,CompanySignedDate,TRUE,--,--,null,date,FALSE,TRUE
+Customer Signed By ID,CustomerSignedId,TRUE,--,"[ ""Contact"" ]",CustomerSigned,reference,FALSE,TRUE
+Customer Signed Title,CustomerSignedTitle,TRUE,--,--,null,string,FALSE,TRUE
+Customer Signed Date,CustomerSignedDate,TRUE,--,--,null,date,FALSE,TRUE
+Special Terms,SpecialTerms,TRUE,--,--,null,textarea,FALSE,TRUE
+Activated By ID,ActivatedById,TRUE,--,"[ ""User"" ]",ActivatedBy,reference,FALSE,TRUE
+Activated Date,ActivatedDate,TRUE,--,--,null,datetime,FALSE,TRUE
+Status Category,StatusCode,FALSE,"[ ""Draft"" , ""InApproval"" , ""Activated"" , ""Terminated"" , ""Expired"" ]",--,null,picklist,FALSE,FALSE
+Description,Description,TRUE,--,--,null,textarea,FALSE,TRUE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Contract Number,ContractNumber,FALSE,--,--,null,string,FALSE,FALSE
+Last Approved Date,LastApprovedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Activity,LastActivityDate,TRUE,--,--,null,date,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE

@@ -1,0 +1,24 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"FinServ__FinancialGoal__c","Financial Goal","Id","Record ID","id",18,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","OwnerId","Owner ID","reference",18,false,"[""Group"",""User""]","Owner",false,true,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","Name","Financial Goal Name","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","LastActivityDate","Last Activity Date","date",0,true,"[]",,false,false,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","LastViewedDate","Last Viewed Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","LastReferencedDate","Last Referenced Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","FinServ__ActualValue__c","Actual Value","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","FinServ__CompletionDate__c","Completion Date","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","FinServ__Description__c","Description","textarea",256,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","FinServ__Household__c","Household","reference",18,true,"[""Account""]","FinServ__Household__r",false,true,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","FinServ__InitialValue__c","Initial Value","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","FinServ__PrimaryOwner__c","Primary Owner","reference",18,false,"[""Account""]","FinServ__PrimaryOwner__r",false,true,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","FinServ__SourceSystemId__c","Source System ID","string",100,true,"[]",,false,true,,"[]",true
+"FinServ__FinancialGoal__c","Financial Goal","FinServ__Status__c","Status","picklist",255,true,"[]",,false,true,,"[""Not Started"",""In Progress"",""Completed""]",false
+"FinServ__FinancialGoal__c","Financial Goal","FinServ__TargetDate__c","Target Date","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","FinServ__TargetValue__c","Target Value","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialGoal__c","Financial Goal","FinServ__Type__c","Type","picklist",255,true,"[]",,false,true,,"[""Retirement"",""Home Purchase"",""Education"",""Other""]",false

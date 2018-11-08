@@ -1,0 +1,13 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Rollup By Lookup Filter Criteria Name,Name,FALSE,--,--,null,string,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Parent Configuration,FinServ__RollupByLookupConfig__c,FALSE,--,"[ ""FinServ__RollupByLookupConfig__c"" ]",FinServ__RollupByLookupConfig__r,reference,FALSE,FALSE
+Field Name,FinServ__FieldName__c,FALSE,--,--,null,string,FALSE,TRUE
+Field Value,FinServ__FieldValue__c,FALSE,--,--,null,string,FALSE,TRUE
+Operator,FinServ__Operator__c,TRUE,"[ ""greater than"" , ""equals"" , ""greater than or equal to"" , ""contains"" , ""not equal to"" , ""less than"" , ""less than or equal to"" , ""not contains"" , ""not like"" , ""starts with"" , ""ends with"" , ""IN"" ]",--,null,picklist,FALSE,TRUE

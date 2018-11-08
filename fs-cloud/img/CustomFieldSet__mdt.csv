@@ -1,0 +1,12 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Custom Metadata Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Custom Metadata Record Name,DeveloperName,FALSE,--,--,null,string,FALSE,FALSE
+Label,MasterLabel,FALSE,--,--,null,string,FALSE,FALSE
+Master Language,Language,FALSE,"[ ""en_US"" , ""de"" , ""es"" , ""fr"" , ""it"" , ""ja"" , ""sv"" , ""ko"" , ""zh_TW"" , ""zh_CN"" , ""pt_BR"" , ""nl_NL"" , ""da"" , ""th"" , ""fi"" , ""ru"" , ""es_MX"" , ""no"" ]",--,null,picklist,FALSE,FALSE
+Namespace Prefix,NamespacePrefix,TRUE,--,--,null,string,FALSE,FALSE
+Label,Label,TRUE,--,--,null,string,FALSE,FALSE
+Qualified API Name,QualifiedApiName,TRUE,--,--,null,string,FALSE,FALSE
+Excluded Fields,FinServ__ExcludedFields__c,TRUE,--,--,null,textarea,FALSE,FALSE
+Field Set Label,FinServ__FieldSetLabel__c,TRUE,--,--,null,string,FALSE,FALSE
+SObject Name,FinServ__SObjectName__c,TRUE,--,--,null,string,FALSE,FALSE
+Two Column Layout,FinServ__TwoColumnLayout__c,FALSE,--,--,null,boolean,FALSE,FALSE

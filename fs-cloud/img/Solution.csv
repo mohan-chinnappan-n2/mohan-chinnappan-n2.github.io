@@ -1,0 +1,20 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Solution ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Solution Number,SolutionNumber,FALSE,--,--,null,string,FALSE,FALSE
+Title,SolutionName,FALSE,--,--,null,string,FALSE,TRUE
+Public,IsPublished,FALSE,--,--,null,boolean,FALSE,TRUE
+Visible in Public Knowledge Base,IsPublishedInPublicKb,FALSE,--,--,null,boolean,FALSE,TRUE
+Status,Status,FALSE,"[ ""Draft"" , ""Reviewed"" , ""Duplicate"" ]",--,null,picklist,FALSE,TRUE
+Reviewed,IsReviewed,FALSE,--,--,null,boolean,FALSE,FALSE
+Description,SolutionNote,TRUE,--,--,null,textarea,FALSE,TRUE
+Owner ID,OwnerId,FALSE,--,"[ ""User"" ]",Owner,reference,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Num Related Cases,TimesUsed,FALSE,--,--,null,int,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Is Html,IsHtml,FALSE,--,--,null,boolean,FALSE,FALSE

@@ -1,0 +1,10 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+User Record Access ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+User ID,UserId,FALSE,--,"[ ""User"" ]",null,reference,FALSE,FALSE
+Record ID,RecordId,FALSE,--,--,null,picklist,FALSE,FALSE
+Has Read Access,HasReadAccess,FALSE,--,--,null,boolean,FALSE,FALSE
+Has Edit Access,HasEditAccess,FALSE,--,--,null,boolean,FALSE,FALSE
+Has Delete Access,HasDeleteAccess,FALSE,--,--,null,boolean,FALSE,FALSE
+Has Transfer Access,HasTransferAccess,FALSE,--,--,null,boolean,FALSE,FALSE
+Has All Access,HasAllAccess,FALSE,--,--,null,boolean,FALSE,FALSE
+Maximum Access Level,MaxAccessLevel,TRUE,"[ ""None"" , ""Read"" , ""Edit"" , ""Delete"" , ""Transfer"" , ""All"" ]",--,null,picklist,FALSE,FALSE

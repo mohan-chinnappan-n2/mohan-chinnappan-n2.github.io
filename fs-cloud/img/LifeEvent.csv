@@ -1,0 +1,17 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Owner ID,OwnerId,FALSE,--,"[ ""Group"", ""User"" ]",Owner,reference,FALSE,TRUE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Life Event Name,Name,FALSE,--,--,null,string,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Client,FinServ__Client__c,TRUE,--,"[ ""Account"" ]",FinServ__Client__r,reference,FALSE,TRUE
+Discussion Note,FinServ__DiscussionNote__c,TRUE,--,--,null,textarea,FALSE,TRUE
+Event Date,FinServ__EventDate__c,TRUE,--,--,null,date,FALSE,TRUE
+Event Type,FinServ__EventType__c,TRUE,"[ ""New Baby"" , ""New Job"" , ""New Home"" , ""College"" , ""New Business"" , ""Retirement"" ]",--,null,picklist,FALSE,TRUE
+Financial Goal,FinServ__FinancialGoal__c,TRUE,--,"[ ""FinServ__FinancialGoal__c"" ]",FinServ__FinancialGoal__r,reference,FALSE,TRUE
+Goal Type,FinServ__GoalType__c,TRUE,"[ ""Saving for College"" , ""Saving for Retirement"" ]",--,null,picklist,FALSE,TRUE
+Source System ID,FinServ__SourceSystemId__c,TRUE,--,--,null,string,FALSE,TRUE

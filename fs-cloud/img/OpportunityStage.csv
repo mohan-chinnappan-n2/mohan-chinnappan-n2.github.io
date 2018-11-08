@@ -1,0 +1,17 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Opportunity Stage ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Master Label,MasterLabel,TRUE,--,--,null,string,FALSE,FALSE
+Api Name,ApiName,FALSE,--,--,null,string,FALSE,FALSE
+Is Active,IsActive,FALSE,--,--,null,boolean,FALSE,FALSE
+Sort Order,SortOrder,TRUE,--,--,null,int,FALSE,FALSE
+Closed,IsClosed,FALSE,--,--,null,boolean,FALSE,FALSE
+Won,IsWon,FALSE,--,--,null,boolean,FALSE,FALSE
+Forecast Category,ForecastCategory,FALSE,"[ ""Omitted"" , ""Pipeline"" , ""BestCase"" , ""Forecast"" , ""Closed"" ]",--,null,picklist,FALSE,FALSE
+Forecast Category Name,ForecastCategoryName,FALSE,"[ ""Omitted"" , ""Pipeline"" , ""Best Case"" , ""Commit"" , ""Closed"" ]",--,null,picklist,FALSE,FALSE
+Probability (%),DefaultProbability,TRUE,--,--,null,percent,FALSE,FALSE
+Description,Description,TRUE,--,--,null,string,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE

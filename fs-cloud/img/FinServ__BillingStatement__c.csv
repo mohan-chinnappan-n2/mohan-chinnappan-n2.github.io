@@ -1,0 +1,31 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"FinServ__BillingStatement__c","Billing Statement","Id","Record ID","id",18,false,"[]",,false,false,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","Name","Name","string",80,false,"[]",,false,false,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","RecordTypeId","Record Type ID","reference",18,true,"[""RecordType""]","RecordType",false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__FinancialAccount__c","Financial Account","reference",18,false,"[""FinServ__FinancialAccount__c""]","FinServ__FinancialAccount__r",false,false,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__BalanceTransfers__c","Balance Transfers","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__BillingPeriodEnd__c","Billing Period End","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__BillingPeriodStart__c","Billing Period Start","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__CashAdvances__c","Cash Advances","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__Deposits__c","Deposits","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__EndingBalance__c","Ending Balance","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__FeesCharged__c","Fees Charged","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__InterestThisPeriod__c","Interest This Period","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__InterestYTD__c","Interest YTD","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__LastPaymentDate__c","Last Payment Date","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__MinimumPaymentDue__c","Minimum Payment Due","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__OtherCredits__c","Other Credits","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__PastDueAmount__c","Past Due Amount","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__PaymentDueDate__c","Payment Due Date","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__Payments__c","Payments","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__PreviousBalance__c","Previous Balance","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__Purchases__c","Purchases","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__SourceSystemId__c","Source System ID","string",100,true,"[]",,false,true,,"[]",true
+"FinServ__BillingStatement__c","Billing Statement","FinServ__StatementDate__c","Statement Date","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__BillingStatement__c","Billing Statement","FinServ__Withdrawals__c","Withdrawals","currency",0,true,"[]",,false,true,,"[]",false

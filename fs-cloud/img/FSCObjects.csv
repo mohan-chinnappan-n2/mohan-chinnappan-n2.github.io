@@ -1,0 +1,440 @@
+Label,Name
+Accepted Event Relation,AcceptedEventRelation
+Account,Account
+Account Contact Relationship,AccountContactRelation
+Account Contact Role,AccountContactRole
+Account Feed,AccountFeed
+Account History,AccountHistory
+Account Partner,AccountPartner
+Account Share,AccountShare
+Action Link Group Template,ActionLinkGroupTemplate
+Action Link Template,ActionLinkTemplate
+Activity History,ActivityHistory
+Additional Directory Number,AdditionalNumber
+Aggregate Result,AggregateResult
+Announcement,Announcement
+Apex Class,ApexClass
+Visualforce Component,ApexComponent
+Apex Email Notification,ApexEmailNotification
+Apex Debug Log,ApexLog
+Visualforce Page,ApexPage
+Apex Page Info,ApexPageInfo
+Apex Test Queue Item,ApexTestQueueItem
+Apex Test Result,ApexTestResult
+Apex Test Result Limit,ApexTestResultLimits
+Apex Test Run Result,ApexTestRunResult
+Apex Test Suite,ApexTestSuite
+Apex Trigger,ApexTrigger
+AppMenuItem,AppMenuItem
+Approval,Approval
+Asset,Asset
+Asset Feed,AssetFeed
+Asset History,AssetHistory
+Asset Relationship,AssetRelationship
+Asset Relationship Feed,AssetRelationshipFeed
+Asset Relationship History,AssetRelationshipHistory
+Asset Share,AssetShare
+Asset Token Event,AssetTokenEvent
+Assignment Rule,AssignmentRule
+Apex Job,AsyncApexJob
+Attached Content Document,AttachedContentDocument
+Note,AttachedContentNote
+Attachment,Attachment
+Lightning Component Definition,AuraDefinition
+Lightning Component Bundle,AuraDefinitionBundle
+AuraDefinitionBundle Info,AuraDefinitionBundleInfo
+AuraDefinition Info,AuraDefinitionInfo
+Authentication Configuration,AuthConfig
+Authentication Configuration Auth. Provider,AuthConfigProviders
+Auth. Provider,AuthProvider
+Auth Session,AuthSession
+Background Operation,BackgroundOperation
+Letterhead,BrandTemplate
+Business Hours,BusinessHours
+Business Process,BusinessProcess
+Call Center,CallCenter
+Campaign,Campaign
+Campaign Feed,CampaignFeed
+Campaign Field History,CampaignHistory
+Campaign Member,CampaignMember
+Campaign Member Status,CampaignMemberStatus
+Campaign Share,CampaignShare
+Case,Case
+Case Comment,CaseComment
+Case Contact Role,CaseContactRole
+Case Feed,CaseFeed
+Case History,CaseHistory
+Case Share,CaseShare
+Case Solution,CaseSolution
+Case Status Value,CaseStatus
+Case Team Member,CaseTeamMember
+Case Team Member Role,CaseTeamRole
+Predefined Case Team,CaseTeamTemplate
+Predefined Case Team Member,CaseTeamTemplateMember
+Predefined Case Team Record,CaseTeamTemplateRecord
+Category Data,CategoryData
+Category Node,CategoryNode
+Chatter Activity,ChatterActivity
+Chatter Extension,ChatterExtension
+Chatter Extension Configuration,ChatterExtensionConfig
+Client Browser,ClientBrowser
+Group,CollaborationGroup
+Group Feed,CollaborationGroupFeed
+Group Member,CollaborationGroupMember
+Group Member Request,CollaborationGroupMemberRequest
+Group Record,CollaborationGroupRecord
+Chatter Invitation,CollaborationInvitation
+"Note, Attachment, Google Doc And File",CombinedAttachment
+Zone,Community
+Connected App,ConnectedApplication
+Contact,Contact
+Contact Feed,ContactFeed
+Contact History,ContactHistory
+Contact Share,ContactShare
+Asset File,ContentAsset
+Content Body,ContentBody
+Content Delivery,ContentDistribution
+Content Delivery View,ContentDistributionView
+Content Document,ContentDocument
+ContentDocument Feed,ContentDocumentFeed
+Content Document History,ContentDocumentHistory
+Content Document Link,ContentDocumentLink
+Content Folder,ContentFolder
+Content Folder Item,ContentFolderItem
+Content Folder Link,ContentFolderLink
+Content Folder Member,ContentFolderMember
+Note,ContentNote
+Content Version,ContentVersion
+Content Version History,ContentVersionHistory
+Library,ContentWorkspace
+Library Document,ContentWorkspaceDoc
+Library Member,ContentWorkspaceMember
+Library Permission,ContentWorkspacePermission
+Contract,Contract
+Contract Contact Role,ContractContactRole
+Contract Feed,ContractFeed
+Contract History,ContractHistory
+Contract Status Value,ContractStatus
+CORS Whitelist Origin,CorsWhitelistEntry
+Cron Job,CronJobDetail
+Scheduled Jobs,CronTrigger
+Content Security Policy Trusted Site,CspTrustedSite
+Custom Brand,CustomBrand
+Custom Brand Asset,CustomBrandAsset
+Custom Object Usage By User License Metric,CustomObjectUserLicenseMetrics
+Custom Permission,CustomPermission
+Custom Permission Dependency,CustomPermissionDependency
+Dashboard,Dashboard
+Dashboard Component,DashboardComponent
+Dashboard Component Feed,DashboardComponentFeed
+Dashboard Feed,DashboardFeed
+Data Assessment Field Metric,DataAssessmentFieldMetric
+Data Assessment Metric,DataAssessmentMetric
+Data Assessment Field Value Metric,DataAssessmentValueMetric
+Data Statistics,DataStatistics
+Data Type,DataType
+Data.com Address,DatacloudAddress
+Dataset Export,DatasetExport
+Dataset Export Event,DatasetExportEvent
+Dataset Export Part,DatasetExportPart
+Declined Event Relation,DeclinedEventRelation
+Document,Document
+Document Entity Map,DocumentAttachmentMap
+Domain,Domain
+Custom URL,DomainSite
+Duplicate Record Item,DuplicateRecordItem
+Duplicate Record Set,DuplicateRecordSet
+Duplicate Rule,DuplicateRule
+EmailCapture,EmailCapture
+Email Domain Key,EmailDomainKey
+Email Message,EmailMessage
+Email Message Relation,EmailMessageRelation
+Email Services Address,EmailServicesAddress
+Email Service,EmailServicesFunction
+Email Status,EmailStatus
+Email Template,EmailTemplate
+Snap-ins,EmbeddedServiceDetail
+Entity Definition,EntityDefinition
+Entity Particle,EntityParticle
+Entity Subscription,EntitySubscription
+Event,Event
+Platform Event Subscription,EventBusSubscriber
+Event Feed,EventFeed
+Event Log File,EventLogFile
+Event Relation,EventRelation
+Event Who Relation,EventWhoRelation
+External Data Source,ExternalDataSource
+External Data User Authentication,ExternalDataUserAuth
+Feed Attachment,FeedAttachment
+Feed Comment,FeedComment
+Feed Item,FeedItem
+Feed Like,FeedLike
+Feed Poll Choice,FeedPollChoice
+Feed Poll Vote,FeedPollVote
+Feed Revision,FeedRevision
+Feed Signal,FeedSignal
+Feed Tracked Change,FeedTrackedChange
+Field Definition,FieldDefinition
+Field Permissions,FieldPermissions
+FileSearchActivity,FileSearchActivity
+Share: Account-Account Relationship,FinServ__AccountAccountRelation__Share
+Account-Account Relationship,FinServ__AccountAccountRelation__c
+Share: Alert,FinServ__Alert__Share
+Alert,FinServ__Alert__c
+Share: Assets and Liabilities,FinServ__AssetsAndLiabilities__Share
+Assets and Liabilities,FinServ__AssetsAndLiabilities__c
+B2C Lead Company Name Config,FinServ__B2CLeadCompanyNameConfig__c
+B2C Lead To Opportunity Mapping,FinServ__B2CLeadToOpportunityMapping__mdt
+Billing Statement,FinServ__BillingStatement__c
+Card,FinServ__Card__c
+Share: Charges And Fees,FinServ__ChargesAndFees__Share
+Charges And Fees,FinServ__ChargesAndFees__c
+Share: Contact-Contact Relationship,FinServ__ContactContactRelation__Share
+Contact-Contact Relationship,FinServ__ContactContactRelation__c
+CustomFieldSet,FinServ__CustomFieldSet__mdt
+CustomLabelConf,FinServ__CustomLabelConf__mdt
+DialogLookUpConfig,FinServ__DialogLookUpConfig__mdt
+Share: Education,FinServ__Education__Share
+Education,FinServ__Education__c
+Share: Employment,FinServ__Employment__Share
+Employment,FinServ__Employment__c
+Financial Account Role,FinServ__FinancialAccountRole__c
+Share: Financial Account Transaction,FinServ__FinancialAccountTransaction__Share
+Financial Account Transaction,FinServ__FinancialAccountTransaction__c
+History: Financial Account,FinServ__FinancialAccount__History
+Share: Financial Account,FinServ__FinancialAccount__Share
+Financial Account,FinServ__FinancialAccount__c
+Share: Financial Goal,FinServ__FinancialGoal__Share
+Financial Goal,FinServ__FinancialGoal__c
+History: Financial Holding,FinServ__FinancialHolding__History
+Financial Holding,FinServ__FinancialHolding__c
+Group Record Type Mapper,FinServ__GroupRecordTypeMapper__mdt
+Share: Identification Document,FinServ__IdentificationDocument__Share
+Identification Document,FinServ__IdentificationDocument__c
+Individual Record Type Mapper,FinServ__IndividualRecordTypeMapper__mdt
+Industries Application Config,FinServ__IndustriesAppConfig__c
+InteractionFieldUpdate,FinServ__InteractionFieldUpdate__mdt
+Job Flow Setting,FinServ__JobFlowSetting__mdt
+Share: Life Event,FinServ__LifeEvent__Share
+Life Event,FinServ__LifeEvent__c
+LookupSearchConf,FinServ__LookupSearchConf__mdt
+Reciprocal Role,FinServ__ReciprocalRole__c
+Share: Revenue,FinServ__Revenue__Share
+Revenue,FinServ__Revenue__c
+Rollup By Lookup Configuration,FinServ__RollupByLookupConfig__c
+Rollup By Lookup Filter Criteria,FinServ__RollupByLookupFilterCriteria__c
+Securities,FinServ__Securities__c
+Use Person Account,FinServ__UsePersonAccount__c
+Wealth Application Config,FinServ__WealthAppConfig__c
+Individual Excluded Fields,FinServ__individualExcludedFields__c
+Fiscal Year Settings,FiscalYearSettings
+Flex Queue Item,FlexQueueItem
+Flow Interview,FlowInterview
+Flow Interview Share,FlowInterviewShare
+Folder,Folder
+Foldered Content Document,FolderedContentDocument
+Forecast Share,ForecastShare
+Forecasting Adjustment,ForecastingAdjustment
+Forecasting Category Mapping,ForecastingCategoryMapping
+Forecasting Displayed Family,ForecastingDisplayedFamily
+Forecasting Fact,ForecastingFact
+Forecasting Item,ForecastingItem
+Forecasting Owner Adjustment,ForecastingOwnerAdjustment
+Forecasting Quota,ForecastingQuota
+Forecasting Type,ForecastingType
+Forecasting Type To Category Mapping,ForecastingTypeToCategory
+Forecasting User Preference,ForecastingUserPreference
+Setting Granted By License,GrantedByLicense
+Group,Group
+Group Member,GroupMember
+Holiday,Holiday
+Idea,Idea
+Idea Comment,IdeaComment
+Identity Provider Event Log,IdpEventLog
+External Data,InsightsExternalData
+External Data Part,InsightsExternalDataPart
+Installed Mobile App,InstalledMobileApp
+Knowledgeable User,KnowledgeableUser
+Lead and Referral,Lead
+Lead Feed,LeadFeed
+Lead and Referral History,LeadHistory
+Lead Share,LeadShare
+Lead Status Value,LeadStatus
+List Email,ListEmail
+List Email Recipient Source,ListEmailRecipientSource
+List Email Share,ListEmailShare
+List View,ListView
+List View Chart,ListViewChart
+List View Chart Instance,ListViewChartInstance
+Login Geo Data,LoginGeo
+Login History,LoginHistory
+Login IP,LoginIp
+Lookups from Activity,LookedUpFromActivity
+Macro,Macro
+Macro History,MacroHistory
+Macro Instruction,MacroInstruction
+Macro Share,MacroShare
+Mail Merge Template,MailmergeTemplate
+Matching Rule,MatchingRule
+Matching Rule Item,MatchingRuleItem
+Name,Name
+Named Credential,NamedCredential
+Note,Note
+Note and Attachment,NoteAndAttachment
+Oauth Token,OauthToken
+Object Permissions,ObjectPermissions
+Open Activity,OpenActivity
+Opportunity,Opportunity
+Opportunity: Competitor,OpportunityCompetitor
+Opportunity Contact Role,OpportunityContactRole
+Opportunity Feed,OpportunityFeed
+Opportunity Field History,OpportunityFieldHistory
+Opportunity History,OpportunityHistory
+Opportunity Product,OpportunityLineItem
+Opportunity Partner,OpportunityPartner
+Opportunity Share,OpportunityShare
+Opportunity Stage,OpportunityStage
+Order,Order
+Order Feed,OrderFeed
+Order History,OrderHistory
+Order Product,OrderItem
+Order Product Feed,OrderItemFeed
+Order Product History,OrderItemHistory
+Order Share,OrderShare
+Org Lifecycle Notification,OrgLifecycleNotification
+Organization-wide From Email Address,OrgWideEmailAddress
+Organization,Organization
+Outgoing Email,OutgoingEmail
+Outgoing Email Relation,OutgoingEmailRelation
+User Owned File,OwnedContentDocument
+Change Owner Option Info,OwnerChangeOptionInfo
+Package License,PackageLicense
+Partner,Partner
+Partner Role Value,PartnerRole
+Period,Period
+Permission Set,PermissionSet
+Permission Set Assignment,PermissionSetAssignment
+Permission Set License,PermissionSetLicense
+Permission Set License Assignment,PermissionSetLicenseAssign
+Picklist Value Info,PicklistValueInfo
+Platform Action,PlatformAction
+Platform Cache Partition,PlatformCachePartition
+Platform Cache Partition Type,PlatformCachePartitionType
+Price Book,Pricebook2
+Price Book History,Pricebook2History
+Price Book Entry,PricebookEntry
+Process Definition,ProcessDefinition
+Process Instance,ProcessInstance
+Process Instance History,ProcessInstanceHistory
+Process Instance Node,ProcessInstanceNode
+Process Instance Step,ProcessInstanceStep
+Approval Request,ProcessInstanceWorkitem
+Process Node,ProcessNode
+Product,Product2
+Product Feed,Product2Feed
+Product History,Product2History
+Profile,Profile
+Skill,ProfileSkill
+Endorsement,ProfileSkillEndorsement
+Endorsement Feed,ProfileSkillEndorsementFeed
+Endorsement History,ProfileSkillEndorsementHistory
+Skill Feed,ProfileSkillFeed
+Skill History,ProfileSkillHistory
+Skill Share,ProfileSkillShare
+Skill User,ProfileSkillUser
+Skill User Feed,ProfileSkillUserFeed
+Skill User History,ProfileSkillUserHistory
+Publisher,Publisher
+Push Topic,PushTopic
+Queue Sobject,QueueSobject
+Quick Text,QuickText
+Quick Text History,QuickTextHistory
+Quick Text Share,QuickTextShare
+Quote,Quote
+Quote PDF,QuoteDocument
+Quote Feed,QuoteFeed
+Quote Line Item,QuoteLineItem
+Quote Share,QuoteShare
+Quote Template Rich Text Data,QuoteTemplateRichTextData
+Recently Viewed,RecentlyViewed
+Record Type,RecordType
+Relationship Domain,RelationshipDomain
+Relationship,RelationshipInfo
+Report,Report
+Report Feed,ReportFeed
+SAML Single Sign-On Setting,SamlSsoConfig
+Custom S-Control,Scontrol
+SearchActivity,SearchActivity
+Search Layout,SearchLayout
+Secure Agent Cluster,SecureAgentsCluster
+Security Custom Baseline,SecurityCustomBaseline
+Session Permission Set Activation,SessionPermSetActivation
+Setup Audit Trail Entry,SetupAuditTrail
+Setup Entity Access,SetupEntityAccess
+Site,Site
+Site,SiteFeed
+Site History,SiteHistory
+Solution,Solution
+Solution Feed,SolutionFeed
+Solution History,SolutionHistory
+Solution Status Value,SolutionStatus
+Stamp,Stamp
+Stamp Assignment,StampAssignment
+Static Resource,StaticResource
+Streaming Channel,StreamingChannel
+Streaming Channel Share,StreamingChannelShare
+Task,Task
+Task Feed,TaskFeed
+Task Priority Value,TaskPriority
+Task Relation,TaskRelation
+Task Status Value,TaskStatus
+Task Who Relation,TaskWhoRelation
+Tenant Usage Entitlement,TenantUsageEntitlement
+Test Suite Membership,TestSuiteMembership
+Third Party Account Link,ThirdPartyAccountLink
+Goal,TodayGoal
+Goal Share,TodayGoalShare
+Topic,Topic
+Record,TopicAssignment
+Topic Feed,TopicFeed
+Undecided Event Relation,UndecidedEventRelation
+User,User
+Last Used App,UserAppInfo
+UserAppMenuCustomization,UserAppMenuCustomization
+UserAppMenuCustomization Share,UserAppMenuCustomizationShare
+Application,UserAppMenuItem
+User Entity Access,UserEntityAccess
+User Feed,UserFeed
+User Field Access,UserFieldAccess
+User License,UserLicense
+User List View,UserListView
+User List View Criteria,UserListViewCriterion
+User Login,UserLogin
+User Package License,UserPackageLicense
+User Permission Access,UserPermissionAccess
+User Preference,UserPreference
+User Provisioning Account,UserProvAccount
+User Provisioning Account Staging,UserProvAccountStaging
+User Provisioning Mock Target,UserProvMockTarget
+User Provisioning Config,UserProvisioningConfig
+User Provisioning Log,UserProvisioningLog
+User Provisioning Request,UserProvisioningRequest
+User Provisioning Request Share,UserProvisioningRequestShare
+User Record Access,UserRecordAccess
+Role,UserRole
+User Share,UserShare
+Identity Verification History,VerificationHistory
+Visualforce Access Metric,VisualforceAccessMetrics
+Vote,Vote
+Wave Asset Event,WaveAssetEvent
+Wave Compatibility Check Item,WaveCompatibilityCheckItem
+Custom Button or Link,WebLink
+Access,WorkAccess
+Access Share,WorkAccessShare
+Badge Received,WorkBadge
+Badge,WorkBadgeDefinition
+Badge Feed,WorkBadgeDefinitionFeed
+Badge History,WorkBadgeDefinitionHistory
+Badge Share,WorkBadgeDefinitionShare
+Thanks,WorkThanks
+Thanks Share,WorkThanksShare

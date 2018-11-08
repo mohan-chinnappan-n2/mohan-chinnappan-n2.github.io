@@ -1,0 +1,28 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Financial Holding Name,Name,TRUE,--,--,null,string,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Activity Date,LastActivityDate,TRUE,--,--,null,date,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Financial Account,FinServ__FinancialAccount__c,FALSE,--,"[ ""FinServ__FinancialAccount__c"" ]",FinServ__FinancialAccount__r,reference,FALSE,FALSE
+Asset Category Name,FinServ__AssetCategoryName__c,TRUE,"[ ""Large Growth"" , ""Large Value"" , ""Large Blend"" , ""Small Growth"" , ""Small Value"" , ""Small Blend"" , ""Mid-Cap Growth"" , ""Mid-Cap Value"" , ""Mid-Cap Blend"" ]",--,null,picklist,FALSE,TRUE
+Asset Category,FinServ__AssetCategory__c,TRUE,"[ ""U.S. Equity"" , ""Sector Equity"" , ""Allocation"" , ""International Equity"" , ""Alternative"" , ""Commodities"" , ""Taxable Bond"" , ""Municipal Bond"" ]",--,null,picklist,FALSE,TRUE
+Asset Class,FinServ__AssetClass__c,TRUE,"[ ""Equities"" , ""Fixed Income"" , ""Cash Equivalents"" , ""Alternative Investments"" ]",--,null,picklist,FALSE,TRUE
+Gain/Loss,FinServ__GainLoss__c,TRUE,--,--,null,currency,FALSE,TRUE
+Household,FinServ__Household__c,TRUE,--,"[ ""Account"" ]",FinServ__Household__r,reference,FALSE,TRUE
+Last Updated,FinServ__LastUpdated__c,TRUE,--,--,null,date,FALSE,TRUE
+Market Value,FinServ__MarketValue__c,TRUE,--,--,null,currency,FALSE,TRUE
+Percent Change,FinServ__PercentChange__c,TRUE,--,--,null,percent,FALSE,TRUE
+Price,FinServ__Price__c,TRUE,--,--,null,currency,FALSE,TRUE
+Primary Owner,FinServ__PrimaryOwner__c,TRUE,--,"[ ""Account"" ]",FinServ__PrimaryOwner__r,reference,FALSE,TRUE
+Purchase Price,FinServ__PurchasePrice__c,TRUE,--,--,null,currency,FALSE,TRUE
+Symbol,FinServ__Securities__c,TRUE,--,"[ ""FinServ__Securities__c"" ]",FinServ__Securities__r,reference,FALSE,TRUE
+Shares,FinServ__Shares__c,TRUE,--,--,null,double,FALSE,TRUE
+Source System ID,FinServ__SourceSystemId__c,TRUE,--,--,null,string,FALSE,TRUE
+Symbol,FinServ__Symbol__c,TRUE,--,--,null,string,FALSE,FALSE

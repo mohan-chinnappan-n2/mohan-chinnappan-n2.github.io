@@ -1,0 +1,12 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+User License ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+License Def. ID,LicenseDefinitionKey,FALSE,--,--,null,string,FALSE,FALSE
+Total Licenses,TotalLicenses,FALSE,--,--,null,int,FALSE,FALSE
+Status,Status,FALSE,"[ ""Active"" , ""Disabled"" ]",--,null,picklist,FALSE,FALSE
+Used Licenses,UsedLicenses,FALSE,--,--,null,int,FALSE,FALSE
+Used Licenses Last Updated,UsedLicensesLastUpdated,FALSE,--,--,null,datetime,FALSE,FALSE
+Name,Name,FALSE,--,--,null,string,FALSE,FALSE
+Master Label,MasterLabel,FALSE,--,--,null,string,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE

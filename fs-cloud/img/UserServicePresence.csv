@@ -1,0 +1,21 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"UserServicePresence","User Presence","Id","User Presence ID","id",18,false,"[]",,false,false,,"[]",false
+"UserServicePresence","User Presence","OwnerId","Owner ID","reference",18,false,"[""Group"",""User""]","Owner",false,true,,"[]",false
+"UserServicePresence","User Presence","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"UserServicePresence","User Presence","Name","Name","string",255,false,"[]",,false,false,,"[]",false
+"UserServicePresence","User Presence","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"UserServicePresence","User Presence","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"UserServicePresence","User Presence","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"UserServicePresence","User Presence","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"UserServicePresence","User Presence","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"UserServicePresence","User Presence","UserId","User ID","reference",18,false,"[""User""]","User",false,false,,"[]",false
+"UserServicePresence","User Presence","ServicePresenceStatusId","Service Presence Status ID","reference",18,true,"[""ServicePresenceStatus""]","ServicePresenceStatus",false,true,,"[]",false
+"UserServicePresence","User Presence","StatusStartDate","Status Start Date","datetime",0,true,"[]",,false,false,,"[]",false
+"UserServicePresence","User Presence","ConfiguredCapacity","Configured Capacity","int",0,true,"[]",,false,false,,"[]",false
+"UserServicePresence","User Presence","StatusEndDate","Status End Date","datetime",0,true,"[]",,false,false,,"[]",false
+"UserServicePresence","User Presence","IsAway","Is Away","boolean",0,false,"[]",,false,false,,"[]",false
+"UserServicePresence","User Presence","IdleDuration","Idle Duration","int",0,true,"[]",,false,false,,"[]",false
+"UserServicePresence","User Presence","AtCapacityDuration","At Capacity Duration","int",0,true,"[]",,false,false,,"[]",false
+"UserServicePresence","User Presence","AverageCapacity","Average Capacity","double",0,true,"[]",,false,false,,"[]",false
+"UserServicePresence","User Presence","IsCurrentState","Is Current State","boolean",0,false,"[]",,false,false,,"[]",false
+"UserServicePresence","User Presence","StatusDuration","Status Duration","int",0,true,"[]",,false,false,,"[]",false

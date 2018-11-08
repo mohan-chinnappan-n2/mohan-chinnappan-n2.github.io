@@ -1,0 +1,12 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Opportunity: Competitor ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Opportunity ID,OpportunityId,FALSE,--,"[ ""Opportunity"" ]",Opportunity,reference,FALSE,FALSE
+Competitor Name,CompetitorName,TRUE,--,--,null,combobox,FALSE,TRUE
+Strengths,Strengths,TRUE,--,--,null,string,FALSE,TRUE
+Weaknesses,Weaknesses,TRUE,--,--,null,string,FALSE,TRUE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE

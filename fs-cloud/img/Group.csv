@@ -1,0 +1,15 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"Group","Group","Id","Group ID","id",18,false,"[]",,false,false,,"[]",false
+"Group","Group","Name","Name","string",40,false,"[]",,false,true,,"[]",false
+"Group","Group","DeveloperName","Developer Name","string",80,true,"[]",,false,true,,"[]",false
+"Group","Group","RelatedId","Related ID","reference",18,true,"[""User"",""UserRole""]","Related",false,false,,"[]",false
+"Group","Group","Type","Type","picklist",40,false,"[]",,false,false,,"[null,null,null,null,null,null,null,null,null,null,null,null,null,null]",false
+"Group","Group","Email","Email","email",255,true,"[]",,false,true,,"[]",false
+"Group","Group","OwnerId","Owner ID","reference",18,false,"[""Organization"",""User""]","Owner",false,false,,"[]",false
+"Group","Group","DoesSendEmailToMembers","Send Email to Members","boolean",0,false,"[]",,false,true,,"[]",false
+"Group","Group","DoesIncludeBosses","Include Bosses","boolean",0,false,"[]",,false,true,,"[]",false
+"Group","Group","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"Group","Group","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"Group","Group","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"Group","Group","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"Group","Group","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false

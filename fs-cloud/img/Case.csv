@@ -1,0 +1,34 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Case ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Case Number,CaseNumber,FALSE,--,--,null,string,FALSE,FALSE
+Contact ID,ContactId,TRUE,--,"[ ""Contact"" ]",Contact,reference,FALSE,TRUE
+Account ID,AccountId,TRUE,--,"[ ""Account"" ]",Account,reference,FALSE,TRUE
+Parent Case ID,ParentId,TRUE,--,"[ ""Case"" ]",Parent,reference,FALSE,TRUE
+Name,SuppliedName,TRUE,--,--,null,string,FALSE,TRUE
+Email Address,SuppliedEmail,TRUE,--,--,null,email,FALSE,TRUE
+Phone,SuppliedPhone,TRUE,--,--,null,string,FALSE,TRUE
+Company,SuppliedCompany,TRUE,--,--,null,string,FALSE,TRUE
+Case Type,Type,TRUE,"[ ""Problem"" , ""Feature Request"" , ""Question"" ]",--,null,picklist,FALSE,TRUE
+Status,Status,TRUE,"[ ""On Hold"" , ""Escalated"" , ""Closed"" , ""New"" ]",--,null,picklist,FALSE,TRUE
+Case Reason,Reason,TRUE,"[ ""User didn't attend training"" , ""Complex functionality"" , ""Existing problem"" , ""Instructions not clear"" , ""New problem"" ]",--,null,picklist,FALSE,TRUE
+Case Origin,Origin,TRUE,"[ ""Email"" , ""Phone"" , ""Web"" ]",--,null,picklist,FALSE,TRUE
+Subject,Subject,TRUE,--,--,null,string,FALSE,TRUE
+Priority,Priority,TRUE,"[ ""High"" , ""Medium"" , ""Low"" ]",--,null,picklist,FALSE,TRUE
+Description,Description,TRUE,--,--,null,textarea,FALSE,TRUE
+Closed,IsClosed,FALSE,--,--,null,boolean,FALSE,FALSE
+Closed Date,ClosedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Escalated,IsEscalated,FALSE,--,--,null,boolean,FALSE,TRUE
+Owner ID,OwnerId,FALSE,--,"[ ""Group"", ""User"" ]",Owner,reference,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Contact Phone,ContactPhone,TRUE,--,--,null,phone,FALSE,FALSE
+Contact Mobile,ContactMobile,TRUE,--,--,null,phone,FALSE,FALSE
+Contact Email,ContactEmail,TRUE,--,--,null,email,FALSE,FALSE
+Contact Fax,ContactFax,TRUE,--,--,null,phone,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Financial Account,FinServ__FinancialAccount__c,TRUE,--,"[ ""FinServ__FinancialAccount__c"" ]",FinServ__FinancialAccount__r,reference,FALSE,TRUE

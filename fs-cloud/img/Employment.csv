@@ -1,0 +1,23 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Owner ID,OwnerId,FALSE,--,"[ ""Group"", ""User"" ]",Owner,reference,FALSE,TRUE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Employer Name,Name,TRUE,--,--,null,string,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Annual Income,FinServ__AnnualIncome__c,TRUE,--,--,null,currency,FALSE,TRUE
+Contact,FinServ__Contact__c,TRUE,--,"[ ""Contact"" ]",FinServ__Contact__r,reference,FALSE,TRUE
+Employer Address,FinServ__EmployerAddress__c,TRUE,--,--,null,textarea,FALSE,TRUE
+Employer Phone Number,FinServ__EmployerPhoneNumber__c,TRUE,--,--,null,phone,FALSE,TRUE
+Employment Status,FinServ__EmploymentStatus__c,TRUE,"[ ""Employed"" , ""Self-Employed"" , ""Home Maker"" , ""Retired"" , ""Student"" , ""Unemployed with Income"" , ""Unemployed without Income"" ]",--,null,picklist,FALSE,TRUE
+End Date,FinServ__EndDate__c,TRUE,--,--,null,date,FALSE,TRUE
+Length of Employment,FinServ__LengthOfEmployment__c,TRUE,--,--,null,double,FALSE,FALSE
+Occupation,FinServ__Occupation__c,TRUE,"[ ""Management"" , ""Computer and Mathematical"" , ""Architecture and Engineering"" , ""Life, Physical, and Social Science"" , ""Community and Social Service"" , ""Legal"" , ""Education, Training, and Library"" , ""Arts, Design, Entertainment, Sports, and Media"" , ""Healthcare Practitioners and Technical"" , ""Healthcare Support"" , ""Protective Service"" , ""Food Preparation and Serving"" , ""Building and Grounds Cleaning/Maintennce"" , ""Personal Care and Service"" , ""Sales"" , ""Office Admin"" , ""Farming, Fishing, and Forestry"" , ""Construction and Extraction"" , ""Installation, Maintenance, and Repair"" , ""Production"" , ""Transportation and Material Moving"" , ""Other"" ]",--,null,picklist,FALSE,TRUE
+Position,FinServ__Position__c,TRUE,--,--,null,string,FALSE,TRUE
+Source System ID,FinServ__SourceSystemId__c,TRUE,--,--,null,string,FALSE,TRUE
+Start Date,FinServ__StartDate__c,TRUE,--,--,null,date,FALSE,TRUE

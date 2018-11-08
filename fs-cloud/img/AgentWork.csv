@@ -1,0 +1,29 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"AgentWork","Agent Work","Id","Agent Work ID","id",18,false,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","Name","Name","string",255,false,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"AgentWork","Agent Work","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"AgentWork","Agent Work","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","UserId","User ID","reference",18,false,"[""User""]","User",false,false,,"[]",false
+"AgentWork","Agent Work","WorkItemId","WorkItem ID","reference",18,false,"[""Account"",""Bot_Command__c"",""Broker__c"",""Camping_Item__c"",""Case"",""Contact"",""Dreamhouse_Settings__c"",""Expense__c"",""Favorite__c"",""Flight4__c"",""Lead"",""Opportunity"",""Order"",""Property__c"",""Weather__c""]","WorkItem",false,false,,"[]",false
+"AgentWork","Agent Work","Status","Status","picklist",255,false,"[]",,false,false,,"[""Assigned"",""Unavailable"",""Declined"",""Opened"",""Closed"",""Declined on Push Time-Out"",""Canceled"",""Transferred""]",false
+"AgentWork","Agent Work","ServiceChannelId","Service Channel ID","reference",18,false,"[""ServiceChannel""]","ServiceChannel",false,false,,"[]",false
+"AgentWork","Agent Work","OriginalQueueId","Queue ID","reference",18,true,"[""Group""]","OriginalQueue",false,false,,"[]",false
+"AgentWork","Agent Work","CapacityWeight","Units of Capacity","double",0,true,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","CapacityPercentage","Percentage  of Capacity","percent",0,true,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","RequestDateTime","Request Date","datetime",0,true,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","AcceptDateTime","Accept Date","datetime",0,true,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","DeclineDateTime","Decline Date","datetime",0,true,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","CloseDateTime","Close Date","datetime",0,true,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","SpeedToAnswer","Speed To Answer","int",0,true,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","AgentCapacityWhenDeclined","Agent Capacity when Declined","double",0,true,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","PushTimeout","Push Time-Out","int",0,true,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","PushTimeoutDateTime","Push Time-Out Date","datetime",0,true,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","HandleTime","Handle Time","int",0,true,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","ActiveTime","Active Time","int",0,true,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","DeclineReason","Decline Reason","string",200,true,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","CancelDateTime","Cancel Date","datetime",0,true,"[]",,false,false,,"[]",false
+"AgentWork","Agent Work","AssignedDateTime","Assign Date","datetime",0,true,"[]",,false,false,,"[]",false

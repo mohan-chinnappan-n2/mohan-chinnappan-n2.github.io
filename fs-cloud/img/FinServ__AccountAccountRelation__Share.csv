@@ -1,0 +1,9 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Custom Object Share ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Parent ID,ParentId,FALSE,--,"[ ""FinServ__AccountAccountRelation__c"" ]",Parent,reference,FALSE,FALSE
+User/Group ID,UserOrGroupId,FALSE,--,"[ ""Group"", ""User"" ]",UserOrGroup,reference,FALSE,FALSE
+Custom Object Access,AccessLevel,FALSE,"[ ""Read"" , ""Edit"" , ""All"" ]",--,null,picklist,FALSE,TRUE
+Row Cause,RowCause,TRUE,"[ ""Owner"" , ""Manual"" , ""Rule"" , ""ImplicitChild"" , ""ImplicitParent"" , ""ImplicitPerson"" , ""Team"" , ""Territory"" , ""TerritoryManual"" , ""TerritoryRule"" , ""Territory2Forecast"" ]",--,null,picklist,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE

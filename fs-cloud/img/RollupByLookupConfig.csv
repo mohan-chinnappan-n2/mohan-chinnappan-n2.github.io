@@ -1,0 +1,24 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Owner ID,OwnerId,FALSE,--,"[ ""Group"", ""User"" ]",Owner,reference,FALSE,TRUE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Rollup By Lookup Configuration Name,Name,TRUE,--,--,null,string,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Active,FinServ__Active__c,FALSE,--,--,null,boolean,FALSE,TRUE
+Field To Roll Up From,FinServ__FromField__c,FALSE,--,--,null,string,FALSE,TRUE
+From Object,FinServ__FromObject__c,FALSE,--,--,null,string,FALSE,TRUE
+From Record Type,FinServ__FromRecordType__c,TRUE,--,--,null,string,FALSE,TRUE
+Lookup Field,FinServ__LookupField__c,FALSE,--,--,null,string,FALSE,TRUE
+Namespace,FinServ__Namespace__c,TRUE,"[ ""Industries"" ]",--,null,picklist,FALSE,TRUE
+Process Type,FinServ__ProcessType__c,TRUE,"[ ""Realtime"" , ""Async"" , ""Batch"" ]",--,null,picklist,FALSE,TRUE
+Rollup Operation,FinServ__RollupOperation__c,TRUE,"[ ""Sum"" , ""Max"" , ""Min"" , ""Avg"" , ""Count"" ]",--,null,picklist,FALSE,TRUE
+Field To Roll Up To,FinServ__ToField__c,FALSE,--,--,null,string,FALSE,TRUE
+To Object,FinServ__ToObject__c,FALSE,--,--,null,string,FALSE,TRUE
+Fields Triggering Update,FinServ__UpdateOnChange__c,TRUE,--,--,null,string,FALSE,TRUE
+Where Clause,FinServ__WhereClause__c,TRUE,--,--,null,textarea,FALSE,TRUE

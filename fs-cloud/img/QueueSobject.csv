@@ -1,0 +1,6 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Queue Sobject ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Group ID,QueueId,FALSE,--,"[ ""Group"" ]",Queue,reference,FALSE,FALSE
+Sobject Type,SobjectType,FALSE,"[ ""Case"" , ""FinServ__AccountAccountRelation__c"" , ""FinServ__Alert__c"" , ""FinServ__AssetsAndLiabilities__c"" , ""FinServ__ChargesAndFees__c"" , ""FinServ__ContactContactRelation__c"" , ""FinServ__Education__c"" , ""FinServ__Employment__c"" , ""FinServ__FinancialAccount__c"" , ""FinServ__FinancialAccountTransaction__c"" , ""FinServ__FinancialGoal__c"" , ""FinServ__IdentificationDocument__c"" , ""FinServ__LifeEvent__c"" , ""FinServ__ReciprocalRole__c"" , ""FinServ__Revenue__c"" , ""FinServ__RollupByLookupConfig__c"" , ""FinServ__Securities__c"" , ""Lead"" , ""Macro"" , ""Order"" , ""ProfileSkill"" , ""QuickText"" , ""Quote"" , ""Scorecard"" , ""UserProvisioningRequest"" , ""WorkBadgeDefinition"" , ""WorkThanks"" ]",--,null,picklist,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,,,,,,

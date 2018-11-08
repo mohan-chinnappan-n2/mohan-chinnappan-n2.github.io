@@ -1,0 +1,19 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"FinServ__FinancialAccountRole__c","Financial Account Role","Id","Record ID","id",18,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","Name","Role Number","string",80,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","RecordTypeId","Record Type ID","reference",18,true,"[""RecordType""]","RecordType",false,true,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","FinServ__FinancialAccount__c","Financial Account","reference",18,false,"[""FinServ__FinancialAccount__c""]","FinServ__FinancialAccount__r",false,false,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","FinServ__Active__c","Active","boolean",0,false,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","FinServ__Editable__c","Editable","boolean",0,false,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","FinServ__EndDate__c","End Date","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","FinServ__RelatedAccount__c","Related Account","reference",18,true,"[""Account""]","FinServ__RelatedAccount__r",false,true,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","FinServ__RelatedContact__c","Related Contact","reference",18,true,"[""Contact""]","FinServ__RelatedContact__r",false,true,,"[]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","FinServ__Role__c","Role","picklist",255,true,"[]",,false,true,,"[""Beneficiary"",""Accountant"",""Trustee"",""Corporation"",""Foundation"",""Grantor"",""Business Manager""]",false
+"FinServ__FinancialAccountRole__c","Financial Account Role","FinServ__SourceSystemId__c","Source System ID","string",100,true,"[]",,false,true,,"[]",true
+"FinServ__FinancialAccountRole__c","Financial Account Role","FinServ__StartDate__c","Start Date","date",0,true,"[]",,false,true,,"[]",false

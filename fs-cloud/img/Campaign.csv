@@ -1,0 +1,34 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Campaign ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Name,Name,FALSE,--,--,null,string,FALSE,TRUE
+Parent Campaign ID,ParentId,TRUE,--,"[ ""Campaign"" ]",Parent,reference,FALSE,TRUE
+Type,Type,TRUE,"[ ""Event"" , ""Demo Signup / Trial"" , ""Email"" , ""Referral Program"" , ""Search"" , ""Social Media"" , ""Thought Leadership"" , ""Website Direct"" , ""Other"" ]",--,null,picklist,FALSE,TRUE
+Status,Status,TRUE,"[ ""In Progress"" , ""Completed"" , ""Aborted"" , ""Planned"" ]",--,null,picklist,FALSE,TRUE
+Start Date,StartDate,TRUE,--,--,null,date,FALSE,TRUE
+End Date,EndDate,TRUE,--,--,null,date,FALSE,TRUE
+Expected Revenue in Campaign,ExpectedRevenue,TRUE,--,--,null,currency,FALSE,TRUE
+Budgeted Cost in Campaign,BudgetedCost,TRUE,--,--,null,currency,FALSE,TRUE
+Actual Cost in Campaign,ActualCost,TRUE,--,--,null,currency,FALSE,TRUE
+Expected Response (%),ExpectedResponse,TRUE,--,--,null,percent,FALSE,TRUE
+Num Sent in Campaign,NumberSent,TRUE,--,--,null,double,FALSE,TRUE
+Active,IsActive,FALSE,--,--,null,boolean,FALSE,TRUE
+Description,Description,TRUE,--,--,null,textarea,FALSE,TRUE
+Leads and Referrals in Campaign,NumberOfLeads,FALSE,--,--,null,int,FALSE,FALSE
+Converted Leads and Referrals in Campaign,NumberOfConvertedLeads,FALSE,--,--,null,int,FALSE,FALSE
+Contacts in Campaign,NumberOfContacts,FALSE,--,--,null,int,FALSE,FALSE
+Responses in Campaign,NumberOfResponses,FALSE,--,--,null,int,FALSE,FALSE
+Opportunities in Campaign,NumberOfOpportunities,FALSE,--,--,null,int,FALSE,FALSE
+Won Opportunities in Campaign,NumberOfWonOpportunities,FALSE,--,--,null,int,FALSE,FALSE
+Value Opportunities in Campaign,AmountAllOpportunities,FALSE,--,--,null,currency,FALSE,FALSE
+Value Won Opportunities in Campaign,AmountWonOpportunities,FALSE,--,--,null,currency,FALSE,FALSE
+Owner ID,OwnerId,FALSE,--,"[ ""User"" ]",Owner,reference,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Activity,LastActivityDate,TRUE,--,--,null,date,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Record Type ID,CampaignMemberRecordTypeId,TRUE,--,"[ ""RecordType"" ]",CampaignMemberRecordType,reference,FALSE,TRUE

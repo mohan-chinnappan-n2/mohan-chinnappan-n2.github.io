@@ -1,0 +1,37 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Campaign Member ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Campaign ID,CampaignId,FALSE,--,"[ ""Campaign"" ]",Campaign,reference,FALSE,FALSE
+Lead and Referral ID,LeadId,TRUE,--,"[ ""Lead"" ]",Lead,reference,FALSE,FALSE
+Contact ID,ContactId,TRUE,--,"[ ""Contact"" ]",Contact,reference,FALSE,FALSE
+Status,Status,TRUE,"[ ""Responded"" , ""Sent"" ]",--,null,picklist,FALSE,TRUE
+Responded,HasResponded,FALSE,--,--,null,boolean,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+First Responded Date,FirstRespondedDate,TRUE,--,--,null,date,FALSE,FALSE
+Salutation,Salutation,TRUE,"[ ""Mr."" , ""Ms."" , ""Mrs."" , ""Dr."" , ""Prof."" ]",--,null,picklist,FALSE,FALSE
+Name,Name,TRUE,--,--,null,string,FALSE,FALSE
+First Name,FirstName,TRUE,--,--,null,string,FALSE,FALSE
+Last Name,LastName,TRUE,--,--,null,string,FALSE,FALSE
+Title,Title,TRUE,--,--,null,string,FALSE,FALSE
+Street,Street,TRUE,--,--,null,string,FALSE,FALSE
+City,City,TRUE,--,--,null,string,FALSE,FALSE
+State/Province,State,TRUE,--,--,null,string,FALSE,FALSE
+Zip/Postal Code,PostalCode,TRUE,--,--,null,string,FALSE,FALSE
+Country,Country,TRUE,--,--,null,string,FALSE,FALSE
+Email,Email,TRUE,--,--,null,email,FALSE,FALSE
+Phone,Phone,TRUE,--,--,null,phone,FALSE,FALSE
+Fax,Fax,TRUE,--,--,null,phone,FALSE,FALSE
+Mobile,MobilePhone,TRUE,--,--,null,phone,FALSE,FALSE
+Description,Description,TRUE,--,--,null,textarea,FALSE,FALSE
+Do Not Call,DoNotCall,FALSE,--,--,null,boolean,FALSE,FALSE
+Email Opt Out,HasOptedOutOfEmail,FALSE,--,--,null,boolean,FALSE,FALSE
+Fax Opt Out,HasOptedOutOfFax,FALSE,--,--,null,boolean,FALSE,FALSE
+Lead and Referral Source,LeadSource,TRUE,"[ ""Advertisement"" , ""Customer Event"" , ""Employee Referral"" , ""Google AdWords"" , ""Other"" , ""Partner"" , ""Purchased List"" , ""Trade Show"" , ""Webinar"" , ""Website"" ]",--,null,picklist,FALSE,FALSE
+Company (Account),CompanyOrAccount,TRUE,--,--,null,string,FALSE,FALSE
+Type,Type,TRUE,--,--,null,string,FALSE,FALSE
+Lead and Referral/Contact ID,LeadOrContactId,TRUE,--,"[ ""Contact"", ""Lead"" ]",null,reference,FALSE,FALSE
+Lead and Referral/Contact Owner ID,LeadOrContactOwnerId,TRUE,--,"[ ""Group"", ""User"" ]",LeadOrContactOwner,reference,FALSE,FALSE

@@ -1,0 +1,27 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","Id","Record ID","id",18,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","OwnerId","Owner ID","reference",18,false,"[""Group"",""User""]","Owner",false,true,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","Name","Transaction Name","string",80,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","LastViewedDate","Last Viewed Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","LastReferencedDate","Last Referenced Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__Amount__c","Amount","currency",0,false,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__BillingStatements__c","Billing Statement","reference",18,true,"[""FinServ__BillingStatement__c""]","FinServ__BillingStatements__r",false,true,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__CardAccountID__c","Card Account ID","string",40,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__Description__c","Description","string",255,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__FinancialAccount__c","Financial Account","reference",18,true,"[""FinServ__FinancialAccount__c""]","FinServ__FinancialAccount__r",false,true,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__MerchantCategoryCode__c","Merchant Category Code (MCCode)","string",10,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__PostDate__c","Post Date","datetime",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__RunningBalance__c","Running Balance","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__SourceSystemId__c","Source System ID","string",100,true,"[]",,false,true,,"[]",true
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__SourceTransactionType__c","Source Transaction Type","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__TransactionDate__c","Transaction Date","datetime",0,false,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__TransactionId__c","Transaction Id","string",80,true,"[]",,true,true,,"[]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__TransactionStatus__c","Transaction Status","picklist",255,true,"[]",,false,true,,"[""Pending"",""Posted""]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__TransactionSubtype__c","Transaction Sub-type","picklist",255,true,"[]",,false,true,,"[""Cash Deposit"",""On-Us Check Deposit"",""Transit Check Deposit"",""Foreign Cash Deposit"",""Bill Payment"",""EFT"",""ATM Deposit"",""ATM Withdrawal"",""POS withdrawal"",""Misc. Credit"",""Misc. Debit"",""Loan Payment"",""Mortgage Payment"",""Credit Card Payment"",""Credit Card Cash Advance"",""Internal Funds Transfer"",""Reversal"",""Interest Earned"",""Fee"",""Merchant Charge""]",false
+"FinServ__FinancialAccountTransaction__c","Financial Account Transaction","FinServ__TransactionType__c","Transaction Type","picklist",255,true,"[]",,false,true,,"[""Credit"",""Debit""]",false

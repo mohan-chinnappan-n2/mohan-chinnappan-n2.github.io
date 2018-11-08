@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="MainCtrl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Data Model - Sales Objects </title>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../../css/navbar-blue.css">
+</head>
+
+<body >
+
+  <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+
+        <a class="navbar-brand" href="javascript:void(0)">SFDC Data Model </a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav">
+                <li ><a href="/">Main</a></li>
+              </ul>
+          <ul class="nav navbar-nav">
+              <li class="active"><a href="model-sales.html">Sales</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="nactive"><a href="model-sfdc.html">Sharing</a></li>
+              </ul>
+              <ul class="nav navbar-nav">
+                  <li class="nactive"><a href="model-task-event.html">Task & Event</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                  <li class="nactive"><a href="model-profile-perm.html">Profile and Permission</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                  <li class="nactive"><a href="model-recordtype.html">RecordType</a></li>
+                </ul>
+       <div class="inner-addon right-addon navbar-form navbar-right">
+          <i class="glyphicon glyphicon-search"></i>
+          <input type="text" class="form-control" placeholder="Search" />
+        </div>
+  
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown ">
+            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Help <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="./help.html">Help Topics</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+
+<div style="padding-left: 30px;"
+<p style='font-size: 20px;'><i class="glyphicon glyphicon-question-sign"></i> Click on any Entity to view the details: Fields, Picklist, Relationships</p>
+<img src="img/sales-objects.png" usemap="#image-map">
+<map name="image-map">
+    <area target="_blank" alt="Account" title="Account" href="csv-viewer.html?f=Account" coords="449,173,539,252" shape="rect">
+    <area target="_blank" alt="Contact" title="Contact" href="csv-viewer.html?f=Contact" coords="217,137,301,227" shape="rect">
+    <area target="_blank" alt="AccountContactRole" title="AccountContactRole" href="csv-viewer.html?f=AccountContactRole" coords="317,214,419,273" shape="rect">
+
+
+    <area target="_blank" alt="Lead" title="Lead" href="csv-viewer.html?f=Lead" coords="235,592,347,715" shape="rect">
+    <area target="_blank" alt="LeadStatus" title="LeadStatus" href="csv-viewer.html?f=LeadStatus" coords="412,632,477,673" shape="rect">
+   
+    <area target="_blank" alt="CampaignMember" title="CampaignMember" href="csv-viewer.html?f=CampaignMember" coords="50,635,143,689" shape="rect">
+    <area target="_blank" alt="Campaign" title="Campaign" href="csv-viewer.html?f=Campaign" coords="49,496,143,569" shape="rect">
+    
+    <area target="_blank" alt="OpportunityContactRole" title="OpportunityContactRole" href="csv-viewer.html?f=OpportunityContactRole" coords="218,498,330,566" shape="rect">
+    <area target="_blank" alt="Opportunity" title="Opportunity" href="csv-viewer.html?f=Opportunity" coords="567,352,644,464" shape="rect">
+    <area target="_blank" alt="OpportunityCompetitor" title="OpportunityCompetitor" href="csv-viewer.html?f=OpportunityCompetitor" coords="649,448,754,508" shape="rect">
+    <area target="_blank" alt="OpportunityStage" title="OpportunityStage" href="csv-viewer.html?f=OpportunityStage" coords="602,266,683,297" shape="rect">
+
+   <area target="_blank" alt="Quote" title="Quote" href="csv-viewer.html?f=Quote" coords="257,418,359,476" shape="rect">
+   <area target="_blank" alt="Order" title="Order" href="csv-viewer.html?f=Order" coords="360,299,454,393" shape="rect">
+   <area target="_blank" alt="Contract" title="Contract" href="csv-viewer.html?f=Contract" coords="82,238,176,328" shape="rect">
+   <area target="_blank" alt="ContractContactRole" title="ContractContactRole" href="csv-viewer.html?f=ContractContactRole" coords="23,155,121,219" shape="rect">
+
+   <area target="_blank" alt="Asset" title="Asset" href="csv-viewer.html?f=Asset" coords="541,113,617,150" shape="rect">
+   
+   <area target="_blank" alt="Partner" title="Partner" href="csv-viewer.html?f=Partner" coords="657,120,746,213" shape="rect">
+   <area target="_blank" alt="PartnerRole" title="PartnerRole" href="csv-viewer.html?f=PartnerRole" coords="666,8,738,60" shape="rect">
+
+   <area target="_blank" alt="Case" title="Case" href="csv-viewer.html?f=Case" coords="457,2,532,86" shape="rect">
+   <area target="_blank" alt="CaseStatus" title="CaseStatus" href="csv-viewer.html?f=CaseStatus" coords="298,23,368,61" shape="rect">
+   
+   
+
+  </map>
+
+
+<hr/>
+
+<h4>References</h4>
+<ul>
+  <li>
+    <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/data_model.htm">
+      SOAP API developer guide - Data Model
+    </a>
+  </li>
+</ul>
+</div>
+
+</body>
+</html>
+

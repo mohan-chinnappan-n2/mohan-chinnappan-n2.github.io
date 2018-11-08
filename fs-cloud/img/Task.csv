@@ -1,0 +1,48 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Activity ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Task Record Type ID,RecordTypeId,TRUE,--,"[ ""RecordType"" ]",RecordType,reference,FALSE,TRUE
+Name ID,WhoId,TRUE,--,"[ ""Contact"", ""Lead"" ]",Who,reference,FALSE,TRUE
+Related To ID,WhatId,TRUE,--,"[ ""Account"", ""Asset"", ""AssetRelationship"", ""Campaign"", ""Case"", ""Contract"", ""FinServ__AssetsAndLiabilities__c"", ""FinServ__Card__c"", ""FinServ__FinancialAccount__c"", ""FinServ__FinancialGoal__c"", ""FinServ__FinancialHolding__c"", ""Opportunity"", ""Order"", ""Product2"", ""Quote"", ""Solution"" ]",What,reference,FALSE,TRUE
+Relation Count,WhoCount,TRUE,--,--,null,int,FALSE,FALSE
+Related To Count,WhatCount,TRUE,--,--,null,int,FALSE,FALSE
+Subject,Subject,TRUE,"[ ""Call"" , ""Send Letter"" , ""Send Quote"" , ""Other"" ]",--,null,combobox,FALSE,TRUE
+Due Date Only,ActivityDate,TRUE,--,--,null,date,FALSE,TRUE
+Status,Status,FALSE,"[ ""Open"" , ""Not Started"" , ""In Progress"" , ""Completed"" ]",--,null,picklist,FALSE,TRUE
+Priority,Priority,FALSE,"[ ""Low"" , ""Normal"" , ""High"" ]",--,null,picklist,FALSE,TRUE
+High Priority,IsHighPriority,FALSE,--,--,null,boolean,FALSE,FALSE
+Assigned To ID,OwnerId,FALSE,--,"[ ""User"" ]",Owner,reference,FALSE,TRUE
+Description,Description,TRUE,--,--,null,textarea,FALSE,TRUE
+Type,Type,TRUE,"[ ""Call"" , ""Meeting"" , ""Other"" ]",--,null,picklist,FALSE,TRUE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Account ID,AccountId,TRUE,--,"[ ""Account"" ]",Account,reference,FALSE,FALSE
+Closed,IsClosed,FALSE,--,--,null,boolean,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Archived,IsArchived,FALSE,--,--,null,boolean,FALSE,FALSE
+Call Duration,CallDurationInSeconds,TRUE,--,--,null,int,FALSE,TRUE
+Call Type,CallType,TRUE,"[ ""Internal"" , ""Inbound"" , ""Outbound"" ]",--,null,picklist,FALSE,TRUE
+Call Result,CallDisposition,TRUE,--,--,null,string,FALSE,TRUE
+Call Object Identifier,CallObject,TRUE,--,--,null,string,FALSE,TRUE
+Reminder Date/Time,ReminderDateTime,TRUE,--,--,null,datetime,FALSE,TRUE
+Reminder Set,IsReminderSet,FALSE,--,--,null,boolean,FALSE,TRUE
+Recurrence Activity ID,RecurrenceActivityId,TRUE,--,"[ ""Task"" ]",null,reference,FALSE,FALSE
+Create Recurring Series of Tasks,IsRecurrence,FALSE,--,--,null,boolean,FALSE,FALSE
+Recurrence Start,RecurrenceStartDateOnly,TRUE,--,--,null,date,FALSE,TRUE
+Recurrence End,RecurrenceEndDateOnly,TRUE,--,--,null,date,FALSE,TRUE
+Recurrence Time Zone,RecurrenceTimeZoneSidKey,TRUE,"[ ""Pacific/Kiritimati"" , ""Pacific/Enderbury"" , ""Pacific/Tongatapu"" , ""Pacific/Chatham"" , ""Asia/Kamchatka"" , ""Pacific/Auckland"" , ""Pacific/Fiji"" , ""Pacific/Guadalcanal"" , ""Pacific/Norfolk"" , ""Australia/Lord_Howe"" , ""Australia/Brisbane"" , ""Australia/Sydney"" , ""Australia/Adelaide"" , ""Australia/Darwin"" , ""Asia/Seoul"" , ""Asia/Tokyo"" , ""Asia/Hong_Kong"" , ""Asia/Kuala_Lumpur"" , ""Asia/Manila"" , ""Asia/Shanghai"" , ""Asia/Singapore"" , ""Asia/Taipei"" , ""Australia/Perth"" , ""Asia/Bangkok"" , ""Asia/Ho_Chi_Minh"" , ""Asia/Jakarta"" , ""Asia/Rangoon"" , ""Asia/Dhaka"" , ""Asia/Kathmandu"" , ""Asia/Colombo"" , ""Asia/Kolkata"" , ""Asia/Karachi"" , ""Asia/Tashkent"" , ""Asia/Yekaterinburg"" , ""Asia/Kabul"" , ""Asia/Tehran"" , ""Asia/Baku"" , ""Asia/Dubai"" , ""Asia/Tbilisi"" , ""Asia/Yerevan"" , ""Africa/Nairobi"" , ""Asia/Baghdad"" , ""Asia/Beirut"" , ""Asia/Jerusalem"" , ""Asia/Kuwait"" , ""Asia/Riyadh"" , ""Europe/Athens"" , ""Europe/Bucharest"" , ""Europe/Helsinki"" , ""Europe/Istanbul"" , ""Europe/Minsk"" , ""Europe/Moscow"" , ""Africa/Cairo"" , ""Africa/Johannesburg"" , ""Europe/Amsterdam"" , ""Europe/Berlin"" , ""Europe/Brussels"" , ""Europe/Paris"" , ""Europe/Prague"" , ""Europe/Rome"" , ""Africa/Algiers"" , ""Africa/Casablanca"" , ""Europe/Dublin"" , ""Europe/Lisbon"" , ""Europe/London"" , ""America/Scoresbysund"" , ""Atlantic/Azores"" , ""GMT"" , ""Atlantic/Cape_Verde"" , ""Atlantic/South_Georgia"" , ""America/St_Johns"" , ""America/Argentina/Buenos_Aires"" , ""America/Halifax"" , ""America/Sao_Paulo"" , ""Atlantic/Bermuda"" , ""America/Caracas"" , ""America/Indiana/Indianapolis"" , ""America/New_York"" , ""America/Puerto_Rico"" , ""America/Santiago"" , ""America/Bogota"" , ""America/Chicago"" , ""America/Lima"" , ""America/Mexico_City"" , ""America/Panama"" , ""America/Denver"" , ""America/El_Salvador"" , ""America/Mazatlan"" , ""America/Los_Angeles"" , ""America/Phoenix"" , ""America/Tijuana"" , ""America/Anchorage"" , ""Pacific/Pitcairn"" , ""America/Adak"" , ""Pacific/Gambier"" , ""Pacific/Marquesas"" , ""Pacific/Honolulu"" , ""Pacific/Niue"" , ""Pacific/Pago_Pago"" ]",--,null,picklist,FALSE,TRUE
+Recurrence Type,RecurrenceType,TRUE,"[ ""RecursDaily"" , ""RecursEveryWeekday"" , ""RecursMonthly"" , ""RecursMonthlyNth"" , ""RecursWeekly"" , ""RecursYearly"" , ""RecursYearlyNth"" ]",--,null,picklist,FALSE,TRUE
+Recurrence Interval,RecurrenceInterval,TRUE,--,--,null,int,FALSE,TRUE
+Recurrence Day of Week Mask,RecurrenceDayOfWeekMask,TRUE,--,--,null,int,FALSE,TRUE
+Recurrence Day of Month,RecurrenceDayOfMonth,TRUE,--,--,null,int,FALSE,TRUE
+Recurrence Instance,RecurrenceInstance,TRUE,"[ ""First"" , ""Second"" , ""Third"" , ""Fourth"" , ""Last"" ]",--,null,picklist,FALSE,TRUE
+Recurrence Month of Year,RecurrenceMonthOfYear,TRUE,"[ ""January"" , ""February"" , ""March"" , ""April"" , ""May"" , ""June"" , ""July"" , ""August"" , ""September"" , ""October"" , ""November"" , ""December"" ]",--,null,picklist,FALSE,TRUE
+Repeat This Task,RecurrenceRegeneratedType,TRUE,"[ ""RecurrenceRegenerateAfterDueDate"" , ""RecurrenceRegenerateAfterToday"" , ""RecurrenceRegenerated"" ]",--,null,picklist,FALSE,TRUE
+Task Subtype,TaskSubtype,TRUE,"[ ""Task"" , ""Email"" , ""ListEmail"" , ""Call"" ]",--,null,picklist,FALSE,FALSE
+Expectations,FinServ__Expectations__c,TRUE,--,--,null,textarea,FALSE,TRUE
+Household,FinServ__Household__c,TRUE,--,"[ ""Account"" ]",FinServ__Household__r,reference,FALSE,TRUE
+Next Steps,FinServ__NextSteps__c,TRUE,--,--,null,textarea,FALSE,TRUE
+Objectives,FinServ__Objectives__c,TRUE,--,--,null,textarea,FALSE,TRUE
+Regarding,FinServ__Regarding__c,TRUE,"[ ""Prospecting"" , ""Onboarding"" , ""Client Retention"" , ""Service"" ]",--,null,picklist,FALSE,TRUE

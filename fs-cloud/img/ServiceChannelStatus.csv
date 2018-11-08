@@ -1,0 +1,10 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"ServiceChannelStatus","Service Channel Status","Id","Service Channel Status ID","id",18,false,"[]",,false,false,,"[]",false
+"ServiceChannelStatus","Service Channel Status","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"ServiceChannelStatus","Service Channel Status","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"ServiceChannelStatus","Service Channel Status","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"ServiceChannelStatus","Service Channel Status","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"ServiceChannelStatus","Service Channel Status","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"ServiceChannelStatus","Service Channel Status","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"ServiceChannelStatus","Service Channel Status","ServiceChannelId","Service Channel ID","reference",18,false,"[""ServiceChannel""]","ServiceChannel",false,false,,"[]",false
+"ServiceChannelStatus","Service Channel Status","ServicePresenceStatusId","Service Presence Status ID","reference",18,true,"[""ServicePresenceStatus""]","ServicePresenceStatus",false,false,,"[]",false

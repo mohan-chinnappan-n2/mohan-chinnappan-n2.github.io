@@ -1,0 +1,22 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Owner ID,OwnerId,FALSE,--,"[ ""Group"", ""User"" ]",Owner,reference,FALSE,TRUE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Symbol,Name,TRUE,--,--,null,string,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+CUSIP,FinServ__CUSIP__c,TRUE,--,--,null,string,FALSE,TRUE
+Exchange,FinServ__Exchange__c,TRUE,"[ ""NYSE"" , ""NASDAQ"" ]",--,null,picklist,FALSE,TRUE
+Last Updated,FinServ__LastUpdated__c,TRUE,--,--,null,date,FALSE,TRUE
+Price,FinServ__Price__c,TRUE,--,--,null,currency,FALSE,TRUE
+Securities Name,FinServ__SecuritiesName__c,FALSE,--,--,null,string,TRUE,TRUE
+Security ID,FinServ__SecurityId__c,TRUE,--,--,null,string,FALSE,TRUE
+Source System ID,FinServ__SourceSystemId__c,TRUE,--,--,null,string,FALSE,TRUE
+Asset Category Name,FinServ__AssetCategoryName__c,TRUE,"[ ""Large Growth"" , ""Large Value"" , ""Large Blend"" , ""Small Growth"" , ""Small Value"" , ""Small Blend"" , ""Mid-Cap Growth"" , ""Mid-Cap Value"" , ""Mid-Cap Blend"" ]",--,null,picklist,FALSE,TRUE
+Asset Category,FinServ__AssetCategory__c,TRUE,"[ ""U.S. Equity"" , ""Sector Equity"" , ""Allocation"" , ""International Equity"" , ""Alternative"" , ""Commodities"" , ""Taxable Bond"" , ""Municipal Bond"" ]",--,null,picklist,FALSE,TRUE
+Asset Class,FinServ__AssetClass__c,TRUE,"[ ""Equities"" , ""Fixed Income"" , ""Cash Equivalents"" , ""Alternative Investments"" ]",--,null,picklist,FALSE,TRUE

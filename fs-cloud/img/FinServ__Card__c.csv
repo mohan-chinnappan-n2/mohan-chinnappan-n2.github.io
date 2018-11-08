@@ -1,0 +1,17 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"FinServ__Card__c","Card","Id","Record ID","id",18,false,"[]",,false,false,,"[]",false
+"FinServ__Card__c","Card","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"FinServ__Card__c","Card","Name","Card Name","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__Card__c","Card","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__Card__c","Card","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"FinServ__Card__c","Card","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__Card__c","Card","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"FinServ__Card__c","Card","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__Card__c","Card","LastActivityDate","Last Activity Date","date",0,true,"[]",,false,false,,"[]",false
+"FinServ__Card__c","Card","FinServ__FinancialAccount__c","Financial Account","reference",18,false,"[""FinServ__FinancialAccount__c""]","FinServ__FinancialAccount__r",false,false,,"[]",false
+"FinServ__Card__c","Card","FinServ__AccountHolder__c","Account Holder","reference",18,true,"[""Account""]","FinServ__AccountHolder__r",false,true,,"[]",false
+"FinServ__Card__c","Card","FinServ__Active__c","Active","boolean",0,false,"[]",,false,true,,"[]",false
+"FinServ__Card__c","Card","FinServ__BinNumber__c","BIN Number","double",0,true,"[]",,false,true,,"[]",false
+"FinServ__Card__c","Card","FinServ__OwnershipType__c","Ownership Type","picklist",255,true,"[]",,false,true,,"[""Primary"",""Authorized"",""Other""]",false
+"FinServ__Card__c","Card","FinServ__SourceSystemId__c","Source System ID","string",100,true,"[]",,false,true,,"[]",true
+"FinServ__Card__c","Card","FinServ__ValidUntil__c","Valid Until","date",0,true,"[]",,false,true,,"[]",false

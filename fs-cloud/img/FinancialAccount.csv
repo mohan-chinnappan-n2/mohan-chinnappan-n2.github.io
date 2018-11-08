@@ -1,0 +1,94 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Owner ID,OwnerId,FALSE,--,"[ ""Group"", ""User"" ]",Owner,reference,FALSE,TRUE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Financial Account Name,Name,TRUE,--,--,null,string,FALSE,TRUE
+Record Type ID,RecordTypeId,TRUE,--,"[ ""RecordType"" ]",RecordType,reference,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Activity Date,LastActivityDate,TRUE,--,--,null,date,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Address 1,FinServ__Address1__c,TRUE,--,--,null,string,FALSE,TRUE
+Address 2,FinServ__Address2__c,TRUE,--,--,null,string,FALSE,TRUE
+Application Date,FinServ__ApplicationDate__c,TRUE,--,--,null,date,FALSE,TRUE
+Asset Rebalance,FinServ__AssetRebalance__c,FALSE,--,--,null,boolean,FALSE,TRUE
+Average Balance,FinServ__AverageBalance__c,TRUE,--,--,null,currency,FALSE,TRUE
+Balance,FinServ__Balance__c,TRUE,--,--,null,currency,FALSE,TRUE
+Cash Balance,FinServ__CashBalance__c,TRUE,--,--,null,currency,FALSE,TRUE
+City,FinServ__City__c,TRUE,--,--,null,string,FALSE,TRUE
+Date Closed,FinServ__CloseDate__c,TRUE,--,--,null,date,FALSE,TRUE
+Country,FinServ__Country__c,TRUE,--,--,null,string,FALSE,TRUE
+Description,FinServ__Description__c,TRUE,--,--,null,textarea,FALSE,TRUE
+Discretionary,FinServ__Discretionary__c,FALSE,--,--,null,boolean,FALSE,TRUE
+Account Number,FinServ__FinancialAccountNumber__c,TRUE,--,--,null,string,FALSE,TRUE
+Source,FinServ__FinancialAccountSource__c,TRUE,"[ ""Integrator"" , ""Pending"" , ""Manual Entry"" ]",--,null,picklist,FALSE,TRUE
+Type,FinServ__FinancialAccountType__c,TRUE,"[ ""Brokerage"" , ""Discount Brokerage"" , ""CD"" , ""Checking"" , ""Cash Management Account"" , ""Credit Card"" , ""Savings"" , ""Mutual Fund"" , ""Fixed Annuity"" , ""Variable Annuity"" , ""Managed Account"" , ""Individual Life"" , ""Term Life"" , ""Variable Life"" , ""Whole Life"" ]",--,null,picklist,FALSE,TRUE
+Held Away,FinServ__HeldAway__c,FALSE,--,--,null,boolean,FALSE,TRUE
+Household,FinServ__Household__c,TRUE,--,"[ ""Account"" ]",FinServ__Household__r,reference,FALSE,TRUE
+Insured Amount,FinServ__InsuredAmount__c,TRUE,--,--,null,currency,FALSE,TRUE
+Investment Objectives,FinServ__InvestmentObjectives__c,TRUE,"[ ""Safety"" , ""Income"" , ""Growth"" , ""Tax Optimization"" , ""Liquidity"" ]",--,null,multipicklist,FALSE,TRUE
+Joint Owner,FinServ__JointOwner__c,TRUE,--,"[ ""Account"" ]",FinServ__JointOwner__r,reference,FALSE,TRUE
+Last Updated,FinServ__LastUpdated__c,TRUE,--,--,null,date,FALSE,TRUE
+Managed,FinServ__Managed__c,FALSE,--,--,null,boolean,FALSE,TRUE
+Minimum Balance,FinServ__MinimumBalance__c,TRUE,--,--,null,currency,FALSE,TRUE
+Model Portfolio,FinServ__ModelPortfolio__c,TRUE,"[ ""Conservative"" , ""Moderate"" , ""Balanced"" , ""Growth"" , ""Aggressive"" ]",--,null,picklist,FALSE,TRUE
+Date Opened,FinServ__OpenDate__c,TRUE,--,--,null,date,FALSE,TRUE
+Owner Type,FinServ__OwnerType__c,TRUE,--,--,null,string,FALSE,TRUE
+Ownership,FinServ__Ownership__c,TRUE,"[ ""Individual"" , ""Joint"" , ""Trust"" ]",--,null,picklist,FALSE,TRUE
+Paperless Delivery,FinServ__PaperlessDelivery__c,FALSE,--,--,null,boolean,FALSE,TRUE
+Performance 1Yr,FinServ__Performance1Yr__c,TRUE,--,--,null,percent,FALSE,TRUE
+Performance 3Yr,FinServ__Performance3Yr__c,TRUE,--,--,null,percent,FALSE,TRUE
+Performance MTD,FinServ__PerformanceMTD__c,TRUE,--,--,null,percent,FALSE,TRUE
+Performance QTD,FinServ__PerformanceQTD__c,TRUE,--,--,null,percent,FALSE,TRUE
+Performance YTD,FinServ__PerformanceYTD__c,TRUE,--,--,null,percent,FALSE,TRUE
+Postal Code,FinServ__PostalCode__c,TRUE,--,--,null,string,FALSE,TRUE
+Premium,FinServ__Premium__c,TRUE,--,--,null,currency,FALSE,TRUE
+Primary Owner,FinServ__PrimaryOwner__c,FALSE,--,"[ ""Account"" ]",FinServ__PrimaryOwner__r,reference,FALSE,TRUE
+Rebalance Frequency,FinServ__RebalanceFrequency__c,TRUE,"[ ""Monthly"" , ""Quarterly"" , ""Semiannually"" , ""Annually"" ]",--,null,picklist,FALSE,TRUE
+Record Type,FinServ__RecordTypeName__c,TRUE,--,--,null,string,FALSE,FALSE
+Renewal Date,FinServ__RenewalDate__c,TRUE,--,--,null,date,FALSE,TRUE
+Service Provider,FinServ__ServiceProvider__c,TRUE,--,--,null,string,FALSE,TRUE
+Source System ID,FinServ__SourceSystemId__c,TRUE,--,--,null,string,FALSE,TRUE
+State,FinServ__State__c,TRUE,--,--,null,string,FALSE,TRUE
+Status,FinServ__Status__c,TRUE,"[ ""Open"" , ""Closed"" , ""On Hold"" , ""Pending"" ]",--,null,picklist,FALSE,TRUE
+Tax ID,FinServ__TaxID__c,TRUE,--,--,null,string,FALSE,TRUE
+Tax Status,FinServ__TaxStatus__c,TRUE,"[ ""Qualified"" , ""Nonqualified"" ]",--,null,picklist,FALSE,TRUE
+Time Horizon,FinServ__TimeHorizon__c,TRUE,"[ ""Long Term"" , ""Medium Term"" , ""Short Term"" ]",--,null,picklist,FALSE,TRUE
+Number of Holdings,FinServ__HoldingCount__c,TRUE,--,--,null,double,FALSE,FALSE
+APY,FinServ__APY__c,TRUE,--,--,null,percent,FALSE,TRUE
+Balance Last Statement,FinServ__BalanceLastStatement__c,TRUE,--,--,null,currency,FALSE,TRUE
+Booked Date,FinServ__BookedDate__c,TRUE,--,--,null,date,FALSE,TRUE
+Collateral Description,FinServ__CollateralDesc__c,TRUE,--,--,null,string,FALSE,TRUE
+Current Posted Balance,FinServ__CurrentPostedBalance__c,TRUE,--,--,null,currency,FALSE,TRUE
+Daily Withdrawal Limit,FinServ__DailyWithdrawalLimit__c,TRUE,--,--,null,currency,FALSE,TRUE
+Draw Period(months),FinServ__DrawPeriodMonths__c,TRUE,--,--,null,double,FALSE,TRUE
+Escrow Balance,FinServ__EscrowBalance__c,TRUE,--,--,null,currency,FALSE,TRUE
+Expected Close Date,FinServ__ExpectedCloseDate__c,TRUE,--,--,null,date,FALSE,TRUE
+Charges And Fees,FinServ__FinancialAccountChargesAndFees__c,TRUE,--,"[ ""FinServ__ChargesAndFees__c"" ]",FinServ__FinancialAccountChargesAndFees__r,reference,FALSE,TRUE
+Interest Rate,FinServ__InterestRate__c,TRUE,--,--,null,percent,FALSE,TRUE
+Last Transaction Date,FinServ__LastTransactionDate__c,TRUE,--,--,null,datetime,FALSE,TRUE
+Lien Holder,FinServ__LienHolder__c,TRUE,--,--,null,string,FALSE,TRUE
+Loan Amount,FinServ__LoanAmount__c,TRUE,--,--,null,currency,FALSE,TRUE
+Loan End Date,FinServ__LoanEndDate__c,TRUE,--,--,null,date,FALSE,TRUE
+Loan Term(months),FinServ__LoanTermMonths__c,TRUE,--,--,null,double,FALSE,TRUE
+Minimum Payment,FinServ__MinimumPayment__c,TRUE,--,--,null,currency,FALSE,TRUE
+Nickname,FinServ__Nickname__c,TRUE,--,--,null,string,FALSE,TRUE
+OverdraftAllowed,FinServ__OverdraftAllowed__c,FALSE,--,--,null,boolean,FALSE,TRUE
+Overdraft/Linked Account,FinServ__OverdraftLinkedAccount__c,TRUE,--,"[ ""Account"" ]",FinServ__OverdraftLinkedAccount__r,reference,FALSE,TRUE
+Payment Amount,FinServ__PaymentAmount__c,TRUE,--,--,null,currency,FALSE,TRUE
+Payment Frequency,FinServ__PaymentFrequency__c,TRUE,"[ ""Weekly"" , ""Biweekly"" , ""Monthly"" , ""Quaterly"" , ""Semiannual"" , ""Annual"" ]",--,null,picklist,FALSE,TRUE
+Pending Deposits,FinServ__PendingDeposits__c,TRUE,--,--,null,currency,FALSE,TRUE
+Pending Withdrawals,FinServ__PendingWithdrawals__c,TRUE,--,--,null,currency,FALSE,TRUE
+Principal Balance,FinServ__PrincipalBalance__c,TRUE,--,--,null,currency,FALSE,TRUE
+Repayment Period(months),FinServ__RepaymentPeriodMonths__c,TRUE,--,--,null,double,FALSE,TRUE
+RoutingNumber,FinServ__RoutingNumber__c,TRUE,--,--,null,string,FALSE,TRUE
+Stage,FinServ__Stage__c,TRUE,"[ ""Qualification"" , ""Underwriting"" , ""Proposal"" , ""Approval/Loan committee"" , ""Processing"" , ""Doc Prep"" , ""Doc Review"" , ""Closing"" , ""Booked"" , ""Complete"" , ""Hold"" , ""Dormant"" , ""Active"" , ""Escheat"" , ""Closed"" , ""Charged off"" , ""Ordered"" , ""Setup Complete"" ]",--,null,picklist,FALSE,TRUE
+Statement Frequency,FinServ__StatementFrequency__c,TRUE,"[ ""Monthly"" , ""Biweekly"" , ""Quarterly"" , ""Yearly"" ]",--,null,picklist,FALSE,TRUE
+Total Credit Limit,FinServ__TotalCreditLimit__c,TRUE,--,--,null,currency,FALSE,TRUE
+Type,FinServ__Type__c,TRUE,"[ ""Single Family home"" , ""Town home"" , ""Leased"" , ""Owned"" ]",--,null,picklist,FALSE,TRUE
+Policy Term,FinServ__PolicyTerm__c,TRUE,"[ ""6 Months"" , ""1 Year"" , ""2 Years"" , ""3 Years"" ]",--,null,picklist,FALSE,TRUE
+Product Name,FinServ__ProductName__c,TRUE,--,"[ ""Product2"" ]",FinServ__ProductName__r,reference,FALSE,TRUE

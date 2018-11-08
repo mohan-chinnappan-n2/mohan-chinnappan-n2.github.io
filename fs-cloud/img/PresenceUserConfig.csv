@@ -1,0 +1,19 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"PresenceUserConfig","Presence Configuration","Id","Presence Configuration ID","id",18,false,"[]",,false,false,,"[]",false
+"PresenceUserConfig","Presence Configuration","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"PresenceUserConfig","Presence Configuration","DeveloperName","Developer Name","string",80,false,"[]",,false,true,,"[]",false
+"PresenceUserConfig","Presence Configuration","Language","Master Language","picklist",40,true,"[]",,false,true,,"[""English"",""German"",""Spanish"",""French"",""Italian"",""Japanese"",""Swedish"",""Korean"",""Chinese (Traditional)"",""Chinese (Simplified)"",""Portuguese (Brazil)"",""Dutch"",""Danish"",""Thai"",""Finnish"",""Russian"",""Spanish (Mexico)"",""Norwegian""]",false
+"PresenceUserConfig","Presence Configuration","MasterLabel","Presence Configuration Name","string",80,false,"[]",,false,true,,"[]",false
+"PresenceUserConfig","Presence Configuration","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"PresenceUserConfig","Presence Configuration","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"PresenceUserConfig","Presence Configuration","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"PresenceUserConfig","Presence Configuration","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"PresenceUserConfig","Presence Configuration","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"PresenceUserConfig","Presence Configuration","Capacity","Capacity","int",0,false,"[]",,false,true,,"[]",false
+"PresenceUserConfig","Presence Configuration","OptionsIsAutoAcceptEnabled","IsAutoAcceptEnabled","boolean",0,false,"[]",,false,true,,"[]",false
+"PresenceUserConfig","Presence Configuration","OptionsIsDeclineEnabled","IsDeclineEnabled","boolean",0,false,"[]",,false,true,,"[]",false
+"PresenceUserConfig","Presence Configuration","OptionsIsDeclineReasonEnabled","IsDeclineReasonEnabled","boolean",0,false,"[]",,false,true,,"[]",false
+"PresenceUserConfig","Presence Configuration","OptionsIsRequestSoundEnabled","IsRequestSoundEnabled","boolean",0,false,"[]",,false,true,,"[]",false
+"PresenceUserConfig","Presence Configuration","OptionsIsDisconnectSoundEnabled","IsDisconnectSoundEnabled","boolean",0,false,"[]",,false,true,,"[]",false
+"PresenceUserConfig","Presence Configuration","PresenceStatusOnDeclineId","Service Presence Status ID","reference",18,true,"[""ServicePresenceStatus""]","PresenceStatusOnDecline",false,true,,"[]",false
+"PresenceUserConfig","Presence Configuration","PresenceStatusOnPushTimeoutId","Service Presence Status ID","reference",18,true,"[""ServicePresenceStatus""]","PresenceStatusOnPushTimeout",false,true,,"[]",false

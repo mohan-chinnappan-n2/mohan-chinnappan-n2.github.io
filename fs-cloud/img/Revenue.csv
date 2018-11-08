@@ -1,0 +1,19 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Record ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Owner ID,OwnerId,FALSE,--,"[ ""Group"", ""User"" ]",Owner,reference,FALSE,TRUE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Revenue Transaction,Name,FALSE,--,--,null,string,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Viewed Date,LastViewedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Last Referenced Date,LastReferencedDate,TRUE,--,--,null,datetime,FALSE,FALSE
+Account,FinServ__Account__c,TRUE,--,"[ ""Account"" ]",FinServ__Account__r,reference,FALSE,TRUE
+Amount,FinServ__Amount__c,FALSE,--,--,null,currency,FALSE,TRUE
+Date,FinServ__Date__c,FALSE,--,--,null,date,FALSE,TRUE
+Financial Account,FinServ__FinancialAccount__c,TRUE,--,"[ ""FinServ__FinancialAccount__c"" ]",FinServ__FinancialAccount__r,reference,FALSE,TRUE
+Source System ID,FinServ__SourceSystemId__c,TRUE,--,--,null,string,FALSE,TRUE
+Sub-Type,FinServ__SubType__c,TRUE,"[ ""Transaction"" , ""Advisory"" , ""Investment"" , ""Custodian"" , ""Planning"" ]",--,null,picklist,FALSE,TRUE
+Type,FinServ__Type__c,TRUE,"[ ""Fees"" , ""Commission"" ]",--,null,picklist,FALSE,TRUE

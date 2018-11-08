@@ -1,0 +1,19 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"FinServ__Revenue__c","Revenue","Id","Record ID","id",18,false,"[]",,false,false,,"[]",false
+"FinServ__Revenue__c","Revenue","OwnerId","Owner ID","reference",18,false,"[""Group"",""User""]","Owner",false,true,,"[]",false
+"FinServ__Revenue__c","Revenue","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"FinServ__Revenue__c","Revenue","Name","Revenue Transaction","string",80,false,"[]",,false,false,,"[]",false
+"FinServ__Revenue__c","Revenue","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__Revenue__c","Revenue","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"FinServ__Revenue__c","Revenue","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__Revenue__c","Revenue","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"FinServ__Revenue__c","Revenue","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__Revenue__c","Revenue","LastViewedDate","Last Viewed Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__Revenue__c","Revenue","LastReferencedDate","Last Referenced Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__Revenue__c","Revenue","FinServ__Account__c","Account","reference",18,true,"[""Account""]","FinServ__Account__r",false,true,,"[]",false
+"FinServ__Revenue__c","Revenue","FinServ__Amount__c","Amount","currency",0,false,"[]",,false,true,,"[]",false
+"FinServ__Revenue__c","Revenue","FinServ__Date__c","Date","date",0,false,"[]",,false,true,,"[]",false
+"FinServ__Revenue__c","Revenue","FinServ__FinancialAccount__c","Financial Account","reference",18,true,"[""FinServ__FinancialAccount__c""]","FinServ__FinancialAccount__r",false,true,,"[]",false
+"FinServ__Revenue__c","Revenue","FinServ__SourceSystemId__c","Source System ID","string",100,true,"[]",,false,true,,"[]",true
+"FinServ__Revenue__c","Revenue","FinServ__SubType__c","Sub-Type","picklist",255,true,"[]",,false,true,,"[""Transaction"",""Advisory"",""Investment"",""Custodian"",""Planning""]",false
+"FinServ__Revenue__c","Revenue","FinServ__Type__c","Type","picklist",255,true,"[]",,false,true,,"[""Fees"",""Commission""]",false

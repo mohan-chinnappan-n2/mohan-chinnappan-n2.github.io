@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"  />
+        <style>
+        table {
+            border-collapse: collapse;
+            border: 1px gray solid;
+            font: 12px sans-serif;
+            margin:10px;
+            height: 400px;
+            overflow: auto;
+        }
+
+        td {
+            border: 1px gray solid ;
+            padding: 5px;
+            opacity: .9;
+        }
+        h4 {
+          text-transform:capitalize;
+        }
+
+        #csvtable tr:nth-child(odd) { background-color:  #eff0f1; }
+        #csvtable tr:nth-child(even) { background-color:  #FFF; }
+        tr:first-child { font-weight: bold; font-size: 15px;}
+        td:nth-child(2) { font-weight: bold }
+
+        </style>
+    </head>
+    <body style="padding:10px;">
+
+    <img id='erd' style='border-radius:20px;' src=''>
+      <script src="https://bl.ocks.org/ndarville/raw/7075823/d3.min.js?v=3.2.8"></script>
+
+        <script type="text/javascript"charset="utf-8">
+
+        var query = location.search.substr(1);
+        var result = {};
+        query.split("&").forEach(function(part) {
+          var item = part.split("=");
+          result[item[0]] = decodeURIComponent(item[1]);
+        });
+        document.getElementById('erd').setAttribute('src','img/' + result.f + '.svg');
+
+        //console.log(result.f);
+            d3.text('img/' + result.f + '.csv', function(data) {
+                var parsedCSV = d3.csv.parseRows(data);
+
+                var container = d3.select("body")
+                    .append("h4").text(result.f)
+                    .append("table").attr('id','csvtable')
+
+                    .selectAll("tr")
+                        .data(parsedCSV).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });
+        </script>
+    </body>
+</html>

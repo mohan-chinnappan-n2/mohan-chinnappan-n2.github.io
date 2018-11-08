@@ -1,0 +1,206 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+Permission Set License ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Developer Name,DeveloperName,FALSE,--,--,null,string,FALSE,FALSE
+Master Language,Language,FALSE,"[ ""en_US"" , ""de"" , ""es"" , ""fr"" , ""it"" , ""ja"" , ""sv"" , ""ko"" , ""zh_TW"" , ""zh_CN"" , ""pt_BR"" , ""nl_NL"" , ""da"" , ""th"" , ""fi"" , ""ru"" , ""es_MX"" , ""no"" ]",--,null,picklist,FALSE,FALSE
+Permission Set License Label,MasterLabel,FALSE,--,--,null,string,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Permission Set License Key,PermissionSetLicenseKey,FALSE,--,--,null,string,TRUE,FALSE
+Total Licenses,TotalLicenses,FALSE,--,--,null,int,FALSE,FALSE
+Status,Status,FALSE,"[ ""Active"" , ""Disabled"" ]",--,null,picklist,FALSE,FALSE
+Expiration Date,ExpirationDate,TRUE,--,--,null,date,FALSE,FALSE
+Send Email,MaximumPermissionsEmailSingle,FALSE,--,--,null,boolean,FALSE,FALSE
+Mass Email,MaximumPermissionsEmailMass,FALSE,--,--,null,boolean,FALSE,FALSE
+Edit Tasks,MaximumPermissionsEditTask,FALSE,--,--,null,boolean,FALSE,FALSE
+Edit Events,MaximumPermissionsEditEvent,FALSE,--,--,null,boolean,FALSE,FALSE
+Export Reports,MaximumPermissionsExportReport,FALSE,--,--,null,boolean,FALSE,FALSE
+Import Personal Contacts,MaximumPermissionsImportPersonal,FALSE,--,--,null,boolean,FALSE,FALSE
+Weekly Data Export,MaximumPermissionsDataExport,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Users,MaximumPermissionsManageUsers,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Public List Views,MaximumPermissionsEditPublicFilters,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Public Classic Email Templates,MaximumPermissionsEditPublicTemplates,FALSE,--,--,null,boolean,FALSE,FALSE
+Modify All Data,MaximumPermissionsModifyAllData,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Cases,MaximumPermissionsManageCases,FALSE,--,--,null,boolean,FALSE,FALSE
+Mass Edits from Lists,MaximumPermissionsMassInlineEdit,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Published Solutions,MaximumPermissionsManageSolutions,FALSE,--,--,null,boolean,FALSE,FALSE
+Customize Application,MaximumPermissionsCustomizeApplication,FALSE,--,--,null,boolean,FALSE,FALSE
+Edit Read Only Fields,MaximumPermissionsEditReadonlyFields,FALSE,--,--,null,boolean,FALSE,FALSE
+Run Reports,MaximumPermissionsRunReports,FALSE,--,--,null,boolean,FALSE,FALSE
+View Setup and Configuration,MaximumPermissionsViewSetup,FALSE,--,--,null,boolean,FALSE,FALSE
+Transfer Record,MaximumPermissionsTransferAnyEntity,FALSE,--,--,null,boolean,FALSE,FALSE
+Report Builder,MaximumPermissionsNewReportBuilder,FALSE,--,--,null,boolean,FALSE,FALSE
+Activate Contracts,MaximumPermissionsActivateContract,FALSE,--,--,null,boolean,FALSE,FALSE
+Activate Orders,MaximumPermissionsActivateOrder,FALSE,--,--,null,boolean,FALSE,FALSE
+Import Leads,MaximumPermissionsImportLeads,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Leads,MaximumPermissionsManageLeads,FALSE,--,--,null,boolean,FALSE,FALSE
+Transfer Leads,MaximumPermissionsTransferAnyLead,FALSE,--,--,null,boolean,FALSE,FALSE
+View All Data,MaximumPermissionsViewAllData,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Public Documents,MaximumPermissionsEditPublicDocuments,FALSE,--,--,null,boolean,FALSE,FALSE
+View Encrypted Data,MaximumPermissionsViewEncryptedData,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Letterheads,MaximumPermissionsEditBrandTemplates,FALSE,--,--,null,boolean,FALSE,FALSE
+Edit HTML Templates,MaximumPermissionsEditHtmlTemplates,FALSE,--,--,null,boolean,FALSE,FALSE
+Chatter Internal User,MaximumPermissionsChatterInternalUser,FALSE,--,--,null,boolean,FALSE,FALSE
+Delete Activated Contracts,MaximumPermissionsDeleteActivatedContract,FALSE,--,--,null,boolean,FALSE,FALSE
+Invite Customers To Chatter,MaximumPermissionsChatterInviteExternalUsers,FALSE,--,--,null,boolean,FALSE,FALSE
+Send Stay-in-Touch Requests,MaximumPermissionsSendSitRequests,FALSE,--,--,null,boolean,FALSE,FALSE
+Override Forecasts,MaximumPermissionsOverrideForecasts,FALSE,--,--,null,boolean,FALSE,FALSE
+View All Forecasts,MaximumPermissionsViewAllForecasts,FALSE,--,--,null,boolean,FALSE,FALSE
+Api Only User,MaximumPermissionsApiUserOnly,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Connected Apps,MaximumPermissionsManageRemoteAccess,FALSE,--,--,null,boolean,FALSE,FALSE
+Drag-and-Drop Dashboard Builder,MaximumPermissionsCanUseNewDashboardBuilder,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Categories,MaximumPermissionsManageCategories,FALSE,--,--,null,boolean,FALSE,FALSE
+Convert Leads,MaximumPermissionsConvertLeads,FALSE,--,--,null,boolean,FALSE,FALSE
+Password Never Expires,MaximumPermissionsPasswordNeverExpires,FALSE,--,--,null,boolean,FALSE,FALSE
+Use Team Reassignment Wizards,MaximumPermissionsUseTeamReassignWizards,FALSE,--,--,null,boolean,FALSE,FALSE
+Edit Activated Orders,MaximumPermissionsEditActivatedOrders,FALSE,--,--,null,boolean,FALSE,FALSE
+Download AppExchange Packages,MaximumPermissionsInstallPackaging,FALSE,--,--,null,boolean,FALSE,FALSE
+Upload AppExchange Packages,MaximumPermissionsPublishPackaging,FALSE,--,--,null,boolean,FALSE,FALSE
+Create and Own New Chatter Groups,MaximumPermissionsChatterOwnGroups,FALSE,--,--,null,boolean,FALSE,FALSE
+Edit Opportunity Product Sales Price,MaximumPermissionsEditOppLineItemUnitPrice,FALSE,--,--,null,boolean,FALSE,FALSE
+Create AppExchange Packages,MaximumPermissionsCreatePackaging,FALSE,--,--,null,boolean,FALSE,FALSE
+Bulk API Hard Delete,MaximumPermissionsBulkApiHardDelete,FALSE,--,--,null,boolean,FALSE,FALSE
+Deploy Change Sets,MaximumPermissionsInboundMigrationToolsUser,FALSE,--,--,null,boolean,FALSE,FALSE
+Import Solutions,MaximumPermissionsSolutionImport,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Call Centers,MaximumPermissionsManageCallCenters,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Synonyms,MaximumPermissionsManageSynonyms,FALSE,--,--,null,boolean,FALSE,FALSE
+Create and Upload Change Sets,MaximumPermissionsOutboundMigrationToolsUser,FALSE,--,--,null,boolean,FALSE,FALSE
+View Content in Portals,MaximumPermissionsViewContent,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Email Client Configurations,MaximumPermissionsManageEmailClientConfig,FALSE,--,--,null,boolean,FALSE,FALSE
+Send Outbound Messages,MaximumPermissionsEnableNotifications,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Data Integrations,MaximumPermissionsManageDataIntegrations,FALSE,--,--,null,boolean,FALSE,FALSE
+Create Content Deliveries,MaximumPermissionsDistributeFromPersWksp,FALSE,--,--,null,boolean,FALSE,FALSE
+View Data Categories,MaximumPermissionsViewDataCategories,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Data Categories,MaximumPermissionsManageDataCategories,FALSE,--,--,null,boolean,FALSE,FALSE
+Author Apex,MaximumPermissionsAuthorApex,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Mobile Configurations,MaximumPermissionsManageMobile,FALSE,--,--,null,boolean,FALSE,FALSE
+API Enabled,MaximumPermissionsApiEnabled,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Custom Report Types,MaximumPermissionsManageCustomReportTypes,FALSE,--,--,null,boolean,FALSE,FALSE
+Edit Case Comments,MaximumPermissionsEditCaseComments,FALSE,--,--,null,boolean,FALSE,FALSE
+Transfer Cases,MaximumPermissionsTransferAnyCase,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Salesforce CRM Content,MaximumPermissionsContentAdministrator,FALSE,--,--,null,boolean,FALSE,FALSE
+Create Libraries,MaximumPermissionsCreateWorkspaces,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Content Permissions,MaximumPermissionsManageContentPermissions,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Content Properties,MaximumPermissionsManageContentProperties,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage record types and layouts for Files,MaximumPermissionsManageContentTypes,FALSE,--,--,null,boolean,FALSE,FALSE
+Schedule Dashboards,MaximumPermissionsScheduleJob,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Lightning Sync,MaximumPermissionsManageExchangeConfig,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Reporting Snapshots,MaximumPermissionsManageAnalyticSnapshots,FALSE,--,--,null,boolean,FALSE,FALSE
+Schedule Reports,MaximumPermissionsScheduleReports,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Business Hours Holidays,MaximumPermissionsManageBusinessHourHolidays,FALSE,--,--,null,boolean,FALSE,FALSE
+Show Custom Sidebar On All Pages,MaximumPermissionsCustomSidebarOnAllPages,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Flow,MaximumPermissionsManageInteraction,FALSE,--,--,null,boolean,FALSE,FALSE
+View My Team's Dashboards,MaximumPermissionsViewMyTeamsDashboards,FALSE,--,--,null,boolean,FALSE,FALSE
+Moderate Chatter,MaximumPermissionsModerateChatter,FALSE,--,--,null,boolean,FALSE,FALSE
+Reset User Passwords and Unlock Users,MaximumPermissionsResetPasswords,FALSE,--,--,null,boolean,FALSE,FALSE
+Require Flow User Feature License,MaximumPermissionsFlowUFLRequired,FALSE,--,--,null,boolean,FALSE,FALSE
+Insert System Field Values for Chatter Feeds,MaximumPermissionsCanInsertFeedSystemFields,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Email Templates,MaximumPermissionsEmailTemplateManagement,FALSE,--,--,null,boolean,FALSE,FALSE
+Email Administration,MaximumPermissionsEmailAdministration,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Chatter Messages and Direct Messages,MaximumPermissionsManageChatterMessages,FALSE,--,--,null,boolean,FALSE,FALSE
+Email-Based Identity Verification Option,MaximumPermissionsAllowEmailIC,FALSE,--,--,null,boolean,FALSE,FALSE
+Create Public Links,MaximumPermissionsChatterFileLink,FALSE,--,--,null,boolean,FALSE,FALSE
+Two-Factor Authentication for User Interface Logins,MaximumPermissionsForceTwoFactor,FALSE,--,--,null,boolean,FALSE,FALSE
+View Event Log Files,MaximumPermissionsViewEventLogFiles,FALSE,--,--,null,boolean,FALSE,FALSE
+Create and Set Up Communities,MaximumPermissionsManageNetworks,FALSE,--,--,null,boolean,FALSE,FALSE
+Use Case Feed,MaximumPermissionsViewCaseInteraction,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Auth. Providers,MaximumPermissionsManageAuthProviders,FALSE,--,--,null,boolean,FALSE,FALSE
+Run Flows,MaximumPermissionsRunFlow,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Quotas,MaximumPermissionsManageQuotas,FALSE,--,--,null,boolean,FALSE,FALSE
+Create and Customize Dashboards,MaximumPermissionsCreateCustomizeDashboards,FALSE,--,--,null,boolean,FALSE,FALSE
+Create Dashboard Folders,MaximumPermissionsCreateDashboardFolders,FALSE,--,--,null,boolean,FALSE,FALSE
+View Dashboards in Public Folders,MaximumPermissionsViewPublicDashboards,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Dashboards in Public Folders,MaximumPermissionsManageDashbdsInPubFolders,FALSE,--,--,null,boolean,FALSE,FALSE
+Create and Customize Reports,MaximumPermissionsCreateCustomizeReports,FALSE,--,--,null,boolean,FALSE,FALSE
+Create Report Folders,MaximumPermissionsCreateReportFolders,FALSE,--,--,null,boolean,FALSE,FALSE
+View Reports in Public Folders,MaximumPermissionsViewPublicReports,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Reports in Public Folders,MaximumPermissionsManageReportsInPubFolders,FALSE,--,--,null,boolean,FALSE,FALSE
+Edit My Dashboards,MaximumPermissionsEditMyDashboards,FALSE,--,--,null,boolean,FALSE,FALSE
+Edit My Reports,MaximumPermissionsEditMyReports,FALSE,--,--,null,boolean,FALSE,FALSE
+View All Users,MaximumPermissionsViewAllUsers,FALSE,--,--,null,boolean,FALSE,FALSE
+Connect Organization to Environment Hub,MaximumPermissionsConnectOrgToEnvironmentHub,FALSE,--,--,null,boolean,FALSE,FALSE
+Create and Customize List Views,MaximumPermissionsCreateCustomizeFilters,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Communities,MaximumPermissionsGovernNetworks,FALSE,--,--,null,boolean,FALSE,FALSE
+Sales Console,MaximumPermissionsSalesConsole,FALSE,--,--,null,boolean,FALSE,FALSE
+Two-Factor Authentication for API Logins,MaximumPermissionsTwoFactorApi,FALSE,--,--,null,boolean,FALSE,FALSE
+Delete Topics,MaximumPermissionsDeleteTopics,FALSE,--,--,null,boolean,FALSE,FALSE
+Edit Topics,MaximumPermissionsEditTopics,FALSE,--,--,null,boolean,FALSE,FALSE
+Create Topics,MaximumPermissionsCreateTopics,FALSE,--,--,null,boolean,FALSE,FALSE
+Assign Topics,MaximumPermissionsAssignTopics,FALSE,--,--,null,boolean,FALSE,FALSE
+Use Identity Features,MaximumPermissionsIdentityEnabled,FALSE,--,--,null,boolean,FALSE,FALSE
+Use Identity Connect,MaximumPermissionsIdentityConnect,FALSE,--,--,null,boolean,FALSE,FALSE
+Access Libraries,MaximumPermissionsContentWorkspaces,FALSE,--,--,null,boolean,FALSE,FALSE
+Create custom Badge Definitions,MaximumPermissionsCreateWorkBadgeDefinition,FALSE,--,--,null,boolean,FALSE,FALSE
+Access Custom Mobile Apps,MaximumPermissionsCustomMobileAppsAccess,FALSE,--,--,null,boolean,FALSE,FALSE
+View Help Link,MaximumPermissionsViewHelpLink,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Profiles and Permission Sets,MaximumPermissionsManageProfilesPermissionsets,FALSE,--,--,null,boolean,FALSE,FALSE
+Assign Permission Sets,MaximumPermissionsAssignPermissionSets,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Roles,MaximumPermissionsManageRoles,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage IP Addresses,MaximumPermissionsManageIpAddresses,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Sharing,MaximumPermissionsManageSharing,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Internal Users,MaximumPermissionsManageInternalUsers,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Password Policies,MaximumPermissionsManagePasswordPolicies,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Login Access Policies,MaximumPermissionsManageLoginAccessPolicies,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Custom Permissions,MaximumPermissionsManageCustomPermissions,FALSE,--,--,null,boolean,FALSE,FALSE
+Verify Answers to Chatter Questions,MaximumPermissionsCanVerifyComment,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Unlisted Groups,MaximumPermissionsManageUnlistedGroups,FALSE,--,--,null,boolean,FALSE,FALSE
+Create and Edit Analytics Dashboards,MaximumPermissionsInsightsAppDashboardEditor,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Two-Factor Authentication in API,MaximumPermissionsManageTwoFactor,FALSE,--,--,null,boolean,FALSE,FALSE
+Use Analytics,MaximumPermissionsInsightsAppUser,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Analytics,MaximumPermissionsInsightsAppAdmin,FALSE,--,--,null,boolean,FALSE,FALSE
+Edit Analytics Dataflows,MaximumPermissionsInsightsAppEltEditor,FALSE,--,--,null,boolean,FALSE,FALSE
+Upload External Data to Analytics,MaximumPermissionsInsightsAppUploadUser,FALSE,--,--,null,boolean,FALSE,FALSE
+Create Analytics Apps,MaximumPermissionsInsightsCreateApplication,FALSE,--,--,null,boolean,FALSE,FALSE
+Lightning Experience User,MaximumPermissionsLightningExperienceUser,FALSE,--,--,null,boolean,FALSE,FALSE
+Configure Custom Recommendations,MaximumPermissionsConfigCustomRecs,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Macros Users Can't Undo,MaximumPermissionsSubmitMacrosAllowed,FALSE,--,--,null,boolean,FALSE,FALSE
+Run Macros on Multiple Records,MaximumPermissionsBulkMacrosAllowed,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Session Permission Set Activations,MaximumPermissionsManageSessionPermissionSets,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Analytics Templated Apps,MaximumPermissionsManageTemplatedApp,FALSE,--,--,null,boolean,FALSE,FALSE
+Use Analytics Templated Apps,MaximumPermissionsUseTemplatedApp,FALSE,--,--,null,boolean,FALSE,FALSE
+Send announcement emails,MaximumPermissionsSendAnnouncementEmails,FALSE,--,--,null,boolean,FALSE,FALSE
+Edit My Own Posts,MaximumPermissionsChatterEditOwnPost,FALSE,--,--,null,boolean,FALSE,FALSE
+Edit Posts on Records I Own,MaximumPermissionsChatterEditOwnRecordPost,FALSE,--,--,null,boolean,FALSE,FALSE
+Download Analytics Data,MaximumPermissionsWaveTabularDownload,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Sandboxes,MaximumPermissionsManageSandboxes,FALSE,--,--,null,boolean,FALSE,FALSE
+Use Einstein Activity Capture,MaximumPermissionsAutomaticActivityCapture,FALSE,--,--,null,boolean,FALSE,FALSE
+Import Custom Objects,MaximumPermissionsImportCustomObjects,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Two-Factor Authentication in User Interface,MaximumPermissionsDelegatedTwoFactor,FALSE,--,--,null,boolean,FALSE,FALSE
+Allow Inclusion of Code Snippets from UI,MaximumPermissionsChatterComposeUiCodesnippet,FALSE,--,--,null,boolean,FALSE,FALSE
+Select Files from Salesforce,MaximumPermissionsSelectFilesFromSalesforce,FALSE,--,--,null,boolean,FALSE,FALSE
+Moderate Community Users,MaximumPermissionsModerateNetworkUsers,FALSE,--,--,null,boolean,FALSE,FALSE
+Merge Topics,MaximumPermissionsMergeTopics,FALSE,--,--,null,boolean,FALSE,FALSE
+Subscribe to Reports,MaximumPermissionsSubscribeToLightningReports,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage All Private Reports and Dashboards,MaximumPermissionsManagePvtRptsAndDashbds,FALSE,--,--,null,boolean,FALSE,FALSE
+Lightning Login User,MaximumPermissionsAllowLightningLogin,FALSE,--,--,null,boolean,FALSE,FALSE
+Campaign Influence,MaximumPermissionsCampaignInfluence2,FALSE,--,--,null,boolean,FALSE,FALSE
+Access to view Data Assessment,MaximumPermissionsViewDataAssessment,FALSE,--,--,null,boolean,FALSE,FALSE
+Remove People from Direct Messages,MaximumPermissionsRemoveDirectMessageMembers,FALSE,--,--,null,boolean,FALSE,FALSE
+Can Approve Feed Post and Comment,MaximumPermissionsCanApproveFeedPost,FALSE,--,--,null,boolean,FALSE,FALSE
+Add People to Direct Messages,MaximumPermissionsAddDirectMessageMembers,FALSE,--,--,null,boolean,FALSE,FALSE
+View and Edit Converted Leads,MaximumPermissionsAllowViewEditConvertedLeads,FALSE,--,--,null,boolean,FALSE,FALSE
+Remove Logos from Accounts,MaximumPermissionsSocialInsightsLogoAdmin,FALSE,--,--,null,boolean,FALSE,FALSE
+Show Company Name as Community Role,MaximumPermissionsShowCompanyNameAsUserBadge,FALSE,--,--,null,boolean,FALSE,FALSE
+Access Community Management,MaximumPermissionsAccessCMC,FALSE,--,--,null,boolean,FALSE,FALSE
+View Health Check,MaximumPermissionsViewHealthCheck,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Health Check,MaximumPermissionsManageHealthCheck,FALSE,--,--,null,boolean,FALSE,FALSE
+Create and Update Second-Generation Packages,MaximumPermissionsPackaging2,FALSE,--,--,null,boolean,FALSE,FALSE
+Manage Certificates,MaximumPermissionsManageCertificates,FALSE,--,--,null,boolean,FALSE,FALSE
+Report Builder (Lightning Experience),MaximumPermissionsCreateReportInLightning,FALSE,--,--,null,boolean,FALSE,FALSE
+Hide Option to Switch to Salesforce Classic,MaximumPermissionsPreventClassicExperience,FALSE,--,--,null,boolean,FALSE,FALSE
+Hide the Seen By List,MaximumPermissionsHideReadByList,FALSE,--,--,null,boolean,FALSE,FALSE
+Allow sending of List Emails,MaximumPermissionsListEmailSend,FALSE,--,--,null,boolean,FALSE,FALSE
+Pin Posts in Feeds,MaximumPermissionsFeedPinning,FALSE,--,--,null,boolean,FALSE,FALSE
+Allow Access to Customized Actions,MaximumPermissionsUseWebLink,FALSE,--,--,null,boolean,FALSE,FALSE
+View All Activities,MaximumPermissionsViewAllActivities,FALSE,--,--,null,boolean,FALSE,FALSE
+Subscribe to Reports: Add Recipients,MaximumPermissionsSubscribeReportToOtherUsers,FALSE,--,--,null,boolean,FALSE,FALSE
+Lightning Console User,MaximumPermissionsLightningConsoleAllowedForUser,FALSE,--,--,null,boolean,FALSE,FALSE
+Subscribe to Reports: Set Running User,MaximumPermissionsSubscribeReportsRunAsUser,FALSE,--,--,null,boolean,FALSE,FALSE
+Subscribe to Dashboards,MaximumPermissionsSubscribeToLightningDashboards,FALSE,--,--,null,boolean,FALSE,FALSE
+Apex REST Services,MaximumPermissionsApexRestServices,FALSE,--,--,null,boolean,FALSE,FALSE
+Show App Launcher in Communities,MaximumPermissionsEnableCommunityAppLauncher,FALSE,--,--,null,boolean,FALSE,FALSE
+Used Licenses,UsedLicenses,FALSE,--,--,null,int,FALSE,FALSE
+ ToolSet v0.7.0,,,,,,,,

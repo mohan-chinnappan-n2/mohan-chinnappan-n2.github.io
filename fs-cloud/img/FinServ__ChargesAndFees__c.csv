@@ -1,0 +1,34 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"FinServ__ChargesAndFees__c","Charges And Fees","Id","Record ID","id",18,false,"[]",,false,false,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","OwnerId","Owner ID","reference",18,false,"[""Group"",""User""]","Owner",false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","Name","Charges And Fees Name","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","RecordTypeId","Record Type ID","reference",18,true,"[""RecordType""]","RecordType",false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","LastViewedDate","Last Viewed Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","LastReferencedDate","Last Referenced Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__APRType__c","APR Type","picklist",255,true,"[]",,false,true,,"[""Fixed"",""Other"",""Variable""]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__APR__c","APR","percent",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__ATMFee__c","ATM Fee","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__AnnualAccountCharge__c","Annual Account Charge","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__AnnualMembershipFee__c","Annual Membership Fee","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__BalanceTransferAPR__c","Balance Transfer APR","percent",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__CashAPRType__c","Cash APR Type","picklist",255,true,"[]",,false,true,,"[""Fixed"",""Variable"",""Other""]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__CashAPR__c","Cash APR","percent",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__CashAdvanceFee__c","Cash Advance Fee","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__ForeignTransactionFee__c","Foreign Transaction Fee","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__InsufficientFundsFee__c","Insufficient Funds Fee","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__InterestRate__c","Interest Rate","percent",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__LatePaymentFee__c","Late Payment Fee","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__MaximumTransactionFee__c","Maximum Transaction Fee","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__MonthlyServiceFee__c","Monthly Service Fee","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__OverdraftFees__c","Overdraft Fees","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__ReplacementCardFee__c","Replacement Card Fee","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__ReturnedCheckFee__c","Returned Check Fee","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__SourceSystemId__c","Source System ID","string",100,true,"[]",,false,true,,"[]",true
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__StatementFee__c","Statement Fee","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__ChargesAndFees__c","Charges And Fees","FinServ__StopPaymentFee__c","Stop Payment Fee","currency",0,true,"[]",,false,true,,"[]",false

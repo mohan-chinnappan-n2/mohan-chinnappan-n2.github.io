@@ -1,0 +1,12 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+SessionPermSetActivation ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Deleted,IsDeleted,FALSE,--,--,null,boolean,FALSE,FALSE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Auth Session ID,AuthSessionId,FALSE,--,"[ ""AuthSession"" ]",AuthSession,reference,FALSE,FALSE
+PermissionSet ID,PermissionSetId,FALSE,--,"[ ""PermissionSet"" ]",PermissionSet,reference,FALSE,FALSE
+User ID,UserId,FALSE,--,"[ ""User"" ]",User,reference,FALSE,FALSE
+Description,Description,TRUE,--,--,null,textarea,FALSE,FALSE

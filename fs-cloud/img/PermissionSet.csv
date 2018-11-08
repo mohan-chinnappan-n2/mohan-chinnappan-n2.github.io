@@ -1,0 +1,206 @@
+Label,Name,Nillable,Picklistvalues,Referenceto,Relationshipname,Type,Unique,Updateable
+PermissionSet ID,Id,FALSE,--,--,null,id,FALSE,FALSE
+Permission Set Name,Name,FALSE,--,--,null,string,FALSE,TRUE
+Permission Set Label,Label,FALSE,--,--,null,string,FALSE,TRUE
+License ID,LicenseId,TRUE,--,"[ ""PermissionSetLicense"", ""UserLicense"" ]",License,reference,FALSE,FALSE
+Profile ID,ProfileId,TRUE,--,"[ ""Profile"" ]",Profile,reference,FALSE,FALSE
+Is Owned By Profile,IsOwnedByProfile,FALSE,--,--,null,boolean,FALSE,FALSE
+Is Custom,IsCustom,FALSE,--,--,null,boolean,FALSE,FALSE
+Send Email,PermissionsEmailSingle,FALSE,--,--,null,boolean,FALSE,TRUE
+Mass Email,PermissionsEmailMass,FALSE,--,--,null,boolean,FALSE,TRUE
+Edit Tasks,PermissionsEditTask,FALSE,--,--,null,boolean,FALSE,TRUE
+Edit Events,PermissionsEditEvent,FALSE,--,--,null,boolean,FALSE,TRUE
+Export Reports,PermissionsExportReport,FALSE,--,--,null,boolean,FALSE,TRUE
+Import Personal Contacts,PermissionsImportPersonal,FALSE,--,--,null,boolean,FALSE,TRUE
+Weekly Data Export,PermissionsDataExport,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Users,PermissionsManageUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Public List Views,PermissionsEditPublicFilters,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Public Classic Email Templates,PermissionsEditPublicTemplates,FALSE,--,--,null,boolean,FALSE,TRUE
+Modify All Data,PermissionsModifyAllData,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Cases,PermissionsManageCases,FALSE,--,--,null,boolean,FALSE,TRUE
+Mass Edits from Lists,PermissionsMassInlineEdit,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Published Solutions,PermissionsManageSolutions,FALSE,--,--,null,boolean,FALSE,TRUE
+Customize Application,PermissionsCustomizeApplication,FALSE,--,--,null,boolean,FALSE,TRUE
+Edit Read Only Fields,PermissionsEditReadonlyFields,FALSE,--,--,null,boolean,FALSE,TRUE
+Run Reports,PermissionsRunReports,FALSE,--,--,null,boolean,FALSE,TRUE
+View Setup and Configuration,PermissionsViewSetup,FALSE,--,--,null,boolean,FALSE,TRUE
+Transfer Record,PermissionsTransferAnyEntity,FALSE,--,--,null,boolean,FALSE,TRUE
+Report Builder,PermissionsNewReportBuilder,FALSE,--,--,null,boolean,FALSE,TRUE
+Activate Contracts,PermissionsActivateContract,FALSE,--,--,null,boolean,FALSE,TRUE
+Activate Orders,PermissionsActivateOrder,FALSE,--,--,null,boolean,FALSE,TRUE
+Import Leads,PermissionsImportLeads,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Leads,PermissionsManageLeads,FALSE,--,--,null,boolean,FALSE,TRUE
+Transfer Leads,PermissionsTransferAnyLead,FALSE,--,--,null,boolean,FALSE,TRUE
+View All Data,PermissionsViewAllData,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Public Documents,PermissionsEditPublicDocuments,FALSE,--,--,null,boolean,FALSE,TRUE
+View Encrypted Data,PermissionsViewEncryptedData,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Letterheads,PermissionsEditBrandTemplates,FALSE,--,--,null,boolean,FALSE,TRUE
+Edit HTML Templates,PermissionsEditHtmlTemplates,FALSE,--,--,null,boolean,FALSE,TRUE
+Chatter Internal User,PermissionsChatterInternalUser,FALSE,--,--,null,boolean,FALSE,TRUE
+Delete Activated Contracts,PermissionsDeleteActivatedContract,FALSE,--,--,null,boolean,FALSE,TRUE
+Invite Customers To Chatter,PermissionsChatterInviteExternalUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+Send Stay-in-Touch Requests,PermissionsSendSitRequests,FALSE,--,--,null,boolean,FALSE,TRUE
+Override Forecasts,PermissionsOverrideForecasts,FALSE,--,--,null,boolean,FALSE,TRUE
+View All Forecasts,PermissionsViewAllForecasts,FALSE,--,--,null,boolean,FALSE,TRUE
+Api Only User,PermissionsApiUserOnly,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Connected Apps,PermissionsManageRemoteAccess,FALSE,--,--,null,boolean,FALSE,TRUE
+Drag-and-Drop Dashboard Builder,PermissionsCanUseNewDashboardBuilder,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Categories,PermissionsManageCategories,FALSE,--,--,null,boolean,FALSE,TRUE
+Convert Leads,PermissionsConvertLeads,FALSE,--,--,null,boolean,FALSE,TRUE
+Password Never Expires,PermissionsPasswordNeverExpires,FALSE,--,--,null,boolean,FALSE,TRUE
+Use Team Reassignment Wizards,PermissionsUseTeamReassignWizards,FALSE,--,--,null,boolean,FALSE,TRUE
+Edit Activated Orders,PermissionsEditActivatedOrders,FALSE,--,--,null,boolean,FALSE,TRUE
+Download AppExchange Packages,PermissionsInstallPackaging,FALSE,--,--,null,boolean,FALSE,TRUE
+Upload AppExchange Packages,PermissionsPublishPackaging,FALSE,--,--,null,boolean,FALSE,TRUE
+Create and Own New Chatter Groups,PermissionsChatterOwnGroups,FALSE,--,--,null,boolean,FALSE,TRUE
+Edit Opportunity Product Sales Price,PermissionsEditOppLineItemUnitPrice,FALSE,--,--,null,boolean,FALSE,TRUE
+Create AppExchange Packages,PermissionsCreatePackaging,FALSE,--,--,null,boolean,FALSE,TRUE
+Bulk API Hard Delete,PermissionsBulkApiHardDelete,FALSE,--,--,null,boolean,FALSE,TRUE
+Deploy Change Sets,PermissionsInboundMigrationToolsUser,FALSE,--,--,null,boolean,FALSE,TRUE
+Import Solutions,PermissionsSolutionImport,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Call Centers,PermissionsManageCallCenters,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Synonyms,PermissionsManageSynonyms,FALSE,--,--,null,boolean,FALSE,TRUE
+Create and Upload Change Sets,PermissionsOutboundMigrationToolsUser,FALSE,--,--,null,boolean,FALSE,TRUE
+View Content in Portals,PermissionsViewContent,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Email Client Configurations,PermissionsManageEmailClientConfig,FALSE,--,--,null,boolean,FALSE,TRUE
+Send Outbound Messages,PermissionsEnableNotifications,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Data Integrations,PermissionsManageDataIntegrations,FALSE,--,--,null,boolean,FALSE,TRUE
+Create Content Deliveries,PermissionsDistributeFromPersWksp,FALSE,--,--,null,boolean,FALSE,TRUE
+View Data Categories,PermissionsViewDataCategories,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Data Categories,PermissionsManageDataCategories,FALSE,--,--,null,boolean,FALSE,TRUE
+Author Apex,PermissionsAuthorApex,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Mobile Configurations,PermissionsManageMobile,FALSE,--,--,null,boolean,FALSE,TRUE
+API Enabled,PermissionsApiEnabled,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Custom Report Types,PermissionsManageCustomReportTypes,FALSE,--,--,null,boolean,FALSE,TRUE
+Edit Case Comments,PermissionsEditCaseComments,FALSE,--,--,null,boolean,FALSE,TRUE
+Transfer Cases,PermissionsTransferAnyCase,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Salesforce CRM Content,PermissionsContentAdministrator,FALSE,--,--,null,boolean,FALSE,TRUE
+Create Libraries,PermissionsCreateWorkspaces,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Content Permissions,PermissionsManageContentPermissions,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Content Properties,PermissionsManageContentProperties,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage record types and layouts for Files,PermissionsManageContentTypes,FALSE,--,--,null,boolean,FALSE,TRUE
+Schedule Dashboards,PermissionsScheduleJob,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Lightning Sync,PermissionsManageExchangeConfig,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Reporting Snapshots,PermissionsManageAnalyticSnapshots,FALSE,--,--,null,boolean,FALSE,TRUE
+Schedule Reports,PermissionsScheduleReports,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Business Hours Holidays,PermissionsManageBusinessHourHolidays,FALSE,--,--,null,boolean,FALSE,TRUE
+Show Custom Sidebar On All Pages,PermissionsCustomSidebarOnAllPages,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Flow,PermissionsManageInteraction,FALSE,--,--,null,boolean,FALSE,TRUE
+View My Team's Dashboards,PermissionsViewMyTeamsDashboards,FALSE,--,--,null,boolean,FALSE,TRUE
+Moderate Chatter,PermissionsModerateChatter,FALSE,--,--,null,boolean,FALSE,TRUE
+Reset User Passwords and Unlock Users,PermissionsResetPasswords,FALSE,--,--,null,boolean,FALSE,TRUE
+Require Flow User Feature License,PermissionsFlowUFLRequired,FALSE,--,--,null,boolean,FALSE,TRUE
+Insert System Field Values for Chatter Feeds,PermissionsCanInsertFeedSystemFields,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Email Templates,PermissionsEmailTemplateManagement,FALSE,--,--,null,boolean,FALSE,TRUE
+Email Administration,PermissionsEmailAdministration,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Chatter Messages and Direct Messages,PermissionsManageChatterMessages,FALSE,--,--,null,boolean,FALSE,TRUE
+Email-Based Identity Verification Option,PermissionsAllowEmailIC,FALSE,--,--,null,boolean,FALSE,TRUE
+Create Public Links,PermissionsChatterFileLink,FALSE,--,--,null,boolean,FALSE,TRUE
+Two-Factor Authentication for User Interface Logins,PermissionsForceTwoFactor,FALSE,--,--,null,boolean,FALSE,TRUE
+View Event Log Files,PermissionsViewEventLogFiles,FALSE,--,--,null,boolean,FALSE,TRUE
+Create and Set Up Communities,PermissionsManageNetworks,FALSE,--,--,null,boolean,FALSE,TRUE
+Use Case Feed,PermissionsViewCaseInteraction,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Auth. Providers,PermissionsManageAuthProviders,FALSE,--,--,null,boolean,FALSE,TRUE
+Run Flows,PermissionsRunFlow,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Quotas,PermissionsManageQuotas,FALSE,--,--,null,boolean,FALSE,TRUE
+Create and Customize Dashboards,PermissionsCreateCustomizeDashboards,FALSE,--,--,null,boolean,FALSE,TRUE
+Create Dashboard Folders,PermissionsCreateDashboardFolders,FALSE,--,--,null,boolean,FALSE,TRUE
+View Dashboards in Public Folders,PermissionsViewPublicDashboards,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Dashboards in Public Folders,PermissionsManageDashbdsInPubFolders,FALSE,--,--,null,boolean,FALSE,TRUE
+Create and Customize Reports,PermissionsCreateCustomizeReports,FALSE,--,--,null,boolean,FALSE,TRUE
+Create Report Folders,PermissionsCreateReportFolders,FALSE,--,--,null,boolean,FALSE,TRUE
+View Reports in Public Folders,PermissionsViewPublicReports,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Reports in Public Folders,PermissionsManageReportsInPubFolders,FALSE,--,--,null,boolean,FALSE,TRUE
+Edit My Dashboards,PermissionsEditMyDashboards,FALSE,--,--,null,boolean,FALSE,TRUE
+Edit My Reports,PermissionsEditMyReports,FALSE,--,--,null,boolean,FALSE,TRUE
+View All Users,PermissionsViewAllUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+Connect Organization to Environment Hub,PermissionsConnectOrgToEnvironmentHub,FALSE,--,--,null,boolean,FALSE,TRUE
+Create and Customize List Views,PermissionsCreateCustomizeFilters,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Communities,PermissionsGovernNetworks,FALSE,--,--,null,boolean,FALSE,TRUE
+Sales Console,PermissionsSalesConsole,FALSE,--,--,null,boolean,FALSE,TRUE
+Two-Factor Authentication for API Logins,PermissionsTwoFactorApi,FALSE,--,--,null,boolean,FALSE,TRUE
+Delete Topics,PermissionsDeleteTopics,FALSE,--,--,null,boolean,FALSE,TRUE
+Edit Topics,PermissionsEditTopics,FALSE,--,--,null,boolean,FALSE,TRUE
+Create Topics,PermissionsCreateTopics,FALSE,--,--,null,boolean,FALSE,TRUE
+Assign Topics,PermissionsAssignTopics,FALSE,--,--,null,boolean,FALSE,TRUE
+Use Identity Features,PermissionsIdentityEnabled,FALSE,--,--,null,boolean,FALSE,TRUE
+Use Identity Connect,PermissionsIdentityConnect,FALSE,--,--,null,boolean,FALSE,TRUE
+Access Libraries,PermissionsContentWorkspaces,FALSE,--,--,null,boolean,FALSE,TRUE
+Create custom Badge Definitions,PermissionsCreateWorkBadgeDefinition,FALSE,--,--,null,boolean,FALSE,TRUE
+Access Custom Mobile Apps,PermissionsCustomMobileAppsAccess,FALSE,--,--,null,boolean,FALSE,TRUE
+View Help Link,PermissionsViewHelpLink,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Profiles and Permission Sets,PermissionsManageProfilesPermissionsets,FALSE,--,--,null,boolean,FALSE,TRUE
+Assign Permission Sets,PermissionsAssignPermissionSets,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Roles,PermissionsManageRoles,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage IP Addresses,PermissionsManageIpAddresses,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Sharing,PermissionsManageSharing,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Internal Users,PermissionsManageInternalUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Password Policies,PermissionsManagePasswordPolicies,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Login Access Policies,PermissionsManageLoginAccessPolicies,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Custom Permissions,PermissionsManageCustomPermissions,FALSE,--,--,null,boolean,FALSE,TRUE
+Verify Answers to Chatter Questions,PermissionsCanVerifyComment,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Unlisted Groups,PermissionsManageUnlistedGroups,FALSE,--,--,null,boolean,FALSE,TRUE
+Create and Edit Analytics Dashboards,PermissionsInsightsAppDashboardEditor,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Two-Factor Authentication in API,PermissionsManageTwoFactor,FALSE,--,--,null,boolean,FALSE,TRUE
+Use Analytics,PermissionsInsightsAppUser,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Analytics,PermissionsInsightsAppAdmin,FALSE,--,--,null,boolean,FALSE,TRUE
+Edit Analytics Dataflows,PermissionsInsightsAppEltEditor,FALSE,--,--,null,boolean,FALSE,TRUE
+Upload External Data to Analytics,PermissionsInsightsAppUploadUser,FALSE,--,--,null,boolean,FALSE,TRUE
+Create Analytics Apps,PermissionsInsightsCreateApplication,FALSE,--,--,null,boolean,FALSE,TRUE
+Lightning Experience User,PermissionsLightningExperienceUser,FALSE,--,--,null,boolean,FALSE,TRUE
+Configure Custom Recommendations,PermissionsConfigCustomRecs,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Macros Users Can't Undo,PermissionsSubmitMacrosAllowed,FALSE,--,--,null,boolean,FALSE,TRUE
+Run Macros on Multiple Records,PermissionsBulkMacrosAllowed,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Session Permission Set Activations,PermissionsManageSessionPermissionSets,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Analytics Templated Apps,PermissionsManageTemplatedApp,FALSE,--,--,null,boolean,FALSE,TRUE
+Use Analytics Templated Apps,PermissionsUseTemplatedApp,FALSE,--,--,null,boolean,FALSE,TRUE
+Send announcement emails,PermissionsSendAnnouncementEmails,FALSE,--,--,null,boolean,FALSE,TRUE
+Edit My Own Posts,PermissionsChatterEditOwnPost,FALSE,--,--,null,boolean,FALSE,TRUE
+Edit Posts on Records I Own,PermissionsChatterEditOwnRecordPost,FALSE,--,--,null,boolean,FALSE,TRUE
+Download Analytics Data,PermissionsWaveTabularDownload,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Sandboxes,PermissionsManageSandboxes,FALSE,--,--,null,boolean,FALSE,TRUE
+Use Einstein Activity Capture,PermissionsAutomaticActivityCapture,FALSE,--,--,null,boolean,FALSE,TRUE
+Import Custom Objects,PermissionsImportCustomObjects,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Two-Factor Authentication in User Interface,PermissionsDelegatedTwoFactor,FALSE,--,--,null,boolean,FALSE,TRUE
+Allow Inclusion of Code Snippets from UI,PermissionsChatterComposeUiCodesnippet,FALSE,--,--,null,boolean,FALSE,TRUE
+Select Files from Salesforce,PermissionsSelectFilesFromSalesforce,FALSE,--,--,null,boolean,FALSE,TRUE
+Moderate Community Users,PermissionsModerateNetworkUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+Merge Topics,PermissionsMergeTopics,FALSE,--,--,null,boolean,FALSE,TRUE
+Subscribe to Reports,PermissionsSubscribeToLightningReports,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage All Private Reports and Dashboards,PermissionsManagePvtRptsAndDashbds,FALSE,--,--,null,boolean,FALSE,TRUE
+Lightning Login User,PermissionsAllowLightningLogin,FALSE,--,--,null,boolean,FALSE,TRUE
+Campaign Influence,PermissionsCampaignInfluence2,FALSE,--,--,null,boolean,FALSE,TRUE
+Access to view Data Assessment,PermissionsViewDataAssessment,FALSE,--,--,null,boolean,FALSE,TRUE
+Remove People from Direct Messages,PermissionsRemoveDirectMessageMembers,FALSE,--,--,null,boolean,FALSE,TRUE
+Can Approve Feed Post and Comment,PermissionsCanApproveFeedPost,FALSE,--,--,null,boolean,FALSE,TRUE
+Add People to Direct Messages,PermissionsAddDirectMessageMembers,FALSE,--,--,null,boolean,FALSE,TRUE
+View and Edit Converted Leads,PermissionsAllowViewEditConvertedLeads,FALSE,--,--,null,boolean,FALSE,TRUE
+Remove Logos from Accounts,PermissionsSocialInsightsLogoAdmin,FALSE,--,--,null,boolean,FALSE,TRUE
+Show Company Name as Community Role,PermissionsShowCompanyNameAsUserBadge,FALSE,--,--,null,boolean,FALSE,TRUE
+Access Community Management,PermissionsAccessCMC,FALSE,--,--,null,boolean,FALSE,TRUE
+View Health Check,PermissionsViewHealthCheck,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Health Check,PermissionsManageHealthCheck,FALSE,--,--,null,boolean,FALSE,TRUE
+Create and Update Second-Generation Packages,PermissionsPackaging2,FALSE,--,--,null,boolean,FALSE,TRUE
+Manage Certificates,PermissionsManageCertificates,FALSE,--,--,null,boolean,FALSE,TRUE
+Report Builder (Lightning Experience),PermissionsCreateReportInLightning,FALSE,--,--,null,boolean,FALSE,TRUE
+Hide Option to Switch to Salesforce Classic,PermissionsPreventClassicExperience,FALSE,--,--,null,boolean,FALSE,TRUE
+Hide the Seen By List,PermissionsHideReadByList,FALSE,--,--,null,boolean,FALSE,TRUE
+Allow sending of List Emails,PermissionsListEmailSend,FALSE,--,--,null,boolean,FALSE,TRUE
+Pin Posts in Feeds,PermissionsFeedPinning,FALSE,--,--,null,boolean,FALSE,TRUE
+Allow Access to Customized Actions,PermissionsUseWebLink,FALSE,--,--,null,boolean,FALSE,TRUE
+View All Activities,PermissionsViewAllActivities,FALSE,--,--,null,boolean,FALSE,TRUE
+Subscribe to Reports: Add Recipients,PermissionsSubscribeReportToOtherUsers,FALSE,--,--,null,boolean,FALSE,TRUE
+Lightning Console User,PermissionsLightningConsoleAllowedForUser,FALSE,--,--,null,boolean,FALSE,TRUE
+Subscribe to Reports: Set Running User,PermissionsSubscribeReportsRunAsUser,FALSE,--,--,null,boolean,FALSE,TRUE
+Subscribe to Dashboards,PermissionsSubscribeToLightningDashboards,FALSE,--,--,null,boolean,FALSE,TRUE
+Apex REST Services,PermissionsApexRestServices,FALSE,--,--,null,boolean,FALSE,TRUE
+Show App Launcher in Communities,PermissionsEnableCommunityAppLauncher,FALSE,--,--,null,boolean,FALSE,TRUE
+Description,Description,TRUE,--,--,null,string,FALSE,TRUE
+Created Date,CreatedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Created By ID,CreatedById,FALSE,--,"[ ""User"" ]",CreatedBy,reference,FALSE,FALSE
+Last Modified Date,LastModifiedDate,FALSE,--,--,null,datetime,FALSE,FALSE
+Last Modified By ID,LastModifiedById,FALSE,--,"[ ""User"" ]",LastModifiedBy,reference,FALSE,FALSE
+System Modstamp,SystemModstamp,FALSE,--,--,null,datetime,FALSE,FALSE
+Namespace Prefix,NamespacePrefix,TRUE,--,--,null,string,FALSE,FALSE
+Session Activation Required,HasActivationRequired,FALSE,--,--,null,boolean,FALSE,TRUE
+" ToolSet v0.7.0 Copyright © 2015 salesforce.com, inc. All rights reserved ",,,,,,,,

@@ -1,0 +1,100 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"FinServ__FinancialAccount__c","Financial Account","Id","Record ID","id",18,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","OwnerId","Owner ID","reference",18,false,"[""Group"",""User""]","Owner",false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","Name","Financial Account Name","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","RecordTypeId","Record Type ID","reference",18,true,"[""RecordType""]","RecordType",false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","LastActivityDate","Last Activity Date","date",0,true,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","LastViewedDate","Last Viewed Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","LastReferencedDate","Last Referenced Date","datetime",0,true,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Address1__c","Address 1","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Address2__c","Address 2","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__ApplicationDate__c","Application Date","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__AssetRebalance__c","Asset Rebalance","boolean",0,false,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__AverageBalance__c","Average Balance","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Balance__c","Balance","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__CashBalance__c","Cash Balance","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__City__c","City","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__CloseDate__c","Date Closed","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Country__c","Country","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Description__c","Description","textarea",255,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Discretionary__c","Discretionary","boolean",0,false,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__FinancialAccountNumber__c","Account Number","string",80,true,"[]",,false,true,,"[]",true
+"FinServ__FinancialAccount__c","Financial Account","FinServ__FinancialAccountSource__c","Source","picklist",255,true,"[]",,false,true,,"[""Integrator"",""Pending"",""Manual Entry""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__FinancialAccountType__c","Type","picklist",255,true,"[]",,false,true,,"[""Brokerage"",""Discount Brokerage"",""CD"",""Checking"",""Cash Management Account"",""Credit Card"",""Savings"",""Mutual Fund"",""Fixed Annuity"",""Variable Annuity"",""Managed Account"",""Individual Life"",""Term Life"",""Variable Life"",""Whole Life""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__HeldAway__c","Held Away","boolean",0,false,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Household__c","Household","reference",18,true,"[""Account""]","FinServ__Household__r",false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__InsuredAmount__c","Insured Amount","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__InvestmentObjectives__c","Investment Objectives","multipicklist",4099,true,"[]",,false,true,,"[""Safety"",""Income"",""Growth"",""Tax Optimization"",""Liquidity""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__JointOwner__c","Joint Owner","reference",18,true,"[""Account""]","FinServ__JointOwner__r",false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__LastUpdated__c","Last Updated","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Managed__c","Managed","boolean",0,false,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__MinimumBalance__c","Minimum Balance","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__ModelPortfolio__c","Model Portfolio","picklist",255,true,"[]",,false,true,,"[""Conservative"",""Moderate"",""Balanced"",""Growth"",""Aggressive""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__OpenDate__c","Date Opened","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__OwnerType__c","Owner Type","string",18,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Ownership__c","Ownership","picklist",255,true,"[]",,false,true,,"[""Individual"",""Joint"",""Trust""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__PaperlessDelivery__c","Paperless Delivery","boolean",0,false,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Performance1Yr__c","Performance 1Yr","percent",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Performance3Yr__c","Performance 3Yr","percent",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__PerformanceMTD__c","Performance MTD","percent",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__PerformanceQTD__c","Performance QTD","percent",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__PerformanceYTD__c","Performance YTD","percent",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__PostalCode__c","Postal Code","string",20,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Premium__c","Premium","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__PrimaryOwner__c","Primary Owner","reference",18,false,"[""Account""]","FinServ__PrimaryOwner__r",false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__RebalanceFrequency__c","Rebalance Frequency","picklist",255,true,"[]",,false,true,,"[""Monthly"",""Quarterly"",""Semiannually"",""Annually""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__RecordTypeName__c","Record Type","string",1300,true,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__RenewalDate__c","Renewal Date","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__ServiceProvider__c","Service Provider","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__SourceSystemId__c","Source System ID","string",100,true,"[]",,false,true,,"[]",true
+"FinServ__FinancialAccount__c","Financial Account","FinServ__State__c","State","string",20,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Status__c","Status","picklist",255,true,"[]",,false,true,,"[""Open"",""Closed"",""On Hold"",""Pending""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__TaxID__c","Tax ID","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__TaxStatus__c","Tax Status","picklist",255,true,"[]",,false,true,,"[""Qualified"",""Nonqualified""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__TimeHorizon__c","Time Horizon","picklist",255,true,"[]",,false,true,,"[""Long Term"",""Medium Term"",""Short Term""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__HoldingCount__c","Number of Holdings","double",0,true,"[]",,false,false,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__APY__c","APY","percent",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__BalanceLastStatement__c","Balance Last Statement","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__BookedDate__c","Booked Date","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__CollateralDesc__c","Collateral Description","string",255,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__CurrentPostedBalance__c","Current Posted Balance","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__DailyWithdrawalLimit__c","Daily Withdrawal Limit","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__DrawPeriodMonths__c","Draw Period(months)","double",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__EscrowBalance__c","Escrow Balance","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__ExpectedCloseDate__c","Expected Close Date","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__FinancialAccountChargesAndFees__c","Charges And Fees","reference",18,true,"[""FinServ__ChargesAndFees__c""]","FinServ__FinancialAccountChargesAndFees__r",false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__InterestRate__c","Interest Rate","percent",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__LastTransactionDate__c","Last Transaction Date","datetime",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__LienHolder__c","Lien Holder","string",200,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__LoanAmount__c","Loan Amount","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__LoanEndDate__c","Loan End Date","date",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__LoanTermMonths__c","Loan Term(months)","double",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__MinimumPayment__c","Minimum Payment","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Nickname__c","Nickname","string",80,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__OverdraftAllowed__c","OverdraftAllowed","boolean",0,false,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__OverdraftLinkedAccount__c","Overdraft/Linked Account","reference",18,true,"[""Account""]","FinServ__OverdraftLinkedAccount__r",false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__PaymentAmount__c","Payment Amount","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__PaymentFrequency__c","Payment Frequency","picklist",255,true,"[]",,false,true,,"[""Weekly"",""Biweekly"",""Monthly"",""Quaterly"",""Semiannual"",""Annual""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__PendingDeposits__c","Pending Deposits","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__PendingWithdrawals__c","Pending Withdrawals","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__PrincipalBalance__c","Principal Balance","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__RepaymentPeriodMonths__c","Repayment Period(months)","double",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__RoutingNumber__c","RoutingNumber","string",40,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Stage__c","Stage","picklist",255,true,"[]",,false,true,,"[""Qualification"",""Underwriting"",""Proposal"",""Approval/Loan committee"",""Processing"",""Doc Prep"",""Doc Review"",""Closing"",""Booked"",""Complete"",""Hold"",""Dormant"",""Active"",""Escheat"",""Closed"",""Charged off"",""Ordered"",""Setup Complete""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__StatementFrequency__c","Statement Frequency","picklist",255,true,"[]",,false,true,,"[""Monthly"",""Biweekly"",""Quarterly"",""Yearly""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__TotalCreditLimit__c","Total Credit Limit","currency",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__Type__c","Type","picklist",255,true,"[]",,false,true,,"[""Single Family home"",""Town home"",""Leased"",""Owned""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__PolicyTerm__c","Policy Term","picklist",255,true,"[]",,false,true,,"[""6 Months"",""1 Year"",""2 Years"",""3 Years""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__ProductName__c","Product Name","reference",18,true,"[""Product2""]","FinServ__ProductName__r",false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__HardwareSerial__c","Hardware Serial","string",255,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__IncomingVolume__c","Incoming Volume","double",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__OutgoingVolume__c","Outgoing Volume","double",0,true,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__OverdraftProtection__c","Overdraft Protection","boolean",0,false,"[]",,false,true,,"[]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__ServiceType__c","Service Type","picklist",255,true,"[]",,false,true,,"[""Merchant Services"",""Lockbox"",""Positive Pay"",""Business Bill Pay"",""Wire Transfer"",""ACH"",""Account Analysis"",""Remote Deposit Capture"",""Purchase Cards"",""Credit Cards"",""Zero Balance Account"",""Bill Presentment"",""Controlled Disbursement"",""Sweep to Repo"",""Sweep to Line""]",false
+"FinServ__FinancialAccount__c","Financial Account","FinServ__TargetLimit__c","Target Limit","double",0,true,"[]",,false,true,,"[]",false

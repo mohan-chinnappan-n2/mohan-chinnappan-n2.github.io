@@ -1,0 +1,10 @@
+"sobjectName","sobjectLabel","name","label","type","length","nillable","referenceTo","relationshipName","unique","updateable","inlineHelpText","picklistValues","externalId"
+"PresenceConfigDeclineReason","Presence Configuration Decline Reason","Id","Presence Configuration Decline Reason ID","id",18,false,"[]",,false,false,,"[]",false
+"PresenceConfigDeclineReason","Presence Configuration Decline Reason","IsDeleted","Deleted","boolean",0,false,"[]",,false,false,,"[]",false
+"PresenceConfigDeclineReason","Presence Configuration Decline Reason","CreatedDate","Created Date","datetime",0,false,"[]",,false,false,,"[]",false
+"PresenceConfigDeclineReason","Presence Configuration Decline Reason","CreatedById","Created By ID","reference",18,false,"[""User""]","CreatedBy",false,false,,"[]",false
+"PresenceConfigDeclineReason","Presence Configuration Decline Reason","LastModifiedDate","Last Modified Date","datetime",0,false,"[]",,false,false,,"[]",false
+"PresenceConfigDeclineReason","Presence Configuration Decline Reason","LastModifiedById","Last Modified By ID","reference",18,false,"[""User""]","LastModifiedBy",false,false,,"[]",false
+"PresenceConfigDeclineReason","Presence Configuration Decline Reason","SystemModstamp","System Modstamp","datetime",0,false,"[]",,false,false,,"[]",false
+"PresenceConfigDeclineReason","Presence Configuration Decline Reason","PresenceUserConfigId","Presence Configuration ID","reference",18,false,"[""PresenceUserConfig""]","PresenceUserConfig",false,false,,"[]",false
+"PresenceConfigDeclineReason","Presence Configuration Decline Reason","PresenceDeclineReasonId","Presence Decline Reason ID","reference",18,true,"[""PresenceDeclineReason""]","PresenceDeclineReason",false,false,,"[]",false
