@@ -1,0 +1,31 @@
+ #mp3Name, #header2, h3 {
+     font-size:60px;
+     font-family:'Tangerine', serif;
+   }
+   .container2, #credits {
+     padding:20px;
+     margin:20px;
+  }
+  img {
+   border-radius:10px;
+   border-color:#efe;
+   margin:30px;
+  }
+
+    @keyframes greet {
+      from {background-color: #99ffcc;color:black;  transform: rotate(-10deg)}
+      to {background-color: #337ab7;color:white;  transform: rotate(+10deg)}
+  }
+
+  .greet {
+      animation-name: greet;
+      animation-duration: 10s;
+      animation:greet 5s linear 2s infinite alternate;
+  }
+  canvas {
+   border-radius:10px;
+   border-color:#efe;
+   margin-top:30px;
+  }
+  
+

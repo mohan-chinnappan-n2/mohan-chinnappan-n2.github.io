@@ -1,0 +1,254 @@
+HashMap<String, Fish> fishes;
+ArrayList<Bubble> foregroundBubbles;
+ArrayList<Bubble> backgroundBubbles; 
+HashMap<String, Food> foods;
+String myId;
+String pusherUpdateIntervalId;
+boolean gameOver = false;
+
+
+public void setup() {
+    int windowWidth = $(window).width();
+    int windowHeight = $(window).height();
+    int pondWidth = 1255;
+    int pondHeight = 640;
+
+	size(pondWidth, pondHeight);
+
+    fishes = new HashMap<String, Fish>();
+	frameRate(45); //45
+	
+    PVector location = new PVector(random(0.2 * pondWidth, 0.8 * pondWidth), 
+        random(0.2 * pondHeight, 0.8 * pondHeight));
+    Fish fish = new Fish(location, random( 2.0, 2.5 ), 0.2);
+    myId = fish.getId();
+    fishes.put(myId, fish);
+
+    foregroundBubbles = new ArrayList<Bubble>();
+    backgroundBubbles = new ArrayList<Bubble>();
+
+    foods = new HashMap<String, Food>();
+}
+
+
+public void draw() {
+	background( 105, 210, 231, 0 );
+
+    randomNumber = random(0, 1000);
+
+    if(randomNumber > 980) {
+        foregroundBubbles.add(new Bubble( color(int(random(100, 255)), 200)));
+    } 
+    else if(randomNumber < 20) {
+        backgroundBubbles.add(new Bubble( color(int(random(100, 255)), 100)));
+    }
+
+    for(int i = backgroundBubbles.size()-1; i >= 0; i--) {
+        Bubble bubble = backgroundBubbles.get(i);
+        if (bubble.getLocation().y < -50)
+            backgroundBubbles.remove(i);
+        else {
+            bubble.update();
+            bubble.render();
+        }
+    }
+
+    if (!gameOver) {
+        Fish myFish = getMyFish();
+        myFish.setBodySizeH(myFish.getBodySizeH()-.005); //-.005
+        if(myFish.getBodySizeH() < 10)
+            endGame();
+    }
+	
+    Iterator<Entry<String,Fish>> fishIterator = fishes.entrySet().iterator();
+    while (fishIterator.hasNext()) {
+        Map.Entry<String,Fish> pair = fishIterator.next();
+        Fish fish = pair.getValue();
+        
+        // fish of players who leave will fade out. Once they are totally transparent,
+        // we can remove them. Don't remove our own fish as that might cause NPEs
+        if(fish.getTransparency() <= 0 && !fish.getId().equals(myId))
+            fishIterator.remove();
+
+        // remove fish and food whose owners have not pushed us updates in over 5 secs
+        // i.e. they closed the page
+        else if (millis() - fish.getLastUpdateTime() > 2500 && !fish.getId().equals(myId)) {
+            fish.setStartFade(true);
+            foods.remove(pair.getKey());
+            fish.update();
+            fish.render();
+        } 
+        else {
+            fish.update();
+            fish.render();
+        }
+    }
+
+    for(int i = foregroundBubbles.size()-1; i >= 0; i--) {
+        Bubble bubble = foregroundBubbles.get(i);
+        if (bubble.getLocation().y < -50)
+            foregroundBubbles.remove(i);
+        else {
+            bubble.update();
+            bubble.render();
+        }
+    }
+
+    if(!gameOver && (foods.get(myId) == null || foods.get(myId).getIsDead())) {
+        if(randomNumber <= 4) {
+            PVector foodLocation = new PVector(random(100, width-100), random(100,height-100));
+            Food food = new Food(foodLocation, myId);
+            foods.put(myId,food);
+        }
+    }
+
+    Iterator<Entry<String,Food>> foodIterator = foods.entrySet().iterator();
+    while (foodIterator.hasNext()) {
+        Map.Entry<String,Food> pair = foodIterator.next();
+        Food food = pair.getValue();
+        boolean foodEaten = false;
+        if (!food.getIsDead()) {
+            food.update();
+            food.render();
+            foodEaten = myFishAteFood(food);
+        }
+        if (foodEaten)
+            foodIterator.remove();
+    }
+}
+
+public boolean myFishAteFood(Food food) {
+    boolean foodEaten = false;
+    Fish myFish = getMyFish();
+
+    // transparent (dead) fish can't eat food
+    if(myFish.getTransparency() > 0) {
+        float distanceToFood = PVector.sub(myFish.getLocation(), food.getLocation()).mag();
+         if (distanceToFood < 10){
+            foodEaten = true;
+            gulp.play();
+            myFish.setBodySizeH(myFish.getBodySizeH() + .3 * 8 + 1);
+            myFish.setBodySizeW(myFish.getBodySizeW() + 8);
+            myFish.setLastAteTimer(int(frameRate/2));
+
+            // halt pusher updates so that the food eaten event is guaranteed
+            // to be sent through
+            clearInterval(pusherUpdateIntervalId);
+            setTimeout(function(){notifyOthersMyFishAte(food.getId())}, 200);
+        }
+    }
+
+    return foodEaten;
+}
+
+// send pusher update client event to alert others that myFish ate a food
+function notifyOthersMyFishAte(foodEatenId) {
+    channel.trigger('client-my-fish-ate', 
+    {
+        foodEatenId: foodEatenId,
+        myFishId: myId,
+    });
+
+    // start the pusher updates again since they had been halted
+    createRepeatedUpdateEvents();
+}
+
+public void foodEatenByRemoteFish(String foodEatenId, String remoteFishId) {
+    foods.remove(foodEatenId);
+    fishes.get(remoteFishId).setLastAteTimer(frameRate/2);
+}
+
+public void mouseMoved() {
+    PVector mousePosition = new PVector(mouseX, mouseY);
+    Fish fish = fishes.get(myId);
+    fish.setMousePosition(mousePosition);
+}
+
+public Fish getMyFish() {
+    return fishes.get(myId);
+}
+
+// method used by Pusher to get a reference to my Food object,
+// in order to send updates about it.
+public Food getMyFood() {
+    Food myFood = foods.get(myId);
+    // create a dummy food to return so that the triggered pusher events don't 
+    // throw null pointer exceptions
+    if (myFood == null)
+    {
+        myFood = new Food();
+        myFood.setIsDummy(true); 
+    }   
+    return myFood;
+}
+
+public void updateRemoteFish(PVector myLocation, PVector mousePosition, Color stripeColor, 
+	String id, float maxSpeed, float maxForce, float bodySizeW, float bodySizeH, 
+    PVector velocity, PVector canonicalUnModdedLocation, float originalBodySizeW,
+    float originalBodySizeH, boolean startFade) {
+    Fish remoteFish = fishes.get(id);
+    if(remoteFish == null) {
+        remoteFish = new Fish(new PVector(myLocation.x, myLocation.y), 
+        	new PVector(mousePosition.x, mousePosition.y), 
+        	stripeColor, id, maxSpeed, maxForce, bodySizeW, bodySizeH, 
+            new PVector(velocity.x, velocity.y), 
+            new PVector(canonicalUnModdedLocation.x, canonicalUnModdedLocation.y),
+            originalBodySizeW, originalBodySizeH, startFade);
+        fishes.put(id, remoteFish);
+    }
+    else {
+        remoteFish.setMousePosition(new PVector(mousePosition.x, mousePosition.y));
+        remoteFish.setLastUpdateTime(millis());
+        remoteFish.setCanonicalUnModdedLocation(new PVector(canonicalUnModdedLocation.x, 
+            canonicalUnModdedLocation.y));
+        remoteFish.setCanonicalVelocity(new PVector(velocity.x, velocity.y));
+        remoteFish.setBodySizeW(bodySizeW);
+        remoteFish.setBodySizeH(bodySizeH);
+        remoteFish.setStartFade(startFade);
+        remoteFish.applyClientSideCorrection();
+    }
+}
+
+public void updateRemoteFood(PVector location, PVector velocity, boolean isDead, 
+    String id, int color, int age, boolean isDummy) {
+    if(isDummy)
+        return;
+    Food remoteFood = foods.get(id);
+    if(remoteFood == null || remoteFood.getIsDead() == true) {
+        remoteFood = new Food(new PVector(location.x,location.y), id, 
+            new PVector(velocity.x, velocity.y), isDead, age, color);
+        foods.put(id, remoteFood);
+    }
+    else {
+        remoteFood.setLocation(new PVector(location.x,location.y));
+        remoteFood.setIsDead(isDead);
+        remoteFood.setAge(age);
+    }
+}
+
+public HashMap<String, Fish> getFishes() {
+    return fishes;
+}
+
+public void setPusherUpdateIntervalId(String intervalId) {
+    pusherUpdateIntervalId = intervalId;
+}
+
+public void endGame() {
+    gameOver = true;
+    Fish myFish = getMyFish();
+    myFish.setStartFade(true);
+
+    // halt pusher updates emitted by my local fish after 200 ms, so that the 
+    // startFade = true update has time to be propagated.
+    setTimeout(function() {
+        clearInterval(pusherUpdateIntervalId);
+    },200);
+
+    $("#gameOverDialog").dialog(
+        {
+            buttons: { "Play Again!": function() {location.reload();},
+                "I just want to watch fishies":  function() {$(this).dialog("close");}},
+            modal: true
+        });
+}

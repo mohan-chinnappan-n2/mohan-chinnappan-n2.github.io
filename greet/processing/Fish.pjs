@@ -1,0 +1,555 @@
+class Fish extends Boid {
+	
+	private Flagellum body;
+	private Flagellum tailR;
+	private Flagellum tailL;
+	private Flagellum finR;
+	private Flagellum finL;
+	
+	// After eating, this gets set to frameRate/2. It is decremented
+	// each loop by one until it hits zero. While it is non-zero, we display
+	// the fish's mouth
+	private int lastAteTimer;
+	private int numBodySegments;
+	private int numTailSegments;
+	private int numFinSegments;
+    private int lastUpdateTime;
+    // fade out the fish if it starves
+    private int transparency;
+    //start fading out in transparency
+    private boolean startFade;
+	
+	private float originalBodySizeW;
+	private float originalBodySizeH;
+	private float bodySizeW;
+	private float bodySizeH;
+	private float tailSizeW;
+	private float tailSizeH;
+
+    private Color mainColor;
+    private Color stripeColor;
+    private Color outlineColor;
+    
+    private String id;
+
+    private PVector mousePosition;
+    private PVector mousePositionOld;
+    /**
+     *	the unmodded location, as determined by the fish's owner
+     */
+    private PVector canonicalUnModdedLocation;
+	/**
+	 *	the unmodded location, as determined by a client's representation of a remote fish
+	 *	that the client does not own. 
+	 *	This will be null in the fish owner's representation of the fish.
+	 */
+    private PVector unModdedLocation;
+    /**
+     *	the velocity, as determined by the fish's owner. 
+     *	This will be null in the fish owner's representation
+     *	of the fish.
+     */
+    private PVector canonicalVelocity;
+	
+	// Constructor to create your personal, local fish
+	public Fish(PVector location, float maxSpeed, float maxForce) {
+        stripeColor = color(int(random(255)), int(random(255)), int(random(255)));
+		bodySizeW		= random( 100, 200 );
+		bodySizeH		= (bodySizeW * 0.3 + random( 5 ));
+		originalBodySizeH = bodySizeH;
+		originalBodySizeW = bodySizeW;
+        id = "" + random(1000000);
+        mousePosition = new PVector(0, 0);
+        canonicalUnModdedLocation = new PVector(location.x, location.y);
+        startFade = false;
+        lastAteTimer = 0;
+
+        createFish(location, maxSpeed, maxForce);
+    }
+
+    // Constructor to create your local representation of a remote fish
+	public Fish(PVector location, PVector mousePosition, Color stripeColor, 
+		String id, float maxSpeed, float maxForce, float bodySizeW, float bodySizeH, 
+		PVector velocity, PVector canonicalUnModdedLocation, float originalBodySizeW,
+		float originalBodySizeH, boolean startFade) {
+        this.mousePosition = mousePosition;
+        this.stripeColor = stripeColor;
+        this.id = id;
+        this.startFade = startFade;
+
+        // temporarily set bodysize to be original values so that fins, etc are rendered
+        // to the corret initial size
+        this.bodySizeW = originalBodySizeW;
+        this.bodySizeH = originalBodySizeH;
+        this.velocity = velocity;
+        this.canonicalUnModdedLocation = new PVector(canonicalUnModdedLocation.x, canonicalUnModdedLocation.y);
+        this.unModdedLocation = new PVector(canonicalUnModdedLocation.x, canonicalUnModdedLocation.y);
+        this.canonicalVelocity = new PVector(velocity.x, velocity.y);
+
+        createFish(location, maxSpeed, maxForce);
+
+        // set body size to be the proper adjusted body size now that the fish body 
+        // has been created
+        this.bodySizeW = bodySizeW;
+        this.bodySizeH = bodySizeH;
+    }
+
+    private void createFish(PVector location, float maxSpeed, float maxForce) {
+    	mousePositionOld = new PVector(mousePosition.x, mousePosition.y);
+		super(location, maxSpeed, maxForce);
+        mainColor = #000000;
+        outlineColor = #D8D8C0;
+        transparency = 255;
+		
+		numBodySegments = 10;
+		
+		numTailSegments = 10;
+		tailSizeW		= bodySizeW * 0.6;
+		tailSizeH		= bodySizeH * 0.25;
+		
+		body = new Flagellum( bodySizeW, bodySizeH, numBodySegments );
+		
+		tailR = new Flagellum( tailSizeW, tailSizeH, numTailSegments );
+		tailL = new Flagellum( tailSizeW * 0.8, tailSizeH * 0.8, numTailSegments );
+		
+		numFinSegments = 9;
+		finR = new Flagellum( tailSizeW * 0.5, tailSizeH, numFinSegments );
+		finL = new Flagellum( tailSizeW * 0.5, tailSizeH, numFinSegments );
+
+        lastUpdateTime = millis();
+	}
+	
+	public void update() {
+		if(startFade && transparency > 0)
+			transparency -= 1;
+
+		super.update();
+
+		// keep unModdedLocations in sync with location
+		if(id.equals(myId))
+			canonicalUnModdedLocation.add(velocity);
+		else
+			unModdedLocation.add(velocity);
+
+		checkBorders();
+		// super.wander();
+		
+		body.muscleFreq = norm(super.velocity.mag(), 0, 1) * 0.05;
+		
+		// Align body to velocity
+		body.theta 	= super.velocity.heading2D();
+		body.swim();
+		
+		float diffX 		= body.spine[numBodySegments-1][0] - body.spine[numBodySegments-2][0];
+		float diffY 		= body.spine[numBodySegments-1][1] - body.spine[numBodySegments-2][1];
+		float angle			= atan2( diffY, diffX );
+		
+		tailR.muscleFreq 	= norm( super.velocity.mag(), 0, 1 ) * 0.08;
+		tailR.theta 		= angle + (PI * 0.95);
+		tailR.swim();
+		
+		tailL.muscleFreq 	= norm( super.velocity.mag(), 0, 1 ) * 0.08;
+		tailL.theta 		= angle + (PI * 1.05);
+		tailL.swim();
+		
+		finR.muscleFreq 	= norm( super.velocity.mag(), 0, 1 ) * 0.04;
+		finR.swim();
+		
+		finL.muscleFreq 	= norm( super.velocity.mag(), 0, 1 ) * 0.04;
+		finL.swim();
+
+		// only change fish velocity if the mouse moved. this makes the fish keep moving as opposed 
+		// to "seizuring up" when they reach the mouse
+		if(mousePosition.x != mousePositionOld.x ||
+			mousePosition.y != mousePositionOld.y)
+        	seek(mousePosition);
+        mousePositionOld = mousePosition;
+	}
+	
+	public void render() {
+		noStroke();
+
+		// render fins
+		PVector finLLocation = new PVector( super.location.x + body.spine[3][0], super.location.y + body.spine[3][1] );
+		PVector finRLocation = new PVector( super.location.x + body.spine[3][0], super.location.y + body.spine[3][1] );
+		
+		fill(mainColor, transparency);
+		renderFin(finR, finLLocation,  bodySizeH * 0.5, 1);
+		fill(mainColor, transparency);		
+		renderFin(finL, finRLocation, -bodySizeH * 0.5, -1);
+		
+		// render body
+		fill(outlineColor, transparency);
+		renderBody( body, super.location, 1.1, 0.1 );
+		fill(stripeColor, transparency);
+		renderBody( body, super.location, 0.8, 0.15 );
+		fill(mainColor, transparency);
+		renderBody( body, super.location, 0.5, 0.25 );
+		
+		// render tails
+		PVector tailLocation = new PVector( super.location.x + body.spine[numBodySegments - 1][0], super.location.y + body.spine[numBodySegments - 1][1] );
+		fill(mainColor, transparency);
+		renderTail( tailR, tailLocation, 0.75 );
+		fill(mainColor, transparency);
+		renderTail( tailL, tailLocation, 0.75 );
+		
+		// render head
+		PVector headLocation = new PVector( super.location.x + body.spine[1][0], super.location.y + body.spine[1][1] );
+		renderHead( headLocation, bodySizeW * 0.1, bodySizeW * 0.06 );
+
+		// render mouth if fish ate recently
+		fill(250, 128, 114);
+		if(lastAteTimer > 0) {
+			lastAteTimer--;
+			float mouthSize = (bodySizeW*.05) * (float) lastAteTimer / (frameRate/2)
+			ellipse(location.x,location.y,mouthSize,mouthSize);
+		}
+	}
+	
+	private void renderHead( PVector _location, float _eyeSize, float _eyeDist ) {
+		float diffX = body.spine[2][0] - body.spine[1][0];
+		float diffY = body.spine[2][1] - body.spine[1][1];
+		float angle	= atan2( diffY, diffX );
+		
+		pushMatrix();
+		translate( _location.x, _location.y );
+		rotate( angle );
+		
+		fill(mainColor, transparency);
+		ellipse( 0, _eyeDist, _eyeSize, _eyeSize );
+		
+		fill(stripeColor, transparency);
+		ellipse( -3, _eyeDist, _eyeSize * 0.35, _eyeSize * 0.35 );
+		
+		popMatrix();
+		
+		
+		pushMatrix();
+		translate( _location.x, _location.y );
+		rotate( angle );
+		
+		fill(mainColor, transparency);
+		ellipse( 0, -_eyeDist, _eyeSize, _eyeSize );
+		
+		fill(stripeColor, transparency);
+		ellipse( -3, -_eyeDist, _eyeSize * 0.35, _eyeSize * 0.35 );
+		
+		popMatrix();
+	}
+	
+	private void renderBody( Flagellum _flag, PVector _location, float _sizeOffsetA, float _sizeOffsetB ) {
+		pushMatrix();
+		translate( _location.x, _location.y );
+		beginShape( TRIANGLE_STRIP );
+		for ( int n = 0; n < _flag.numNodes; n++ ) {
+			float dx, dy;
+			if ( n == 0 ) {
+				dx = _flag.spine[1][0] - _flag.spine[0][0];
+				dy = _flag.spine[1][1] - _flag.spine[0][1];
+			}
+			else {
+				dx = _flag.spine[n][0] - _flag.spine[n - 1][0];
+				dy = _flag.spine[n][1] - _flag.spine[n - 1][1];
+			}
+			
+			float theta = -atan2( dy, dx );
+			
+			float t 	= n / float(_flag.numNodes - 1);
+			float b		= bezierPoint( 3, bodySizeH * _sizeOffsetA, bodySizeH * _sizeOffsetB, 2, t );
+			
+			float x1	= _flag.spine[n][0] - sin( theta ) * b;
+			float y1 	= _flag.spine[n][1] - cos( theta ) * b;
+			
+			float x2 	= _flag.spine[n][0] + sin( theta ) * b;
+			float y2 	= _flag.spine[n][1] + cos( theta ) * b;
+			
+			vertex( x1, y1 );
+			vertex( x2, y2 );
+		}
+
+		endShape();
+		popMatrix();
+	}
+	
+	
+	private void renderTail( Flagellum _flag, PVector _location, float _sizeOffset ) {
+		pushMatrix();
+		translate( _location.x, _location.y );
+		
+		beginShape( TRIANGLE_STRIP );
+		for ( int n = 0; n < _flag.numNodes; n++ ) {
+			float dx, dy;
+			if ( n == 0 ) {
+				dx = _flag.spine[1][0] - _flag.spine[0][0];
+				dy = _flag.spine[1][1] - _flag.spine[0][1];
+			}
+			else {
+				dx = _flag.spine[n][0] - _flag.spine[n - 1][0];
+				dy = _flag.spine[n][1] - _flag.spine[n - 1][1];
+			}
+			
+			float theta = -atan2( dy, dx );
+			
+			float t 	= n / float(_flag.numNodes - 1);
+			float b		= bezierPoint( 2, _flag.sizeH, _flag.sizeH * _sizeOffset, 0, t );
+			
+			float x1	= _flag.spine[n][0] - sin( theta ) * b;
+			float y1 	= _flag.spine[n][1] - cos( theta ) * b;
+			
+			float x2 	= _flag.spine[n][0] + sin( theta ) * b;
+			float y2 	= _flag.spine[n][1] + cos( theta ) * b;
+			
+			vertex( x1, y1 );
+			vertex( x2, y2 );
+		}
+		endShape();
+		
+		popMatrix();
+	}
+	
+	
+	private void renderFin( Flagellum _flag, PVector _location, float _posOffset, int _flip ) {
+		float diffX = body.spine[2][0] - body.spine[1][0];
+		float diffY = body.spine[2][1] - body.spine[1][1];
+		float angle	= atan2( diffY, diffX );
+		
+		pushMatrix();
+		translate( _location.x, _location.y );
+		rotate( angle );
+		
+		pushMatrix();
+		translate( 0, _posOffset );
+		
+		beginShape(TRIANGLE_STRIP);
+		for ( int n = 0; n < _flag.numNodes; n++ ) {
+			float dx, dy;
+			if ( n == 0 ) {
+				dx = _flag.spine[1][0] - _flag.spine[0][0];
+				dy = _flag.spine[1][1] - _flag.spine[0][1];
+			}
+			else {
+				dx = _flag.spine[n][0] - _flag.spine[n - 1][0];
+				dy = _flag.spine[n][1] - _flag.spine[n - 1][1];
+			}
+			
+			float theta = -atan2( dy, dx );
+			
+			float t 	= n / float(_flag.numNodes - 1);
+			float b		= bezierPoint( 0, _flip * _flag.sizeH * 0.75, _flip * _flag.sizeH * 0.75, 0, t );
+			float v		= bezierPoint( 0, _flip * _flag.sizeH * 0.05, _flip * _flag.sizeH * 0.65, 0, t );
+			
+			float x1	= _flag.spine[n][0] - sin( theta ) * v;
+			float y1 	= _flag.spine[n][1] - cos( theta ) * v;
+			
+			float x2 	= _flag.spine[n][0] + sin( theta ) * b;
+			float y2 	= _flag.spine[n][1] + cos( theta ) * b;
+			
+			vertex( x1, y1 );
+			vertex( x2, y2 );
+		}
+
+		endShape();
+		popMatrix();
+		popMatrix();
+	}
+
+	/**
+	 *	client side correction to correct velocity/location discrepancies between the local
+	 *	representation of a remote fish. This is called from the updateRemoteFish method
+	 *	in the Pond.
+	 */
+	public void applyClientSideCorrection() {
+		// correct location discrepancies
+		PVector locationDiscrepancy = PVector.sub(canonicalUnModdedLocation, unModdedLocation);
+		PVector locationCorrection = PVector.mult(locationDiscrepancy,0.1);
+
+		location.add(locationCorrection);
+		unModdedLocation.add(locationCorrection);
+
+		// correct velocity discrepancies
+		PVector velocityDiscrepancy = PVector.sub(canonicalVelocity, velocity);
+		PVector velocityCorrection = PVector.mult(velocityDiscrepancy,0.5);
+		velocity.add(velocityCorrection);
+	}
+
+	private int roundToNearestRightBoundary(int currentX) {
+		int nearestRightBoundary;
+		int roundingWidth = width + 2 * bodySizeW;
+		int adjustedCurrentX = currentX + 2 * bodySizeW;
+		float multiple = adjustedCurrentX / (float) roundingWidth;
+		if(ceil(multiple) - multiple < multiple - floor(multiple)) {
+			nearestRightBoundary = ceil(multiple) * roundingWidth - 2 * bodySizeW;
+		}
+		else {
+			nearestRightBoundary = floor(multiple) * roundingWidth - 2 * bodySizeW;
+		}
+		return nearestRightBoundary
+	}
+
+	private int roundToNearestLeftBoundary(int currentX) {
+		int nearestLeftBoundary;
+		int roundingWidth = width + 2 * bodySizeW;
+		int adjustedCurrentX = currentX;
+		float multiple = adjustedCurrentX / (float) roundingWidth;
+		if(ceil(multiple) - multiple < multiple - floor(multiple)) {
+			nearestLeftBoundary = ceil(multiple) * roundingWidth;
+		}
+		else {
+			nearestLeftBoundary = floor(multiple) * roundingWidth;
+		}
+		return nearestLeftBoundary
+	}
+
+	private int roundToNearestBottomBoundary(int currentY) {
+		int nearestBottomBoundary;
+		int roundingHeight = height + 2 * bodySizeW;
+		int adjustedCurrentY = currentY + 2 * bodySizeW;
+		float multiple = adjustedCurrentY / (float) roundingHeight;
+		if(ceil(multiple) - multiple < multiple - floor(multiple)) {
+			nearestBottomBoundary = ceil(multiple) * roundingHeight - 2 * bodySizeW;
+		}
+		else {
+			nearestBottomBoundary = floor(multiple) * roundingHeight - 2 * bodySizeW;
+		}
+		return nearestBottomBoundary
+	}
+
+	private int roundToNearestTopBoundary(int currentY){
+		int nearestTopBoundary;
+		int roundingHeight = height + 2 * bodySizeW;
+		int adjustedCurrentY = currentY;
+		float multiple = adjustedCurrentY / (float) roundingHeight;
+		if(ceil(multiple) - multiple < multiple - floor(multiple)) {
+			nearestTopBoundary = ceil(multiple) * roundingHeight;
+		}
+		else {
+			nearestTopBoundary = floor(multiple) * roundingHeight;
+		}
+		return nearestTopBoundary
+	}
+
+	/**
+	 *	ensure that the fish wraps around the the other end of the pond
+	 *	if it goes past the edge. Also keeps unModdedLocations in sync with
+	 *	location
+	 */
+	private void checkBorders() {
+		if ( location.x < -bodySizeW ) {
+			location.x = width;
+			if (id.equals(myId))
+				canonicalUnModdedLocation.x = roundToNearestRightBoundary(canonicalUnModdedLocation.x);
+			else
+				unModdedLocation.x = roundToNearestRightBoundary(unModdedLocation.x);
+		}
+		if ( location.x > width + bodySizeW ) {
+			location.x = 0;
+			if (id.equals(myId))
+				canonicalUnModdedLocation.x = roundToNearestLeftBoundary(canonicalUnModdedLocation.x);
+			else
+				unModdedLocation.x = roundToNearestLeftBoundary(unModdedLocation.x);
+		}
+		if ( location.y < -bodySizeW ) {
+			location.y = height;
+			if (id.equals(myId))			
+				canonicalUnModdedLocation.y = roundToNearestBottomBoundary(canonicalUnModdedLocation.y);
+			else
+				unModdedLocation.y = roundToNearestBottomBoundary(unModdedLocation.y);
+		}
+		if ( location.y > height + bodySizeW ) {
+			location.y = 0;
+			if (id.equals(myId))			
+				canonicalUnModdedLocation.y = roundToNearestTopBoundary(canonicalUnModdedLocation.y);
+			else
+				unModdedLocation.y = roundToNearestTopBoundary(unModdedLocation.y);
+		}
+	}	
+
+    // Getters
+    public Color getStripeColor() {
+        return stripeColor;
+    }
+
+    public float getBodySizeW() {
+        return bodySizeW;
+    }
+
+    public float getBodySizeH() {
+        return bodySizeH;
+    }
+
+    public String getId(){
+        return id;
+    }
+    
+    public PVector getMousePosition() {
+        return mousePosition;
+    }
+
+    public int getLastUpdateTime() {
+        return lastUpdateTime;
+    }
+
+    public void setMousePosition(PVector position) {
+        mousePosition = position;
+    }
+
+    public void setLastUpdateTime(int time) {
+        lastUpdateTime = time;
+    }
+
+    public void setCanonicalUnModdedLocation(PVector canonicalUnModdedLocation) {
+    	this.canonicalUnModdedLocation = canonicalUnModdedLocation;
+    }
+
+    public PVector getCanonicalUnModdedLocation() {
+    	return canonicalUnModdedLocation;
+    }
+
+    public void setCanonicalVelocity(PVector canonicalVelocity) {
+    	this.canonicalVelocity = canonicalVelocity;
+    }
+
+    public float getBodySizeH(){
+    	return bodySizeH;
+    }
+
+    public void setBodySizeH(float bodySizeH){
+    	this.bodySizeH = bodySizeH;
+    }
+
+    public float getBodySizeW(){
+    	return bodySizeW;
+    }
+
+    public void setBodySizeW(float bodySizeW){
+    	this.bodySizeW = bodySizeW;
+    }
+
+    public float getOriginalBodySizeW(){
+    	return originalBodySizeW;
+    }
+
+    public float getOriginalBodySizeH(){
+    	return originalBodySizeH;
+    }
+
+    public boolean getStartFade() {
+    	return startFade;
+    }
+
+    public void setStartFade(boolean startFade){
+    	this.startFade = startFade;
+    }
+
+    public int getTransparency() {
+    	return transparency;
+    }
+
+    public int getLastAteTimer() {
+    	return lastAteTimer;
+    }
+
+    public void setLastAteTimer(int lastAteTimer) {
+    	this.lastAteTimer = lastAteTimer;
+    }
+}

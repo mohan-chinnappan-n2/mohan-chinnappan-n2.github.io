@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title id='title'>Happy Birthday!</title>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/processing-1.4.js"></script>
+  <script type="text/javascript" src="js/pusher.min.js"></script>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/css/navbar-blue.css">
+  <link rel="stylesheet"
+   href="https://fonts.googleapis.com/css?family=Tangerine">
+ <style>
+   #mp3Name, #header2 {
+     font-size:60px;
+     font-family:'Tangerine', serif;
+   }
+   .container2, #credits {
+     padding:20px;
+     margin:20px;
+  }
+  img {
+   border-radius:10px;
+   border-color:#efe;
+   margin-top:30px;
+  }
+
+    @keyframes greet {
+      from {background-color: #99ffcc;color:black;  transform: rotate(-1deg)}
+      to {background-color: ##337ab7;color:white;  transform: rotate(+1deg)}
+  }
+
+  .greet {
+      animation-name: greet;
+      animation-duration: 10s;
+      animation:greet 5s linear 2s infinite alternate;
+  }
+  canvas {
+   border-radius:10px;
+   border-color:#efe;
+   margin-top:30px;
+  }
+  
+
+ </style>
+</head>
+<body>
+
+
+  <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id='header' href="javascript:void(0)">Happy Birthday!</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </nav>
+
+  <div class="container2">
+
+
+ <div class='row' >
+       <div class="col-lg-6">
+           <div id='mp3Name' class='greet2'>Happy Birthday!!!</div>
+       </div>
+       <div class="col-lg-6">
+           <audio controls autoplay loop class='greet2'>
+                <source id="mp3player" src="mp3/happy-birthday.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+        </div>
+</div>
+ <div class='row' >
+      <div class="col-lg-12">
+         <canvas id="mycanvas"  data-processing-sources="processing/pond.pjs processing/Fish.pjs processing/Boid.pjs processing/Flagellum.pjs processing/Bubble.pjs processing/Food.pjs"></canvas>
+       </div>
+</div>
+
+        <img  class='greet' style='display:none2;' src="https://mohan-chinnappan-n.github.io/life/img/fish-1.jpg"  alt="">
+</span>
+  </div>
+
+  <script>
+
+  (function() {
+
+        var query = location.search.substr(1);
+        var result = {};
+        query.split("&").forEach(function(part) {
+          var item = part.split("=");
+          result[item[0]] = decodeURIComponent(item[1]);
+        });
+        var name = result.n || 'you';
+        var ele = document.getElementById('mp3Name');
+        var greeting = 'Happy Birthday to ' + name + '!!!'; 
+        ele.innerHTML = greeting;
+        var title= document.getElementById('title');
+        title.innerHTML = 'Happy Birthday to ' + name + '!!!'; 
+        var header= document.getElementById('header');
+        header.innerHTML = 'Happy Birthday to ' + name + '!!!'; 
+
+
+     // fish pond:
+ // the reference to the processing sketch
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "steelblue";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  var pjs;
+  // the id of the repeated update events that each local fish makes
+  var intervalId;
+
+
+  channel.bind('pusher:subscription_error', function(status) {
+    alert("pusher subscription failed: " + status);
+  });
+
+  // bind to the repeated updates that each local fish makes about itself.
+  channel.bind('client-update', function(data) {
+    pjs.updateRemoteFish(data.myLocation, data.mousePosition, data.stripeColor, data.id, data.maxSpeed, data.maxForce, data.bodySizeW, data.bodySizeH, data.velocity, data.canonicalUnModdedLocation, data.originalBodySizeW,
+      data.originalBodySizeH, data.startFade);
+    
+    pjs.updateRemoteFood(data.foodLocation, data.foodVelocity, data.foodIsDead, data.foodId, 
+      data.foodColor, data.foodAge, data.foodIsDummy);
+  });
+
+  // bind to the event that a remote fish ate a food
+  channel.bind('client-my-fish-ate', function(data) {
+    gulp.play();
+    pjs.foodEatenByRemoteFish(data.foodEatenId, data.myFishId);
+  });
+
+  // create the repeated pusher updates
+  function createRepeatedUpdateEvents() {
+    if(pjs != null) {
+      intervalId = setInterval(function(){
+        sendUpdate();
+        //printDebugInfo();
+      }, 100); // send every 100 milliseconds if position has changed
+      pjs.setPusherUpdateIntervalId(intervalId);
+    }
+    else
+      setTimeout(createRepeatedUpdateEvents,250);
+  }
+
+  // obtain a reference to the processing sketch
+  function getPjsInstance() {
+    var bound = false;
+    pjs = Processing.getInstanceById('mycanvas');
+    if(pjs != null)
+      bound = true;
+    if(!bound)
+      setTimeout(getPjsInstance, 250);
+  } 
+
+  // the repeated update where each local fish tells others about itself
+  function sendUpdate(){
+    var myFish = pjs.getMyFish();
+    var myFood = pjs.getMyFood();
+    channel.trigger("client-update",
+      {
+        myLocation: myFish.getLocation(),
+        mousePosition: myFish.getMousePosition(),
+        stripeColor: myFish.getStripeColor(),
+        id: myFish.getId(),
+        maxSpeed: myFish.getMaxSpeed(),
+        maxForce: myFish.getMaxForce(),
+        bodySizeW: myFish.getBodySizeW(),
+        bodySizeH: myFish.getBodySizeH(),
+        velocity: myFish.getVelocity(),
+        canonicalUnModdedLocation: myFish.getCanonicalUnModdedLocation(),
+        originalBodySizeW: myFish.getOriginalBodySizeW(),
+        originalBodySizeH: myFish.getOriginalBodySizeH(),
+        startFade: myFish.getStartFade(),
+
+        foodLocation: myFood.getLocation(),
+        foodVelocity: myFood.getVelocity(),
+        foodIsDead: myFood.getIsDead(),
+        foodId: myFood.getId(),
+        foodColor: myFood.getColor(),
+        foodAge: myFood.getAge(),
+        foodIsDummy: myFood.getIsDummy(),
+      });
+  }
+
+  function printDebugInfo() {
+    myFish = pjs.getMyFish();
+    document.getElementById('debugger').innerHTML = myFish.getId();
+  } 
+
+   })();
+   </script>
+ <div id="credits" >
+     Credits:
+      <div>
+        koi designed by 
+        <a href="http://nardove.com/" target="_blank">nardove</a>
+        <br>
+        interactive aquarium by 
+        <a href="http://twitter.com/sunahsuh" target="_blank">sunah suh</a> 
+        and 
+        <a href="http://twitter.com/davidleibovic" target="_blank">david leibovic</a>
+      </div>
+    </div>
+</body>
+</html>
+
