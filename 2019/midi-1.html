@@ -1,0 +1,80 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MIDI player</title>
+</head>
+<body>
+
+    <h3> Keep playing in your MIDI keyboard...</h3>
+    <textarea name="log" id="log" cols="100" readonly rows="50">
+
+
+    </textarea>
+    <script>
+
+
+function log(msg) {
+   const logEle =   document.getElementById('log');
+   logEle.innerHTML += `${msg}\n`;
+   console.log(msg);
+}
+// -------- Note to audio convertor//
+var context = new AudioContext();
+var oscillators = {};
+
+//  create an oscillator that generates the frequency of the note pressed, 
+// so we'll need to convert the MIDI note number to its relevant frequency. 
+function midiNoteToFrequency (note) {
+    return Math.pow(2, ((note - 49) / 12)) * 440; // check: 49 or 69??
+}
+function playNote (frequency) {
+    oscillators[frequency] = context.createOscillator();
+    oscillators[frequency].frequency.value = frequency;
+    oscillators[frequency].connect(context.destination);
+    oscillators[frequency].start(context.currentTime);
+}
+ 
+function stopNote (frequency) {
+    oscillators[frequency].stop(context.currentTime);
+    oscillators[frequency].disconnect();
+}
+
+//============================
+
+navigator.requestMIDIAccess()
+  .then( (access) => {
+
+    log('\n[cmd, note, velocity]')
+     // Get lists of available MIDI  inputs and outputs
+     const inputs = access.inputs;
+     const outputs = access.outputs;
+
+    // handle the onmidimessage event for each inputs
+    for (var input of access.inputs.values()) {
+        input.onmidimessage =  (msg) => {
+           log(`[${msg.data}]`);
+           var frequency = midiNoteToFrequency(msg.data[1]);
+             if (msg.data[0] === 144 && msg.data[2] > 0) {
+                playNote(frequency);
+            }
+            if (msg.data[0] === 128 || msg.data[2] === 0) {
+                stopNote(frequency);
+            }
+        } 
+    } 
+
+    //console.log(inputs);
+    //console.log(outputs);
+
+     access.onstatechange = function(e) {
+       // Print information about the (dis)connected MIDI controller
+       console.log(e.port.name, e.port.manufacturer, e.port.state);
+     };
+  });
+
+    </script>
+</body>
+</html>

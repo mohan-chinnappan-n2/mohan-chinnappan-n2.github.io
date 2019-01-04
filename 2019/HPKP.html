@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <title>HPKP</title>
+</head>
+<body class="container">
+
+    <h2>
+            HPKP ( HTTP-Based Public Key Pinning ) 
+    </h2>
+
+    <h4>HTTP-Based Public Key Pinning (HPKP) was intended to allow websites to send an HTTP header
+         that pins one or more of the public keys present in the site's certificate chain.</h4>
+    <br>
+    
+   <h4>Why Chrome is backing away from HPKP  due these: </h4>
+    <ol class="list-group">
+        <li class="list-group-item">HPKP has security issues - creates DOS (denial of service) attack </li>
+        <li class="list-group-item">Hostile pinning</li>
+    </ol>
+
+    <br>
+    <h3>References</h3>
+
+    <ul class='list-group'>
+        <li class="list-group-item">
+              <a href="https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/he9tr7p3rZ8/eNMwKPmUBAAJ">
+              Intent To Deprecate And Remove: Public Key Pinning></a>
+
+        </li>
+        <li class="list-group-item">
+           <a href="https://www.zdnet.com/article/google-chrome-is-backing-away-from-public-key-pinning-and-heres-why/">
+        Chrome is backing away from public key pinning, and here's why</a> 
+        </li>
+    </ul>
+</body>
+</html>
