@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Progress Bar</title>
+</head>
+<body>
+    <div onclick="incProgress()" style='border:1px solid #99ccff;width:400px;border-radius:10px;'>
+        <progress-bar progress="40" pcolor='salmon'></progress-bar> 
+    </div>
+
+    <script src='js/progress-bar.js'></script>
+    <script>
+
+       let pb = document.getElementsByTagName('progress-bar')[0];
+       console.log(pb);
+       let progress = pb.getAttribute('progress');
+       // console.log(progress);
+       function incProgress() {
+           if (progress < 100) {
+               progress++;
+           } else {
+               progress = 1;
+           }
+           // console.log(progress);
+           pb.setAttribute('progress', progress);
+       }
+       
+    </script>
+</body>
+</html>
