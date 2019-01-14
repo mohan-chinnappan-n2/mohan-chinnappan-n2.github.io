@@ -1,0 +1,22 @@
+.heading {
+    border-bottom:0px solid #99ccff;
+    padding:10px;
+  }
+  .ide-main {
+    margin: 10px;
+    border-radius: 10px;
+    border: 0px solid #99ccff;
+    display: block;
+    height: 800px;
+  }
+  .ide-col {
+    border-radius: 10px;
+    border: 0px solid #99ccff;
+    height: 800px;
+  }
+  .editor-ta {
+      background-color:#efe;
+      color:black;
+      font-family: Monaco,Arial, Helvetica, sans-serif;
+      border-radius: 10px;
+  }

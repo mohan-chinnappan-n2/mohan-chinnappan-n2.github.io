@@ -1,0 +1,42 @@
+{
+
+  "IndividualRecordTypeMapper" :  {
+      "AccountRecordTypeNamespace__c": "",
+      "AccountRecordType__c": "Individual",
+      "AccountRecordType__desc": "Namespace for Account record type being mapped.",
+
+
+
+      "ContactRecordTypeNamespace__c": "",
+      "ContactRecordType__c": "",
+      "ContactRecordType__desc": "Contact record type being mapped to the Financial Services Cloud Individual record type.",
+
+
+      "IndividualType__c": "",
+      "IndividualType__desc": "Type of Individual being mapped.",
+
+
+      "LeadRecordTypeNamespace__c": "",
+      "LeadRecordType__c": "",
+      "LeadRecordType__desc": "Lead Record Type to be used when converting Lead records. Leave this field blank to use any record type. All available record types are converted to an Individual record type unless there is another mapping specified.",
+
+  },
+
+  "GroupRecordTypeMapper": {
+
+    "AccountRecordTypeNamespace__c": "",
+    "AccountRecordType__c" : "",
+    "AccountRecordType__desc" : "The name of your new custom Group record type being mapped to the Financial Services Cloud Group record type."
+
+
+  },
+
+  "ReferralRecordTypeMapper": {
+      "LeadRecordTypeNamespace__c": "",
+      "LeadRecordType__c": "",
+      "LeadRecordType__desc": "The name of your new custom record type on the Lead object being mapped to the Financial Services Cloud Referral record type."
+ 
+  }
+
+
+}

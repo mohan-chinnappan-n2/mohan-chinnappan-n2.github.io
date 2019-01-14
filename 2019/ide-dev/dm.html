@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Mapper</title>
+    <link rel="stylesheet" href="css/lib/bootstrap.css" />
+    <link rel="stylesheet" href="css/dm.css?v=2" />
+    <script src="https://bgrins.github.io/filereader.js/filereader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+</head>
+<body class="container">
+
+    <h3 style='border-bottom: 1px solid steelblue'>Data Mapper</h3>
+
+    
+    <button class='btn btn-primary' onclick="doAutomap();"> Automap</button>
+    <button class='btn btn-primary' onclick="clearAutomap();">Clear Automap</button>
+    <button class='btn btn-success' onclick="createMapFile();"> Create Map </button>
+    <button class='btn btn-success' id='saveMapFileBtn' style='display:none;' onclick="saveMapFile();"> Save Map File</button>
+    <div style='margin-top:5px;'></div>
+
+ 
+    <div  class="row">
+        <div class="col-lg-6">
+          <input  type="file" name="file" class='btn btn-info' id="loadObjDocument" />
+          <h4  style='border-bottom: 1px solid steelblue'>Object Fields</h4>
+          <ul class="list-group list-group-striped" id='oflds'> </ul>
+        </div>
+        <div class="col-lg-6">
+            <input  type="file" name="file" class='btn btn-info' id="loadFileDocument" />
+           <h4  style='border-bottom: 1px solid steelblue'>File Fields</h4>
+           <ul class="list-group list-group-striped" id='fflds'> </ul>
+        </div>
+    </div>
+    <div  class="row">
+         <div class="col-lg-6">
+            <h4  style='border-bottom: 1px solid steelblue'>Map Data</h4>
+            <textarea name="mapData" id="mapData" cols="100" rows="20"> </textarea>
+        </div>
+    </div>
+
+    <script src="js/dm.js?v=1"></script>
+
+    
+</body>
+</html>

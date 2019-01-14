@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FSC RT Mapper App</title>
+    <style>
+
+        input {
+            width: 300px;
+            height: 20px;
+            font-weight: bold;
+        }
+        p {
+          /*  border-bottom: 1px solid #99ccff; */
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+</head>
+<body class='container'>
+
+    <div id="content">
+        <ol id="sec" class='list-group'> </ul>
+    </div>
+
+ <script>
+
+var mapper = 
+{
+
+  "IndividualRecordTypeMapper" :  [ {
+      "AccountRecordTypeNamespace__c": "",
+      "AccountRecordType__c": "Individual",
+      "AccountRecordType__desc": "The name of your new <b>custom Individual record type</b> being mapped to the Financial Services Cloud <b>Individual record type</b>"
+  }, 
+
+  {   "ContactRecordTypeNamespace__c": "",
+      "ContactRecordType__c": "",
+      "ContactRecordType__desc": "<b>Contact record type</b> being mapped to the Financial Services Cloud <b>Individual record type </b>"
+  },
+
+
+     /*
+      "IndividualType__c": "",
+      "IndividualType__desc": "Type of Individual being mapped.",
+      */
+
+  { 
+      "LeadRecordTypeNamespace__c": "",
+      "LeadRecordType__c": "",
+      "LeadRecordType__desc": "<b>Lead Record Type</b> to be used when converting Lead records. Leave this field blank to use any record type. All available record types are converted to an Individual record type unless there is another mapping specified"
+  }
+
+
+  ], 
+
+  "GroupRecordTypeMapper":  [{
+
+    "AccountRecordTypeNamespace__c": "",
+    "AccountRecordType__c" : "",
+    "AccountRecordType__desc" : "The name of your new <b>custom Group record type</b> being mapped to the Financial Services Cloud <b>Group record type</b>"
+  }],
+
+  "ReferralRecordTypeMapper": [{
+      "LeadRecordTypeNamespace__c": "",
+      "LeadRecordType__c": "",
+      "LeadRecordType__desc": "The name of your new custom record type on the <b>Lead object</b> being mapped to the Financial Services Cloud <b>Referral record type</b>"
+ 
+  }]
+
+
+};
+
+var items = Object.keys(mapper);
+
+var secEle = document.getElementById('sec');
+
+for (const item of items) {
+    //console.log(item);
+    const liEle = document.createElement('li');
+    liEle.innerHTML = `<b>${item}</b>`;
+
+    const mitems = mapper[item];
+    for (const mitem of mitems) {
+          const keys = Object.keys(mitem);
+          for (const key of keys) {
+              var desc = "";
+              const pEle = document.createElement('p');
+              if (key.endsWith('_desc')) {
+                  desc = mitem[key];
+                  pEle.innerHTML  = desc
+                  liEle.appendChild(pEle);
+                  liEle.setAttribute('class', 'list-group-item');
+
+                  const inputEle = document.createElement('input');
+                  inputEle.setAttribute('id', keys[0]);
+                  inputEle.setAttribute('placeholder', 'Enter ' + keys[0]);
+                  liEle.appendChild(inputEle);
+                  liEle.appendChild(document.createElement('br'));
+
+
+                  const inputEle2 = document.createElement('input');
+                  inputEle2.setAttribute('id', keys[1]);
+                  inputEle2.setAttribute('placeholder', 'Enter ' + keys[1]);
+                  liEle.appendChild(inputEle2);
+
+              }
+          }
+
+    }
+
+    secEle.appendChild(liEle); 
+    secEle.appendChild( document.createElement('hr'));
+}
+
+</script>  
+
+</body>
+</html>
