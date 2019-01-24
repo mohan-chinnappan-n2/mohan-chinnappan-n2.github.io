@@ -44,3 +44,60 @@
 - [Future House | Living Off the Grid Comfortably](https://www.youtube.com/watch?v=N3Em64OBGqI)
 - [Future House | Touring a Napa Valley Smart House](https://www.youtube.com/watch?v=wfvd3LzVmhg)
 - [Future House | Net Zero Neighborhood](https://www.youtube.com/watch?v=Uy0SEG36bEM)
+
+### Roof cleaning
+- [How to Remove Roof Moss - All-Clean SoftWash](https://www.youtube.com/watch?v=N2wIzza0ImI)
+
+### Deck repair
+- [How to Safely Attach a Deck to a House - This Old House](https://www.youtube.com/watch?v=w3czHZwBfEo)
+- [How to Clean and Restain a Deck - This Old House](https://www.youtube.com/watch?v=Endync6z3XM)
+- [How to Restore a Deck](https://www.youtube.com/watch?v=nTjC3oWsXz4)
+- [How to Replace a Deck Post](https://www.youtube.com/watch?v=fpA_NyFQcqU)
+- [How to Pour a Concrete Deck Footing - This Old House](https://www.youtube.com/watch?v=mDuRx19XWR0)
+- [How to Replace a Rotted Windowsill](https://www.youtube.com/watch?v=x8iu9dLrV-E)
+
+### Floor
+-[How to Repair Squeaky Wood Floors](https://www.youtube.com/watch?v=3iAseVZZKlY)
+### Foundation
+- [How to Grade Around a Foundation ](https://www.youtube.com/watch?v=7wlslzFTQP0)
+- [How to Repair a Cracked Drywall Ceiling - This Old House](https://www.youtube.com/watch?v=Btkt0F7O-O8)
+- [How to Install Fiber-Cement Siding](https://www.youtube.com/watch?v=cXqgQ-akDEc)
+
+### Siding
+- [How To Replace Vinyl Siding with Real Brick](https://www.youtube.com/watch?v=XVDs8jtXpmc)
+
+### Load bearing walls
+- [How to Remove a Load-Bearing Wall - This Old House](https://www.youtube.com/watch?v=rZsS_4HiHT8)
+
+### Stair case
+- [How to Repair a Broken Stair Tread](https://www.youtube.com/watch?v=b4ixXEoCMRw)
+
+### Kitchen
+- [Build It: Movable Kitchen Island](https://www.youtube.com/watch?v=cN3cJgTlYTM)
+
+
+### Salvaging
+- [Build It | Salvaged Door Shadow Box](https://www.youtube.com/watch?v=0jt-tD_-QcU)
+
+### Build it
+- [Build It | End Grain Cutting Board from Scrap Wood](https://www.youtube.com/watch?v=O97enrnp0MY&index=13&list=PLkJADc1qDrr_6uaos7lLduUSbqYUgn8RZ)
+- [Build It | End Grain Cutting Board from Scrap Wood](https://www.youtube.com/watch?v=O97enrnp0MY)
+
+
+### Flat roof fixing
+- [Top 3 Flat Roof Systems Explained - Torch Down, EPDM, TPO - Which is the best?](https://www.youtube.com/watch?v=9dtAeN7seW8)
+- [How to Patch a Leaking Rubber Roof - This Old House](https://www.youtube.com/watch?v=me1QwKYFODI)
+- [DIY Flat Roof Repair - Easy Paint on Fix](https://www.youtube.com/watch?v=8oJGjrLummo)
+- [Firestone RubberCover roofing system (English version)](https://www.youtube.com/watch?v=P9BRkVAPIiw)
+- [Waterproofing a Flat Roof with Firestone EPDM Rubber Roof Membrane](https://www.youtube.com/watch?v=t7w6Y5sxePw)
+
+
+### Walls repair
+- [How to Repair Plaster Walls - This Old House](https://www.youtube.com/watch?v=P4D0sESi5So)
+- [How to Patch a Plaster and Lath Ceiling](https://www.youtube.com/watch?v=i5mdg4gH1Ko)
+
+
+### Basement
+- [Insulate Basement](https://www.youtube.com/watch?v=oKQdo88Ne74)
+- [How to Frame Walls for a Basement Room - This Old House](https://www.youtube.com/watch?v=aulgjB4rFU0)
+- [How to Repair a Bad Flooring Joint](https://www.youtube.com/watch?v=lHDDqu7gaPs)
