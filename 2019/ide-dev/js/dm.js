@@ -10,6 +10,8 @@
 
  // ------ File Loaders
   // Load text documents
+    console.log('Fields: ' + fields);
+    fillObjectSide(fields.split(','));
 
     FileReaderJS.setupInput(document.getElementById('loadObjDocument'), {
       readAsDefault: 'Text',
@@ -95,8 +97,8 @@
         let index = 0;
         for (const ofld of oflds) {
              // console.log(ofld.innerHTML, field);
-            const indexOf = ofld.innerHTML.indexOf(field); 
-            // console.log(indexOf);
+            const indexOf = ofld.innerHTML.toLowerCase().indexOf(field.toLowerCase()); 
+             console.log(indexOf);
             if ( indexOf >= 0) {
                  // console.log(`value before: ${fflds[index].value}`);
                 // console.log('setting value');
@@ -118,8 +120,10 @@
          for (const ofld of oflds) {
              // console.log(ofld.innerHTML, field);
              const of = ofld.innerHTML;
-             const ff = fflds[index].value;
-             sdlStr += `${of}=${ff}\n`;
+             const ff = fflds[index].value; 
+             if(ff) {
+                sdlStr += `${of}=${ff}\n`;
+             }
              index++;
          }
          // console.log(sdlStr);
