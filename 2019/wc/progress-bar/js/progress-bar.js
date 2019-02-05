@@ -1,4 +1,4 @@
-
+/*jshint esversion: 6 */
 class ProgressBar extends HTMLElement {
 
     // get the progress attribute 

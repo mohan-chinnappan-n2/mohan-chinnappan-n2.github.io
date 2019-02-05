@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Datatable</title>
+</head>
+
+<body>
+    <mc-datatable id='dt' bgcolor='lightblue' fields="name, city, state"
+    records='Dennis Ritchie, Murray Hill, NJ
+    Ken Thompson, Mountain View, CA
+    Jeff Dean, Mountain View, CA
+    Rob Pike, Mountain View, CA'
+</mc-datatable>
+
+
+    <script src='js/datatable.js?v=101'></script>
+
+    <script>
+        let data =
+            `Dennis Ritchie, Murray Hill, NJ
+            Ken Thompson, Mountain View, CA
+            Mohan Chinnappan, Nashua, NH
+            Jeff Dean, Mountain View, CA
+            Rob Pike, Mountain View, CA`
+
+        let mcDatatable = document.getElementsByTagName('mc-datatable')[0];
+        mcDatatable.setAttribute('records', data);
+        console.log(mcDatatable.getAttribute('records'));
+
+        document.addEventListener( 'DOMContentLoaded', function(event) {
+            let mcDatatable = document.getElementsByTagName('mc-datatable')[0];
+
+            function readTextFile(file) {
+                console.log(file);
+                var rawFile = new XMLHttpRequest();
+                rawFile.open("GET", file, false);
+                rawFile.onreadystatechange = function () {
+                    if (rawFile.readyState === 4) {
+                        console.log(rawFile.status);
+                        if (rawFile.status === 200 || rawFile.status == 0) {
+                            let content = rawFile.responseText;
+                            console.log(content);
+                            mcDatatable.setAttribute('records', content);
+                        }
+                    }
+                }
+                rawFile.send(null);
+            }
+
+
+            //readTextFile('persons.csv');
+        });
+    </script>
+
+</body>
+
+</html>
