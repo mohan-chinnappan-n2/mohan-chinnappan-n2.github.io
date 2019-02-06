@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FSC Migration App - Demos</title>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/css/navbar-green.css">
+<script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+<link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css">
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation" style='margin-bottom:0px;'>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="javascript:void(0)">FSC Migration App - Demos</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#/home">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li ><a href="/">Main</a></li>
+      </ul>
+
+    </div>
+    <!-- /.navbar-collapse -->
+  </nav>
+
+    <div class="split split-horizontal" id="menu">
+    <h4  class='slds-text-heading--medium'>FSC Migration App</h4> 
+    <ol class="list-group">
+        <li class="list-group-item"> <a href="#FMA1">Demo-1</a> </li> 
+        <li class="list-group-item"> <a href="#OData1">OData Demo-1</a> </li> 
+    </ol>
+ 
+   </div>
+    <div class="split split-horizontal" id="content">
+
+       <div id="FMA1">
+        <h3  class=''>FSC Migration App - Demo-1</h3> 
+            <ul class="list-group">
+               <li class="list-group-item"> <img src="../fsc-hh-1.gif" alt=""> </li>
+           </ul>
+      </div>
+
+       <div id="OData1">
+        <h3  class=''>Love is the universal Binder</h3> 
+           <ul class="list-group">
+                <li class="list-group-item"> <img src="./fsc-odata-ext-obj-1.gif" alt=""> </li>
+           </ul>
+      </div>
+
+
+
+   </div>
+
+<script>
+    Split(['#menu', '#content'],  {sizes: [12, 88]});
+</script>
+</body>
+</html>
+
