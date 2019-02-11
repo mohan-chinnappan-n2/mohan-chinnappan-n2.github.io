@@ -77,13 +77,13 @@ CREATE FOREIGN DATA WRAPPER postgresql
 
 
 -- Create a foreign server.
-CREATE SERVER remote_postgresql_server
+CREATE SERVER <b>remote_postgresql_server</b>
   FOREIGN DATA WRAPPER postgresql
   OPTIONS ( host 'somehost', port 5432, dbname 'remotedb' );
 
 -- Create a user mapping.
 CREATE USER MAPPING FOR postgres
-  SERVER remote_postgresql_server
+  SERVER <b>remote_postgresql_server</b>
   OPTIONS ( user 'someuser', password 'secret' )
 
 -------------------
@@ -92,7 +92,7 @@ CREATE FOREIGN TABLE schemaname.tablename (
     column_name type_name [ OPTIONS ( ... ) ] [ NOT NULL ],
     ...
   )
-  SERVER remote_postgresql_server
+  SERVER <b>remote_postgresql_server</b>
   OPTIONS ( ... );
 </pre>
                     </li>
