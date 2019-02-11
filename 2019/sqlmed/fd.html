@@ -42,7 +42,8 @@
     <ol class="list-group">
         <li class="list-group-item"> <a href="#goals">Goals</a> </li> 
          <li class="list-group-item"> <a href="#samplecode">Code Sample</a> </li> 
-          <li class="list-group-item"> <a href="#arch">Architecture</a> </li> 
+         <li class="list-group-item"> <a href="#arch">Architecture</a> </li> 
+          <li class="list-group-item"> <a href="#matview">Materialized View</a> </li> 
  
     </ol>
  
@@ -99,6 +100,48 @@ CREATE FOREIGN TABLE schemaname.tablename (
                <img src="img/sqlmed-2.png " width='400'  alt="">
 
 
+<pre id='matview'>
+
+--- MATERIALIZED VIEW  with FDW
+
+CREATE DATABASE fdw_test;
+\connect fdw_test;
+CREATE TABLE world (greeting TEXT);
+\connect test
+
+CREATE EXTENSION postgres_fdw;
+CREATE SERVER postgres_fdw_test FOREIGN DATA WRAPPER postgres_fdw
+OPTIONS (host 'localhost', dbname 'fdw_test');
+
+CREATE USER MAPPING FOR PUBLIC SERVER postgres_fdw_test
+OPTIONS (password '');
+
+CREATE FOREIGN TABLE other_world (greeting TEXT)
+SERVER postgres_fdw_test
+OPTIONS (table_name 'world');
+
+\det
+          List of foreign tables
+Schema |    Table    |      Server
+--------+-------------+-------------------
+public | other_world | postgres_fdw_test
+
+-- populate it with some data:
+
+INSERT INTO other_world
+SELECT *
+FROM generate_series(1, 100000);
+
+--- and create a materialized view on the foreign table:
+
+CREATE MATERIALIZED VIEW mat_view (first_letter, count) AS
+        SELECT left(greeting, 1), COUNT(*)
+        FROM other_world
+        GROUP BY left(greeting, 1);
+
+
+
+</pre>
 
  </li>
            </ul>
