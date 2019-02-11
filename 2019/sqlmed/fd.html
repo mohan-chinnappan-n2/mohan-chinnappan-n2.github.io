@@ -40,7 +40,9 @@
     <div class="split split-horizontal" id="menu">
     <h4  class='slds-text-heading--medium'>Resources</h4> 
     <ol class="list-group">
-        <li class="list-group-item"> <a href="#goal">Goals</a> </li> 
+        <li class="list-group-item"> <a href="#goals">Goals</a> </li> 
+         <li class="list-group-item"> <a href="#samplecode">Code Sample</a> </li> 
+          <li class="list-group-item"> <a href="#arch">Architecture</a> </li> 
  
     </ol>
  
@@ -56,12 +58,49 @@
                       <li class='list-group-item'>
                          Postgres database as the front-end to all other databases via FDW (Foreign Data Wrapper).
 By implementing SQL/MED spec, Postgres can  access data that resides outside PostgreSQL using regular SQL queries.
+<hr/>
+ <img src="img/sqlmed-pg.png" width='700' alt="">
+<hr/>
+<pre id='samplecode'>
+-- Register a function that returns FDW handler function set.
+CREATE FUNCTION postgresql_fdw_handler() RETURNS fdw_handler
+  AS 'MODULE_PATHNAME'
+  LANGUAGE C;
+
+-- Create a foreign data wrapper with FDW handler.
+CREATE FOREIGN DATA WRAPPER postgresql
+  HANDLER postgresql_fdw_handler
+  VALIDATOR postgresql_fdw_validator;
 
 
+-- Create a foreign server.
+CREATE SERVER remote_postgresql_server
+  FOREIGN DATA WRAPPER postgresql
+  OPTIONS ( host 'somehost', port 5432, dbname 'remotedb' );
+
+-- Create a user mapping.
+CREATE USER MAPPING FOR postgres
+  SERVER remote_postgresql_server
+  OPTIONS ( user 'someuser', password 'secret' )
+
+-------------------
+- Create a foreign table.
+CREATE FOREIGN TABLE schemaname.tablename (
+    column_name type_name [ OPTIONS ( ... ) ] [ NOT NULL ],
+    ...
+  )
+  SERVER remote_postgresql_server
+  OPTIONS ( ... );
+</pre>
                     </li>
                   </ul>
 
-               <img src="img/fdw-arch-1.png" width='400'  alt=""> </li>
+               <img id='arch' src="img/fdw-arch-1.png" width='400'  alt="">
+               <img src="img/sqlmed-2.png " width='400'  alt="">
+
+
+
+ </li>
            </ul>
       </div>
 
