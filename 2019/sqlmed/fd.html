@@ -66,13 +66,13 @@ By implementing SQL/MED spec, Postgres can  access data that resides outside Pos
 <hr/>
 <pre id='samplecode'>
 -- Register a function that returns FDW handler function set.
-CREATE FUNCTION postgresql_fdw_handler() RETURNS fdw_handler
+CREATE FUNCTION <b>postgresql_fdw_handler()</b> RETURNS fdw_handler
   AS 'MODULE_PATHNAME'
   LANGUAGE C;
 
 -- Create a foreign data wrapper with FDW handler.
 CREATE FOREIGN DATA WRAPPER postgresql
-  HANDLER postgresql_fdw_handler
+  HANDLER <b>postgresql_fdw_handler</b>
   VALIDATOR postgresql_fdw_validator;
 
 
