@@ -44,8 +44,10 @@
     <ol class="list-group">
         <li class="list-group-item"> <a href="#ldv">Large Data Volume</a> 
      <ol class="list-group">
-         <li class="list-group-item"> <a href="#ldv_dl"> Data Loader - Batch API</a> </li> 
-         <li class="list-group-item"> <a href="#ldv_dx"> SFDX plugin - Batch API</a> </li> 
+         <li class="list-group-item"> <a href="#ldv_dl"> Data Loader - Bulk API</a> </li> 
+          <li class="list-group-item"> <a href="#ldv_dx"> SFDX plugin - Bulk API</a> </li> 
+          <li class="list-group-item"> <a href="#ba1">Bulk API V1</a> </li> 
+          <li class="list-group-item"> <a href="#ba2">Bulk  API V2</a> </li> 
       </ol>
          <li class="list-group-item"> <a href="#eb">Event Based Data Sync</a> </li> 
       </li> 
@@ -74,7 +76,14 @@ Batches can be processed in parallel or serially depending upon your needs. The 
 </p>
 <p>
 
-Salesforce provides an additional API, Bulk API 2.0, which uses the REST API framework to provide similar capabilities to Bulk API. Use Bulk API 2.0 instead of Bulk API if you want a simplified process for inserting, updating, upserting, or deleting large sets of data. Bulk API 2.0 does not currently support query or queryAll
+Salesforce provides an additional API, Bulk API 2.0, which uses the REST API framework to provide similar capabilities to Bulk API. Use Bulk API 2.0 instead of Bulk API if you want a simplified process for inserting, updating, upserting, or deleting large sets of data. Bulk API 2.0 does not currently support query or queryAll.<br/>
+
+Bulk API v2 does away with the need to manually break up data into batches. Simply submit jobs with the full set of records, and Salesforce automatically determines the most efficient way to batch the data.
+
+<br/>
+
+Bulk API v2 simplifies the basic daily limits. Instead of having limits based on the number of Bulk jobs and batches, you’re simply limited to a maximum number of records <b>(100 million) per 24 hour period</b>.
+
 </p>
                   <ul class='list-group'>
                       <li class='list-group-item'>
@@ -145,6 +154,69 @@ $ cat <b>error022019081012672.csv</b>
                     </li>
                   </ul>
 
+
+<h4 id='ba1'>Bulk API v1</h4>
+<pre>
+1. Get an authenticated session ID, likely via a completely different API, such as the SOAP API.
+2. Create a Bulk API v1 job.
+3. Break up job data into batches. This can be a complex task and in many scenarios will involve:
+  - Break up data to fit within the Bulk API v1 batch size limit for records, and batch size limit for total size for a batch.
+  - Decide if you need to use special processing headers, like compression or PK Chunking.
+  - Analyze data chunks for potential locking issues due to data skew, which could result in very slow or failed bulk processing. Re-organize batches as needed.
+  - Minimize the amount of data post-processing actions (like triggers and Workflow rules) that might result in batch processing timeouts.
+  - After all of this, if it turns out your batches take too long to process, go through the process of determining the best way to organize your batches all over again.
+4. Upload data in batches.
+5. Verify the batches uploaded properly.
+6. Close the job, which tells Salesforce to start processing the records.
+7. Check the status of the job.
+8. If the job completes with no errors, we’re done.
+9. If the job completes but encountered errors during processing, iterate over each batch in the job, collect 
+results of successful and failed records for the batch, determine why the records failed, and re-assemble the data to submit a new job as needed.
+
+
+
+</pre>
+<h4 id='ba2'>Bulk API v2</h4>
+<pre>
+1. Authenticate using OAuth.
+2. Create a Bulk API v2 job.
+3. Upload all your data.
+4. Close the job, which tells Salesforce to start processing the data.
+5. Check the status of the job.
+6. If the job completes with no errors, we’re done.
+7. If the job completes but encountered errors during processing, request the complete list of failed 
+records with one API call, determine why the records failed, and submit a new job as needed.
+
+<hr>
+<b>1. Authenticate using OAuth</b>
+ - Issue requests to <b>https://login.salesforce.com/services/oauth2/authorize</b> to obtain an authentication token.
+
+<b>2. Create a job</b>
+- Create a new Bulk API v2 job by issuing a <b>POST</b> request to <b> /services/data/v44.0/jobs/ingest/</b> with the following request body:
+<b>{  "object" : "Contact", "contentType" : "CSV", "operation" : "insert" }</b>
+This creates a job that will insert new Contact records.
+
+<b>3. Upload the data</b>
+ - Issue a <b>PUT</b> request using the JOB ID returned from the previous request to the following URI:
+<b>/services/data/v44.0/jobs/ingest/JOB ID/batches/</b>
+The request body will be CSV data of all the records you want to upload (with the Content-Type request header set to text/csv).
+
+<b>4. Close the job</b>
+Issue a <b>PATCH</b> request again using the JOB ID, to the following URI: <b>/services/data/v44.0/jobs/ingest/JOB ID/</b>
+With the following request body:  <b>{  "state" : "UploadComplete"  } </b>
+This tells Salesforce we’re done uploading data for the job, and Salesforce will start inserting the records.
+
+<b>5. Check the status of the job</b>
+Issue a <b>GET</b> request to: <b>/services/data/v44.0/jobs/ingest/JOB ID/</b>
+Look for a job state of JobComplete to know Salesforce is done processing the job.
+
+<b>6. Get errors for any failed records</b> 
+If the job status indicates that some records encountered errors during processing, 
+issue a <b>GET</b> request to the following URI to get a full list of the failed records:
+<b>/services/data/v44.0/jobs/ingest/JOB ID/failedResults/</b>
+
+
+</pre>
 <h4 id='ldv_dx'>Using SFDX Plugin to use Bulk API</h4>
  <img src="img/di-dx-2.png" width='1000' alt=""> <hr/>
  <img src="img/di-dx-1.png" width='1000' alt=""> <hr/>
@@ -164,6 +236,8 @@ $ cat <b>error022019081012672.csv</b>
  <br/>
 <a  target='_new' href="https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_batches_intro.htm">Bulk API Developer Guide
 </a>
+  <br/>
+<a  target='_new' href="https://developer.salesforce.com/blogs/2017/12/slim-new-bulk-api-v2.html">Comparing Bulk API v1 and v2 </a>
  
  </li>
            </ul>
@@ -175,7 +249,7 @@ $ cat <b>error022019081012672.csv</b>
    </div>
 
 <script>
-    Split(['#menu', '#content'],  {sizes: [20, 80]});
+    Split(['#menu', '#content'],  {sizes: [15, 85]});
 </script>
 </body>
 </html>
