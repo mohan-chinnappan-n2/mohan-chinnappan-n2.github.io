@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload</title>
+</head>
+<body>
+ <input type="file" id="input" multiple onchange="handleFiles(this.files)">
+
+<script>
+ const inputElement = document.getElementById('input');
+ inputElement.addEventListener("change", handleFiles, false);
+
+ function handleFiles() {
+  const fileList = this.files; /* now you can work with the file list */
+
+  console.log(typeof(fileList));
+  for  (let i = 0, numFiles = fileList.length; i < numFiles; i++) {
+     const file = fileList[i];
+     console.log(file);
+     if (file.size > 10000) {
+        console.log('size is > 10,000');
+     }
+  }
+
+ }
+
+</script>
+</body>
+</html>

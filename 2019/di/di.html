@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salesforce Data Integration Tips</title>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/css/navbar-blue.css">
+<script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+<link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css">
+
+<style> img { border-radius:20px; } </style>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation" style='margin-bottom:0px;'>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="javascript:void(0)">Salesforce Data Integration Tips</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#/home">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li ><a href="/">Main</a></li>
+      </ul>
+
+    </div>
+    <!-- /.navbar-collapse -->
+  </nav>
+
+    <div class="split split-horizontal" id="menu">
+    <h4  class='slds-text-heading--medium'>Topics</h4> 
+    <ol class="list-group">
+        <li class="list-group-item"> <a href="#ldv">Large Data Volume</a> 
+     <ol class="list-group">
+         <li class="list-group-item"> <a href="#ldv_dl"> Data Loader - Batch API</a> </li> 
+         <li class="list-group-item"> <a href="#ldv_dx"> SFDX plugin - Batch API</a> </li> 
+      </ol>
+         <li class="list-group-item"> <a href="#eb">Event Based Data Sync</a> </li> 
+      </li> 
+    </ol>
+ 
+   </div>
+    <div class="split split-horizontal" id="content">
+
+       <div id="ldv">
+        <h4  class=''>Large Data Volume</h4> 
+            <ul class="list-group">
+               <li class="list-group-item"> 
+         <h4>Using Bulk API  </h4>
+                  <ul class='list-group'>
+                      <li class='list-group-item'>
+<ol class="list-group">
+<li class="list-group-item">Create a new <b>job</b> that specifies the object and action.</li>
+<li class="list-group-item">Send data to the server in a number of <b>batches</b>.</li>
+<li class="list-group-item">Once all data has been submitted, close the <b>job</b>. Once closed, no more batches can be sent as part of the job.</li>
+<li class="list-group-item">Check status of all batches at a reasonable interval. Each status check returns the state of each batch.</li>
+<li class="list-group-item">When all batches have either completed or failed, retrieve the result for each batch.</li>
+<li class="list-group-item">Match the result sets with the original data set to determine which records failed and succeeded, and take appropriate action</li>
+<li class="list-group-item">At any point in this process, you can abort the job. Aborting a job has the effect of preventing any <b>unprocessed batches from being processed. It doesn't undo the effects of batches already processed.  </b></li>
+<li class="list-group-item">
+To configure Data Loader to use the Bulk API for inserting, updating, upserting, deleting, and hard deleting records: <br/>
+Open the Data Loader.  Choose Settings | Settings.  Select the Use Bulk API option.  Click OK.
+
+</li>
+
+</ol>
+
+<pre>
+<b>Folder content</b>
+
+$<b> tree</b>
+.
+├── error022019081012672.csv
+├── fieldMap.sdl
+├── harvest_field-2.csv
+├── harvest_field.csv
+└── success022019081012672.csv
+
+0 directories, 5 files
+
+$ <b> cat fieldMap.sdl</b>
+#Mapping values
+#Wed Feb 20 20:09:30 EST 2019
+Name=Name
+Asset_Under_Management__c=Asset_Under_Management__c
+Status__c=Status__c
+</pre>
+
+<h4 id='ldv_dl'>Using Data Loader Configured to use Bulk API</h4>
+ <img src="img/dl-0.png" width='700' alt=""> <hr/>
+ <img src="img/dl-1.png" width='700' alt=""> <hr/>
+ <img src="img/dl-2.png" width='700' alt=""> <hr/>
+ <img src="img/dl-3.png" width='700' alt=""> <hr/>
+ <img src="img/dl-4.png" width='700' alt=""> <hr/>
+ <img src="img/dl-5.png" width='700' alt=""> <hr/>
+ <img src="img/dl-6.png" width='1000' alt=""> <hr/>
+
+
+
+<pre>
+$ cat <b>success022019081012672.csv</b>
+"ID","NAME","STATUS__C","ASSET_UNDER_MANAGEMENT__C","STATUS"
+"a00B0000009skwAIAQ","Pine East Field","Normal","310000","Item Created"
+"a00B0000009skwBIAQ","Pine West Field","Normal","312000","Item Created"
+"a00B0000009skwCIAQ","Pine North Field","Normal","313000","Item Created"
+"a00B0000009skwDIAQ","Pine South Field","Normal","315000","Item Created"
+
+$ cat <b>error022019081012672.csv</b>
+"NAME","STATUS__C","ASSET_UNDER_MANAGEMENT__C","ERROR"
+</pre>
+
+
+
+
+
+                    </li>
+                  </ul>
+
+<h4 id='ldv_dx'>Using SFDX Plugin to use Bulk API</h4>
+ <img src="img/di-dx-2.png" width='1000' alt=""> <hr/>
+ <img src="img/di-dx-1.png" width='1000' alt=""> <hr/>
+ 
+<h4 id='eb'>Event Based Data Sync</h4>
+<p> Well suited for near-real time data sync with external systems </p>
+<hr/>
+ <img src="https://mohan-chinnappan-n.github.io/sfdc/img/pe/pe-1.png" width='1000' alt=""> <hr/>
+
+<a href="https://mohan-chinnappan-n.github.io/sfdc/pevents.html#/home"> Platform Events</a>
+<br/>
+<a href="https://mohan-chinnappan-n2.github.io/2019/sqlmed/fd.html">Foreign Data Wrapper (FDW) and SQL/MED<</a>
+ 
+ </li>
+           </ul>
+      </div>
+
+
+
+
+   </div>
+
+<script>
+    Split(['#menu', '#content'],  {sizes: [20, 80]});
+</script>
+</body>
+</html>
+
