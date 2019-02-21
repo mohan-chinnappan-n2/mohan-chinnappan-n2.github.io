@@ -59,6 +59,23 @@
             <ul class="list-group">
                <li class="list-group-item"> 
          <h4>Using Bulk API  </h4>
+
+<img src="img/bulk-api-1.png" alt="">
+<p>
+The Bulk API  developed specifically to simplify the process of uploading large amounts of data. It is optimized for inserting, updating, upserting, and deleting large numbers of records <b>asynchronously</b> by submitting them in batches to Force.com, to be processed in the <b>background</b>.
+</p>
+<p>
+Uploaded records are streamed to Force.com to create a new job. As the data rolls in for the job it is stored in temporary storage and then sliced up into user-defined batches. Even while your data is still being sent to the server, the Force.com platform submits the batches for processing.
+<br/>
+Batch sizes should be adjusted based on processing times. Start with 5000 records and adjust the batch size based on processing time. If it takes more than five minutes to process a batch, it may be beneficial to reduce the batch size. If it takes a few seconds, the batch size should be increased. If you get a timeout error when processing a batch, split your batch into smaller batches, and try again.
+</p>
+<p>
+Batches can be processed in parallel or serially depending upon your needs. The Bulk API moves the functionality and work from your client application to the server. The API logs the status of each job and tries to reprocess failed records for you automatically. 
+</p>
+<p>
+
+Salesforce provides an additional API, Bulk API 2.0, which uses the REST API framework to provide similar capabilities to Bulk API. Use Bulk API 2.0 instead of Bulk API if you want a simplified process for inserting, updating, upserting, or deleting large sets of data. Bulk API 2.0 does not currently support query or queryAll
+</p>
                   <ul class='list-group'>
                       <li class='list-group-item'>
 <ol class="list-group">
@@ -140,6 +157,9 @@ $ cat <b>error022019081012672.csv</b>
 <a  target='_new' href="https://mohan-chinnappan-n.github.io/sfdc/pevents.html#/home"> Platform Events</a>
 <br/>
 <a  target='_new' href="https://mohan-chinnappan-n2.github.io/2019/sqlmed/fd.html">Foreign Data Wrapper (FDW) and SQL/MED</a>
+ <br/>
+<a  target='_new' href="https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_batches_intro.htm">Bulk API Developer Guide
+</a>
  
  </li>
            </ul>
