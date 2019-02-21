@@ -50,6 +50,9 @@
           <li class="list-group-item"> <a href="#ba2">Bulk  API v2</a> </li> 
       </ol>
          <li class="list-group-item"> <a href="#eb">Event Based Data Sync</a> </li> 
+         <li class="list-group-item"> <a href="#ref">References</a> </li> 
+
+
       </li> 
     </ol>
  
@@ -75,8 +78,8 @@ Batch sizes should be adjusted based on processing times. Start with 5000 record
 Batches can be processed in parallel or serially depending upon your needs. The Bulk API moves the functionality and work from your client application to the server. The API logs the status of each job and tries to reprocess failed records for you automatically. 
 </p>
 <p>
-
-Salesforce provides an additional API, Bulk API 2.0, which uses the REST API framework to provide similar capabilities to Bulk API. Use Bulk API 2.0 instead of Bulk API if you want a simplified process for inserting, updating, upserting, or deleting large sets of data. Bulk API 2.0 does not currently support query or queryAll.<br/>
+<hr/>
+Salesforce provides an additional API, <b>Bulk API 2.0</b>, which uses the REST API framework to provide similar capabilities to Bulk API. Use Bulk API 2.0 instead of Bulk API if you want a simplified process for inserting, updating, upserting, or deleting large sets of data. Bulk API 2.0 does not currently support query or queryAll.<br/>
 
 Bulk API v2 does away with the need to manually break up data into batches. Simply submit jobs with the full set of records, and Salesforce automatically determines the most efficient way to batch the data.
 
@@ -216,12 +219,36 @@ issue a <b>GET</b> request to the following URI to get a full list of the failed
 <b>/services/data/v44.0/jobs/ingest/JOB ID/failedResults/</b>
 </pre>
 <h4>Start Job</h4>
+<pre>
+# $1: jobstart.json
+export RESOURCE='/services/data/v41.0/jobs/ingest/'
+     curl -X POST $URL/$RESOURCE  -H "Authorization: Bearer $AT " -H "Content-Type: application/json" -d "@$1" | jq
+</pre>
 <img src="img/wb-startjob.png" width='1000' alt="">
 <h4>Load Data</h4>
+<pre>
+# $1: JOBID, $2:data.csv
+export RESOURCE=/services/data/v41.0/jobs/ingest/$1/batches
+     curl -i -X PUT $URL/$RESOURCE  -H "Authorization: Bearer $AT " -H "Content-Type: text/csv" -d "@$2" 
+</pre>
 <img src="img/wb-dataload.png" width='1000' alt="">
 <h4>Close Job</h4>
+<pre>
+# $1: JOBID,
+export RESOURCE=/services/data/v41.0/jobs/ingest/$1/
+     curl -X PATCH $URL/$RESOURCE  -H "Authorization: Bearer $AT " -H "Content-Type: application/json" -d "@jobdone.json" 
+#
+cat jobdone.json 
+ {  "state" : "UploadComplete"  } 
+
+</pre>
 <img src="img/wb-jobcomplete.png" width='1000' alt="">
 <h4>Check Status</h4>
+<pre>
+export RESOURCE=/services/data/v41.0/jobs/ingest/$1/
+     curl -i -X GET $URL/$RESOURCE  -H "Authorization: Bearer $AT " -H "Content-Type: application/json"  
+
+</pre>
 <img src="img/wb-loaded.png" width='1000' alt="">
 <h4>Data Loaded</h4>
 <img src="img/wb-dataloaded.png" width='1000' alt="">
@@ -241,8 +268,8 @@ issue a <b>GET</b> request to the following URI to get a full list of the failed
  <img src="img/pe-3.png" width='1000' alt=""> <hr/>
 
 
-
-<a  target='_new' href="https://mohan-chinnappan-n.github.io/sfdc/pevents.html#/home"> Platform Events</a>
+<h4 id='ref'>References</h4>
+<a   target='_new' href="https://mohan-chinnappan-n.github.io/sfdc/pevents.html#/home"> Platform Events</a>
 <br/>
 <a  target='_new' href="https://mohan-chinnappan-n2.github.io/2019/sqlmed/fd.html">Foreign Data Wrapper (FDW) and SQL/MED</a>
  <br/>
@@ -250,6 +277,16 @@ issue a <b>GET</b> request to the following URI to get a full list of the failed
 </a>
   <br/>
 <a  target='_new' href="https://developer.salesforce.com/blogs/2017/12/slim-new-bulk-api-v2.html">Comparing Bulk API v1 and v2 </a>
+   <br/>
+<a  target='_new' href="https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/best_practices_with_any_data_loader.htm">Best Practices with Any Data Loader
+</a>
+    <br/>
+<a  target='_new' href="https://help.salesforce.com/articleView?id=000004601&type=1">KB: Best practices when you migrate data </a>
+     <br/>
+<a  target='_new' href="https://help.salesforce.com/articleView?id=import_which_data_import_tool.htm&type=5">Choosing a Method for Importing Data
+</a>
+      <br/>
+<a  target='_new' href="https://developer.salesforce.com/docs/atlas.en-us.financial_services_cloud_admin_guide.meta/financial_services_cloud_admin_guide/fsc_admin_data_loader_upload_sequence.htm">FSC: Load Data </a>
  
  </li>
            </ul>
