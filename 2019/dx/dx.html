@@ -10,7 +10,10 @@
     <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
     <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
 
-    <link rel="stylesheet" href="css/slides.css?v=14" />
+    <link rel="stylesheet" href="css/slides.css?v=15" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
   
   </head>
 
@@ -45,6 +48,11 @@
         </ul>
         <ul class="nav navbar-nav">
           <li><a href="/">Main</a></li>
+          <li>
+
+      <select style="display:none2;margin-top:10px;" id='outline'> </select>
+
+          </li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -57,11 +65,12 @@
       </span>
       <ol class="list-group" id='mitems'> </ol>
 
+
     </div>
     <div class="split split-horizontal" id="content">
 
 
-        <div class="slide" id='Home'>
+        <div class="slide" id='SFDX'>
             <div class="row">
               <div class="col-lg-0"></div>
               <div class="col-lg-12">
@@ -336,6 +345,21 @@
                 <li >Org Shape = (edition, feature, preferences)</li>
                 <li >Enabled via Scratch Org Definition files</li>
               </ul>
+              <pre class='code'>
+                  $ sfdx force:org:shape:list -h
+                  Usage: sfdx force:org:shape:list [--json] [--loglevel <string>] 
+                  
+                  list all org shapes you’ve created
+                  
+                  Flags:
+                   --json               format output as json
+                   --loglevel LOGLEVEL  logging level for this command invocation (error*,trace,debug,info,warn,fatal)
+                  
+                  Examples:
+                     $ sfdx force:org:shape:list
+                     $ sfdx force:org:shape:list --json
+                     $ sfdx force:org:shape:list --json > tmp/MyOrgShapeList.json
+              </pre>
             </div>
           </div>
       </div>
@@ -534,6 +558,6 @@
     </div>
 
     <script> Split(["#menu", "#content"], { sizes: [12, 88] }); </script>
-     <script src='js/slides.js?v=12'> </script>
+     <script src='js/slides.js?v=16'> </script>
   </body>
 </html>

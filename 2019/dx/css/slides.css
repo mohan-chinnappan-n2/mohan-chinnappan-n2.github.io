@@ -32,3 +32,11 @@ img {
       padding:20px;
       margin:30px;
   }
+
+  .code {
+      background-color: black;
+      border-radius: 10px;
+      color:white;
+      font-family: Monaco, Arial, Helvetica, sans-serif;
+      opacity: .8;
+  }

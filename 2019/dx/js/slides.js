@@ -22,6 +22,8 @@ function setActive() {
 // fill the menu items
 function fillMenuItems() {
   let container = document.getElementById('mitems');
+  let select = document.getElementById('outline');
+
   let ndx = 1;
   for (let slide of slides) {
     //console.log(slide);
@@ -39,6 +41,12 @@ function fillMenuItems() {
     a.setAttribute('href', '#' + slides[ndx-1].id);
     a.text = slide.getAttribute('id');
     li.appendChild(a);
+
+    // select2
+    let opt = document.createElement('option');
+    opt.setAttribute('value', slide.getAttribute('id') );
+    opt.text = slide.getAttribute('id') ; 
+    select.appendChild(opt);
 
     container.appendChild(li);
     ndx++;
@@ -81,3 +89,12 @@ document.body.onkeyup = function (e) {
     nextSlide();
   }
 };
+
+$('#outline').select2({
+    placeholder: 'Select a topic'
+  });
+  $('#outline').change(function(e) {
+    let value = e.target.value;
+    document.location.hash = value;
+
+  })
