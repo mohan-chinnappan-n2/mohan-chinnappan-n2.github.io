@@ -10,7 +10,7 @@
     <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
     <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
 
-    <link rel="stylesheet" href="css/slides.css?v=12" />
+    <link rel="stylesheet" href="css/slides.css?v=14" />
   
   </head>
 
@@ -59,6 +59,16 @@
 
     </div>
     <div class="split split-horizontal" id="content">
+
+
+        <div class="slide" id='Home'>
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                <img src="img/dx-front.png" width="100%" alt="" />
+              </div>
+            </div>
+        </div>
 
 
       <div   class="slide" id='Goals'>
@@ -322,10 +332,9 @@
           <div class="row">
             <div class="col-lg-0"></div>
             <div class="col-lg-12">
-              <ul class="list-group" style='font-size:20px;'>
-                <li class="list-group-item">Org Shape = (edition, feature, preferences)</li>
-                <li class="list-group-item">Enabled via Scratch Org Definition files</li>
-                <li class="list-group-item"></li>
+              <ul class='largelist'>
+                <li >Org Shape = (edition, feature, preferences)</li>
+                <li >Enabled via Scratch Org Definition files</li>
               </ul>
             </div>
           </div>
@@ -376,6 +385,143 @@
             </div>
           </div>
       </div>
+
+
+      <div class="slide" id='Adopting new ALM'>
+          <h3>Create complete modules utilizing our IDE, CLI and Source Control </h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+
+              <ul class='largelist'>
+                <li><b>Improve your Tool Chain and Migrate Current Development Processes</b>
+                   <ul>
+                     <li>Adopt the Salesforce CLI </li>
+                     <li>Extend with Source Control - externalize all of the Metadata in your Org </li>
+                     <li>Automate key processes and extend again with Continuous Integration and Delivery tools <hr/> </li>
+                   </ul>
+                  </li>
+                <li><b>Adopt the Package Development Process</b>
+                 <ul>
+                   <li>Modular Development w/ Projects, Scratch Orgs, and Developer Controlled Packages </li>
+                 </ul>   
+                </li>
+              </ul>
+              </center>
+            </div>
+          </div>
+      </div>
+
+
+      <div class="slide" id='Package Development - 2'>
+          <h3>Identifying Metadata that can migrate into a Package </h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+
+              <ul class='largelist'>
+                <li><b>Isolate Vertically First </b>
+                   <ul>
+                     <li>Custom Force.com Apps built in-house </li>
+                     <li>Extensions of Sales Cloud, Service Cloud, etc </li>
+                     <li>Extensions of an AppExchange App </li>
+                     <li>Shared Libraries/Functionality </li>
+                   </ul>
+                  </li>
+                <li><b>Modularize Horizontally as Needed </b>
+                 <ul>
+                   <li>Schema, Business Logic, UI </li>
+                   <li>Ownership e.g. Business Unit or Process </li>
+                   <li>Shared Libraries/Functionality </li>
+                 </ul>   
+                </li>
+              </ul>
+              </center>
+            </div>
+          </div>
+      </div>
+
+
+      <div class="slide" id='Package Development - 3'>
+          <h3>General Criteria for Metadata that can migrate into a Package </h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+
+              <ul class='largelist'>
+                     <li>Logical groups of <b>related</b> source/metadata </li>
+                     <li>Projects can be <b>tested</b> independently </li>
+                     <li>Projects can be <b>released</b> independently </li>
+                     <li>Increases Release Flexibility </li>
+                     <li>Increases Dev Productivity </li>
+                 </ul>   
+                </li>
+              </ul>
+              </center>
+            </div>
+          </div>
+      </div>
+
+
+      <div class="slide" id='Packages Adoption'>
+          <h3>Proposed DX Packaging Adoption</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="img/dx-pkg-adopt-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+      <div class="slide" id='Package Guidelines'>
+          <h3>Things you must keep in mind </h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="img/dx-pkg-guidelines-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+  
+    <div class="slide" id='Package Guidelines Contd.'>
+    <h3>Things you must keep in mind </h3>
+    <div class="row">
+      <div class="col-lg-0"></div>
+      <div class="col-lg-12">
+        <ul class='largelist'>
+          <li>Be careful with <b>Object Schema</b>
+            <ul>
+              <li>Object/Schema changes have potential data loss implications </li>
+            </ul>
+          </li>
+          <li>Identify <b>Shared Metadata/Source</b>
+            <ul>
+              <li>Break apart where possible </li>
+              <li>Created shared packages when necessary </li>
+            </ul>
+          </li>
+           <li>Migrate to <b>Permission Sets</b> </li>
+           <li>Migrate to <b>Custom Metadata</b> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="slide" id='Q & A'>
+      <div class="row">
+        <div class="col-lg-0"></div>
+        <div class="col-lg-12">
+          <img src="img/dx-qa-1.png" width="100%" alt="" />
+        </div>
+      </div>
+  </div>
+
+
+
+
+
+
 
 
   
