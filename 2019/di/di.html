@@ -11,7 +11,13 @@
 <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
 <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css">
 
-<style> img { border-radius:20px; } </style>
+<style> img { border-radius:20px; }
+    .list-group-mc .list-group-item {
+      background-color: #f1f9fb;
+      border-left-color: #fff;
+      border-right-color: #fff;
+    }  
+</style>
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation" style='margin-bottom:0px;'>
@@ -413,7 +419,7 @@ export RESOURCE=/services/data/v41.0/jobs/ingest/$1/
    </div>
 
 <script>
-    Split(['#menu', '#content'],  {sizes: [15, 85]});
+    Split(['#menu', '#content'],  {sizes: [20, 80]});
 </script>
 </body>
 </html>
