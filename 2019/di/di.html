@@ -61,7 +61,9 @@
               <li class="list-group-item"> <a href="#odata">OData</a> </li> 
             <li class="list-group-item"> <a href="#coa">Cross-org adapter</a> </li> 
           </ol> 
+
         </li> 
+         <li class="list-group-item"> <a href="#FDW"> FDW  - SQL/MED</a> </li> 
          <li class="list-group-item"> <a href="#ref">References</a> </li> 
 
 
@@ -373,6 +375,15 @@ export RESOURCE=/services/data/v41.0/jobs/ingest/$1/
 </ul>
 
 </p>
+
+<hr/>
+<h4 id='FDW'> Foreign Data Wrapper - SQL/MED </h4>
+  
+  <p>Using Postgres database as the front-end to all other databases via 
+    <a href='https://mohan-chinnappan-n2.github.io/2019/sqlmed/fd.html'>FDW (Foreign Data Wrapper)</a>.
+    By implementing SQL/MED spec, Postgres can  access data that resides outside PostgreSQL using regular SQL queries.
+  </p>
+
 
 
 <hr/>
