@@ -40,3 +40,13 @@ img {
       font-family: Monaco, Arial, Helvetica, sans-serif;
       opacity: .8;
   }
+
+
+  .tooltip-inner {
+    max-width: 350px;
+    /* If max-width does not work, try using width instead */
+    width: 350px; 
+    height: 30px;
+    font-size: 16px;
+}
+

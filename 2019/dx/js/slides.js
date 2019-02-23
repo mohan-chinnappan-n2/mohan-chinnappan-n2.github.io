@@ -85,19 +85,31 @@ function prevSlide() {
 }
 
 document.body.onkeyup = function (e) {
-  if (e.keyCode == 32) {
+  const SPACE = 32;
+  if (e.keyCode === SPACE) {
     nextSlide();
   }
 };
 
+// select2 
+
 $('#outline').select2({
     placeholder: 'Select a topic'
   });
-  $('#outline').change(function(e) {
-    let value = e.target.value;
-    document.location.hash = value;
-    clearActives(); 
-    let li = document.getElementById(value + '_t');
-    li.classList.add('tocactive');
 
-  })
+$('#outline').change(function(e) {
+let value = e.target.value;
+document.location.hash = value;
+clearActives(); 
+let li = document.getElementById(value + '_t');
+li.classList.add('tocactive');
+
+});
+
+$(function () {
+    $('#help').tooltip({ placement: 'bottom', width: "300px"});
+});
+
+
+
+
