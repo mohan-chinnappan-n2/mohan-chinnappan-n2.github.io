@@ -27,7 +27,7 @@
     <style>
       img {
         border-radius: 20px;
-        padding-left: 30px;
+        align-content: center;
       }
 
       .slide {
@@ -91,7 +91,9 @@
 
     </div>
     <div class="split split-horizontal" id="content">
-      <div id="1" class="slide" title='Goals'>
+
+
+      <div   class="slide" id='Goals'>
         <h3>Salesforce Changes How you approach App Development</h3>
         <div class="row">
           <div class="col-lg-0"></div>
@@ -101,7 +103,7 @@
         </div>
       </div>
 
-      <div id="2" class="slide" title='Modern Development'>
+      <div  class="slide" id='Modern Development'>
         <h3>Modern software development on the Lightning Platform</h3>
 
         <div class="row">
@@ -131,7 +133,7 @@
         </div>
       </div>
 
-      <div id="3" class="slide" title='Tools for everyone'>
+      <div  class="slide" id='Tools for everyone'>
           <h3>Salesforce Changes How you approach App Development</h3>
           <div class="row">
             <div class="col-lg-0"></div>
@@ -141,7 +143,7 @@
           </div>
       </div>
 
-      <div id="4" class="slide" title='IDE'>
+      <div  class="slide" id='IDE'>
           <h3>VS Code for Lightning Platform</h3>
 
           <div class="row">
@@ -189,7 +191,7 @@
 
 
 
-      <div id="5" class="slide" title='CLI'>
+      <div  class="slide" id='CLI'>
           <h3>Salesforce Command Line Interface (CLI)</h3>
           <div class="row">
             <div class="col-lg-4">
@@ -225,12 +227,39 @@
                        Same tools as Non-Salesforce Development
    
                    </li>
+                   <li class="list-group-item">
+                      Single interface for all Salesforce DX features
+
+  
+                  </li>
+                  <li class="list-group-item">
+                      Improved Developer Productivity
+  
+                  </li>
+                  <li class="list-group-item">
+                      Integration with VCS, CI, and other External Toolsets
+  
+                  </li>
+                  
+
     
                </ul>
 
             </div>
             <div class="col-lg-8">
               <img src="img/dx-cmds-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+     
+
+      <div class="slide" id='Modern ALM'>
+          <h3>Modern Application Lifecycle Management For Everyone!</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="img/dx-alm-2.png" width="100%" alt="" />
             </div>
           </div>
       </div>
@@ -256,8 +285,8 @@
             li.setAttribute('class', 'list-group-item');
 
             let a = document.createElement('a');
-            a.setAttribute('href', '#' + ndx);
-            a.text = slide.getAttribute('title');
+            a.setAttribute('href', '#' + slides[ndx-1].id);
+            a.text = slide.getAttribute('id');
             li.appendChild(a);
 
             container.appendChild(li);
@@ -277,7 +306,7 @@
           } else {
             index = 1;
           }
-          gotoSlide(index);
+          gotoSlide(slides[index-1].id);
         }
 
         function prevSlide() {
@@ -287,7 +316,7 @@
             index = slides.length + 1;
           }
 
-          gotoSlide(index);
+          gotoSlide(slides[index-1].id);
         }
 
         document.body.onkeyup = function (e) {
