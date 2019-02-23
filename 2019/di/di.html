@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Salesforce Data Integration Tips</title>
+    <title>Salesforce Data Integration </title>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -23,7 +23,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="javascript:void(0)">Salesforce Data Integration Tips</a>
+      <a class="navbar-brand" href="javascript:void(0)">Salesforce Data Integration </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -50,6 +50,12 @@
           <li class="list-group-item"> <a href="#ba2">Bulk  API v2</a> </li> 
       </ol>
          <li class="list-group-item"> <a href="#eb">Event Based Data Sync</a> </li> 
+         <li class="list-group-item"> <a href="#sc">Salesforce Connect</a>
+          <ol class="list-group">
+              <li class="list-group-item"> <a href="#odata">OData Demo</a> </li> 
+            <li class="list-group-item"> <a href="#coa">Cross-org adapter</a> </li> 
+          </ol> 
+        </li> 
          <li class="list-group-item"> <a href="#ref">References</a> </li> 
 
 
@@ -267,8 +273,103 @@ export RESOURCE=/services/data/v41.0/jobs/ingest/$1/
  <img src="https://mohan-chinnappan-n.github.io/sfdc/img/pe/pe-2.png" width='1000' alt=""> <hr/>
  <img src="img/pe-3.png" width='1000' alt=""> <hr/>
 
+ <h4 id='sc'>Salesforce Connect </h4>
+ <p>
+  Salesforce Connect is a framework that enables you to :
+  <ul class='list-group2'>
+    <li class='list-group-item2'>View</li>
+    <li class='list-group-item2'>Search</li>
+    <li class='list-group-item2'>Modify</li>
+  </ul>
+    modify data that’s stored outside your Salesforce org.<br/>
+    Salesforce Connect maps data tables in external systems to <b>external objects</b> in your org. 
 
+  <h5>Recommended when:</h5>
+<ol>
+<li>    You have a large amount of data that you don’t want to copy into your Salesforce org.</li>
+<li>    You need small amounts of data at any one time.</li>
+<li>    You need real-time access to the latest data.</li>
+<li>    You store your data in the cloud or in a back-office system, but want to display or process that data in your Salesforce org</li>
+</ol>
+
+<h5>Cost details</h5>
+<p>Cost is based per connection/month (billed annually): 
+  <a href="https://www.salesforce.com/products/platform/pricing/">Current Cost Details</a>
+  <hr>
+
+</p>
+
+<h5>Comparing Custom Objects and External Objects</h5>
+<img src="img/ext-vs-cust-objs.png" width="800" alt="">
+
+<h5>Types of External Connections</h5>
+<ul>
+  <li><b>OData 2.0/4.0 adapter</b>:
+
+    Connects to data exposed by any OData 2.0/4.0 producer on the Internet.
+    <a href="https://www.odata.org/">OData</a> (Open Data Protocol) is a modern, REST-based protocol for integrating data. Vendors such as SAP and Microsoft have already implemented OData support,
+
+  </li>
+  <li>
+    <b>Cross-org adapter</b>: 
+    Connects to data that’s stored in another Salesforce org. 
+    The Cross-org adapter uses the standard Lightning Platform REST API. 
+    It directly connects to the other org without the need of an intermediary web service, as is the case with OData.
+    
+  </li>
+  <li>
+    <b>Custom adapter created via Apex</b>:
+    If the OData and cross-org adapters aren’t suitable for your needs, develop your own adapter with 
+    the <a href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_connector_start.htm">Apex Connector Framework</a> .
+  </li>
+</ul>
+</p>
+<hr/>
+
+<h5 id='odata'>OData Demo</h5>
+
+<img src="https://mohan-chinnappan-n2.github.io/2019/fsc/demos/fsc-odata-ext-obj-1.gif" alt="">
+
+
+
+
+<h5 id='coa'>Cross-org adapter</h5>
+<p>
+
+  The users and the Lightning Platform interact with other orgs’ data via <b>external objects</b>. <br/>
+   The cross-org adapter for Salesforce Connect converts each of those interactions into a Lightning Platform <b>REST API call</b>.
+   The provider org stores the data that the subscriber org accesses.<br/>
+    External object record IDs are derived from the corresponding record IDs in the provider organization. 
+    External ID values in external object records match the record IDs in the provider organization.
+    <br/>
+
+   <b> Example:</b><br/>
+     When we sync the provider organization’s Account object,
+      and the subscriber organization’s <b>Account__x</b> object is assigned the key prefix x00. 
+      An account in the provider organization with the ID 001B0000003SVC7IAO appears in 
+      the subscriber organization with the ID <b>x00</b>B0000003SVC7IAO and the external ID 001B0000003SVC7IAO.
+
+
+   <br/><br/>
+   The cross-org adapter makes a Lightning Platform REST API call each time that:
+<ul>
+<li>    A user clicks an external object tab for a list view.</li>
+<li>    A user views a record detail page of an external object.</li>
+<li>    A user views a record detail page of a parent object that displays a related list of child external object records.</li>
+<li>    A user performs a Salesforce global search.</li>
+<li>    A user creates, edits, or deletes an external object record.</li>
+<li>    A user runs a report.</li>
+<li>    The preview loads in the report builder.</li>
+<li>    An external object is accessed via flows, processes, APIs, Apex, SOQL, or SOSL.</li>
+<li>    You validate or sync an external data source.</li>
+</ul>
+
+</p>
+
+
+<hr/>
 <h4 id='ref'>References</h4>
+
 <a   target='_new' href="https://mohan-chinnappan-n.github.io/sfdc/pevents.html#/home"> Platform Events</a>
 <br/>
 <a  target='_new' href="https://mohan-chinnappan-n2.github.io/2019/sqlmed/fd.html">Foreign Data Wrapper (FDW) and SQL/MED</a>
@@ -288,6 +389,20 @@ export RESOURCE=/services/data/v41.0/jobs/ingest/$1/
       <br/>
 <a  target='_new' href="https://developer.salesforce.com/docs/atlas.en-us.financial_services_cloud_admin_guide.meta/financial_services_cloud_admin_guide/fsc_admin_data_loader_upload_sequence.htm">FSC: Load Data </a>
  
+<h5>Salesforce Connect</h5>
+<ul>
+  <li>
+    <a href="https://developer.salesforce.com/events/webinars/Lightning-Connect">Access External Data in Real-time with Lightning Connect</a>
+  </li>
+  <li>
+    <a href="https://help.salesforce.com/articleView?id=odata_type_mapping.htm&type=5">OData Type Mapping</a>
+  </li>
+  <li>
+   <a href="https://trailhead.salesforce.com/content/learn/modules/lightning_connect/lightning_connect_setup"> Set up Salesforce Connect </a>
+  </li>
+  <li></li>
+  <li></li>
+</ul>
  </li>
            </ul>
       </div>
