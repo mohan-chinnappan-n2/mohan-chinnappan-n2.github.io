@@ -96,5 +96,8 @@ $('#outline').select2({
   $('#outline').change(function(e) {
     let value = e.target.value;
     document.location.hash = value;
+    clearActives(); 
+    let li = document.getElementById(value + '_t');
+    li.classList.add('tocactive');
 
   })
