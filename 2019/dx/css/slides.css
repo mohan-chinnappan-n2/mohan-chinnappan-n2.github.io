@@ -1,0 +1,23 @@
+img {
+    border-radius: 20px;
+    align-content: center;
+    color: transparent;
+  }
+
+  .slide {
+    border: 10px gray;
+    border-radius: 4px;
+    height: 750px;
+  }
+  h3, h4 {
+    padding-left: 30px;
+    padding-top: 30px;
+  }
+   h4 {
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+
+  .tocactive {
+    border-left: 4px solid steelblue;
+  }

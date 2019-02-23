@@ -3,47 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <title>SFDX - Modern Tooling and Development Experience</title>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w="
-      crossorigin="anonymous"
-    />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://mohan-chinnappan-n.github.io/css/navbar-blue.css"
-    />
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/css/navbar-blue.css" />
     <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css"
-    />
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
 
-    <style>
-      img {
-        border-radius: 20px;
-        align-content: center;
-      }
-
-      .slide {
-        border: 10px gray;
-        border-radius: 4px;
-        height: 750px;
-      }
-      h3, h4 {
-        padding-left: 30px;
-        padding-top: 30px;
-      }
-       h4 {
-        padding-left: 10px;
-        padding-top: 10px;
-      }
-    </style>
+    <link rel="stylesheet" href="css/slides.css?v=12" />
+  
   </head>
 
   <body>
@@ -270,60 +238,7 @@
 
     </div>
 
-    <script>
-        Split(["#menu", "#content"], { sizes: [12, 88] });
-        let index = 1;
-        let slides = document.querySelectorAll(".slide");
-
-
-        function fillMenuItems() {
-          let container = document.getElementById('mitems');
-          let ndx = 1;
-          for (let slide of slides) {
-            console.log(slide);
-            let li = document.createElement('li');
-            li.setAttribute('class', 'list-group-item');
-
-            let a = document.createElement('a');
-            a.setAttribute('href', '#' + slides[ndx-1].id);
-            a.text = slide.getAttribute('id');
-            li.appendChild(a);
-
-            container.appendChild(li);
-            ndx++;
-          }
-        }
-        // setup menu
-        fillMenuItems();
-
-        // slide nav functions
-        function gotoSlide(loc) {
-          document.location.hash = loc;
-        }
-        function nextSlide() {
-          if ( (index+1) <= slides.length) {
-            index++;
-          } else {
-            index = 1;
-          }
-          gotoSlide(slides[index-1].id);
-        }
-
-        function prevSlide() {
-          if (index > 0) {
-            index--;
-          } else {
-            index = slides.length + 1;
-          }
-
-          gotoSlide(slides[index-1].id);
-        }
-
-        document.body.onkeyup = function (e) {
-          if (e.keyCode == 32) {
-            nextSlide();
-          }
-        };
-    </script>
+    <script> Split(["#menu", "#content"], { sizes: [12, 88] }); </script>
+     <script src='js/slides.js?v=12'> </script>
   </body>
 </html>
