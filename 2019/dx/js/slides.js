@@ -6,6 +6,19 @@
 let index = 1;
 let slides = document.querySelectorAll(".slide");
 
+function clearActives() {
+    let tocs = document.getElementsByClassName('toc');
+    for (let tocitem of tocs){
+        tocitem.classList.remove('tocactive');
+    }
+}
+
+function setActive() {
+  let ele =  this.event.target;
+  clearActives();
+  ele.parentElement.classList.add('tocactive');
+}
+
 // fill the menu items
 function fillMenuItems() {
   let container = document.getElementById('mitems');
@@ -20,6 +33,7 @@ function fillMenuItems() {
     }
     
     li.setAttribute('id', slide.getAttribute('id') + '_t' );
+    li.setAttribute('onclick', 'setActive()');
 
     let a = document.createElement('a');
     a.setAttribute('href', '#' + slides[ndx-1].id);
@@ -38,11 +52,7 @@ fillMenuItems();
 function gotoSlide(loc) {
   let gotoId = slides[loc-1].id;
   document.location.hash = gotoId;
-  let tocs = document.getElementsByClassName('toc');
-  for (let tocitem of tocs){
-      tocitem.classList.remove('tocactive');
-  }
-
+  clearActives(); 
   let li = document.getElementById(gotoId + '_t');
   li.classList.add('tocactive');
   
