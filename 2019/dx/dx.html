@@ -35,9 +35,13 @@
         border-radius: 4px;
         height: 750px;
       }
-      h3 {
+      h3, h4 {
         padding-left: 30px;
         padding-top: 30px;
+      }
+       h4 {
+        padding-left: 10px;
+        padding-top: 10px;
       }
     </style>
   </head>
@@ -84,7 +88,7 @@
         <button class="btn btn-success" onclick="nextSlide()">Next</button>
       </span>
       <ol class="list-group" id='mitems'> </ol>
-      
+
     </div>
     <div class="split split-horizontal" id="content">
       <div id="1" class="slide" title='Goals'>
@@ -135,7 +139,53 @@
               <img src="img/dx-tools-1.png" width="100%" alt="" />
             </div>
           </div>
-        </div>
+      </div>
+
+      <div id="4" class="slide" title='IDE'>
+          <h3>VS Code for Lightning Platform</h3>
+
+          <div class="row">
+            <div class="col-lg-4">
+              <h4>Features</h4>
+             <ul class="list-group">
+               <li class="list-group-item">
+                  Salesforce Extensions for Visual Studio Code
+               </li>
+               <li class="list-group-item">
+                  Support for Lightning Development and Large Codebases
+               </li>
+               <li class="list-group-item">
+                  Spin up Scratch Environments on demand
+               </li>
+               <li class="list-group-item">
+                  Synchronize Source to and from Scratch Environments
+               </li>
+               <li class="list-group-item">
+                  Code Completion, Code Scan, Navigation, Integrated Testing
+               </li>
+             </ul>
+             <h4>Benefits</h4>
+             <ul class="list-group">
+                <li class="list-group-item">
+                    Improved Developer Productivity
+                </li>
+                <li class="list-group-item">
+                    Support for Preferred Dev Tools
+                </li>
+                 <li class="list-group-item">
+                    Same tools as Non-Salesforce Development
+
+                </li>
+ 
+            </ul>
+
+
+            </div>
+            <div class="col-lg-8">
+              <img src="img/dx-vscode-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
 
 
 
@@ -156,7 +206,7 @@
             li.setAttribute('class', 'list-group-item');
 
             let a = document.createElement('a');
-            a.setAttribute('href', ndx);
+            a.setAttribute('href', '#' + ndx);
             a.text = slide.getAttribute('title');
             li.appendChild(a);
 
