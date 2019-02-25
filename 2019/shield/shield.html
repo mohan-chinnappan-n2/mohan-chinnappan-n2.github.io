@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title id='title'>Shield Key Management (KMS)</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/css/navbar-blue.css" />
+    <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
+
+    <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2019/dx/css/slides.css?v=17" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
+  
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-default"
+      role="navigation"
+      style="margin-bottom:0px;"
+    >
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)" id='navtitle' > Shield Key Management (KMS)</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#/home">Home</a></li>
+          <li>
+              <a href="#" id='help' data-toggle="tooltip" title="Use Space Bar to move the slides">Help</a>
+
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <select style="display:none2;margin-top:10px;" id='outline'> </select>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+
+    <div class="split split-horizontal" id="menu">
+      <span style="display:none">
+        <button class="btn btn-success" onclick="prevSlide()">Prev</button>
+        <button class="btn btn-success" onclick="nextSlide()">Next</button>
+      </span>
+      <select style="display:none;margin-top:10px;" id='outline2'> </select>
+      <ol class="list-group" id='mitems'> </ol>
+
+
+    </div>
+    <div class="split split-horizontal" id="content">
+
+<div class="slide" id='Key Derivation'>
+<div class="row">
+  <div class="col-lg-0"></div>
+  <div class="col-lg-12">
+  <img src="img/ShieldBP.png" alt="">
+  </div>
+</div>
+</div>
+
+
+        <div class="slide" id='Best Practices'>
+          <h3>Best Practices</h3>
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+    <ul class="largelist">
+        <li>It’s recommended to regularly generate a new Tenant Secret and archive the previously active one.</li>
+        <li>When you generate a new Tenant Secret, any new data is encrypted using this key. However, existing sensitive data remains encrypted using previous keys. In this situation, Salesforce strongly recommends re-encrypting these fields using the latest key. Contact Salesforce for help with re-encrypting your data.</li>
+        <li>Since your tenant secret is unique to your organization and to the specific data to which it applies. Salesforce recommends that you export your secret to ensure continued data access in cases where you need to gain access to the related data again.</li>
+        <li>When you create and store your own key material outside of Salesforce, it’s important that you safeguard that key material. Make sure that you have a trustworthy place to archive your key material; never save a tenant secret or data encryption key on a hard drive without a backup.</li>
+   </ul>
+
+</div>
+              </div>
+            </div>
+        </div>
+
+
+      
+
+
+
+
+    </div>
+
+
+
+    <script> Split(["#menu", "#content"], { sizes: [12, 88] }); </script>
+     <script src='https://mohan-chinnappan-n2.github.io/2019/dx/js/slides.js?v=17'> </script>
+  </body>
+
+
+
+</html>
