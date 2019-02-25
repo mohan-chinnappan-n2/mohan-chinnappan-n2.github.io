@@ -486,6 +486,48 @@ https://customer-energy-4643-dev-ed.cs16.my.salesforce.com//secur/frontdoor.jsp?
     </div>
 
 
+  <div class="slide" id='Scratch Org with FSC'>
+      <h3>FSC package install in Scratch Org </h3>
+        <div class="row">
+          <div class="col-lg-0"></div>
+          <div class="col-lg-12">
+
+            <ul class="largelist">
+            <li>   FSC permission set licenses are available by default in scratch orgs</li> 
+            <li>      The user needs to install the FSC package using :</li> 
+            <li>     <b>package:install</b> similar to how they would install any other dependent package.</li> 
+            </ul>
+            <pre class='code'>
+  $ sfdx force:package:install -h
+  Usage: sfdx force:package:install [-w <minutes>] [-k <string>] [-b <minutes>] [-r] [-p <string>] [-s <string>] [-t <string>] [-u <string>] [--json] [--loglevel <string>] 
+  
+  install a package in the target org
+  
+  Flags:
+    -k, --installationkey INSTALLATIONKEY  installation key for key-protected package (default: null)
+    -r, --noprompt                         allow Remote Site Settings and Content Security Policy websites to send or receive data
+                                          without confirmation
+    -p, --package PACKAGE                  ID (starts with 04t) or alias of the package version to install
+    -b, --publishwait PUBLISHWAIT          number of minutes to wait for subscriber package version ID to become available in the
+                                          target org 
+    -s, --securitytype SECURITYTYPE        security access type for the installed package (AllUsers,AdminsOnly)
+    -u, --targetusername TARGETUSERNAME    username or alias for the target org; overrides default target org
+    -t, --upgradetype UPGRADETYPE          the upgrade type for the package installation (Mixed*,DeprecateOnly)
+    -w, --wait WAIT                        number of minutes to wait for installation status
+    --json                                 format output as json
+    --loglevel LOGLEVEL                    logging level for this command invocation (error*,trace,debug,info,warn,fatal)
+  
+  Supply the ID of the package version to install. The package installs in your default target org unless you supply the username for a different target org.
+  
+  For package upgrades, to specify options for component deprecation or deletion of removed components, include an --upgradetype value. To delete components that can be safely deleted and deprecate the others, specify --upgradetype Mixed (the default). To deprecate all removed components, specify --upgradetype DeprecateOnly. The default is Mixed.
+  
+
+            </pre>
+          </div>
+        </div>
+    </div>
+
+
 
 
 
