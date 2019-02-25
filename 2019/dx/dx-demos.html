@@ -10,7 +10,7 @@
     <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
     <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
 
-    <link rel="stylesheet" href="css/slides.css?v=16" />
+    <link rel="stylesheet" href="css/slides.css?v=17" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
@@ -80,6 +80,46 @@
               </div>
             </div>
         </div>
+
+
+
+<div   class="slide" id='Use Case'>
+    <h3>Use Case</h3>
+    <div class="row">
+      <div class="col-lg-6">
+        <ul class='mediumlist'>
+          <li>In our  FSC org, we like to add <b>Near-Realtime Stock Quote</b>  Lightning Web Component (LWC)</li>
+          <li>We will using a  <b>Custom Settings</b> to store the API key for the Stock Service</li>
+          <li>Apex Class - <b> Server-side Controller</b> will provide this API Key to this LWC Component</li>
+          <li>Stock Rendering will be done via an <b> Util </b>Lightning Web Component</li>
+          <li>Take care of <b>CSP</b> (Content Security Policy) to access the external website <hr/></li>
+          <li>Develop this Stock Quote Lightning Web Component using SFDX CLI and VS Code</li>
+          <li>Spin-up a <b>scratch org</b> to do the development</li>
+          <li>All the artifacts are <b>externalized</b> and stored in VCS (git) </li>
+          <li>Test the LWC in the scratch org</li>
+          <li>Push this LWC and related artifacts to a <b>FSC</b> org</li>
+        </ul>
+</div>
+<div class="col-lg-6">
+
+  <img src="img/demos/dx-use-case-1.png"  width='100%' alt="">
+</div>
+
+</div>
+</div>
+
+
+<div   class="slide" id='What we want'>
+    <h3>Demo of what we like to have</h3>
+    <div class="row">
+      <div class="col-lg-0"></div>
+      <div class="col-lg-12">
+     <img src="img/demos/dx-fsc-1.gif"  height='700' alt="" />
+
+</div>
+</div>
+</div>
+
 
 
       <div   class="slide" id='DevHub'>
@@ -255,7 +295,6 @@ https://customer-energy-4643-dev-ed.cs16.my.salesforce.com//secur/frontdoor.jsp?
         </pre>
 <img src="img/demos/dx-sorg-1.png"  height='600' alt="" />
 
-</pre>
 </div>
 </div>
 </div>
@@ -265,10 +304,8 @@ https://customer-energy-4643-dev-ed.cs16.my.salesforce.com//secur/frontdoor.jsp?
     <div class="row">
       <div class="col-lg-0"></div>
       <div class="col-lg-12">
-        </pre>
     <img src="img/demos/dx-create-lwc-1.gif"  height='600' alt="" />
 
-</pre>
 </div>
 </div>
 </div>
@@ -279,10 +316,8 @@ https://customer-energy-4643-dev-ed.cs16.my.salesforce.com//secur/frontdoor.jsp?
     <div class="row">
       <div class="col-lg-0"></div>
       <div class="col-lg-12">
-        </pre>
     <img src="img/demos/dx-create-lwc-2.gif"  height='600' alt="" />
 
-</pre>
 </div>
 </div>
 </div>
@@ -292,13 +327,98 @@ https://customer-energy-4643-dev-ed.cs16.my.salesforce.com//secur/frontdoor.jsp?
     <div class="row">
       <div class="col-lg-0"></div>
       <div class="col-lg-12">
-        </pre>
     <img src="img/demos/dx-csp-1.gif"  height='600' alt="" />
+</div>
+</div>
+</div>
 
-</pre>
+<div   class="slide" id='Custom Settings'>
+    <h3>Custom Settings - FinApp Settings - Source Pull</h3>
+    <div class="row">
+      <div class="col-lg-0"></div>
+      <div class="col-lg-12">
+    <img src="img/dx-custom-settings-1.gif"  height='600' alt="" />
+
 </div>
 </div>
 </div>
+
+<div   class="slide" id='Apex Class Creation'>
+    <h3>Apex Class -  StockServiceController - Source Push</h3>
+    <div class="row">
+      <div class="col-lg-0"></div>
+      <div class="col-lg-12">
+    <img src="img/dx-apexclass-1.gif"  height='600' alt="" />
+
+</div>
+</div>
+</div>
+
+<div   class="slide" id='StockQuote LWC'>
+    <h3>Finish up StockQuote Lightning Web Component (LWC)</h3>
+    <div class="row">
+      <div class="col-lg-0"></div>
+      <div class="col-lg-12">
+    <img src="img/demos/dx-stockquote-2.gif"  height='550' alt="" />
+    <pre class="code">
+  $ sfdx force:source:push
+  === Pushed Source
+  STATE    FULL NAME                   TYPE                      PROJECT PATH
+  ───────  ──────────────────────────  ────────────────────────  ────────────────────────────────────────────────────────────
+  Changed  stockQuote/stockQuote.html  LightningComponentBundle  force-app/main/default/lwc/stockQuote/stockQuote.html
+  Changed  stockQuote/stockQuote.js    LightningComponentBundle  force-app/main/default/lwc/stockQuote/stockQuote.js
+  Changed  stockQuote/stockQuote.js    LightningComponentBundle  force-app/main/default/lwc/stockQuote/stockQuote.js-meta.xml
+    </pre>
+
+</div>
+</div>
+
+
+<div   class="slide" id='App Builder'>
+    <h3>Modify Accounts Page with stockQuote LWC </h3>
+    <div class="row">
+      <div class="col-lg-0"></div>
+      <div class="col-lg-12">
+    <img src="img/demos/dx-page-setup-1.gif"  height='600' alt="" />
+
+</div>
+</div>
+</div>
+
+
+<div   class="slide" id='Commit to VCS'>
+    <h3>Commit stockQuote and releated artifacts into VCS</h3>
+    <div class="row">
+      <div class="col-lg-0"></div>
+      <div class="col-lg-12">
+    <img src="img/demos/dx-pull-2.gif"  height='600' alt="" />
+
+</div>
+</div>
+</div>
+
+
+<div   class="slide" id='Non-Scratch Org Push'>
+    <h3>How you can push artifacts into a Non-Scratch Orgs</h3>
+    <div class="row">
+      <div class="col-lg-0"></div>
+      <div class="col-lg-12">
+
+     <pre class="code">
+       # ------- login into the Non-Scratch org via CLI
+       $ sfdx force:auth:web:login -r https://login|test.salesforce.com 
+       # -------- once logged in checked in the org list
+       $ sfdx force:org:list
+       # -------- you will see this org listed with username
+       # -------- source:push to this org
+       $ sfdx force:source:push -u username
+     </pre>
+     <img src="img/demos/dx-fsc-1.gif"  height='500' alt="" />
+
+</div>
+</div>
+</div>
+
 
 
 
