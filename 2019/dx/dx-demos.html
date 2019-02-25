@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SFDX - Modern Tooling and Development Experience</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/css/navbar-blue.css" />
+    <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
+
+    <link rel="stylesheet" href="css/slides.css?v=16" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
+  
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-default"
+      role="navigation"
+      style="margin-bottom:0px;"
+    >
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)"
+          >SFDX - Demos</a
+        >
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#/home">Home</a></li>
+          <li>
+              <a href="#" id='help' data-toggle="tooltip" title="Use Space Bar to move the slides">Help</a>
+
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <select style="display:none2;margin-top:10px;" id='outline'> </select>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+
+    <div class="split split-horizontal" id="menu">
+      <span style="display:none">
+        <button class="btn btn-success" onclick="prevSlide()">Prev</button>
+        <button class="btn btn-success" onclick="nextSlide()">Next</button>
+      </span>
+      <select style="display:none;margin-top:10px;" id='outline2'> </select>
+      <ol class="list-group" id='mitems'> </ol>
+
+
+    </div>
+    <div class="split split-horizontal" id="content">
+
+
+        <div class="slide" id='SFDX'>
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                <img src="img/dx-front.png" width="100%" alt="" />
+              </div>
+            </div>
+        </div>
+
+
+      <div   class="slide" id='DevHub'>
+        <h3>Make DevHub Ready</h3>
+        <div class="row">
+          <div class="col-lg-0"></div>
+          <div class="col-lg-12">
+            <ul class="largelist">
+            <li>Comprises Objects with Permission that allow admins to control level-of-access available to a user and org</li>
+            <li>Provides ability to create and manage scratch orgs</li>
+            <li>You can choose an org to function as your Dev Hub</li>
+            <li>
+                <a class='btn btn-info' title='click me' href="https://developer.salesforce.com/promotions/orgs/dx-signup"> Sign up for Dev Hub 30-day Trial Org</a>
+            </li> 
+           </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <div   class="slide" id='Login DevHub'>
+        <h3>Using CLI login into DevHub</h3>
+        <div class="row">
+          <div class="col-lg-0"></div>
+          <div class="col-lg-12">
+            <pre class='code'>
+
+
+# ---------- Login into Dev Hub
+$  sfdx force:auth:web:login -d -a MCDevHub
+Successfully authorized mohan.chinnappan.n_dh19_1@gmail.com with org ID 00D1U0000011ubzUAA
+You may now close the browser
+
+# ---------- list out the orgs 
+sfdx force:org:list 
+=== Orgs
+     ALIAS     USERNAME                             ORG ID              CONNECTED STATUS
+───  ────────  ───────────────────────────────────  ──────────────────  ────────────────
+(D)  MCDevHub  mohan.chinnappan.n_dh19_1@gmail.com  00D1U0000011ubzUAA  Connected
+
+
+
+           </pre>
+                 <img src="img/demos/dx-dh-1.png"  height='300' alt="" />
+          </div>
+        </div>
+      </div>
+
+
+      <div   class="slide" id='DX Project'>
+          <h3>Create DX Project - Stock Quote</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <pre class='code'>
+$ sfdx force:project:create -n StockQuote
+target dir = /Users/mchinnappan
+    create StockQuote/sfdx-project.json
+    create StockQuote/README.md
+    create StockQuote/.forceignore
+    create StockQuote/config/project-scratch-def.json
+
+$ tree
+.
+├── README.md
+├── config
+│   └── project-scratch-def.json
+├── force-app
+│   └── main
+│       └── default
+│           ├── aura
+│           └── lwc
+└── sfdx-project.json
+$ cat sfdx-project.json 
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "45.0"
+}
+$ cat config/project-scratch-def.json 
+{
+    "orgName": "mchinnappan Company",
+    "edition": "Developer",
+    "orgPreferences" : {
+        "enabled": ["S1DesktopEnabled"]
+    }
+}
+    </pre>
+    </div>
+    </div>
+    </div>
+
+
+  <div   class="slide" id='VS Code - Project'>
+      <h3>Load the project in VS Code</h3>
+      <div class="row">
+        <div class="col-lg-0"></div>
+        <div class="col-lg-12">
+                <img src="img/demos/dx-prj-scratch-1.png"  height='600' alt="" />
+        </div>
+      </div>
+  </div>
+  
+  
+
+
+  <div   class="slide" id='Version Control'>
+      <h3>Commit into Version Control</h3>
+      <div class="row">
+        <div class="col-lg-0"></div>
+        <div class="col-lg-12">
+          <pre class='code'>
+  $ git commit -m 'init'
+  [master (root-commit) a3061e1] init
+    6 files changed, 49 insertions(+)
+    create mode 100644 .forceignore
+    create mode 100644 .sfdx/tools/apex.db
+    create mode 100644 .vscode/settings.json
+    create mode 100644 README.md
+    create mode 100644 config/project-scratch-def.json
+    create mode 100644 sfdx-project.json
+   </pre>
+
+
+  </div>
+</div>
+</div>
+
+<div   class="slide" id='Create Scratch Org'>
+    <h3>Create Scratch Org</h3>
+    <div class="row">
+      <div class="col-lg-0"></div>
+      <div class="col-lg-12">
+        <pre class='code'>
+
+$ sfdx force:org:create -s -f config/project-scratch-def.json -a StockQuote_sorg_1
+Successfully created scratch org: 00Df0000001orqnEAA, username: test-xbv1xfitawca@example.com
+# ----------------------------- 
+$ sfdx force:org:list 
+=== Orgs
+     ALIAS     USERNAME                             ORG ID              CONNECTED STATUS
+───  ────────  ───────────────────────────────────  ──────────────────  ────────────────
+(D)  MCDevHub  mohan.chinnappan.n_dh19_1@gmail.com  00D1U0000011ubzUAA  Connected
+
+     ALIAS              SCRATCH ORG NAME     USERNAME                       ORG ID              EXPIRATION DATE
+───  ─────────────────  ───────────────────  ─────────────────────────────  ──────────────────  ───────────────
+(U)  StockQuote_sorg_1  mchinnappan Company  test-xbv1xfitawca@example.com  00Df0000001orqnEAA  2019-03-04
+
+ </pre>
+
+ <img src="img/demos/dx-dh-sorg-1.png"  height='300' alt="" />
+
+</div>
+</div>
+</div>
+
+<div   class="slide" id='Open Scratch Org'>
+    <h3>Open Scratch Org</h3>
+    <div class="row">
+      <div class="col-lg-0"></div>
+      <div class="col-lg-12">
+        <pre class='code'>
+$  sfdx force:org:open
+Access org 00Df0000001orqnEAA as user test-xbv1xfitawca@example.com with the 
+following URL:
+https://customer-energy-4643-dev-ed.cs16.my.salesforce.com//secur/frontdoor.jsp?sid=00Df0000001orqn!ARkAQKhdCzttSDr.QBSNMYWPwC94Iui4sif_dPVkcJ.pJRgemij_6SbeF9Rj1kF8IuX72oIl2SF6V6goUBkjakzh3.nnA5g9
+        </pre>
+<img src="img/demos/dx-sorg-1.png"  height='600' alt="" />
+
+</pre>
+</div>
+</div>
+</div>
+
+<div   class="slide" id='Create LWC StockQuote'>
+    <h3>Create Lightning Web Component (LWC) - stockQuote</h3>
+    <div class="row">
+      <div class="col-lg-0"></div>
+      <div class="col-lg-12">
+        </pre>
+    <img src="img/demos/dx-create-lwc-1.gif"  height='600' alt="" />
+
+</pre>
+</div>
+</div>
+</div>
+
+
+<div   class="slide" id='Create LWC StockUtils'>
+    <h3>Create Lightning Web Component (LWC) - stockUtils</h3>
+    <div class="row">
+      <div class="col-lg-0"></div>
+      <div class="col-lg-12">
+        </pre>
+    <img src="img/demos/dx-create-lwc-2.gif"  height='600' alt="" />
+
+</pre>
+</div>
+</div>
+</div>
+
+<div   class="slide" id='CSP'>
+    <h3>Content Security Policy (CSP) Trusted Site Trusted Site Setup - Source Pull</h3>
+    <div class="row">
+      <div class="col-lg-0"></div>
+      <div class="col-lg-12">
+        </pre>
+    <img src="img/demos/dx-csp-1.gif"  height='600' alt="" />
+
+</pre>
+</div>
+</div>
+</div>
+
+
+
+    </div>
+
+    <script> Split(["#menu", "#content"], { sizes: [12, 88] }); </script>
+     <script src='js/slides.js?v=17'> </script>
+  </body>
+</html>
