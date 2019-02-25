@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title id='title'>SFDX Packages</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/css/navbar-blue.css" />
+    <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
+
+    <link rel="stylesheet" href="css/slides.css?v=16" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
+  
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-default"
+      role="navigation"
+      style="margin-bottom:0px;"
+    >
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)" id='navtitle' >SFDX Packages</a
+        >
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#/home">Home</a></li>
+          <li>
+              <a href="#" id='help' data-toggle="tooltip" title="Use Space Bar to move the slides">Help</a>
+
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <select style="display:none2;margin-top:10px;" id='outline'> </select>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+
+    <div class="split split-horizontal" id="menu">
+      <span style="display:none">
+        <button class="btn btn-success" onclick="prevSlide()">Prev</button>
+        <button class="btn btn-success" onclick="nextSlide()">Next</button>
+      </span>
+      <select style="display:none;margin-top:10px;" id='outline2'> </select>
+      <ol class="list-group" id='mitems'> </ol>
+
+
+    </div>
+    <div class="split split-horizontal" id="content">
+
+
+        <div class="slide" id='What’s a Package?'>
+          <h3>What’s a Package?</h3>
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+              <ul class="largelist">
+
+                <li> Package is a container that you fill with metadata. </li>
+                <li> Use packages to move the metadata from one location to another.
+                   Each second-generation package has a distinct life cycle.
+                  </li>
+                <li>Snapshot: We call the snapshot a package version.
+                    As you add, remove, or change the package metadata, you can create another snapshot, called a package versions. 
+                </li>
+                <li> The package version can be installed in a scratch org, sandbox org, DE org, or production org.
+                   Installing the package is similar to deploying metadata.</li>
+                  <li>Upgrade: you can install a new package version into the same org through a package upgrade.
+
+                  </li>
+                  <li>Cycle
+                     <ul>
+                       <li>Change metadata</li>
+                       <li>Create a package version</li>
+                       <li>Test the package version</li>
+                       <li> Finally deploy or install the package to a production org. </li>
+                     </ul>                    
+                  </li>
+                  <li>Use Salesforce DX projects to organize your source into package directories</li>
+                  <li>Create packages using those directories that are version-able, easy to maintain, update, install, and upgrade.</li>
+                  <li>With unlocked packages, developers can more easily develop and deploy their apps and functionality.</li>
+              </ul>
+
+              </div>
+            </div>
+        </div>
+
+        <div class="slide" id='Unlocked package'>
+
+            <h3>Help Enterprise developers to  easily develop and deploy their apps and functionality</h3>
+              <div class="row">
+                <div class="col-lg-0"></div>
+                <div class="col-lg-12">
+                  <img src="https://mohan-chinnappan-n.github.io/books/lx/chap-26/img/pk-unpk-metadata-1.png" alt="">
+                <ul class="largelist">
+                  <li>
+                      Organize the unpackaged metadata in your production org into well-defined packages. 
+                  </li>
+                  <li>These packages are version-able and easy to maintain, update, install, and upgrade.</li>
+                  <li>When your “happy soup” of metadata is organized into packages, updates and 
+                       customizations are much easier to manage across your development team.</li>
+                </ul>
+              </div>
+              </div>
+        </div>
+
+
+        <div class="slide" id='Enable 2GP'>
+
+            <h3>Help Enterprise developers to  easily develop and deploy their apps and functionality</h3>
+              <div class="row">
+                <div class="col-lg-0"></div>
+                <div class="col-lg-12">
+                <img src="img/enable-2gp-beta.png" width='100%' alt="">
+              </div>
+              </div>
+        </div>
+  
+        <div class="slide" id='2GP Features'>
+            <h3>Second-Generation Packaging </h3>
+              <div class="row">
+                <div class="col-lg-0"></div>
+                <div class="col-lg-12">
+                  <ul class="largelist">
+                    <li>Allows customers and system integrators (SI) to create packages in a source-driven development environment </li>
+                    <li>Packages that are built directly from the source. </li>
+                    <li>You can create and deploy packages in your own Salesforce org or develop and distribute packages to your customers</li>
+                    <li>The Salesforce CLI provides commands for the entire application life cycle so you can work efficiently with your packages, scratch orgs, and development processes.
+                      </li>
+                      <li>Options for enterprise customers to organize and deploy metadata to production orgs.
+                      </li>
+                      <li>
+                          Multiple packages per namespace, so you can better organize your source and easily share Apex code.
+                           You can use <b>public Apex classes across</b> packages rather than global Apex classes.
+                      </li>
+                      <li>
+                          Feature branch development and testing
+                      </li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+
+          
+
+        <div class="slide" id='Package Checklist'>
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                <ul class="largelist">
+                  <li>Namespace : Link the name of each package to Dev Hub Org
+
+<pre class="code">
+  #----- in sfdx-project.json
+  "namespace": "GreenCorp"
+</pre>
+                  </li>
+                  <li>
+                    Check out the metadata of the package from version control system (VCS)
+                  </li>
+                  <li>
+
+                    Authenticate the Dev Hub org
+                  </li>
+                  <li> Create Scratch Org </li>
+                  <li>Push source to the Scratch Org and update source in Scratch org as needed</li>
+                  <li>Convert source format to metadata format
+
+<pre class="code">
+ sfdx force:source:convert --outputdir mdapi_output_dir --packagename managed_pkg_name
+ #----- review the contents of the mdapi_output_dir
+ ls -lR mdapi_output_dir
+ #----- Authenticate the packaging org
+ sfdx force:auth:web:login --setalias MyPackagingOrgAlias
+ #----- Deploy the package metadata back to the packaging org
+ sfdx force:mdapi:deploy --deploydir mdapi_output_dir --targetusername me@example.com
+ #----- Check the status of the deployment
+ sfdx force:mdapi:deploy:report
+#----- Create the beta version of the package
+sfdx force:package1:version:create --packageid package_id --name package_version_name
+#----- List package version to install
+sfdx force:package1:version:list
+#----- Install package
+sfdx force:package:install --package 04txx000000069zAAA
+
+#----- After your testing is done, your app is almost ready to be published in your enterprise or on AppExchange. 
+#      Generate a new managed package version in your Dev Hub org
+#      Include the --managedreleased parameter to create the managed package
+sfdx force:package1:version:create --packageid 04txx000000069zAAA --name ”Spring 19” --description ”Spring 19 Release” --version 3.2 --managedreleased
+
+#----- View information about a package
+force:package1:version:display -i 04txx000000069yAAA
+
+
+</pre>
+                  </li>
+  
+
+                </ul>
+              </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+    <script> Split(["#menu", "#content"], { sizes: [12, 88] }); </script>
+     <script src='js/slides.js?v=17'> </script>
+  </body>
+
+
+
+</html>
