@@ -14,6 +14,23 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
+
+  
+
+
+<style>
+    @keyframes demo {
+      from {background-color: #99ffcc;color:black;  transform: rotate(-1deg)}
+      to {background-color: ##337ab7;color:white;  transform: rotate(+1deg)}
+  }
+
+  .demo {
+      animation-name: demo;
+      animation-duration: 10s;
+      animation:demo 5s linear 2s infinite alternate;
+  }
+  </style>
+     
   
   </head>
 
@@ -462,7 +479,7 @@
                  </ul>   
                 </li>
               </ul>
-              </center>
+             
             </div>
           </div>
       </div>
@@ -487,6 +504,45 @@
             </div>
           </div>
       </div>
+
+
+      <div class="slide" id='Project Configuration File'>
+          <h3> Project configuration file is a blueprint for the project and for the outline of a package </h3>
+          <h4>The settings in the file determine the package attributes and package contents</h4>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+
+              
+              <pre class="code">
+    {
+      "packageDirectories": [
+        {
+          "path": "force-app",
+          "default": true
+        }
+      ],
+      "namespace": "",
+      "sfdcLoginUrl": "https://login.salesforce.com",
+      "sourceApiVersion": "45.0",
+
+    
+      "dependencies": [
+        {
+            "package": "Expense Manager - Util",
+            "versionNumber": "4.7.0.LATEST"
+        },
+        {
+            "package" : "External Apex Library - 1.0.0.4"
+        }
+      ]
+    }
+     </pre>
+              </center>
+            </div>
+          </div>
+      </div>
+
 
 
       <div class="slide" id='Packages Adoption'>
@@ -543,13 +599,21 @@
       </div>
   </div>
 
-  <div class="slide" id='Demo'>
+  <div class="slide" id='Demo and Resources'>
       <div class="row">
         <div class="col-lg-0"></div>
         <div class="col-lg-12">
           <center>
-          <a class='btn btn-info' style='height:60px;width:300px;margin:30px;padding-top:20px;' href='./dx-demos.html'>DX - LWC Demo</a>
-          <a class='btn btn-success' style='height:60px;width:300px;margin:30px;padding-top:20px;' href='./dx-pkg.html'>More about Package</a>
+          <a class='btn btn-danger demo' style='height:60px;width:300px;margin:30px;padding-top:20px;' href='./dx-demos.html'> <b>DX - LWC Demo</b></a>
+          <a class='btn btn-warning ' style='height:60px;width:300px;margin:30px;padding-top:20px;' href='./dx-pkg.html'>Package</a>
+          <a class='btn btn-success ' style='height:60px;width:300px;margin:30px;padding-top:20px;' href='https://mohan-chinnappan-n.github.io/books/lx/chap-26/dx-packaging.html'>More about Package</a>
+          <a class='btn btn-primary ' style='height:60px;width:300px;margin:30px;padding-top:20px;' href='https://mohan-chinnappan-n.github.io/sfdc/package-faq.html'> Package FAQ</a>
+       
+          <a class='btn btn-info' style='height:60px;width:300px;margin:30px;padding-top:20px;' href='https://mohan-chinnappan-n.github.io/dx/plugins.html#/home'>  SFDX plugins</a>
+          <a class='btn btn-info ' style='height:60px;width:300px;margin:30px;padding-top:20px;' href='https://mohan-chinnappan-n.github.io/dx/dx-ci.html#/home'>  SFDX CI Jenkins</a>
+
+
+        
        
         </center>
         </div>
@@ -577,7 +641,7 @@
 
     </div>
 
-    <script> Split(["#menu", "#content"], { sizes: [12, 88] }); </script>
+    <script> Split(["#menu", "#content"], { sizes: [15, 80] }); </script>
      <script src='js/slides.js?v=17'> </script>
   </body>
 </html>
