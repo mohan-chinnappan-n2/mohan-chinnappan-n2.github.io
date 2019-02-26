@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SFDX - Modern Tooling and Development Experience</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/css/navbar-blue.css" />
+    <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
+
+    <link rel="stylesheet" href="css/slides.css?v=17" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
+
+  
+
+
+<style>
+    @keyframes demo {
+      from {background-color: #99ffcc;color:black;  transform: rotate(-1deg)}
+      to {background-color: ##337ab7;color:white;  transform: rotate(+1deg)}
+  }
+
+  .demo {
+      animation-name: demo;
+      animation-duration: 10s;
+      animation:demo 5s linear 2s infinite alternate;
+  }
+  </style>
+     
+  
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-default"
+      role="navigation"
+      style="margin-bottom:0px;"
+    >
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)"
+          >SFDX - Modern Tooling and Development Experience</a
+        >
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#/home">Home</a></li>
+          <li>
+              <a href="#" id='help' data-toggle="tooltip" title="Use Space Bar to move the slides">Help</a>
+
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <select style="display:none2;margin-top:10px;" id='outline'> </select>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+
+    <div class="split split-horizontal" id="menu">
+      <span style="display:none">
+        <button class="btn btn-success" onclick="prevSlide()">Prev</button>
+        <button class="btn btn-success" onclick="nextSlide()">Next</button>
+      </span>
+      <select style="display:none;margin-top:10px;" id='outline2'> </select>
+      <ol class="list-group" id='mitems'> </ol>
+
+
+    </div>
+    <div class="split split-horizontal" id="content">
+
+
+        <div class="slide" id='SFDX'>
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                <img src="img/dx-front.png" width="100%" alt="" />
+              </div>
+            </div>
+        </div>
+
+
+      <div   class="slide" id='Goals'>
+        <h3>Salesforce Changes How you approach App Development</h3>
+        <div class="row">
+          <div class="col-lg-0"></div>
+          <div class="col-lg-12">
+            <img src="img/dx-goals.png" width="100%" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div  class="slide" id='Modern Development'>
+        <h3>Modern software development on the Lightning Platform</h3>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <ul class="list-group largelist">
+              <li class="list-group-item">
+                <b>Team Collaboration</b> <br />
+                Increased productivity, for all builders, whether you use clicks
+                or code
+              </li>
+              <li class="list-group-item">
+                <b>Automated, Open & Prescriptive</b> <br />
+                Higher quality code, support for continuous integration and
+                delivery (CI/CD), built with the tools and processes you know
+                and love
+              </li>
+              <li class="list-group-item">
+                <b>Built for Enterprise </b> <br />
+                Greater agility, integration and release management plus support
+                for both <b>org and package</b> development
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <img src="img/dx-1.png" width="800" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div  class="slide" id='Tools for everyone'>
+          <h3>Salesforce Changes How you approach App Development</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="img/dx-tools-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+      <div  class="slide" id='IDE'>
+          <h3>VS Code for Lightning Platform</h3>
+
+          <div class="row">
+            <div class="col-lg-4">
+              <h4>Features</h4>
+             <ul class="list-group">
+               <li class="list-group-item">
+                  Salesforce Extensions for Visual Studio Code
+               </li>
+               <li class="list-group-item">
+                  Support for Lightning Development and Large Codebases
+               </li>
+               <li class="list-group-item">
+                  Spin up Scratch Environments on demand
+               </li>
+               <li class="list-group-item">
+                  Synchronize Source to and from Scratch Environments
+               </li>
+               <li class="list-group-item">
+                  Code Completion, Code Scan, Navigation, Integrated Testing
+               </li>
+             </ul>
+             <h4>Benefits</h4>
+             <ul class="list-group">
+                <li class="list-group-item">
+                    Improved Developer Productivity
+                </li>
+                <li class="list-group-item">
+                    Support for Preferred Dev Tools
+                </li>
+                 <li class="list-group-item">
+                    Same tools as Non-Salesforce Development
+
+                </li>
+ 
+            </ul>
+
+
+            </div>
+            <div class="col-lg-8">
+              <img src="img/dx-vscode-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+
+
+      <div  class="slide" id='CLI'>
+          <h3>Salesforce Command Line Interface (CLI)</h3>
+          <div class="row">
+            <div class="col-lg-4">
+
+                <h4>Features</h4>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                      Create orgs for dev and CI
+                  </li>
+                  <li class="list-group-item">
+                      Synchronize Source to/from orgs & file system
+
+                  </li>
+                  <li class="list-group-item">
+                      Import data for dev and test
+                  </li>
+                  <li class="list-group-item">
+                      Create and execute test suites
+                  </li>
+                  <li class="list-group-item">
+                      Control the package & artifact lifecycle
+                  </li>
+               </ul>
+                <h4>Benefits</h4>
+                <ul class="list-group">
+                   <li class="list-group-item">
+                       Improved Developer Productivity
+                   </li>
+                   <li class="list-group-item">
+                       Support for Preferred Dev Tools
+                   </li>
+                    <li class="list-group-item">
+                       Same tools as Non-Salesforce Development
+   
+                   </li>
+                   <li class="list-group-item">
+                      Single interface for all Salesforce DX features
+
+  
+                  </li>
+                  <li class="list-group-item">
+                      Improved Developer Productivity
+  
+                  </li>
+                  <li class="list-group-item">
+                      Integration with VCS, CI, and other External Toolsets
+  
+                  </li>
+                  
+
+    
+               </ul>
+
+            </div>
+            <div class="col-lg-8">
+              <img src="img/dx-cmds-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+     
+
+      <div class="slide" id='Modern ALM'>
+          <h3>Modern Application Lifecycle Management For Everyone!</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="img/dx-alm-2.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+
+      <div class="slide" id='Change Set'>
+          <h3>Promote org changes in Setup using Change Sets </h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="img/dx-cs-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+
+
+      <div class="slide" id='VCS based'>
+          <h3>Promote org changes utilizing our IDE, CLI and Source Control </h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="img/dx-cli-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+      <div class="slide" id='Current State'>
+          <h3>Current State in Most of the Orgs</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="https://mohan-chinnappan-n.github.io/books/lx/chap-26/img/pk-unpk-metadata-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+      <div class="slide" id='Challenges with current methods'>
+            <h3>Challenges with current methods </h3>
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                  <ul class="largelist">
+<li>Starts with list of components to deployed from one env to another</li>
+<li>No easy way to aggregating and knowing set-of-metadata moving to different stages</li>
+<li>Scratch org → Deploy Metadata to Sandbox orgs → UAT → PROD</li>
+<li>Above methods do not offer <b>Immutable Artifacts</b></li>
+<li>Once deployed -- it is <b>happy soup of unpackaged set of metadata</b></li>
+
+</ul>
+              </div>
+            </div>
+        </div>
+
+
+
+
+      <div class="slide" id='Benefits of Packaging'>
+            <h3>Benefits of Packaging</h3>
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                  <ul class="largelist">
+                  <li>DX packages we can create <b>Immutable Artifacts</b> on a <b>repeatable</b> manner</li>
+                  <li>Version the changes you are making - maintained in the VCS</li>
+                  <li>Versioning is built into the packaging</li>
+                  <li>Checkout a version of the package - snapshot - package version</li>
+                  <li>Make changes - add/edit/remove components</li>
+                  <li>Can be used across the environments - transporting</li>
+                  <li>Helps to <b>organize metadata</b> in the org</li>
+                </ul>
+              </div>
+            </div>
+        </div>
+
+
+
+      <div class="slide" id='Desired'>
+        <div class="row">
+          <div class="col-lg-0"></div>
+          <div class="col-lg-12">
+            <img src="https://mohan-chinnappan-n.github.io/books/lx/chap-26/img/prep-dcp-1.png" width="100%" alt="" />
+            <hr/>
+            <center>
+            <a class='btn btn-info' target='_blank' href="https://mohan-chinnappan-n.github.io/books/lx/chap-26/dx-packaging.html">More Info</a>
+            </center>
+          </div>
+        </div>
+    </div>
+
+
+
+      <div class="slide" id='Good Start'>
+          <h3>Start to package Metadata</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="https://mohan-chinnappan-n.github.io/books/lx/chap-26/img/pk-unmaged-2-managed-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+      <div class="slide" id='Benefits of Packaging'>
+          <h3>Benefits of Packaging</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+                <ul class="largelist">
+                <li>DX packages we can create <b>Immutable Artifacts</b> on a <b>repeatable</b> manner</li>
+                <li>Version the changes you are making - maintained in the VCS</li>
+                <li>Versioning is built into the packaging</li>
+                <li>Checkout a version of the package - snapshot - package version</li>
+                <li>Make changes - add/edit/remove components</li>
+                <li>Can be used across the environments - transporting</li>
+                <li>Helps to <b>organize metadata</b> in the org</li>
+              </ul>
+            </div>
+          </div>
+      </div>
+
+
+
+
+      <div class="slide" id='Target State'>
+          <h3>Target State</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="https://mohan-chinnappan-n.github.io/books/lx/chap-26/img/pk-unmaged-2-managed-2.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+      <div class="slide" id="Guidelines">
+          <h3>Guidelines</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="https://mohan-chinnappan-n.github.io/books/lx/chap-26/img/guidelines-org-unmanaged-metadata-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+      <div class="slide" id="Criteria">
+          <h3>Criteria</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="https://mohan-chinnappan-n.github.io/books/lx/chap-26/img/guidelines-org-unmanaged-metadata-2.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+
+      <div class="slide" id="Things don't work">
+          <h3>Things don't work!</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="https://mohan-chinnappan-n.github.io/books/lx/chap-26/img/guidelines-org-unmanaged-metadata-3.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+
+      <div class="slide" id="Org Shape">
+          <h3>Org Shape based Scratch Org Development</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <ul class='largelist'>
+                <li >Org Shape = (edition, feature, preferences)</li>
+                <li >Enabled via Scratch Org Definition files</li>
+              </ul>
+              <pre class='code'>
+                  $ sfdx force:org:shape:list -h
+                  Usage: sfdx force:org:shape:list [--json] [--loglevel <string>] 
+                  
+                  list all org shapes you’ve created
+                  
+                  Flags:
+                   --json               format output as json
+                   --loglevel LOGLEVEL  logging level for this command invocation (error*,trace,debug,info,warn,fatal)
+                  
+                  Examples:
+                     $ sfdx force:org:shape:list
+                     $ sfdx force:org:shape:list --json
+                     $ sfdx force:org:shape:list --json > tmp/MyOrgShapeList.json
+              </pre>
+            </div>
+          </div>
+      </div>
+
+
+
+      <div class="slide" id='Metadata Deploy today'>
+          <h3>How we deploy Metadata to PROD orgs today </h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="https://mohan-chinnappan-n.github.io/books/lx/chap-26/img/before-dx-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+      <div class="slide" id='DCP'>
+          <h3>DCP - Developer Controlled Packages - Modular Development to Package Development</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="https://mohan-chinnappan-n.github.io/books/lx/chap-26/img/prep-dcp-1.png" width="100%" alt="" />
+            </div>
+          </div>
+        </div>
+
+
+
+
+      <div class="slide" id='Packages'>
+          <h3>Organizing Unpackaged Metadata using Packages</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="img/dx-pkg-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+
+      <div class="slide" id='Package Development'>
+          <h3>Create complete modules utilizing our IDE, CLI and Source Control </h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="img/dx-pkg-dev-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+
+      <div class="slide" id='Adopting new ALM'>
+          <h3>Create complete modules utilizing our IDE, CLI and Source Control </h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+
+              <ul class='largelist'>
+                <li><b>Improve your Tool Chain and Migrate Current Development Processes</b>
+                   <ul>
+                     <li>Adopt the Salesforce CLI </li>
+                     <li>Extend with Source Control - externalize all of the Metadata in your Org </li>
+                     <li>Automate key processes and extend again with Continuous Integration and Delivery tools <hr/> </li>
+                   </ul>
+                  </li>
+                <li><b>Adopt the Package Development Process</b>
+                 <ul>
+                   <li>Modular Development w/ Projects, Scratch Orgs, and Developer Controlled Packages </li>
+                 </ul>   
+                </li>
+              </ul>
+              </center>
+            </div>
+          </div>
+      </div>
+
+
+      <div class="slide" id='Package Development - 2'>
+          <h3>Identifying Metadata that can migrate into a Package </h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+
+              <ul class='largelist'>
+                <li><b>Isolate Vertically First </b>
+                   <ul>
+                     <li>Custom Force.com Apps built in-house </li>
+                     <li>Extensions of Sales Cloud, Service Cloud, etc </li>
+                     <li>Extensions of an AppExchange App </li>
+                     <li>Shared Libraries/Functionality </li>
+                   </ul>
+                  </li>
+                <li><b>Modularize Horizontally as Needed </b>
+                 <ul>
+                   <li>Schema, Business Logic, UI </li>
+                   <li>Ownership e.g. Business Unit or Process </li>
+                   <li>Shared Libraries/Functionality </li>
+                 </ul>   
+                </li>
+              </ul>
+             
+            </div>
+          </div>
+      </div>
+
+
+      <div class="slide" id='Package Development - 3'>
+          <h3>General Criteria for Metadata that can migrate into a Package </h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+
+              <ul class='largelist'>
+                     <li>Logical groups of <b>related</b> source/metadata </li>
+                     <li>Projects can be <b>tested</b> independently </li>
+                     <li>Projects can be <b>released</b> independently </li>
+                     <li>Increases Release Flexibility </li>
+                     <li>Increases Dev Productivity </li>
+                 </ul>   
+                </li>
+              </ul>
+              </center>
+            </div>
+          </div>
+      </div>
+
+
+      <div class="slide" id='Project Configuration File'>
+          <h3> Project configuration file is a blueprint for the project and for the outline of a package </h3>
+          <h4>The settings in the file determine the package attributes and package contents</h4>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+
+              
+              <pre class="code">
+    {
+      "packageDirectories": [
+        {
+          "path": "force-app",
+          "default": true
+        }
+      ],
+      "namespace": "",
+      "sfdcLoginUrl": "https://login.salesforce.com",
+      "sourceApiVersion": "45.0",
+
+    
+      "dependencies": [
+        {
+            "package": "Expense Manager - Util",
+            "versionNumber": "4.7.0.LATEST"
+        },
+        {
+            "package" : "External Apex Library - 1.0.0.4"
+        }
+      ]
+    }
+     </pre>
+              </center>
+            </div>
+          </div>
+      </div>
+
+
+
+      <div class="slide" id='Packages Adoption'>
+          <h3>Proposed DX Packaging Adoption</h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="img/dx-pkg-adopt-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+
+      <div class="slide" id='Package Guidelines'>
+          <h3>Things you must keep in mind </h3>
+          <div class="row">
+            <div class="col-lg-0"></div>
+            <div class="col-lg-12">
+              <img src="img/dx-pkg-guidelines-1.png" width="100%" alt="" />
+            </div>
+          </div>
+      </div>
+  
+    <div class="slide" id='Package Guidelines Contd.'>
+    <h3>Things you must keep in mind </h3>
+    <div class="row">
+      <div class="col-lg-0"></div>
+      <div class="col-lg-12">
+        <ul class='largelist'>
+          <li>Be careful with <b>Object Schema</b>
+            <ul>
+              <li>Object/Schema changes have potential data loss implications </li>
+            </ul>
+          </li>
+          <li>Identify <b>Shared Metadata/Source</b>
+            <ul>
+              <li>Break apart where possible </li>
+              <li>Created shared packages when necessary </li>
+            </ul>
+          </li>
+           <li>Migrate to <b>Permission Sets</b> </li>
+           <li>Migrate to <b>Custom Metadata</b> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="slide" id='Q & A'>
+      <div class="row">
+        <div class="col-lg-0"></div>
+        <div class="col-lg-12">
+          <img src="img/dx-qa-1.png" width="100%" alt="" />
+        </div>
+      </div>
+  </div>
+
+  <div class="slide" id='Demo and Resources'>
+      <div class="row">
+        <div class="col-lg-0"></div>
+        <div class="col-lg-12">
+          <center>
+          <a class='btn btn-danger demo' style='height:60px;width:300px;margin:30px;padding-top:20px;' href='./dx-demos.html'> <b>DX - LWC Demo</b></a>
+          <a class='btn btn-warning ' style='height:60px;width:300px;margin:30px;padding-top:20px;' href='./dx-pkg.html'>Package</a>
+          <a class='btn btn-success ' style='height:60px;width:300px;margin:30px;padding-top:20px;' href='https://mohan-chinnappan-n.github.io/books/lx/chap-26/dx-packaging.html'>More about Package</a>
+          <a class='btn btn-primary ' style='height:60px;width:300px;margin:30px;padding-top:20px;' href='https://mohan-chinnappan-n.github.io/sfdc/package-faq.html'> Package FAQ</a>
+       
+          <a class='btn btn-info' style='height:60px;width:300px;margin:30px;padding-top:20px;' href='https://mohan-chinnappan-n.github.io/dx/plugins.html#/home'>  SFDX plugins</a>
+          <a class='btn btn-info ' style='height:60px;width:300px;margin:30px;padding-top:20px;' href='https://mohan-chinnappan-n.github.io/dx/dx-ci.html#/home'>  SFDX CI Jenkins</a>
+
+
+        
+       
+        </center>
+        </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+    </div>
+
+    <script> Split(["#menu", "#content"], { sizes: [15, 80] }); </script>
+     <script src='js/slides.js?v=17'> </script>
+  </body>
+</html>

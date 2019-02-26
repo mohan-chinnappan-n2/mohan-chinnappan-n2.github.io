@@ -1,3 +1,5 @@
+/* jshint esversion:6 */
+
 class PieChart extends HTMLElement {
 
    // inspiration: https://github.com/timeu/svg-piechart/blob/master/svg-piechart.html
