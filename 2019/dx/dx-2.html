@@ -98,6 +98,28 @@
             </div>
         </div>
 
+        <div class="slide" id='Topics'>
+                <h3>Topics</h3>
+                <div class="row">
+                  <div class="col-lg-0"></div>
+                  <div class="col-lg-12">
+                      <ul class="largelist list-group">
+    <li class='list-group-item'>Org Based Development</li>
+    <li class='list-group-item'>Source code (VCS) based Development</li>
+    <li class='list-group-item'>Tools for developer Productivity and Collaboration </li>
+    <li class='list-group-item'>Process and tools for automation and CI/CD <hr/></li>
+    
+    <li class='list-group-item'>Packages to deliver <b>Immutable Artifacts</b></li>
+    <li class='list-group-item'>Q & A</li>
+    <li class='list-group-item'>Demos</li>
+    
+    </ul>
+                  </div>
+                </div>
+            </div>
+
+
+
 
       <div   class="slide" id='Goals'>
         <h3>Salesforce Changes How you approach App Development</h3>
@@ -261,7 +283,7 @@
      
 
       <div class="slide" id='Modern ALM'>
-          <h3>Modern Application Lifecycle Management For Everyone!</h3>
+          <h3>Modern Application Lifecycle Management (ALM) For Everyone!</h3>
           <div class="row">
             <div class="col-lg-0"></div>
             <div class="col-lg-12">
@@ -272,7 +294,7 @@
 
 
       <div class="slide" id='Change Set'>
-          <h3>Promote org changes in Setup using Change Sets </h3>
+          <h3>Promote org changes in Setup using Change Sets - Org based development</h3>
           <div class="row">
             <div class="col-lg-0"></div>
             <div class="col-lg-12">
@@ -284,7 +306,7 @@
 
 
       <div class="slide" id='VCS based'>
-          <h3>Promote org changes utilizing our IDE, CLI and Source Control </h3>
+          <h3>Promote org changes utilizing our IDE, CLI and Source Control</h3> 
           <div class="row">
             <div class="col-lg-0"></div>
             <div class="col-lg-12">
@@ -308,12 +330,12 @@
             <div class="row">
               <div class="col-lg-0"></div>
               <div class="col-lg-12">
-                  <ul class="largelist">
-<li>Starts with list of components to deployed from one env to another</li>
-<li>No easy way to aggregating and knowing set-of-metadata moving to different stages</li>
-<li>Scratch org → Deploy Metadata to Sandbox orgs → UAT → PROD</li>
-<li>Above methods do not offer <b>Immutable Artifacts</b></li>
-<li>Once deployed -- it is <b>happy soup of unpackaged set of metadata</b></li>
+                  <ul class="list-group largelist">
+<li class='list-group-item'>Do not offer <b>Immutable Artifacts</b></li>
+<li class='list-group-item'>Starts with list of components to deployed from one env to another</li>
+<li class='list-group-item'>No easy way to aggregating and knowing set-of-metadata moving to different stages</li>
+<li class='list-group-item'>From Scratch org deploy Metadata to Sandbox orgs → UAT → PROD</li>
+<li class='list-group-item'>Once deployed -- it is <b>happy soup of unpackaged set of metadata</b></li>
 
 </ul>
               </div>
@@ -328,14 +350,14 @@
             <div class="row">
               <div class="col-lg-0"></div>
               <div class="col-lg-12">
-                  <ul class="largelist">
-                  <li>DX packages we can create <b>Immutable Artifacts</b> on a <b>repeatable</b> manner</li>
-                  <li>Version the changes you are making - maintained in the VCS</li>
-                  <li>Versioning is built into the packaging</li>
-                  <li>Checkout a version of the package - snapshot - package version</li>
-                  <li>Make changes - add/edit/remove components</li>
-                  <li>Can be used across the environments - transporting</li>
-                  <li>Helps to <b>organize metadata</b> in the org</li>
+                  <ul class="largelist list-group">
+                  <li class='list-group-item'>With DX packages we can create <b>Immutable Artifacts</b> on a <b>repeatable</b> manner</li>
+                  <li class='list-group-item'>Version the changes you are making - maintained in the VCS</li>
+                  <li class='list-group-item'>Versioning is <b>built</b> into the packaging - like in Maven </li>
+                  <li class='list-group-item'>Checkout a version of the package - snapshot </li>
+                  <li class='list-group-item'>Make changes - add/edit/remove components</li>
+                  <li class='list-group-item'>Can be used across the environments - transporting</li>
+                  <li class='list-group-item'>Helps to <b>organize metadata</b> in the org</li>
                 </ul>
               </div>
             </div>
@@ -368,23 +390,7 @@
           </div>
       </div>
 
-      <div class="slide" id='Benefits of Packaging'>
-          <h3>Benefits of Packaging</h3>
-          <div class="row">
-            <div class="col-lg-0"></div>
-            <div class="col-lg-12">
-                <ul class="largelist">
-                <li>DX packages we can create <b>Immutable Artifacts</b> on a <b>repeatable</b> manner</li>
-                <li>Version the changes you are making - maintained in the VCS</li>
-                <li>Versioning is built into the packaging</li>
-                <li>Checkout a version of the package - snapshot - package version</li>
-                <li>Make changes - add/edit/remove components</li>
-                <li>Can be used across the environments - transporting</li>
-                <li>Helps to <b>organize metadata</b> in the org</li>
-              </ul>
-            </div>
-          </div>
-      </div>
+    
 
 
 
@@ -419,6 +425,60 @@
           </div>
       </div>
 
+      <div class="slide" id='Package Development'>
+            <h3>Identifying Metadata that can migrate into a Package </h3>
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+  
+                <ul class='list-group largelist'>
+                  <li><b>Isolate Vertically First </b>
+                     <ul>
+                       <li class='list-group-item'>Custom Force.com Apps built in-house </li>
+                       <li class='list-group-item'>Extensions of Sales Cloud, Service Cloud, etc </li>
+                       <li class='list-group-item'>Extensions of an AppExchange App </li>
+                       <li class='list-group-item'>Shared Libraries/Functionality </li>
+                     </ul>
+                    </li>
+                </ul>
+                <ul class='list-group largelist'>
+                  <li class='list-group-item'><b>Modularize Horizontally as Needed </b>
+                   <ul class='list-group largelist'>
+                     <li class='list-group-item'>Schema, Business Logic, UI </li>
+                     <li class='list-group-item'>Ownership e.g. Business Unit or Process </li>
+                     <li class='list-group-item'>Shared Libraries/Functionality </li>
+                   </ul>   
+                  </li>
+                </ul>
+               
+              </div>
+            </div>
+        </div>
+  
+  
+        <div class="slide" id='Package Development contd.'>
+            <h3>General Criteria for Metadata that can migrate into a Package </h3>
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+  
+                <ul class='list-group largelist'>
+                       <li class='list-group-item'>Logical groups of <b>related</b> source/metadata </li>
+                       <li class='list-group-item'>Projects can be <b>tested</b> independently </li>
+                       <li class='list-group-item'>Projects can be <b>released</b> independently </li>
+                       <li class='list-group-item'>Increases Release Flexibility </li>
+                       <li class='list-group-item'>Increases Dev Productivity </li>
+                   </ul>   
+                  </li>
+                </ul>
+                </center>
+              </div>
+            </div>
+        </div>
+  
+
+        
+
 
       <div class="slide" id="Things don't work">
           <h3>Things don't work!</h3>
@@ -432,12 +492,12 @@
 
 
       <div class="slide" id="Org Shape">
-          <h3>Org Shape based Scratch Org Development</h3>
+          <h3>Org Shape based Scratch Org Development (Pilot)</h3>
           <div class="row">
             <div class="col-lg-0"></div>
             <div class="col-lg-12">
               <ul class='largelist'>
-                <li >Org Shape = (edition, feature, preferences)</li>
+                <li >Org Shape => (edition, feature, preferences)</li>
                 <li >Enabled via Scratch Org Definition files</li>
               </ul>
               <pre class='code'>
@@ -460,7 +520,7 @@
       </div>
 
 
-
+<!--
       <div class="slide" id='Metadata Deploy today'>
           <h3>How we deploy Metadata to PROD orgs today </h3>
           <div class="row">
@@ -470,20 +530,12 @@
             </div>
           </div>
       </div>
-
-      <div class="slide" id='DCP'>
-          <h3>DCP - Developer Controlled Packages - Modular Development to Package Development</h3>
-          <div class="row">
-            <div class="col-lg-0"></div>
-            <div class="col-lg-12">
-              <img src="https://mohan-chinnappan-n.github.io/books/lx/chap-26/img/prep-dcp-1.png" width="100%" alt="" />
-            </div>
-          </div>
-        </div>
+-->
+   
 
 
 
-
+<!--
       <div class="slide" id='Packages'>
           <h3>Organizing Unpackaged Metadata using Packages</h3>
           <div class="row">
@@ -504,6 +556,7 @@
             </div>
           </div>
       </div>
+
 
 
       <div class="slide" id='Adopting new ALM'>
@@ -530,58 +583,9 @@
             </div>
           </div>
       </div>
+-->
 
-
-      <div class="slide" id='Package Development - 2'>
-          <h3>Identifying Metadata that can migrate into a Package </h3>
-          <div class="row">
-            <div class="col-lg-0"></div>
-            <div class="col-lg-12">
-
-              <ul class='largelist'>
-                <li><b>Isolate Vertically First </b>
-                   <ul>
-                     <li>Custom Force.com Apps built in-house </li>
-                     <li>Extensions of Sales Cloud, Service Cloud, etc </li>
-                     <li>Extensions of an AppExchange App </li>
-                     <li>Shared Libraries/Functionality </li>
-                   </ul>
-                  </li>
-                <li><b>Modularize Horizontally as Needed </b>
-                 <ul>
-                   <li>Schema, Business Logic, UI </li>
-                   <li>Ownership e.g. Business Unit or Process </li>
-                   <li>Shared Libraries/Functionality </li>
-                 </ul>   
-                </li>
-              </ul>
-             
-            </div>
-          </div>
-      </div>
-
-
-      <div class="slide" id='Package Development - 3'>
-          <h3>General Criteria for Metadata that can migrate into a Package </h3>
-          <div class="row">
-            <div class="col-lg-0"></div>
-            <div class="col-lg-12">
-
-              <ul class='largelist'>
-                     <li>Logical groups of <b>related</b> source/metadata </li>
-                     <li>Projects can be <b>tested</b> independently </li>
-                     <li>Projects can be <b>released</b> independently </li>
-                     <li>Increases Release Flexibility </li>
-                     <li>Increases Dev Productivity </li>
-                 </ul>   
-                </li>
-              </ul>
-              </center>
-            </div>
-          </div>
-      </div>
-
-
+     
       <div class="slide" id='Project Configuration File'>
           <h3> Project configuration file is a blueprint for the project and for the outline of a package </h3>
           <h4>The settings in the file determine the package attributes and package contents</h4>
@@ -640,13 +644,14 @@
             </div>
           </div>
       </div>
-  
+
+    <!--
     <div class="slide" id='Package Guidelines Contd.'>
     <h3>Things you must keep in mind </h3>
     <div class="row">
       <div class="col-lg-0"></div>
       <div class="col-lg-12">
-        <ul class='largelist'>
+        <ul class='list-group largelist'>
           <li>Be careful with <b>Object Schema</b>
             <ul>
               <li>Object/Schema changes have potential data loss implications </li>
@@ -664,16 +669,9 @@
       </div>
     </div>
   </div>
+-->
 
 
-  <div class="slide" id='Q & A'>
-      <div class="row">
-        <div class="col-lg-0"></div>
-        <div class="col-lg-12">
-          <img src="img/dx-qa-1.png" width="100%" alt="" />
-        </div>
-      </div>
-  </div>
 
   <div class="slide" id='Pilot'>
       <h3>Pilots</h3>
@@ -694,6 +692,14 @@
       </div>
   </div>
 
+  <div class="slide" id='Q & A'>
+        <div class="row">
+          <div class="col-lg-0"></div>
+          <div class="col-lg-12">
+            <img src="img/dx-qa-1.png" width="100%" alt="" />
+          </div>
+        </div>
+    </div>
 
 
 
