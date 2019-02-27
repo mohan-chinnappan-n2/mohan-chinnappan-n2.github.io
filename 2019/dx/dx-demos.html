@@ -171,11 +171,11 @@
         <div class="row">
           <div class="col-lg-0"></div>
           <div class="col-lg-12">
-            <ul class="largelist">
-            <li>Comprises Objects with Permission that allow admins to control level-of-access available to a user and org</li>
-            <li>Provides ability to create and manage scratch orgs</li>
-            <li>You can choose an org to function as your Dev Hub</li>
-            <li>
+            <ul class="largelist list-group">
+            <li class='list-group-item'>Provides ability to create and manage scratch orgs</li>
+            <li class='list-group-item'>Comprises Objects with Permission that allow admins to control level-of-access available to a user and org</li>
+            <li class='list-group-item'>You can choose an org to function as your Dev Hub</li>
+            <li class='list-group-item'>
                 <a class='btn btn-info' title='click me' href="https://developer.salesforce.com/promotions/orgs/dx-signup"> Sign up for Dev Hub 30-day Trial Org</a>
             </li> 
            </ul>
@@ -269,6 +269,10 @@ $ cat config/project-scratch-def.json
         <div class="col-lg-0"></div>
         <div class="col-lg-12">
                 <img src="img/demos/dx-prj-scratch-1.png"  height='600' alt="" />
+                <hr>
+                <a target='_blank' class='btn btn-info' href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file.htm">
+                More on Scratch Org Definition File
+              </a>
         </div>
       </div>
   </div>
@@ -492,10 +496,10 @@ https://customer-energy-4643-dev-ed.cs16.my.salesforce.com//secur/frontdoor.jsp?
           <div class="col-lg-0"></div>
           <div class="col-lg-12">
 
-            <ul class="largelist">
-            <li>   FSC permission set licenses are available by default in scratch orgs</li> 
-            <li>      The user needs to install the FSC package using :</li> 
-            <li>     <b>package:install</b> similar to how they would install any other dependent package.</li> 
+            <ul class="largelist list-group">
+            <li class='list-group-item'>   FSC permission set licenses are available by default in scratch orgs</li> 
+            <li class='list-group-item'>      The user needs to install the FSC package using :</li> 
+            <li class='list-group-item'>  &nbsp;&nbsp;   <b>package:install</b> similar to how they would install any other dependent package.</li> 
             </ul>
             <pre class='code'>
   $ sfdx force:package:install -h
