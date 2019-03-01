@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EA Workbook</title>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/css/navbar-green.css">
+ <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+<link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css"> 
+
+<style>
+    .menu-button {
+     width:100%;
+     opacity:.7;
+     margin-bottom:10px;
+     text-align:left;
+    }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="javascript:void(0)">EA Workbook</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="javascript:void(0)">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="https://mohan-chinnappan-n.github.io/index.html">Main</a></li>
+      </ul>
+
+
+    <!-- /.navbar-collapse -->
+  </nav>
+
+   <div id="menu" class="split split-horizontal">
+
+     <a class='btn btn-primary menu-button'   data-toggle="collapse" href="#step1" role="button" aria-expanded="false" aria-controls="step1"> Step-1 - Get to Know EA </a>
+      <ul class='collapse list-group' id='step1'>
+        <li class='list-group-item'> <a href="#welcome-to-EA">Welcome to EA!</a>  </li>
+        <li class='list-group-item'> <a href="#ea-steps">EA Steps</a>  </li>
+        <li class='list-group-item'> <a href="#data-exploration">Data Exploration</a>  </li>
+     </ul> 
+    
+  <a  class='btn btn-primary menu-button'  data-toggle="collapse" href="#step2" role="button" aria-expanded="false" aria-controls="step2"> Step-2 - Key Features </a>
+      <ul class='collapse list-group' id='step2'>
+         <li class='list-group-item'> <a href="#recipe-or-dataflow">Recipe or Dataflow</a> </li>
+        <li class='list-group-item'> <a href="#recipe-editor">Recipe Editor</a> </li>
+        <li class='list-group-item'> <a href="#take-action">Take Action</a> </li>
+        <li class='list-group-item'> <a href="#build-app">Build App</a> </li>
+        <li class='list-group-item'> <a href="#get-answers">Get Answers</a> </li>
+        <li class='list-group-item'> <a href="#trend-report-data">Trend Report Data</a> </li>
+        <li class='list-group-item'> <a href="#ea-explorer">Explorer</a> </li>
+        <li class='list-group-item'> <a href="#interactive-dashboardr">Interactive Dashboards</a> </li>
+    </ul>
+ 
+
+ <a  class='btn btn-primary menu-button' data-toggle="collapse"  href="#training" role="button" aria-expanded="false" aria-controls="training"> Training </a>
+ <ul class='collapse list-group' id='training'>
+        <li class='list-group-item'> <a href="#ea-training-basic"> Basic</a> </li>
+        <li class='list-group-item'> <a href="#ea-training-inter-adv">Intermediate to Advanced</a> </li>
+  </ul>
+ 
+ <a  class='btn btn-primary menu-button' data-toggle="collapse"  href="#step4" role="button" aria-expanded="false" aria-controls="step4"> Sync </a>
+ <ul class='collapse list-group' id='step4'>
+        <li class='list-group-item'> <a href="#ea-datasync">Data Sync</a> </li>
+  </ul>
+ 
+  <a  class='btn btn-primary menu-button' data-toggle="collapse"  href="#step5" role="button" aria-expanded="false" aria-controls="step5"> Encryption </a>
+ <ul class='collapse list-group' id='step5'>
+        <li class='list-group-item'> <a href="#ea-encryption">Data Encryption</a> </li>
+  </ul>
+ <a  class='btn btn-primary menu-button' data-toggle="collapse"  href="#step6" role="button" aria-expanded="false" aria-controls="step6"> Resources </a>
+ <ul class='collapse list-group' id='step6'>
+        <li class='list-group-item'> <a href="#ea-glossary">Glossary</a> </li>
+        <li class='list-group-item'> <a href="#ea-resources">EA Docs</a> </li>
+  </ul>
+ 
+ 
+</div>
+  <div id="content" class="split split-horizontal">
+
+    <p>
+<h3> Einstein Analytics </h3>
+
+Analytics collects and organizes your data in <b>datasets, lenses, dashboards, and apps</b>. These collections, also known as <b>Analytics assets</b> represent levels of data refinement—from raw data that’s uploaded from your source systems to highly curated, packaged views of your data.
+<h3>Analytics Assets</h3>
+<ul class="list-group">
+    <li class="list-group-item"> <b>Dataset</b> contains a set of source data, specially formatted and optimized for interactive exploration.</li>
+    <li class="list-group-item"> <b>Lens</b> is a particular view into a dataset’s data. It’s where you do exploratory analysis and visualization.</li>
+    <li class="list-group-item"> <b>Dashboard</b> is a curated set of charts, metrics, and tables based on the data in one or more lenses.</li>
+    <li class="list-group-item"><b>App</b> is a purpose-built set of analytics and answers about a specific area of your business. With apps, you can provide pathways through your data, plus powerful tools for spontaneous, deep explorations. After creating dashboards, lenses, and datasets, organize apps to present dashboards in relevant order, and then share apps with appropriate groups.</li>
+</ul>
+    <h3 id='welcome-to-EA'>Welcome to EA! </h3>
+    <div  class="stage append-bottom">
+                <meta itemprop="height" content="600">
+                <meta itemprop="width" content="800">
+                <meta itemprop="thumbnail" content="//play.vidyard.com/Swk3XdXHtQgrv2H4gRAGAK.jpg?">
+                <meta itemprop="duration" content="T259S">
+                <div class="aspect-ratio">
+                  <span id="vidyard_Swk3XdXHtQgrv2H4gRAGAK" class="vidyard_player"><span id="vidyard_span_Swk3XdXHtQgrv2H4gRAGAK" style="display: block; margin: auto; position: relative; width: 800px; height: 600px;"><iframe id="vidyard_iframe_Swk3XdXHtQgrv2H4gRAGAK" class="vidyard_iframe" src="//play.vidyard.com/Swk3XdXHtQgrv2H4gRAGAK?disable_popouts=0&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyetoken=1c2c1bf7-b4c5-4920-95db-b4108a99b953&amp;type=inline&amp;email=&amp;referring_url=http%253A%252F%252Fpages.mail.salesforce.com%252FNextGen-Popup%253Flanguage%253DEnglish&amp;" width="100%" height="100%" title="Video" aria-label="Video" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" allow="autoplay" style="opacity: 1; background-color: transparent; position: absolute; right: 0px; top: 0px;"></iframe></span></span><script type="text/javascript" id="vidyard_embed_code_Swk3XdXHtQgrv2H4gRAGAK" src="//play.vidyard.com/Swk3XdXHtQgrv2H4gRAGAK.js?disable_popouts=0&amp;height=600&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyetoken=1c2c1bf7-b4c5-4920-95db-b4108a99b953&amp;width=800&amp;type=inline"></script>
+    </div>
+   </div>
+   <hr/>
+
+  <h3 id='ea-steps'>Exploring and Visualizing Your Data Interactively </h3>
+   <div class='row'> 
+     <div class="col-lg-3">
+        <img src="https://mohan-chinnappan-n.github.io/ea/img/ea-stages.png" style='border-radius:10px;border-color:#99ccff;'alt="">
+    </div>
+
+     <div class="col-lg-9">
+        <ul class="list-group">
+            <li class="list-group-item"> <b>View</b>—View the data set </li>
+            <li class="list-group-item"><b>Explore</b>—Get to know the boundaries and shape of your data. Play with different views, zoom in and zoom out, and see what you get with different charting options.</li>
+            <li class="list-group-item"><b>Refine</b>—Narrow your view to the most important data. Decide the level of detail and categorization that’s easiest for your colleagues to understand. Choose the most appropriate chart visualization.</li>
+            <li class="list-group-item"><b>Save</b>—Save your work.</li>
+             <li class="list-group-item"><b>Share</b>—Share your view with others. For a more packaged presentation, use your visualization to build a dashboard.
+</li>
+ 
+ 
+        </ul>
+    </div>
+ 
+   </div>
+
+<h3 id='data-exploration'>Data Exploration</h3>
+<ul class="list-group">
+    <li class="list-group-item"> <b>Visualization</b>  is commonly a chart or graph, such as a bar chart, donut chart, timeline, or heat map. It can also be data in tabular form, such as a comparison table or pivot table. Every visualization has an underlying <b>query</b>, which is how Analytics retrieves information from the source data. </li>
+   <li class="list-group-item"><b>Measure</b> is a <b>quantitative value</b>, like revenue and exchange rate. You can do <b>math on measures</b> such as calculating the total revenue and minimum exchange rate. Measures have names (revenue) and values ($1,000,000). When you’re viewing a chart visualization in Analytics, it’s important to remember:
+ <ul class="list-group">
+  <li class="list-group-item">
+   A measure is typically <b>aggregated in some way</b>, which means that it’s displayed with some math already applied to it. 
+   <br/>For example, when you first view a dataset, you often see a simple aggregation such as the count of the number of rows. You typically aggregate by a different method—sum, average, maximum, and so on—as you explore and change or add measures, but you always specify how you want to aggregate at the time when you select the measure.
+</li>
+</ul>
+
+  <li class="list-group-item">
+<b>Dimension</b> is a <b>qualitative value</b>, like region, product name, and model number. Dimensions are handy for grouping and filtering your data. Unlike measures, <b>you can’t perform math on dimensions</b>. Like measures, dimensions also have names (region) and values (northeast). Time is usually considered a dimension rather than a measure.
+  </li>  
+</ul>    
+ </li>
+
+</ul>
+<!-- -->
+
+<h3 id='recipe-or-dataflow'> Dataflow or Recipe</h3>
+
+
+<iframe class="video-modal-player" src="https://play.vidyard.com/fhUuuy4auL5uRxe5Q6au9r.html?autoplay=1" width="100%" height="100%"></iframe>
+
+
+<h3 id='recipe-editor'> Recipe Editor</h3>
+<div class="hub-container">
+
+      <div class="stage append-bottom">
+        <meta itemprop="height" content="600">
+        <meta itemprop="width" content="800">
+        <meta itemprop="thumbnail" content="//play.vidyard.com/Ah3XgJikytnp9psNRE6FWu.jpg?">
+        <meta itemprop="duration" content="T158S">
+        <div class="aspect-ratio">
+          <span id="vidyard_Ah3XgJikytnp9psNRE6FWu" class="vidyard_player"><span id="vidyard_span_Ah3XgJikytnp9psNRE6FWu" style="display: block; margin: auto; position: relative; width: 800px; height: 600px;"><iframe id="vidyard_iframe_Ah3XgJikytnp9psNRE6FWu" class="vidyard_iframe" src="//play.vidyard.com/Ah3XgJikytnp9psNRE6FWu?disable_popouts=0&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyemail=&amp;type=inline&amp;referring_url=http%253A%252F%252Fwww.einsteinanalyticslearningmap.com%252F&amp;" width="100%" height="100%" title="Video" aria-label="Video" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" allow="autoplay" style="opacity: 1; background-color: transparent; position: absolute; right: 0px; top: 0px;"></iframe></span></span><script type="text/javascript" id="vidyard_embed_code_Ah3XgJikytnp9psNRE6FWu" src="//play.vidyard.com/Ah3XgJikytnp9psNRE6FWu.js?disable_popouts=0&amp;height=360&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyemail=&amp;width=640&amp;type=inline"></script>
+        </div>
+
+<hr/>
+
+<h3 id='take-action'>Personalize, collaborate, and take action from the analytics tab </h3>
+<div class="stage append-bottom">
+        <meta itemprop="height" content="360">
+        <meta itemprop="width" content="640">
+        <meta itemprop="thumbnail" content="//play.vidyard.com/X5Cv1RYiuk2Kb5QkVQYBwY.jpg?">
+        <meta itemprop="duration" content="T224S">
+        <div class="aspect-ratio">
+          <span id="vidyard_X5Cv1RYiuk2Kb5QkVQYBwY" class="vidyard_player"><span id="vidyard_span_X5Cv1RYiuk2Kb5QkVQYBwY" style="display: block; margin: auto; position: relative; width: 640px; height: 360px;"><iframe id="vidyard_iframe_X5Cv1RYiuk2Kb5QkVQYBwY" class="vidyard_iframe" src="//play.vidyard.com/X5Cv1RYiuk2Kb5QkVQYBwY?disable_popouts=0&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyemail=&amp;type=inline&amp;" width="100%" height="100%" title="Video" aria-label="Video" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" allow="autoplay" style="opacity: 1; background-color: transparent; position: absolute; right: 0px; top: 0px;"></iframe></span></span><script type="text/javascript" id="vidyard_embed_code_X5Cv1RYiuk2Kb5QkVQYBwY" src="//play.vidyard.com/X5Cv1RYiuk2Kb5QkVQYBwY.js?disable_popouts=0&amp;height=360&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyemail=&amp;width=640&amp;type=inline"></script>
+        </div>
+      </div>
+<hr/>
+
+<h3 id='build-app'>Build Analytics App</h3>
+
+<div class="stage append-bottom">
+        <meta itemprop="height" content="360">
+        <meta itemprop="width" content="640">
+        <meta itemprop="thumbnail" content="//play.vidyard.com/6kdihLWNfRmtdtx1oncY23.jpg?">
+        <meta itemprop="duration" content="T238S">
+        <div class="aspect-ratio">
+          <span id="vidyard_6kdihLWNfRmtdtx1oncY23" class="vidyard_player"><span id="vidyard_span_6kdihLWNfRmtdtx1oncY23" style="display: block; margin: auto; position: relative; width: 640px; height: 360px;"><iframe id="vidyard_iframe_6kdihLWNfRmtdtx1oncY23" class="vidyard_iframe" src="//play.vidyard.com/6kdihLWNfRmtdtx1oncY23?disable_popouts=0&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyemail=&amp;type=inline&amp;" width="100%" height="100%" title="Video" aria-label="Video" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" allow="autoplay" style="opacity: 1; background-color: transparent; position: absolute; right: 0px; top: 0px;"></iframe></span></span><script type="text/javascript" id="vidyard_embed_code_6kdihLWNfRmtdtx1oncY23" src="//play.vidyard.com/6kdihLWNfRmtdtx1oncY23.js?disable_popouts=0&amp;height=360&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyemail=&amp;width=640&amp;type=inline"></script>
+        </div>
+      </div>
+
+<hr/>
+
+<h3 id='get-answers'>Get Answers</h3>
+<div class="stage append-bottom">
+        <meta itemprop="height" content="360">
+        <meta itemprop="width" content="640">
+        <meta itemprop="thumbnail" content="//play.vidyard.com/tpgDwYmW3eSTjJJikZrwhJ.jpg?">
+        <meta itemprop="duration" content="T175S">
+        <div class="aspect-ratio">
+          <span id="vidyard_tpgDwYmW3eSTjJJikZrwhJ" class="vidyard_player"><span id="vidyard_span_tpgDwYmW3eSTjJJikZrwhJ" style="display: block; margin: auto; position: relative; width: 640px; height: 360px;"><iframe id="vidyard_iframe_tpgDwYmW3eSTjJJikZrwhJ" class="vidyard_iframe" src="//play.vidyard.com/tpgDwYmW3eSTjJJikZrwhJ?disable_popouts=0&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyemail=&amp;type=inline&amp;" width="100%" height="100%" title="Video" aria-label="Video" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" allow="autoplay" style="opacity: 1; background-color: transparent; position: absolute; right: 0px; top: 0px;"></iframe></span></span><script type="text/javascript" id="vidyard_embed_code_tpgDwYmW3eSTjJJikZrwhJ" src="//play.vidyard.com/tpgDwYmW3eSTjJJikZrwhJ.js?disable_popouts=0&amp;height=360&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyemail=&amp;width=640&amp;type=inline"></script>
+        </div>
+      </div>
+
+<hr/> 
+<h3 id='trend-report-data'>Trend Report Data </h3>
+<div class="stage append-bottom">
+        <meta itemprop="height" content="360">
+        <meta itemprop="width" content="640">
+        <meta itemprop="thumbnail" content="//play.vidyard.com/6dRdRv8f2yn8Wfc45eAU1Q.jpg?">
+        <meta itemprop="duration" content="T144S">
+        <div class="aspect-ratio">
+          <span id="vidyard_6dRdRv8f2yn8Wfc45eAU1Q" class="vidyard_player"><span id="vidyard_span_6dRdRv8f2yn8Wfc45eAU1Q" style="display: block; margin: auto; position: relative; width: 640px; height: 360px;"><iframe id="vidyard_iframe_6dRdRv8f2yn8Wfc45eAU1Q" class="vidyard_iframe" src="//play.vidyard.com/6dRdRv8f2yn8Wfc45eAU1Q?disable_popouts=0&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyemail=&amp;type=inline&amp;" width="100%" height="100%" title="Video" aria-label="Video" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" allow="autoplay" style="opacity: 1; background-color: transparent; position: absolute; right: 0px; top: 0px;"></iframe></span></span><script type="text/javascript" id="vidyard_embed_code_6dRdRv8f2yn8Wfc45eAU1Q" src="//play.vidyard.com/6dRdRv8f2yn8Wfc45eAU1Q.js?disable_popouts=0&amp;height=360&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyemail=&amp;width=640&amp;type=inline"></script>
+        </div>
+      </div>
+
+
+<hr/> 
+
+<h3 id='ea-explorer'>Explorer</h3>
+<div class="stage append-bottom">
+        <meta itemprop="height" content="360">
+        <meta itemprop="width" content="640">
+        <meta itemprop="thumbnail" content="//play.vidyard.com/M8GkvG9EvEpneAvxq2WQdc.jpg?">
+        <meta itemprop="duration" content="T165S">
+        <div class="aspect-ratio">
+          <span id="vidyard_M8GkvG9EvEpneAvxq2WQdc" class="vidyard_player"><span id="vidyard_span_M8GkvG9EvEpneAvxq2WQdc" style="display: block; margin: auto; position: relative; width: 640px; height: 360px;"><iframe id="vidyard_iframe_M8GkvG9EvEpneAvxq2WQdc" class="vidyard_iframe" src="//play.vidyard.com/M8GkvG9EvEpneAvxq2WQdc?disable_popouts=0&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyemail=&amp;type=inline&amp;" width="100%" height="100%" title="Video" aria-label="Video" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" allow="autoplay" style="opacity: 1; background-color: transparent; position: absolute; right: 0px; top: 0px;"></iframe></span></span><script type="text/javascript" id="vidyard_embed_code_M8GkvG9EvEpneAvxq2WQdc" src="//play.vidyard.com/M8GkvG9EvEpneAvxq2WQdc.js?disable_popouts=0&amp;height=360&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyemail=&amp;width=640&amp;type=inline"></script>
+        </div>
+      </div>
+<hr/>
+
+<h3 id='dashboard-interactive'> Build Interactive EA Dashboards</H3>
+<div class="stage append-bottom">
+        <meta itemprop="height" content="360">
+        <meta itemprop="width" content="959">
+        <meta itemprop="thumbnail" content="//play.vidyard.com/6aA4EKE9jbuhqC2fLoHt85.jpg?">
+        <meta itemprop="duration" content="T1078S">
+        <div class="aspect-ratio aspect-ratio-playlist">
+          <span id="vidyard_6aA4EKE9jbuhqC2fLoHt85" class="vidyard_player"><span id="vidyard_span_6aA4EKE9jbuhqC2fLoHt85" style="display: block; margin: auto; position: relative; width: 640px; height: 360px;"><iframe id="vidyard_iframe_6aA4EKE9jbuhqC2fLoHt85" class="vidyard_iframe" src="//play.vidyard.com/6aA4EKE9jbuhqC2fLoHt85?disable_popouts=0&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyemail=&amp;type=inline&amp;" width="100%" height="100%" title="Video" aria-label="Video" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" allow="autoplay" style="opacity: 1; background-color: transparent; position: absolute; right: 0px; top: 0px;"></iframe></span></span><script type="text/javascript" id="vidyard_embed_code_6aA4EKE9jbuhqC2fLoHt85" src="//play.vidyard.com/6aA4EKE9jbuhqC2fLoHt85.js?disable_popouts=0&amp;height=360&amp;hide_html5_playlist=1&amp;v=3.1.1&amp;vyemail=&amp;width=640&amp;type=inline"></script>
+        </div>
+      </div>
+
+
+
+ 
+<h3 id='analytics-guide'>Analytics Guide</h3>
+         <object   data="https://resources.docs.salesforce.com/216/latest/en-us/sfdc/pdf/analytics.pdf" type="application/pdf" style="width: 100%; height: 800px;">
+           <p>It appears you don't have a PDF plugin for this browser</p>
+         </object>
+ 
+<h3 id='ea-training-basic'> EA Training Basic</h3>
+<ul class="list-group">
+    <li class="list-group-item"><b> EA Overview (30 min.)</b>
+       <ul class="list-group">
+           <li class="list-group-item">Analytics Expectations & EA</li>
+           <li class="list-group-item">EA Assets</li>
+           <li class="list-group-item">EA Apps</li>
+       </ul>
+    </li>
+    <li class="list-group-item"><b> Data Layer Simple (90 min.)</b>
+       <ul class="list-group">
+           <li class="list-group-item">Dataset Builder</li>
+           <li class="list-group-item">Dataset from CSV</li>
+           <li class="list-group-item">Data Prep/Recipes</li>
+       </ul>
+
+    </li>
+    <li class="list-group-item"><b> Designer Layer - 1 (60 min.)</b>
+       <ul class="list-group">
+           <li class="list-group-item">Analytics Studio</li>
+           <li class="list-group-item">Explorer/Lens</li>
+           <li class="list-group-item">Dashboard Basics</li>
+           <li class="list-group-item">Global Filters </li>
+           <li class="list-group-item">Customize Tooltips</li>
+           <li class="list-group-item"> Notifications/Annotate/Share/Download</li>
+           <li class="list-group-item">Values Table</li>
+       </ul>
+    </li>
+    <li class="list-group-item"><b> Designer Layer - 2 (4 hours)</b>
+       <ul class="list-group">
+           <li class="list-group-item">Compare Table</li>
+           <li class="list-group-item">Micro Charts/KPIs</li>
+           <li class="list-group-item">Linked Dashboards</li>
+           <li class="list-group-item">Enable Actions</li>
+           <li class="list-group-item">Layouts and Devices</li>
+           <li class="list-group-item">Salesforce Analytics Tabs</li>
+           <li class="list-group-item">Embed Analytics Everywhere</li>
+       </ul>
+    </li>
+
+    <li class="list-group-item"><b>Other key topics (30 min.) </b>
+       <ul class="list-group">
+           <li class="list-group-item">Connect Data Sources</li>
+           <li class="list-group-item">Pages</li>
+           <li class="list-group-item">Trend in Analytics</li>
+           <li class="list-group-item">Custom Maps</li>
+       </ul>
+    </li>
+    <li class="list-group-item"><b>Build a Dashboard (60 min.)</b>
+       <ul class="list-group">
+           <li class="list-group-item">Business Jargon to Design </li>
+       </ul>
+    </li>
+
+    <li class="list-group-item"><b>Analytics Apps (30 min.)</b>
+       <ul class="list-group">
+           <li class="list-group-item">Sales App</li>
+            <li class="list-group-item">EA Learning Adventure App</li>
+       </ul>
+    </li>
+
+    <li class="list-group-item"><b>Helpful Ext Tools (15 min.)</b>
+       <ul class="list-group">
+           <li class="list-group-item">Wave Labs</li>
+            <li class="list-group-item">DatasetUtils</li>
+       </ul>
+    </li>
+
+    <li class="list-group-item"><b>Data Considerations (60 min)</b>
+       <ul class="list-group">
+           <li class="list-group-item">Data Layer vs Designer Layer </li>
+            <li class="list-group-item">Dataset Grain Level</li>
+            <li class="list-group-item">Technical Jargon Simplified</li>
+       </ul>
+    </li>
+
+    <li class="list-group-item"><b>Einstein Discovery (2 hours)</b>
+       <ul class="list-group">
+           <li class="list-group-item">Sample Use Case</li>
+       </ul>
+    </li>
+
+
+
+</ul>
+<h3 id='ea-training-inter-adv'> EA Training Intermediate to Advanced </h3>
+<ul class="list-group">
+    <li class="list-group-item"><b> Platform Overview (30 min.)</b>
+       <ul class="list-group">
+           <li class="list-group-item">Architecture</li>
+           <li class="list-group-item">Security</li>
+           <li class="list-group-item">Analytics Setup & Permissions </li>
+           <li class="list-group-item">Analytics Cloud Integration User Profile </li>
+       </ul>
+    </li>
+    <li class="list-group-item"><b> Other key topics (30 min.)</b>
+       <ul class="list-group">
+           <li class="list-group-item">Bulk Actions</li>
+           <li class="list-group-item">SOQL/Apex Steps</li>
+           <li class="list-group-item">ALM - Packages & Change Sets</li>
+            <li class="list-group-item">Multi-Value</li>
+       </ul>
+    </li>
+    <li class="list-group-item"><b> Designer Layer - Technical (120 min.)</b>
+       <ul class="list-group">
+           <li class="list-group-item">Replication</li>
+           <li class="list-group-item">Connectors</li>
+           <li class="list-group-item">Data Landscape</li>
+           <li class="list-group-item">Dataflow Editor & Transformations </li>
+           <li class="list-group-item">Multi Dataflows</li>
+           <li class="list-group-item">Dataset Fields & XMD</li>
+           <li class="list-group-item">Dashboard JSON</li>
+           <li class="list-group-item">Dashboard SAQL</li>
+       </ul>
+    </li>
+    <li class="list-group-item"><b> Common Use Cases -  (4 hours)</b>
+       <ul class="list-group">
+           <li class="list-group-item">Dynamic Reference Line/Label/Value</li>
+           <li class="list-group-item">Dynamic Group by/Sort/Measure</li>
+           <li class="list-group-item">Dynamic Colors (Customer Threshold)</li>
+           <li class="list-group-item">SAQL Custom Querying: union</li>
+           <li class="list-group-item">SAQL Custom Querying: cogroup</li>
+           <li class="list-group-item">SAQL Custom Querying: now()</li>
+       </ul>
+    </li>
+</ul>
+
+   <h3 id='ea-datasync'>EA Data Sync </h3>
+   <ul class="list-group">
+        <li class="list-group-item">Syncs Salesforce data incrementally by default, meaning that only data that’s changed gets synced.</li>
+       <li class="list-group-item">
+         HOW TO: From Setup, enter <b>Analytics</b> in the Quick Find box, then select Settings.  Select <b>Enable Data Sync and Connections</b>, and then click <b>Save</b>.
+       <br/>
+           After you enable data sync and connections, make sure that you run data sync before your dataflows next run. Dataflows with sfdcDigest nodes fail until data sync has run and completed for the first tim
+ 
+
+       <li class="list-group-item">
+     Up to 100 objects can be synced. For extracting more than 100 objects in your dataflows, contact Salesforce Customer Support before you enable data sync.
+    <br/>
+     Data Sync only performs one sync per object. Keep this in mind if you need to perform multiple syncs from the same object. For example, if you need to sync both filtered and unfiltered data from an object.
+    </li>
+   </ul> 
+    <h3 id='ea-encryption'>EA Data Encryption </h3>
+   <ul class="list-group">
+        <li class="list-group-item"> Extends encryption capabilities to the data at rest that is stored on the Salesforce file system.</li>
+       <li class="list-group-item"> Einstein Analytics Encryption services are built natively into the Einstein Analytics platform. The solution applies strong, probabilistic encryption on data stored at rest. Platform encryption is based on the Advanced Encryption Standard (AES) with 256-bit keys using CTR mode for every write.
+    </li>
+        <li class="list-group-item"> Your org must have a Shield Platform Encryption tenant secret. (Einstein Analytics Encryption uses PE key management, so it’s not necessary to encrypt objects and fields in core Salesforce.)</li>
+        <li class="list-group-item"> 
+             Make sure that
+             <ul>
+                 <li> You have this feature (EA Encryption) enabled by Salesforce</li/>
+             <li> You have <b>Manage Encryption Keys </b> permission enabled for your profile <br/>
+             Demo showing how to enable this permission : 
+             <img src="https://github.com/mohan-chinnappan-n/Shield-setup/raw/master/demo/Shield_setup-2.gif" height='600' alt="">
+        </li>
+
+
+ <li class="list-group-item">When using Einstein Analytics with your encryption-enabled instance, data read from and written to disk is automatically encrypted with the unique key for your account.
+
+ <hr/>
+<img src="https://resources.help.salesforce.com/images/d5aef8837c16a6ecfa73498155c6ba3c.png" alt="">
+<br/>
+ The Einstein Analytics Encryption solution is designed to have at most a minimal performance impact on your Einstein Analytics application experience.
+<br/>
+The keys are different for Shield Platform Encryption and Einstein Analytics Encryption. Although Shield and Einstein Analytics use the same key management technology, they use different keys.
+<br/>
+Einstein Analytics can bring in data encrypted with Shield Platform Encryption.<br/>
+ Einstein Analytics reads platform encrypted data in the same way that any user reads platform encrypted data. The data is then written and encrypted in Einstein Analytics. It is not required that data be encrypted with Shield Platform Encryption to be encrypted in Einstein Analytics. <b>It is only required that a Tenant Secret exist for the org.</b>
+
+</li>
+   </ul> 
+
+<h3 id='ea-glossary'>EA Glossary </h3>
+   <ul class="list-group">
+   <li class="list-group-item">
+      <b>App</b>: An app contains </b>dashboards, lenses, and datasets in any combination that</b> makes sense for sharing your data analyses with colleagues. apps are like folders. they allow users to organize their data projects—private and shared—and to control sharing.
+   </li>
+    <li class="list-group-item"> <b>Dashboard</b>: A dashboard is a curated set of <b>charts, metrics, and tables</b> based on the data in one or more lenses. Dashboard JSON file </li>
+     <li class="list-group-item"> <b>Dashboard JSON</b>: 
+      A dashboard JSON file defines the <b>components</b> that a dashboard contains and describes how they’re <b>connected</b>.
+     </li>
+
+     <li class="list-group-item"> <b>Data Monitor</b>: 
+        The data monitor tool allows you to monitor dataflow and system jobs. You can also use it to start, stop, reschedule, download, and upload dataflows.
+     </li>
+     <li class="list-group-item"> <b>Dataflow </b>: 
+        A dataflow is a set of instructions that specifies what data to extract from Salesforce objects or datasets, how to transform the datasets, and which datasets to make available for querying.
+     </li>
+     <li class="list-group-item"> <b>Dataflow  definition file</b>: 
+        A dataflow definition file is a JSON file that contains transformations that represent the dataflow logic.
+     </li>
+     <li class="list-group-item"> <b>Dataflow Job</b>: 
+            A dataflow job processes the logic in a dataflow. 
+     </li>
+     <li class="list-group-item"> <b>Dataset</b>: 
+      A dataset contains a set of source data, specially formatted and optimized for interactive exploration.
+     </li>
+     <li class="list-group-item"> <b>Dataset Builder</b>: 
+        The dataset builder is a point-and-click user interface that allows you to easily select and extract data from related Salesforce objects to create a single dataset.
+     </li>
+    <li class="list-group-item"> <b>Date</b>: 
+     A date can be represented as a day, month, year, and, optionally, time. You can group, filter, and perform math on dates.
+     </li>
+    <li class="list-group-item"> <b>Designer</b>: 
+        Designer is the interface where you create dashboards. There are two versions: dashboard designer (the new one) and classic designer (the legacy one).
+    </li>
+
+    <li class="list-group-item"> <b>Measure</b>: 
+        A measure is a quantitative value, like revenue and exchange rate. You can do math on measures, such as calculating the total revenue and minimum exchange rate.
+   </li>
+ 
+    <li class="list-group-item"> <b>Dimension</b>: 
+       A dimension is a qualitative value, like region, product name, and model number. Dimensions are handy for grouping and filtering your data. Unlike measures, you can’t perform math on dimensions.
+    </li>
+    <li class="list-group-item"> <b>Explorer</b>: 
+        Explorer is the interface where you explore datasets and lenses.
+    </li>
+
+
+    <li class="list-group-item"> <b>Extended Metadata (XMD)</b>: 
+        Extended metadata (XMD) allows you to customize the formatting of many dashboard elements in Analytics. 
+    </li>
+    <li class="list-group-item"> <b>External Data</b>: 
+        External data is data that resides outside of Salesforce, such as data from outside applications and spreadsheets. External Data API.<br/>
+        Use External Data API to upload external data files to Analytics to create datasets. 
+    </li>
+
+    <li class="list-group-item"> <b>Lens</b>: 
+        A lens is a particular view into a dataset’s data. It’s where you do exploratory analysis and visualization.
+    </li>
+    <li class="list-group-item"> <b>Metadata file</b>: 
+        A metadata file is a JSON file that describes the structure of an external data file. Predicate
+    </li>
+
+    <li class="list-group-item"> <b>Predicate</b>: 
+        A predicate is a filter condition that defines row-level access to records in a dataset. Salesforce Analytics Query Language (SAQL)
+    </li>
+    <li class="list-group-item"> <b>Salesforce Analytics Query Language (SAQL)</b>: 
+        Use SAQL to access and analyze data in Analytics datasets.
+    </li>
+
+    <li class="list-group-item"> <b>Step</b>: 
+        A step determines the results shown in a widget. Steps either get data <b>dynamically or statically</b>.
+      <br>
+     For example, a step can query a dataset to get the average opportunity amount for each account, or it can retrieve an unchanging, user-defined value.
+    </li>
+
+    <li class="list-group-item"> <b>Transformation</b>: 
+        A transformation refers to the manipulation of data.<br/>
+          You can add transformations to a dataflow to extract data from Salesforce objects or datasets, transform datasets that contain Salesforce or external data, and register datasets.
+    </li>
+ 
+    <li class="list-group-item"> <b>Unit of symbol (for measures)</b>: 
+        A unit symbol represents the unit of a shortened number that appears in a chart or number widget. Analytics uses the following symbols.
+    </li>
+
+    <li class="list-group-item"> <b>Visualization</b>: 
+    A visualization is commonly a chart or graph, such as a bar chart, donut chart, timeline, or heat map. It can also be data in tabular form, such as a comparison table or pivot table. Every visualization has an underlying query, which is how Analytics retrieves information from the source data.
+
+    </li>
+
+
+
+
+
+
+
+
+
+</ul>
+ 
+<table class="table table-bordered table-hover">
+   <tr>
+       <th> Symbol</th>
+       <th>Unit</th>
+       <th>Example</th>
+   </tr>
+<tr><td>   K</td><td> Thousand (10^3)</td><td>  4K = 4,000</td></tr>
+<tr><td>   M</td><td> Million (10^6)</td><td>   4M = 4,000,000</td></tr>
+<tr><td>   B</td><td> Billion (10^9)</td><td>   4B = 4,000,000,000</td></tr>
+<tr><td>   T</td><td> Trillion (10^12)</td><td> 4T = 4,000,000,000,000</td></tr>
+<tr><td>   P</td><td> Quadrillion (10^15)</td><td> 4P = 4,000,000,000,000,000</td></tr>
+<tr><td>   X</td><td> Quintillion (10^18)</td><td> 4X= 4,000,000,000,000,000,000</td></tr>
+<tr><td>   Z</td><td> Sextillion (10^21)</td><td> 4Z = 4,000,000,000,000,000,000,000</td></tr>
+<tr><td>   Y</td><td> Septillion (10^24)</td><td> 4Y = 4,000,000,000,000,000,000,000,000</td></tr>
+<tr><td>   m</td><td> Thousandth (10^-3)</td><td> 4m = 0.004</td></tr>
+<tr><td>   μ</td><td> Millionth (10^-6)</td><td> 4μ = 0.000004</td></tr>
+<tr><td>   n</td><td> Billionth (10^-9)</td><td> 4n = 0.000000004</td></tr>
+<tr><td>   p</td><td> Trillionth (10^-12)</td><td> 4p = 0.000000000004</td></tr>
+<tr><td>   f</td><td> Quadrillionth (10^-15)</td><td> 4f = 0.000000000000004</td></tr>
+<tr><td>   a</td><td> Quintillionth (10^-18)</td><td> 4a = 0.000000000000000004</td></tr>
+<tr><td>   z</td><td> Sextillionth (10^-21)</td><td> 4z = 0.000000000000000000004</td></tr>
+<tr><td>   y</td><td> Septillionth (10^-24)</td><td> 4y = 0.000000000000000000000004</td></tr>
+</table> 
+<!-- -->
+   <h3 id='ea-resources'>EA Resources </h3>
+   <ul class="list-group">
+       <li class="list-group-item"> <a target='_blank' href="http://www.einsteinanalyticslearningmap.com/">EA Learning Map</a> </li>
+       <li class="list-group-item"> <a target='_blank' href="https://resources.docs.salesforce.com/216/latest/en-us/sfdc/pdf/bi_admin_guide_setup.pdf">Analytics Setup Guide</a> </li>
+       <li class="list-group-item"> <a target='_blank' href="https://resources.docs.salesforce.com/216/latest/en-us/sfdc/pdf/bi_admin_guide_security.pdf">Analytics Security Implementation Guide</a> </li>
+       <li class="list-group-item"> <a target='_blank' href="http://pages.mail.salesforce.com/gettingstarted/analytics-cloud/einstein-analytics/">EA Getting Started</a> </li>
+       <li class="list-group-item"> <a target='_blank' href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000DoLB3UAN">Einstein Analytics Learning Adventure
+ 
+   </ul>
+
+
+
+
+
+</div>
+
+<script>
+  Split(['#menu', '#content'], {
+    sizes: [15, 85]
+});
+</script>
+
+  
+
+</body>
+</html>
+
