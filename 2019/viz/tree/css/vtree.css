@@ -1,0 +1,22 @@
+/* vtree.css mohan chinnappan */
+
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 2px;
+  }
+
+  .node text { font: 12px Arial, Sans-Serif; font-weight: bold; }
+
+  .link {
+    fill: none;
+    stroke: salmon;
+    stroke-width: 2px;
+  }
+
+  svg {
+      border:1px solid steelblue;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px;
+  }

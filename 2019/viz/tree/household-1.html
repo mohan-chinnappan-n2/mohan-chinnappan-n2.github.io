@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D3 Experiments</title>
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script> -->
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+    <script src='js/vtree-data.js?v=1'></script>
+    <script src='js/vtree.js?v=1'></script>
+
+    <link rel="stylesheet" href="css/vtree.css?v=1" />
+
+     
+	
+</head>
+<body>
+
+<script>
+
+     const NORMALIZE = 200; 
+
+     const settings = {
+         normalize: NORMALIZE,
+         circleRadius : 15,
+         labelOffset : 38
+     };
+     let margin = {top: 60, right: 10, bottom: 20, left: 10};
+     const H = 1900, W = 1900;
+
+     drawHousehold( margin, W, H, treeData, settings); 
+
+</script>
+</body>
+</html>
