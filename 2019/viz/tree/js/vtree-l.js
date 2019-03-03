@@ -12,11 +12,14 @@ var getNodeColor = (d) => {
     if ( d.primary)           return '#ffcc99';
     return '#99ccff';
 }
+let duration = 750;
 
 
     //------- view-source:http://bl.ocks.org/d3noob/raw/8326869/
 // household render
 var drawHousehold = ( margin, w, h, tdata , settings )  => {
+
+  
   try {
 
     let width =  w - margin.right - margin.left;
@@ -28,6 +31,7 @@ var drawHousehold = ( margin, w, h, tdata , settings )  => {
               .attr('height', height + margin.top + margin.bottom)
               .append("g")
                 .attr("transform", `translate(${margin.left},${margin.top})`)
+               ;
 
     
     let tree = d3.layout.tree()
@@ -48,14 +52,16 @@ var drawHousehold = ( margin, w, h, tdata , settings )  => {
 
     let i = 0;
 
-    let svgNodes = svg.selectAll("node")
+    let svgNodes = svg.selectAll("g")
         // introduce node id as current value of i
         .data( nodes, (d) =>  d.id || (d.id = ++i ) )
+
         .enter()
             // append g container
             // <g class="node" transform="translate(314.2857142857143,100)">
             .append('g')
             .attr('class', 'node')
+             
             .attr('transform', (d) => `translate(${d.x},${d.y})` )
 
 
@@ -69,11 +75,12 @@ var drawHousehold = ( margin, w, h, tdata , settings )  => {
             //.attr('width', settings.circleRadius * 2)
             //.attr('height', settings.circleRadius * 2)
             .style('fill', (d) => getNodeColor(d) )
+            .on('click', (d) => alert (d.name) )
+            ;
            
-            
-
     
         svgNodes
+           
             // <text y="-18" dy=".35em" text-anchor="middle" style="fill-opacity: 1;">Top Level</text>
             // set y as 18 to write text under the circle , -18 to write above the circle
             .append('text')
@@ -82,6 +89,7 @@ var drawHousehold = ( margin, w, h, tdata , settings )  => {
             .attr("text-anchor", "middle")
             .style("fill-opacity", 1)
             .text( (d) => d.name +   (d.role !== undefined ? ' : ' + d.role : '') ) 
+            ;  
 
         // links
         let link = svg.selectAll("path")
@@ -89,11 +97,12 @@ var drawHousehold = ( margin, w, h, tdata , settings )  => {
                 .enter()
                     .insert("path", "g")
                     .attr("class", "link")
+                  
                     .attr("d", diagonal);
 
        }
        catch (e) {
-           alert (e)
+           alert (e);
        }
 
      }
