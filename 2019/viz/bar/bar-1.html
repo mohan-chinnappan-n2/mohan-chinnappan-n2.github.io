@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D3 Experiments</title>
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <style>
+
+            .chart  {
+                font: 10px Monaco;
+                background-color:steelblue;
+                text-align: right;
+                padding: 3px;
+                margin: 1px;
+                color: white;
+              }
+
+            .graph {
+              margin: 10px;
+              border:1px solid gray;
+              border-radius: 10px;
+              background-color: lightblue;
+              padding:10px;
+            }
+    </style>
+	
+</head>
+<body>
+
+    <script>
+
+    const SCALE = 7;
+
+    let trades =  [
+            {
+              "name": "Math",
+              "score": 37
+            },
+            {
+              "name": "Physics",
+              "score": 39
+            },
+            {
+              "name": "Farming",
+              "score": 31
+            },
+            {
+              "name": "Plumbing",
+              "score": 35
+            },
+            {
+              "name": "Carpentry",
+              "score": 38
+            }
+          ];
+
+         
+
+          let graphs= ['Trades']
+
+          // get the document body
+          d3.select('body')
+            // we need a graph classed  h3 created fro each item in data: graphs
+            .selectAll('.graph')
+            .data (graphs, (d) => d)
+            .enter()
+              .append('h3')
+              .text( (d) => d)
+              .classed('graph', true)
+              // in each of the h3 we need a div with class person for item in data: trades
+              .selectAll('.person')
+              .data(trades, (d) => d.name )
+              .enter()
+                    .append('div')
+                    .text(  (d) => `${d.name} : ${d.score}` )
+                    .classed('chart', true)
+                    .style('width', (d) => `${d.score * SCALE}px` )
+
+
+    </script>
+</body>
+</html>
