@@ -25,9 +25,36 @@ OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 
+/* jslint esversion:6 */
+
+
+/*
+
+The panning functionality can certainly be improved in my opinion and I would be thrilled to see better solutions contributed.
+
+One can do all manner of housekeeping or server related calls on the drop event to manage a remote tree dataset for example.
+
+Dragging can be performed on any node other than root (flare).
+Dropping can be done on any node.
+
+Panning can either be done by dragging an empty part of the SVG around or dragging a node towards an edge.
+
+Zooming is performed by either double clicking on an empty part of the SVG or by scrolling the mouse-wheel.
+To Zoom out hold shift when double-clicking.
+
+Expanding and collapsing of nodes is achieved by clicking on the desired node.
+
+The tree auto-calculates its sizes both horizontally and vertically so it can adapt between 
+many nodes being present in the view to very few whilst making the view managable and pleasing on the eye.
+
+*/
 
 // Get JSON data
-treeJSON = d3.json("data/flare.json", function(error, treeData) {
+treeJSON = d3.json("data/hh.json", function(error, treeData) {
+
+    let zoomMax = { 
+         x:0.5 , y: 10
+    }
 
     // Calculate total nodes, max label length
     var totalNodes = 0;
@@ -83,18 +110,14 @@ treeJSON = d3.json("data/flare.json", function(error, treeData) {
 
 
     // sort the tree according to the node names
-
-    function sortTree() {
-        tree.sort(function(a, b) {
-            return b.name.toLowerCase() < a.name.toLowerCase() ? 1 : -1;
-        });
-    }
+    let sortTree = () => tree.sort( (a, b) =>  b.name.toLowerCase() < a.name.toLowerCase() ? 1 : -1  );
     // Sort the tree initially incase the JSON isn't in a sorted order.
+    // sorting turned off
     sortTree();
 
     // TODO: Pan function, can be better implemented.
 
-    function pan(domNode, direction) {
+   let pan = (domNode, direction) => { 
         var speed = panSpeed;
         if (panTimer) {
             clearTimeout(panTimer);
@@ -109,7 +132,8 @@ treeJSON = d3.json("data/flare.json", function(error, treeData) {
             scaleX = translateCoords.scale[0];
             scaleY = translateCoords.scale[1];
             scale = zoomListener.scale();
-            svgGroup.transition().attr("transform", "translate(" + translateX + "," + translateY + ")scale(" + scale + ")");
+            svgGroup.attr("transform", `translate(${translateX}, ${translateY}) scale(${scale})`);
+            // svgGroup.transition().attr("transform", "translate(" + translateX + "," + translateY + ")scale(" + scale + ")");
             d3.select(domNode).select('g.node').attr("transform", "translate(" + translateX + "," + translateY + ")");
             zoomListener.scale(zoomListener.scale());
             zoomListener.translate([translateX, translateY]);
@@ -121,15 +145,14 @@ treeJSON = d3.json("data/flare.json", function(error, treeData) {
 
     // Define the zoom function for the zoomable tree
 
-    function zoom() {
-        svgGroup.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-    }
-
-
+    let zoom =() => 
+       // svgGroup.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+        svgGroup.attr("transform", `translate(${d3.event.translate}) scale(${d3.event.scale})`);
+    
     // define the zoomListener which calls the zoom function on the "zoom" event constrained within the scaleExtents
-    var zoomListener = d3.behavior.zoom().scaleExtent([0.1, 3]).on("zoom", zoom);
+    var zoomListener = d3.behavior.zoom().scaleExtent([ zoomMax.x, zoomMax.y ]).on("zoom", zoom);
 
-    function initiateDrag(d, domNode) {
+    let initiateDrag = (d, domNode) => {
         draggingNode = d;
         d3.select(domNode).select('.ghostCircle').attr('pointer-events', 'none');
         d3.selectAll('.ghostCircle').attr('class', 'ghostCircle show');
@@ -257,7 +280,7 @@ treeJSON = d3.json("data/flare.json", function(error, treeData) {
             }
         });
 
-    function endDrag() {
+    let endDrag = () => {
         selectedNode = null;
         d3.selectAll('.ghostCircle').attr('class', 'ghostCircle');
         d3.select(domNode).attr('class', 'node');
@@ -273,27 +296,28 @@ treeJSON = d3.json("data/flare.json", function(error, treeData) {
 
     // Helper functions for collapsing and expanding nodes.
 
-    function collapse(d) {
+    let collapse = (d) => {
         if (d.children) {
             d._children = d.children;
             d._children.forEach(collapse);
             d.children = null;
         }
-    }
+    };
 
-    function expand(d) {
+   let expand = (d) => {
         if (d._children) {
             d.children = d._children;
+            console.log('expand');
             d.children.forEach(expand);
             d._children = null;
         }
-    }
+    };
 
-    var overCircle = function(d) {
+    var overCircle = (d) => {
         selectedNode = d;
         updateTempConnector();
     };
-    var outCircle = function(d) {
+    var outCircle = (d) => {
         selectedNode = null;
         updateTempConnector();
     };
@@ -342,8 +366,8 @@ treeJSON = d3.json("data/flare.json", function(error, treeData) {
     }
 
     // Toggle children function
-
-    function toggleChildren(d) {
+    let toggleChildren  = (d) => {
+        // console.log('toggleChildern');
         if (d.children) {
             d._children = d.children;
             d.children = null;
@@ -352,23 +376,24 @@ treeJSON = d3.json("data/flare.json", function(error, treeData) {
             d._children = null;
         }
         return d;
-    }
+    };
 
     // Toggle children on click.
 
-    function click(d) {
-        if (d3.event.defaultPrevented) return; // click suppressed
+    let click = (d) => {
+        if (d3.event.defaultPrevented) return; // click 
+        // alert('clicked');
         d = toggleChildren(d);
         update(d);
         centerNode(d);
-    }
+    };
 
     function update(source) {
         // Compute the new height, function counts total children of root node and sets tree height accordingly.
         // This prevents the layout looking squashed when new nodes are made visible or looking sparse when nodes are removed
         // This makes the layout more consistent.
         var levelWidth = [1];
-        var childCount = function(level, n) {
+        let childCount = (level, n) => {
 
             if (n.children && n.children.length > 0) {
                 if (levelWidth.length <= level + 1) levelWidth.push(0);
@@ -379,8 +404,11 @@ treeJSON = d3.json("data/flare.json", function(error, treeData) {
                 });
             }
         };
+
         childCount(0, root);
+
         var newHeight = d3.max(levelWidth) * 25; // 25 pixels per line  
+        console.log(newHeight, viewerWidth);
         tree = tree.size([newHeight, viewerWidth]);
 
         // Compute the new tree layout.
@@ -418,17 +446,11 @@ treeJSON = d3.json("data/flare.json", function(error, treeData) {
             });
 
         nodeEnter.append("text")
-            .attr("x", function(d) {
-                return d.children || d._children ? -10 : 10;
-            })
+            .attr("x", (d) => d.children || d._children ? -10 : 10 )
             .attr("dy", ".35em")
             .attr('class', 'nodeText')
-            .attr("text-anchor", function(d) {
-                return d.children || d._children ? "end" : "start";
-            })
-            .text(function(d) {
-                return d.name;
-            })
+            .attr("text-anchor", (d) => d.children || d._children ? "end" : "start" )
+            .text( (d) => `${d.name} : ${d.role} ` )
             .style("fill-opacity", 0);
 
         // phantom node to give us mouseover in a radius around it
@@ -534,7 +556,10 @@ treeJSON = d3.json("data/flare.json", function(error, treeData) {
             d.x0 = d.x;
             d.y0 = d.y;
         });
-    }
+    } // update(source)
+
+
+    //----------------------------
 
     // Append a group which holds all nodes and which the zoom Listener can act upon.
     var svgGroup = baseSvg.append("g");

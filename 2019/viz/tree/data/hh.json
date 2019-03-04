@@ -1,0 +1,12 @@
+{
+    "name": "Adams Household",
+    "children": [{
+        "name": "Members",
+        "children": [{
+            "name": "Rachel Adams", "role": "Client" }, 
+            { "name": "Nigel Adams", "role": "Spouse" }, 
+            { "name":"Adams Charitable Trust", "role": "Trustee" }
+        ]
+    }]
+
+}
