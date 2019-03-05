@@ -164,6 +164,9 @@ function update(source) {
 	  });
 
   // Transition links to their new position.
+  link.transition()
+	  .duration(duration)
+	  .attr("d", diagonal);
 
   // Transition exiting nodes to the parent's new position.
   link.exit().transition()
