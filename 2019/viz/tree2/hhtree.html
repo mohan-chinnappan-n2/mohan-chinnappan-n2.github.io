@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HH Tree</title>
+
+    <script src="js/d3.v4.min.js"></script>
+</head>
+<body>
+
+    <svg height='500' width='900'> </svg>
+   
+    <script>
+        const vspace = 60;
+
+        const itemValue = (d) => `${d.name} $${d.price}`;
+        const svgEle = d3.select('svg');
+
+        let render = (svg, inData) => { 
+         const text =   svg.selectAll('text')
+            .data(inData)
+            // .text(itemValue) // updates
+            ;
+        
+        text
+            .enter().append('text')
+                .style('font-size', '32pt')
+                .style('font-family', 'Sans-Serif')
+                .attr('x', 250)
+                .attr('y', (d,i) =>  50 + vspace * i )
+             .merge(text) // to take of update and add
+                .text(itemValue) // enters
+                ;
+        text
+            .exit().remove();
+        
+        }
+
+       setTimeout( () => { 
+            render(svgEle,  [ {name: 'Milk', price: 3}, {name: 'Eggs', price: 20}]);
+       }, 200 );
+
+       setTimeout( () => { 
+        render(svgEle,  [ {name: 'Milk', price: 3}, {name: 'Eggs', price: 1.5}]);
+       }, 2000 );
+
+       setTimeout( () => { 
+        render(svgEle,  [ {name: 'Milk', price: 3}, {name: 'Eggs', price: 1.5}, { name: 'Cupcakes', price: 5} ]);
+       }, 4000 );
+
+       setTimeout( () => { 
+        render(svgEle,  [ {name: 'Milk', price: 3}, {name: 'Eggs', price: 1.5} ]);
+       }, 6000 );
+
+
+
+                
+    </script>
+</body>
+</html>

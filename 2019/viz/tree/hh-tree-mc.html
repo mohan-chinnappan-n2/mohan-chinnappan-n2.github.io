@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/hhtree.css">
+  
+<script src="js/jquery.min.js"></script>
+<script src="js/d3.v4.min.js"></script>
+<script src="js/hhtree-mc.js?v=1"></script>
+
+
+<script>
+/* jslint esversion:6 */
+
+//================
+const settings = {
+    container: '#hh',
+    treeDataFile : 'data/hh.json',
+
+    enableSorting: false,
+    zoomMax :{ x:0.5 , y: 10 },
+
+
+    // panning variables
+    panSpeed : 200,
+    panBoundary : 20, // Within 20px from edges will pan when dragging
+
+    transitionDuration: 750,
+    pixelsPerLine: 25,
+
+    dragTargetCircleColor: '#ff99cc',
+    dragTargetCircleRadius: 25,
+
+    factorWidthBetweenLevels: 10,
+
+    nodeTextOffset: 10,
+
+    nodeColorWithChildren: 'lightsteelblue',
+    nodeColorWithoutChildren: 'white'
+
+};
+renderTree(settings);
+
+</script>
+ 
+<body>
+    <div id="hh"></div>
+</body>
+</html>

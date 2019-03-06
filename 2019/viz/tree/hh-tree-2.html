@@ -18,6 +18,8 @@ const settings = {
     enableSorting: false,
     zoomMax :{ x:0.5 , y: 10 },
 
+
+    // panning variables
     panSpeed : 200,
     panBoundary : 20, // Within 20px from edges will pan when dragging
 
@@ -27,8 +29,12 @@ const settings = {
     dragTargetCircleColor: '#ff99cc',
     dragTargetCircleRadius: 25,
 
-    factorWidthBetweenLevels: 10
+    factorWidthBetweenLevels: 10,
 
+    nodeTextOffset: 10,
+
+    nodeColorWithChildren: 'lightsteelblue',
+    nodeColorWithoutChildren: 'white'
 
 };
 renderTree(settings);

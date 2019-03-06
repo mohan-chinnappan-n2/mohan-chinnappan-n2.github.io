@@ -27,26 +27,22 @@ let renderTree = (stg) => {
 
     // Get JSON data
     treeJSON = d3.json(stg.treeDataFile,  (error, treeData) => {
-        if (error) {
-            alert(error);
-            return;
-        }
+        if (error) { alert(error); return; }
 
         let zoomMax =  stg.zoomMax;
 
         // Calculate total nodes, max label length
-        var totalNodes = 0;
-        var maxLabelLength = 0;
+        let totalNodes = 0;
+        let maxLabelLength = 0;
         // variables for drag/drop
-        var selectedNode = null;
-        var draggingNode = null;
-        // panning variables
+        let selectedNode = null;
+        let draggingNode = null;
       
         // Misc. variables
-        var i = 0;
+        let i = 0;
         const duration = stg.transitionDuration;
 
-        var root;
+        let root;
 
         // size of the diagram
         const viewerWidth = $(document).width();
@@ -88,17 +84,18 @@ let renderTree = (stg) => {
 
         // TODO: Pan function, can be better implemented.
 
-    let pan = (domNode, direction) => { 
+        let pan = (domNode, direction) => { 
             var speed = stg.panSpeed;
             if (panTimer) {
                 clearTimeout(panTimer);
                 translateCoords = d3.transform(svgGroup.attr("transform"));
-                if (direction == 'left' || direction == 'right') {
-                    translateX = direction == 'left' ? translateCoords.translate[0] + speed : translateCoords.translate[0] - speed;
+                console.log(`direction: ${direction}`);
+                if (direction === 'left' || direction === 'right') {
+                    translateX = direction === 'left' ? translateCoords.translate[0] + speed : translateCoords.translate[0] - speed;
                     translateY = translateCoords.translate[1];
-                } else if (direction == 'up' || direction == 'down') {
+                } else if (direction === 'up' || direction === 'down') {
                     translateX = translateCoords.translate[0];
-                    translateY = direction == 'up' ? translateCoords.translate[1] + speed : translateCoords.translate[1] - speed;
+                    translateY = direction === 'up' ? translateCoords.translate[1] + speed : translateCoords.translate[1] - speed;
                 }
                 scaleX = translateCoords.scale[0];
                 scaleY = translateCoords.scale[1];
@@ -112,7 +109,7 @@ let renderTree = (stg) => {
                     pan(domNode, speed, direction);
                 }, 50);
             }
-        }
+        };
 
         // Define the zoom function for the zoomable tree
 
@@ -200,6 +197,7 @@ let renderTree = (stg) => {
                 relCoords = d3.mouse($('svg').get(0));
                 if (relCoords[0] < stg.panBoundary) {
                     panTimer = true;
+                    console.log('panning-left');
                     pan(this, 'left');
                 } else if (relCoords[0] > ($('svg').width() - stg.panBoundary)) {
 
@@ -326,13 +324,14 @@ let renderTree = (stg) => {
 
         function centerNode(source) {
             scale = zoomListener.scale();
+            console.log(`scale: ${scale}`);
             x = -source.y0;
             y = -source.x0;
             x = x * scale + viewerWidth / 2;
             y = y * scale + viewerHeight / 2;
             d3.select('g').transition()
                 .duration(duration)
-                .attr("transform", "translate(" + x + "," + y + ") scale(" + scale + ")");
+                .attr("transform", `translate(${x}, ${y}) scale(${scale})`);
             zoomListener.scale(scale);
             zoomListener.translate([x, y]);
         }
@@ -361,11 +360,11 @@ let renderTree = (stg) => {
 
         //=========== update ================
 
-        function update(source) {
+        let update = (source) => {
             // Compute the new height, function counts total children of root node and sets tree height accordingly.
             // This prevents the layout looking squashed when new nodes are made visible or looking sparse when nodes are removed
             // This makes the layout more consistent.
-            var levelWidth = [1];
+            let levelWidth = [1];
             let childCount = (level, n) => {
                 if (n.children && n.children.length > 0) {
                     if (levelWidth.length <= level + 1) { levelWidth.push(0); console.log(levelWidth); }
@@ -378,7 +377,7 @@ let renderTree = (stg) => {
             childCount(0, root);
             console.log(`levelWidth: ${levelWidth}, max: ${d3.max(levelWidth) }`);
 
-            var newHeight = d3.max(levelWidth) * stg.pixelsPerLine;  
+            let newHeight = d3.max(levelWidth) * stg.pixelsPerLine;  
             console.log(newHeight, viewerWidth);
             tree = tree.size([newHeight, viewerWidth]);
 
@@ -397,7 +396,7 @@ let renderTree = (stg) => {
                   .data(nodes, (d) =>  d.id || (d.id = ++i) );
 
             // Enter any new nodes at the parent's previous position.
-            var nodeEnter = node.enter().append("g")
+            let nodeEnter = node.enter().append("g")
                 .call(dragListener)
                 .attr("class", "node")
                 .attr("transform", function(d) {
@@ -409,16 +408,17 @@ let renderTree = (stg) => {
                 .attr('class', 'nodeCircle')
                 .attr("r", 0)
                 .style("fill", function(d) {
-                    return d._children ? "lightsteelblue" : "#fff";
+                    return d._children ? stg.nodeColorWithChildren : stg.nodeColorWithoutChildren;
                 });
 
             nodeEnter.append("text")
-                .attr("x", (d) => d.children || d._children ? -10 : 10 )
+                .attr("x", (d) => d.children || d._children ? -stg.nodeTextOffset  :  stg.nodeTextOffset  )
                 .attr("dy", ".35em")
                 .attr('class', 'nodeText')
                 .attr("text-anchor", (d) => d.children || d._children ? "end" : "start" )
                 .text( (d) => `${d.name}` )
-                .style("fill-opacity", 0 );
+                .style("fill-opacity", 0 )
+                ;
 
             // phantom node to give us mouseover in a radius around it
             nodeEnter.append("circle")
@@ -427,33 +427,26 @@ let renderTree = (stg) => {
                 .attr("opacity", 0.2) // change this to zero to hide the target area
             .style("fill", stg.dragTargetCircleColor)
                 .attr('pointer-events', 'mouseover')
-                .on("mouseover", function(node) {
-                    overCircle(node);
-                })
-                .on("mouseout", function(node) {
-                    outCircle(node);
-                });
+                .on("mouseover", (node) =>  overCircle(node) )
+                .on("mouseout", (node)  =>  outCircle(node)  )
+                ;
 
             // Update the text to reflect whether node has children or not.
             node.select('text')
-                .attr("x", function(d) {
-                    return d.children || d._children ? -10 : 10;
-                })
-                .attr("text-anchor", function(d) {
-                    return d.children || d._children ? "end" : "start";
-                })
+                .attr("x", (d) =>  d.children || d._children ? -stg.nodeTextOffset :  stg.nodeTextOffset  )
+                .attr("text-anchor", (d) => d.children || d._children ? "end" : "start" )
                 .text( (d) => `${d.name }` )
                 ;
+            
 
             // Change the circle fill depending on whether it has children and is collapsed
             node.select("circle.nodeCircle")
                 .attr("r", 4.5)
-                .style("fill", function(d) {
-                    return d._children ? "lightsteelblue" : "#fff";
-                });
+                .style("fill", (d) => d._children ? stg.nodeColorWithChildren : stg.nodeColorWithoutChildren )
+                ;
 
             // Transition nodes to their new position.
-            var nodeUpdate = node.transition()
+            let nodeUpdate = node.transition()
                 .duration(duration)
                 .attr("transform", (d) => `translate(${d.y},${d.x})`);
 
@@ -462,7 +455,7 @@ let renderTree = (stg) => {
                 .style("fill-opacity", 1);
 
             // Transition exiting nodes to the parent's new position.
-            var nodeExit = node.exit().transition()
+            let nodeExit = node.exit().transition()
                 .duration(duration)
                 .attr("transform", (d) => `translate(${source.y},${source.x})`)
                 .remove();
@@ -474,7 +467,7 @@ let renderTree = (stg) => {
                 .style("fill-opacity", 1);
 
             // Update the links…
-            var link = svgGroup.selectAll("path.link")
+            let link = svgGroup.selectAll("path.link")
                 .data(links, function(d) {
                     return d.target.id;
                 });
@@ -501,22 +494,16 @@ let renderTree = (stg) => {
             // Transition exiting nodes to the parent's new position.
             link.exit().transition()
                 .duration(duration)
-                .attr("d", function(d) {
-                    var o = {
-                        x: source.x,
-                        y: source.y
-                    };
-                    return diagonal({
-                        source: o,
-                        target: o
-                    });
+                .attr("d", (d) => {
+                    let o = { x: source.x, y: source.y };
+                    return diagonal({ source: o, target: o });
                 })
                 .remove();
 
             // Stash the old positions for transition.
             nodes.forEach( (d) => { d.x0 = d.x; d.y0 = d.y; } );
 
-        } // update(source)
+        }; // update(source)
 
 
         //----------------------------
@@ -530,6 +517,7 @@ let renderTree = (stg) => {
         root.y0 = 0;
 
         // Layout the tree initially and center on the root node.
+        //console.log(root);
         update(root);
         centerNode(root);
     });
