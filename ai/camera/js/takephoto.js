@@ -1,5 +1,5 @@
 // takePhoto.js
-//  
+// mohan chinnappan 
 async function takePhoto(quality) {
       const resultImg = document.getElementById('result');
       resultImg.style.display = 'none'; 
