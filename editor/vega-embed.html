@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/vega@4"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc12"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+</head>
+
+<body>  
+  <div id="vis"></div>
+  <script>
+
+  var query = location.search.substr(1);
+  var result = {};
+  query.split("&").forEach(function(part) {
+          var item = part.split("=");
+          result[item[0]] = decodeURIComponent(item[1]);
+  });
+     
+    
+    const spec = result.f || "bar.vl.json";
+    console.log(spec);
+  	vegaEmbed('#vis', spec)
+    	// result.view provides access to the Vega View API
+      .then(result => console.log(result))
+      .catch(console.warn);
+  </script>
+</body>
