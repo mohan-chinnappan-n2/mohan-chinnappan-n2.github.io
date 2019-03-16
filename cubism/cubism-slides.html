@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<base target="_blank">
+<title>Cubism</title>
+<style>
+
+@import url(style.css);
+
+</style>
+<script src="//d3js.org/d3.v2.min.js" charset="utf-8"></script>
+<script src="https://square.github.io/cubism/cubism.v1.min.js"></script>
+<body class="overview">
+
+<section class="title">
+  <h1 class="double">
+    Time Series Visualization
+    <div style="font-weight:400;">with Cubism.js</div>
+  </h1>
+  <h2>
+    <a href="https://bost.ocks.org/mike/">Mike Bostock</a>
+    <div>Square, Inc.</div>
+  </h2>
+  <aside>These are slides from a short talk about <a href="http://square.github.com/cubism/">Cubism.js</a>, given at the <a href="http://www.meetup.com/San-Francisco-Metrics-Meetup/">SF Metrics Meetup</a> on May 2, 2012. Scroll down to continue.</aside>
+</section>
+
+<section class="chapter">
+  <h1>
+    Why do we need visualization*?
+  </h1>
+  <h2>* for monitoring of production systems</h2>
+  <aside>Visualization is a tool, not a panacea. Like any tool, it can be used most effectively if you are cognizant of its inherent strengths and weaknesses.</aside>
+</section>
+
+<section>
+  <h2>How do we use visualization?</h2>
+  <ul>
+    <li>Anomaly detection<span class="grey"> - observe abnormal activity</span>
+    <li>Capacity planning<span class="grey"> - extrapolate non-linear trends</span>
+    <li>Crisis diagnosis<span class="grey"> - see interactions between services</span>
+    <li>System design<span class="grey"> - don’t guess; decide empirically</span>
+  </ul>
+  <aside>One way to study visualization is to categor&shy;ize the various ways we use it (successfully) in practice. Here are a few use cases for production dashboards. I imagine you can think of others.</aside>
+</section>
+
+<section>
+  <h2>What are the benefits of visualization?</h2>
+  <ul>
+    <li>Faster diagnosis<span class="grey"> - reduce impact</span>
+    <li>Discovery of unexpected behavior<span class="grey"> - prevent downtime</span>
+    <li>Increased situational awareness<span class="grey"> - make better decisions</span>
+  </ul>
+  <aside>Visualization is not a substitute for log analysis or automated alerts; instead, it utilizes human perception to process lots of data quickly and approxi&shy;mately. Detecting trends and anomalies at-a-glance is fast and flexible, but it also requires you to look!</aside>
+</section>
+
+<section class="chapter">
+  <h1>Why is visualization hard?</h1>
+  <h2>Or: The strengths & weaknesses of human perception.</h2>
+</section>
+
+<section>
+  <h2>Why is visualization hard?</h2>
+  <ul>
+    <li>Data is not information<span class="grey"> - transform data to make it meaningful</span>
+    <li>Some visual channels are less effective<span class="grey"> - favor position</span>
+    <li>Integrality is hard to avoid<span class="grey"> - three dimensions max. (XY+Z)</span>
+    <li>Not all colors are percieved equally<span class="grey"> - use color appropriately!</span>
+    <li>Doing it right takes time<span class="grey"> - there’s no free lunch; think it through</span>
+  </ul>
+  <aside>There are few hard rules, but research has established many best practices for effective visualization design. For a good introduction, see Tamara Munzner’s talk on <a href="http://www.cs.ubc.ca/~tmm/talks/vizbi11/vizbi11.pdf">Visualization Principles</a>, and the books of <a href="http://www.amazon.com/Semiology-Graphics-Diagrams-Networks-Maps/dp/1589482611">Bertin</a> and <a href="http://www.edwardtufte.com/tufte/books_vdqi">Tufte</a>.</aside>
+</section>
+
+<section style="background:#fff url(graphite-area.png) no-repeat 50% 30%;">
+  <h2>Aspect ratios matter.</h2>
+  <aside>And now <b>what not to do</b>. Given the noisiness of these metrics, the aspect ratio on this stacked area chart is too tall. <a href="http://vis.berkeley.edu/papers/banking/">Banking to 45º</a> would improve slope differentiation.</aside>
+</section>
+
+<section style="background:#fff url(graphite-area-2.png) no-repeat 50% 30%;">
+  <h2>Stacking makes middle layers hard to read.</h2>
+  <aside style="bottom:300px;"><a href="http://www.leebyron.com/else/streamgraph/">Stacked graphs</a> are acceptable for certain uses, but it’s easier to perceive the bottom&shy;most layer and the sum than it is to observe changes in the middle: spikes in lower layers mask changes in those above.</aside>
+</section>
+
+<section style="background:#fff url(graphite-line.png) no-repeat 50% 30%;">
+  <h2>Garish colors can be hard to see.</h2>
+  <aside>In addition to the aspect ratio, the colors on this chart are abysmal! Avoid fully-saturated colors, especially yellow on white. When in doubt, use <a href="http://colorbrewer.org">ColorBrewer</a>! <a href="https://github.com/gka/chroma.js">Chroma.js</a> is also useful for designing new color scales.</aside>
+</section>
+
+<section>
+  <ul>
+    <li>Load and render data incrementally.
+    <li>Provide details on demand.
+    <li>Allow panning & zooming, <i>etc.</i>
+  </ul>
+  <h2>Make better use of modern browsers.</h2>
+  <aside>We’ve come a long way since 1994. Modern browsers can generate dynamic graphics and fetch asynchronously using web standards. Interaction can make dashboards much more powerful: start with an overview, then allow <a href="ftp://ftp.cs.umd.edu/pub/hcil/Reports-Abstracts-Bibliography/96-13html/96-13.html">zoom and filter</a> for closer inspection.</aside>
+</section>
+
+<section class="chapter">
+  <h1>Horizon Charts</h1>
+</section>
+
+<section style="background:#fff">
+  <style>
+
+  #horizon-controls {
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  #horizon-bands {
+    position: absolute;
+    right: 0;
+  }
+
+  </style>
+  <div id="horizon-controls">
+    <input name="mode" type="radio" value="mirror" id="horizon-mode-mirror" checked><label for="horizon-mode-mirror"> Mirror</label>
+    <input name="mode" type="radio" value="offset" id="horizon-mode-offset"><label for="horizon-mode-offset"> Offset</label>
+    <span id="horizon-bands"><span id="horizon-bands-value">1</span> <button class="first">&#x2212;</button><button class="last">+</button></span>
+  </div>
+  <div id="horizon-chart"></div>
+  <script src="horizon.js"></script>
+  <script>
+
+  var width = 1120,
+      height = 360;
+
+  var chart = d3.horizon()
+      .width(width)
+      .height(height)
+      .bands(1)
+      .mode("mirror")
+      .interpolate("basis");
+
+  var svg = d3.select("#horizon-chart").append("svg")
+      .attr("width", width)
+      .attr("height", height);
+
+  d3.json("unemployment.json", function(data) {
+
+    // Offset so that positive is above-average and negative is below-average.
+    var mean = data.rate.reduce(function(p, v) { return p + v; }, 0) / data.rate.length;
+
+    // Transpose column values to rows.
+    data = data.rate.map(function(rate, i) {
+      return [Date.UTC(data.year[i], data.month[i] - 1), rate - mean];
+    });
+
+    // Render the chart.
+    svg.data([data]).call(chart);
+
+    // Enable mode buttons.
+    d3.selectAll("#horizon-controls input[name=mode]").on("change", function() {
+      svg.call(chart.duration(0).mode(this.value));
+    });
+
+    // Enable bands buttons.
+    d3.selectAll("#horizon-bands button").data([-1, 1]).on("click", function(d) {
+      var n = Math.max(1, chart.bands() + d);
+      d3.select("#horizon-bands-value").text(n);
+      svg.call(chart.duration(1000).bands(n).height(height / n));
+    });
+  });
+
+  </script>
+  <h2>Combine position and color to reduce vertical space.</h2>
+  <aside>Start with a standard area chart, then <b>mirror</b> negative values (in blue) or <b>offset</b> them vertically. Click the <b>+ button</b> above to increase the number of bands, turning the area into a horizon.</aside>
+</section>
+
+<section class="full">
+  <a href="demo-random.html"><img src="demo-random.png"></a>
+  <aside>Wow, look at all those metrics! Because they share a common <i>x</i>-axis, it’s easier to spot coincident anomalies. This is <a href="demo-random.html">random data</a>, so it’s not especially interesting, but keep reading for better examples.</aside>
+</section>
+
+<section class="full">
+  <a href="demo-stocks.html"><img style="margin-top:40px;" src="demo-stocks.png"></a>
+  <aside>These charts show the percentage change of 19 <a href="demo-stocks.html">technology stocks</a> since December 2008. It’s easy to spot similarities: market events that affected multiple stocks.</aside>
+</section>
+
+<section class="chapter">
+  <h1>Cubism.js</h1>
+  <h2>A small library, not a system.</h2>
+</section>
+
+<section>
+<pre><code>var context = cubism.context()
+    .step(1e4) // ten seconds
+    .size(1440); // four hours</code></pre>
+<h2>cubism.context<span class="grey"> - Synchronize fetching and rendering.</span></h2>
+<aside>The <b>context</b> coordinates Cubism’s various components: charts, metrics, axes, etc.</aside>
+</section>
+
+<section>
+  <h2>Why a context?</h2>
+  <ul>
+    <li>Avoids distracting redraws<span class="grey"> - async. fetch, sync. render</span>
+    <li>Per-pixel resolution<span class="grey"> - maximize data density</span>
+  </ul>
+  <aside>With Cubism you specify the resolution of each pixel rather than the duration of the entire chart. This guarantees optimal data density: one metric value per pixel.</aside>
+</section>
+
+<section>
+<pre><code>var graphite = context
+    .graphite("http://example.com");</code></pre>
+<h2>context.graphite<span class="grey"> - Define a source for Graphite metrics.</span></h2>
+<aside>This slide and the next show how to fetch metrics from <a href="https://github.com/square/cubism/wiki/Graphite">Graphite</a>; you can also plug in <a href="https://github.com/square/cubism/wiki/Context#wiki-metric">other data sources</a>.</aside>
+</section>
+
+<section>
+<pre><code>var foo = graphite
+    .metric("sumSeries(foo.*)")
+    .alias("Foo");</code></pre>
+<h2>graphite.metric<span class="grey"> - Fetch data from Graphite.</span></h2>
+<aside>Given a data source (such as Graphite), you can create multiple metrics. The <b>alias</b> method makes them human-readable.</aside>
+</section>
+
+<section>
+<pre><code>var horizon = context.horizon()
+    .metric(foo);</code></pre>
+<h2>context.horizon<span class="grey"> - Visualize metrics as horizon charts.</span></h2>
+<aside>You can visualize metrics as <a href="https://github.com/square/cubism/wiki/Horizon">horizon charts</a> or <a href="https://github.com/square/cubism/wiki/Comparison">comparison charts</a>, or extend Cubism for additional chart types.</aside>
+</section>
+
+<section style="background:url(cpu.png) no-repeat 50% 55%;">
+  <h2>CPU (10s)</h2>
+  <aside style="bottom:300px;">These diagonal patterns show rolling restarts: sequential deploys across hosts.</aside>
+</section>
+
+<section style="background:url(net.png) no-repeat 50% 55%;">
+  <h2>Network (10s)</h2>
+  <aside>You can pair related metrics by alternating positive and negative. Here green is incoming traffic and blue is outgoing traffic.</aside>
+</section>
+
+<section style="background:url(net-5m.png) 50% 8%;">
+  <h2>Network (5m)</h2>
+  <aside>By increasing the time step, you can see daily and weekly trends.</aside>
+</section>
+
+<section>
+<pre><code>var c = a.add(b);      // c = a + b
+var c = a.subtract(b); // c = a - b
+var c = a.multiply(b); // c = a * b
+var c = a.divide(b);   // c = a / b</code></pre>
+<h2>Metrics are composable, even across sources.</h2>
+<aside>Data sources such as Graphite may allow metric composition, but composing metrics on the client increases flexibility.</aside>
+</section>
+
+<section>
+<pre><code>var fooLastWeek = foo
+    .shift(-7 * 24 * 60 * 60 * 1000);
+
+var fooChange = foo
+    .subtract(fooLastWeek)
+    .divide(fooLastWeek);</code></pre>
+<h2>Time-shift metrics to compare against historical data.</h2>
+<aside>Comparing time-shifted metrics is a great way to remove daily and weekly effects and examine the residuals.</aside>
+</section>
+
+<section>
+<pre><code>body.selectAll(".horizon")
+    .data([foo, bar, baz])
+  .enter().append("div")
+    .attr("class", "horizon")
+    .call(horizon);</code></pre>
+<h2>Cubism is a <a href="https://bost.ocks.org/mike/chart/">D3 plugin</a>: data-driven generation.</h2>
+</section>
+
+<section>
+  <h2>Why a library (not a GUI)?</h2>
+  <ul>
+    <li>Small, orthogonal components<span class="grey"> - assemble via code</span>
+    <li>Highly customizable<span class="grey"> - add interaction, style, embed</span>
+    <li>Highly extensible<span class="grey"> - define new charts & sources</span>
+    <li>Built on D3 and web standards<span class="grey"> - knowledge is power</span>
+    <li>Higher power-to-weight ratio<span class="grey"> - do more with less</span>
+  </ul>
+  <aside>Previous releases of Cube supported a graphical front-end for building dashboards. A GUI makes for a nice demo, but focusing on the API lets you do <a href="https://groups.google.com/d/msg/cube-user/v7iWNVc5SQY/yjakLgvPv5wJ">more with less</a>.</aside>
+</section>
+
+<section class="title">
+  <h1>
+    <a href="http://square.github.com/cubism/" style="color:white;">square.github.com/cubism</a>
+  </h1>
+  <h2>
+    <a href="https://bost.ocks.org/mike/">Mike Bostock</a>
+    <div>Square, Inc.</div>
+  </h2>
+  <aside>Thanks for reading!</aside>
+</section>
+
+<script src="https://mbostock.github.io/stack/stack.v0.min.js"></script>
+<script src="highlight.v0.js"></script>
+
