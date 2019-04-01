@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Charts</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+</head>
+<body>
+  
+<canvas id="donut" width="100 height="100"></canvas>
+<script>
+
+var ctx = document.getElementById('donut').getContext('2d');
+let data = {
+    datasets: [{
+        data: [30, 30, 30],
+       backgroundColor: [
+          "#99ccff",
+          "#ff99cc",
+          "#ccff99"
+        ],
+        borderColor: [
+           "#99ccff",
+          "#ff99cc",
+           "#ccff99"
+        ], 
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+        'Useful',
+        'Usable',
+        'Enjoyable'
+    ]
+};
+
+//options
+  var options = {
+    responsive: true,
+    title: {
+      display: true,
+      position: "top",
+      text: "Good Customer Experiences (CX) ",
+      fontSize: 18,
+      fontColor: "#111"
+    },
+    legend: {
+      display: true,
+      position: "bottom",
+      labels: {
+        fontColor: "#333",
+        fontSize: 16
+      }
+    }
+  };
+
+var myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: data,
+    options: options 
+});
+
+
+</script> 
+</body>
+</html>
