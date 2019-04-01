@@ -1,0 +1,24 @@
+/* 
+   seq-app.css
+
+*/
+#editor {
+    width: 880px;
+    height: 80%;
+    font-size: 14px;
+  }
+
+
+.signal text {
+    fill: black;
+}
+.signal text:hover {
+    fill: #aaaaaa
+}
+.note rect, .note path {
+    fill: salmon;
+}
+.title rect, .title path,
+.actor rect, .actor path {
+    fill: #99ccff;
+}

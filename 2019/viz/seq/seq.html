@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UML Sequence Diagram</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/css/navbar-blue.css" />
+
+  <script src="./bower_components/bower-webfontloader/webfont.js"></script>
+  <script src="./bower_components/snap.svg/dist/snap.svg.js"></script>
+  <script src="./bower_components/underscore/underscore.js"></script>
+  <script src="./bower_components/js-sequence-diagrams/dist/sequence-diagram.js"></script>
+
+  <script src="https://bramp.github.io/js-sequence-diagrams/js/svginnerhtml.min.js"></script>
+
+  <link href="./bower_components/js-sequence-diagrams/dist/sequence-diagram.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js" type="text/javascript" charset="utf-8"></script>
+
+  <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+  <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
+
+  <link rel="stylesheet" href="css/seq-app.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-default" role="navigation" style="margin-bottom:0px;">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="javascript:void(0)">UML Sequence Diagram</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#/home">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="split split-horizontal" id="menu">
+    <div id="diagram"></div>
+  </div>
+  <div class="split split-horizontal" id="content">
+    <div id="editor">
+      Nature->Rain:Rains
+      Rain->Land: Falls
+      Note right of Land: Thank you!
+      Land->Farmer:Start farming!
+      Farmer->Nature: Thanks you Nature!
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <input id='scale' onchange="on_change()" type="number" style='display:none;' value="1">
+        <div class="form-group">
+          <label for='theme' for='theme'>Theme</label>
+          <select class='form-control' style='width:300px;' id="theme" onchange="on_change()">
+            <option value="simple" selected>Simple</option>
+            <option value="hand">Hand drawn</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="col-lg-6">
+        <a href="#" class='btn btn-primary' id="download"> <i class="glyphicon glyphicon-floppy-save"></i>
+          Download as SVG</a>
+      </div>
+    </div>
+  </div>
+  <script src="js/seq-app.js"></script>
+</body>
+</html>
