@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Salesforce Canvas</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/css/navbar-blue.css" />
+    <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
+
+    <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2019/dx/css/slides.css?v=17" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
+
+  
+
+
+<style>
+    @keyframes demo {
+      from {background-color: #99ffcc;color:black;  transform: rotate(-1deg)}
+      to {background-color: ##337ab7;color:white;  transform: rotate(+1deg)}
+  }
+
+  .demo {
+      animation-name: demo;
+      animation-duration: 10s;
+      animation:demo 5s linear 2s infinite alternate;
+  }
+  .center {
+    text-align: center;
+  }
+  img {
+    border-radius: 10px;
+    border: 1px solid;
+  }
+  </style>
+     
+  
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-default"
+      role="navigation"
+      style="margin-bottom:0px;"
+    >
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)">Salesforce Canvas</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#/home">Home</a></li>
+          <li>
+              <a href="#" id='help' data-toggle="tooltip" title="Use Space Bar to move the slides">Help</a>
+
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <select style="display:none2;margin-top:10px;" id='outline'> </select>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+
+    <div class="split split-horizontal" id="menu">
+      <span style="display:none">
+        <button class="btn btn-success" onclick="prevSlide()">Prev</button>
+        <button class="btn btn-success" onclick="nextSlide()">Next</button>
+      </span>
+      <select style="display:none;margin-top:10px;" id='outline2'> </select>
+      <ol class="list-group" id='mitems'> </ol>
+
+
+    </div>
+    <div class="split split-horizontal" id="content">
+
+
+        <div class="slide" id='What is Salesforce Canvas?'>
+           <h3 class='center'>What is Salesforce Canvas?</h3>
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                <ul class="list-group largelist">
+                  <li class="list-group-item">
+                      Canvas enables you to easily integrate a third-party application in Salesforce.</li>
+                      <li class="list-group-item">
+                      Canvas is a set of <b>tools and JavaScript APIs</b> that you can use to expose an application as a canvas app. 
+                  </li>
+                  <li class="list-group-item">
+                   You can take your new or existing applications and make them available to your users as part of their Salesforce experience.
+                   </li>
+                   <li class='list-group-item'>
+                      The third-party app that you want to expose as a canvas app can be written in any language. The only requirement is that the app has a secure URL (HTTPS).
+
+                   </li>
+                </ul>
+              </div>
+            </div>
+        </div>
+
+        <div class="slide" id='Canvas Tools'>
+            <h3 class='center'>Canvas Tools</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                      <b>authentication</b>: If your application requires authorization, you can implement it by using a <b>signed request or OAuth 2.0</b>.
+                   </li>
+                  <li class="list-group-item">
+                  <b>context</b>:  API support that enables you to retrieve context information about the environment in which the canvas app is running.
+                   </li>
+                   <li class="list-group-item">
+                    <b>cross-domain XHR</b>: JavaScript support for cross-domain XML HTTP requests back to the Salesforce domain.
+                    </li>
+                    <li class="list-group-item">
+                    <b>resizing</b>: Methods that support the ability to resize your canvas app.
+                     </li>
+
+                     <li class="list-group-item">
+                        <b>events</b>: provide a JavaScript-based way to send and receive events <b>canvas apps</b>.
+                         Use events to enable communication between multiple canvas apps on a single page.
+                         </li>
+                      <li class="list-group-item">
+                         <b>visualforce component</b>:  that lets you expose your canvas app on a Visualforce page.
+                      </li>
+                      <li class="list-group-item"> 
+                      <b>Canvas Apps in the Chatter Feed</b>: Lets you expose your canvas apps as feed items.
+                      </li>
+                      <li class="list-group-item"> 
+                      <b>Canvas in the Salesforce App</b>: Makes your canvas apps available in the Salesforce app.
+
+
+
+                     
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+        <div class="slide" id='Create a Connected App'>
+           
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                <img src="img/canvas-1.gif" height="700" alt="">
+              </div>
+            </div>
+        </div>
+
+        <div class="slide" id='Signed Request'>
+            <h3 class='center'>Signed Request</h3>
+           
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+
+       <ul class="list-group largelist">
+         <li class="list-group-item">
+       The server defines a <b>/signedrequest</b> endpoint configured to respond to POST requests. </li>
+       <li class="list-group-item"> This is the endpoint (Canvas App URL) you specified in the Canvas parameters of your Connected App. </li> 
+       <li class="list-group-item"> When loading your Canvas app, your Salesforce instance will post encoded data to that endpoint including contextual information (logged in user, current object, ...), 
+        and an authenticated session id that your app can use to make API calls to your Salesforce instance.      </li>
+        </li>
+      
+      </div>
+            </div>
+        </div>
+
+        <div class="slide" id='Demo'>
+           
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                <img src="img/canvas-0.gif" height="700" alt="">
+              </div>
+            </div>
+        </div>
+
+
+        <div class="slide" id='Creating App in Heroku'>
+           
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                <img src="img/canvas-2.gif" height="700" alt="">
+              </div>
+            </div>
+        </div>
+
+        <div class="slide" id='Updating Canvas App URL'>
+           
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                <img src="img/canvas-2.gif" height="700" alt="">
+              </div>
+            </div>
+        </div>
+
+        <div class="slide" id='Canvas Preview'>
+           
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                <img src="img/canvas-preview.png" height="700" alt="">
+              </div>
+            </div>
+        </div>
+
+
+        <div class="slide" id='Canvas Error'>
+           
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                <img src="img/canvas-app-lex-error-1.png" height="700" alt="">
+              </div>
+            </div>
+        </div>
+
+        canvas-app-lex-error-1.png 
+
+        <div class="slide" id='Canvas Lightning Component'>
+          <pre>
+              <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+                  <force:canvasApp developerName="AccountPositionApp"  />
+            </aura:component>
+          </pre>
+           
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                <img src="img/canvas-app-lightning-comp-1.png" height="700" alt="">
+              </div>
+            </div>
+        </div>
+
+
+ 
+
+
+        <div class="slide" id='Resources'>
+                <h3>Resources</h3>
+                <div class="row">
+                  <div class="col-lg-0"></div>
+                  <div class="col-lg-12">
+                      <ul class="largelist list-group">
+    
+    </ul>
+                  </div>
+                </div>
+            </div>
+
+
+       
+        </center>
+        </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+    </div>
+
+    <script> Split(["#menu", "#content"], { sizes: [15, 80] }); </script>
+     <script src='https://mohan-chinnappan-n2.github.io/2019/dx/js/slides.js?v=17'> </script>
+  </body>
+</html>

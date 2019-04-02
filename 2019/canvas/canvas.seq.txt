@@ -1,0 +1,2 @@
+SF->Canvas App:POST\n /signedrequest
+Note right of SF: Encoded contextual information & sesssion-id 
