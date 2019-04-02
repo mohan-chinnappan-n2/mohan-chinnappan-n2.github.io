@@ -1,3 +1,5 @@
+ /* jslint esversion: 6 */
+
  /* seq-app.js 
      mohan chinnappan
      based on work by: Andrew Brampton
@@ -72,6 +74,36 @@
     on_change();
 
     setup_editor();
+
+  // file loading 
+   
+  let getUploadedFile = (event) => {
+      const input = event.target;
+      if ('files' in input && input.files.length > 0) {
+          console.log(input.files[0]);
+          placeFileContent( document.getElementById('editor'), input.files[0]);
+      }
+  }
+  let placeFileContent = (target, file) => {
+      readFileContent(file).then ( content => {
+         editor.setValue(content); 
+          //console.log()
+      }).catch (error => console.log(error))
+  }
+
+  let readFileContent = (file) => {
+      const reader = new FileReader();
+      return new Promise( (resolve, reject) => {
+          reader.onload = event => resolve(event.target.result);
+          reader.onerror = error => reject(error);
+          reader.readAsText(file);
+      });
+  };
+
+  document.getElementById('inputfile').addEventListener('change', getUploadedFile);
+
+
+  
 
     Split(["#menu", "#content"], {
       sizes: [55, 45]
