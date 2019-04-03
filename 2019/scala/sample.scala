@@ -36,6 +36,42 @@ println (s"${account._2} ${account._3} has transaction of ${account._5} for amou
 val(id, fname, lname, amount, txtype) = account;
 println (s"${fname} ${lname} with id: ${id} has transaction of ${txtype} for amount ${amount}")
 
+// tuple iterator
+ account.productIterator.foreach(println)
+
+
+
+// Map
+
+val langs = Map("B" -> "Ken Thompson", 
+              "Pascal" -> "Niklaus Wirth",
+              "C"->"Dennis Ritchie",
+              "C++" -> "Bjarne Stroustrup",
+              "C#" -> "Anders Hejlsberg",
+
+              "Javascript" -> "Brendan Eich",
+              "Nodejs" -> "Ryan Dahl",
+              "Typescript" -> "Anders Hejlsberg",
+
+              "Python" -> "Guido van Rossum",
+              "Perl" -> "Larry Wall",
+              "Ruby" -> "Yukihiro Matsumoto",
+              "PHP" -> "Rasmus Lerdorf",
+
+              "Java" -> "James Gosling",
+              "Scala" -> "Martin Odersky",
+              "GO"->"Ken Thompson, Robert Griesemer, Rob Pike"
+              
+              )
+println ( s"Language GO was designed by ${langs("GO")}")
+langs.foreach(println (_))
+// formated output of the Map
+for ( (k,v) <- langs ) println(s"Language ${k} was designed by ${v}")
+
+// mutable Map
+var states = scala.collection.mutable.Map("NH" -> "New Hampshire")
+
+
 
 
  /*
