@@ -67,6 +67,8 @@ println ( s"Language GO was designed by ${langs("GO")}")
 langs.foreach(println (_))
 // formated output of the Map
 for ( (k,v) <- langs ) println(s"Language ${k} was designed by ${v}")
+// print the keys in the map
+for ( l <- langs.keys) println(s"Lang: ${l} designer(s) : ${langs(l)} ")
 
 // mutable Map
 var states = scala.collection.mutable.Map("NH" -> "New Hampshire")
