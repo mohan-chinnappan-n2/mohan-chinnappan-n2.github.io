@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Salesforce Canvas</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/css/navbar-blue.css" />
+    <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
+
+    <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2019/dx/css/slides.css?v=17" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
+
+  
+
+
+<style>
+    @keyframes demo {
+      from {background-color: #99ffcc;color:black;  transform: rotate(-1deg)}
+      to {background-color: ##337ab7;color:white;  transform: rotate(+1deg)}
+  }
+
+  .demo {
+      animation-name: demo;
+      animation-duration: 10s;
+      animation:demo 5s linear 2s infinite alternate;
+  }
+  .center {
+    text-align: center;
+  }
+  img {
+    border-radius: 10px;
+    border: 1px solid;
+  }
+  </style>
+     
+  
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-default"
+      role="navigation"
+      style="margin-bottom:0px;"
+    >
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)">Salesforce Backup Best Practices</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#/home">Home</a></li>
+          <li>
+              <a href="#" id='help' data-toggle="tooltip" title="Use Space Bar to move the slides">Help</a>
+
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <select style="display:none2;margin-top:10px;" id='outline'> </select>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+
+    <div class="split split-horizontal" id="menu">
+      <span style="display:none">
+        <button class="btn btn-success" onclick="prevSlide()">Prev</button>
+        <button class="btn btn-success" onclick="nextSlide()">Next</button>
+      </span>
+      <select style="display:none;margin-top:10px;" id='outline2'> </select>
+      <ol class="list-group" id='mitems'> </ol>
+
+
+    </div>
+    <div class="split split-horizontal" id="content">
+
+
+        <div class="slide" id='Why we need to backup ?'>
+           <h3 class='center'>Why we need to backup Salesforce org metadata and data ?</h3>
+            <div class="row">
+              <div class="col-lg-0"></div>
+              <div class="col-lg-12">
+                <ul class="list-group largelist">
+                  <li class="list-group-item">
+                          Salesforce maintains a copy of customer data for disaster recovery (DR) purposes, 
+                          but it is important for customers to develop a <b>data backup and recovery strategy</b>
+                           as part of their overall data management, business continuity and security model
+                  </li>
+                  <li class="list-group-item">
+                      Salesforce Data Recovery service is <b>expensive and time-consuming process </b>
+                      and should only be used as a last resort, when no other copy of the data is available.
+                   </li>
+                   <li class='list-group-item'>
+                      <b>Metadata</b>: refers to all of your configuration settings, 
+                      such as custom fields, page layouts, reports, dashboards,
+                       and custom code like Apex and Visualforce pages
+
+                   </li>
+                   <li class='list-group-item'>
+                      <b>Data</b>: refers to all of your records, including accounts, contacts, leads, opportunities, 
+                        cases, contracts, and other records. <br/>
+                        Also includes your custom object records, files, content, and chatter.
+                    </li>
+
+                </ul>
+              </div>
+            </div>
+        </div>
+
+
+        <div class="slide" id='Need for data backup'>
+            <h3 class='center'>Need for data backup</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+
+<iframe id="vidyard_iframe_Mrb44nyn7QMkHJhw8nN352" class="vidyard_iframe" src="//play.vidyard.com/Mrb44nyn7QMkHJhw8nN352?v=3.1&amp;type=inline&amp;hide_html5_playlist=1&amp;video_id=&amp;referring_url=https%253A%252F%252Fwww.google.com%252F&amp;" width="100%" height="100%" title="Video" aria-label="Video" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" allow="autoplay" style="opacity: 1; background-color: transparent; position: absolute; right: 0px; top: 0px;"></iframe></span></span>
+               </div>
+             </div>
+         </div>
+
+
+        <div class="slide" id='Need for metadata backup'>
+            <h3 class='center'>Need for metadata backup</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                      It is also easy for administrators or developers (and users with advanced permissions) to make changes to your configuration settings,
+                       such as adding or deleting custom fields, modifying page layouts, deleting or changing reports and dashboards, or modifying custom code. 
+                      <li class="list-group-item">
+                          As many of these changes are not reversible, it is important to have a copy of your metadata to fall back on in the event that you need to restore prior settings.
+                      </li>
+                     
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+         <div class="slide" id='Data Restore Options'>
+            <h3 class='center'>Data Restore Options</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                      Tools like the data loader and the API as a method for customers to manually restore their data. It is important to note the order in which data is restored, so that relationships and the connection to related records can be preserved. 
+                    </li>  
+                    <li class="list-group-item">
+                       <b>Non-Free</b>: Customers can also choose to engage Salesforce Services or a partner to assist them in the restoration of their data, provided they have a copy of that data available. <br/>
+                       There are also several third-party options that can be leveraged when a more comprehensive approach is needed.                      </li>
+                    </li>
+
+                      <li class="list-group-item">
+                          <b>Free Options</b>:To help customers routinely backup their data, we offer several native options that are available for no additional cost to customers. 
+                     
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+
+         <div class="slide" id='Native Data Backup Options'>
+            <h3 class='center'>Native Data Backup Options</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group">
+                   <li class="list-group-item">
+                      Data Export Service
+                       <img height="450" src="img/data-backup-1.gif " alt="">
+                       <img height="100" src="img/dataexport-email.png" alt="">
+
+
+                    </li>  
+                    <li class="list-group-item">
+                        Data Loader
+
+                      </li>
+
+                      <li class="list-group-item">
+                        Report Export
+                     
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+
+         <div class="slide" id='Native Metadata Backup Options'>
+            <h3 class='center'>Native Metadata Backup Options </h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                      Change Sets
+
+                    </li>  
+                    <li class="list-group-item">
+                        Sandbox Refresh
+
+                      </li>
+
+                      <li class="list-group-item">
+                          Force.com Migration Tool
+                      </li>
+                      <li class="list-group-item">
+                          Force.com IDE 
+
+                        </li>
+
+
+                     
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+
+         <div class="slide" id='Third-Party Offerings'>
+            <h3 class='center'>Third-Party Offerings </h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                      OwnBackup for Salesforce
+                    </li>  
+                    <li class="list-group-item">
+                        Spanning Backup for Salesforce
+                      </li>
+
+                      <li class="list-group-item">
+                          CloudAlly Backup for Salesforce                    
+                      </li>
+                      <li class="list-group-item">
+                          Backupify for Salesforce                      </li>
+                      <li class="list-group-item">
+                          Odaseva for Salesforce                      </li>
+                          <li class="list-group-item">
+                              Druva                     </li>
+
+                              
+
+
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+
+         <div class="slide" id='References'>
+            <h3 class='center'>References</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                      <a href="https://help.salesforce.com/articleView?id=000003594&type=1&language=en_US">
+                        Data Recovery Service and Cost FAQ
+                      </a>
+
+                    </li>  
+                    <li class="list-group-item">
+                        <a href="https://help.salesforce.com/articleView?id=000213366&type=1">
+                          BEST PRACTICES: Data Backup & Recovery Best Practices
+                        </a>
+  
+                      </li>  
+
+
+                    <li class="list-group-item">
+                        <a href="https://help.salesforce.com/articleView?id=000265231&type=1"> Data Export FAQ </a>
+                      </li>  
+ 
+                      <li class="list-group-item">
+                          <a href="https://help.salesforce.com/articleView?id=000004037&type=1&language=en_US">
+                            Recover or restore lost or deleted records and data
+                          </a>
+    
+                        </li>  
+
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+
+
+
+  
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+    </div>
+
+    <script> Split(["#menu", "#content"], { sizes: [15, 80] }); </script>
+     <script src='https://mohan-chinnappan-n2.github.io/2019/dx/js/slides.js?v=17'> </script>
+  </body>
+</html>
