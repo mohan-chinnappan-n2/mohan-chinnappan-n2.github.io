@@ -1,0 +1,6 @@
+Nature->Rain:Rains
+Rain->Land: Falls
+Note right of Land: Thank you!
+Land->Farmer:Start farming!
+Farmer->Nature: Thanks you Lovely Nature!
+    

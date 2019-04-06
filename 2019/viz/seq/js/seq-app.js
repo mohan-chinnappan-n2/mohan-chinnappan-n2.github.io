@@ -4,6 +4,34 @@
      mohan chinnappan
      based on work by: Andrew Brampton
  */
+
+ // query parm parser
+ let getQueryParams = () => {
+  const query = location.search.substr(1);
+  let result = {};
+  query.split("&").forEach(function(part) {
+       const item = part.split("=");
+       result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+ };
+
+ let params = getQueryParams();
+    console.log(params.f);
+    //const url =  params.f ;
+    const url =  params.f || './seqs/farming.seq.txt';
+    //console.log(`url: ${url}`);
+    
+    let getFile = async (name)  => {
+      let response = await fetch(name);
+      return await response.text();
+    }
+    
+  
+
+  //========================
+
+
     const diagram_div = document.getElementById('diagram');
     const download_link = document.getElementById('download');
     const editorEl = document.getElementById('editor');
@@ -18,6 +46,10 @@
       editor.setTheme("ace/theme/crimson_editor");
       editor.getSession().setMode("ace/mode/asciidoc");
       editor.getSession().on('change', _.debounce(on_change, 100));
+
+      let data = getFile(url).then( data => {
+       editor.setValue(data);
+     });
 
       download_link.onclick = function (ev) {
         var svg = document.getElementsByTagName('svg')[0];
