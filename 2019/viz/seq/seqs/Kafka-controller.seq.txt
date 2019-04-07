@@ -1,0 +1,7 @@
+Title: What is Kafka Controller?
+
+Controller->Brokers : Check Heartbeat
+Brokers->Controller: Failed
+Controller->Controller:Re-elect New Leaders
+Controller->Brokers:Notify New Leaders
+
