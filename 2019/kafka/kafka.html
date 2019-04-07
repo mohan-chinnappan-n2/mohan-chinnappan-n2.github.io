@@ -36,6 +36,11 @@
     border-radius: 10px;
     border: 1px solid;
   }
+  .reflink {
+    width:600px;
+    padding: 10px;
+    font-size: 18px;
+  }
   </style>
      
   
@@ -218,7 +223,7 @@
                    <li class="list-group-item">
                      
                      <a href="../viz/seq/seq.html?f=./seqs/Kafka-controller.seq.txt" 
-                     class='btn btn-info' target="_blank">Function of the controller</a>
+                     class='btn btn-info reflink' target="_blank">Function of the controller</a>
                      <br/> 
                      The controller is one of the most important brokering entity in a Kafka ecosystem responsible:
                       to maintain the <b>leader-follower</b> relationship across all the partitions.
@@ -226,7 +231,7 @@
                       <br>
                       Every cluster has one leader node and the rest of the nodes are followers.
                       <img height='220' src="img/leader-follower.png" alt="">
-                      <a class='btn btn-warning' href="img/Zab_2011.pdf"> Paper on ZAB</a>
+                      <a class='btn btn-warning reflink' href="img/Zab_2011.pdf"> Paper on ZAB</a>
 
 
                    </li>
@@ -262,11 +267,11 @@
                           and to establish a new leader to broadcast state changes
 
                           <br/>
-                          <a class='btn btn-warning' href="img/zab.totally-ordered-broadcast-protocol.2008.pdf">
+                          <a class='btn btn-warning reflink' href="img/zab.totally-ordered-broadcast-protocol.2008.pdf">
                             A simple totally ordered broadcast protocol</a>
                       </li>
                       <li class="list-group-item">
-                        <a class='btn btn-warning' href="img/2012-deSouzaMedeiros.pdf">ZooKeeper’s atomic broadcast protocol: Theory and practice</a>
+                        <a class='btn btn-warning reflink' href="img/2012-deSouzaMedeiros.pdf">ZooKeeper’s atomic broadcast protocol: Theory and practice</a>
 
                       </li>
 
