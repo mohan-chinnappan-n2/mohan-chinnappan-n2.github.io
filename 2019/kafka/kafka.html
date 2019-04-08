@@ -116,6 +116,7 @@
                      Messaging System with { Brokers, Topics, Publishers, Subscribers }
                    </li>
                    <li class='list-group-item'>
+                      <a  class="btn btn-warning  reflink demo" target="_blank" href="https://mohan-chinnappan-n.github.io/sfdc/kafka.html#/22"> Key Points</a>
                     </li>
 
                 </ul>
@@ -168,15 +169,161 @@
                       <li class="list-group-item">
                         Zookeeper provides the consistent view of the system: 
                           keeps track of status of the Kafka cluster nodes and it also keeps track of Kafka topics, partitions etc.
-
                       </li>
-
-
-                     
                  </ul>
                </div>
              </div>
          </div>
+
+         <div class="slide" id='DB Person View'>
+            <h3 class='center'>DB Person View</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                     <img src="img/kafka-arch-1.svg" height="500" alt="">
+                      </li>
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+         <div class="slide" id='Kafka Full View'>
+            <h3 class='center'>Kafka Full View</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                     <img src="img/kafka-arch-2.svg" height="500" alt="">
+                      </li>
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+         <div class="slide" id='Kafka Full View - Detailed'>
+            <h3 class='center'>Kafka Full View - Detailed</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                     <img src="img/kafka-arch-4.png" height="500" alt="">
+                      </li>
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+
+         <div class="slide" id='Why Kafka - Durable Message Retention'>
+            <h3 class='center'>Why Kafka - Durable Message Retention</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                      Support for Multiple Producers and Consumers
+                      </li>
+                   <li class="list-group-item">
+                      Disk base durable message retention: 
+                      consumers do not always need to work in real time. <br/>
+                      Messages are committed to disk, and will be stored with configurable (per-topic basis) retention rules.<br/>
+                      If a consumer falls behind, either due to slow processing or a burst in traffic, there is no danger of losing data. <br/>
+                      Consumers can be stopped, and the messages will be retained in Kafka. <br/>
+                      This allows them to restart and pick up processing messages where they left off with no data loss. 
+
+                      </li>
+
+
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+
+         <div class="slide" id='Why Kafka - Scalable'>
+            <h3 class='center'>Why Kafka - Scalable</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                      Flexible scalability:  easy to handle any amount of data
+                      </li>
+                   <li class="list-group-item">
+                      Users can start with a single broker as a proof of concept <br/>
+                      Expand to a small development cluster of 3 brokers<b/> 
+                      Move into production with a larger cluster of 10 or even 100s of brokers 
+                      that grows over time as the data scales up.
+                     </li>
+                   <li class="list-group-item">
+                      Expansions can be performed while the cluster is online, with no impact on the availability of the system as
+                      a whole. <br/>
+                      A cluster of multiple brokers can handle the failure of an individual broker, and continue servicing clients. <br/>
+                      Clusters that need to tolerate more simultaneous failures can be configured with higher replication factors. 
+
+                   </li>
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+
+         <div class="slide" id='Why Kafka - High Performance'>
+            <h3 class='center'>Why Kafka - High Performance</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                      Producers, Consumers,
+                      and Brokers can all be <b>scaled out</b> to handle very large message streams with ease. <br/>
+                      This can be done while still providing sub-second message latency.<br/>
+                      Kafka provides the <b>circulatory system</b> for the data ecosystem
+                      <br/>
+                      <img src="img/kafka-big-data-sys-1.png" height="350" alt="">
+                    </li>
+
+                   </li>
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+         <div class="slide" id='The name Kafka'>
+            <h3 class='center'>The name Kafka</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                       <pre>
+                          I thought that since Kafka was a system optimized for writing, using a writer’s name
+                          would make sense. I had taken a lot of lit classes in college and liked Franz Kafka. Plus
+                          the name sounded cool for an open source project.
+                          So basically there is not much of a relationship.
+
+                          - Jay Kreps (Team Lead at LinkedIn for Kafka Project)
+                       </pre>
+                    </li>
+
+                   </li>
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+
+
+
+
+
+
+
+
 
          <div class="slide" id='ZooKeeper'>
             <h3 class='center'>ZooKeeper &rarr;	 highly reliable distributed coordination 
@@ -188,7 +335,9 @@
                    <li class="list-group-item">
                      <img src="img/zookeeper-1.png" height="250" alt="">
                      <img src="https://zookeeper.apache.org/images/zookeeper_small.gif" alt="">
-                    Centralized service  used to maintain naming and configuration data 
+                    Centralized service  used to maintain naming and configuration data.<br/>
+                    Used to store metadata about the Kafka cluster, as well as consumer client details.
+                    <img src="img/zookeeper-01.png" height="250" alt="">
                    </li>
                       <li class="list-group-item">
                           Provides flexible and robust synchronization within distributed systems                      </li>
@@ -208,9 +357,109 @@
              </div>
          </div>
 
+
+
+
+         <div class="slide" id='Starting ZooKeeper'>
+            <h3 class='center'>Starting ZooKeeper</h3> 
+              </h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                  
+                    <pre>
+  # tar -zxf zookeeper-3.4.6.tar.gz
+  # mv zookeeper-3.4.6 /usr/local/zookeeper
+
+  # mkdir -p /var/lib/zookeeper
+  # cat > /usr/local/zookeeper/conf/zoo.cfg << EOF
+  > tickTime=2000
+  > dataDir=/var/lib/zookeeper
+  > clientPort=2181
+  > EOF
+
+  # export JAVA_HOME=/usr/java/jdk1.8.0_51
+
+  # /usr/local/zookeeper/bin/zkServer.sh start
+  JMX enabled by default
+  Using config: /usr/local/zookeeper/bin/../conf/zoo.cfg
+  Starting zookeeper ... STARTED
+  
+  #
+  
+
+                        
+                    </pre>
+                   </li>
+                      
+
+                     
+                 </ul>
+               </div>
+             </div>
+         </div>
+
       
 
+         <div class="slide" id='ZooKeeper Ensemble'>
+            <h3 class='center'>ZooKeeper Ensemble</h3> 
+              </h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                  
+                      A Zookeeper cluster is called an ensemble. Due to the algorithm used, it is recom‐
+                      mended that ensembles contain an odd number of servers (e.g., 3, 5, etc.) as a major‐
+                      ity of ensemble members (a quorum) must be working in order for Zookeeper to
+                      respond to requests. 
+                      <br/>
+                      This means that in a 3-node ensemble, you can run with 1 node missing. 
+                      <br/> With a <b>5-node ensemble (recommended) </b>, you can run with 2 nodes missing.
 
+                      <pre>
+                        $ cat /usr/local/zookeeper/conf/zoo.cfg 
+                          # in ms
+                          tickTime=2000
+
+                          dataDir=/var/lib/zookeeper
+
+                          clientPort=2181
+
+                          #  the amount of time to allow followers to connect with a leader :
+                          initLimit=20
+
+                          # limits how out-of-sync followers can be with the leader :
+                          syncLimit=5
+                          
+                          #  servers in the ensemble:
+                          #  format: server.X=hostname:peerPort:leaderPort
+                          #  X: ID
+                          #  peerPort: The TCP port over which servers in the ensemble communicate with each other
+                          #  leaderPort: The TCP port over which leader election is performed.
+                          #  each server must have a file in the data Dir directory with the name myid:
+                          #     this file must contain the ID number of the server
+
+                          which must match the configuration file. 
+                          server.1=zoo1.example.com:2888:3888
+                          server.2=zoo2.example.com:2888:3888
+                          server.3=zoo3.example.com:2888:3888
+                          server.4=zoo4.example.com:2888:3888
+                          server.5=zoo5.example.com:2888:3888
+
+                      </pre>
+                        
+                   </li>
+                      
+
+                     
+                 </ul>
+               </div>
+             </div>
+         </div>
 
 
 
@@ -280,10 +529,105 @@
              </div>
          </div>
 
+         <div class="slide" id='Installing a Kafka Broker'>
+            <h3 class='center'>Installing a Kafka Broker</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                      # tar -zxf kafka_2.11-0.9.0.1.tgz
+                      # mv kafka_2.11-0.9.0.1 /usr/local/kafka
+                      # mkdir /tmp/kafka-logs
+                      # export JAVA_HOME=/usr/java/jdk1.8.0_51
+                      # /usr/local/kafka/bin/kafka-server-start.sh -daemon /usr/local/kafka/config/server.properties
+                      #
+                     </li>
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+         <div class="slide" id='Creating a test topic'>
+            <h3 class='center'>Creating a test topic</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                      # /usr/local/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+                      Created topic "test".
+
+
+                      # /usr/local/kafka/bin/kafka-topics.sh --zookeeper localhost:2181 --describe --topic test
+                      Topic:test PartitionCount:1 ReplicationFactor:1 Configs:
+                       Topic: test Partition: 0 Leader: 0 Replicas: 0 Isr: 0
+                      #
+                     </li>
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+         <div class="slide" id='Produce messages to a test topic'>
+            <h3 class='center'>Produce messages to a test topic</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                      # /usr/local/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+                      Test Message 1
+                      Test Message 2
+                      ^D
+                      #
+                    </li>
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+
+         <div class="slide" id='Consume messages from a test topic:'>
+            <h3 class='center'>Consume messages from a test topic:</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                      # /usr/local/kafka/bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning
+                      Test Message 1
+                      Test Message 2
+                      ^C
+                      Consumed 2 messages
+                      # 
+                    </li>
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+
+         <div class="slide" id='Producer'>
+            <h3 class='center'>Producer</h3>
+             <div class="row">
+               <div class="col-lg-0"></div>
+               <div class="col-lg-12">
+                 <ul class="list-group largelist">
+                   <li class="list-group-item">
+                     <img src="img/kafka-producer-1.png" height="500" alt="">
+                    </li>
+                 </ul>
+               </div>
+             </div>
+         </div>
+
+         
 
 
 
-         <div class="slide" id='How Kakfka Data is stored?'>
+
+         <div class="slide" id='How Kafka Data is stored?'>
             <h3 class='center'>How Kafka Data is Stored?</h3>
              <div class="row">
                <div class="col-lg-0"></div>
@@ -342,5 +686,6 @@
 
     <script> Split(["#menu", "#content"], { sizes: [15, 80] }); </script>
      <script src='https://mohan-chinnappan-n2.github.io/2019/dx/js/slides.js?v=17'> </script>
+
   </body>
 </html>
