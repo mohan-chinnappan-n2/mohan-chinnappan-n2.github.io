@@ -75,7 +75,7 @@ var drawHousehold = ( margin, w, h, tdata , settings )  => {
             //.attr('width', settings.circleRadius * 2)
             //.attr('height', settings.circleRadius * 2)
             .style('fill', (d) => getNodeColor(d) )
-            .on('click', (d) => alert (d.name) )
+           // .on('click', (d) => alert (d.name) )
             ;
            
     
