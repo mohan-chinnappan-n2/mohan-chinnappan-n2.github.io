@@ -47,11 +47,54 @@ Gandhi wanted to have an ideal society of his own imagination and his economic i
     - technological research (17% of total agriculture budget)
 - self-sufficient (90%) with respects vegetables, fruits (other than tropical fruits: jackfruit, coconut)
 
--  Jews were not trained to be farmers but in Israel they made agriculture is the prime culture and industry with 9M population!
+#### Milestones
+![Milestone](img/israel-milestones-2.png)
+
+![crops](img/israel-crops-1.png)
+![crops](img/israel-crops-2.png)
+
+### Mandarin growing - Intensive growing
+![crops](img/israel-crop-3.png)
+
+#### Live stock - High yielding disease resisting cows
+![cows](img/israel-cows-1.png)
+
+#### Modern irrigation
+
+- drip irrigation
+![drip irrigation](img/drip-irrigation-1.png)
+![drip irrigation](img/drip-irrigation-2.png)
+
+- jet irrigation
+![jet irrigation](img/jet-irrigation.png)
+
+- mobile sprinkler irrigation
+![irrigation](img/israel-irrigation-1.png)
+
+- spraying 
+![sparying](img/israel-spraying-1.png)
+
+![Milestone](img/israel-milestones-1.png)
+
+
+- farm equipment made locally
+![equip1](img/farm-equipment-1.png)
+![equip2](img/farm-equipment-2.png)
+
+
+
+
+
+
+-  Jews were not trained to be farmers but in Israel they made agriculture as the prime culture and industry with 9M population!
 
 - exports fresh produce and agriculture machineries to the world
 
 - water conservation is employed - plants are grown in tunnels of white plastic sheets with vent holes
+
+- hiring labors from Thailand for the farm work. Thai labors go back to Thailand they implement these technique in their homeland
+
+- cactus cultivation in large scale for leaves and fruits
 
 ![israel wm](img/israel-wm-1.png)
 ![israel wm2](img/israel-wm-2.png)
