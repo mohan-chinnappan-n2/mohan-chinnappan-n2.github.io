@@ -12,3 +12,9 @@
 ## Neem (Azadirachta indica) tree 
 ![Azadirachta indica](https://upload.wikimedia.org/wikipedia/commons/8/8e/Neem_tree_leaves.JPG)
 - Botanical name: [Azadirachta indica](https://en.wikipedia.org/wiki/Azadirachta_indica)
+
+## Curry tree
+![Curry tree](https://upload.wikimedia.org/wikipedia/commons/a/ad/Curry_Trees.jpg)
+- Botanical name: [Murraya koenigii](https://en.wikipedia.org/wiki/Curry_tree)
+![Curry tree friuts](https://upload.wikimedia.org/wikipedia/commons/a/a9/CurryLeaf_Fruits.jpg)
+
