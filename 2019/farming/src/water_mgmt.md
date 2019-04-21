@@ -37,7 +37,7 @@
 Gandhi wanted to have an ideal society of his own imagination and his economic ideas are a part and parcel of his philosophical and sociological ideas. Gandhi is in favor of the **self-sufficient village economy** where the villages will be the independent economic units.
 
 
-### Learn from Israel Agriculture and Water Management
+### Learn from Israel's Agriculture and Water Management
 
  - only 20% of the land is arable (suitable for growing crops)
  - multiplied crop production by 16x from 1948 
@@ -45,9 +45,22 @@ Gandhi wanted to have an ideal society of his own imagination and his economic i
     - farmers
     - agro industry
     - technological research (17% of total agriculture budget)
-- self-sufficient with respects vegetables, fruits (other than tropical fruits: jackfruit, coconut)
+- self-sufficient (90%) with respects vegetables, fruits (other than tropical fruits: jackfruit, coconut)
 
--  Jews were not trained to farmers but in Israel they made agriculture is a prime one!
+-  Jews were not trained to be farmers but in Israel they made agriculture is the prime culture and industry with 9M population!
+
+- exports fresh produce and agriculture machineries to the world
+
+- water conservation is employed - plants are grown in tunnels of white plastic sheets with vent holes
+
+![israel wm](img/israel-wm-1.png)
+![israel wm2](img/israel-wm-2.png)
+
+![date harvest](https://upload.wikimedia.org/wikipedia/commons/c/c7/Dattelernte.jpg)
+![hot houses](https://upload.wikimedia.org/wikipedia/commons/c/cc/PikiWiki_Israel_5358_ein_yahav_hot-houses.jpg)
+![fields](https://upload.wikimedia.org/wikipedia/commons/b/ba/PikiWiki_Israel_14301_Gilboa_Mountain.JPG)
+![wheat field](https://upload.wikimedia.org/wikipedia/commons/1/11/Wheat-haHula-ISRAEL2.JPG)
+
 
 
 <iframe width="800" height="600" src="https://www.youtube.com/embed/LQ3192n9KVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
