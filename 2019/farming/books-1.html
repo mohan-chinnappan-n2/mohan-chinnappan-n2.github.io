@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id='title'>Farming Notebook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/css/navbar-blue.css">
+    <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sw2/css/book.css">
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation" style='margin-bottom:0px;'>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id='appName' href="javascript:void(0)"></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#/home">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li ><a href="/">Main</a></li>
+      </ul>
+
+    </div>
+</nav>
+
+ <div class="split split-horizontal" id="menu">
+    <h3  class='slds-text-heading--medium' id='mainTopic'></h3> 
+    <ol class="list-group" id='toc'>
+    </ol>
+</div>
+
+ <div class="split split-horizontal" id="content">
+            <h3  id='contentTitle'></h3> 
+        <span id='mds'></span>
+
+</div>
+ 
+
+<script src="https://mohan-chinnappan-n.github.io/sf-notes/js/bookreader.js?v=103"></script>
+<script>
+var config = {
+    title: "Farming Notes",
+    bookfile: "./md/books-1.toc?10"
+}
+// read the TOC
+readTextFile(config.bookfile + '?v=' + Math.floor(Math.random() * 1000) );;
+
+
+</script>
+
+<script src="https://mohan-chinnappan-n.github.io/sw2/js/book.js?v=103"></script>
+    
+</body>
+</html>
+
