@@ -75,7 +75,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="water_mgmt.html" class="active"><strong aria-hidden="true">1.</strong> Water Resource Management</a></li><li><a href="key_trees.html"><strong aria-hidden="true">2.</strong> Keys Trees to grow</a></li><li><ol class="section"><li><a href="trees/moringa.html"><strong aria-hidden="true">2.1.</strong> Moringa</a></li><li><a href="trees/tamarind.html"><strong aria-hidden="true">2.2.</strong> Tamarind</a></li><li><a href="trees/neem.html"><strong aria-hidden="true">2.3.</strong> Neem</a></li><li><a href="trees/curry.html"><strong aria-hidden="true">2.4.</strong> Curry</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="top10-india.html"><strong aria-hidden="true">1.</strong> Top 10 items for India</a></li><li><ol class="section"><li><a href="water_mgmt.html" class="active"><strong aria-hidden="true">1.1.</strong> Water Resource Management</a></li><li><a href="key_trees.html"><strong aria-hidden="true">1.2.</strong> Keys Trees to grow</a></li><li><ol class="section"><li><a href="trees/moringa.html"><strong aria-hidden="true">1.2.1.</strong> Moringa</a></li><li><a href="trees/tamarind.html"><strong aria-hidden="true">1.2.2.</strong> Tamarind</a></li><li><a href="trees/neem.html"><strong aria-hidden="true">1.2.3.</strong> Neem</a></li><li><a href="trees/curry.html"><strong aria-hidden="true">1.2.4.</strong> Curry</a></li></ol></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -140,8 +140,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#how-india-can-be-come-a-truly-farming-nation" id="how-india-can-be-come-a-truly-farming-nation"><h1>How India can be come a truly Farming Nation?</h1></a>
-<a class="header" href="#water-resource-management" id="water-resource-management"><h2>Water Resource Management</h2></a>
+                        <a class="header" href="#water-resource-management" id="water-resource-management"><h2>Water Resource Management</h2></a>
 <ul>
 <li>
 <p>Proper Water Resource Management is the key</p>
@@ -279,6 +278,10 @@
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="top10-india.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
                         
                             <a rel="next" href="key_trees.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
@@ -293,6 +296,10 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a href="top10-india.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
                 
                     <a href="key_trees.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
@@ -303,6 +310,21 @@
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         

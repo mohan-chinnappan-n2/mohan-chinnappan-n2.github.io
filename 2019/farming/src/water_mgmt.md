@@ -1,4 +1,3 @@
-# How India can be come a truly Farming Nation?
 
 ## Water Resource Management
 
