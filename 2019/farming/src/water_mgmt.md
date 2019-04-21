@@ -12,13 +12,17 @@
     - Use [E85](https://en.wikipedia.org/wiki/E85) as the prime fuel
 - Start sharing water with every farmer, so each one can contribute the development of Ethanol and all required corps
 - Stop water getting wasted into Seas
+- Avoid Flood Irrigation : Drip Irrigation double/triple the yield
+![drip vs flood](img/flood-vs-drip.png)
+- Collaborate with other Countries/Universities to move forward
+
 - Farming contribution to GDP () should be increased to more than 70% (2019 value: 12%, it was 68% in 1947, world average: 6.4%)
 - Stop importing vegetable oils like [Palm oil](https://en.wikipedia.org/wiki/Palm_oil) 
     - Encourage the use of by local cultivation of the seeds and nuts required:
         - [Coconut-nut oil](https://en.wikipedia.org/wiki/Coconut_oil)
         - [Mustard oil](https://en.wikipedia.org/wiki/Mustard_oil)
         - [Sesame seed oil](https://en.wikipedia.org/wiki/Sesame_oil)
-        - [Peanut oil)(https://en.wikipedia.org/wiki/Peanut_oil)
+        - [Peanut oil](https://en.wikipedia.org/wiki/Peanut_oil)
         - [Castor oil](https://en.wikipedia.org/wiki/Castor_oil)
         - [Sunflower oil](https://en.wikipedia.org/wiki/Sunflower_oil)
         - [Grape seed oil](https://en.wikipedia.org/wiki/Grape_seed_oil)

@@ -167,6 +167,13 @@
 <p>Stop water getting wasted into Seas</p>
 </li>
 <li>
+<p>Avoid Flood Irrigation : Drip Irrigation double/triple the yield
+<img src="img/flood-vs-drip.png" alt="drip vs flood" /></p>
+</li>
+<li>
+<p>Collaborate with other Countries/Universities to move forward</p>
+</li>
+<li>
 <p>Farming contribution to GDP () should be increased to more than 70% (2019 value: 12%, it was 68% in 1947, world average: 6.4%)</p>
 </li>
 <li>
@@ -177,7 +184,7 @@
 <li><a href="https://en.wikipedia.org/wiki/Coconut_oil">Coconut-nut oil</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Mustard_oil">Mustard oil</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Sesame_oil">Sesame seed oil</a></li>
-<li>[Peanut oil)(https://en.wikipedia.org/wiki/Peanut_oil)</li>
+<li><a href="https://en.wikipedia.org/wiki/Peanut_oil">Peanut oil</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Castor_oil">Castor oil</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Sunflower_oil">Sunflower oil</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Grape_seed_oil">Grape seed oil</a></li>
@@ -296,6 +303,21 @@
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         
