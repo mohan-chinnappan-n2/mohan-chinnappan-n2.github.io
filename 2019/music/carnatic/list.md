@@ -110,7 +110,7 @@
 
 <hr/><hr/>
 
-## [Mahatma Gandhi ](https://en.wikipedia.org/wiki/Ilaiyaraaja)
+## [Mahatma Gandhi ](https://en.wikipedia.org/wiki/Mahatma_Gandhi)
 - [Video: Namrata ke Saagar- Bhajan - Mahatma Gandhi](https://www.youtube.com/watch?v=Z86LscyJhNY)
 
 
