@@ -1,7 +1,7 @@
 # Great Carnatic Songs Collection
 
 ### Muruga Murga - Periaswamy Thooran
-- [Video:MS Subbulakshmi-Muruga Muruga Enral- Saveri-Caapu- Periaswamy Thooran](https://www.youtube.com/watch?v=ju5nYcGWvmg)
+- [Video: MS Subbulakshmi-Muruga Muruga Enral- Saveri-Caapu- Periaswamy Thooran](https://www.youtube.com/watch?v=ju5nYcGWvmg)
 - [Audio: MS Sbubulakshimi](https://soundcloud.com/karnatik/c1208)
 - [Complete Notes](http://www.shivkumar.org/music/murugamuruga.pdf)
 
