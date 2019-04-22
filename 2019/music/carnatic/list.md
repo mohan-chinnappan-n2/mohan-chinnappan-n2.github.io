@@ -115,5 +115,11 @@
 
 
 
+<hr/><hr/>
+
+## [Manikkavacakar](https://en.wikipedia.org/wiki/Manikkavacakar)
+- [Video: Thiruvasagam In Symphony - By Maestro Ilaiyaraaja (சிம்ஃபொனியில் திருவாசகம்)](https://www.youtube.com/watch?v=-XuO4CR7fzI)
+
+
 
 
