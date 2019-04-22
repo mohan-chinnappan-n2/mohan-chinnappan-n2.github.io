@@ -108,8 +108,6 @@
 
 
 
-- [Complete Notes](https://karnatik.com/c1146.shtml)
-
 
 
 
