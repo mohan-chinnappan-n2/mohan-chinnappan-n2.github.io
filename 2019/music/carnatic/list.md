@@ -5,7 +5,7 @@
 
 ### Muruga Murga 
 - [Video: MS Subbulakshmi-Muruga Muruga Enral- Saveri-Caapu](https://www.youtube.com/watch?v=ju5nYcGWvmg)
-- [Audio: MS Sbubulakshimi](https://soundcloud.com/karnatik/c1208)
+- [Audio: MS Subbulakshmi](https://soundcloud.com/karnatik/c1208)
 - [Complete Notes](http://www.shivkumar.org/music/murugamuruga.pdf)
 
 
