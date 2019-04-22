@@ -124,7 +124,7 @@
 <hr/><hr/>
 
 ## [Ludwig van Beethoven](https://en.wikipedia.org/wiki/Ludwig_van_Beethoven)
-- [Video: Beethoven - Für Elise | 60 Minutes Version](https://www.youtube.com/watch?v=Lkcvrxj0eLY&t=8s)
+- [Video: Beethoven - Für Elise | 60 Minutes Version](https://www.youtube.com/watch?v=Lkcvrxj0eLY&t=3s)
 - [Score](https://www.mutopiaproject.org/ftp/BeethovenLv/WoO59/fur_Elise_WoO59/fur_Elise_WoO59-let.pdf)
 
 
