@@ -13,7 +13,7 @@
 
 - [Video: muralIdharA gOpAlA - mAnd - Adi - Periasamy Thooran ](https://www.youtube.com/watch?v=ku87hsna784)
 
-### Lyrics
+#### Lyrics
 ```
 
 முரளீதர கோபாலா முகுந்தா ஸ்ரீ வைகுண்டா (முரளீதர)
@@ -23,3 +23,10 @@
 
 
 ```
+<hr/><hr/>
+
+### Endaro Mahanu Bhavulu - Thiyagaraja
+
+- [Video: Nithyasri](https://www.youtube.com/watch?v=miZlfSPbKdY)
+- [Complete Notes](http://www.shivkumar.org/music/endaromahanubhavulu-new.pdf)
+
