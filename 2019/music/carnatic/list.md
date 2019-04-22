@@ -1,13 +1,15 @@
 # Great Carnatic Songs Collection
 
-### Muruga Murga - Periaswamy Thooran
+### Muruga Murga 
 - [Video: MS Subbulakshmi-Muruga Muruga Enral- Saveri-Caapu- Periaswamy Thooran](https://www.youtube.com/watch?v=ju5nYcGWvmg)
 - [Audio: MS Sbubulakshimi](https://soundcloud.com/karnatik/c1208)
 - [Complete Notes](http://www.shivkumar.org/music/murugamuruga.pdf)
 
 <hr/>
 
-### Muralidhara Gopala - Periaswamy Thooran
+## [Periaswamy Thooran](https://en.wikipedia.org/wiki/Periyasaamy_Thooran)
+
+### Muralidhara Gopala 
 
 - [Video: MURALIDHARA GOPALA KRISHNA BHAJAN - By Revaa ](https://www.youtube.com/watch?v=Fjo7dPOkzDI)
 
@@ -25,15 +27,20 @@
 ```
 <hr/><hr/>
 
-### Endaro Mahanu Bhavulu - Thiyagaraja
+## [Thiyagaraja](https://en.wikipedia.org/wiki/Tyagaraja)
+
+### Endaro Mahanu Bhavulu - [Thiyagaraja]
 
 - [Video: Nithyasri](https://www.youtube.com/watch?v=miZlfSPbKdY)
 - [Complete Notes](http://www.shivkumar.org/music/endaromahanubhavulu-new.pdf)
 
 <hr/><hr/>
 
-### Ninnukori (varnam) - Mohanam - Ramanad Srinivasa Iyengar
-- [Video: T.N.Seshagopalan-Ninnukori (varnam) - Mohanam- Ramanad Srinivasa Iyengar](https://www.youtube.com/watch?v=zlqcwbiwEog)
+## [Ramanad Srinivasa Iyengar](https://en.wikipedia.org/wiki/Poochi_Srinivasa_Iyengar)
+
+### Ninnukori (varnam) - Mohanam  
+[Ramanad Srinivasa Iyengar](https://en.wikipedia.org/wiki/Poochi_Srinivasa_Iyengar)
+- [Video: T.N.Seshagopalan-Ninnukori (varnam)](https://www.youtube.com/watch?v=zlqcwbiwEog)
 - [Complete Notes](http://www.shivkumar.org/music/varnams/ninnukori.htm)
 
 
