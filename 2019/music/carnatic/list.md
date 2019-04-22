@@ -32,7 +32,7 @@
 
 <hr/><hr/>
 
-### Ninnukori (varnam) - Mohanam
+### Ninnukori (varnam) - Mohanam - Ramanad Srinivasa Iyengar
 - [Video: T.N.Seshagopalan-Ninnukori (varnam) - Mohanam- Ramanad Srinivasa Iyengar](https://www.youtube.com/watch?v=zlqcwbiwEog)
 - [Complete Notes](http://www.shivkumar.org/music/varnams/ninnukori.htm)
 
