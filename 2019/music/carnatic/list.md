@@ -1,17 +1,17 @@
 # Great Carnatic Songs Collection
 
 ### Muruga Murga - Thooran
-- [MS Subbulakshmi-Muruga Muruga Enral- Saveri-Caapu- Periaswamy Thooran](https://www.youtube.com/watch?v=ju5nYcGWvmg)
-- [Recording](https://soundcloud.com/karnatik/c1208)
+- [Video:MS Subbulakshmi-Muruga Muruga Enral- Saveri-Caapu- Periaswamy Thooran](https://www.youtube.com/watch?v=ju5nYcGWvmg)
+- [Recording - MS Sbubulakshimi](https://soundcloud.com/karnatik/c1208)
 - [Complete Notes](http://www.shivkumar.org/music/murugamuruga.pdf)
 
 <hr/>
 
 ### Muralidhara Gopala - Thooran
 
-- [MURALIDHARA GOPALA KRISHNA BHAJAN - By Revaa ](https://www.youtube.com/watch?v=Fjo7dPOkzDI)
+- [Video: MURALIDHARA GOPALA KRISHNA BHAJAN - By Revaa ](https://www.youtube.com/watch?v=Fjo7dPOkzDI)
 
-- [muralIdharA gOpAlA - mAnd - Adi - Periasamy Thooran ](https://www.youtube.com/watch?v=ku87hsna784)
+- [Video: muralIdharA gOpAlA - mAnd - Adi - Periasamy Thooran ](https://www.youtube.com/watch?v=ku87hsna784)
 
 ```
 
