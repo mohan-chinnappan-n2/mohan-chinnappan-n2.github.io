@@ -127,3 +127,12 @@
 - [Video: Beethoven - Für Elise | 60 Minutes Version](https://www.youtube.com/watch?v=Lkcvrxj0eLY&t=8s)
 - [Score](https://www.mutopiaproject.org/ftp/BeethovenLv/WoO59/fur_Elise_WoO59/fur_Elise_WoO59-let.pdf)
 
+
+hr/><hr/>
+
+## [Nikolai Rimsky-Korsakov](https://en.wikipedia.org/wiki/Nikolai_Rimsky-Korsakov)
+- [Video: Flight of the Bumblebee - Rimsky-Korsakov (arr. Rachmaninoff)](https://www.youtube.com/watch?v=M93qXQWaBdE)
+- ![Score](https://www.8notes.com/school/png/piano/bumble_bee001.png)
+
+
+
