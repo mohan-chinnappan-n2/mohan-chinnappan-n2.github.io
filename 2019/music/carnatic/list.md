@@ -5,7 +5,7 @@
 - This song: notes: [notes](https://karnatik.com/c1208.shtml) :  
 - [Recording](https://soundcloud.com/karnatik/c1208)
 
-- [Muruga](http://www.shivkumar.org/music/murugamuruga.pdf)
+- [Another Notes](http://www.shivkumar.org/music/murugamuruga.pdf)
 
 <hr/>
 
