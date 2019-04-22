@@ -47,7 +47,7 @@
 <hr/><hr/>
 
 ## [Purandara Dasa](https://en.wikipedia.org/wiki/Purandara_Dasa)
-- [[Video: Bhagyada Lakshmi Baramma - Nithyasree Mahadevan](https://www.youtube.com/watch?v=0wMgHi3Fq0M)
+- [Video: Bhagyada Lakshmi Baramma - Nithyasree Mahadevan](https://www.youtube.com/watch?v=0wMgHi3Fq0M)
 - [Complete Notes](https://karnatik.com/c1146.shtml)
 
 <hr/><hr/>
