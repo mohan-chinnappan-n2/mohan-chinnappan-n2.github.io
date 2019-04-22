@@ -2,7 +2,7 @@
 
 ### Muruga Murga - Thooran
 - [Video:MS Subbulakshmi-Muruga Muruga Enral- Saveri-Caapu- Periaswamy Thooran](https://www.youtube.com/watch?v=ju5nYcGWvmg)
-- [Recording - MS Sbubulakshimi](https://soundcloud.com/karnatik/c1208)
+- [Audio: MS Sbubulakshimi](https://soundcloud.com/karnatik/c1208)
 - [Complete Notes](http://www.shivkumar.org/music/murugamuruga.pdf)
 
 <hr/>
@@ -13,6 +13,7 @@
 
 - [Video: muralIdharA gOpAlA - mAnd - Adi - Periasamy Thooran ](https://www.youtube.com/watch?v=ku87hsna784)
 
+### Lyrics
 ```
 
 முரளீதர கோபாலா முகுந்தா ஸ்ரீ வைகுண்டா (முரளீதர)
