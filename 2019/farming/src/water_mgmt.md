@@ -16,7 +16,7 @@
 - Collaborate with other Countries/Universities to move forward
 
 - Farming contribution to GDP ([Gross Domestic Product](https://en.wikipedia.org/wiki/Gross_domestic_product)) should be increased to more than 70% (2019 value: 12%, it was 68% in 1947, world average: 6.4%)
-- Stop importing vegetable oils like [Palm oil](https://en.wikipedia.org/wiki/Palm_oil) 
+- Stop [importing](https://www.indiabudget.gov.in/es2000-01/chap820.pdf) vegetable oils like [Palm oil](https://en.wikipedia.org/wiki/Palm_oil). 
     - Encourage the use of by local cultivation of the seeds and nuts required:
         - [Coconut-nut oil](https://en.wikipedia.org/wiki/Coconut_oil)
         - [Mustard oil](https://en.wikipedia.org/wiki/Mustard_oil)

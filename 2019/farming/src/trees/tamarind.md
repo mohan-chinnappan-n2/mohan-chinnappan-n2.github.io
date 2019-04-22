@@ -31,3 +31,4 @@
 - contains vitamins, minerals, amino acids and beneficial plant compounds. It also has a lot of sugar.
 - contains plant compounds that may protect against heart disease and oxidative damage.
 - contains a good amount of magnesium, an important mineral that plays a role in over 600 functions in the body.
+- can combat many different microbes. It may help kill bacteria, viruses, fungi and parasites.
