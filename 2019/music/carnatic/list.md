@@ -44,5 +44,11 @@
 - [Complete Notes](http://www.shivkumar.org/music/varnams/ninnukori.htm)
 
 
+<hr/><hr/>
+
+## [Purandara Dasa](https://en.wikipedia.org/wiki/Tyagaraja)
+- [Bhagyada Lakshmi Baramma - Nithyasree Mahadevan](https://www.youtube.com/watch?v=0wMgHi3Fq0M)
+
+
 
 
