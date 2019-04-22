@@ -111,7 +111,7 @@
 <hr/><hr/>
 
 ## [Mahatma Gandhi ](https://en.wikipedia.org/wiki/Mahatma_Gandhi)
-- [Video: Namrata ke Saagar- Bhajan - Mahatma Gandhi - Music by Ilayaraja](https://www.youtube.com/watch?v=Z86LscyJhNY)
+- [Video: Namrata ke Saagar- Bhajan - Mahatma Gandhi - Music by Ilayaraja - sung by Bhimsen Joshi and Pandit Ajoy Chakravarty](https://www.youtube.com/watch?v=Z86LscyJhNY)
 
 
 
