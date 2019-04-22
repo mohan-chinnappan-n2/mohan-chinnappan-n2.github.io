@@ -54,7 +54,7 @@
 
 ## [IlayaRaja ](https://en.wikipedia.org/wiki/Ilaiyaraaja)
 - [Video: Bhikshaipaaththiram - Rajavin Ramanamalai  - Ilayaraja](https://www.youtube.com/watch?v=0wMgHi3Fq0M)
-- [Movie Video: Bhikshaipaaththiram - Rajavin Ramanamalai  - Ilayaraja](https://www.youtube.com/watch?v=dsXkZ0KlPQA)
+- [Movie Video: Bhikshaipaaththiram - Naan Kadavul  - Ilayaraja](https://www.youtube.com/watch?v=dsXkZ0KlPQA)
 
 ### Lyrics
 
