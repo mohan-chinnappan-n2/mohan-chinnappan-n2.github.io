@@ -1,5 +1,7 @@
 ### Machine setup for Machine Learning
 
+
+
 ### Download Ubuntu 18.04 LTS
 [ubuntu-18.04.2 Download](http://releases.ubuntu.com/18.04/ubuntu-18.04.2-desktop-amd64.iso)
 
