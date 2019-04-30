@@ -156,7 +156,7 @@
     document.body.appendChild(downloadLink);
   }
 
-downloadLink.click();
+  downloadLink.click();
 }
 var saveSrcButton = document.getElementById('save');
 saveSrcButton.addEventListener('click', saveSourceToFile);
