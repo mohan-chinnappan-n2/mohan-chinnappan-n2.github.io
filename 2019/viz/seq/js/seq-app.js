@@ -140,7 +140,9 @@
   
     var fileContent = editor.getValue();
     var textFileAsBlob = new Blob([ fileContent ], { type: 'text/plain' });
-    var fileNameToSaveAs = "myseq.seq.txt";
+    var fileNameToSaveAsInput = document.getElementById('savefilename').value;
+    //console.log('fileNameToSaveAsInput:' , fileNameToSaveAsInput)
+    var fileNameToSaveAs =   fileNameToSaveAsInput ||  "myseq.seq.txt";
 
   var downloadLink = document.createElement("a");
   downloadLink.download = fileNameToSaveAs;

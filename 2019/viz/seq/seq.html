@@ -21,7 +21,7 @@
   <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
   <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
 
-  <link rel="stylesheet" href="css/seq-app.css" />
+  <link rel="stylesheet" href="css/seq-app.css?v=3" />
 </head>
 
 <body>
@@ -56,7 +56,13 @@
     </div>
 
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-7">
+        <div class="row">
+          <div class="col-lg-6">
+              <label for='theme' for='theme'>Open</label>
+              <input class='btn btn-info' type="file" id='inputfile' accept="*.seq.txt"/>
+          </div>
+        </div>
         <input id='scale' onchange="on_change()" type="number" style='display:none;' value="1">
         <div class="form-group">
           <label for='theme' for='theme'>Theme</label>
@@ -64,22 +70,26 @@
             <option value="simple" selected>Simple</option>
             <option value="hand">Hand drawn</option>
           </select>
+
         </div>
 
       </div>
-      <div class="col-lg-6">
-          <input class='btn btn-info' type="file" id='inputfile' accept="*.seq.txt"/>
-        <a href="#" class='btn btn-primary' id="download"> <i class="glyphicon glyphicon-floppy-save"></i>
+      <div class="col-lg-5">
+        
+          <input  type="text" id='savefilename' value="myseq.seq.txt"  placeholder="file name to save the seq file to"/>
+          <button  class='btn btn-success' type="button" value="save" id="save" title="Download the seq file in the editor">
+            <i class="glyphicon glyphicon-floppy-save"></i> Source</button>
+          <hr/>
+
+          <a href="#" class='btn btn-primary' id="download"> <i class="glyphicon glyphicon-floppy-save"></i>
           Download as SVG</a>
 
-          <button  class='btn btn-success' type="button" value="save" id="save" title="Download the dot file in the editor">
-            <i class="glyphicon glyphicon-floppy-save"></i> Source</button>
 
 
       </div>
     </div>
   </div>
-  <script src="js/seq-app.js?v=3"></script>
+  <script src="js/seq-app.js?v=4"></script>
 
   
 </body>
