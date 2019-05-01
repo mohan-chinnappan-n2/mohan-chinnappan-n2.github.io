@@ -42,7 +42,7 @@
   </nav>
 
   <div class="split split-horizontal" id="menu">
-    <textarea class='form-control' id="text" rows='5' cols='80'>
+    <textarea class='form-control' id="text" rows='1' cols='80'>
   An ounce of practice is worth more than tons of preaching. - Mohandas K Gandhi</textarea>
       <button class='btn btn-primary' id='qr'>QR</button>
   </div>
@@ -52,7 +52,30 @@
   </div> 
 
 <script>
-var qrcode = new QRCode("qrcode");
+
+    var qrcode = new QRCode("qrcode");
+
+  // query parm parser
+ let getQueryParams = () => {
+  const query = location.search.substr(1);
+  let result = {};
+  query.split("&").forEach(function(part) {
+       const item = part.split("=");
+       result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+ };
+
+ let params = getQueryParams();
+    console.log(params.f);
+    //const url =  params.f ;
+    const text =  params.f || 'An ounce of practice is worth more than tons of preaching. - Mohandas K Gandhi';
+    document.getElementById('text').value = text;
+    //console.log(`url: ${url}`);
+    qrcode.makeCode(text); 
+    
+
+
 
 function makeCode () {		
 	var elText = document.getElementById("text");
@@ -66,7 +89,7 @@ function makeCode () {
 	qrcode.makeCode(elText.value);
 }
 
-makeCode();
+// makeCode();
 
 $('#qr').click( function() {
   makeCode();
