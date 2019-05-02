@@ -11,15 +11,7 @@
 
   <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
   <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
-
-    
-<style>
-#qrcode {
-  width:160px;
-  height:160px;
-  margin-top:15px;
-}
-</style>
+  <link rel="stylesheet" href="css/qr.css?v=2" />
 
 </head>
 <body>
@@ -42,76 +34,16 @@
   </nav>
 
   <div class="split split-horizontal" id="menu">
-    <textarea class='form-control' id="text" rows='1' cols='80'>
-  An ounce of practice is worth more than tons of preaching. - Mohandas K Gandhi</textarea>
-      <button class='btn btn-primary' id='qr'>QR</button>
+   <textarea class='form-control' id="text" rows='1' cols='80'> </textarea>
+      <button class='btn btn-primary' id='qr'>Generate QR Code</button>
   </div>
 
   <div class="split split-horizontal" id="content">
    <div id="qrcode"></div>
+   <hr/>
+   <div id='qtext'></div>
   </div> 
 
-<script>
-
-    var qrcode = new QRCode("qrcode");
-
-  // query parm parser
- let getQueryParams = () => {
-  const query = location.search.substr(1);
-  let result = {};
-  query.split("&").forEach(function(part) {
-       const item = part.split("=");
-       result[item[0]] = decodeURIComponent(item[1]);
-  });
-  return result;
- };
-
- let params = getQueryParams();
-    console.log(params.f);
-    //const url =  params.f ;
-    const text =  params.f || 'An ounce of practice is worth more than tons of preaching. - Mohandas K Gandhi';
-    document.getElementById('text').value = text;
-    //console.log(`url: ${url}`);
-    qrcode.makeCode(text); 
-    
-
-
-
-function makeCode () {		
-	var elText = document.getElementById("text");
-	
-	if (!elText.value) {
-		alert("Input a text");
-		elText.focus();
-		return;
-	}
-	
-	qrcode.makeCode(elText.value);
-}
-
-// makeCode();
-
-$('#qr').click( function() {
-  makeCode();
-}); 
-
-$("#text").
-	on("blur", function () {
-		makeCode();
-	}).
-	on("keydown", function (e) {
-		if (e.keyCode == 13) {
-			makeCode();
-		}
-	});
-
-
-
-Split(["#menu", "#content"], {
-      sizes: [55, 45]
-});
-
-
-</script>
+<script src='js/qr-app.js?v=3'> </script>
 </body>
 </html>
