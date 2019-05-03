@@ -5,6 +5,9 @@
 
 ### Muruga Murga 
 - [Video: MS Subbulakshmi-Muruga Muruga Enral- Saveri-Caapu](https://www.youtube.com/watch?v=ju5nYcGWvmg)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ju5nYcGWvmg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 - [Audio: MS Subbulakshmi](https://soundcloud.com/karnatik/c1208)
 - [Complete Notes](http://www.shivkumar.org/music/murugamuruga.pdf)
 
@@ -12,8 +15,10 @@
 ### Muralidhara Gopala 
 
 - [Video: MURALIDHARA GOPALA KRISHNA BHAJAN - By Revaa ](https://www.youtube.com/watch?v=Fjo7dPOkzDI)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Fjo7dPOkzDI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - [Video: muralIdharA gOpAlA - mAnd - Adi - Periasamy Thooran ](https://www.youtube.com/watch?v=ku87hsna784)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ku87hsna784" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Lyrics
 ```
@@ -32,6 +37,10 @@
 ### Endaro Mahanu Bhavulu - [Thiyagaraja]
 
 - [Video: Nithyasri](https://www.youtube.com/watch?v=miZlfSPbKdY)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/miZlfSPbKdY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
 - [Complete Notes](http://www.shivkumar.org/music/endaromahanubhavulu-new.pdf)
 
 <hr/><hr/>
@@ -41,6 +50,7 @@
 ### Ninnukori (varnam) - Mohanam  
 [Ramanad Srinivasa Iyengar](https://en.wikipedia.org/wiki/Poochi_Srinivasa_Iyengar)
 - [Video: T.N.Seshagopalan-Ninnukori (varnam)](https://www.youtube.com/watch?v=zlqcwbiwEog)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zlqcwbiwEog" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 - [Complete Notes](http://www.shivkumar.org/music/varnams/ninnukori.htm)
 
 
@@ -48,13 +58,17 @@
 
 ## [Purandara Dasa](https://en.wikipedia.org/wiki/Purandara_Dasa)
 - [Video: Bhagyada Lakshmi Baramma - Nithyasree Mahadevan](https://www.youtube.com/watch?v=0wMgHi3Fq0M)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0wMgHi3Fq0M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 - [Complete Notes](https://karnatik.com/c1146.shtml)
 
 <hr/><hr/>
 
 ## [IlayaRaja ](https://en.wikipedia.org/wiki/Ilaiyaraaja)
-- [Video: Bhikshaipaaththiram - Rajavin Ramanamalai  - Ilayaraja](https://www.youtube.com/watch?v=0wMgHi3Fq0M)
+- [Video: Bhikshaipaaththiram - Rajavin Ramanamalai  - Ilayaraja](https://www.youtube.com/watch?v=jFufifkRMOc)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jFufifkRMOc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 - [Movie Video: Bhikshaipaaththiram - Naan Kadavul  - Ilayaraja](https://www.youtube.com/watch?v=dsXkZ0KlPQA)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dsXkZ0KlPQA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Lyrics
 
@@ -113,18 +127,24 @@
 ## [Mahatma Gandhi ](https://en.wikipedia.org/wiki/Mahatma_Gandhi)
 - [Video: Namrata ke Saagar- Bhajan - Mahatma Gandhi - Music by Ilayaraja - sung by Bhimsen Joshi and Pandit Ajoy Chakravarty](https://www.youtube.com/watch?v=Z86LscyJhNY)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z86LscyJhNY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 
 <hr/><hr/>
 
 ## [Manikkavacakar](https://en.wikipedia.org/wiki/Manikkavacakar)
 - [Video: Thiruvasagam In Symphony - By Maestro Ilaiyaraaja (சிம்ஃபொனியில் திருவாசகம்)](https://www.youtube.com/watch?v=-XuO4CR7fzI)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-XuO4CR7fzI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 
 <hr/><hr/>
 
 ## [Ludwig van Beethoven](https://en.wikipedia.org/wiki/Ludwig_van_Beethoven)
 - [Video: Beethoven - Für Elise | 60 Minutes Version](https://www.youtube.com/watch?v=Lkcvrxj0eLY&t=3s)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Lkcvrxj0eLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 - [Score](https://www.mutopiaproject.org/ftp/BeethovenLv/WoO59/fur_Elise_WoO59/fur_Elise_WoO59-let.pdf)
 
 
@@ -132,6 +152,8 @@
 
 ## [Nikolai Rimsky-Korsakov](https://en.wikipedia.org/wiki/Nikolai_Rimsky-Korsakov)
 - [Video: Flight of the Bumblebee - Rimsky-Korsakov (arr. Rachmaninoff)](https://www.youtube.com/watch?v=M93qXQWaBdE)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M93qXQWaBdE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 - ![Score](https://www.8notes.com/school/png/piano/bumble_bee001.png)
 
 
@@ -139,6 +161,7 @@
 <hr/><hr/>
 
 - [Video: இளங்காத்து வீசுதே | Elangaathu Veesudhey)](https://www.youtube.com/watch?v=xobWk2KzdJk)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xobWk2KzdJk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ``` tamil
 இளங்காத்து வீசுதே இசை போல பேசுதே
