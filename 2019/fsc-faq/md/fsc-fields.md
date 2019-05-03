@@ -3,7 +3,6 @@
 <tr>
     <th>Field Name</th>
     <th>Description</th>
-<
 </tr>
 <tr>
         <td>FinServ__DrawPeriodMonths__c</td> 
