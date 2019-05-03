@@ -1,9 +1,11 @@
-## Description for FSC Object fields
+<h2>Description for FSC Object fields</h2>
 
-### FinServ__FinancialAccount__c
+<h3> FinServ__FinancialAccount__c</h3>
 
+<h4>ERD</h4>
 ![fsc financial account ERD](https://mohan-chinnappan-n.github.io/sfdc/fs-cloud/img/FinServ__FinancialAccount__c.svg)
-<table>
+<h4>Field Description</h4>
+<table class='table table-striped table-bordered'>
 <tr>
     <th>Field Name</th>
     <th>Label</th>
