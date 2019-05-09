@@ -1,5 +1,6 @@
 // Example trigger to prevent changes to record except on EXCLUDED fields.
-// This is for example only and is no provided with any gaurentee.
+// This is  provided as an example. Modifications are needed to fit to your use case
+
 trigger MyValidationTrigger on Task (before update) {
   String ERROR_MSG = 'Not allowed to change closed Task!';
   Set<String> EXCLUDED_FIELDS = new Set<String>{'FinServ__Household__c', 'LastModifiedById'};
@@ -11,12 +12,13 @@ trigger MyValidationTrigger on Task (before update) {
       	taskFields.add(field);
   }
  
-  // Bulkified. Loop on all updated Task records.
+  // Bulkified: Loop on all updated Task records.
   for(Integer i = 0; i < Trigger.new.size(); i++) {
       Task oldTask = Trigger.old[i];
       Task newTask = Trigger.new[i];
      
-      // Task not previously closed, skip
+      // Task not previously closed the skip it:
+      // ref for task fields: https://mohan-chinnappan-n.github.io/sfdc/fs-cloud/csv-viewer.html?f=Task
       if(!oldTask.isClosed)
           break;
      
@@ -24,6 +26,8 @@ trigger MyValidationTrigger on Task (before update) {
       for(String field : taskFields) { 
           // Error if change detected
           if(oldTask.get(field) != newTask.get(field)) // change has happened
+              // ref for addError:
+              // https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_exceptions.htm
               newTask.addError(ERROR_MSG + ' Field changed was: ' + field);
           //Add any other condition checks here...
       }
