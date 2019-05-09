@@ -1,4 +1,4 @@
-// Exmaple trigger to prevent changes to record except on EXCLUDED fields.
+// Example trigger to prevent changes to record except on EXCLUDED fields.
 // This is for example only and is no provided with any gaurentee.
 trigger MyValidationTrigger on Task (before update) {
   String ERROR_MSG = 'Not allowed to change closed Task!';
