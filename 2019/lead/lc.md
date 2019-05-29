@@ -85,6 +85,8 @@ trigger LeadConversion on Lead (after update) {
             //    If the parameter is not set or is set true, an exception is thrown if the method is not successful.
             Database.LeadConvertResult[] lcrResultList = Database.convertLead(curList, false);
             // the above result object (lcrResultList) that can be used to verify which records succeeded, which failed, and why. 
+            // NOTE:
+            // At the backend we optimize this processing the items in parallel and also bulkify as much as possible
        }
 
    }
