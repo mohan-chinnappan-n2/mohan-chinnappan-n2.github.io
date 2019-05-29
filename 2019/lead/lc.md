@@ -86,7 +86,7 @@ trigger LeadConversion on Lead (after update) {
             Database.LeadConvertResult[] lcrResultList = Database.convertLead(curList, false);
             // the above result object (lcrResultList) that can be used to verify which records succeeded, which failed, and why. 
             // NOTE:
-            // At the backend we optimize this processing the items in parallel and also bulkify as much as possible
+            // At the backend we optimize the convertLead processing of the items by running them in parallel and also bulkify as much as possible.
        }
 
    }
