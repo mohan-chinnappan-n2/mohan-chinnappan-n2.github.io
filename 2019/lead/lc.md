@@ -64,7 +64,6 @@ trigger LeadConversion on Lead (after update) {
        // ref: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_database.htm
        // The convertLead method accepts up to 100 (LCLIMIT) LeadConvert objects.
        //   Each executed convertLead method counts against the governor limit for DML statements.
-
        Integer lcsize = leadConverts.size() ; 
        Integer times =  lcsize / LCLIMIT ;
        for(Integer i = 0; i <=  times ; i++) {
