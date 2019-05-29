@@ -84,7 +84,7 @@ trigger LeadConversion on Lead (after update) {
             // If you specify false for this parameter and a record fails, the remainder of the DML operation can still succeed. 
             //  This method returns a result object that can be used to verify which records succeeded, which failed, and why.
             //    If the parameter is not set or is set true, an exception is thrown if the method is not successful.
-            Database.LeadConvertResult[] lcrResultList = Database.convertLead(tempList, false);
+            Database.LeadConvertResult[] lcrResultList = Database.convertLead(curList, false);
             // the above result object (lcrResultList) that can be used to verify which records succeeded, which failed, and why. 
        }
 
