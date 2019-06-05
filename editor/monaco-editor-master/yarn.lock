@@ -2238,6 +2238,10 @@ es6-promise@^4.0.5:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.1.1.tgz#8811e90915d9a0dba36274f0b242dbda78f9c92a"
 
+es6-promisify@^6.0.0:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/es6-promisify/-/es6-promisify-6.0.1.tgz#6edaa45f3bd570ffe08febce66f7116be4b1cdb6"
+
 escape-html@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.1.tgz#181a286ead397a39a92857cfb1d43052e356bff0"
@@ -4545,13 +4549,13 @@ peek-stream@^1.1.0:
     through2 "^2.0.3"
 
 pem@^1.8.3:
-  version "1.12.3"
-  resolved "https://registry.yarnpkg.com/pem/-/pem-1.12.3.tgz#b1fb5c8b79da8d18146c27fee79b0d4ddf9905b3"
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/pem/-/pem-1.14.2.tgz#ab29350416bc3a532c30beeee0d541af897fb9ac"
   dependencies:
+    es6-promisify "^6.0.0"
     md5 "^2.2.1"
     os-tmpdir "^1.0.1"
-    safe-buffer "^5.1.1"
-    which "^1.2.4"
+    which "^1.3.1"
 
 pend@~1.2.0:
   version "1.2.0"
@@ -6289,9 +6293,9 @@ which@1.1.1:
   dependencies:
     is-absolute "^0.1.7"
 
-which@^1.0.8, which@^1.2.10, which@^1.2.12, which@^1.2.4, which@^1.2.9:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/which/-/which-1.3.0.tgz#ff04bdfc010ee547d780bec38e1ac1c2777d253a"
+which@^1.0.8, which@^1.2.10, which@^1.2.12, which@^1.2.9, which@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/which/-/which-1.3.1.tgz#a45043d54f5805316da8d62f9f50918d3da70b0a"
   dependencies:
     isexe "^2.0.0"
 
