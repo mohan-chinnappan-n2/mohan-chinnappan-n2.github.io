@@ -8,7 +8,7 @@
 
 
 
-### Videos
+### Videos / Resources
 
 - [Einstein Analytics - Discovery](https://www.youtube.com/watch?v=Ev895wkofX4)
 - [Trailhead](https://trailhead.salesforce.com/en/content/learn/modules/wave_exploration_smart_data_discovery_basics/wave_smart_data_discovery_your_data_scientist)
