@@ -1,0 +1,54 @@
+{
+    "fileFormat": {
+        "charsetName": "UTF-8",
+        "fieldsDelimitedBy": ",",
+        "linesTerminatedBy": "\r\n"
+    },
+    "objects": [{
+        "connector": "CSV",
+        "fullyQualifiedName": "APdist_csv",
+        "label": "APdist.csv",
+        "name": "APdist_csv",
+        "fields": [{
+            "fullyQualifiedName": "Product",
+            "name": "Product",
+            "type": "Text",
+            "label": "Product"
+        }, {
+            "fullyQualifiedName": "Region",
+            "name": "Region",
+            "type": "Text",
+            "label": "Region"
+        }, {
+            "fullyQualifiedName": "Vertical",
+            "name": "Vertical",
+            "type": "Text",
+            "label": "Vertical"
+        }, {
+            "fullyQualifiedName": "Close_Date",
+            "name": "Close_Date",
+            "type": "Date",
+            "label": "Close Date",
+            "format": "d/M/yy"
+        }, {
+            "fullyQualifiedName": "Distributor",
+            "name": "Distributor",
+            "type": "Text",
+            "label": "Distributor"
+        }, {
+            "fullyQualifiedName": "Discount_Level",
+            "name": "Discount_Level",
+            "type": "Text",
+            "label": "Discount Level"
+        }, {
+            "fullyQualifiedName": "Margin",
+            "name": "Margin",
+            "type": "Numeric",
+            "label": "Margin",
+            "precision": 18,
+            "defaultValue": "0",
+            "scale": 0,
+            "format": "0"
+        }]
+    }]
+}
