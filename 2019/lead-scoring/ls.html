@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+    Lead Score
+  </title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2019/stats/css/gridism.css">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2019/stats/css/markdown.css">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2019/stats/css/octicons.css">
+  <link href="https://mohan-chinnappan-n2.github.io/2019/stats/css/main.css" rel="stylesheet" />
+  <link href="https://mohan-chinnappan-n2.github.io/2019/stats/css/pygments.css" rel="stylesheet" />
+
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/jquery.js" type="text/javascript"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/snap.svg-min.js" type="text/javascript"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/application.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="wrap">
+      <ul class="links">
+        <li><a
+            href="https://www.khanacademy.org/math/ap-statistics/density-curves-normal-distribution-ap/measuring-position/v/z-score-introduction">Z-Score</a>
+        </li>
+        <li><a href="https://help.github.com">Book: Stat in plain English</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <article class="full">
+    <div class="article-heading js-article-heading js-geopattern"
+      style="background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NDAiIGhlaWdodD0iNDQwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZ2IoMTI3LCA1NCwgNjApIiAgLz48cmVjdCB4PSIwIiB5PSI1IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxNSIgb3BhY2l0eT0iMC4xMDY2NjY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgIC8+PHJlY3QgeD0iMCIgeT0iMjkiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjE4IiBvcGFjaXR5PSIwLjEzMjY2NjY2NjY2NjY2NjY1IiBmaWxsPSIjMjIyIiAgLz48cmVjdCB4PSIwIiB5PSI1NyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAiIG9wYWNpdHk9IjAuMDYzMzMzMzMzMzMzMzMzMzQiIGZpbGw9IiMyMjIiICAvPjxyZWN0IHg9IjAiIHk9IjgyIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMyIgb3BhY2l0eT0iMC4wODkzMzMzMzMzMzMzMzMzMyIgZmlsbD0iI2RkZCIgIC8+PHJlY3QgeD0iMCIgeT0iMTEzIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMiIgb3BhY2l0eT0iMC4wODA2NjY2NjY2NjY2NjY2NiIgZmlsbD0iIzIyMiIgIC8+PHJlY3QgeD0iMCIgeT0iMTM3IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMyIgb3BhY2l0eT0iMC4wODkzMzMzMzMzMzMzMzMzMyIgZmlsbD0iI2RkZCIgIC8+PHJlY3QgeD0iMCIgeT0iMTY5IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMCIgb3BhY2l0eT0iMC4wNjMzMzMzMzMzMzMzMzMzNCIgZmlsbD0iIzIyMiIgIC8+PHJlY3QgeD0iMCIgeT0iMTg0IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSI3IiBvcGFjaXR5PSIwLjAzNzMzMzMzMzMzMzMzMzMzIiBmaWxsPSIjZGRkIiAgLz48cmVjdCB4PSIwIiB5PSIxOTgiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjIwIiBvcGFjaXR5PSIwLjE1IiBmaWxsPSIjMjIyIiAgLz48cmVjdCB4PSIwIiB5PSIyMzMiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjE2IiBvcGFjaXR5PSIwLjExNTMzMzMzMzMzMzMzMzM0IiBmaWxsPSIjMjIyIiAgLz48cmVjdCB4PSIwIiB5PSIyNjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjUiIG9wYWNpdHk9IjAuMDIiIGZpbGw9IiNkZGQiICAvPjxyZWN0IHg9IjAiIHk9IjI3MiIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTQiIG9wYWNpdHk9IjAuMDk4IiBmaWxsPSIjMjIyIiAgLz48cmVjdCB4PSIwIiB5PSIyOTgiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEyIiBvcGFjaXR5PSIwLjA4MDY2NjY2NjY2NjY2NjY2IiBmaWxsPSIjMjIyIiAgLz48cmVjdCB4PSIwIiB5PSIzMjciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwIiBvcGFjaXR5PSIwLjA2MzMzMzMzMzMzMzMzMzM0IiBmaWxsPSIjMjIyIiAgLz48cmVjdCB4PSIwIiB5PSIzNTUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEzIiBvcGFjaXR5PSIwLjA4OTMzMzMzMzMzMzMzMzMzIiBmaWxsPSIjZGRkIiAgLz48cmVjdCB4PSIwIiB5PSIzNzciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjUiIG9wYWNpdHk9IjAuMDIiIGZpbGw9IiNkZGQiICAvPjxyZWN0IHg9IjAiIHk9IjM5OCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTYiIG9wYWNpdHk9IjAuMTE1MzMzMzMzMzMzMzMzMzQiIGZpbGw9IiMyMjIiICAvPjxyZWN0IHg9IjAiIHk9IjQzMSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iOSIgb3BhY2l0eT0iMC4wNTQ2NjY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgIC8+PHJlY3QgeD0iNSIgeT0iMCIgd2lkdGg9IjE1IiBoZWlnaHQ9IjEwMCUiIG9wYWNpdHk9IjAuMTA2NjY2NjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiICAvPjxyZWN0IHg9IjI5IiB5PSIwIiB3aWR0aD0iMTgiIGhlaWdodD0iMTAwJSIgb3BhY2l0eT0iMC4xMzI2NjY2NjY2NjY2NjY2NSIgZmlsbD0iIzIyMiIgIC8+PHJlY3QgeD0iNTciIHk9IjAiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMDAlIiBvcGFjaXR5PSIwLjA2MzMzMzMzMzMzMzMzMzM0IiBmaWxsPSIjMjIyIiAgLz48cmVjdCB4PSI4MiIgeT0iMCIgd2lkdGg9IjEzIiBoZWlnaHQ9IjEwMCUiIG9wYWNpdHk9IjAuMDg5MzMzMzMzMzMzMzMzMzMiIGZpbGw9IiNkZGQiICAvPjxyZWN0IHg9IjExMyIgeT0iMCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEwMCUiIG9wYWNpdHk9IjAuMDgwNjY2NjY2NjY2NjY2NjYiIGZpbGw9IiMyMjIiICAvPjxyZWN0IHg9IjEzNyIgeT0iMCIgd2lkdGg9IjEzIiBoZWlnaHQ9IjEwMCUiIG9wYWNpdHk9IjAuMDg5MzMzMzMzMzMzMzMzMzMiIGZpbGw9IiNkZGQiICAvPjxyZWN0IHg9IjE2OSIgeT0iMCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwMCUiIG9wYWNpdHk9IjAuMDYzMzMzMzMzMzMzMzMzMzQiIGZpbGw9IiMyMjIiICAvPjxyZWN0IHg9IjE4NCIgeT0iMCIgd2lkdGg9IjciIGhlaWdodD0iMTAwJSIgb3BhY2l0eT0iMC4wMzczMzMzMzMzMzMzMzMzMyIgZmlsbD0iI2RkZCIgIC8+PHJlY3QgeD0iMTk4IiB5PSIwIiB3aWR0aD0iMjAiIGhlaWdodD0iMTAwJSIgb3BhY2l0eT0iMC4xNSIgZmlsbD0iIzIyMiIgIC8+PHJlY3QgeD0iMjMzIiB5PSIwIiB3aWR0aD0iMTYiIGhlaWdodD0iMTAwJSIgb3BhY2l0eT0iMC4xMTUzMzMzMzMzMzMzMzMzNCIgZmlsbD0iIzIyMiIgIC8+PHJlY3QgeD0iMjYxIiB5PSIwIiB3aWR0aD0iNSIgaGVpZ2h0PSIxMDAlIiBvcGFjaXR5PSIwLjAyIiBmaWxsPSIjZGRkIiAgLz48cmVjdCB4PSIyNzIiIHk9IjAiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxMDAlIiBvcGFjaXR5PSIwLjA5OCIgZmlsbD0iIzIyMiIgIC8+PHJlY3QgeD0iMjk4IiB5PSIwIiB3aWR0aD0iMTIiIGhlaWdodD0iMTAwJSIgb3BhY2l0eT0iMC4wODA2NjY2NjY2NjY2NjY2NiIgZmlsbD0iIzIyMiIgIC8+PHJlY3QgeD0iMzI3IiB5PSIwIiB3aWR0aD0iMTAiIGhlaWdodD0iMTAwJSIgb3BhY2l0eT0iMC4wNjMzMzMzMzMzMzMzMzMzNCIgZmlsbD0iIzIyMiIgIC8+PHJlY3QgeD0iMzU1IiB5PSIwIiB3aWR0aD0iMTMiIGhlaWdodD0iMTAwJSIgb3BhY2l0eT0iMC4wODkzMzMzMzMzMzMzMzMzMyIgZmlsbD0iI2RkZCIgIC8+PHJlY3QgeD0iMzc3IiB5PSIwIiB3aWR0aD0iNSIgaGVpZ2h0PSIxMDAlIiBvcGFjaXR5PSIwLjAyIiBmaWxsPSIjZGRkIiAgLz48cmVjdCB4PSIzOTgiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxMDAlIiBvcGFjaXR5PSIwLjExNTMzMzMzMzMzMzMzMzM0IiBmaWxsPSIjMjIyIiAgLz48cmVjdCB4PSI0MzEiIHk9IjAiIHdpZHRoPSI5IiBoZWlnaHQ9IjEwMCUiIG9wYWNpdHk9IjAuMDU0NjY2NjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiICAvPjwvc3ZnPg==);">
+      <div class="wrap">
+        <div class="icon-container">
+          <span class="mega-octicon octicon-globe"></span>
+        </div>
+        <h1> Lead Score</h1>
+        <span class="article-read-time article-meta">
+          <i class="far fa-clock"></i>20 minutes read
+        </span>
+
+      </div>
+    </div>
+
+
+    <div class="wrap">
+
+      <!-- toc-->
+      <div class="toc-wrapper">
+        <ol class="toc js-toc"></ol>
+      </div>
+
+
+      <!-- main content-->
+      <div class="markdown-body content-body ">
+
+        <p><a id="LeadScore" title="What is Lead Scoring" class="toc-item"></a></p>
+        <h3>Lead Scoring</h3>
+        <p>
+          Lead scoring is methodology for ranking leads in order to determine their <b>sales-readiness</b>.
+          We score leads based on lead's :
+          <ul>
+            <li><b>interest</b> in our business</li>
+            <li><b>current place</b> in the buying cycle</li>
+            <li><b>fit</b> in regards to our business</li>
+          </ul>
+
+          Lead scoring helps companies know whether <b>prospects</b> need to be:
+          <ul>
+            <li> fast-tracked to sales </li>
+            <li>developed with lead nurturing</li>
+          </ul>
+
+          Factors making up the Lead Score:
+
+          <p><b>Firmographics attributes</b></p>
+          <ul>
+            <li>company size</li>
+            <li>technologies used</li>
+            <li>industry</li>
+            <li>geographic area</li>
+            <li>job title</li>
+          </ul>
+          <p><b>Behavioral attributes</b></p>
+          <ul>
+            <li>clicks on the website</li>
+            <li>page views</li>
+            <li>article downloads</li>
+            <li>time spend on the website</li>
+            <li>did they click on the email we sent</li>
+            <li>participated in web chat</l i>
+          </ul>
+        </p>
+
+
+
+        <p><a id="ExampleLeadScore" title="Lead Scoring Examples" class="toc-item"></a></p>
+        <h3>Lead Scoring Examples</h3>
+        Lead Scoring goal is clarity of a sales-ready lead by assigning points/terms like
+        <ul>
+          <li> A, B, C, D</li>
+          <li>‘hot’, ‘warm’ or ‘cold’</li>
+        </ul>
+
+
+        <p><a id="EinsteinLeadScore" title="Einstein Lead Scoring" class="toc-item"></a></p>
+
+        <h3>Einstein Lead Scoring</h3>
+        <img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/prioritize-leads-with-einstein-lead-scoring/test-new-leads-with-einstein/images/dd745da9880a1550dad38f1a55060483_cjinngfds-00030-vbu-7-clbsgia.png" alt="">
+        <img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/prioritize-leads-with-einstein-lead-scoring/test-new-leads-with-einstein/images/557210967f3373fc3aa64e05a73a5968_cjinngfe-500070-vbujll-87-qeb.png" alt=""> 
+        <img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/prioritize-leads-with-einstein-lead-scoring/test-new-leads-with-einstein/images/df559307df07b53e9b1ccdf8123af7e5_cjj-01-cun-800-a-40-uaximlqfsb-9.png" alt="">
+        <p>
+          Einstein Lead Scoring, a key capability of Sales Cloud
+          Einstein, helps sales reps convert more leads, faster.
+          <br>
+
+          Uses artificial intelligence (AI) to automatically analyze
+          your <b>historical sales data</b> and discover the top factors
+          that determine whether a <b>lead is likely to convert</b> to
+          an opportunity.
+
+          <br>
+          Sales reps can segment and prioritize leads, and gain insight
+          into the factors that explain why leads are likely to convert or
+          not.
+        </p>
+
+        <p><b>How it works?</b>
+          <br>
+
+          Einstein looks at your company’s past leads, including any custom fields,
+          to find patterns in your successful lead conversion history. <br>
+
+          Einstein Lead Scoring then determines which of your current leads fit your success patterns best.
+          <br>
+          Each lead receives a score indicating how well it fits your patterns,
+          along with insights about which of the lead’s fields affect its score most.
+
+        </p>
+
+        <p><a id="EinsteinLeadScoreSetup" title="Einstein Lead Scoring Setup" class="toc-item"></a></p>
+
+        <h3>Einstein Lead Scoring Setup</h3>
+
+        <p>Key inputs need for the setting up
+
+
+          <ul>
+            <li>Which conversion milestone constitutes success for your company?<br>
+
+              Tell Einstein whether you convert leads simply to <b>accounts and contacts</b>,
+              or also to <b>opportunities, contact, and account</b>.
+
+              Should Einstein consider <b>all lead fields</b>? <br>
+
+              In most cases, it's best to have Einstein consider all lead fields.
+              There are some kinds of fields you might choose to have Einstein ignore.
+            </li>
+
+
+            <li>
+
+              Should I tell Einstein to <b> ignore any lead fields</b>? <br>
+
+              Some businesses use fields that don’t affect the lead’s chance of converting.
+              For example, you might have a field that isn’t used until after a lead converts.
+              <br>
+              Telling Einstein to ignore those fields yields more accurate lead scores
+              <br>
+              Before ignoring a field, make sure the field doesn't affect the lead's chance of converting.
+              Ignoring fields that do affect lead quality decreases the accuracy of your lead scores.
+              <br>
+            </li>
+            <li><b>How long</b> it takes to analyze your lead conversion history?
+              It can take up to<b> 24 hours to analyze your lead conversion history</b> and your current leads.
+            </li>
+          </ul>
+          <p>Permset Assignment
+
+            <br>
+            <img src="img/sc-ls-ps-1.png" alt="">
+
+            Setup Demo <br>
+            <img src="img/sc-ls-1.gif" alt="">
+            <br>
+            ScoreIntelligence Object <br>
+            <img src="img/ScoreIntelligence-1.png" alt="">
+
+          </p>
+        </p>
+
+        <p><a id="LeadObject" title="Lead Object" class="toc-item"></a></p>
+        <h3>Lead Object</h3>
+        <pre>
+
+Label	Name	Nillable	Picklistvalues	Referenceto	Relationshipname	Type	Unique	Updateable
+Lead ID	Id	false	--	--	null	id	false	false
+Deleted	IsDeleted	false	--	--	null	boolean	false	false
+Master Record ID	MasterRecordId	true	--	[ "Lead" ]	MasterRecord	reference	false	false
+Last Name	LastName	false	--	--	null	string	false	true
+First Name	FirstName	true	--	--	null	string	false	true
+Salutation	Salutation	true	[ "Mr." , "Ms." , "Mrs." , "Dr." , "Prof." ]	--	null	picklist	false	true
+Full Name	Name	false	--	--	null	string	false	false
+Title	Title	true	--	--	null	string	false	true
+Company	Company	false	--	--	null	string	false	true
+Street	Street	true	--	--	null	textarea	false	true
+City	City	true	--	--	null	string	false	true
+State/Province	State	true	--	--	null	string	false	true
+Zip/Postal Code	PostalCode	true	--	--	null	string	false	true
+Country	Country	true	--	--	null	string	false	true
+Latitude	Latitude	true	--	--	null	double	false	true
+Longitude	Longitude	true	--	--	null	double	false	true
+Geocode Accuracy	GeocodeAccuracy	true	[ "Address" , "NearAddress" , "Block" , "Street" , "ExtendedZip" , "Zip" , "Neighborhood" , "City" , "County" , "State" , "Unknown" ]	--	null	picklist	false	true
+Address	Address	true	--	--	null	address	false	false
+Phone	Phone	true	--	--	null	phone	false	true
+Mobile Phone	MobilePhone	true	--	--	null	phone	false	true
+Fax	Fax	true	--	--	null	phone	false	true
+Email	Email	true	--	--	null	email	false	true
+Website	Website	true	--	--	null	url	false	true
+Photo URL	PhotoUrl	true	--	--	null	url	false	false
+Description	Description	true	--	--	null	textarea	false	true
+Lead Source	LeadSource	true	[ "Web" , "Phone Inquiry" , "Partner Referral" , "Purchased List" , "Other" ]	--	null	picklist	false	true
+Status	Status	false	[ "New - Not Contacted" , "Working - Contacted" , "Nurturing - Contacted" , "Closed - Converted" , "Closed - Not Converted" ]	--	null	picklist	false	true
+Industry	Industry	true	[ "Agriculture" , "Apparel" , "Banking" , "Biotechnology" , "Chemicals" , "Communications" , "Construction" , "Consulting" , "Education" , "Electronics" , "Energy" , "Engineering" , "Entertainment" , "Environmental" , "Finance" , "Food & Beverage" , "Government" , "Healthcare" , "Hospitality" , "Insurance" , "Machinery" , "Manufacturing" , "Media" , "Not For Profit" , "Recreation" , "Retail" , "Shipping" , "Technology" , "Telecommunications" , "Transportation" , "Utilities" , "Other" ]	--	null	picklist	false	true
+Rating	Rating	true	[ "Hot" , "Warm" , "Cold" ]	--	null	picklist	false	true
+Annual Revenue	AnnualRevenue	true	--	--	null	currency	false	true
+Employees	NumberOfEmployees	true	--	--	null	int	false	true
+Owner ID	OwnerId	false	--	[ "Group", "User" ]	Owner	reference	false	true
+Converted	IsConverted	false	--	--	null	boolean	false	false
+Converted Date	ConvertedDate	true	--	--	null	date	false	false
+Converted Account ID	ConvertedAccountId	true	--	[ "Account" ]	ConvertedAccount	reference	false	false
+Converted Contact ID	ConvertedContactId	true	--	[ "Contact" ]	ConvertedContact	reference	false	false
+Converted Opportunity ID	ConvertedOpportunityId	true	--	[ "Opportunity" ]	ConvertedOpportunity	reference	false	false
+Unread By Owner	IsUnreadByOwner	false	--	--	null	boolean	false	true
+Created Date	CreatedDate	false	--	--	null	datetime	false	false
+Created By ID	CreatedById	false	--	[ "User" ]	CreatedBy	reference	false	false
+Last Modified Date	LastModifiedDate	false	--	--	null	datetime	false	false
+Last Modified By ID	LastModifiedById	false	--	[ "User" ]	LastModifiedBy	reference	false	false
+System Modstamp	SystemModstamp	false	--	--	null	datetime	false	false
+Last Activity	LastActivityDate	true	--	--	null	date	false	false
+Last Viewed Date	LastViewedDate	true	--	--	null	datetime	false	false
+Last Referenced Date	LastReferencedDate	true	--	--	null	datetime	false	false
+Data.com Key	Jigsaw	true	--	--	null	string	false	true
+Jigsaw Contact ID	JigsawContactId	true	--	--	JigsawContact	string	false	false
+Clean Status	CleanStatus	true	[ "Matched" , "Different" , "Acknowledged" , "NotFound" , "Inactive" , "Pending" , "SelectMatch" , "Skipped" ]	--	null	picklist	false	true
+Company D-U-N-S Number	CompanyDunsNumber	true	--	--	null	string	false	true
+D&B Company ID	DandbCompanyId	true	--	[ "DandBCompany" ]	DandbCompany	reference	false	true
+Email Bounced Reason	EmailBouncedReason	true	--	--	null	string	false	true
+Email Bounced Date	EmailBouncedDate	true	--	--	null	datetime	false	true
+Score Intelligence ID	ScoreIntelligenceId	true	--	[ "ScoreIntelligence" ]	ScoreIntelligence	reference	false	false
+SIC Code	SICCode__c	true	--	--	null	string	false	true
+Product Interest	ProductInterest__c	true	[ "GC1000 series" , "GC5000 series" , "GC3000 series" ]	--	null	picklist	false	true
+Primary	Primary__c	true	[ "No" , "Yes" ]	--	null	picklist	false	true
+Current Generator(s)	CurrentGenerators__c	true	--	--	null	string	false	true
+Number of Locations	NumberofLocations__c	true	--	--	null	double	false	true
+
+</pre>
+
+
+
+<p><a id="AssignLeads" title="Assign Top Leads to Reps" class="toc-item"></a></p>
+
+<h3>Assign Top Leads to Reps and other Leads to Lead Queue</h3>
+<img src="img/ls-assign-pb-1.gif" alt="">
+<p>Top Lead Assignment Example</p>
+<img src="img/lead-assignment-1.png" alt="">
+
+
+
+
+
+
+
+
+        <p><a id="Resources" title="Resources" class="toc-item"></a></p>
+        <h3>Resources</h3>
+        <ul>
+          <li>
+            <a href="https://developer.salesforce.com/promotions/orgs/einsteinleadscoring">Signup for a Developer Org
+              with Einstein Lead Scoring</a>
+          </li>
+          <li>
+            <a
+              href="https://trailhead.salesforce.com/content/learn/projects/prioritize-leads-with-einstein-lead-scoring">Prioritize
+              Leads with Einstein Lead Scoring
+            </a>
+          </li>
+          <li>
+            <a href="https://help.salesforce.com/articleView?id=einstein_sales_els_how_it_works.htm">
+              Understand How Einstein Scores Your Leads
+            </a>
+          </li>
+        </ul>
+
+
+
+      </div>
+</body>
+
+</html>
