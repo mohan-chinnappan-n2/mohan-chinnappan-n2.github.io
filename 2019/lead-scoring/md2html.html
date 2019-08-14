@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+</head>
+
+<body>
+    <style>
+        #sourceTA {
+            display: block;
+        }
+
+        #targetDiv {
+            border: 1px dashed #333333;
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+
+    <textarea id="sourceTA" rows="10" cols="82"></textarea>
+    <hr />
+    <button id="runBtn" onClick="run()">Convert</button>
+    <hr />
+    <div id="targetDiv"></div>
+
+    <script>
+        function run() {
+            var text = document.getElementById('sourceTA').value,
+                target = document.getElementById('targetDiv'),
+                converter = new showdown.Converter(),
+                html = converter.makeHtml(text);
+
+            target.innerHTML = html;
+        }
+    </script>
+
+</body>
+
+</html>
