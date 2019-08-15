@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+    Lead Score
+  </title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2019/stats/css/gridism.css">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2019/stats/css/markdown.css">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2019/stats/css/octicons.css">
+  <link href="https://mohan-chinnappan-n2.github.io/2019/stats/css/main.css" rel="stylesheet" />
+  <link href="https://mohan-chinnappan-n2.github.io/2019/stats/css/pygments.css" rel="stylesheet" />
+
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/jquery.js" type="text/javascript"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/snap.svg-min.js" type="text/javascript"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/application.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="wrap">
+      <ul class="links">
+        <li><a href="../stats/tscore.html">T-Score</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <article class="full">
+    <div class="article-heading js-article-heading js-geopattern" style="background:steelblue;">
+      <div class="wrap">
+        <div class="icon-container">
+          <span class="mega-octicon octicon-light-bulb"></span>
+        </div>
+        <h1> Lead Scoring</h1>
+        <span class="article-read-time article-meta">
+            <span class="octicon octicon-clock"></span> 20 minutes read
+        </span>
+
+      </div>
+    </div>
+
+
+    <div class="wrap">
+
+      <!-- toc-->
+      <div class="toc-wrapper">
+        <ol class="toc js-toc"></ol>
+      </div>
+
+
+      <!-- main content-->
+      <div class="markdown-body content-body ">
+
+        <p><a id="shieldFAQ" title="Shield FAQ" class="toc-item"></a></p>
+        <h3>Shield FAQ</h3>
+<textarea rows="30" cols="80" id='ead-md' style="display: none;">
+1. How do I know a Field in an Object is encrypted at rest?
+--------------------------------------------------------
+
+Metadata API - ***describe*** - provides **encrypted** flag value for the encrypted fields as **true** as shown below:
+
+#### Account object encrypted fields:
+
+![Account object encrypted fields:](https://raw.githubusercontent.com/mohan-chinnappan-n/Shield-setup/master/FAQ/img/account-encrypted-fields.png)
+
+#### Describe on Account Object showing **encrypted flag** for the  encrypted fields:
+
+![describe showing the encrypted flag](https://raw.githubusercontent.com/mohan-chinnappan-n/Shield-setup/master/FAQ/img/describe-showing-encrypted-flag.png)
+
+
+#### Describe on Account Object:
+
+![describe showing the Account Object](https://raw.githubusercontent.com/mohan-chinnappan-n/Shield-setup/master/FAQ/img/account-describe-metadata.png)
+
+
+
+
+
+### Options for Verifying Encryption:
+
+1. At the request of an organizations admin,  ***Tier 3 security agents*** can run a backend process to provide confirmation details of encrypted fields based on server logs which can be provided to users. Please allow two business days for these requests to process due to complexity of the request.
+
+2. Organization admins can follow the steps below to use **tenant key masking** to verify field encryption at a record level:
+
+
+      a.     Export **current tenant secret** used to encrypt current data in report and store it in a safe place.
+
+      b.     Generate a **new tenant secret**.
+
+      c.     Destroy the initial key used to encrypt data.
+
+      d.     With the new key active navigate to any record where fields are encrypted and the data will show ????? meaning the data is encrypted.
+
+
+Note: Once the admin or customer has reviewed the data masked with ????, the old secret used to encrypt the data can be imported back into the org and the new key destroyed as it was not used to encrypt any data.
+
+
+#### How about Attachments encryption?
+
+In the event that an admin would like to verify encryption on files and attachments the query below can be ran in Developer Console:
+
+```sql
+    SELECT ContentType, Id, IsEncrypted FROM Attachments WHERE IsEncrypted = false/true
+```
+
+The query above will run against attachments and show all content where IsEncrypted = true or false. The attachments option can be replaced with files and content type removed to determine if files are encrypted or decrypted based on the IsEncrypted flag.
+
+For additional information related to platform encryption masking please review our Salesforce article entitled:
+
+What Does My Encrypted Data Look Like?:
+  https://help.salesforce.com/articleView?id=security_pe_masking.htm&type=0
+
+
+
+<hr/>
+
+2.Knowledge Article: 000247422 says: View Encrypted Data Permission Not Needed with Shield Platform Encryption Beginning Spring ‘17
+---------------------------------------------------------------------------------------------------------------------------------
+Can you explain this with an example?
+-------------------------------------
+
+![KB-FLS](https://raw.githubusercontent.com/mohan-chinnappan-n/Shield-setup/master/FAQ/img/KB-FLS.png)
+[Reference to this Knowledge Article](https://help.salesforce.com/articleView?id=000247422&type=1)
+
+
+![Winter17 release-notes](https://raw.githubusercontent.com/mohan-chinnappan-n/Shield-setup/master/FAQ/img/win17-rel-notes-viewEncryptedData-perm-NN.png)
+
+
+[Reference: View Encrypted Data” Permission Not Needed with Shield Platform Encryption Beginning Spring ‘17](https://releasenotes.docs.salesforce.com/en-us/winter17/release-notes/rn_security_pe_ved_decouple_announcement.htm)
+
+
+
+Let us take an example: In our org, we have an user: **joe simple**
+
+![user joe simple](https://raw.githubusercontent.com/mohan-chinnappan-n/Shield-setup/master/FAQ/img/user-joe-simple.png)
+
+
+Joe can see the **encrypted** field: **Account.Fax** but Joe **can't** see the **encrypted** field **Account.Phone** as per FLS for his profile:
+
+#### Account.Fax:
+![joe account.fax](https://raw.githubusercontent.com/mohan-chinnappan-n/Shield-setup/master/FAQ/img/user-joesimple-can-seee-account_fax.png)
+
+
+#### Account.Phone:
+![joe account.phone](https://raw.githubusercontent.com/mohan-chinnappan-n/Shield-setup/master/FAQ/img/user-joesimple-cannot-see-account_phone.png)
+
+
+
+If Joe uses REST API for example, to access Account Object, Joe will be denied access to the field: **Account.Phone** as shown below, while Joe can access **Account.Fax**
+
+![joe cannot access account.phone](https://raw.githubusercontent.com/mohan-chinnappan-n/Shield-setup/master/FAQ/img/rest-api-user-cannot-access_account_phone.png)
+
+But other user, whose FLS allows **read** on these fields: **Account.Fax** and **Account.Phone** can access these two fields:
+
+
+![describe showing the encrypted flag](https://raw.githubusercontent.com/mohan-chinnappan-n/Shield-setup/master/FAQ/img/describe-showing-encrypted-flag.png)
+
+
+<hr/>
+
+
+
+3.Do I have to backup tenant secrets?
+--------------------------------------------------------
+
+YES!!!
+
+Tenant secrets are not like passwords.
+
+Unlike passwords, you can’t reset a tenant secret. Salesforce can’t help with deleted, destroyed, or misplaced tenant secrets. Always back up tenant secrets!
+
+<hr/>
+
+4.Is the encrypted fields data encrypted at rest?
+--------------------------------------------------------
+
+YES!
+
+You should use field-level access controls to limit who can access this sensitive data as shown above in question number: 2
+
+<hr/>
+
+5.About guideline for selecting fields for encrypting?
+--------------------------------------------------------
+
+Unnecessarily encrypting data can slow down performance and affect users day-to-day activities.  Based on your regulatory requirements define the kinds of customer data that require extra security and apply Shield Platform Encryption only to those areas.
+
+
+6.About automatic encryption?
+---------------------------------
+
+Field values are automatically encrypted only in records **created or updated after you’ve enabled encryption**. Salesforce recommends **updating existing records** to ensure that their field values are encrypted. For example, if you encrypt the Description field on the Case object, use the Data Loader to update all case records. Contact Salesforce if you need help with this.
+
+
+7.Can you provide technical details about Platform Encryption?
+----------------------------------------------------------------
+
+
+
+![Platform Encryption Flow](https://raw.githubusercontent.com/mohan-chinnappan-n/Shield-setup/master/FAQ/img/platform-en.png)
+
+Here is the video answering this question. Click on the image below to view the video:
+
+[![Salesforce Shield Platform Encryption Whiteboard"](https://img.youtube.com/vi/RMUl0fF7x1E/0.jpg)](https://www.yout‌​ube.com/watch?v=RMUl0fF7x1E "Salesforce Shield Platform Encryption Whiteboard")
+
+
+8. About Sandbox Refresh: How Does Shield Platform Encryption Work In a Sandbox?
+----------------------------------------------------------------
+
+Refreshing a sandbox from a production organization creates an exact copy of the production organization. If Shield Platform Encryption is enabled on the production organization, all encryption settings are copied, including tenant secrets created in production.
+
+Once a sandbox is refreshed, tenant secret changes are confined to your current organization. This means that when you rotate or destroy a tenant secret on sandbox, it doesn’t affect the production organization.
+
+As a best practice, rotate tenant secrets on sandboxes after a refresh. Rotation ensures that production and sandbox use different tenant secrets. Destroying tenant secrets on a sandbox renders encrypted data unusable in cases of partial or full copies.
+
+
+[Ref](https://help.salesforce.com/articleView?id=security_pe_sandboxes.htm&type=5)
+
+
+
+
+<hr/>
+<hr/>
+
+### Links for curious minds:
+
+[Rotate Your Encryption Tenant Secrets - based on your organization’s security policies](https://help.salesforce.com/articleView?id=security_pe_rotate_keys.htm&type=5)
+
+
+
+What’s the Difference Between Classic Encryption and Shield Platform Encryption?:
+https://help.salesforce.com/articleView?err=1&id=security_pe_comparison_table.htm&siteLang=en_US&type=0
+
+How Shield Platform Encryption Works:
+https://help.salesforce.com/articleView?id=security_pe_concepts.htm&type=0&language=en_US
+
+Tradeoffs and Limitations of Shield Platform Encryption:
+https://help.salesforce.com/articleView?err=1&id=security_pe_considerations.htm&siteLang=en_US&type=0
+
+Encrypt Fields:
+https://help.salesforce.com/articleView?err=1&id=security_pe_enable_standard_fields.htm&siteLang=en_US&type=0&language=en_US
+
+
+Salesforce Shield Platform Encryption Whiteboard:
+https://www.youtube.com/watch?v=RMUl0fF7x1E
+
+
+View Encrypted Data Permission Not Needed with Shield Platform Encryption Beginning Spring ‘17:
+
+
+https://help.salesforce.com/articleView?id=000247422&type=1
+
+
+View Encrypted Data” Permission Not Needed with Shield Platform Encryption Beginning Spring ‘17:
+https://releasenotes.docs.salesforce.com/en-us/winter17/release-notes/rn_security_pe_ved_decouple_announcement.htm
+
+
+Platform Encryption Best Practices:
+https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta/securityImplGuide/security_pe_best_practices.htm
+
+SALESFORCE PLATFORM ENCRYPTION:
+https://resources.docs.salesforce.com/206/latest/en-us/sfdc/pdf/salesforce_platform_encryption_tipsheet.pdf
+
+Training: Trailhead: Shield Platform Encryption:
+https://github.com/mohan-chinnappan-n/Shield-setup/blob/master/FAQ/faq.md
+
+
+Tighten Your Security with Salesforce Shield Platform Encryption:
+https://www.youtube.com/watch?v=sZ9SvYIij4w
+
+<hr/>
+
+Probabilistic encryption:
+https://en.wikipedia.org/wiki/Probabilistic_encryption
+
+
+Deterministic encryption:
+https://en.wikipedia.org/wiki/Deterministic_encryption
+  
+        </textarea>
+        <p id="ead-md2html">
+
+        </p>
+
+
+
+
+
+        <p><a id="Resources" title="Resources" class="toc-item"></a></p>
+        <h3>Resources</h3>
+        <ul>
+          <li>
+            <a href="https://developer.salesforce.com/promotions/orgs/einsteinleadscoring">Signup for a Developer Org
+              with Einstein Lead Scoring</a>
+          </li>
+         
+
+
+        </ul>
+
+
+
+      </div>
+      <script>
+
+          const converter = new showdown.Converter();
+          const text      = document.getElementById('ead-md').value;
+          const html      = converter.makeHtml(text);
+          document.getElementById('ead-md2html').innerHTML = html;
+      </script>
+</body>
+
+</html>

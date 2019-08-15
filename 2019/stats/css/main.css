@@ -97,13 +97,13 @@ html, body {
 /* Columns & Layout */
 
 .wrap {
-  max-width: 960px;
+  max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
 }
 
 article.full .content-body {
-  width: 650px;
+  width: 900px;
   padding-bottom: 30px;
   font-size: 18px;
 }
@@ -114,10 +114,10 @@ article.full .content-body.full-width {
 
 .toc-wrapper {
   float: right;
-  width: 200px;
+  width: 150px;
 }
 ol.toc {
-  width: 200px;
+  width: 150px;
   margin: 0;
 }
 ol.toc.sticky {
@@ -143,8 +143,8 @@ ol.toc.sticky {
 
 .article-heading {
   position: relative;
-  margin-top: 10px;
-  margin-bottom: 40px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   text-shadow: 0 2px 0 rgba(0, 0, 0, .15);
   background-color: #aaa;
 }
@@ -158,7 +158,7 @@ ol.toc.sticky {
 .article-heading .wrap {
   position: relative;
   z-index: 2;
-  padding: 50px 0;
+  padding: 10px 0;
   color: #fff;
 }
 
@@ -371,7 +371,7 @@ ol.toc>li a.active {
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   article.full .content-body {
-    width: 500px;
+    width: 700px;
   }
   .guide-listings {
     width: 100%;
