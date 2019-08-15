@@ -38,17 +38,17 @@
     .markdown-body h1 tt, .markdown-body h1 code, .markdown-body h2 tt, .markdown-body h2 code, .markdown-body h3 tt, .markdown-body h3 code, .markdown-body h4 tt, .markdown-body h4 code, .markdown-body h5 tt, .markdown-body h5 code, .markdown-body h6 tt, .markdown-body h6 code {
       font-size: inherit; }
   .markdown-body h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     border-bottom: 1px solid #ddd; }
   .markdown-body h2 {
-    font-size: 2em;
+    font-size: 1.5em;
     border-bottom: 1px solid #eee; }
   .markdown-body h3 {
-    font-size: 1.5em; }
-  .markdown-body h4 {
-    font-size: 1.2em; }
-  .markdown-body h5 {
     font-size: 1em; }
+  .markdown-body h4 {
+    font-size: .8em; }
+  .markdown-body h5 {
+    font-size: .71em; }
   .markdown-body h6 {
     color: #777;
     font-size: 1em; }
