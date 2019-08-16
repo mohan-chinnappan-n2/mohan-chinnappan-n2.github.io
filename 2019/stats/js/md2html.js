@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   mds.forEach((item, ndx) => {
     const mdEle = document.getElementById(item);
     const dataTrim = mdEle.getAttribute('data-trim');
-    console.log(dataTrim);
+    //console.log(dataTrim);
     var text = mdEle.textContent;
 
     if (dataTrim !== 'false') {
