@@ -1012,6 +1012,54 @@ the new query definition
 
 </div>
 
+<p><a id="eaOrderBindings" title="Order Bindings" class="toc-item"></a></p>
+<div id='eaOrderBindings-md' data-trim='false'>
+## Order Bindings
+
+``` asOrder() ``` is used as serialization function to specify the sort order in a SAQL query.
+Example:
+
+```
+// sortOrderSourceStep:
+
+[
+  {order: "State", direction: "desc"}
+  {order: "City", direction: "asc"}
+]
+
+// Binding Query:
+q = order q by {{ cell(sortOrderSourceStep.selection, 1, "order").asOrder() }};
+
+
+// This get evaluated to (based on the selection by the user)
+q = order q by 'State';
+// OR
+q = order q by 'City';
+
+ 
+
+// Order multiple fields:
+q = order q by {{column(sortOrderSourceStep.selection, ["order"]).asOrder()}};
+
+
+// This get evaluated to:
+q = order q by ('State', 'City');
+
+
+// To specify the order and the direction:
+q = order q by {{row(sortOrderSourceStep.selection, [], ["order", "direction"]).asOrder()}};
+
+// This get evaluated to:
+q = order q by ('State' desc, 'City' asc);
+
+
+
+
+```
+
+
+  </div>
+
 
 
 <p><a id="eaBindingLinks" title="Links" class="toc-item"></a></p>
@@ -1030,7 +1078,7 @@ the new query definition
 
 </div>
 
-<script> const mds = ['binding1-md', 'bindingDemo-1-md', 'bindingDemo-2-md', 'links-md'];</script>
+<script> const mds = ['binding1-md', 'bindingDemo-1-md', 'bindingDemo-2-md',  'eaOrderBindings-md', 'links-md'];</script>
 <script src="../stats/js/md2html.js"> </script>
 </body>
 
