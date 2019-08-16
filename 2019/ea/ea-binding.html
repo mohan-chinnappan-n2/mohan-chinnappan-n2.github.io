@@ -54,6 +54,7 @@
 
       <!-- toc-->
       <div class="toc-wrapper">
+           <span class='octicon octicon-clippy' style='color:steelblue; padding-left:30px;'></span> 
         <ol class="toc js-toc"></ol>
       </div>
 
@@ -62,21 +63,65 @@
       <div class="markdown-body content-body ">
 
         <p><a id="LeadScore" title="What is Binding in Dashboards?" class="toc-item"></a></p>
-        <h3> Binding in Dashboards</h3>
-        <p>
-          
+        <div id='binding1-md' data-trim='false'>
+
+## Binding in Dashboards</h3>
+
+- Bindings enable interaction among the widgets in the Dashboard
+- Control the interactions by **binding** steps to each other
+### 2 types of binding, which triggers updates in other steps in the Dashboard:
+  1. **Selection** binding - updates a step based on the selection by the user in a widget - interactive
+  Can be used specify interactions between widgets which use steps from **different datasets**
+
+  2. **Results** binding - updates a step based on the results of the another step
+  Use case: Define intermediate results for a complex calculation. 
+
+  **Calculate the total opportunity amount for the top-5 products:**
+  - use one step to calculate the top-five products
+  - use those results to *filter* another step that calculates the total number opportunity amount for each product
+
+
+### Steps needed before making the widgets interactive
+- Faceting - most common way to specify interactions between widgets
+- When facted, selections made in one widget automatically filter **all other** widgets when they are using **steps** from the **same dataset** (scope)
+- Faceting works only on the **steps** from the **same dataset**
+- To create interactions outside, **binding is the way**
+
+
+### Bindings in Dashboard Designer Dashboards
+-  Both types of bindings operate on tabular data and return complete rows, even for columns not used in widgets
+-  The dashboard designer treats *multiple selections as tabular data* and *single selections* as a *single row* of tabular data. 
+
+### Syntax
+
+```java
+ stepId.result|selection
+
+ // example: 
+ myStaticStep.selection 
+
+ 
+```
+
+### Binding Functions
+- To get data from a **source step**, **manipulate it**, and **serialize** it to make it consumable by the target step
+Binding functions operate on input data with one the following shapes:
+1. Scalar like: ``` 0, "hello world" ```
+2. 1-D array like: ``` [10,20,30],  ["North", "South", "East", "West"] ```
+3. 2-D array like: ``` [ ["Apple", "Mango"], ["Oak", "Pine"] ] ```
+
+![binding demo-1](https://mohan-chinnappan-n.github.io/sfdc/img/ea2/ea-static-binding-2.gif)
 
       </div>
-      <script>
 
-          const converter = new showdown.Converter();
-          const mds = ['ead-md'];
-          mds.forEach( (item, ndx) => {
-             const text      = document.getElementById(item).value;
-             const html      = converter.makeHtml(text);
-            document.getElementById(`${item}-md2html`).innerHTML = html;
-          });
-      </script>
+
+  
+
+
+</div>
+
+<script> const mds = ['binding1-md'];</script>
+<script src="../stats/js/md2html.js"> </script>
 </body>
 
 </html>
