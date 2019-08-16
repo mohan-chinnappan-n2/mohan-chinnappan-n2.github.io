@@ -6,7 +6,7 @@
   <title>
     Lead Score
   </title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n2.github.io/favicon.ico">
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -21,6 +21,7 @@
   <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/application.js" type="text/javascript"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+
 
 </head>
 
@@ -62,7 +63,7 @@
       <!-- main content-->
       <div class="markdown-body content-body ">
 
-        <p><a id="LeadScore" title="What is Binding in Dashboards?" class="toc-item"></a></p>
+        <p><a id="eaBinding" title="What is Binding in Dashboards?" class="toc-item"></a></p>
         <div id='binding1-md' data-trim='false'>
 
 ## Binding in Dashboards</h3>
@@ -110,7 +111,385 @@ Binding functions operate on input data with one the following shapes:
 2. 1-D array like: ``` [10,20,30],  ["North", "South", "East", "West"] ```
 3. 2-D array like: ``` [ ["Apple", "Mango"], ["Oak", "Pine"] ] ```
 
-![binding demo-1](https://mohan-chinnappan-n.github.io/sfdc/img/ea2/ea-static-binding-2.gif)
+-  Each binding must have one **data selection function** and one **data serialization** function and optionally can have multiple **data manipulation** functions. 
+
+
+
+</div>
+
+<p><a id="eaBindingDemo1" title="Binding Demo-1" class="toc-item"></a></p>
+<div id='bindingDemo-1-md' data-trim='false'>
+
+## Binding Demo-1 
+
+![demo1 screenshot](img/ea-binding-demo-01.png)
+
+### Demo
+![demo1](img/ea-binding-demo-1.gif)
+
+
+### Dashboard JSON 
+
+```json
+
+{
+  "label": "Binding Demo Dashboard",
+  "mobileDisabled": false,
+  "state": {
+      "steps": {
+          "StaticMeasureNames_1": {
+              "type": "staticflex",
+              "numbers": [],
+              "strings": [],
+              "groups": [],
+              "broadcastFacet": true,
+              "selectMode": "singlerequired",
+              "label": "StaticMeasureNames",
+              "start": {
+                  "display": [
+                      "Total Amount"
+                  ]
+              },
+              "values": [
+                  {
+                      "display": "Total Amount",
+                      "value": [
+                          "sum",
+                          "Amount"
+                      ]
+                  },
+                  {
+                      "display": "Avg Amount",
+                      "value": [
+                          "avg",
+                          "Amount"
+                      ]
+                  }
+              ]
+          },
+          "Account_Type_1": {
+              "type": "aggregateflex",
+              "query": {
+                  "measures": "{{column(StaticMeasureNames_1.selection,[\"value\"]).asObject()}}",
+                  "groups": [
+                      "Account_Type"
+                  ]
+              },
+              "visualizationParameters": {
+                  "options": {},
+                  "type": "chart",
+                  "parameters": {
+                      "visualizationType": "hbar",
+                      "autoFitMode": "keepLabels",
+                      "theme": "wave",
+                      "title": {
+                          "label": "",
+                          "fontSize": 14,
+                          "subtitleLabel": "",
+                          "subtitleFontSize": 11,
+                          "align": "center"
+                      },
+                      "showValues": true,
+                      "axisMode": "multi",
+                      "binValues": false,
+                      "bins": {
+                          "breakpoints": {
+                              "low": 0,
+                              "high": 100
+                          },
+                          "bands": {
+                              "low": {
+                                  "label": "",
+                                  "color": "#B22222"
+                              },
+                              "medium": {
+                                  "label": "",
+                                  "color": "#ffa500"
+                              },
+                              "high": {
+                                  "label": "",
+                                  "color": "#008000"
+                              }
+                          }
+                      },
+                      "dimensionAxis": {
+                          "showAxis": true,
+                          "showTitle": true,
+                          "title": "",
+                          "customSize": "auto",
+                          "icons": {
+                              "useIcons": false,
+                              "iconProps": {
+                                  "column": "",
+                                  "fit": "cover",
+                                  "type": "round"
+                              }
+                          }
+                      },
+                      "measureAxis1": {
+                          "sqrtScale": false,
+                          "showAxis": true,
+                          "customDomain": {
+                              "showDomain": false
+                          },
+                          "showTitle": true,
+                          "title": ""
+                      },
+                      "measureAxis2": {
+                          "sqrtScale": false,
+                          "showAxis": true,
+                          "customDomain": {
+                              "showDomain": false
+                          },
+                          "showTitle": true,
+                          "title": ""
+                      },
+                      "legend": {
+                          "show": true,
+                          "showHeader": true,
+                          "inside": false,
+                          "descOrder": false,
+                          "position": "right-top",
+                          "customSize": "auto"
+                      },
+                      "tooltip": {
+                          "customizeTooltip": false,
+                          "showDimensions": true,
+                          "dimensions": "",
+                          "showMeasures": true,
+                          "measures": "",
+                          "showPercentage": true,
+                          "showNullValues": true,
+                          "showBinLabel": true
+                      },
+                      "trellis": {
+                          "enable": false,
+                          "showGridLines": true,
+                          "flipLabels": false,
+                          "type": "x",
+                          "chartsPerLine": 4,
+                          "size": [
+                              100,
+                              100
+                          ]
+                      },
+                      "applyConditionalFormatting": true,
+                      "showActionMenu": true,
+                      "columnMap": null
+                  }
+              },
+              "datasets": [
+                  {
+                      "id": "0Fb1N000000LK1NSAW",
+                      "name": "DTC_Opportunity_SAMPLE",
+                      "label": "DTC Opportunity",
+                      "url": "/services/data/v46.0/wave/datasets/0Fb1N000000LK1NSAW"
+                  }
+              ],
+              "useGlobal": true,
+              "isGlobal": false,
+              "broadcastFacet": true,
+              "receiveFacet": true,
+              "selectMode": "single"
+          }
+      },
+      "widgets": {
+          "chart_1": {
+              "type": "chart",
+              "parameters": {
+                  "visualizationType": "hbar",
+                  "autoFitMode": "keepLabels",
+                  "theme": "wave",
+                  "title": {
+                      "label": "",
+                      "fontSize": 14,
+                      "subtitleLabel": "",
+                      "subtitleFontSize": 11,
+                      "align": "center"
+                  },
+                  "showValues": true,
+                  "axisMode": "multi",
+                  "binValues": false,
+                  "bins": {
+                      "breakpoints": {
+                          "low": 0,
+                          "high": 100
+                      },
+                      "bands": {
+                          "low": {
+                              "label": "",
+                              "color": "#B22222"
+                          },
+                          "medium": {
+                              "label": "",
+                              "color": "#ffa500"
+                          },
+                          "high": {
+                              "label": "",
+                              "color": "#008000"
+                          }
+                      }
+                  },
+                  "dimensionAxis": {
+                      "showAxis": true,
+                      "showTitle": true,
+                      "title": "",
+                      "customSize": "auto",
+                      "icons": {
+                          "useIcons": false,
+                          "iconProps": {
+                              "column": "",
+                              "fit": "cover",
+                              "type": "round"
+                          }
+                      }
+                  },
+                  "measureAxis1": {
+                      "sqrtScale": false,
+                      "showAxis": true,
+                      "customDomain": {
+                          "showDomain": false
+                      },
+                      "showTitle": true,
+                      "title": ""
+                  },
+                  "measureAxis2": {
+                      "sqrtScale": false,
+                      "showAxis": true,
+                      "customDomain": {
+                          "showDomain": false
+                      },
+                      "showTitle": true,
+                      "title": ""
+                  },
+                  "legend": {
+                      "show": true,
+                      "showHeader": true,
+                      "inside": false,
+                      "descOrder": false,
+                      "position": "right-top",
+                      "customSize": "auto"
+                  },
+                  "tooltip": {
+                      "customizeTooltip": false,
+                      "showDimensions": true,
+                      "dimensions": "",
+                      "showMeasures": true,
+                      "measures": "",
+                      "showPercentage": true,
+                      "showNullValues": true,
+                      "showBinLabel": true
+                  },
+                  "trellis": {
+                      "enable": false,
+                      "showGridLines": true,
+                      "flipLabels": false,
+                      "type": "x",
+                      "chartsPerLine": 4,
+                      "size": [
+                          100,
+                          100
+                      ]
+                  },
+                  "applyConditionalFormatting": true,
+                  "showActionMenu": true,
+                  "columnMap": null,
+                  "step": "Account_Type_1"
+              }
+          },
+          "pillbox_1": {
+              "type": "pillbox",
+              "parameters": {
+                  "compact": false,
+                  "showActionMenu": true,
+                  "exploreLink": false,
+                  "fontSize": 14,
+                  "textColor": "#0070D2",
+                  "selectedTab": {
+                      "textColor": "#FFFFFF",
+                      "backgroundColor": "#0070D2",
+                      "borderEdges": [
+                          "all"
+                      ],
+                      "borderColor": "#C6D3E1",
+                      "borderWidth": 1
+                  },
+                  "step": "StaticMeasureNames_1"
+              }
+          }
+      },
+      "filters": [],
+      "gridLayouts": [
+          {
+              "name": "Default",
+              "numColumns": 12,
+              "rowHeight": "normal",
+              "version": 1,
+              "pages": [
+                  {
+                      "label": "BindingDemo1",
+                      "name": "fc29efa5-0f70-4c60-bd5c-b0d653b7b9a3",
+                      "widgets": [
+                          {
+                              "row": 2,
+                              "column": 2,
+                              "rowspan": 5,
+                              "colspan": 6,
+                              "name": "chart_1",
+                              "widgetStyle": {}
+                          },
+                          {
+                              "row": 1,
+                              "column": 2,
+                              "rowspan": 1,
+                              "colspan": 5,
+                              "name": "pillbox_1",
+                              "widgetStyle": {}
+                          }
+                      ],
+                      "navigationHidden": false
+                  }
+              ],
+              "selectors": [],
+              "style": {
+                  "backgroundColor": "#F2F6FA",
+                  "gutterColor": "#C5D3E0",
+                  "cellSpacingX": 8,
+                  "cellSpacingY": 8,
+                  "fit": "original",
+                  "alignmentX": "left",
+                  "alignmentY": "top"
+              }
+          }
+      ],
+      "dataSourceLinks": [],
+      "widgetStyle": {
+          "backgroundColor": "#FFFFFF",
+          "borderEdges": [],
+          "borderColor": "#E6ECF2",
+          "borderWidth": 1,
+          "borderRadius": 0
+      }
+  },
+  "datasets": [
+      {
+          "name": "DTC_Opportunity_SAMPLE",
+          "url": "/services/data/v46.0/wave/datasets/0Fb1N000000LK1NSAW",
+          "id": "0Fb1N000000LK1NSAW"
+      }
+  ]
+}
+```
+</div>
+
+<p><a id="eaBindingLinks" title="Links" class="toc-item"></a></p>
+<div id='links-md' data-trim='false'>
+
+### Links 
+- [That Thing Called columnMap](https://www.salesforceblogger.com/2018/04/22/that-thing-called-columnmap/)
+- [The power of static steps ](https://www.salesforceblogger.com/2017/02/28/the-power-of-static-steps/)
+- [Using date fields in static steps](https://www.salesforceblogger.com/2017/04/02/using-date-fields-in-static-steps/)
+
 
       </div>
 
@@ -120,7 +499,7 @@ Binding functions operate on input data with one the following shapes:
 
 </div>
 
-<script> const mds = ['binding1-md'];</script>
+<script> const mds = ['binding1-md', 'bindingDemo-1-md', 'links-md'];</script>
 <script src="../stats/js/md2html.js"> </script>
 </body>
 
