@@ -160,6 +160,13 @@ Binding functions operate on input data with one the following shapes:
 }
 ```
 
+- Note columnMap: null change required
+
+Reason: Because when you change the query, the set of fields will likely be different from what’s in the columnMap
+section. When you replace the columnMap property with **an empty columns array, the system remaps** the columns based on
+the new query definition
+
+
 
 
 ### Demo
