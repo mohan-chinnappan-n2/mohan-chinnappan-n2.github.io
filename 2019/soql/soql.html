@@ -92,7 +92,7 @@ else {
  System.debug('No max(LastModifiedDate) found for this AccountId:  ' + acctId);
 }
 
-// if you know we have multiple rows in the grouped result
+// if you know we have multiple rows (when you have passed in array of AccountIds ) in the grouped result
 
 for (AggregateResult ar : groupedResults)  {
         System.debug('AccountId' + ar.get('AccountId
@@ -112,6 +112,7 @@ for (AggregateResult ar : groupedResults)  {
 
 - [SOQL guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_SOQL_agg_fns.htm)
 - [Task Object](https://mohan-chinnappan-n.github.io/sfdc/fs-cloud/csv-viewer_fsc.html?f=Task)
+- [COALESCE in SQL](http://www.contrib.andrew.cmu.edu/~shadow/sql/sql1992.txt)
 
       </div>
 
