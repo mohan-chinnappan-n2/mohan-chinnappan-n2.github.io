@@ -1,0 +1,6 @@
+accountId,status,revenue,createdDate,lastModifiedDate
+1,completed,200,05/29/2012,06/02/2012
+1,in-progress,300,05/29/2012,06/03/2012
+2,open,,05/29/2012,10/10/2012
+2,completed,,05/29/2012,05/11/2012
+3,scheduled,200,05/29/2012,07/10/2012
