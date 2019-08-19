@@ -1,0 +1,18 @@
+"filters": [
+                        [
+                            "type",
+                            "{{ column(type_1.result, [\"type \"] ).asObject() }}"
+                        ]
+],
+
+
+
+
+                    "filters": [
+                        [
+                            "type",
+                            ["garden", "nut"]
+
+                        ]
+                    ],
+
