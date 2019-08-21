@@ -1,0 +1,11 @@
+Hi Anirudh,
+
+Greetings!
+
+I was chatting with Tim Bezold,  Tim mentioned that  you are developing the Dataset Explorer and you may know this info about the
+ best way get the fields in the dataset using Wave REST API
+
+Regards,
+Mohan
+
+
