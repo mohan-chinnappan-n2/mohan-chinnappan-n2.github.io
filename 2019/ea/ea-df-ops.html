@@ -199,6 +199,24 @@ let augment = (leftDataset, rightDataset, matchCondition, rightColumns ) => {
 <div id='fruitsaugment-md' data-trim='false' style='display:none;'>
 
 ## Augment example with fruits dataset
+
+### Data sources
+```
+$ cat data/fruits.csv 
+name,qty
+Mango,150
+Jackfruit,200
+Banana,250
+
+$ cat data/botnames.csv 
+name,botName
+Mango,Mangifera indica
+Jackfruit,Artocarpus heterophyllus
+Banana,Musa
+
+```
+
+### Dataflow JSON
 ```
 {
   "ExtractFruits": {
@@ -243,21 +261,7 @@ let augment = (leftDataset, rightDataset, matchCondition, rightColumns ) => {
 
 
 ```
-### Data sources
-```
-$ cat data/fruits.csv 
-name,qty
-Mango,150
-Jackfruit,200
-Banana,250
 
-$ cat data/botnames.csv 
-name,botName
-Mango,Mangifera indica
-Jackfruit,Artocarpus heterophyllus
-Banana,Musa
-
-```
 
 ### Dataflow Design
 ![Augment Fruit 1](img/df/augment-fruit-1.png)
