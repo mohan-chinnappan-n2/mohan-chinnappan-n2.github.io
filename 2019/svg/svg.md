@@ -1,0 +1,1 @@
+- [svg](https://www.svgrepo.com/svg/38007/redimension-image)
