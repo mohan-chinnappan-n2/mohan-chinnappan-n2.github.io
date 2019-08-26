@@ -1116,6 +1116,252 @@ q = order q by ('State' desc, 'City' asc);
 <h4>Demo to view which fields are used in Dashboard from the Fruits Dataset</h4>
 <img src="img/dbrd/fruits-ea-field-usage.gif" alt="">
 
+<p><a id="bindingInSOQL" title="Binding in SOQL Step" class="toc-item"></a></p>
+<h3>Binding in SOQL step</h3>
+
+<h4>Demo</h4>
+<img src="img/soql-step-binding-1.gif" alt="">
+
+<h4>Binding Diagram</h4>
+<img src="img/soql-step-binding-2.gif" alt="">
+
+<div id='bindingInSOQL-md' data-trim='false' class='md'  style='display:none;'>
+### Key portions of the Dashboard JSON
+```
+
+
+
+"steps": {
+
+    "opptyName_1": {
+        "broadcastFacet": true,
+        "label": "opptyName",
+        "selectMode": "singlerequired",
+        "type": "staticflex",
+        "values": [
+            {
+                "display": "Abbott1184",
+                "value": "Opportunity for Abbott1184"
+            },
+            {
+                "display": "Allen1162",
+                "value": "Opportunity for Allen1162"
+            }
+        ],
+        "numbers": [],
+        "strings": [],
+        "groups": []
+    },
+    
+    "soql": {
+        "groups": [
+            "Name"
+        ],
+        "numbers": [
+            "Amount"
+        ],
+        "query": "SELECT Name, Amount from Opportunity WHERE NAME IN ('{{column(opptyName_1.selection,[\"value\"]).asObject()}}')",
+        "selectMode": "single",
+        "strings": [
+            "Name"
+        ],
+        "type": "soql"
+    },
+    "soql2": {
+        "groups": [],
+        "numbers": [
+            "Amount"
+        ],
+        "query": "SELECT Name, CloseDate, StageName, Owner.Name, Amount, Account.Name FROM Opportunity ",
+        "selectMode": "single",
+        "strings": [
+            "Name",
+            "CloseDate",
+            "StageName",
+            "Owner.Name",
+            "Account.Name"
+        ],
+        "type": "soql"
+    },
+    "opptyName_1": {
+        "broadcastFacet": true,
+        "label": "opptyName",
+        "selectMode": "singlerequired",
+        "type": "staticflex",
+        "values": [
+            {
+                "display": "Abbott1184",
+                "value": "Opportunity for Abbott1184"
+            },
+            {
+                "display": "Allen1162",
+                "value": "Opportunity for Allen1162"
+            }
+        ],
+        "numbers": [],
+        "strings": [],
+        "groups": []
+    },
+    "staticIndustry_1": {
+        "broadcastFacet": true,
+        "label": "staticIndustry",
+        "selectMode": "singlerequired",
+        "type": "staticflex",
+        "values": [
+            {
+                "display": "Industry",
+                "value": "Industry"
+            },
+            {
+                "display": "Type",
+                "value": "Account_Type"
+            }
+        ],
+        "numbers": [],
+        "strings": [],
+        "groups": []
+    },
+    "Industry_1": {
+        "broadcastFacet": true,
+        "datasets": [
+            {
+                "id": "0Fb1N000000LK1NSAW",
+                "label": "DTC Opportunity",
+                "name": "DTC_Opportunity_SAMPLE",
+                "url": "/services/data/v46.0/wave/datasets/0Fb1N000000LK1NSAW"
+            }
+        ],
+        "isGlobal": false,
+        "query": {
+            "measures": [
+                [
+                    "count",
+                    "*"
+                ]
+            ],
+            "groups": [
+                "{{column(staticIndustry_1.selection,[\"value\"]).asObject()}}"
+            ]
+        },
+        "receiveFacet": true,
+        "selectMode": "single",
+        "type": "aggregateflex",
+        "useGlobal": true,
+        "visualizationParameters": {
+            "parameters": {
+                "autoFitMode": "keepLabels",
+                "showValues": true,
+                "bins": {
+                    "breakpoints": {
+                        "high": 100,
+                        "low": 0
+                    },
+                    "bands": {
+                        "high": {
+                            "color": "#008000",
+                            "label": ""
+                        },
+                        "low": {
+                            "color": "#B22222",
+                            "label": ""
+                        },
+                        "medium": {
+                            "color": "#ffa500",
+                            "label": ""
+                        }
+                    }
+                },
+                "legend": {
+                    "showHeader": true,
+                    "show": true,
+                    "customSize": "auto",
+                    "position": "right-top",
+                    "inside": false
+                },
+                "axisMode": "multi",
+                "tooltip": {
+                    "showBinLabel": true,
+                    "measures": "",
+                    "showPercentage": true,
+                    "showDimensions": true,
+                    "showMeasures": true,
+                    "customizeTooltip": false,
+                    "dimensions": ""
+                },
+                "visualizationType": "hbar",
+                "title": {
+                    "fontSize": 14,
+                    "subtitleFontSize": 11,
+                    "label": "",
+                    "align": "center",
+                    "subtitleLabel": ""
+                },
+                "binValues": false,
+                "trellis": {
+                    "flipLabels": false,
+                    "showGridLines": true,
+                    "size": [
+                        100,
+                        100
+                    ],
+                    "enable": false,
+                    "type": "x",
+                    "chartsPerLine": 4
+                },
+                "columnMap": {
+                    "trellis": [],
+                    "dimensionAxis": [
+                        "Industry"
+                    ],
+                    "plots": [
+                        "count"
+                    ]
+                },
+                "measureAxis2": {
+                    "sqrtScale": false,
+                    "showTitle": true,
+                    "showAxis": true,
+                    "title": "",
+                    "customDomain": {
+                        "showDomain": false
+                    }
+                },
+                "measureAxis1": {
+                    "sqrtScale": false,
+                    "showTitle": true,
+                    "showAxis": true,
+                    "title": "",
+                    "customDomain": {
+                        "showDomain": false
+                    }
+                },
+                "theme": "wave",
+                "dimensionAxis": {
+                    "showTitle": true,
+                    "customSize": "auto",
+                    "showAxis": true,
+                    "title": "",
+                    "icons": {
+                        "useIcons": false,
+                        "iconProps": {
+                            "fit": "cover",
+                            "column": "",
+                            "type": "round"
+                        }
+                    }
+                }
+            },
+            "type": "chart",
+            "options": {}
+        }
+    }
+}
+
+```
+
+</div>
+
+
 <p><a id="eaBindingLinks" title="Links" class="toc-item"></a></p>
 <div id='links-md' data-trim='false' class='md'  style='display:none;'>
 
