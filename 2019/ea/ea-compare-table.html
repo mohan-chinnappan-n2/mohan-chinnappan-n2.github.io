@@ -78,7 +78,7 @@
     src="https://www.youtube.com/embed/ePvDXx5SFpU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 
-<div id='comparetable-1-md' data-trim='false' style='display:block;'>
+<div id='comparetable-1-md' data-trim='false' class='md' style='display:block;'>
 
 ## Let us see World Best Film Music Composers
 
@@ -122,7 +122,7 @@ postion,fname,lname,country,dob,scores
 
 
 <p><a id="links" title="Links" class="toc-item"></a></p>
-<div id='links-md' data-trim='false'>
+<div id='links-md' data-trim='false' class='md'>
 
 ### Links 
 
@@ -139,8 +139,14 @@ postion,fname,lname,country,dob,scores
 
 </div>
 </article>
-
-<script> const mds = ['comparetable-1-md', 'links-md'];</script>
+<script>
+ const mdElements = document.getElementsByClassName('md');
+var mds = [];
+for (var i = 0; i < mdElements.length; i++) {
+    const ele = mdElements[i];
+    mds.push(ele.getAttribute('id'));
+};
+</script>
 <script src="../stats/js/md2html.js"> </script>
 </body>
 

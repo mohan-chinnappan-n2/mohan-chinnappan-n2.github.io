@@ -89,7 +89,7 @@
     
 
         <p><a id="ead" title="More About EA Discovery" class="toc-item"></a></p>
-        <div id='ead-md' data-trim='false' style='display:none;'>
+        <div id='ead-md' data-trim='false' class='md' style='display:none;'>
 
 
 ## More about EA discovery
@@ -359,7 +359,7 @@ filter](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/
 
 
 <p><a id="eadLinks" title="Links" class="toc-item"></a></p>
-<div id='links-md' data-trim='false'>
+<div id='links-md' data-trim='false' class='md'>
 
 ## Links
 - [Einstein Analytics - Discovery](https://www.youtube.com/watch?v=Ev895wkofX4)
@@ -378,7 +378,15 @@ Stories](https://trailhead.salesforce.com/en/content/learn/modules/understand_ei
 
 </div>
 
-<script> const mds = ['ead-md',  'links-md'];</script>
+<script>
+ const mdElements = document.getElementsByClassName('md');
+var mds = [];
+for (var i = 0; i < mdElements.length; i++) {
+    const ele = mdElements[i];
+    mds.push(ele.getAttribute('id'));
+};
+</script>
+
 <script src="../stats/js/md2html.js"> </script>
 </body>
 

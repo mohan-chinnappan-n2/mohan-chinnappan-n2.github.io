@@ -64,7 +64,7 @@
       <div class="markdown-body content-body ">
 
         <p><a id="eaBinding" title="What is Binding in Dashboards?" class="toc-item"></a></p>
-        <div id='binding1-md' data-trim='false' style='display:none;'>
+        <div id='binding1-md' data-trim='false' class='md' style='display:none;'>
 
 ## Binding in Dashboards</h3>
 
@@ -118,7 +118,7 @@ Binding functions operate on input data with one the following shapes:
 </div>
 
 <p><a id="eaBindingDemo1" title="Measure binding demo" class="toc-item"></a></p>
-<div id='bindingDemo-1-md' data-trim='false' style='display:none;'>
+<div id='bindingDemo-1-md' data-trim='false' class='md' style='display:none;'>
 
 ##  Measure Binding Demo
 
@@ -529,7 +529,7 @@ the new query definition
 
 
 <p><a id="eaBindingDemo2" title="Measures and Grouping Bindings demo" class="toc-item"></a></p>
-<div id='bindingDemo-2-md' data-trim='false'  style='display:none;'>
+<div id='bindingDemo-2-md' data-trim='false' class='md'  style='display:none;'>
 
 ## Measures and Grouping Bindings demo
 
@@ -1015,14 +1015,14 @@ the new query definition
 </div>
 
 <p><a id="eaBindings101" title="Sample Bindings diagram" class="toc-item"></a></p>
-<div id='eaBindings101-md' data-trim='false' style='display:none;'>
+<div id='eaBindings101-md' data-trim='false' class='md' style='display:none;'>
 ###  Sample EA Binding diagram
 ![binding diagram](img/binding-demo-2.svg)
 
 </div>
 
 <p><a id="eaOrderBindings" title="Order Bindings" class="toc-item"></a></p>
-<div id='eaOrderBindings-md' data-trim='false'  style='display:none;'>
+<div id='eaOrderBindings-md' data-trim='false' class='md'  style='display:none;'>
 ## Order Bindings
 
 ``` asOrder() ``` is used as serialization function to specify the sort order in a SAQL query.
@@ -1117,14 +1117,15 @@ q = order q by ('State' desc, 'City' asc);
 <img src="img/dbrd/fruits-ea-field-usage.gif" alt="">
 
 <p><a id="eaBindingLinks" title="Links" class="toc-item"></a></p>
-<div id='links-md' data-trim='false'  style='display:none;'>
+<div id='links-md' data-trim='false' class='md'  style='display:none;'>
 
 ### Links 
 
 - [EA binding developer guide](https://resources.docs.salesforce.com/220/latest/en-us/sfdc/pdf/bi_dev_guide_bindings.pdf)
 - [Optimize Dashboard Performance](https://help.salesforce.com/articleView?id=bi_dashboards_inspector.htm&type=5)
 - [Analytics Extended Metadata (XMD) Reference](https://developer.salesforce.com/docs/atlas.en-us.220.0.bi_dev_guide_xmd.meta/bi_dev_guide_xmd/bi_xmd_intro.htm)
-
+- [Einstein Analytics: Demystifying Bindings – Part 1-9](https://www.salesforceblogger.com/2018/12/23/einstein-analytics-demystifying-bindings-part-2/) 
+- [SOQL Step in Salesforce Analytics Cloud Wave - Andrew Price](https://www.youtube.com/watch?v=oq1Xu94ngdY)
 
 </div>
 
@@ -1134,11 +1135,14 @@ q = order q by ('State' desc, 'City' asc);
 
 </div>
 </article>
-
-<script> const mds = ['binding1-md', 'bindingDemo-1-md', 'bindingDemo-2-md',  'eaOrderBindings-md', 'eaBindings101-md', 
-     'links-md'];
-    
-  </script>
+<script>
+ const mdElements = document.getElementsByClassName('md');
+var mds = [];
+for (var i = 0; i < mdElements.length; i++) {
+    const ele = mdElements[i];
+    mds.push(ele.getAttribute('id'));
+};
+</script>
 <script src="../stats/js/md2html.js"> </script>
 </body>
 
