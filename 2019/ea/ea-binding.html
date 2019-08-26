@@ -1359,7 +1359,34 @@ q = order q by ('State' desc, 'City' asc);
 
 ```
 
+### Another Example of binding in SOQL
+
+- Here you will get IN for SOQL query clause as:
+
+``` IN [ 'Name1', 'Name2'] ```
+
+
+####  Portion of the Dashboard JSON covering this
+
+```
+
+
+"soqlStep2": {
+    "groups": [],
+    
+    "query": "SELECT Id FROM User WHERE Name IN ('{{join(column(step_5.selection, [\"Name\"]), \"','\").asString()}}') ",
+    "selectMode": "single",
+    "strings": [
+        "Id"
+    ],
+    "type": "soql"
+}
+
+```
 </div>
+
+
+
 
 
 <p><a id="eaBindingLinks" title="Links" class="toc-item"></a></p>
