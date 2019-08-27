@@ -76,13 +76,13 @@ Microsoft Intune is a cloud-based service in the **enterprise mobility managemen
   In this way, IT has control of corporate data while the end user maintains control and privacy over their personal data.
 
 
-  ## Enterprise mobility management (EMM) with and without device enrollment
+## Enterprise mobility management (EMM) with and without device enrollment
 
-  ### Example
+### Example
   A device enrolled in MDM may have "open-in" protections provided by the mobile operating system. "Open-in" protection is a feature of Apple's iOS that restricts you from opening a document from one app, like Outlook, into another app, like Word, unless both apps are managed by the same MDM provider. 
 
 
-  ## Key features
+## Key features
 - An integrated console for all your Enterprise Mobility + Security (EMS) components
 - An HTML-based console built on web standards
 - Microsoft Graph API support to automate many actions
