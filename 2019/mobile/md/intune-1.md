@@ -9,7 +9,7 @@ Microsoft Intune is a cloud-based service in the **enterprise mobility managemen
 -  Ensures devices and apps are compliant with **company security requirements**
 - IT administrator can create a corporate security compliance policy from the **Intune management console**
     - Apply that corporate security compliance policy to the enrolled devices
-- Itegrates closely with other MS EMS (Enterprise Mobility + Security) components like Azure Active Directory  (Azure AD) for **identity and access control**  and Azure Information Protection for **data protection**.
+- Integrates closely with other MS EMS (Enterprise Mobility + Security) components like Azure Active Directory  (Azure AD) for **identity and access control**  and Azure Information Protection for **data protection**.
 
 
 ## Intune Architecture
