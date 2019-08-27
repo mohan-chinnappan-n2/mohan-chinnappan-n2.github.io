@@ -89,4 +89,56 @@ Microsoft Intune is a cloud-based service in the **enterprise mobility managemen
 - Azure Active Directory (AD) groups to provide compatibility across all your Azure applications
 - Support for most modern web browsers
 
+## The Intune App SDK
 
+-  Available for both iOS and Android, enables your app to support **Intune app protection policies**.
+
+-  When your mobile app has app protection policies applied to it, it can be managed by Intune and is recognized by Intune as a **managed app**
+
+- After your app becomes Intune-managed app, IT administrators can deploy these policies to protect their corporate data within the mobile app.
+
+- Can be used to customize your mobile app behavior to support features that require your app participation
+
+
+
+### App protection features
+
+- Control users’ ability to move corporate files
+    - IT administrators can control where work **data** in the app can be moved. For instance, they can deploy a policy that disables the app from backing up corporate data to the cloud.
+
+- Configure clipboard restrictions
+    - IT administrators can configure the clipboard behavior in Intune-managed apps. For instance, they can deploy a policy to prevent end users from cutting or copying data from the app and pasting into an unmanaged, personal app.
+
+- Enforce encryption on saved data
+    - IT administrators can enforce a policy that ensures that data saved to the device by the app is encrypted.
+
+- Remotely wipe corporate data
+    - IT administrators can remotely wipe corporate data from an Intune-managed app. This feature is identity-based and will only delete the files associated with the corporate identity of the end user.
+
+- Enforce the use of a managed browser
+    - IT administrators can force web links in the app to be opened with the Intune Managed Browser app. This functionality ensures that links that appear in a corporate environment are kept within the domain of Intune-managed apps.
+
+- Enforce a PIN policy
+    - IT administrators can require users to sign in with their work account to access the app. 
+    - The Intune App SDK uses Azure Active Directory (Identity Provider) to provide a single sign-on (SSO)experience, where the credentials, once entered, are reused for subsequent logins.
+- Check device health and compliance
+    - IT administrators can a check the health of the device and its compliance with Intune policies before end-users access the app.
+    - On iOS, this policy checks if the device has been jailbroken. On Android, this policy checks if the device has been rooted.
+
+- Support multi-identity
+    -  Enables coexistence of policy-managed (corporate) and unmanaged (personal) accounts in a single app.
+    - The multi-identity feature helps solve the data protection problem that organizations face with store apps that support **both personal and work accounts**.
+    - For example, many users configure both corporate and personal email accounts in the Office mobile apps for iOS and Android. When a user accesses data with their corporate account, the IT administrator must be confident that app protection policy will be applied. However, when a user is accessing a personal email account, that data should be outside of the IT administrator's control. The Intune App SDK achieves this by targeting the app protection policy to only the corporate identity in the app.
+
+## Intune App Wrapping Tool for iOS
+
+- Use the  Intune App Wrapping Tool for iOS to enable Intune app protection policies for **in-house iOS apps** without changing the code of the app itself.
+
+- Creates a wrapper around an app
+- Once an app is processed, you can change the app's functionality by deploying app protection policies to it.
+
+
+## For Apps to be released in public app store
+
+- If your app will be released to a public app store, like the Apple App Store or Google Play:
+    - You must first register your app with Microsoft Intune and agree to the registration terms. IT administrators can then apply an app protection policy to the managed app, which will be listed as an Intune protected partner app.
