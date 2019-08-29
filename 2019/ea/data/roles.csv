@@ -1,0 +1,8 @@
+id,name,parentid
+1,Sales Rep 1,10
+2,Sales Rep 2,11
+10,Manager 1,20
+11,Manager 2,21
+20,VP 1,30
+21,VP 2,30
+30,CEO,

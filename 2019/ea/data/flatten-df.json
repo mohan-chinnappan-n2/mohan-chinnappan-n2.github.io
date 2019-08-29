@@ -1,0 +1,93 @@
+{
+"Extract_Opportunity": {
+   "action": "sfdcDigest",
+   "parameters": {
+      "object": "Opportunity",
+      "fields": [
+         { "name": "Id" },
+         { "name": "Name" },
+         { "name": "Amount" },
+         { "name": "StageName" },
+         { "name": "AccountId" },
+         { "name": "OwnerId" }
+      ]
+   }
+},
+"Extract_User": {
+   "action": "sfdcDigest",
+   "parameters": {
+      "object": "User",
+      "fields": [
+         { "name": "Id" },
+         { "name": "Name" },
+         { "name": "Department" },
+         { "name": "UserRoleId" }
+      ]
+   }
+},
+"Extract_UserRole": {
+   "action": "sfdcDigest",
+   "parameters": {
+      "object": "UserRole",
+      "fields": [
+         { "name": "Id" },
+         { "name": "Name" },
+         { "name": "ParentRoleId" }
+      ]
+   }
+},
+"Flatten_UserRole": {
+   "action": "flatten",
+   "parameters": {
+      "source": "Extract_UserRole",
+      "self_field": "Id",
+      "parent_field": "ParentRoleId",
+      "multi_field": "Roles",
+      "path_field": "RolePath",
+      "include_self_id":false
+   }
+},
+"Augment_User_FlattenUserRole": {
+   "action": "augment",
+   "parameters": {
+      "left": "Extract_User",
+      "left_key": [ "UserRoleId" ],
+      "relationship": "Role",
+      "right": "Flatten_UserRole",
+      "right_key": [ "Id" ],
+      "right_select": [ 
+         "Id",
+         "Name",
+         "Roles",
+         "RolePath"
+      ]
+   }
+},
+"Augment_Opportunity_UserWithRoles": {
+   "action": "augment",
+   "parameters": {
+      "left": "Extract_Opportunity",
+      "left_key": [ "OwnerId" ],
+      "right": "Augment_User_FlattenUserRole",
+      "relationship": "Owner",
+      "right_select": [
+         "Name",
+         "Department",
+         "Role.Id",
+         "Role.Name",
+         "Role.Roles",
+         "Role.RolePath"
+      ],
+      "right_key": [ "Id" ]
+   }
+},
+"Register_OpportunityWithRoles_Dataset": {
+   "action": "sfdcRegister",
+   "parameters": {
+      "alias": "OppRoles",
+      "name": "OppRoles",
+      "source": "Augment_Opportunity_UserWithRoles",
+      "rowLevelSecurityFilter": "'Owner.Role.Roles' == \"$User.UserRoleId\" || 'OwnerId' == \"$User.Id\""
+   }
+}
+}
