@@ -1,6 +1,6 @@
 ## JMeter
 
-![jmeter gui](img/jmeter-1.png)
+![jmeter gui](img/jmeter-2.png)
 
 -  designed to load test functional behavior and measure performance
 -  originally designed for testing Web Applications 
