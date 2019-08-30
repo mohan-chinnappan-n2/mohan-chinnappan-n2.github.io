@@ -1096,6 +1096,18 @@ q = order q by ('State' desc, 'City' asc);
    <h4>Demo</h4>
    <img src="img/dbrd/dbrd-dev-tools-1.gif" alt="">
 
+   <h3>Browser - HTTP 1.1</h3>
+   <p>
+    The HTTP 1.1 protocol states that single-user clients should not maintain more than <b>two connections</b> with any server or proxy. 
+    Browsers like Chrome and Firefox has a limit of 6 connections.
+    If we have Dashboard requiring say 14 query executions, Chrome will do this in 3 batches, each with :  6, 6 and 2 connections.
+
+    <h4>Waterfall - connections in Chrome</h4>
+    <img src="img/dbrd/chrome-waterfall-1.png" alt="">
+   </p>
+
+   
+
 
 
    <p><a id="xmd" title="Extended Metadata (XMD)" class="toc-item"></a></p>
@@ -1107,7 +1119,7 @@ q = order q by ('State' desc, 'City' asc);
    <iframe width="920" height="480" src="https://www.youtube.com/embed/20x_PWhXI5o" 
    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+ 
 
 
 
