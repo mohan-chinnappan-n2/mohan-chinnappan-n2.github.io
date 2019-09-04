@@ -1400,10 +1400,24 @@ q = order q by ('State' desc, 'City' asc);
     "type": "soql"
 }
 
-```
+
 </div>
 
+<p><a id='multi-selection' title='Multi-Selection' class='toc-item'></a></p>
+<div id='multi-selection-md' data-trim='false' class='md'  style='display:none;'>
+### Multi Selection Example 
 
+![multi-selection](img/dbrd/ea-binding-multi-selection-3.gif)
+
+#### Binding
+```
+"query": {
+    "groups": "{{column(typer_1.selection,['value']).asObject() }}"
+}
+
+```
+
+</div>
 
 
 

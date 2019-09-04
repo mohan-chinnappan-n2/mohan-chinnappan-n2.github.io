@@ -1,0 +1,14 @@
+type,name,zone_start,zone_end,self_pollination,qty
+Fruit,Mango Pawpaw,4,8,n,234
+Fruit,Apricot,4,8,y,800
+Fruit,Dwarf Cavendish Banana,9,10,y,100
+Fruit,Cherry,5,9,y,20
+Fruit,Beach Plum,4,8,y,3
+Nut,Almond,5,9,y,12
+Nut,Chestnut,4,9,n,23
+Nut,Pecan,5,9,n,12
+Nut,Walnut,4,9,n,34
+Nut,Hazelnut,5,8,n,22
+Berry,Blackberry,4,8,y,12
+Berry,Cranberry,2,7,y,34
+Berry,Issai Hardy Kiwi,5,9,y,11
