@@ -29,6 +29,25 @@ for (var i = 0; i < mdFileElements.length; i++) {
     fileMds.push(ele.getAttribute('id'));
 };
 
+// html file 
+const htmlFileElements = document.getElementsByClassName('html-file');
+var fileHtmls = [];
+for (var i = 0; i < htmlFileElements.length; i++) {
+    const ele = htmlFileElements[i];
+    fileHtmls.push(ele.getAttribute('id'));
+};
+
+fileHtmls.forEach( (id) => {
+  const htmlEle = document.getElementById(id);
+  const url = htmlEle.getAttribute('data-url');
+  const htmlContent =  readURL(url);
+  htmlContent.then ( (htmlTxt) => {
+    htmlEle.innerHTML = htmlTxt;
+  });
+
+});
+
+
 
 const converter = new showdown.Converter();
 
