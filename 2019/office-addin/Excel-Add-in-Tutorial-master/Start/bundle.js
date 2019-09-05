@@ -42,46 +42,76 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	/*
 	 * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
 	 * See LICENSE in the project root for license information.
 	 */
 
+	// refer:https://docs.microsoft.com/en-us/office/dev/add-ins/tutorials/excel-tutorial
+
 	'use strict';
 
-	__webpack_require__(1);
-
 	(function () {
-	    Office.initialize = function (reason) {
+
+	    Office.onReady().then(function () {
 	        $(document).ready(function () {
 
-	            if (!Office.context.requirements.isSetSupported('ExcelApi', 1.7)) {
+	            //  Determine if the user's version of Office supports all the
+	            //  Office.js APIs that are used in the tutorial.
+	            if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
 	                console.log('Sorry. The tutorial add-in uses Excel.js APIs that are not available in your version of Office.');
 	            }
 
+	            //  Assign event handlers and other initialization logic.
 	            $('#create-table').click(createTable);
-	            $('#filter-table').click(filterTable);
-	            $('#sort-table').click(sortTable);
-	            $('#create-chart').click(createChart);
-	            $('#freeze-header').click(freezeHeader);
-	            $('#open-dialog').click(openDialog);
 	        });
-	    };
+	    });
 
+	    // Add handlers and business logic functions here.
+	    // This logic does not execute immediately. Instead, it is added to a queue of pending commands.
 	    function createTable() {
 	        Excel.run(function (context) {
 
-	            const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-	            const expensesTable = currentWorksheet.tables.add("A1:D1", true /*hasHeaders*/);
+	            // TODO4: Queue table creation logic here.
+
+	            // creates a table by using add method of a worksheet's table collection,
+	            //  which always exists even if it is empty. 
+	            // This is the standard way that Excel.js objects are created. 
+	            // There are no class constructor APIs, and you never use a new operator to create an Excel object.
+	            //  Instead, you add to a parent collection object.
+
+	            var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+
+	            // The first parameter of the add method is the range of only the top row of the table,
+	            //  not the entire range the table will ultimately use. 
+	            //  This is because when the add-in populates the data rows (in the next step),
+	            //   it will add new rows to the table instead of writing values to the cells of existing rows.
+	            //  This is a more common pattern because the number of rows that a table will have 
+	            //    is often not known when the table is created
+	            var expensesTable = currentWorksheet.tables.add("A1:D1", true /*hasHeaders*/);
 	            expensesTable.name = "ExpensesTable";
 
+	            // Queue commands to populate the table with data.
+
+	            // The cell values of a range are set with an array of arrays.
 	            expensesTable.getHeaderRowRange().values = [["Date", "Merchant", "Category", "Amount"]];
 
-	            expensesTable.rows.add(null /*add at the end*/, [["1/1/2017", "The Phone Company", "Communications", "120"], ["1/2/2017", "Northwind Electric Cars", "Transportation", "142.33"], ["1/5/2017", "Best For You Organics Company", "Groceries", "27.9"], ["1/10/2017", "Coho Vineyard", "Restaurant", "33"], ["1/11/2017", "Bellows College", "Education", "350.1"], ["1/15/2017", "Trey Research", "Other", "135"], ["1/15/2017", "Best For You Organics Company", "Groceries", "97.88"]]);
+	            // New rows are created in a table by calling the add method of the table's row collection.
+	            //  You can add multiple rows in a single call of add by including multiple cell value arrays
+	            //   in the parent array that is passed as the second parameter.
 
-	            expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
+	            expensesTable.rows.add(null /*add at the end*/, [["1/1/2017", "The Telephone Company", "Communications", "120"], ["1/2/2017", "Northwind Electric Cars", "Transportation", "142.33"], ["1/5/2017", "Best For You Organics Company", "Groceries", "27.9"], ["1/10/2017", "Coho Vineyard", "Restaurant", "33"], ["1/11/2017", "Bellows College", "Education", "350.1"], ["1/15/2017", "Trey Research", "Other", "135"], ["1/15/2017", "Best For You Organics Company", "Groceries", "97.88"]]);
+
+	            // TODO6: Queue commands to format the table.
+	            // gets a reference to the Amount column by passing its zero-based index to the getItemAt method of the table's column collection.
+	            //  formats the range of the Amount column as USD to the second decimal.
+	            expensesTable.columns.getItemAt(3 /* Amount column */).getRange().numberFormat = [['$#,##0.00']];
+	            // ensures that the width of the columns and height of the rows is big enough to fit the longest (or tallest)
+	            //  data item. 
+	            // Notice that the code must get Range objects to format. 
+	            // TableColumn and TableRow objects do not have format properties.
 	            expensesTable.getRange().format.autofitColumns();
 	            expensesTable.getRange().format.autofitRows();
 
@@ -93,141 +123,7 @@
 	            }
 	        });
 	    }
-
-	    function filterTable() {
-	        Excel.run(function (context) {
-
-	            const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-	            const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-	            const categoryFilter = expensesTable.columns.getItem('Category').filter;
-	            categoryFilter.applyValuesFilter(["Education", "Groceries"]);
-
-	            return context.sync();
-	        }).catch(function (error) {
-	            console.log("Error: " + error);
-	            if (error instanceof OfficeExtension.Error) {
-	                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	            }
-	        });
-	    }
-
-	    function sortTable() {
-	        Excel.run(function (context) {
-
-	            const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-	            const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-	            const sortFields = [{
-	                key: 1, // Merchant column
-	                ascending: false
-	            }];
-
-	            expensesTable.sort.apply(sortFields);
-
-	            return context.sync();
-	        }).catch(function (error) {
-	            console.log("Error: " + error);
-	            if (error instanceof OfficeExtension.Error) {
-	                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	            }
-	        });
-	    }
-
-	    function createChart() {
-	        Excel.run(function (context) {
-
-	            const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-	            const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-	            const dataRange = expensesTable.getDataBodyRange();
-
-	            let chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'auto');
-
-	            chart.setPosition("A15", "F30");
-	            chart.title.text = "Expenses";
-	            chart.legend.position = "right";
-	            chart.legend.format.fill.setSolidColor("white");
-	            chart.dataLabels.format.font.size = 15;
-	            chart.dataLabels.format.font.color = "black";
-
-	            return context.sync();
-	        }).catch(function (error) {
-	            console.log("Error: " + error);
-	            if (error instanceof OfficeExtension.Error) {
-	                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	            }
-	        });
-	    }
-
-	    function freezeHeader() {
-	        Excel.run(function (context) {
-
-	            const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-	            currentWorksheet.freezePanes.freezeRows(1);
-
-	            return context.sync();
-	        }).catch(function (error) {
-	            console.log("Error: " + error);
-	            if (error instanceof OfficeExtension.Error) {
-	                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	            }
-	        });
-	    }
-
-	    let dialog = null;
-
-	    function openDialog() {
-	        Office.context.ui.displayDialogAsync('https://localhost:3000/popup.html', { height: 35, width: 25 }, function (result) {
-	            dialog = result.value;
-	            dialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, processMessage);
-	        });
-	    }
-
-	    function processMessage(arg) {
-	        console.log(arg.message);
-	        $('#user-name').text(arg.message);
-	        dialog.close();
-	    }
 	})();
-
-/***/ },
-/* 1 */
-/***/ function(module, exports) {
-
-	/*
-	 * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
-	 * See LICENSE in the project root for license information.
-	 */
-
-	'use strict';
-
-	(function () {
-
-	    Office.initialize = function (reason) {
-
-	        //If you need to initialize something you can do so here. 
-
-	    };
-	})();
-
-	function toggleProtection(args) {
-	    Excel.run(function (context) {
-	        const sheet = context.workbook.worksheets.getActiveWorksheet();
-	        sheet.load('protection/protected');
-
-	        return context.sync().then(function () {
-	            if (sheet.protection.protected) {
-	                sheet.protection.unprotect();
-	            } else {
-	                sheet.protection.protect();
-	            }
-	        }).then(context.sync);
-	    }).catch(function (error) {
-	        console.log("Error: " + error);
-	        if (error instanceof OfficeExtension.Error) {
-	            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	        }
-	    });
-	    args.completed();
-	}
 
 /***/ }
 /******/ ]);

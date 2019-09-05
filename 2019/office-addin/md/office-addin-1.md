@@ -35,7 +35,7 @@ Or visit our repo at: https://github.com/officeDev/generator-office
 
 ### Demos
  - ![Demo - Excel Office Add-in](img/excel-add-in-1.gif)
- - ![Demo2 - Excel Office Add-in](img/excel-add-in-2.gif)
+ - ![Demo2 - Excel Office Add-in](img/excel-add-in-3.gif)
 
 
 
