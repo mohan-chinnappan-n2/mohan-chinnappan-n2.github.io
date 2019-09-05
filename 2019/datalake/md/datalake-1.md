@@ -17,5 +17,17 @@
 
 ![dw-vs-dl](img/datalake-vs-dw.png)
 
+
+
 ### Comparing RDBMS, Data Warehouse, Data Mart and Data Lake
 ![rdbms-dw-vs-dm-dl](img/dw-vs-dm-vs-dl.png)
+
+
+### Heroku Connect for Data Lake
+
+ - Provides bi-directional synchronization between Salesforce and Heroku Postgres
+ - Allows mapping between Salesforce Objects this  Postgres database. After the service is configured, it will mirror the Salesforce data on a periodic schedule
+ - Unifies the data in your Postgres database
+ - Data from the this Postgres database becomes source for the Data Lake as shown in this example architecture here:
+
+ ![Data lake Heroku connect](https://d2908q01vomqb2.cloudfront.net/77de68daecd823babbb58edb1c8e14d7106e83bb/2019/04/03/FinancialForce-1.png) 
