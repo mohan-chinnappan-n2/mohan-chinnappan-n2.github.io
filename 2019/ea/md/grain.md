@@ -73,9 +73,11 @@
 ```
 
 ### Demo  Aggregateflex step values table
+
 ![aggregateflex values table](img/dbrd/ea-aggregateflex-values-table-3.gif)
 
 
 ### References
 
 - [Grain Step Type Properties](https://developer.salesforce.com/docs/atlas.en-us.bi_dev_guide_json.meta/bi_dev_guide_json/bi_dbjson_steps_types_grain.htm) 
+- [Einstein Analytics: Demystifying Bindings  Part 7](https://www.salesforceblogger.com/2019/04/29/einstein-analytics-demystifying-bindings-part-7/) 
