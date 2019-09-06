@@ -2,7 +2,7 @@
 
 - Use the grain step type for a values table. 
 - Values tables have no groupings, just a list of dataset fields to display as columns in the table.
-- The query can be in compact form only
+- The query can be in **compact form** only
     -  can contain the following properties:
         -  filter conditions to apply to the data.
         -  values list of dataset fields to show as table columns
@@ -23,7 +23,7 @@
 
 ```
 
-- Binding should be like this 
+- Binding should be like this:
 
 ```   
  "filters": [
