@@ -101,8 +101,17 @@
  // example: 
  myStaticStep.selection 
 
+
+ "{{Data_Selection_Function(step_name.Binding_Function, Details_From_Reference_Step).Data_Serialization_Function()}}"
+
+
  
 ```
+
+- Data Selection Function
+            - cell, column or row
+            - what data is being selected from a step or table
+- Step Name
 
 ### Binding Functions
 - To get data from a **source step**, **manipulate it**, and **serialize** it to make it consumable by the target step
@@ -1420,11 +1429,20 @@ q = order q by ('State' desc, 'City' asc);
 
 ![multi-selection](img/dbrd/ea-binding-multi-selection-4.gif)
 
+#### Values Table aggregateflex filter example
+![aggregateflex values table](img/dbrd/ea-aggregateflex-values-table-3.gif)
+
+
+
 </div>
+
+<p><a id='grainstep' title='Grain Step' class='toc-item'></a></p>
+<div id='grainstep-md' data-url='./md/grain.md' class='md-file' ></div>
 
 <p><a id='dateconversion' title='Date Conversion' class='toc-item'></a></p>
 <div id='dateconversion-md' data-trim='false' class='md'  style='display:none;'>
-![date-conversion](img/dbrd/ea-date-test.gif    )
+### Date Conversion Example
+![date-conversion](img/dbrd/ea-date-test.gif)
 
 </div>
 
