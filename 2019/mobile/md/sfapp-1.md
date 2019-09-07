@@ -671,6 +671,7 @@ when they log in to a new session
 
 
 ### App available at:
+
 - [Salesforce App for iOS at Apple App Store](https://apps.apple.com/us/app/salesforce/id404249815)
+
 - [Salesforce App for Android at Google Play](https://play.google.com/store/apps/details?id=com.salesforce.chatter&hl=en_US) 
--
