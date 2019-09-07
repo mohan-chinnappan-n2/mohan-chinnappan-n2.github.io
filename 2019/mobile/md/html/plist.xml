@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key> AppServiceHosts </key>
+		<array> <string> host1 </string>
+			    <string> host2 </string>
+		</array>
+		<key> AppServiceHostLabels </key>
+		<array>
+			<string> Production </string>
+			<string> Sandbox </string>
+		</array>
+		<key> RequireCertAuth </key>
+		<true />
+		<key> ClearClipboardOnBackground </key>
+		<false />
+		<key> OnlyShowAuthorizedHosts </key>
+		<false />
+	</dict>
+</plist>
