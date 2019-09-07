@@ -578,7 +578,7 @@ when they log in to a new session
 
 
 </table>
-### Summary
+
 
 <table class="featureTable sort_table" summary="">
         
