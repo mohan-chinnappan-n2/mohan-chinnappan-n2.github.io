@@ -148,6 +148,15 @@ OAuth.popup('facebook').then((facebook) => {
 - [22 Best Free Add-ins](https://zapier.com/blog/best-word-excel-powerpoint-addins/)
 - [Boomerang](https://appsource.microsoft.com/en-us/product/office/WA104379606?tab=Overview&utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier)
 
+#### Stackoverflow
+- [Office Add-in SO](https://stackoverflow.com/search?q=office+add-in)
+
+#### Outlook Office Add-in
+- [Tutorial: Build a message compose Outlook add-in](https://docs.microsoft.com/en-us/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context)
+- [Outlook add-in APIs](https://docs.microsoft.com/en-us/outlook/add-ins/apis)
+- [Outlook add-in manifests](https://docs.microsoft.com/en-us/outlook/add-ins/manifests)
+
+- [Using add-ins in Outlook on the web](https://support.office.com/en-us/article/using-add-ins-in-outlook-on-the-web-8f2ce816-5df4-44a5-958c-f7f9d6dabdce#targetText=Microsoft%20has%20partnered%20with%20leading,you%20view%20or%20create%20messages.)
 
 #### Outlook add-ins
 - ![Addin Howto](img/outlook-addin-howto.png)
@@ -182,4 +191,8 @@ decodeURI('outlook%7Cweb%7C16.01%7Cen-us%7C6be62e51-d616-49e5-45f7-e15509984d24%
 
 - Tasks
 ![LFO4](https://az158878.vo.msecnd.net/marketing/Partner_21474843361/Product_42949677285/Asset_a71ce1f1-a240-4b96-a2c2-ea9cc6cbb43a/6Tasks.png)
+
+-  Comparing Microsoft Office VSTO ( Visual Studio Tools for Office add-in) and Web add-ins
+    - [Video: Comparing Microsoft Office VSTO and Web add-ins](https://www.youtube.com/watch?v=Z0kBiHR2ZJU)
+
 
