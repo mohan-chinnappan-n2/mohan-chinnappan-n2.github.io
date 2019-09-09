@@ -11,7 +11,7 @@
 
 
 ### Demo - Ramanujan Office Add-In app for Outlook
-![Ramanujan app](img/ramanujan-add-in-1.gif)
+![Ramanujan app](img/ramanujan-add-in-2.gif)
 
 ### Demo - Ramanujan Office Add-In app for Excel
 ![Ramanujan app](img/ramanujan-add-in-1.gif)
