@@ -5,8 +5,32 @@
 
 - Office Add-in is just a web app that you can host anywhere
 - Using a manifest.xml file, you tell the Office application where your web app is located and how you want it to appear
+- Office.js provides interoperability - add in and client (office web app)
+- Hosted centrally - on any web server 
+- Discoverable from Add-in [Market Place](https://appsource.microsoft.com/en-us/marketplace/apps?product=add-ins)
+
+
+### Demo - Ramanujan Office Add-In app
+![Ramanujan app](img/ramanujan-add-in-1.gif)
 
 ![Office add-ins](img/office-addins-1.png)
+
+#### Add-in Types Examples
+![Contextual](img/addin-in-contextual.png)
+![taskpane](img/addin-taskpane.png)
+![taskpane](img/addin-taskpane-2.png)
+![taskpane](img/addin-taskpane-3.png)
+
+![content](img/addin-content.png)
+![content](img/addin-content-2.png)
+
+![Command](img/addin-command.png)
+
+
+#### Manifest file runs everything
+![Manifestfile](img/office-addin-manifest.png )
+
+
 
 
 ```
@@ -32,6 +56,46 @@ Or visit our repo at: https://github.com/officeDev/generator-office
 
 
 ```
+
+### OAuth
+A fundamental idea of OAuth is that an application can be a security principal unto itself, just like a user or a group, with its own identity and set of permissions. In the most typical scenarios, when the user takes an action in the Office Add-in that requires the online service, the add-in sends the service a request for a specific set of permissions to the user's account. The service then prompts the user to grant the add-in those permissions. After the permissions are granted, the service sends the add-in a small encoded access token. The add-in can use the service by including the token in all its requests to the service's APIs. But the add-in can act only within the permissions that the user granted it. The token also expires after a specified time
+
+#### Flows
+The purpose of an OAuth flow is to secure the identity and authorization of the application. 
+
+- **Implicit flow**: Communication between the add-in and the online service is implemented with client-side JavaScript. This flow is commonly used in single-page applications (SPAs).
+
+- **Authorization Code flow**: Communication is server-to-server between your add-in's web application and the online service. So, it is implemented with server-side code.
+
+- Which one to use:
+    - In the **Authorization Code flow**, you're provided a client secret that needs to be kept hidden. 
+    - An application that has no server-side backend, such as an SPA, has no way to protect the secret, so we recommend that you use the **Implicit flow** in SPAs.
+
+### Middleman services
+- A middleman service may either provide access tokens for popular online services or simplify the process of enabling social login for your add-in, or both. 
+    - [oauth.io](https://oauth.io/)
+
+ ```javascript
+OAuth.popup('facebook').then((facebook) => {
+    return facebook.me()
+}).then((me) => {
+    console.log('Your name is ' + me.name)
+}).catch((error) => {
+    console.error(error)
+})
+```
+    - [auth0](https://manage.auth0.com/welcome/#)
+        - [github auth0 samples](https://github.com/auth0-samples/auth0-javascript-samples/tree/master/01-Login)
+
+- With very little code, your add-in can use either client-side script or server-side code to connect to the middleman service and it will send your add-in any required tokens for the online service. All of the authorization implementation code is in the middleman service.
+- User [Dialog API](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/dialog-api-in-office-add-ins#use-the-dialog-apis-in-an-authentication-flow)
+
+#### Refer
+[Authorize external services in your Office Add-in](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins)
+- [Authorization code](https://tools.ietf.org/html/rfc6749#section-1.3.1)
+- [Implicit](https://tools.ietf.org/html/rfc6749#section-1.3.2) 
+- [Connect Salesforce and Microsoft® Exchange Using OAuth 2.0](https://help.salesforce.com/articleView?id=lightning_sync_admin_exch_connect_w_oauth.htm&type=5)
+- [Salesforce for Outlook' OAuth re-authentication](https://help.salesforce.com/articleView?id=000336422&language=en_US&type=1&mode=1)
 
 ### Demos
  - ![Demo - Excel Office Add-in](img/excel-add-in-1.gif)
@@ -66,4 +130,53 @@ Or visit our repo at: https://github.com/officeDev/generator-office
 - [Office Add-ins with Visual Studio Code](https://code.visualstudio.com/docs/other/office)  
 - [Installing the Office Generator](https://developer.microsoft.com/en-us/office/blogs/creating-office-add-ins-with-any-editor-introducing-yo-office/)
 - [Build an Office add-in using React](https://www.youtube.com/watch?v=Aszwh_h5MtM)
+
+-[Integrating Salesforce with Microsoft Office through Add-ins](https://www.youtube.com/watch?v=33qzO54dKvQ)
+
+#### Salesforce Add-ins
+- [Salesforce Wave Connector for Excel](https://appsource.microsoft.com/en-us/product/office/WA104379394?src=office&corrid=09eba5e7-529c-432b-8b96-579361c37615&omexanonuid=51339668-c31b-420c-a7ee-900484382c80&referralurl=https%3a%2f%2fexcel.officeapps.live.com%2f)
+- [Install the Einstein Analytics Connector for Excel](https://help.salesforce.com/articleView?id=bi_integrate_wave_connector.htm&type=5)
+![Add-in Wave](img/office-addin-wave.gif)
+
+- [Salesforce Outlook Integration](https://appsource.microsoft.com/en-us/product/office/WA104379334)
+- [Outlook Integration with Salesforce for Outlook](http://sfdc.co/cckKXJ)
+
+#### Best Office Add-Ins
+- [22 Best Free Add-ins](https://zapier.com/blog/best-word-excel-powerpoint-addins/)
+- [Boomerang](https://appsource.microsoft.com/en-us/product/office/WA104379606?tab=Overview&utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier)
+
+
+#### Outlook add-ins
+- ![Addin Howto](img/outlook-addin-howto.png)
+- [Location](https://outlook.live.com/owa/?path=/options/manageapps/action/installFromURL.slab&assetid=WA104379334&lc=en-US&pm=US&scope=3&licensetype=Free&corr=ee593bc8-c607-41d5-81fc-0f37486a099e&upt=Consumer)
+- [Settings](https://outlook.live.com/mail/options/mail/layout)
+- ![Boomerang](img/outlook-addin.png)
+- ![Salesforce](img/outlook-addin-sf.png)
+
+```
+
+Signup Servlet:
+https://mohansun-60-dev-ed.my.salesforce.com/clients/mailapp/signupservlet?_host_Info=outlook%7Cweb%7C16.01%7Cen-us%7C6be62e51-d616-49e5-45f7-e15509984d24%7CisDialog%7C
+
+decodeURI('outlook%7Cweb%7C16.01%7Cen-us%7C6be62e51-d616-49e5-45f7-e15509984d24%7CisDialog%7C')
+
+"outlook|web|16.01|en-us|6be62e51-d616-49e5-45f7-e15509984d24|isDialog|"
+
+//  sourceMappingURL=/javascript/1567849500000/clients-mailapp/source/Mailapp.SignUp.js.map
+
+```
+
+![MailAppSignup](img/lfo-mailAppSignup.png )
+
+- Inbox Integration 
+![LFO0](https://az158878.vo.msecnd.net/marketing/Partner_21474843361/Product_42949677285/Asset_a7fc333c-a458-4578-be9a-047f2d67163f/4WithInbox.png)
+
+- Log Emails
+![LFO2](https://az158878.vo.msecnd.net/marketing/Partner_21474843361/Product_42949677285/Asset_e2e9465a-d190-4e37-a71c-73a6cb937e09/3Related.png)
+
+- Create Records
+![LFO3](https://az158878.vo.msecnd.net/marketing/Partner_21474843361/Product_42949677285/Asset_576eab74-3ff9-4100-8e50-f3100941a654/5CreateRecords.png)
+
+- Tasks
+![LFO4](https://az158878.vo.msecnd.net/marketing/Partner_21474843361/Product_42949677285/Asset_a71ce1f1-a240-4b96-a2c2-ea9cc6cbb43a/6Tasks.png)
 
