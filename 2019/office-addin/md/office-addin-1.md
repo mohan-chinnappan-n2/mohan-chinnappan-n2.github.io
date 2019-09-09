@@ -10,7 +10,10 @@
 - Discoverable from Add-in [Market Place](https://appsource.microsoft.com/en-us/marketplace/apps?product=add-ins)
 
 
-### Demo - Ramanujan Office Add-In app
+### Demo - Ramanujan Office Add-In app for Outlook
+![Ramanujan app](img/ramanujan-add-in-1.gif)
+
+### Demo - Ramanujan Office Add-In app for Excel
 ![Ramanujan app](img/ramanujan-add-in-1.gif)
 
 ![Office add-ins](img/office-addins-1.png)
