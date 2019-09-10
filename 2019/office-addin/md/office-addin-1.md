@@ -196,3 +196,19 @@ decodeURI('outlook%7Cweb%7C16.01%7Cen-us%7C6be62e51-d616-49e5-45f7-e15509984d24%
     - [Video: Comparing Microsoft Office VSTO and Web add-ins](https://www.youtube.com/watch?v=Z0kBiHR2ZJU)
 
 
+### Outlook Add-in
+
+- [Outlook add-ins overview](https://docs.microsoft.com/en-us/outlook/add-ins/)
+
+- Supports
+    - email messages
+    - meeting requests
+    - responses and cancellations
+    - appointments 
+- Extension points are the ways that add-ins integrate with Outlook
+    - Command buttons on the ribbon
+        - ![cmd btn on ribbon](https://docs.microsoft.com/en-us/outlook/add-ins/images/uiless-command-shape.png)
+    - A contextual add-in for a highlighted entity (an address)
+        -  Link off regular expression matches or detected entities in messages and appointments
+        - ![contextual add-in](https://docs.microsoft.com/en-us/outlook/add-ins/images/outlook-detected-entity-card.png)
+        
