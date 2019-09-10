@@ -1,5 +1,10 @@
 ## Microsoft Add-In Development
 
+
+- Mnifest (XML) + webpage (HTML, JS) = an Office Add-in
+![anatomy of add-in](https://docs.microsoft.com/en-us/office/dev/add-ins/images/about-addins-manifestwebpage.png)
+![add-in](https://docs.microsoft.com/en-us/office/dev/add-ins/images/about-addins-componentshelloworldoffice.png)
+
 ### What is Office Add-ins 
 - Office Add-ins run inside an Office application and can interact with the contents of the Office document using the rich JavaScript API.
 
@@ -111,6 +116,7 @@ OAuth.popup('facebook').then((facebook) => {
 - [outlook](https://outlook.live.com/mail/inbox)
 ### Links
 
+- [Anatomy of an Office add-in](https://docs.microsoft.com/en-us/office/dev/add-ins/overview/office-add-ins?redirectedfrom=MSDN#StartBuildingApps_AnatomyofApp)
 - [Office Add-ins documentation](https://docs.microsoft.com/en-us/office/dev/add-ins/)
 - [Office on web](https://www.office.com/?auth=1)
 - Sideloading
@@ -211,4 +217,4 @@ decodeURI('outlook%7Cweb%7C16.01%7Cen-us%7C6be62e51-d616-49e5-45f7-e15509984d24%
     - A contextual add-in for a highlighted entity (an address)
         -  Link off regular expression matches or detected entities in messages and appointments
         - ![contextual add-in](https://docs.microsoft.com/en-us/outlook/add-ins/images/outlook-detected-entity-card.png)
-        
+
