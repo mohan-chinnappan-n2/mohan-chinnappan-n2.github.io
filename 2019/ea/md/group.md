@@ -12,8 +12,18 @@ q = group q by all;
 q = foreach q generate  count() as 'count';
 ```
 
+![query with query all](img/saql/query-w-group-all.png)
 
-#### Trees example
+- Same query without ``` group by all```
+```
+q = load "trees";
+q = foreach q generate  count() as 'count';
+```
+
+![query with query all](img/saql/query-wo-group-all.png)
+
+
+#### Trees example for ```sum(qty)```
 
 ```
 q = load "trees";
