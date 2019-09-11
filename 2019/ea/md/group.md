@@ -32,3 +32,8 @@ q = foreach q generate type, sum(qty) as sum_qty;
 ```
 
 ![group trees by type](img/saql/groups-tree-1.png)
+
+#### Reference
+
+- [group](https://developer.salesforce.com/docs/atlas.en-us.bi_dev_guide_saql.meta/bi_dev_guide_saql/bi_saql_statement_group.htm?search_text=group)
+
