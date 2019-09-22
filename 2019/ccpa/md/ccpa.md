@@ -12,3 +12,11 @@
 
 ### Videos
 - [Alastair Mactaggart on the genesis of the California Consumer Privacy Act of 2018](https://www.youtube.com/watch?v=kkgn3HtTvjI)
+
+### Tools
+
+![Metadata Export DX](https://mohan-chinnappan-n.github.io/dx/img/dx-model-export-1.gif)
+
+### Data Governance
+- [Salesforce Data Governance](https://mohan-chinnappan-n.github.io/sfdc/dg.html#/home)
+- [Salesforce GDPR](https://mohan-chinnappan-n.github.io/sfdc/gdpr.html#/home)
