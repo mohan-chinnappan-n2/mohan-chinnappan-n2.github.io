@@ -6,6 +6,8 @@
 
 let readURL = async (url) => {
   try {
+      const dt = new Date();
+      if (url.indexOf('?') < 0) url +=`?v=${dt.getTime()}`;
       const response = await fetch(`${url}`);
       return await response.text();
   } catch (err) {
