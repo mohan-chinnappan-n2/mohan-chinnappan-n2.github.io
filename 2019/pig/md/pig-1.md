@@ -16,11 +16,61 @@ all truly great things are simple
 $ cat wordcount.pig
 A = load './input2.txt';
 B = foreach A generate flatten(TOKENIZE((chararray)$0)) as word;
-C = group B by word;
-D = foreach C generate COUNT(B), group;
-store D into './results';
+store B into './results_B';
 
-$ cat results/part-r-00000 
+C = group B by word;
+store C into './results_C';
+
+
+D = foreach C generate COUNT(B), group;
+store D into './results_D';
+
+$ cat results_B/part-m-00000 
+this
+is
+the
+time
+for
+all
+good
+men
+to
+go
+for
+the
+aid
+of
+the
+country
+all
+truly
+great
+things
+are
+simple
+
+
+$ cat results_C/part-r-00000 
+go	{(go)}
+is	{(is)}
+of	{(of)}
+to	{(to)}
+aid	{(aid)}
+all	{(all),(all)}
+are	{(are)}
+for	{(for),(for)}
+men	{(men)}
+the	{(the),(the),(the)}
+good	{(good)}
+this	{(this)}
+time	{(time)}
+great	{(great)}
+truly	{(truly)}
+simple	{(simple)}
+things	{(things)}
+country	{(country)}
+
+$ cat results_D/part-r-00000 
 1	go
 1	is
 1	of
