@@ -1,0 +1,24 @@
+Pig Stack Trace
+---------------
+ERROR 1200: <file filter-2.pig, line 3, column 28>  Syntax error, unexpected symbol at or near 'number'
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1000: Error during parsing. <file filter-2.pig, line 3, column 28>  Syntax error, unexpected symbol at or near 'number'
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1833)
+	at org.apache.pig.PigServer$Graph.access$000(PigServer.java:1528)
+	at org.apache.pig.PigServer.parseAndBuild(PigServer.java:461)
+	at org.apache.pig.PigServer.executeBatch(PigServer.java:486)
+	at org.apache.pig.PigServer.executeBatch(PigServer.java:472)
+	at org.apache.pig.tools.grunt.GruntParser.executeBatch(GruntParser.java:171)
+	at org.apache.pig.tools.grunt.GruntParser.processDump(GruntParser.java:777)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:383)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:230)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:205)
+	at org.apache.pig.tools.grunt.Grunt.exec(Grunt.java:81)
+	at org.apache.pig.Main.run(Main.java:630)
+	at org.apache.pig.Main.main(Main.java:175)
+Caused by: Failed to parse: <file filter-2.pig, line 3, column 28>  Syntax error, unexpected symbol at or near 'number'
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:244)
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:182)
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1820)
+	... 12 more
+================================================================================

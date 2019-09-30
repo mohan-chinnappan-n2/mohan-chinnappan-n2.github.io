@@ -1,5 +1,52 @@
 ##  Pig Latin
 
+- Language which can be used to analyze the data in Hadoop using Apache Pig
+- Interpreter layer transforms Pig Latin statements into MapReduce jobs
+- Hadoop process these jobs further
+- Has SQL like semantics
+- extensible by writing user-defined functions (UDF) using java
+
+
+
+### Relation Operators
+
+- Loading and Storing
+    - LOAD It loads the data from a file system into a relation.
+    - STORE It stores a relation to the file system (local/HDFS).
+- Filtering
+    - FILTER  removes of unwanted rows from a relation.
+    - DISTINCT  removes duplicate rows from a relation.
+    - FOREACH, GENERATE	 transforms the data based on the columns of data
+    - STREAM  transforms a relation using an external program
+- Grouping and Joining
+    - JOIN  joins two or more relations.
+    - COGROUP  grouping of the data into two or more relations.
+    - GROUP groups the data in a single relation.
+    - CROSS creates the cross product of two or more relations
+- Sorting
+    - ORDER arranges a relation in an order based on one or more fields
+    - LIMIT gets a particular number of tuples from a relation.
+- Combining and Splitting
+    - UNION combines two or more relations into one relation.
+    - SPLIT splits a single relation into more relations.
+- Diagnostic Operators
+    - DUMP prints the content of a relationship through the console
+    - DESCRIBE describes the schema of a relation.
+    - EXPLAIN explains logical, physical execution plans to evaluate a relation.
+    - ILLUSTRATE  displays all the execution steps as the series of statements.
+
+
+- [ref](https://data-flair.training/blogs/apache-pig-built-in-functions/)
+
+
+
+
+
+
+
+
+
+
 
 ### Install
 
@@ -177,6 +224,4 @@ DUMP D
 ```
 
 
-### Links
-[A Beginner's Guide to Pig Latin on Mac OS X 10.8](https://www.liangeugene.com/blog/a-beginners-guide-to-pig-latin-on-mac-os-x-10-8)
-[Pig Word Count Tutorial](http://salsahpc.indiana.edu/ScienceCloud/pig_word_count_tutorial.htm)
+

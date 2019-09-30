@@ -1,0 +1,17 @@
+Pig Stack Trace
+---------------
+ERROR 1003: Unable to find an operator for alias grouped
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1003: Unable to find an operator for alias grouped
+	at org.apache.pig.PigServer$Graph.buildPlan(PigServer.java:1629)
+	at org.apache.pig.PigServer.storeEx(PigServer.java:1114)
+	at org.apache.pig.PigServer.store(PigServer.java:1082)
+	at org.apache.pig.PigServer.openIterator(PigServer.java:995)
+	at org.apache.pig.tools.grunt.GruntParser.processDump(GruntParser.java:782)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:383)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:230)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:205)
+	at org.apache.pig.tools.grunt.Grunt.exec(Grunt.java:81)
+	at org.apache.pig.Main.run(Main.java:630)
+	at org.apache.pig.Main.main(Main.java:175)
+================================================================================
