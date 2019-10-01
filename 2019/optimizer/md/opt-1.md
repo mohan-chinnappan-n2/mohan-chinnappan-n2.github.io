@@ -11,8 +11,8 @@
 - By uploading data into a Salesforce custom object, you can create workflow triggers and alerts when various thresholds are reached.
 ![XLS file](img/opt-2.png)
 ![XLS file view](img/opt-3.png)
-
-
+- [Sample Optimizer XLS file](img/SalesforceOptimizerReport_V2.7_10-01-2019_02-15-53-1.xls)
+- [Sample Optimizer PDF report file](img/SalesforceOptimizerReport_V2.7_10-01-2019_02-15-53.pdf)
 
 
 ### How to Run the Salesforce Optimizer Report
