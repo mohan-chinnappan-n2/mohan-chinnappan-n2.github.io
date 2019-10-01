@@ -21,3 +21,5 @@
 ### References
 
 - [Run the Salesforce Optimizer Report](https://help.salesforce.com/articleView?id=optimizer_kick_off.htm&type=5&sfdcIFrameOrigin=null)
+- [Trailhead: Salesforce Optimizer ](https://trailhead.salesforce.com/en/content/learn/modules/salesforce-optimizer)
+
