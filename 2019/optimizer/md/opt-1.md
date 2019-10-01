@@ -9,6 +9,10 @@
 ### Trending and triggers
 - Use the .xls file to **load the data into Salesforce to analyze it for trending and historical analysis**. 
 - By uploading data into a Salesforce custom object, you can create workflow triggers and alerts when various thresholds are reached.
+![XLS file](img/opt-2.png)
+![XLS file view](img/opt-3.png)
+
+
 
 
 ### How to Run the Salesforce Optimizer Report
@@ -17,6 +21,12 @@
 - Click Create PDF | Allow | Got It.
 
 ![How to run optimizer](img/opt-1.png)
+
+
+### Field Footprint app
+- Quickly identify and cleanup underused fields
+- Unwind complexity to boost performance and usability of your Salesforce. Use Field Footprint to analyze objects and record types to identify fields that can be reduced or eliminated.
+- [Get it from AppExchange](https://appexchange.salesforce.com/listingDetail?listingId=a0N3A00000EShrRUAT)
 
 ### References
 
