@@ -3,7 +3,7 @@
 - Use to get the first non-null value from a list of parameters, or to replace nulls with a different value.
 
 
-!(Coalesce)(img/tree_not_in-1.gif)
+![Coalesce](img/trees_not_in-1.gif)
 
 ### Binding example
 
