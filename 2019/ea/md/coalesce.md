@@ -8,6 +8,12 @@
 ### Binding example
 
 ```
+{{coalesce(column(typer_1.selection,['value']), \"[]\").asString() }}
+
+```
+
+#### In query
+```
 "query": "q = load \"trees\";\nq = foreach q generate q.name as 'name';\n\n\nq = filter q by name not in {{coalesce(column(typer_1.selection,['value']), \"[]\").asString() }};",
 
 ```
