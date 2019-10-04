@@ -26,5 +26,10 @@
 
 ### Einstein Discovery: Automated Story Creation
 
-<iframe width="800" height="400" src="https://www.youtube.com/embed/T9lu9HVSbPo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" height="800" src="https://www.youtube.com/embed/T9lu9HVSbPo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### Einstein Analytics for Communities Enhancements
+
+<iframe width="800" height="800" src="https://www.youtube.com/embed/JBrOc47biRQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
