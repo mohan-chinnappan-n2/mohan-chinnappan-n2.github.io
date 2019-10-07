@@ -1,0 +1,13 @@
+<template>
+	<h3 class='slds-text-title_caps'>Fruits and Veg Counter</h3>
+
+	<lightning-card>
+
+		<template for:each={cdata} for:item="item">
+			<c-Counter key={item.name} item={item.name} value={item.value}>
+
+			</c-Counter>
+		</template>
+	</lightning-card>
+
+</template>

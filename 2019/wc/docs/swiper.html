@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swiper</title>
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+
+
+
+</head>
+<body>
+
+<style>
+.swiper-container {
+    width: 900px;
+    height: 600px;
+}
+</style>
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"> Web Components 
+
+<iframe width="800" height="500" src="https://www.youtube.com/embed/YBwgkr_Sbx0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="swiper-slide">Slide 2
+            <hr/>
+         <img src="https://picsum.photos/800?v=3" alt="">
+        </div>
+        
+        <div class="swiper-slide">Slide 3
+        <hr/>
+         <img src="https://picsum.photos/800?v=4" alt="">
+       
+       </div>
+        ...
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+
+    
+<script src="https://unpkg.com/swiper/js/swiper.js"></script>
+<script>
+
+// ref: https://swiperjs.com/get-started/
+var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  })
+</script>
+</body>
+</html>

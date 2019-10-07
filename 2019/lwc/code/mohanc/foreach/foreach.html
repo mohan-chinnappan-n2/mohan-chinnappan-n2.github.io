@@ -1,0 +1,79 @@
+<template>
+
+ <h3 class="slds-text-heading_medium slds-m-bottom_small">
+            Badges 
+  </h3>
+
+<lightning-badge label={mapItems.length}></lightning-badge>
+<hr>
+<h3 class="slds-text-heading_medium slds-m-bottom_small"> Breadcrumb Items</h3>
+
+ <lightning-breadcrumbs>
+
+ 
+  <template for:each={mapItems} for:item="item">
+      <lightning-breadcrumb key={item.name}
+        label={item.name}
+        href={item.wiki}>
+    </lightning-breadcrumb>
+
+  </template>
+
+  </lightning-breadcrumbs>
+<hr>
+<div class="slds-p-around-large">
+ Lighting button icons
+</div>
+
+  <!-- lightning button icon -->
+  <div class="slds-p-around_small">
+     <template for:each={icons} for:item="icon">
+      <lightning-button-icon icon-name={icon.name} key={icon.name} alternative-text={icon.label}></lightning-button-icon>
+     </template>
+  </div>
+
+    <!-- lightning button menu -->
+  <div class="slds-p-around_small">
+     <p>Selected : {clickedMenuItem}</p>
+
+  
+    <lightning-button-menu>
+     <template for:each={icons} for:item="icon">
+    
+          <lightning-menu-item 
+            onclick={handleMenuClick}
+             value={icon.name} 
+             key={icon.name} 
+             label={icon.label}>
+          </lightning-menu-item>
+    
+   
+     </template>
+    </lightning-button-menu>
+  </div>
+
+
+    <!-- lightning button menu -->
+  <div class="slds-p-around_small">
+      <p>Selected : {clickedIconLabel}</p>
+
+    <lightning-button-menu>
+     <template for:each={icons} for:item="icon">
+    
+          <lightning-button-icon 
+           onclick={handleIconClick}
+           icon-name={icon.name} key={icon.name} 
+           alternative-text={icon.label}>
+          </lightning-button-icon>
+    
+   
+     </template>
+    </lightning-button-menu>
+  </div>
+
+
+
+
+
+
+</template>

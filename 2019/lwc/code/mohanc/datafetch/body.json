@@ -1,0 +1,11 @@
+{
+  "amountOfRecords": 5,
+{
+    name: 'name',
+    email: 'email',
+    website: 'url',
+    amount: 'currency',
+    phone: 'phoneNumber',
+    closeAt: 'dateInFuture'
+}
+}

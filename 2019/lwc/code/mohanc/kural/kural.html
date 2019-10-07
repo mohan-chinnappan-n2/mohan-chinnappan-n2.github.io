@@ -1,0 +1,32 @@
+<template>
+
+ <lightning-card>
+        The Kural is structured into 133 chapters, each containing 10 couplets (or kurals)
+        for a total of 1,330 couplets.<br/>
+        The 133 chapters are grouped into three <b>Parts</b>, or <b>Books</b>
+ </lightning-card>
+
+     <lightning-dual-listbox name="languages"
+                            label="Select Tirukkuṛaḷ Parts"
+                            source-label="Available"
+                            selected-label="Selected"
+                            field-level-help="This is a dual listbox for quotes"
+                            options={options}
+                            onchange={handleChange}>
+    </lightning-dual-listbox>
+    <div class="slds-box" >
+        <p>Selected Parts are: {selected}</p>
+    </div>
+
+      <lightning-tabset>
+          <template for:each={options}  for:item="option">
+              <lightning-tab key={option.label} label={option.label}>
+                  <lightning-card>
+                      {option.content}
+                  </lightning-card>
+              </lightning-tab>
+           </template>
+
+      </lightning-tabset>
+
+</template>
