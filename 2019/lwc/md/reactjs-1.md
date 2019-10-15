@@ -279,6 +279,6 @@ function Counter() {
 ### References
 
 - [React Commonly Faced Problems](https://jscomplete.com/learn/react-beyond-basics/react-cfp)
-- 
+- [React & Webpack ](typescriptlang.org/docs/handbook/react-&-webpack.html)
 
 
