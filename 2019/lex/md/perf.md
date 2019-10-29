@@ -20,7 +20,15 @@ Technical Requirements
 
 
 
+- On Desktop MacOS 10.13.6 Chrome 77
 ![Octane Score](img/octane-score.png)
+
+- On VM Windows 10  Chrome 77 
+![VM Octane Chrome 57 Score](img/onVMChrome-octane.png)
+
+- On VM Windows 10  Edge 16 (which is Chrome 58 based)
+![VM Octane Edge 16 Chrome 58 Score](img/onVM-octance-score.png)
+
 
 ### References
 
@@ -36,10 +44,16 @@ Technical Requirements
 
  - Octane measures the time a test takes to complete and then assigns a score that is inversely proportional to the run time (historically, Firefox 2 produced a score of 100 on an old benchmark rig the V8 team used).
 -  bigger is better.
+- Octane is a benchmark developed by Google that measures JavaScript performance. A higher Octane score correlates to faster page load times. Octane factors in your computer hardware and browser choice.
+
+- Using newer-generation hardware with faster CPUs generates higher Octane scores.
+- Using the latest version of Salesforce-supported browsers generates higher Octane scores.
+- IE11 results in low Octane scores and much slower page load speeds.
+
 
 - [Run Octane Test](http://chromium.github.io/octane/)
 
-- Chrome
-![Google Chrome Octane Score](img/google-octane-score.png)
-- Firefox
-![Firefox Octane Score](img/firefox-octane-score.png)
+    - Chrome
+    ![Google Chrome Octane Score](img/google-octane-score.png)
+    - Firefox
+    ![Firefox Octane Score](img/firefox-octane-score.png)
