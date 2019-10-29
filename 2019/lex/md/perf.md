@@ -23,10 +23,10 @@ Technical Requirements
 - On Desktop MacOS 10.13.6 Chrome 77
 ![Octane Score](img/octane-score.png)
 
-- On VM Windows 10  Chrome 77 
+- On VM Windows 10.0.16299.1451  Chrome 77 
 ![VM Octane Chrome 57 Score](img/onVMChrome-octane.png)
 
-- On VM Windows 10  Edge 16 (which is Chrome 58 based)
+- On VM Windows 10.0.16299.1451  Edge 16 (which is Chrome 58 based)
 ![VM Octane Edge 16 Chrome 58 Score](img/onVM-octance-score.png)
 
 
