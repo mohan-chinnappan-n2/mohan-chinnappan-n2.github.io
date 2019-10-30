@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Tensorflow App</title>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+
+<style>
+  .code {
+    font-family: Monaco, 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    background-color: black;
+    color:azure;
+    padding: 10px;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+   
+<h3>Tensorflow</h3>
+
+<textarea id='results' class="code" rows="10" cols="80" ></textarea>
+
+<script>
+
+const resultsEle = document.getElementById('results');
+let cout = (content, append) => {
+   console.log(content);
+   if (append) resultsEle.innerText += "\n" + content;
+   else resultsEle.innerText = content; 
+}
+
+const csvUrl =
+'https://storage.googleapis.com/tfjs-examples/multivariate-linear-regression/data/boston-housing-train.csv';
+
+
+
+let setup = () =>{
+  //const values = [1,2,3,4.33, 5,6,7,8, 9,10,11,12];
+
+  const seqModel = tf.sequential();
+  console.log(seqModel); 
+
+  const hiddenLayer = tf.layers.dense({units: 3});
+  seqModel.add(hiddenLayer);
+  console.log(seqModel); 
+
+ 
+}
+
+setup();
+ 
+</script>
+
+</body>
+</html>

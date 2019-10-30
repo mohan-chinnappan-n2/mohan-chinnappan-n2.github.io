@@ -10,5 +10,8 @@
 ### Lex HAR recording
 ![LEX HAR](img/lex-har-1.gif)
 
+### Reading HAR recording in JSON editor
+![har reading](img/har-reading-1.png)
+
 ### References
 - [Inspect Network Activity In Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network)

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Tensorflow App</title>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+
+<style>
+  .code {
+    font-family: Monaco, 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    background-color: black;
+    color:azure;
+    padding: 10px;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+   
+<h3>Tensorflow</h3>
+
+<textarea id='results' class="code" rows="10" cols="80" ></textarea>
+
+<script>
+
+const resultsEle = document.getElementById('results');
+let cout = (content, append) => {
+   console.log(content);
+   if (append) resultsEle.innerText += "\n" + content;
+   else resultsEle.innerText = content; 
+}
+
+let setup = () =>{
+  //const values = [1,2,3,4.33, 5,6,7,8, 9,10,11,12];
+
+  const values = [];
+  for (let i = 0 ; i < 12; i++) {
+    values.push( Math.random(10));
+  }
+  const shape = [2, 3,2];
+  const dtype = 'float32';
+
+  const data = tf.tensor(values , shape , dtype );
+  cout(data.toString(), false);
+
+  // let results = await  data.data();
+  // console.log(results);
+
+  data.data().then( (results) => {
+    console.log(results);
+  });
+
+  console.log(data.dataSync());
+
+  const v1 = tf.variable( tf.tensor ([8,9,10]));
+  console.log(v1.toString());
+  tf.tidy( () => {
+    const at = tf.tensor( [1,2,3], [1,3])
+    const bt = tf.tensor( [1,2,3], [3, 1]);
+    const btt = bt.transpose();
+    console.log (at.matMul(bt).toString()); 
+    console.log (btt.toString());
+
+    cout(tf.scalar(3.14).toString());
+
+    const ast = tf.keep(at.square());
+    btt.dispose();
+  });
+
+  console.log(`Num Tensors: ${tf.memory().numTensors}
+  Num Bytes: ${tf.memory().numBytes} 
+  `);
+  // clean up 
+  data.dispose();
+  console.log(`Num Tensors after dispose: ${tf.memory().numTensors}
+  Num Bytes: ${tf.memory().numBytes} 
+  `);
+
+
+ 
+}
+
+setup();
+ 
+</script>
+
+</body>
+</html>
