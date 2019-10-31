@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My App</title>
+    <style>
+      .static {
+        cursor: not-allowed;
+      }
+      .draggable {
+        cursor:move;
+      }
+    </style>
+</head>
+<body>
+  <svg viewBox ="0 0 30 20" onload="makeDraggable(evt)">
+      <rect x="0" y="0" width="30" height="30" fill="#99ccff"> </rect>
+      <rect class='static' x="4" y="5" width="8" height="10" fill="#cc99ff"> </rect>
+      <rect class='draggable' x="18" y="5" width="10" height="10" fill="#ff99cc"> </rect>
+  </svg>
+
+<script>
+
+  let makeDraggable = (evt) => {
+    const svg = evt.target;
+    let selectedElement = false;
+    let offset;
+
+    // get current mouse position in SVG space
+    // use SVG's getScreenCTM (currentTransformation Matrix)
+    //  an object with 6 keys (a,b,c, d,e,f)
+    // x is mapped to ax + e
+    // y is mapped to dy + f
+    let getMousePos = (evt) => {
+      const ctm = svg.getScreenCTM();
+      return  {
+        x: (evt.clientX - ctm.e) / ctm.a,
+        y: (evt.clientY - ctm.f) / ctm.d
+
+      }
+  }
+
+    svg.addEventListener('mousedown', (evt) => {
+      if (evt.target.classList.contains('draggable')) {
+         selectedElement = evt.target; 
+         // calculated the offset when the mouse is first clicked
+         offset = getMousePos(evt);
+         offset.x -= parseFloat(selectedElement.getAttributeNS(null, x));
+         offset.y -= parseFloat(selectedElement.getAttributeNS(null, y));
+      } 
+    });
+    svg.addEventListener('mousemove', (evt) => {
+       if (selectedElement) {
+         evt.preventDefault();
+  
+         const coord = getMousePos(evt);
+         selectedElement.setAttributeNS(null, 'x', coord.x - offset.x);
+         selectedElement.setAttributeNS(null, 'y', coord.y - offset.y);
+ 
+       } 
+    });
+    svg.addEventListener('mouseup', (evt) => {
+      selectedElement = false;
+    });
+    svg.addEventListener('mouseleave', (evt) => {
+       selectedElement = false;
+    });
+
+
+
+  }
+</script>
+</body>
+</html>
