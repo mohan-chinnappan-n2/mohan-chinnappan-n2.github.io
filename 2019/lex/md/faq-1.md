@@ -4,7 +4,7 @@
  - Yes. How much:  Depends on the number of objects and depth of the objects that you are logging into console. 
  - ```console.log(...)``` in Production can create security and compliance issue as well.
 - It is a source of memory leak in the browser
-  - If the developer puts say Object using ```console.log(...)```, browser will put **not** this object for GC (Garbage Collection) since developer may like to expand that log line to see the object structure.
+  - If the developer puts say Object using ```console.log(...)```, browser will  **not** put this object for GC (Garbage Collection) since developer may like to expand that log line to see the object structure.
   - Golden rule: A DOM node can only be garbage collected when **there are no references to it** from either the page's DOM tree or JavaScript code
 
 ![console.log](img/consolelog-1.png)
