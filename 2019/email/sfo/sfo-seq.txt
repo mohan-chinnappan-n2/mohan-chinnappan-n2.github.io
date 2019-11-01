@@ -1,0 +1,10 @@
+Title: SFO 
+User->Outlook:Send Email
+Outlook->SFO:Provide the event
+SFO->SF:Create a Task with\n default Task Type
+User->Outlook:Reply Email
+Outlook->SFO:Provide the event
+SFO->SF:Create a Task with\n default Task Type
+SF->TaskTrigger\n@before_insert:Parse the\n email subject for RE:
+ 
+

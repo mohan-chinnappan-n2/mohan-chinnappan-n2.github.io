@@ -1,0 +1,11 @@
+Title: SFO 
+User->Outlook:Send Email
+Outlook->SFO:Provide the event
+SFO->SF:Create a Task with\n default Task Type
+SF->TaskTrigger@before_insert:Process
+Note right of TaskTrigger@before_insert: - If Oppty Clue found\n insert Task for Oppty as well\n - Upsert if Task already created
+User->Outlook:Reply Email
+Outlook->SFO:Provide the event
+SFO->SF:Create a Task with\n default Task Type
+SF->TaskTrigger@before_insert:Process 
+Note right of TaskTrigger@before_insert: - Parse the\n email subject for RE:\n- Change the Task Type\n and insert
