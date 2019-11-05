@@ -29,7 +29,7 @@ This is the reason the webpack minimizer (via contrib) does this for Production 
 
 ```
 
-### Does Lightning code scanner warn about this ```console.log(...)``` 
+### Does Lightning code scanner warn about this ```console.log(...)``` ?
 
 - Yes. Here is the demo
 ![Lightning Code Scanner](img/lightning-code-scanner-1.gif)
