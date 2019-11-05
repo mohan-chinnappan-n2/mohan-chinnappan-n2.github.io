@@ -36,6 +36,12 @@ This is the reason the webpack minimizer (via contrib) does this for Production 
 
 - URL for this service [here](https://mohansun-slds-lint.herokuapp.com/)
 
+### Example using a Utility Bar component
+
+![console.log.nop](img/lex-console-log-nop.png)
+
+- [Sample Code](https://github.com/mohan-chinnappan-n/FSCConfigUI/blob/master/force-app/main/default/aura/FSCConfig/FSCConfigUtilityController.js)
+
 
 #### See also
 
@@ -52,6 +58,8 @@ Use  Chrome Task Manager to find the memory footprint of the tabs:
 ![Chrome Task Manager](img/chrome-task-mgr-1.png)
 
 - Signs of too many GCs: Frequently rising and falling Memory or JavaScript Memory values represent frequent garbage collections
+
+
 
 
 #### See also
