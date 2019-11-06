@@ -160,7 +160,29 @@ export default class App extends LightningElement {
 ![shadow dom-3](img/shadow-dom-3.png)
 ![shadow dom-4](img/shadow-dom-4.png)
 
+  - Object oriented model for CSS (variables)
+  - Customize CSS for shadow DOM
+  - ![css oom](img/css-oom-1.png)
 
+  ```
+ /* css variable example */
+  element {
+    --main-bg-color: brown;
+  }
+
+  /* using it */
+  element {
+      background-color: var(--main-bg-color);
+  }
+
+
+
+```
+
+### Specs
+
+- [part](https://www.w3.org/TR/css-shadow-parts-1/)
+- [state](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/custom-states-and-state-pseudo-class.md)
 
 ## Videos
 
@@ -173,6 +195,9 @@ export default class App extends LightningElement {
 
 -   JavaScript Metaprogramming - ES6 Proxy Use and Abuse | JSConf Budapest 2017
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_5X2aB_mNp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<embed src="img/lwc.pdf#toolbar=1&navpanes=1&scrollbar=" type="application/pdf" width="100%" height="600px" />
 
 
 
