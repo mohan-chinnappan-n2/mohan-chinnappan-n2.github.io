@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proxy example</title>
+</head>
+<body>
+
+ <h3>fruitConsumption</h3>
+ <p id='output'></p>
+<script>
+
+    let items = { fruits : 10, vegs : 5};
+    let fruitConsumption = 0;
+    
+    const itemProxy = new Proxy(items, {
+        get: function (target, prop) {
+            if (prop === 'fruits') fruitConsumption++;
+            return target[prop];
+        }
+    })
+    // let us consume fruits
+    itemProxy.fruits;
+    itemProxy.fruits;
+
+
+    console.log(fruitConsumption);
+    document.getElementById('output').innerHTML = fruitConsumption;
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,12 @@
+  <script>
+  class Hello extends HTMLElement {
+    constructor() {
+      super();
+      // Attach a shadow root to the element.
+      let shadowRoot = this.attachShadow({mode: 'open'});
+      shadowRoot.innerHTML = `<p>hello from web components</p>`;
+    }
+  }
+  customElements.define('hello-wc', Hello);
+  </script>
+  <hello-wc></hello-wc>
