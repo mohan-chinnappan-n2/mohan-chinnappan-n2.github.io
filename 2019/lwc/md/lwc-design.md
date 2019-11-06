@@ -27,6 +27,13 @@
 - Future proof
 - Backward compatibility
 
+
+### Guidelines
+- Build on top of web standards
+- Leverage native APIs - provide performance
+- Make developers productive on day-1 with current skills
+- Use static analysis to scale (size and complexity) the system
+
 ```
   <script>
 
@@ -179,6 +186,33 @@ export default class App extends LightningElement {
 
 ```
 
+
+## UI Scale
+- Single page with 100s of components
+![lwc components](img/lwc-ui-1.png)
+![lwc labels](img/lwc-ui-2.png)
+![lwc data](img/lwc-ui-3.png)
+![lwc grap](img/lwc-ui-4.png)
+
+- graph can help in progressive loading by using splitting the graph
+- just ship enough to boot up the application and present first screen
+- meanwhile bring in subsequent pages when the user is consuming the earlier screen info
+
+![lwc progressive loading](img/lwc-pl-1.png)
+![lwc progressive loading](img/lwc-pl-2.png)
+![lwc progressive loading](img/lwc-pl-3.png)
+
+![lwc scale](img/lwc-scale-1.png)
+
+
+
+
+
+
+
+
+
+
 ### Specs
 
 - [part](https://www.w3.org/TR/css-shadow-parts-1/)
@@ -198,6 +232,10 @@ export default class App extends LightningElement {
 
 
 <embed src="img/lwc.pdf#toolbar=1&navpanes=1&scrollbar=" type="application/pdf" width="100%" height="600px" />
+
+- [Typescript lwc boiler plate](https://github.com/diervo/lwc-typescript-boilerplate)
+- [PWA podcast player written with LWC ](https://github.com/pmdartus/rcast)
+- [Wait Wait... Don't Tell Me!](https://rcast-lwc.herokuapp.com/podcasts/121493804)
 
 
 
