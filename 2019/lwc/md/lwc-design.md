@@ -27,6 +27,10 @@
 - Future proof
 - Backward compatibility
 
+![lwc-arch-1](img/lwc-arch-1.png)
+
+
+
 
 ### Guidelines
 - Build on top of web standards
@@ -34,6 +38,8 @@
 - Make developers productive on day-1 with current skills
 - Use static analysis to scale (size and complexity) the system
 
+![lwc-arch-2](img/lwc-arch-2.png)
+![lwc-arch-3](img/lwc-arch-3.png)
 ```
   <script>
 
