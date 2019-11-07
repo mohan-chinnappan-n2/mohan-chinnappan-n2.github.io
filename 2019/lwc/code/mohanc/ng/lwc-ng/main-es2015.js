@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!--\n  Bind the formGroup to the one we defined in the component, submit to the addPerson method.\n  In addition to formControlName, add ngDefaultControl.\n   to tell Angular to treat the custom fields as standard text inputs.\n-->\n<form [formGroup]=\"form\" (ngSubmit)=\"addPerson()\"> \n  <vaadin-text-field\n    label=\"First Name\"\n    formControlName=\"firstName\"\n    ngDefaultControl> \n  </vaadin-text-field>\n\n  <vaadin-text-field\n    label=\"Last Name\"\n    formControlName=\"lastName\"\n    ngDefaultControl>\n  </vaadin-text-field>\n\n  <vaadin-button (click)=\"addPerson()\"> Add </vaadin-button>\n</form>\n\n<!-- \n  Bind the people array to the items property on the grid.\n\n-->\n<vaadin-grid [items]=\"people\"> \n  <vaadin-grid-column path=\"firstName\" header=\"First name\">\n  </vaadin-grid-column>\n  <vaadin-grid-column path=\"lastName\" header=\"Last name\"> </vaadin-grid-column>\n</vaadin-grid>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!--\n  Bind the formGroup to the one we defined in the component, submit to the addPerson method.\n  In addition to formControlName, add ngDefaultControl.\n   to tell Angular to treat the custom fields as standard text inputs.\n-->\n<link rel=\"stylesheet\" href=\"https://unpkg.com/@salesforce-ux/design-system@2.9.4/assets/styles/salesforce-lightning-design-system.min.css\">\n    \n\n<h2 class='slds-button slds-button_brand'>How to use Web Components in Angular</h2>\n<greet-user></greet-user>\n\n<form [formGroup]=\"form\" (ngSubmit)=\"addPerson()\"> \n  <vaadin-text-field\n    label=\"First Name\"\n    formControlName=\"firstName\"\n    ngDefaultControl> \n  </vaadin-text-field>\n\n  <vaadin-text-field\n    label=\"Last Name\"\n    formControlName=\"lastName\"\n    ngDefaultControl>\n  </vaadin-text-field>\n\n  <vaadin-button (click)=\"addPerson()\"> Add </vaadin-button>\n</form>\n\n<!-- \n  Bind the people array to the items property on the grid.\n\n-->\n<vaadin-grid [items]=\"people\"> \n  <vaadin-grid-column path=\"firstName\" header=\"First name\">\n  </vaadin-grid-column>\n  <vaadin-grid-column path=\"lastName\" header=\"Last name\"> </vaadin-grid-column>\n</vaadin-grid>");
 
 /***/ }),
 
@@ -299,6 +299,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import '../sflwc/app';
 
 let AppComponent = class AppComponent {
     constructor() {
