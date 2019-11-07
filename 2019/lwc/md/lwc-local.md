@@ -9,8 +9,11 @@ sfdx force:lightning:lwc:start -u MyScratchOrg
 ```
 
 ![lwc-local-1](img/lwc-local-1.png)
-![lwc-local-2](img/lwc-local-2.png)
+
+![lwc-local-0](img/lwc-local-0.png)
+
 ![lwc-local-3](img/lwc-local-3.png)
+![lwc-local-2](img/lwc-local-2.png)
 
 ![lwc-local-2-1](img/lwc-local-2-1.png)
 ![lwc-local-2-2](img/lwc-local-2-2.png)
