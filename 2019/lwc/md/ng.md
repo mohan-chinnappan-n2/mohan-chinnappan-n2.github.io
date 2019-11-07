@@ -2,7 +2,8 @@
 
 ![ng-wc](img/ng-wc-1.png)
 
-- [Example App] (./code/mohanc/ng/lwc-ng/)
+- [Example App](./code/mohanc/ng/lwc-ng/)
+- [Source Repo](https://github.com/mohan-chinnappan-n/ng-wc)
 
 ### Resources 
 - [How to use Web Components in Angular](https://vaadin.com/tutorials/using-web-components-in-angular)
