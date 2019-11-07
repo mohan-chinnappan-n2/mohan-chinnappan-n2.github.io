@@ -217,12 +217,14 @@ export default class App extends LightningElement {
 
 
 
-
+### LWC local development
+- [Announcing LWC Local Development Beta](https://developer.salesforce.com/blogs/2019/10/announcing-lwc-local-development-beta.html?utm_source=twitter&utm_medium=organic&utm_campaign=social&utm_content=lwc_local_dev_blog_post)
 
 ### Specs
 
 - [part](https://www.w3.org/TR/css-shadow-parts-1/)
 - [state](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/custom-states-and-state-pseudo-class.md)
+
 
 ## Videos
 
