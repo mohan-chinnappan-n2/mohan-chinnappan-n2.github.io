@@ -1,14 +1,21 @@
 ## Platform Events
 
+![pe bus](img/pe-bus-1.png)
+
+ - An event-driven architecture is easy to scale, and easy to maintain.  
+- As you add more solutions, you don’t need to add more connectors, allowing you to design business processes that are seamless across the board.
+- We can  move from a mess of tangled solutions, to a streamlined architecture that isn’t brittle.
+
+
 ![PE](https://mohan-chinnappan-n.github.io/sfdc/img/pe/pe-1.png)
 
 - Event bus provides a communication channel
 - Allows loose coupling between components
-    - you can new publishers and subscribers 
+    - you can add new publishers and subscribers 
 - Durability via sliding window and replay-id
     - component can go down and comes back on, it can resubscribe to any event in the sliding window, so it can never miss an event
 - Standards based
-    - polyglot (your component can be in any programming language) - all integrated using the event bus
+    - polyglot (your component can be written in any programming language) - all integrated using the event bus
     - communication via open standards 
         - HTTP
         - Subscribe using [Bayeux protocol](https://docs.cometd.org/current/reference/#_concepts_bayeux_protocol) (for transporting asynchronous messages, primarily over HTTP)
@@ -94,6 +101,20 @@
 ### Demo
 <iframe width="800" height="500" src="https://www.youtube.com/embed/L6OWyCfQD6U?start=632" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+### Key points
+- Deploy Platform Events at mass scale
+    - Take on bigger projects within an expanded 72 hour event window
+- Ramp up event usage without a learning curve
+    - Setup and configuration doesn’t change as you scale
+- Tackle heavy event initiatives such as IoT with confidence
+    - Make Salesforce data a seamless part of your largest business goals
+
+
+### Change Data Capture
+![CDC](img/pe-cdc.png)
+
 ### Avro data serialization system
 - [Apache Avro](https://avro.apache.org/docs/1.2.0/)
+
+
 
