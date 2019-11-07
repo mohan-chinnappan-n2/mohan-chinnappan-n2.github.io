@@ -361,7 +361,13 @@
                 function AppComponent() {
                     this.title = 'lwc-ng';
                     // Our component state is an array of people that should be listed in the grid
-                    this.people = [];
+                    this.people = [
+                        new Person('Dennis', 'Ritchie'),
+                        new Person('Ken', 'Thompson'),
+                        new Person('APJ', 'Kalam'),
+                        new Person('Srinivasa', 'Ramanujan'),
+                        new Person('Albert', 'Einstein')
+                    ];
                     // A reactive FormGroup with controls for firstName and lastName
                     this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
                         firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](''),
@@ -389,6 +395,7 @@
                 function Person(firstName, lastName) {
                     this.firstName = firstName;
                     this.lastName = lastName;
+                    console.log('constructor called');
                 }
                 return Person;
             }());
@@ -428,10 +435,13 @@
                         _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]
                     ],
                     imports: [
-                        [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]]
+                        [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+                            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]
+                        ]
                     ],
                     providers: [],
                     bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
+                    // for wc support
                     schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["CUSTOM_ELEMENTS_SCHEMA"]]
                 })
             ], AppModule);
