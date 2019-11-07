@@ -1,3 +1,16 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"], {
         /***/ "./$$_lazy_route_resource lazy recursive": 
         /*!******************************************************!*\
@@ -28,7 +41,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<!--\n  Bind the formGroup to the one we defined in the component, submit to the addPerson method.\n  In addition to formControlName, add ngDefaultControl.\n   to tell Angular to treat the custom fields as standard text inputs.\n-->\n<link rel=\"stylesheet\" href=\"https://unpkg.com/@salesforce-ux/design-system@2.9.4/assets/styles/salesforce-lightning-design-system.min.css\">\n    \n\n<h2 class='slds-button slds-button_brand'>How to use Web Components in Angular</h2>\n<greet-user></greet-user>\n\n<form [formGroup]=\"form\" (ngSubmit)=\"addPerson()\"> \n  <vaadin-text-field\n    label=\"First Name\"\n    formControlName=\"firstName\"\n    ngDefaultControl> \n  </vaadin-text-field>\n\n  <vaadin-text-field\n    label=\"Last Name\"\n    formControlName=\"lastName\"\n    ngDefaultControl>\n  </vaadin-text-field>\n\n  <vaadin-button (click)=\"addPerson()\"> Add </vaadin-button>\n</form>\n\n<!-- \n  Bind the people array to the items property on the grid.\n\n-->\n<vaadin-grid [items]=\"people\"> \n  <vaadin-grid-column path=\"firstName\" header=\"First name\">\n  </vaadin-grid-column>\n  <vaadin-grid-column path=\"lastName\" header=\"Last name\"> </vaadin-grid-column>\n</vaadin-grid>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<!--\n  Bind the formGroup to the one we defined in the component, submit to the addPerson method.\n  In addition to formControlName, add ngDefaultControl.\n   to tell Angular to treat the custom fields as standard text inputs.\n-->\n<link rel=\"stylesheet\" href=\"https://unpkg.com/@salesforce-ux/design-system@2.9.4/assets/styles/salesforce-lightning-design-system.min.css\">\n    \n\n<div style='margin-left:20px;'>\n<h2 class='slds-button slds-button_brand'>vaadin Web Components in Angular (via npm)</h2>\n<greet-user></greet-user>\n\n<form [formGroup]=\"form\" (ngSubmit)=\"addPerson()\"> \n  <vaadin-text-field\n    label=\"First Name\"\n    formControlName=\"firstName\"\n    ngDefaultControl> \n  </vaadin-text-field>\n\n  <vaadin-text-field\n    label=\"Last Name\"\n    formControlName=\"lastName\"\n    ngDefaultControl>\n  </vaadin-text-field>\n\n  <vaadin-button (click)=\"addPerson()\"> Add </vaadin-button>\n</form>\n\n<!-- \n  Bind the people array to the items property on the grid.\n  \n\n-->\n<vaadin-grid [items]=\"people\"> \n  <vaadin-grid-column path=\"firstName\" header=\"First name\">\n  </vaadin-grid-column>\n  <vaadin-grid-column path=\"lastName\" header=\"Last name\"> </vaadin-grid-column>\n</vaadin-grid>\n\n\n<!-- \n\n  ref:\n  https://stackblitz.com/edit/web-components-in-angular\n  https://www.grapecity.com/blogs/using-web-components-in-angular\n-->\n<h2 class='slds-button slds-button_brand'>Counter Web Components in Angular</h2>\n\n\n<h5>Imperative Counter</h5>  \n<div class=\"counter-box\">  \n  <i-counter #iCounter></i-counter>  \n</div>  \n<h5>Declarative Counter</h5>  \n<div class=\"counter-box\">  \n  <d-counter [count]=\"count\" #dCounter></d-counter>  \n</div>  \n<button (click)=\"increment()\" class=\"slds-button slds-button_success\">Increment</button>  \n<button (click)=\"decrement()\" class=\"slds-button slds-button_brand\">Decrement</button>\n\n</div>\n\n");
             /***/ 
         }),
         /***/ "./node_modules/tslib/tslib.es6.js": 
@@ -357,6 +370,14 @@
             /* harmony import */ var _vaadin_vaadin_grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @vaadin/vaadin-grid */ "./node_modules/@vaadin/vaadin-grid/vaadin-grid.js");
             /* harmony import */ var _vaadin_vaadin_text_field__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @vaadin/vaadin-text-field */ "./node_modules/@vaadin/vaadin-text-field/vaadin-text-field.js");
             /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+            /*
+            ElementRef, ViewChild
+            
+            We need ElementRef and ViewChild because we’ll need to manipulate
+            our Web Components directly to change their values.
+            
+            
+            */
             // import '../sflwc/app';
             var AppComponent = /** @class */ (function () {
                 function AppComponent() {
@@ -369,12 +390,36 @@
                         new Person('Srinivasa', 'Ramanujan'),
                         new Person('Albert', 'Einstein')
                     ];
+                    /*
+                     You’ll see that we’ve also added something extra to our components: #iCounter and #dCounter.
+                     As we’ll see in a moment, these tags allow our Angular component to obtain direct references
+                      to these elements so we can update them.
+                     Finally, we have increment and decrement buttons that call methods in the app component
+                     to change the value of our Web Component counters.
+                    */
+                    // instance variable to store our current counter value
+                    this.count = 0;
                     // A reactive FormGroup with controls for firstName and lastName
                     this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
                         firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](''),
                         lastName: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]('')
                     });
                 }
+                // ElementRef instances make it possible to use underlying native elements directly.
+                //  In our case, these elements are DOM nodes.
+                // we change the component’s count variable, and then update our Web Components to use the new value. 
+                AppComponent.prototype.increment = function () {
+                    this.count++;
+                    // we call its increment and decrement methods.
+                    this.iCounter.nativeElement.increment();
+                    // we use the DOM’s setAttribute method to update the counter’s value.
+                    this.dCounter.nativeElement.setAttribute("count", this.count);
+                };
+                AppComponent.prototype.decrement = function () {
+                    this.count--;
+                    this.iCounter.nativeElement.decrement();
+                    this.dCounter.nativeElement.setAttribute("count", this.count);
+                };
                 // When submitting the form, create a new array containing
                 //  a Person object with the information in the form, then reset the form.
                 AppComponent.prototype.addPerson = function () {
@@ -385,6 +430,12 @@
                 };
                 return AppComponent;
             }());
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('iCounter', { static: true })
+            ], AppComponent.prototype, "iCounter", void 0);
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('dCounter', { static: true })
+            ], AppComponent.prototype, "dCounter", void 0);
             AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-root',
@@ -416,6 +467,10 @@
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
             /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+            // CUSTOM_ELEMENTS_SCHEMA :
+            //  Angular uses schemas to determine what element names are allowed inside a module
+            // else: without it, the Angular template compiler will report an error when 
+            //  it encounters an element name it doesn’t understand.
             /*
               refer: https://vaadin.com/tutorials/using-web-components-in-angular
             
@@ -443,9 +498,115 @@
                     providers: [],
                     bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
                     // for wc support
+                    //  tell Angular to use the custom elements schema in our app module.
                     schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["CUSTOM_ELEMENTS_SCHEMA"]]
                 })
             ], AppModule);
+            /***/ 
+        }),
+        /***/ "./src/app/web-components/DeclarativeCounter.ts": 
+        /*!******************************************************!*\
+          !*** ./src/app/web-components/DeclarativeCounter.ts ***!
+          \******************************************************/
+        /*! no static exports found */
+        /***/ (function (module, exports) {
+            var __importDefault = (this && this.__importDefault) || function (mod) {
+                return (mod && mod.__esModule) ? mod : { "default": mod };
+            };
+            var DeclarativeCounter = /** @class */ (function (_super) {
+                __extends(DeclarativeCounter, _super);
+                function DeclarativeCounter() {
+                    var _this = _super.call(this) || this;
+                    // stores the current value of our counter.
+                    _this.currentCount = 0;
+                    // creates the shadow DOM and stores it in shadow 
+                    _this.shadow = _this.attachShadow({ mode: 'open' });
+                    return _this;
+                    // We want to wait and see if a value was passed into the component via the count attribute
+                    // This value for count won’t be available at the time the component’s constructor is called. 
+                    // Instead, we use a Web Component lifecycle method: connectedCallback.
+                }
+                Object.defineProperty(DeclarativeCounter, "observedAttributes", {
+                    // observedAttributes static property
+                    // provides the browser a list of attribute names for
+                    //   which the component would like to receive a notification when they change.
+                    // end-users of the component could add as many attributes to it as they want to,
+                    //  and it would be a waste of resources for the browser to 
+                    //  send the component change notifications it isn’t going to use.
+                    get: function () {
+                        return ['count'];
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                // gets called after a component has been inserted in the DOM
+                DeclarativeCounter.prototype.connectedCallback = function () {
+                    //  reads the value of the component’s count attribute 
+                    //   ses it to set the value of currentCount
+                    this.currentCount = parseInt(this.getAttribute('count')) || 0;
+                    // calls update to render the component.
+                    this.update();
+                };
+                // called by the browser whenever one of the attributes listed in attributeChangedCallback changes
+                //  in our case count is the only attribute we’ll receive notifications for.
+                DeclarativeCounter.prototype.attributeChangedCallback = function (attrName, oldVal, newVal) {
+                    // when the method is called, we update currentCount with the new value and
+                    //  then call update to re-render the component.
+                    this.currentCount = newVal;
+                    this.update();
+                };
+                DeclarativeCounter.prototype.update = function () {
+                    // HTML template for our element that includes the value of currentCount
+                    // 
+                    var template = "\n        <style>\n          .counter {\n            font-size: 25px;\n          }\n        </style>\n        <div class=\"counter\">\n          <b>Count:</b> " + this.currentCount + "\n      ";
+                    // assign our template string to our shadow DOM’s innerHTML property.
+                    this.shadow.innerHTML = template;
+                };
+                return DeclarativeCounter;
+            }(HTMLElement));
+            window.customElements.define('d-counter', DeclarativeCounter);
+            /***/ 
+        }),
+        /***/ "./src/app/web-components/ImperativeCounter.ts": 
+        /*!*****************************************************!*\
+          !*** ./src/app/web-components/ImperativeCounter.ts ***!
+          \*****************************************************/
+        /*! no static exports found */
+        /***/ (function (module, exports) {
+            var __importDefault = (this && this.__importDefault) || function (mod) {
+                return (mod && mod.__esModule) ? mod : { "default": mod };
+            };
+            var ImperativeCounter = /** @class */ (function (_super) {
+                __extends(ImperativeCounter, _super);
+                function ImperativeCounter() {
+                    var _this = _super.call(this) || this;
+                    //  stores the current value of our counter.
+                    _this.currentCount = 0;
+                    // creates the shadow DOM and stores it in shadow.
+                    _this.shadow = _this.attachShadow({ mode: 'open' });
+                    // finishes up by calling the update method 
+                    _this.update();
+                    return _this;
+                }
+                // we define an HTML template for our element that includes the value of currentCount
+                ImperativeCounter.prototype.update = function () {
+                    var template = "\n      <style>\n        .counter {\n          font-size: 25px;\n        }\n      </style>\n      <div class=\"counter\">\n        <b>Count:</b> " + this.currentCount + "\n      </div>\n    ";
+                    //  assign our template string to our shadow DOM’s innerHTML
+                    this.shadow.innerHTML = template;
+                };
+                ImperativeCounter.prototype.increment = function () {
+                    this.currentCount++;
+                    // update to ensure that we show the new value of currentCount in our component’s HTML.
+                    this.update();
+                };
+                ImperativeCounter.prototype.decrement = function () {
+                    this.currentCount--;
+                    this.update();
+                };
+                return ImperativeCounter;
+            }(HTMLElement));
+            // register our  new component with the browser.
+            window.customElements.define('i-counter', ImperativeCounter);
             /***/ 
         }),
         /***/ "./src/environments/environment.ts": 
@@ -487,6 +648,17 @@
             /* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js");
             /* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
             /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+            /* harmony import */ var _app_web_components_ImperativeCounter_ts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app/web-components/ImperativeCounter.ts */ "./src/app/web-components/ImperativeCounter.ts");
+            /* harmony import */ var _app_web_components_ImperativeCounter_ts__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/ __webpack_require__.n(_app_web_components_ImperativeCounter_ts__WEBPACK_IMPORTED_MODULE_5__);
+            /* harmony import */ var _app_web_components_DeclarativeCounter_ts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app/web-components/DeclarativeCounter.ts */ "./src/app/web-components/DeclarativeCounter.ts");
+            /* harmony import */ var _app_web_components_DeclarativeCounter_ts__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/ __webpack_require__.n(_app_web_components_DeclarativeCounter_ts__WEBPACK_IMPORTED_MODULE_6__);
+            /*
+            
+             import the counter components we created and registers them with the browser.
+              This step is important because, without it,
+               we wouldn’t be able to use the components in our Angular app!
+            
+            */
             if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
             }
