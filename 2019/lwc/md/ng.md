@@ -1,5 +1,7 @@
 ## How to use Web Components in Angular
 
+![ng-wc](img/ng-wc-1.png)
+
 - [Example App] (./code/mohanc/ng/lwc-ng/)
 
 ### Resources 
