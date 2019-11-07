@@ -94,5 +94,6 @@
 ### Demo
 <iframe width="800" height="500" src="https://www.youtube.com/embed/L6OWyCfQD6U?start=632" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+### Avro data serialization system
+- [Apache Avro](https://avro.apache.org/docs/1.2.0/)
 
