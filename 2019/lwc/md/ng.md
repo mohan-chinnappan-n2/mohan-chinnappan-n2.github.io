@@ -4,6 +4,8 @@
 
 - [Example App](./code/mohanc/ng/lwc-ng/)
 - [Source Repo](https://github.com/mohan-chinnappan-n/ng-wc)
+- [stackblitz](https://stackblitz.com/edit/web-components-in-angular-zsramg)
+- [App](https://web-components-in-angular-zsramg.stackblitz.io/)
 
 ### Resources 
 - [Web components Spec](https://www.webcomponents.org/specs)
