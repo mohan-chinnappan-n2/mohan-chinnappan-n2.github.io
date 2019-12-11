@@ -22,6 +22,12 @@
 - Notes and Notes previews in the old Notes tool
 
 
+### Document created using the following method are encrypted
+
+![attach](img/files/attach-0.png)
+![attach](img/files/attach-1.png)
+![attach](img/files/attach-2.png)
+
 ### Document created using the following method are not encrypted
 
 ![contentDocument](img/files/contentDocument-00.png)
