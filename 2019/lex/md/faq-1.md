@@ -60,8 +60,32 @@ Use  Chrome Task Manager to find the memory footprint of the tabs:
 - Signs of too many GCs: Frequently rising and falling Memory or JavaScript Memory values represent frequent garbage collections
 
 
-
-
 #### See also
  - [Memory Terminology](https://developers.google.com/web/tools/chrome-devtools/memory-problems/memory-101)
  - [Fix Memory Problems](https://developers.google.com/web/tools/chrome-devtools/memory-problems)
+
+
+## Caching
+- When I make changes in a component, I need to refresh the page a few times in the browser for my changes to take effect. Why do I have to do that, and how can I avoid it?”
+
+- If you enble **Component caching**  the component definitions are cached at the client-side. As a result, when you make a change to a component, and then reload the page hosting the component, you can still get the previous version of the component served from the client cache
+- You can usually get the new version of the component by refreshing the page a couple of times, but that isn’t a suitable developer experience.
+- The solution is to disable client-side caching during development.
+
+### Recommended settings:
+
+- PROD
+    - Debug Mode: Off
+    - Component Caching: On 
+- DEV
+    - Debug Mode: On 
+    - Component Caching: Off
+
+- [Lightning Components Performance Best Practices](https://developer.salesforce.com/blogs/developer-relations/2017/04/lightning-components-performance-best-practices.html)
+
+
+
+
+
+
+
