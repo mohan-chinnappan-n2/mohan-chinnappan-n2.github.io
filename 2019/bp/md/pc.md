@@ -85,9 +85,11 @@
 ### No allocation - Cache miss
 ![pc-put-get-0](img/pc/pc-put-get-0.png)
 
+![pc-part](img/pc/pc-part-100.png)
 ### Allocated - Cache hit
 ![pc-put-get-1](img/pc/pc-put-get-1.png)
 
+ 
 ### Best Practice
 
 ![pc-bp](img/pc/pc-put-get-bp-1.png)
@@ -98,6 +100,89 @@
 ### Use in Visualforce Pages
 ![pc-vf](img/pc/pc-vf-1.png)
 
+```java
+
+ 
+// Best Practice
+// Org Cache
+Cache.OrgPartition orgPart = Cache.Org.getPartition('local.CurrencyCache');
+
+// Retrieve cache value from the partition. Note the casting
+String cachedRate = (String)orgPart.get('DollarToEuroRate');
+
+// Check the cache value that the get() call returned.
+if (cachedRate != null) {
+    // Display this exchange rate 
+    System.debug(Cache.org.get('DollarToEuroRate'));
+} 
+else {
+    // We have a cache miss, so fetch the value from the source.
+    // Call an API to get the exchange rate.
+    System.debug('Calling API to get the Exchange Rate');
+
+}
+
+// Session Cache
+// Get partition
+Cache.SessionPartition sessionPart = Cache.Session.getPartition('local.CurrencyCache');
+// Add cache value to the partition
+sessionPart.put('FavoriteCurrency', 'INR');
+// Retrieve cache value from the partition. Note the casting
+String cachedFavCurrency = (String)sessionPart.get('FavoriteCurrency');
+
+if (cachedFavCurrency != null) {
+    // Display this exchange rate 
+    System.debug('FavoriteCurrency: ' + Cache.Session.get('FavoriteCurrency'));
+
+} 
+else {
+    // We have a cache miss, so fetch the value from the source.
+    // Call an API to get the exchange rate.
+    System.debug('Calling API to get the Exchange Rate');
+
+}
+```
+
+
+### Sample
+
+```java
+public class BusScheduleCache {
+
+  private Cache.OrgPartition part;
+  
+  BusScheduleCache() {
+    part = Cache.Org.getPartition('local.BusSchedule');
+  }
+  
+  public void putSchedule(String busLine, Time[] schedule) {
+   part.put( busLine, schedule );
+  
+  }
+  
+  public Time[] getSchedule(String busLine) {
+      
+      Time[] cachedSchedule = (Time[])part.get(busLine);
+      // Check the cache value that the get() call returned.
+      if (cachedSchedule != null) {
+            // Display this cachedschedule
+            System.debug(cachedSchedule);
+            return cachedSchedule;
+      }
+      else {
+
+        Time[] schedule = new Time[]{};
+
+        schedule.add(Time.newInstance(8,0,0,0));
+        schedule.add(Time.newInstance(17,0,0,0));
+        
+        return schedule;
+      } 
+  }
+
+
+}
+```
 
 ## Videos and Slides
 
