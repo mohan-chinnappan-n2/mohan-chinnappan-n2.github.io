@@ -175,4 +175,4 @@ OK
 
 ### Links
 
-- [github radis](https://github.com/antirez/redis)
+- [github redis](https://github.com/antirez/redis)
