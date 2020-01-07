@@ -1,9 +1,11 @@
 
-## What is Platform Cache?
+## Platform Cache Sizes 
 
+### Recap
 - Platform Cache is a memory layer that stores Salesforce **org and session** data for later access
 - It can help to run  applications faster because they store reusable data in memory. 
 - Applications don’t need to duplicate **calculations and requests** to the database on subsequent transactions.
+
 - Available to customers with Enterprise Edition orgs and above
     - Enterprise Edition (10 MB by default)
     - Unlimited Edition (30 MB by default)
