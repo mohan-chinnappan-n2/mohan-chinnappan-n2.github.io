@@ -44,10 +44,11 @@
     - stores org-wide data that anyone in the org can use
     - accessible across sessions, requests, and org users and profiles
     - Example: daily snapshots of currency exchange rates can be cached for use in an app.
+    -```put(key, value, ttlSecs)``` [API](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_cache_Org.htm)
 
  2. Session Cache
     - stores data for an individual user and is tied to that user’s session. 
-    - maximum life of a session is **8 hours**
+    - maximum life of a session is **8 hours** - min(time-to-live, 8) - ```put(key, value, ttlSecs)``` [API](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_cache_Session.htm#apex_class_cache_Session)
     - Example:  your app calculates the distance from a user’s location to all customers the user wishes to visit on the same day. The location and the calculated distances can be stored in the session cache. If the user wants to get this information again, the distances don’t need to be recalculated.
 
 ## Performance Gain
