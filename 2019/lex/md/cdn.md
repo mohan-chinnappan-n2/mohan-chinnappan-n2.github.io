@@ -46,9 +46,8 @@ e14569.dsca.akamaiedge.net. 20	IN	A	23.192.68.79
 
 ```
 
-### Links
+### CDN Links
 
 - [Enable CDN to Load Applications Faster ](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/perf_cdn.htm)
  - [About Akamai](https://en.wikipedia.org/wiki/Akamai_Technologies)
 
-### 
