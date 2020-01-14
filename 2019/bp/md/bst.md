@@ -6,7 +6,7 @@
 ![bst-1](img/bst/bst-1.png)
 
 
-- 3 release per year
+- 3 releases per year
 - sandbox testing (manual or automated)
 - testing automated (Selenium, Provar)
 - BST
