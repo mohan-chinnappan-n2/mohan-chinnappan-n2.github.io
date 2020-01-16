@@ -10,6 +10,20 @@
 ### Browser Performance Info
 ![Lex usage app](https://d259t2jj6zp7qm.cloudfront.net/images/c_scale%2Cf_png%2Cw_600-216_lightning_usage_browser_performance_txgatq.png)
 
+### Example
+- Selecting the Lightning Usage App
+![lua-00](img/lua-00.png)
+- Running Lightning Usage App
+![lua-01](img/lua-01.png)
+![lua-1](img/lua-1.png)
+![lua-2](img/lua-2.png)
+
+
+
+
+
+
+
 - This [blog post](https://developer.salesforce.com/blogs/2018/10/understanding-experienced-page-time.html)  helps to understand how we define and calculate EPT.
 
  
