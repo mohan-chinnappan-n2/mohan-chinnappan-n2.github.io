@@ -21,11 +21,11 @@ java -cp ..\dataloader-47.0.0-uber.jar -Dsalesforce.config.dir=C:\dl\Command Lin
 
 4. If you need to notify other systems in the enterprise  about data load completion:
     - Use [Platform Events](https://mohan-chinnappan-n.github.io/sfdc/pevents.html#/home)
-    - Other enterprise system can can be a subscribe to the Salesforce Event Bus  
+    - Other enterprise system  can be a subscriber to the Salesforce Event Bus  
     - ![Event bus](https://mohan-chinnappan-n.github.io/sfdc/img/pe/pe-1.png)
     - Publish the data load completion like this:
     - ![ publish event](https://mohan-chinnappan-n.github.io/sfdc/img/pe/publish-event.png)
-    - On the receiving end of the enterprise system, event handler will do the required processing
+    - On the receiving end of the enterprise system, event handler can do the required processing
 
 
   
