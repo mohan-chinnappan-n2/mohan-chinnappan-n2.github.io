@@ -4,6 +4,9 @@
 
 - add eptVisible parameter as:  https://<example>.lightning.force.com/one/one.app?eptVisible=1
 
+![ept1](img/ept1.png)
+![ept0](img/ept0.png)
+
 - This [blog post](https://developer.salesforce.com/blogs/2018/10/understanding-experienced-page-time.html)  helps to understand how we define and calculate EPT.
 
  
