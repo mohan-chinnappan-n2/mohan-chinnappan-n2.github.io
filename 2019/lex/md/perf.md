@@ -38,6 +38,7 @@ Technical Requirements
 - [Lightning Console Technical Requirements](https://help.salesforce.com/articleView?id=console2_technical_requirements.htm&type=5)
 
 - [Octane FAQ](https://developers.google.com/octane/faq)
+- [Troubleshoot Salesforce issues in Google Chrome](https://help.salesforce.com/articleView?id=000312846&language=en_US&type=1&mode=1)
 
 
 ## Octane
