@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My App</title>
+</head>
+<body>
+   
+<script type="module">
+import { openDB, deleteDB } from 'https://unpkg.com/idb?module'
+// https://www.freecodecamp.org/news/a-quick-but-complete-guide-to-indexeddb-25f030425501/
+(() => {
+  'use strict'
+
+  if (!('indexedDB' in window)) {
+    console.warn('IndexedDB not supported')
+    return
+  }
+
+  console.log('indexedDB is supported!');
+
+
+  const dbName = 'farmingDB'
+  const storeName = 'fruits'
+  const version = 1 //versions start at 1
+
+  const db = await openDB(dbName, version, {
+    upgrade(db, oldVersion, newVersion, transaction) {
+      const store = db.createObjectStore(storeName);
+      store.put(100, 'apples')
+    }
+  });
+
+
+})()
+
+</script>
+
+
+</script>
+</body>
+</html>
