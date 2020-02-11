@@ -19,6 +19,16 @@
         </li>
     </template>
 </ul>
+
+<ul>
+
+    <template iterator:it={contacts}>
+        <li key={it.value.Id}>
+            {it.value.Name} | {it.value.Title} | {it.value.Id}
+        </li>
+    </template>
+
+</ul>
  
 
 
