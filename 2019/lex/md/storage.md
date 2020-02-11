@@ -43,6 +43,9 @@
 
 ![storage status](img/indexedDB-Storage.png)
 
+![storage check](img/lex-idb-1.png )
+
+
 ### Storage References
 - [Overview & State of Storage APIs](https://docs.google.com/presentation/d/11CJnf77N45qPFAhASwnfRNeEMJfR-E_x05v1Z6Rh5HA/edit#slide=id.g146417e51d_0_103)
  
