@@ -1,6 +1,6 @@
 ### Google's recommendation Optimize Chrome Browser on virtual desktops
 
-- Content is from Google's page [Optimize Chrome Browser on virtual desktops](https://support.google.com/chrome/a/answer/9303118)
+- This content is from Google's page [Optimize Chrome Browser on virtual desktops](https://support.google.com/chrome/a/answer/9303118)
 
 
 ### For administrators who manage Chrome Browser on Windows for a business or school.
