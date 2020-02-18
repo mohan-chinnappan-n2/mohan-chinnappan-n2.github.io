@@ -14,7 +14,12 @@
 **Hardware acceleration**
 - If your VDI server doesn’t support graphics processing units (GPUs), use Group Policy Management Editor to set the Use hardware acceleration when available policy to false.
 
-**Extensions**
+- If this policy is set to true or left unset, hardware acceleration will be enabled unless a certain GPU feature is blacklisted.
+    - If this policy is set to false, hardware acceleration will be disabled
+    - Windows registry location: <code>Software\Policies\Google\Chrome\HardwareAccelerationModeEnabled</code>
+    -  Example value (Windows):<code> 0x00000001</code>
+
+ **Extensions**
 - Extensions can use a large amount of memory or increase the amount of time it takes to start Chrome Browser. Google recommends that you limit the number of extensions that users can install. For information, see Set Chrome app and extension policies (Windows).
 
 **Roaming user profiles**
