@@ -18,6 +18,22 @@
     - If this policy is set to false, hardware acceleration will be disabled
     - Windows registry location: <code>Software\Policies\Google\Chrome\HardwareAccelerationModeEnabled</code>
     -  Example value (Windows):<code> 0x00000001</code>
+    - Via Chrome settings
+ ![hardware accel](img/hardware-accel.png)
+    - Via Windows Registry
+```
+Hold down the Windows Key and press “R” to bring up the Run window.
+
+Type “regedit“, then press “Enter” to bring up the Registry Editor.
+Navigate to:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\
+Note: You may have to create the “Google” and “Chrome” folders.
+Right-click “Chrome” and select “New” > “DWORD 32-bit value“
+Give the value a name of “HardwareAccelerationModeEnabled“.
+Set the value data to “0” to disable Hardware Acceleration. Set it to “1” to enable it.
+
+```
 
  **Extensions**
 - Extensions can use a large amount of memory or increase the amount of time it takes to start Chrome Browser. Google recommends that you limit the number of extensions that users can install. For information, see Set Chrome app and extension policies (Windows).
