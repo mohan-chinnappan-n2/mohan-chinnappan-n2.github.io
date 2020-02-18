@@ -14,6 +14,8 @@
 
 ### Data Caching
 
+![Data Caching Summary](img//data-caching-summary.png)
+
 - If the cached data is stale, the framework retrieves the latest data from the server.
 
 #### Marking a Server Action as Storable
