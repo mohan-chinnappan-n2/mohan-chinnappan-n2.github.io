@@ -48,9 +48,9 @@ Set the value data to “0” to disable Hardware Acceleration. Set it to “1�
 - Avoid network congestion—Advise users not to simultaneously use streaming services on virtual desktops. For example, 100 users watching YouTube will increase the demand on network bandwidth as well as memory and CPU resources. Remember that **GPUs aren’t used on most VDI server**.
 
 
-### Chrome User agent info for Windows 7 and Windows 10
+### Chrome User agent (navigator.userAgent)
 
- - Windows 7:  Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36
- - Windows 10: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36
-
-
+ - **Windows 7**:  Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36
+ - **Windows 10**: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36
+ - **macOS 10.13.6**: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36
+ - **Ubuntu 18**: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome 80.0.3987.106 Safari/537.36
