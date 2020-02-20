@@ -23,8 +23,22 @@ https_mohansun-fsc10.lightning.force.com_0.indexeddb.leveldb
 
 ```
 - In Windows
-    - Search for the files with extension leveldb
+```
+cd View And Change IndexedDB Data With Microsoft Edge DevTools
+dir C:\Users\<username>\AppData\Local\Google\Chrome\User Data\Default\IndexedDB
 
+You will see the folders like:
+  https_mohansun-fsc-20.lightning.force.com_0.indexeddb.leveldb
+if you cd into that folder: like https_mohansun-fsc-20.lightning.force.com_0.indexeddb.leveldb
+
+you will see:
+
+files with extenion ldb (levelDB)  like:
+000001.ldb
+000002.ldb
+...
+
+```
 - In Linux
 ```
 run at root folder: sudo find . -name '*leveldb' -print | grep -i lightning
@@ -33,6 +47,10 @@ to get something like this:
  ~/.config/google-chrome/Default/IndexedDB/https_mohansun-fsc-20.lightning.force.com_0.indexeddb.leveldb
 
 ```
+
+- For Edge (Chromium based)
+- [View And Change IndexedDB Data With Microsoft Edge DevTools](https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/storage/indexeddb)
+
 #### specs and sample code for indexedDB
 
 - [w3spec](https://www.w3.org/TR/IndexedDB/)
