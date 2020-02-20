@@ -1,11 +1,11 @@
 ## Browser Storage Options 
 
 ### localStorage (webStorage) - [w3spec](https://www.w3.org/TR/webstorage/)
-    - window.localStorage
-    - strings only key - value storage
-    - sync API (Blocks the main thread)
-    - 5 MB limit
-    - store app's session data
+- window.localStorage
+- strings only key - value storage
+- sync API (Blocks the main thread)
+- 5 MB limit
+- store app's session data
 
 ### indexedDB
 
@@ -35,9 +35,10 @@ to get something like this:
 ```
 #### specs and sample code for indexedDB
 
-    - [w3spec](https://www.w3.org/TR/IndexedDB/)
-    - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
-    - JavaScript-based object-oriented database 
+- [w3spec](https://www.w3.org/TR/IndexedDB/)
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
+- JavaScript-based object-oriented database 
+
 ```
     open = indexedDB.openDatabase('db', 1);
     open.onupgradeneeded = e => {
