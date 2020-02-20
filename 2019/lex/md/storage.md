@@ -24,7 +24,6 @@ https_mohansun-fsc10.lightning.force.com_0.indexeddb.leveldb
 ```
 - In Windows
 ```
-cd View And Change IndexedDB Data With Microsoft Edge DevTools
 dir C:\Users\<username>\AppData\Local\Google\Chrome\User Data\Default\IndexedDB
 
 You will see the folders like:
@@ -36,6 +35,8 @@ you will see:
 files with extenion ldb (levelDB)  like:
 000001.ldb
 000002.ldb
+
+You can note down the file sizes
 ...
 
 ```
