@@ -1,13 +1,29 @@
 ## Browser Storage Options 
 
-- localStorage (webStorage) - [w3spec](https://www.w3.org/TR/webstorage/)
+### localStorage (webStorage) - [w3spec](https://www.w3.org/TR/webstorage/)
     - window.localStorage
     - strings only key - value storage
     - sync API (Blocks the main thread)
     - 5 MB limit
     - store app's session data
 
-- indexedDB
+### indexedDB
+
+- Chrome's indexedDB is based on LevelDB (work of Sanjay Ghemawat and Jeff Dean: [leveldb]:(https://github.com/google/leveldb)
+- How to find the levelDB files related to Lightning in Chrome's indexedDB 
+    - in Mac
+```
+$ tree  ~/Library/Application\ Support/Google/Chrome/ | grep indexed | grep  -i lightning
+│   │   ├── https_mohansun-59-dev-ed.lightning.force.com_0.indexeddb.leveldb
+│   │   ├── https_mohansun-60-dev-ed.lightning.force.com_0.indexeddb.leveldb
+│   │   ├── https_mohansun-fsc-20.lightning.force.com_0.indexeddb.leveldb
+│   │   ├── https_mohansun-fsc-70.lightning.force.com_0.indexeddb.leveldb
+│   │   ├── https_mohansun-fsc10.lightning.force.com_0.indexeddb.leveldb
+...
+
+```
+#### specs and sample code for indexedDB
+
     - [w3spec](https://www.w3.org/TR/IndexedDB/)
     - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
     - JavaScript-based object-oriented database 
