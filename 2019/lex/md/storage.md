@@ -11,7 +11,7 @@
 
 - Chrome's indexedDB is based on LevelDB (work of Sanjay Ghemawat and Jeff Dean: [leveldb](https://github.com/google/leveldb) )
 - How to find the levelDB files related to Lightning in Chrome's indexedDB 
-    - in Mac
+- in Mac
 ```
 $ tree  ~/Library/Application\ Support/Google/Chrome/ | grep indexed | grep  -i lightning
 https_mohansun-59-dev-ed.lightning.force.com_0.indexeddb.leveldb
@@ -22,11 +22,12 @@ https_mohansun-fsc10.lightning.force.com_0.indexeddb.leveldb
 ...
 
 ```
-    - In Windows
-        - Search for the files with extension leveldb
-    - In Linux
+- In Windows
+    - Search for the files with extension leveldb
+
+- In Linux
 ```
-run: sudo find . -name '*leveldb' -print | grep -i lightning
+run at root folder: sudo find . -name '*leveldb' -print | grep -i lightning
 to get something like this:
 
  ~/.config/google-chrome/Default/IndexedDB/https_mohansun-fsc-20.lightning.force.com_0.indexeddb.leveldb
