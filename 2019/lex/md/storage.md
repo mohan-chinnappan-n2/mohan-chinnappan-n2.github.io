@@ -22,6 +22,16 @@ https_mohansun-fsc10.lightning.force.com_0.indexeddb.leveldb
 ...
 
 ```
+    - In Windows
+        - Search for the files with extension leveldb
+    - In Linux
+```
+run: sudo find . -name '*leveldb' -print | grep -i lightning
+to get something like this:
+
+ ~/.config/google-chrome/Default/IndexedDB/https_mohansun-fsc-20.lightning.force.com_0.indexeddb.leveldb
+
+```
 #### specs and sample code for indexedDB
 
     - [w3spec](https://www.w3.org/TR/IndexedDB/)
