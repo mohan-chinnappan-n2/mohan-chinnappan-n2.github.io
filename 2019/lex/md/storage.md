@@ -1,5 +1,6 @@
 ## Browser Storage Options 
 
+
 ### localStorage (webStorage) - [w3spec](https://www.w3.org/TR/webstorage/)
 - window.localStorage
 - strings only key - value storage
@@ -8,6 +9,8 @@
 - store app's session data
 
 ### indexedDB
+
+- Key point: Make sure the leveldb files of the indexedDB are stored locally not on a network drive
 
 - Chrome's indexedDB is based on LevelDB (work of Sanjay Ghemawat and Jeff Dean: [leveldb](https://github.com/google/leveldb) )
 - How to find the levelDB files related to Lightning in Chrome's indexedDB 
