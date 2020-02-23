@@ -84,10 +84,13 @@
             let runFPS = document.getElementById('runFPS');
             let fpsOut = document.getElementById('fps');
             var status = document.getElementById("main-banner");
+            let memInfo = document.getElementById('mem-info');
+
             if (success) {
                 status.innerHTML = "Octane Score: " + score;
                 runFPS.style.visibility ='visible';
                 fpsOut.style.visibility ='visible';
+                memInfo.style.visibility ='visible';
                 
             } else {
                 status.innerHTML = "Octane Score (incomplete): " + score;
@@ -104,12 +107,15 @@
 
             let runFPS = document.getElementById('runFPS');
             let fpsOut = document.getElementById('fps');
+            let memInfo = document.getElementById('mem-info');
 
 
             let userAgent = navigator.userAgent;
             document.getElementById('userAgent').innerHTML =
                 ` 
             ${userAgent}`;
+            document.getElementById('ua-card').style.visibility='visible';
+            document.getElementById('webGL').style.visibility='visible';
 
             findWebGL(document.getElementById('webGL'));
 
@@ -117,14 +123,17 @@
             runFPS.addEventListener('click', function() {
                 getFPS(fpsOut);
             })
+
+            if (navigator.userAgent.indexOf('Chrome') > 0 ) {
+                document.getElementById('mem-info').innerHTML =  getMemoryInfo();
+            }
             
+            let frameTime = 10000;
             // Report the fps only every second, to only lightly affect measurements
-            setInterval(function(){
-            fpsOut.innerHTML = (1000/frameTime).toFixed(1) + " fps";
-            },1000);
+            // setInterval(function(){ fpsOut.innerHTML = (1000/frameTime).toFixed(1) + " fps"; },1000);
 
             let h3s = document.getElementsByTagName('h3')
-            console.log(h3s);
+            // console.log(h3s);
             for (let i = 0; i < h3s.length; i++) {
                 h3s[i].style.visibility = 'visible';
             }
@@ -174,6 +183,23 @@
         }
 
 
+        function getMemoryInfo(para) {
+
+            let performance = window.performance;
+            if (performance) {
+            return `
+            <b>Memory Info</b><br>
+            Total Heap Size: ${performance.memory.totalJSHeapSize.toLocaleString()} <br>
+            Used Heap Size: ${performance.memory.usedJSHeapSize.toLocaleString()} <br>
+            Heap Size Limit: ${performance.memory.jsHeapSizeLimit.toLocaleString()}<br>
+            
+            `
+            } else {
+                return "";
+            }
+        }
+
+
         function findWebGL(paragraph) {
             // Create canvas element. The canvas is not added to the
             // document itself, so it is never displayed in the
@@ -185,7 +211,13 @@
             // Report the result.
             if (gl && gl instanceof WebGLRenderingContext) {
                 paragraph.innerHTML =
-                    "Your browser supports WebGL";
+                    `Your browser supports <b>WebGL</b> and has    ${gl.getSupportedExtensions().length}  extensions.<br>
+                     Version: ${gl.getParameter(gl.VERSION)} <br>
+                     Vendor : ${gl.getParameter(gl.VENDOR)} <br>
+                     Shading Lang Ver: ${gl.getParameter(gl.SHADING_LANGUAGE_VERSION)}<br>
+
+                    `
+
             } else {
                 paragraph.innerHTML = "Failed to get WebGL context. " +
                     "Your browser or device may not support WebGL.";
@@ -236,7 +268,7 @@
 <body onLoad="Load()">
 
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-info">
         <a class="navbar-brand cap-it" href="#">Octane 2.0 </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -265,7 +297,7 @@
         <div id="main-container">
             <a id="run-octane" href="javascript:Run()">
                 <div class="hero-unit" id="inside-anchor">
-                    <h1 class='btn btn-info' align="center" id="main-banner">Start Octane 2.0</h1>
+                    <h1 class='btn btn-info cap-it' align="center" id="main-banner">Start Octane 2.0</h1>
                     <div id="bar-appendix"></div>
                 </div>
             </a>
@@ -275,19 +307,22 @@
         </div>
 
 
-        <div class="alert alert-info" role="alert" id='webGL'>WebGL </div>
-        <div class="card" style="width: 69rem;">
+        <div class="alert alert-info hidden" role="alert" id='webGL'>WebGL </div>
+        <div class="card hidden" id='ua-card'>
             <div class="card-body" id='userAgent'>
             </div>
         </div>
 
         <button class='btn btn-danger hidden' id='runFPS'>Find FPS</button>
         <div class="alert alert-info hidden" role="alert" id='fps'>FPS </div>
+        <div class="alert alert-primary hidden" role="alert" id='mem-info'>Memory Info </div>
+
+
        
 
         <div class="content">
 
-            <h3 class='cap-it'>Core Language Features</h3>
+            <h4 class='cap-it'>Core Language Features</h4>
 
             <div class="row">
                 <div class="col">
@@ -345,7 +380,7 @@
                 </div>
             </div>
 
-            <h3 class='cap-it'>Bit Operations</h3>
+            <h4 class='cap-it'>Bit Operations</h4>
             <div class="row">
                 <div class="col">
                     <div id="Box-Crypto" style="visibility: hidden;">
@@ -384,7 +419,7 @@
 
 
 
-            <h3 class='cap-it'>Memory and Garbage Collection</h3>
+            <h4 class='cap-it'>Memory and Garbage Collection</h4>
             <div class="row">
                 <div class="col">
                     <div id="Box-EarleyBoyer" style="visibility: hidden;">
@@ -443,7 +478,7 @@
             </div>
 
 
-            <h3 class='cap-it'>Strings and Arrays</h3>
+            <h4 class='cap-it'>Strings and Arrays</h4>
 
             <div class='row'>
                 <div class="col">
@@ -502,7 +537,7 @@
             </div>
 
 
-            <h3 class='cap-it'>Virtual Machine</h3>
+            <h4 class='cap-it'>Virtual Machine</h4>
 
             <div class="row">
                 <div class="col">
@@ -570,7 +605,7 @@
             </div>
 
 
-            <h3 class='cap-it'>Compiler</h3>
+            <h4 class='cap-it'>Compiler</h4>
 
             <div class="row">
                 <div class="col">
