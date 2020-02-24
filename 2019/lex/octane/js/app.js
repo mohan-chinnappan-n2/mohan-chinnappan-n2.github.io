@@ -9,6 +9,9 @@ Feb-23-2020
 
 */
 
+        var SCORESG = [];
+        var SCORES = {};
+
         var completed = 0;
         var benchmarks = BenchmarkSuite.CountBenchmarks();
         var percentCompleted = 0;
@@ -39,8 +42,14 @@ Feb-23-2020
 
         function AddResult(name, result) {
             // console.log(name + ': ' + result);
+            let item = { "category": name, amount:parseInt(result)};
+            SCORESG.push(item);
+
+            SCORES[name] = parseInt(result);
+          
             var box = document.getElementById("Result-" + name);
             box.innerHTML = result.toLocaleString();
+            // console.log(SCORES);
         }
 
         function AddError(name, error) {
@@ -72,6 +81,9 @@ Feb-23-2020
                 scoreProgress.style.width = `${percentCompleted}%`;
                 scoreProgress.innerHTML=`${percentCompleted.toFixed(0)}%`;
                 scoreProgress.classList.remove('progress-bar-animated');
+
+                document.getElementById('finalScore').value = JSON.stringify(SCORES, null, 4);
+                document.getElementById('finalScore').style.display='block';
     
                 
             } else {
@@ -209,7 +221,9 @@ Feb-23-2020
         before=Date.now();
         fps=0;
         requestAnimationFrame(
+
             function loop(){
+
                 now=Date.now();
                 fps=Math.round(1000/(now-before));
                 before=now;
