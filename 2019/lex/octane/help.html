@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.js"
+        integrity="sha256-Z1t+wxZ7Eh5T1sK6aePWMhEQOghR4jZVLwjwrUZAReE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
+
+
+    <link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-info">
+        <a class="navbar-brand cap-it" href="#">Octane 2.0 </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="octane2.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="help.html">Help</a>
+                  </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class='container top-margin-80'>
+
+        <div class="card" style="width: 100%">
+            <div class="card-body">
+              <h5 class="card-title"><b>How the Octane score is arrived?</b></h5>
+
+              <p>
+                Octane 2.0 consists of <b>17 tests</b>, 4 more than Octane v1. 
+                We have chosen each test in order to cover most use cases encountered in the <b>real web</b> <br>
+
+                We believe a high-performance JavaScript engine should be able to perform well on real-world code,
+                 not just synthetic benchmarks. That is how the 4 new tests, have been selected:
+
+                 <ul class="list-group">
+                    <li class="list-group-item">NavierStoke </li> 
+                    <li class="list-group-item">SplayLatency </li> 
+                    <li class="list-group-item">zlib </li> 
+                    <li class="list-group-item">TypeScript </li> 
+                
+                </ul>
+
+
+              </p>
+            </div>
+          </div>
+          <br/>
+          <div class="jumbotron">
+            <h5>Geometric Mean</h4>
+            <p class="lead">
+                The final score is the <a href="https://en.wikipedia.org/wiki/Geometric_mean#Properties">geometric mean</a>
+                of the
+                single scores. 
+               <br> 
+                <button class='btn btn-info'>
+                    We suggest you to restart the browser before repeating the test.
+                </button>             
+      
+            </p>
+            <hr class="my-4">
+       
+          </div>
+
+
+
+
+    </div>
+
+
+</body>
+</html>
