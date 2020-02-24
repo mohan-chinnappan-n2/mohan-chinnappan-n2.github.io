@@ -71,6 +71,7 @@ Feb-23-2020
                 
                 scoreProgress.style.width = `${percentCompleted}%`;
                 scoreProgress.innerHTML=`${percentCompleted.toFixed(0)}%`;
+                scoreProgress.classList.remove('progress-bar-animated');
     
                 
             } else {
