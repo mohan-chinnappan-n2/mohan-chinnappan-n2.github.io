@@ -11,6 +11,7 @@ Feb-23-2020
 
         var completed = 0;
         var benchmarks = BenchmarkSuite.CountBenchmarks();
+        var percentCompleted = 0;
         var success = true;
         var latencyBenchmarks = ["Splay", "Mandreel"];
         var skipBenchmarks =
@@ -18,9 +19,16 @@ Feb-23-2020
 
         function ShowBox(name) {
             var box = document.getElementById("Box-" + name);
+            var scoreProgress = document.getElementById('score-progress');
             box.style.visibility = 'visible';
-            var bar = document.getElementById("progress-bar").style.width = "" +
-                ((++completed) / benchmarks) * 100 + "%";
+          
+            
+            percentCompleted  = ((++completed) / benchmarks) * 100 ;
+            scoreProgress.style.width = `${percentCompleted}%`;
+            scoreProgress.innerHTML=`${percentCompleted.toFixed(0)}%`;
+
+           // console.log('% completed: ' + percentCompleted);
+
             latencyBenchmarks.forEach(function (entry) {
                 if (name.valueOf() === entry.valueOf()) {
                     var box1 = document.getElementById("Box-" + name + "Latency");
@@ -30,9 +38,9 @@ Feb-23-2020
         }
 
         function AddResult(name, result) {
-            console.log(name + ': ' + result);
+            // console.log(name + ': ' + result);
             var box = document.getElementById("Result-" + name);
-            box.innerHTML = result;
+            box.innerHTML = result.toLocaleString();
         }
 
         function AddError(name, error) {
@@ -52,25 +60,31 @@ Feb-23-2020
             let fpsOut = document.getElementById('fps');
             var status = document.getElementById("main-banner");
             let memInfo = document.getElementById('mem-info');
-
+            var scoreProgress = document.getElementById('score-progress');
             if (success) {
                 status.innerHTML = "Octane Score: " + score.toLocaleString();
                 runFPS.style.visibility ='visible';
                 fpsOut.style.visibility ='visible';
                 memInfo.style.visibility ='visible';
+                document.getElementById('o-spinner').style.visibility='hidden';
+                percentCompleted  = 100;
+                
+                scoreProgress.style.width = `${percentCompleted}%`;
+                scoreProgress.innerHTML=`${percentCompleted.toFixed(0)}%`;
+    
                 
             } else {
                 status.innerHTML = "Octane Score (incomplete): " + score;
+                console.log("Octane Score (incomplete): " + score);
             }
-            document.getElementById("progress-bar-container").style.visibility = 'hidden';
-            document.getElementById("bottom-text").style.visibility = 'visible';
-            document.getElementById("inside-anchor").removeChild(document.getElementById("bar-appendix"));
             document.getElementById("alertbox").style.visibility = 'hidden';
         }
 
         
 
         function Run() {
+
+            document.getElementById('o-spinner').style.visibility = 'visible';
 
             let runFPS = document.getElementById('runFPS');
             let fpsOut = document.getElementById('fps');
@@ -95,7 +109,7 @@ Feb-23-2020
                 document.getElementById('mem-info').innerHTML =  getMemoryInfo();
             }
             
-            let frameTime = 10000;
+            // let frameTime = 10000;
             // Report the fps only every second, to only lightly affect measurements
             // setInterval(function(){ fpsOut.innerHTML = (1000/frameTime).toFixed(1) + " fps"; },1000);
 
@@ -107,16 +121,11 @@ Feb-23-2020
 
             document.getElementById("main-banner").innerHTML = "Running Octane...";
             // append the progress bar elements..
-            document.getElementById("bar-appendix").innerHTML =
-                "<br/><div class=\"progress \" id=\"progress-bar-container\" style=\"visibility:visible\"><div class=\"bar\"style=\"width: 0%;\" id=\"progress-bar\"></div></div>";
             var anchor = document.getElementById("run-octane");
             var parent = document.getElementById("main-container");
             parent.appendChild(document.getElementById("inside-anchor"));
             parent.removeChild(anchor);
 
-            // document.getElementById("startup-text").innerHTML = "";
-
-            document.getElementById("progress-bar-container").style.visibility = 'visible';
 
             BenchmarkSuite.RunSuites({
                     NotifyStart: ShowBox,

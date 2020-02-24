@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Script-Type" content="text/javascript">
     <meta name="description" content="Octane 2.0 JavaScript Benchmark - the Javascript benchmark for the modern web">
-    <meta name="author" content="Octane Team Google">
+    <meta name="author" content="Octane Team Google and Mohan Chinnappan">
     <!-- twitter bootstrap code -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -50,8 +50,8 @@
 <![endif]-->
 
     <!-- Le fav and touch icons -->
-    <!-- TODO update icons -->
-    <link rel="shortcut icon" href="ico/favicon.ico">
+
+    <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n2.github.io/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
@@ -93,10 +93,18 @@
         <div id="main-container">
             <a id="run-octane" href="javascript:Run()">
                 <div class="hero-unit" id="inside-anchor">
-                    <button class='btn btn-lg btn-info' 
-                       title="Click to start the Octane Score Test"
+                    <button class='btn btn-lg btn-primary' 
+                       title="Octane Score"
                    id="main-banner">Start Octane 2.0</button>
-                    <div id="bar-appendix"></div>
+                   <div id='o-spinner' class="spinner-border hidden text-info"></div>
+                   <br>
+                    <div class="progress">
+                        <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" id='score-progress' role="progressbar" style="width: 0%" 
+                        aria-valuenow="0"
+                         aria-valuemin="0" 
+                         aria-valuemax="100"></div>
+                      </div>
+                    <br>
                 </div>
             </a>
 
@@ -487,6 +495,14 @@
 
     </div>
     <!-- /container -->
+
+    <footer class="footer">
+        <div class="container">
+          <span class="text-muted">Octane2 Score</span>
+        </div>
+      </footer>
+
+
 
 </body>
 
