@@ -53,6 +53,8 @@ Technical Requirements
 
 
 - [Run Octane Test](http://chromium.github.io/octane/)
+- [Run Octane Test - New UI](https://mohan-chinnappan-n2.github.io/2019/lex/octane/octane2.html)
+
 
     - Chrome
     ![Google Chrome Octane Score](img/google-octane-score.png)
