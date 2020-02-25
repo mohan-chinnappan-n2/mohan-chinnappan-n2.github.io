@@ -9,7 +9,7 @@ Feb-23-2020
 
 */
 
-        var SCORES = {};
+        var SCORES = {tests: {}};
 
         var completed = 0;
         var benchmarks = BenchmarkSuite.CountBenchmarks();
@@ -42,8 +42,8 @@ Feb-23-2020
         function AddResult(name, result) {
             // console.log(name + ': ' + result);
             let item = { "category": name, amount:parseInt(result)};
-            spec.data[0].values.push(item);
-            SCORES[name] = parseInt(result);
+            spec2.data.values.push(item);
+            SCORES.tests[name] = parseInt(result);
           
             var box = document.getElementById("Result-" + name);
             box.innerHTML = result.toLocaleString();
@@ -79,8 +79,14 @@ Feb-23-2020
                 scoreProgress.style.width = `${percentCompleted}%`;
                 scoreProgress.innerHTML=`${percentCompleted.toFixed(0)}%`;
                 scoreProgress.classList.remove('progress-bar-animated');
+
+               SCORES['ua'] = navigator.userAgent;
+               SCORES['score'] = parseInt(score);
+
+                spec2.title = 'OCTANE SCORE: ' + score.toLocaleString();
+                // +  ' ' + navigator.userAgent;
                
-                vegaEmbed('#vis', spec);
+                vegaEmbed('#vis', spec2);
 
                 document.getElementById('finalScore').value = JSON.stringify(SCORES, null, 4);
                 document.getElementById('finalScore').style.display='block';
@@ -239,6 +245,7 @@ Feb-23-2020
         "width": 1000,
         "height": 400,
         "padding": 5,
+        "title": "OCTANE SCORE",
       
         "data": [
           {
@@ -264,7 +271,7 @@ Feb-23-2020
             "type": "band",
             "domain": {"data": "table", "field": "category"},
             "range": "width",
-            "padding": 0.05,
+            "padding": 0.3,
             "round": true
           },
           {
@@ -276,8 +283,8 @@ Feb-23-2020
         ],
       
         "axes": [
-          { "orient": "bottom", "scale": "xscale" },
-          { "orient": "left", "scale": "yscale" }
+            {"orient": "bottom", "scale": "xscale","title": "TESTS"},
+            {"orient": "left", "scale": "yscale", "title": "SCORE"}
         ],
       
         "marks": [
@@ -295,7 +302,7 @@ Feb-23-2020
                 "fill": {"value": "steelblue"}
               },
               "hover": {
-                "fill": {"value": "red"}
+                "fill": {"value": "turquoise"}
               }
             }
           },
@@ -305,7 +312,7 @@ Feb-23-2020
               "enter": {
                 "align": {"value": "center"},
                 "baseline": {"value": "bottom"},
-                "fill": {"value": "#333"}
+                "fill": {"value": "black"}
               },
               "update": {
                 "x": {"scale": "xscale", "signal": "tooltip.category", "band": 0.5},
@@ -322,6 +329,40 @@ Feb-23-2020
 
 
         ]
+      };
+
+
+      let spec2 = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+        "title": "OCTANE SCORE",
+        "width": 800,
+        "height": 600,
+        "data": {
+          "values": [
+             
+              
+            ]
+          
+        },
+         
+            
+        "encoding": {
+          "y": {"field": "category", "type": "ordinal", "title": "TESTS"},
+          "x": {"field": "amount", "type": "quantitative", "title": "SCORE"}
+        },
+        "layer": [{
+          "mark": "bar"
+        }, {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "dx": 4
+          },
+          "encoding": {
+            "text": {"field": "amount", "type": "quantitative"}
+          }
+        }]
       };
 
    
