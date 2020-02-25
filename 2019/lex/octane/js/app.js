@@ -9,7 +9,6 @@ Feb-23-2020
 
 */
 
-        var SCORESG = [];
         var SCORES = {};
 
         var completed = 0;
@@ -43,8 +42,7 @@ Feb-23-2020
         function AddResult(name, result) {
             // console.log(name + ': ' + result);
             let item = { "category": name, amount:parseInt(result)};
-            SCORESG.push(item);
-
+            spec.data[0].values.push(item);
             SCORES[name] = parseInt(result);
           
             var box = document.getElementById("Result-" + name);
@@ -81,6 +79,8 @@ Feb-23-2020
                 scoreProgress.style.width = `${percentCompleted}%`;
                 scoreProgress.innerHTML=`${percentCompleted.toFixed(0)}%`;
                 scoreProgress.classList.remove('progress-bar-animated');
+               
+                vegaEmbed('#vis', spec);
 
                 document.getElementById('finalScore').value = JSON.stringify(SCORES, null, 4);
                 document.getElementById('finalScore').style.display='block';
@@ -232,3 +232,101 @@ Feb-23-2020
             }
         );
     }
+
+    // graphing
+     let spec =  {
+        "$schema": "https://vega.github.io/schema/vega/v5.json",
+        "width": 1000,
+        "height": 400,
+        "padding": 5,
+      
+        "data": [
+          {
+            "name": "table",
+            "values":[ ]
+          }
+        ],
+      
+        "signals": [
+          {
+            "name": "tooltip",
+            "value": {},
+            "on": [
+              {"events": "rect:mouseover", "update": "datum"},
+              {"events": "rect:mouseout",  "update": "{}"}
+            ]
+          }
+        ],
+      
+        "scales": [
+          {
+            "name": "xscale",
+            "type": "band",
+            "domain": {"data": "table", "field": "category"},
+            "range": "width",
+            "padding": 0.05,
+            "round": true
+          },
+          {
+            "name": "yscale",
+            "domain": {"data": "table", "field": "amount"},
+            "nice": true,
+            "range": "height"
+          }
+        ],
+      
+        "axes": [
+          { "orient": "bottom", "scale": "xscale" },
+          { "orient": "left", "scale": "yscale" }
+        ],
+      
+        "marks": [
+          {
+            "type": "rect",
+            "from": {"data":"table"},
+            "encode": {
+              "enter": {
+                "x": {"scale": "xscale", "field": "category"},
+                "width": {"scale": "xscale", "band": 1},
+                "y": {"scale": "yscale", "field": "amount"},
+                "y2": {"scale": "yscale", "value": 0}
+              },
+              "update": {
+                "fill": {"value": "steelblue"}
+              },
+              "hover": {
+                "fill": {"value": "red"}
+              }
+            }
+          },
+          {
+            "type": "text",
+            "encode": {
+              "enter": {
+                "align": {"value": "center"},
+                "baseline": {"value": "bottom"},
+                "fill": {"value": "#333"}
+              },
+              "update": {
+                "x": {"scale": "xscale", "signal": "tooltip.category", "band": 0.5},
+                "y": {"scale": "yscale", "signal": "tooltip.amount", "offset": -2},
+                "text": {"signal": "tooltip.amount"},
+                "fillOpacity": [
+                  {"test": "datum === tooltip", "value": 0},
+                  {"value": 1}
+                ]
+              }
+            }
+          },
+
+
+
+        ]
+      };
+
+   
+
+      
+      
+
+

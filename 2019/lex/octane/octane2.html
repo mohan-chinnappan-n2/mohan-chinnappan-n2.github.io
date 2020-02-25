@@ -39,6 +39,14 @@
     <script type="text/javascript" src="https://chromium.github.io/octane/typescript-input.js"></script>
     <script type="text/javascript" src="https://chromium.github.io/octane/typescript-compiler.js"></script>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.9.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.4.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.2.2"></script>
+
+
+
+
     <script type="text/javascript" src="js/app.js"></script>
 
 
@@ -105,15 +113,15 @@
                          aria-valuemax="100"></div>
                       </div>
                     <br>
-                    <textarea name="score" class="no-display form-control" id="finalScore" cols="100" rows="17"></textarea>
+                    <textarea  name="score" class="no-display form-control code-ta" id="finalScore" cols="100" rows="17"></textarea>
                 </div>
             </a>
 
         
-
         </div>
 
 
+        <div id="vis"></div>
         <div class="alert alert-info hidden" role="alert" id='webGL'>WebGL </div>
         <div class="card hidden" id='ua-card'>
             <div class="card-body" id='userAgent'>
@@ -123,6 +131,8 @@
         <button class='btn btn-danger hidden' id='runFPS'>Find FPS</button>
         <div class="alert alert-info hidden" role="alert" id='fps'> </div>
         <div class="alert alert-primary hidden" role="alert" id='mem-info'></div>
+
+
 
 
        

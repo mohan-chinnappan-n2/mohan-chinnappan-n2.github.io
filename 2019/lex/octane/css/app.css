@@ -68,6 +68,12 @@ html {
     font-size: 80%;
   }
 
+  .code-ta {
+      background-color: black;
+      color: whitesmoke;
+      font-family: Monaco, Arial, Helvetica, sans-serif;
+  }
+
 
 
 
