@@ -23,6 +23,13 @@ Technical Requirements
 - On Desktop MacOS 10.13.6 Chrome 77
 ![Octane Score](img/octane-score.png)
 
+- On Desktop MacOS 10.13.6 Chrome 80 - Chart
+![Octane Graph](img/octane-graph-1.svg)
+
+- On iPhone 8 plus  - Chart
+![Octane Chart iPhone](img/iphone-8plus-oscore-1.png)
+
+
 - On VM Windows 10.0.16299.1451  Chrome 77 
 ![VM Octane Chrome 57 Score](img/onVMChrome-octane.png)
 

@@ -132,10 +132,9 @@ Feb-23-2020
             // Report the fps only every second, to only lightly affect measurements
             // setInterval(function(){ fpsOut.innerHTML = (1000/frameTime).toFixed(1) + " fps"; },1000);
 
-            let h3s = document.getElementsByTagName('h3')
-            // console.log(h3s);
-            for (let i = 0; i < h3s.length; i++) {
-                h3s[i].style.visibility = 'visible';
+            let h4s = document.getElementsByTagName('h4')
+            for (let i = 0; i < h4s.length; i++) {
+                h4s[i].style.visibility = 'visible';
             }
 
             document.getElementById("main-banner").innerHTML = "Running Octane...";
