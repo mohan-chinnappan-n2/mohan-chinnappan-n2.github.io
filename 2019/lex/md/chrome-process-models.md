@@ -38,7 +38,10 @@
     - Any renderer crash will cause the loss of the entire browser process
         - For testing and development purposes ONLY
 
+### Reference for Chromium command line options
+- [Chromium command line options](https://github.com/mohan-chinnappan-n/chrome/blob/master/cmd/chrome-cmd-line-opts.csv)
 
+![Cmd line opts](img/chrome-cmd-line-options-help.png )
 ### How to view the processes 
 
 - Get the  process id (PID) of the tab your are interested in from the Chrome's Task Panel (Window > Task Manager) 
