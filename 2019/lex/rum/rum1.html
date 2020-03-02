@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>RUM - Beacon Web API</title>
+  <!-- twitter bootstrap code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.js"
+        integrity="sha256-Z1t+wxZ7Eh5T1sK6aePWMhEQOghR4jZVLwjwrUZAReE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
+</head>
+
+<body class='container'>
+  <h3>RUM - Beacon Web API</h3>
+
+
+  <script>
+
+    let urlhb = 'https://mohansun-rum.herokuapp.com/heartbeat'; 
+    navigator.sendBeacon(`${urlhb}?id=123`);
+
+    // String
+    const dataObj = {
+      location: window.location,
+      time: Date(),
+      pt: performance.timing
+    };
+    
+    const data = JSON.stringify(dataObj, null, 4);
+
+   
+    let url = 'https://mohansun-rum.herokuapp.com/pt'; 
+    var status  = navigator.sendBeacon(url, JSON.stringify(dataObj, null, 4));
+    console.log(`sendBeacon: URL = ${url} ; data = ${data} status = ${status}`);
+
+
+    /*
+    // FormData
+    const formData = new FormData();
+    formData.append("session", "12345");
+    formData.append("id", 11);
+    navigator.sendBeacon('usageFormData', formData);
+
+    // Blob
+    const ua = JSON.stringify({ ua: navigator.userAgent, now: performance.now() });
+    const headers = { type: 'application/json' };
+    const blob = new Blob([ua], headers);
+    navigator.sendBeacon('usageBlob', blob);
+
+    // ArrayBufferView
+    const string = '=======This is a text, sent compressed to the server=======';
+    const enc = new TextEncoder();
+    const encoded = enc.encode(string);
+    const compressed = pako.deflate(encoded);
+
+    navigator.sendBeacon('usageArrayBufferView', compressed);
+
+  */
+  </script>
+</body>
+
+</html>
+
