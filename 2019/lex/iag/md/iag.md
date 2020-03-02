@@ -43,7 +43,7 @@
 !
 - Monitoring
 ![iag-mon](img/iag-mon-1.png)
-https://cdn.vidyard.com/videos/5VcWtl0mXh1lsuAn1k07Mg/sd.mp4?4WvQ3EBk2HHpdDR1cPvgW3tF5Tt4wUxrZEIAoIqAfvF3rtWVaDKmIijOvaTja9G1dLBy2R1b5GQXk8ugYmrPjauNqEO93vu0V1V5Dcb4K7Ts6M04kYLC1nJSlMqfy7Jz6GLMIE-iuVs">
+
 ### Articles
 - [Drive User Engagement at the Point of Impact With In-App Guidance](https://www.salesforce.com/blog/2019/10/in-app-guidance.html)
 
