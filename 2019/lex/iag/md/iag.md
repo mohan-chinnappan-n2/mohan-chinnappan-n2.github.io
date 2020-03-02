@@ -1,4 +1,4 @@
-## In-App Guidance
+## In-App Guidance in Lightning
 
 
 - Prompts can be used to onboard and train users
