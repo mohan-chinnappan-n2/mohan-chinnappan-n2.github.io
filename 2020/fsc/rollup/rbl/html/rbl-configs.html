@@ -1,0 +1,422 @@
+
+<h3>RBL Configurations</h3>
+<table class="featureTable sort_table" summary="">
+            
+            <tbody class="tbody">
+              <tr>
+                <td class="entry"><strong class="ph b">Rule</strong></td>
+                <td class="entry"><strong class="ph b">Type</strong></td>
+                <td class="entry"><strong class="ph b">Object</strong></td>
+                <td class="entry"><strong class="ph b">Description</strong></td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFinAcctsHHTotal</td>
+                <td class="entry">HH</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Group-level aggregation of all Financial Account balances.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForInvestmentsHH</td>
+                <td class="entry">HH</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Group-level aggregation of all Financial Account balances with record type
+                  Investment Account.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForBankingHH</td>
+                <td class="entry">HH</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Group-level aggregation of all Financial Account balances with record type
+                  Banking Account, Checking Account, and Savings Account.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForInsuranceHH</td>
+                <td class="entry">HH</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Group-level aggregation of all Financial Accounts balances with record type
+                  Insurance Policy.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLforAUMHH</td>
+                <td class="entry">HH</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Group-level aggregation of all Financial Accounts balances with Managed set
+                  to True. Denotes assets under management.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFinAcctsHHHeldAway</td>
+                <td class="entry">HH</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Group-level aggregation of all Financial Accounts balances with Held Away set
+                  to True.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForTotalOutstandingCreditBankerHH</td>
+                <td class="entry">HH</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Group-level aggregation of total outstanding credit balances of all Financial
+                  Accounts with record type Credit Card, Mortgage, HELOC, LoanAccount, or
+                  AutoLoan.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForLastTransactionDateHH</td>
+                <td class="entry">HH</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Group-level summary of the Last Transaction Date for all associated Financial
+                  Accounts.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForTotalNumberOfAccountsBankerHH</td>
+                <td class="entry">HH</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Group-level summary of the number of all associated Financial
+                  Accounts.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForLiabilitiesHH</td>
+                <td class="entry">HH</td>
+                <td class="entry">Assets and Liabilities</td>
+                <td class="entry">Group-level summary of all non-financial liabilities.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForNonfinAssetsHH</td>
+                <td class="entry">HH</td>
+                <td class="entry">Assets and Liabilities</td>
+                <td class="entry">Group-level summary of all non-financial assets.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFinAcctsClientPrimaryOwner</td>
+                <td class="entry">FA</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Client-level aggregation of all Financial Account balances where Client is
+                  Primary Owner on the Financial Account. </td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFinAcctsClientJointOwner</td>
+                <td class="entry">FA</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Client-level aggregation of all Financial Account balances where Client is
+                  Joint Owner on the Financial Account. One Joint Owner only.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForInvestmentsClientPrimaryOwner</td>
+                <td class="entry">FA</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with record type
+                  Investment Account where Client is Primary Owner on the Financial Account.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForInvestmentsClientJointOwner</td>
+                <td class="entry">FA</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with record type
+                  Investment Account where Client is Joint Owner on the Financial Account. One Joint
+                  Owner only.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForBankingClientPrimaryOwner</td>
+                <td class="entry">FA</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with record type Banking
+                  Account, Checking Account and Savings Account where Client is Primary Owner on the
+                  Financial Account.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForBankingClientJointOwner</td>
+                <td class="entry">FA</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with record type Banking
+                  Account, Checking Account and Savings Account where Client is Joint Owner on the
+                  Financial Account. One Joint Owner only.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForInsuranceClientPrimaryOwner</td>
+                <td class="entry">FA</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with record type Insurance
+                  Policy where Client is Primary Owner on the Financial Account.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForInsuranceClientJointOwner</td>
+                <td class="entry">FA</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with record type Insurance
+                  Policy where Client is Joint Owner on the Financial Account. One Joint Owner
+                  only.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLforAUMClientPrimaryOwner</td>
+                <td class="entry">FA</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with Managed set to True
+                  where Client is Primary Owner on the Financial Account. Denotes Assets under
+                  Management.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLforAUMClientJointOwner</td>
+                <td class="entry">FA</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with Managed set to True
+                  where Client is Joint Owner on the Financial Account. One Joint Owner
+                  only.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFinAcctsClientHeldAwayPrimaryOwner</td>
+                <td class="entry">FA</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with Held Away set to True
+                  where Client is Primary Owner on the Financial Account.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFinAcctsClientHeldAwayJointOwner</td>
+                <td class="entry">FA</td>
+                <td class="entry">Financial Account</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with Held Away set to True
+                  where Client is Joint Owner on the Financial Account. One Joint Owner
+                  only.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForFinAcctsClientPrimaryOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts balances where Client is
+                  designated as the Primary Owner on Financial Account Role.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForFinAcctsClientJointOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts balances where Client is
+                  designated as a Joint Owner on Financial Account Role. Multiple Joint Owners
+                  supported.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForInvestmentsClientPrimaryOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with record type Banking
+                  Account, Checking Account and Savings Account where Client is designated as the
+                  Primary Owner on Financial Account Role.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForInvestmentsClientJointOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with record type Banking
+                  Account, Checking Account and Savings Account where Client is designated as a
+                  Joint Owner on Financial Account Role. Multiple Joint Owners supported.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForTotalBankDepositsPrimaryOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with record type
+                  Investment Account where Client is designated as the Primary Owner on Financial
+                  Account Role.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForTotalBankDepositsJointOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with record type
+                  Investment Account where Client is designated as a Joint Owner on Financial
+                  Account Role. Multiple Joint Owners supported.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForInsuranceClientPrimaryOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with record type Insurance
+                  Policy where Client is designated as the Primary Owner on Financial Account
+                  Role.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForInsuranceClientJointOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with record type Insurance
+                  Policy where Client is designated as a Joint Owner on Financial Account Role.
+                  Multiple Joint Owners supported.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARforAUMClientPrimaryOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with Managed set to True
+                  where Client is designated as the Primary Owner on Financial Account Role. Summary
+                  denotes Assets under Management.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARforAUMClientJointOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with Managed set to True
+                  where Client is designated as a Joint Owner on Financial Account Role. Multiple
+                  Joint Owners supported.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForFinAcctsClientHeldPrimaryOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with Held Away set to True
+                  where Client is designated as the Primary Owner on Financial Account Role.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForFinAcctsClientHeldJointOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of all Financial Accounts with Held Away set to True
+                  where Client is designated as a Joint Owner on Financial Account Role. Multiple
+                  Joint Owners supported.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForInsurancePremium</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of all premiums for all Financial Accounts with
+                  record type Investment Account where Client is designated as the Related Account
+                  on Financial Account Role.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForTotalOutstandingCreditPrimaryOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of total outstanding credit balances of all
+                  Financial Accounts with record type Credit Card, Mortgage, HELOC, LoanAccount,
+                  AutoLoan where Client is designated as a Primary Owner on Financial Account Role.
+                </td>
+
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForTotalOutstandingCreditJointOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level aggregation of total outstanding credit balances of all
+                  Financial Accounts with record type Credit Card, Mortgage, HELOC, LoanAccount,
+                  AutoLoan where Client is designated as a Joint Owner on Financial Account Role.
+                  Multiple Joint Owners supported.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForTotalNumberOfAccountsPrimaryOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level summary of the number of all associated Financial Accounts where
+                  Client is designated as a Primary Owner on Financial Account Role.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForTotalNumberOfAccountsJointOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level summary of the number of all associated Financial Accounts where
+                  Client is designated as a Joint Owner on Financial Account Role. Multiple Joint
+                  Owners supported.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForLastTransactionDatePrimaryOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level summary of the Last Transaction Date for all associated
+                  Financial Accounts where Client is designated as a Primary Owner on Financial
+                  Account Role.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForLastTransactionDateJointOwner</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Client-level summary of the Last Transaction Date for all associated
+                  Financial Accounts where Client is designated as a Joint Owner on Financial
+                  Account Role. Multiple Joint Owners supported.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForFARForLastTransactionDateHH</td>
+                <td class="entry">FAR</td>
+                <td class="entry">Financial Account Role</td>
+                <td class="entry">Group-level summary of the Last Transaction Date for all associated Financial
+                  Accounts.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForLiabilitiesClientPrimaryOwner</td>
+                <td class="entry">- </td>
+                <td class="entry">Assets and Liabilities</td>
+                <td class="entry">Client-level summary of all non-financial liabilities where Client is Primary
+                  Owner.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForLiabilitiesClientJointOwner</td>
+                <td class="entry">- </td>
+                <td class="entry">Assets and Liabilities</td>
+                <td class="entry">Client-level summary of all non-financial liabilities where Client is Joint
+                  Owner.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForNonfinAssetsClientPrimaryOwner</td>
+                <td class="entry">- </td>
+                <td class="entry">Assets and Liabilities</td>
+                <td class="entry">Client-level summary of all non-financial assets where Client is Primary
+                  Owner.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForNonfinAssetsClientJointOwner</td>
+                <td class="entry">- </td>
+                <td class="entry">Assets and Liabilities</td>
+                <td class="entry">Client-level summary of all non-financial assets where Client is Joint
+                  Owner.</td>
+              </tr>
+
+              <tr>
+                <td class="entry">RBLForTotalRevenueBanker</td>
+                <td class="entry">-</td>
+                <td class="entry">Revenue</td>
+                <td class="entry">Client-level summary of all Revenues.</td>
+              </tr>
+
+            </tbody>
+          </table>
+
