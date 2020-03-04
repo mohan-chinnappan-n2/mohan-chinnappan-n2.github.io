@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OAuth Service</title>
+</head>
+<body>
+<script>
+function get(name){
+   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+      return decodeURIComponent(name[1]);
+}
+
+window.addEventListener('load', (event) => {
+  console.log('page is fully loaded');
+  document.getElementById('code').innerHTML = get('code');
+});
+
+</script>
+
+<div id='code'></div>
+</body>
+</html>
