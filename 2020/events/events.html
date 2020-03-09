@@ -51,8 +51,56 @@
 <p>All these events are stored in <b>event log files</b>.</p>
 </google-codelab-step>
 
+<google-codelab-step label="EventLogFile Object " duration="1">
+  <img src='img/EventLogFile.svg' />
+
+ <p>
+ Complete details of the EventLogFile object is <a href='https://mohan-chinnappan-n.github.io/sfdc/fs-cloud/csv-viewer_fsc.html?f=EventLogFile' class='btn btn-info' style='color:white'>here</a>
+</p>
+</google-codelab-step>
+
+<google-codelab-step label="Getting the Event Log File " duration="1">
+
+<h5>Getting the log file names </h5>
+  <img src='img/getting-event-log-1.png' />
+
+<hr>
+
+<h5>Getting the log file content </h5>
+ 
+<pre>
+curl -X GET https://mohansun-fsc-21.my.salesforce.com/services/data/v48.0/sobjects/EventLogFile/0AT3h000000KPEUGA4/LogFile -H 'Authorization: Bearer 00....N.' -H "X-PrettyPrint:1"
+
+EVENT_TYPE","TIMESTAMP","REQUEST_ID","ORGANIZATION_ID","USER_ID","RUN_TIME","CPU_TIME","URI","SESSION_KEY","LOGIN_KEY","REQUEST_STATUS","DB_TOTAL_TIME","BROWSER_TYPE","API_TYPE","API_VERSION","USER_NAME","TLS_PROTOCOL","CIPHER_SUITE","TIMESTAMP_DERIVED","USER_ID_DERIVED","CLIENT_IP","URI_ID_DERIVED","LOGIN_STATUS","SOURCE_IP"
+
+"Login","20191104172936.801","4SF4ovHKzd5NpAX2-pRgi-","00D3k000000tGJA","0053k00000ACatb","115","49","/index.jsp","","VIpEvxzS06n/RniU","","59750786","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36","","9998.0","fsc_trialforce@fsc.org","TLSv1.2","ECDHE-RSA-AES256-GCM-SHA384","2019-11-04T17:29:36.801Z","0053k00000ACatbAAD","Salesforce.com IP","","LOGIN_NO_ERROR","Salesforce.com IP"
+</pre>
+
+<hr>
+<h5>Sample Log file content</h5>
+<img src="img/log-file-1.gif"/>
+
+</google-codelab-step>
+
 <google-codelab-step label="Visualization" duration="1">
 <img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/event_monitoring/event_monitoring_intro/images/44105839952a08ac4a4d39c6c135b122_elf_num_logins_by_user.png" alt="">
+<p>
+<strong>Event Monitoring  Analytics App</strong> - This Analytics app is a way to get insights into your event monitoring data without ever leaving the Salesforce platform. Your data is automatically loaded from Salesforce to the app so you always get the most recent (and most stunning) visualization of what’s going on in your org. The app provides a collection of dashboards that use pre-integrated event data, so it’s a great way to get started with event monitoring.
+<img src='https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/event_monitoring/event_monitoring_download/images/de61c543ea51723ff7e5501f250cfd13_elf_admin_analytics.png'/>
+</p>
+</google-codelab-step>
+
+ <google-codelab-step label="Splunk" duration="1">
+<img src='img/splunk-1.png'/>
+<img src='img/splunk-2.png'/>
+<img src='img/splunk-3.png'/>
+<img src='img/splunk-4.png'/>
+<img src='img/splunk-5.png'/>
+
+
+
+
+
 </google-codelab-step>
  
 <google-codelab-step label="Use Cases" duration="1">
@@ -88,6 +136,8 @@
 </a> </li>
 <li class="list-group-item"> <a href="https://salesforce-elf.herokuapp.com/">A Salesforce connected web app to access and download event log files </a> </li>
 <li class="list-group-item"> <a href="https://trailhead.salesforce.com/content/learn/modules/event_monitoring">Trailhead Event Monitoring Module</a> </li>
+<li class="list-group-item"> <a href="https://splunkbase.splunk.com/app/1931/">Splunk App for Salesforce</a> </li>
+
 
 
 
