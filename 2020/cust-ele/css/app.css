@@ -1,0 +1,44 @@
+/* 
+app.css
+
+based on the work by google polymer team
+
+modifications: mohan chinnappan
+*/
+
+
+.success { color: #1e8e3e; } 
+.error { color: red; }
+
+
+google-codelab #codelab-title {
+background: steelblue;
+color:white;
+font-weight:bold;
+text-transform:uppercase;
+
+}
+
+google-codelab-step {
+
+background:#efefef;
+
+}
+
+#previous-step {
+  text-transform:uppercase;
+  background-color: #ffc107;
+  color:white;
+}
+
+#next-step {
+  text-transform:uppercase;
+}
+
+
+#done {
+   text-transform:uppercase;
+} 
+
+
+
