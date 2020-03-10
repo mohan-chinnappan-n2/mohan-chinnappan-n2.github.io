@@ -88,6 +88,54 @@ EVENT_TYPE","TIMESTAMP","REQUEST_ID","ORGANIZATION_ID","USER_ID","RUN_TIME","CPU
     - slow page performance
     - poor user adoption
 
+- Event Monitoring log files aren’t a system of record for user activity. 
+    - They are a source of truth, but aren’t durable. 
+    - During Salesforce site switches, instance refreshes, or unplanned system outages, data loss can occur.
+
+
+### Event Monitoring Analytics App Terminology
+- **APT** :	Average page time. An aggregate metric across multiple transactions.
+- **EPT**  : Experienced page time. The timing of a page transaction as seen by the user.
+- **Event** : A user-initiated interaction in Salesforce. For example, a login, the firing of an API call, or the download of a report. Events are related to the EventLogFile sObject.
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="Event Monitoring Dashboards" duration="1">
+ <div id='emdb-md' class='md' data-trim='false'>
+### Prebuilt Dashboards
+- Analytics Adoption
+    - Corresponds to the Wave Change, Wave Interaction, and Wave Performance event types. This dashboard shows Analytics usage and performance information.
+- Apex Executions
+    - Corresponds to the Apex Execution event type. This dashboard lets you track trends in Apex code executions and performance.
+- API
+    - Corresponds to the API Event event type. This dashboard gives you information about both your users’ API usage and API performance in your org. You can see how often each object is being used, how fast each object is being processed, and what methods are being invoked on that object.
+- Dashboards
+    - Corresponds to the Dashboard event type. This dashboard helps you track dashboard adoption and performance.
+- Files
+    - Corresponds to the Content Transfer event type. When users in your org perform content transfers (downloads, uploads, or previews), they show up on this dashboard. You can also track file adoption.
+- Lightning Adoption
+    - Corresponds to the Lightning Interaction and Lightning Page View event types. Use this dashboard to see how users interact with Lightning Experience on the desktop and mobile devices.
+- Lightning Performance
+    - Corresponds to the Lightning Error, Lightning Interaction, Lightning Page View, and Lightning Performance event types. Use this dashboard to optimize performance and user interactions with Lightning Experience and the Salesforce app.
+- Login-As
+    - Corresponds to the Login As event type. This dashboard lets you see which admins are using the login-as feature and on which user accounts.
+- My Trust
+    - The My Trust dashboard gives you an overall idea of what kind of events are taking place in your org over time. It also shows the average speed of these transactions. The dashboard corresponds to the following event types: Apex Execution, API, Content Transfer, Dashboard, Lightning Page View, Login As, Login, Report, Report Export, REST API, and Visualforce, all correlated by User IDs. For the My Trust dashboard to work, add all datasets to your app in the Configuration Wizard. This could impact your row utilization, depending on the number of events in your org.
+- Page Views (URIs)
+    - Corresponds to the URI event type. This dashboard lets you see which pages users are accessing in the Salesforce desktop app.
+- Report Downloads
+    - Corresponds to the Report Export event type. This dashboard lets you see which users are downloading your reports and where they’re downloading them from.
+- Reports
+    - Corresponds to the Report event type. This dashboard shows you trends in reporting as well as which users are running specific reports. You can also find out which reports are having performance issues.
+- RestAPI
+    - Corresponds to the REST API event type. This dashboard shows you trends in REST API usage and which endpoints are seeing the most traffic. You can also view information about the IP ranges issuing the requests and which methods are being called.
+- Setup Audit Trail
+    - Corresponds to the Setup Audit Trail page in Setup. Use this dashboard to see the changes your users are making in the Setup area.
+- User Logins
+    - Corresponds to the Login event type. This dashboard shows login trends by user and information about where and how users are accessing your org.
+- Visualforce Requests
+    - Corresponds to the Visualforce Request event type. Here you can see trends in Visualforce adoption and page performance
+
 </div>
 </google-codelab-step>
  
@@ -111,6 +159,7 @@ EVENT_TYPE","TIMESTAMP","REQUEST_ID","ORGANIZATION_ID","USER_ID","RUN_TIME","CPU
     - Tell how users are using a new feature introduced last week
     - Determine the cause of slow page performance and find issues like network delays
 - Optimize performance
+
 </div>
 </google-codelab-step>
  
