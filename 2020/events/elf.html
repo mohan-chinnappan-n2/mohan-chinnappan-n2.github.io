@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Event Monitoring</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/codelab-elements.css">
+  <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n2.github.io/favicon.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/app.css">
+</head>
+<body>
+<google-codelab id="Salesfoce-event-logs" title="Salesforce Event Logs" environment="web" > 
+
+<google-codelab-step label="Overview" duration="1">
+<div id='over-md' class='md' data-trim='false'>
+##Salesforce Event Monitoring helps to keep your data safe! 
+ <hr>
+- Helps you see the granular details of user activities(events) in your organization.
+- You can view information about individual events or **track trends** in events to swiftly identify  **abnormal behavior** and safeguard your company’s data.
+- Event monitoring is **an API-only feature** and you will not be see in Setup area
+</div>
+</google-codelab-step> 
+
+<google-codelab-step label="Event Types" duration="1">
+<div id='et-md' class='md' data-trim='false'>
+- Logins
+- Logouts
+- URI (web clicks in Salesforce Classic)
+- Lightning (web clicks, performance, and errors in Lightning Experience and the Salesforce mobile app)
+- Visualforce page loads
+- API calls
+- Apex executions
+- Report exports
+
+**All these events are stored in event log files**
+</div>
+
+<google-codelab-step label="EventLogFile Object " duration="1">
+ <div id='elf-md' class='md' data-trim='false'>
+ ![EventLogFile](img/EventLogFile.svg)
+ - Complete details of the EventLogFile object is [here](https://mohan-chinnappan-n.github.io/sfdc/fs-cloud/csv-viewer_fsc.html?f=EventLogFile) 
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="Getting the Event Log File " duration="1">
+<div id='elfc-md' class='md' data-trim='false'>
+#### Log file names 
+![dx elf](img/eventlog-file-dx.png)
+<hr>
+#### Log file content 
+```
+curl -X GET https://mohansun-fsc-21.my.salesforce.com/services/data/v48.0/sobjects/EventLogFile/0AT3h000000KPEUGA4/LogFile -H 'Authorization: Bearer 00....N.' -H "X-PrettyPrint:1"
+
+EVENT_TYPE","TIMESTAMP","REQUEST_ID","ORGANIZATION_ID","USER_ID","RUN_TIME","CPU_TIME","URI","SESSION_KEY","LOGIN_KEY","REQUEST_STATUS","DB_TOTAL_TIME","BROWSER_TYPE","API_TYPE","API_VERSION","USER_NAME","TLS_PROTOCOL","CIPHER_SUITE","TIMESTAMP_DERIVED","USER_ID_DERIVED","CLIENT_IP","URI_ID_DERIVED","LOGIN_STATUS","SOURCE_IP"
+
+"Login","20191104172936.801","4SF4ovHKzd5NpAX2-pRgi-","00D3k000000tGJA","0053k00000ACatb","115","49","/index.jsp","","VIpEvxzS06n/RniU","","59750786","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36","","9998.0","fsc_trialforce@fsc.org","TLSv1.2","ECDHE-RSA-AES256-GCM-SHA384","2019-11-04T17:29:36.801Z","0053k00000ACatbAAD","Salesforce.com IP","","LOGIN_NO_ERROR","Salesforce.com IP"
+```
+<hr>
+#### Sample Log file content
+![log file](img/log-file-1.gif)
+
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="Visualization" duration="1">
+ <div id='viz-md' class='md' data-trim='false'>
+![viz](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/event_monitoring/event_monitoring_intro/images/44105839952a08ac4a4d39c6c135b122_elf_num_logins_by_user.png) 
+
+- **Event Monitoring  Analytics App** 
+    - This Analytics app is a way to get insights into your event monitoring data without ever leaving the Salesforce platform. Your data is automatically loaded from Salesforce to the app so you always get the most recent (and most stunning) visualization of what’s going on in your org. The app provides a collection of dashboards that use pre-integrated event data, so it’s a great way to get started with event monitoring.
+
+![em app](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/event_monitoring/event_monitoring_download/images/de61c543ea51723ff7e5501f250cfd13_elf_admin_analytics.png)
+</div>
+</google-codelab-step>
+
+
+<google-codelab-step label="Splunk App" duration="1">
+ <div id='splunk-md' class='md' data-trim='false'>
+![splunk1](img/splunk-1.png)
+![splunk2](img/splunk-2.png)
+![splunk3](img/splunk-3.png)
+![splunk4](img/splunk-4.png)
+![splunk5](img/splunk-5.png)
+</div>
+</google-codelab-step>
+ 
+<google-codelab-step label="Use Cases" duration="1">
+ <div id='usecase-md' class='md' data-trim='false'>
+- Monitor data loss
+    - Capture unusual user behaviors
+- Increase adoption
+    - Find out parts of your organization that aren’t performing well
+    - Tell how users are using a new feature introduced last week
+    - Determine the cause of slow page performance and find issues like network delays
+- Optimize performance
+</div>
+</google-codelab-step>
+ 
+
+<google-codelab-step label="Links and References" duration="1">
+<div id='ref-md' class='md' data-trim='false'>
+- [Download Large Event Log Files Using cURL with REST](https://developer.salesforce.com/docs/atlas.en-us.224.0.api_rest.meta/api_rest/dome_event_log_file_download.htm)
+- [Salesforce connected web app to access and download event log files](https://salesforce-elf.herokuapp.com)
+- [Trailhead Event Monitoring Module](https://trailhead.salesforce.com/content/learn/modules/event_monitoring)
+- [Splunk App for Salesforce](https://splunkbase.splunk.com/app/1931/)
+</div>
+</google-codelab-step>
+
+
+</google-codelab>
+
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/md2html.js?v=2"> </script> 
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/native-shim.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/custom-elements.min.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/codelab-elements.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/prettify.js"></script>
+ 
+</body>
+</html>
+
