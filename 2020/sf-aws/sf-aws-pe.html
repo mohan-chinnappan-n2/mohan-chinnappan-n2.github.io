@@ -42,8 +42,13 @@
 - Create node js project with the following code in index.js
 - ![aws lambda index.js](img/aws-lambda-sf-pe-4.png)
 ```
-const fetch = require('node-fetch');
 
+//---------------------------------------
+// Code for the aws lambda function sfpe
+// Mohan Chinnappan (mar-12-2020)
+//---------------------------------------
+
+const fetch = require('node-fetch');
 exports.handler = async (event) => {
 
     await sendPOST();
@@ -52,8 +57,6 @@ exports.handler = async (event) => {
 
 async function sendGET() {
     const url = "https://mohansun-fsc-21.my.salesforce.com/services/data";
-
-
    const params = {
         method: "GET",
         mode: "cors",
@@ -65,10 +68,8 @@ async function sendGET() {
 async function sendPOST() {
     const sobj = 'LCTest__e';
     const url = `https://mohansun-fsc-21.my.salesforce.com/services/data/v46.0/sobjects/${sobj}`;
-
     const at = `00D3h000000DC8N!ARcAQAEoNV.jGPdWoODD.GeAp.tzVqKQt_Cci1lrl91CL__WosVlAfOLCKx9tjIuI.I7JWablqx9pu8q209Y2434234234`;
     const postbody = { "msg__c": "Create", "fname__c": "Johnny", "lname__c": "Sailer", "cname__c": "Jonny Sailer Sons" } ;
-
     const params = {
         method: "POST",
         mode: "cors",
@@ -77,8 +78,6 @@ async function sendPOST() {
     };
     await fetch(url, params);
 }
-
-
 
 
 
@@ -155,8 +154,7 @@ $ cat package.json
 <div id='links-md' class='md' data-trim='false'>
 - [AWS Lambda Guide](https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html)
 - [Salesforce Platform Events](https://mohan-chinnappan-n.github.io/sfdc/pevents.html#/home)
-
-
+- [Chatter in Apex examples](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/connectapi_examples.htm)
 - [Node js project code zip file](img/sf-pe.zip)
 </div>
 </google-codelab-step>
