@@ -68,6 +68,7 @@ async function sendGET() {
 async function sendPOST() {
     const sobj = 'LCTest__e';
     const url = `https://mohansun-fsc-21.my.salesforce.com/services/data/v46.0/sobjects/${sobj}`;
+    // access token can be passed from outside (via event...)
     const at = `00D3h000000DC8N!ARcAQAEoNV.jGPdWoODD.GeAp.tzVqKQt_Cci1lrl91CL__WosVlAfOLCKx9tjIuI.I7JWablqx9pu8q209Y2434234234`;
     const postbody = { "msg__c": "Create", "fname__c": "Johnny", "lname__c": "Sailer", "cname__c": "Jonny Sailer Sons" } ;
     const params = {
@@ -128,6 +129,12 @@ $ cat package.json
   }
 }
 ```
+- Lambda function Permission
+![aws lambda perm](img/aws-perm-1.png)
+
+- Event to trigger the Lambda function
+![aws lambda event](img/aws-lambda-event-1.png)
+
 </div>
 </google-codelab-step>
 
