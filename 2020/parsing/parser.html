@@ -10,16 +10,44 @@
 
 <script >
 const content2 = `
-     STEP: Overview
+# label="Overview" duration="1" 
         - Overview here
-      END STEP
-      STEP: Links
+# label="Links and References" duration="1"
         - [Forbidden Secrets of the Metadata API](https://medium.com/inside-the-salesforce-ecosystem/forbidden-secrets-of-the-metadata-api-c38208e9a818)
-      END STEP
+`    
+
+let stepGen = (content)  => {
+    let mdContent = '';
+    const stepEle = 'google-codelab-step'
+    console.log(content);
+    const lines = content.split('\n');
+    const et =` 
+    </div>
+</${stepEle}>
 `;
 
-console.log(content2);
-const match = content2.match(/STEP:(.*)END STEP/)
-console.log(match)
+    let stepCount = 0;
+    let endTag = '';
+    lines.forEach( line => {
+    if (stepCount !== 0) {
+        endTag = et;
+    }
+     let newLine = line;
+     if (line.match(/^\s*# /)) {
+        newLine = endTag +  line.replace(/^\s*#/, `<${stepEle}`);
+        newLine += `> 
+    <div id='s${stepCount}-md' class='md' data-trim='false'>
+          `;
+       stepCount++; 
+     }
+     mdContent += newLine ;
+     
+    })
+
+    mdContent += et;
+    return mdContent;
+}
+
+console.log( stepGen(content2) );
 </script>
 </html>

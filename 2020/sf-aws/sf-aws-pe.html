@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Salesforce Platform Events & AWS Lambda</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/codelab-elements.css">
+  <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n2.github.io/favicon.ico">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/app.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+</head>
+<body>
+<google-codelab id="Salesforce Platform Events & AWS Lambda" title="Salesforce Platform Events &  AWS Lambda " environment="web" > 
+
+<google-codelab-step label="Overview" duration="1">
+<div id='ov-md' class='md' data-trim='false'>
+- In this doc, we explain how we can use  **AWS Lambda function** to publish a **Salesforce platform event**, which can do a **lead conversion**   
+    - AWS lambda function ```sfpe``` POSTs a platform event 
+- ![event-bus](https://mohan-chinnappan-n.github.io/sfdc/img/pe/pe-1.png)
+    - Salesforce gets that event on the event **bus** and executes event trigger
+    - The event trigger performs Lead Conversion
+- ![pe-seq](img/pe-seq-1.png)
+- Lead Conversion
+- ![lc-1](img/le-pa-1.png)
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="Platform Events" duration="1">
+<div id='pe-md' class='md' data-trim='false'>
+- Create Platform Event Object **LCTest__e**
+![pe-1](img/pe-1.png)
+- Create Platform Event Trigger for **LCTest__e**
+![pe-2](img/pe-2.png)
+<div>
+</google-codelab-step>
+
+<google-codelab-step label="AWS Lambda" duration="1">
+<div id='awsl-md' class='md' data-trim='false'>
+- Create node js project with the following code in index.js
+- ![aws lambda index.js](img/aws-lambda-sf-pe-4.png)
+```
+const fetch = require('node-fetch');
+
+exports.handler = async (event) => {
+
+    await sendPOST();
+    return { statusCode: 200, body: "Ok"};
+};
+
+async function sendGET() {
+    const url = "https://mohansun-fsc-21.my.salesforce.com/services/data";
+
+
+   const params = {
+        method: "GET",
+        mode: "cors",
+        headers: {"Content-Type":"application/json" },
+    };
+    await fetch(url, params);
+}
+
+async function sendPOST() {
+    const sobj = 'LCTest__e';
+    const url = `https://mohansun-fsc-21.my.salesforce.com/services/data/v46.0/sobjects/${sobj}`;
+
+    const at = `00D3h000000DC8N!ARcAQAEoNV.jGPdWoODD.GeAp.tzVqKQt_Cci1lrl91CL__WosVlAfOLCKx9tjIuI.I7JWablqx9pu8q209Y2434234234`;
+    const postbody = { "msg__c": "Create", "fname__c": "Johnny", "lname__c": "Sailer", "cname__c": "Jonny Sailer Sons" } ;
+
+    const params = {
+        method: "POST",
+        mode: "cors",
+        headers: {"Content-Type":"application/json", "Authorization": `Bearer ${at}` },
+        body: JSON.stringify(postbody)
+    };
+    await fetch(url, params);
+}
+
+
+
+
+
+```
+- Node Project Folder
+```
+$ tree
+.
+├── index.js
+├── l_app.js
+├── node_modules
+│   └── node-fetch
+│       ├── CHANGELOG.md
+│       ├── LICENSE.md
+│       ├── README.md
+│       ├── browser.js
+│       ├── lib
+│       │   ├── index.es.js
+│       │   ├── index.js
+│       │   └── index.mjs
+│       └── package.json
+├── package-lock.json
+├── package.json
+└── sf-pe.zip
+
+```
+
+- package.json
+```
+$ cat package.json 
+{
+  "name": "aws-lambda-sf",
+  "version": "0.0.1",
+  "description": "aws lambda and salesforce",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "salesforce"
+  ],
+  "author": "mohan chinnappan",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}
+```
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="Results" duration="1">
+<div id='results-md' class='md' data-trim='false'>
+- Accounts before the Platform Event
+- ![pe-lc-1](img/aws-lambda-sf-pe-1.png)
+
+- Running the Lambda function
+- ![lambda results](img/lamba-resutls-1.png)
+- Accounts after the Platform Event
+- ![pe-lc-2](img/aws-lambda-sf-pe-2.png)
+- ![pe-lc-5](img/pe-lc-5.png)
+
+`
+
+</div>
+</google-codelab-step>
+
+
+
+
+<google-codelab-step label="Links and References" duration="1">
+<div id='links-md' class='md' data-trim='false'>
+- [AWS Lambda Guide](https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html)
+- [Salesforce Platform Events](https://mohan-chinnappan-n.github.io/sfdc/pevents.html#/home)
+
+
+- [Node js project code zip file](img/sf-pe.zip)
+</div>
+</google-codelab-step>
+
+
+    
+</google-codelab>
+
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/md2html.js?v=2"> </script> 
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/native-shim.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/custom-elements.min.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/codelab-elements.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/prettify.js"></script>
+
+</body>
+</html>
+

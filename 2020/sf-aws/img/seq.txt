@@ -1,0 +1,5 @@
+Title: AWS Lambda and Salesforce Platform Events
+AWS Lambda Event->AWS Lambda Function (sfpe):Invokes
+AWS Lambda Function (sfpe)->Salesforce PE:POSTs the event with payload
+Salesforce PE->Lead Conversion: Peform Lead Conversion\n    for the given payload
+Note right of Lead Conversion: Person Account and\n Oppty records created
