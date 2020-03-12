@@ -17,11 +17,11 @@
 
 <google-codelab-step label="Overview" duration="1">
 <div id='ov-md' class='md' data-trim='false'>
-- In this doc, we explain how we can use  **AWS Lambda function** to publish a **Salesforce platform event**, which can do a **lead conversion**   
-    - AWS lambda function ```sfpe``` POSTs a platform event 
-- ![event-bus](https://mohan-chinnappan-n.github.io/sfdc/img/pe/pe-1.png)
-    - Salesforce gets that event on the event **bus** and executes event trigger
-    - The event trigger performs Lead Conversion
+ In this doc, we explain how we can use  **AWS Lambda function** to publish a **Salesforce platform event**, which can do a **lead conversion**  and a notification.  
+ 1. AWS lambda function ```sfpe``` POSTs a platform event 
+    -  ![event-bus](https://mohan-chinnappan-n.github.io/sfdc/img/pe/pe-1.png)
+ 2. Salesforce gets that event on the **event bus** and executes event trigger
+ 3. The event trigger performs Lead Conversion and sends Notifications and Chatter post about the completion  
 - ![pe-seq](img/pe-seq-1.png)
 - Lead Conversion
 - ![lc-1](img/le-pa-1.png)
