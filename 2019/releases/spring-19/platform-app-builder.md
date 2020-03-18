@@ -100,7 +100,7 @@ you can make your Lightning pages more dynamic by configuring component visibili
 
 You can create a rule for a component to display for users with a specific permission, but it’s hidden for everyone else. Component visibility filters are supported for standard components, custom components, and components from AppExchange.
 
-![Component Visibility](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/platform-app-builder-maintenance-spring19/get-hands-on-with-customized-home-pages-and-components/images/9e8c486f62c1986b8b03ce0c8604684c_component-visibility.JPG)
+![Component Visibility](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/platform-app-builder-maintenance-spring19/get-hands-on-with-customized-home-pages-and-components/images/9e8c486f62c1986b8b03ce0c8604684c_component-visibility.JPG   )
 
 
 

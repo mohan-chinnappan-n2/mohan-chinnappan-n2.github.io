@@ -1,0 +1,361 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Salesforce Bulk API 2.0 NPM </title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/codelab-elements.css">
+  <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n2.github.io/favicon.ico">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/app.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+</head>
+<body>
+<google-codelab id="Bulk API 2.0 NPM" title="Salesforce Bulk API 2.0 NPM" environment="web" > 
+
+<google-codelab-step label="Overview" duration="1">
+<div id='ov-md' class='md' data-trim='false'>
+ In this doc, we explain how we can use  the npm package **sfbulk2js** to load data into Salesforce using BulkAPI 2.0 
+
+## Create a your nodejs project 
+```
+$ mkdir awessome-project
+$ cd awessome-project/
+$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (awessome-project) 
+version: (1.0.0) 0.0.1
+description: Project using sfbulk2js for loading data into Salesforce using BulkAPI 2.0
+entry point: (index.js) 
+test command: 
+git repository: 
+keywords: salesforce, bulkapi2.0, sfbulk2js
+author: mohan chinnappan
+license: (ISC) MIT
+About to write to /Users/mchinnappan/awessome-project/package.json:
+
+{
+  "name": "awessome-project",
+  "version": "0.0.1",
+  "description": "Project using sfbulk2js for loading data into Salesforce using BulkAPI 2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "salesforce",
+    "bulkapi2.0",
+    "sfbulk2js"
+  ],
+  "author": "mohan chinnappan",
+  "license": "MIT"
+}
+
+
+Is this OK? (yes) 
+```
+ 
+
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="sfbulk2js npm package" duration="2">
+<div id='pe-md' class='md' data-trim='false'>
+## Install sfbulk2js npm package in your nodejs project
+```
+$ npm install -s sfbulk2js
++ sfbulk2js@0.0.1
+added 2 packages from 2 contributors and audited 2 packages in 1.653s
+found 0 vulnerabilities
+
+```
+### Now you are all set with the setup
+<div>
+</google-codelab-step>
+
+<google-codelab-step label="Dataloading" duration="3">
+<div id='awsl-md' class='md' data-trim='false'>
+### Sample Code to load a CSV file into Case Object
+- You can create this CSV from data store (like Postgres, Spanner, MySQL...) for the Case Object
+- Here is the content of our CSV file: input.csv
+```
+$ cat input.csv 
+Subject,Priority
+Engine cylinder has knocking,High
+Wiper Blade needs replacement,Low
+```
+
+## Code to load the records in this CSV file to Salesforce Case Object using sfbulk2js
+```
+// filename:index.js
+// test file for sfbulk2js 
+// author: mohan chinnappan (mar-18-2020) 
+
+const sfb2 = require('sfbulk2js'); // the npm package we just installed
+const  fs = require('fs');
+const process = require('process');
+
+// read access-token from the env
+const AT = process.env.AT;
+
+const cji = {
+     instanceUrl: 'https://mohansun-fsc-21.my.salesforce.com',
+     apiVersion: 'v46.0',
+     accessToken: `${AT}`,
+     contentType: 'CSV',
+     lineEnding: 'LF'
+};
+
+const waitTimeMs = 5000;
+
+function sleep(ms) {
+  console.log('WAITING');
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function dataload(datafile) {
+ try {
+
+     console.log(`=== CREATE JOB === `);
+     const job = await sfb2.createJob(cji.instanceUrl, cji.apiVersion, cji.accessToken, 'insert', 'Case', cji.contentType,  cji.lineEnding );
+     console.log(job);
+     console.log(`jobId: ${job.id}`);
+ 
+     console.log(`=== JOB STATUS === `);
+     let jobStatus = await sfb2.getJobStatus(cji.instanceUrl, cji.apiVersion, cji.accessToken, 'ingest', job.id );
+     console.log(`=== JOB STATUS for job: ${job.id} ===`);
+     console.log(jobStatus);
+
+
+     console.log(`=== PUT DATA === `);
+
+     const fdata =  fs.readFileSync(datafile, 'utf8');
+     const putDataStatus  = await sfb2.putData(cji.instanceUrl, cji.accessToken, job.contentUrl, fdata );
+
+     console.log(`=== JOB STATUS === `);
+     jobStatus = await sfb2.getJobStatus(cji.instanceUrl, cji.apiVersion, cji.accessToken, 'ingest', job.id );
+     console.log(`=== JOB STATUS for job: ${job.id} ===`);
+     console.log(jobStatus);
+
+     console.log(`=== PATCH STATAE === `);
+     const patchDataStatus  = await sfb2.patchState(cji.instanceUrl, cji.apiVersion, cji.accessToken,  job.id, 'UploadComplete' );
+     console.log(patchDataStatus);
+
+     console.log(`=== JOB STATUS === `);
+     jobStatus = await sfb2.getJobStatus(cji.instanceUrl, cji.apiVersion, cji.accessToken, 'ingest', job.id );
+     console.log(`=== JOB STATUS for job: ${job.id} ===`);
+     console.log(jobStatus);
+
+     while (jobStatus.state === 'InProgress') { // wait for it 
+        await sleep(waitTimeMs);
+        jobStatus = await sfb2.getJobStatus(cji.instanceUrl, cji.apiVersion, cji.accessToken, 'ingest', job.id );
+        console.log(jobStatus);
+     }
+
+     console.log(`=== JOB Failure STATUS === `);
+     jobStatus = await sfb2.getJobFailureStatus(cji.instanceUrl, cji.apiVersion, cji.accessToken,  job.id );
+     console.log(`=== JOB Failure STATUS for job: ${job.id} ===`);
+     console.log(jobStatus);
+
+     console.log(`=== JOB getUnprocessedRecords STATUS === `);
+     jobStatus = await sfb2.getUnprocessedRecords(cji.instanceUrl, cji.apiVersion, cji.accessToken,  job.id );
+     console.log(`=== JOB getUnprocessedRecords STATUS for job: ${job.id} ===`);
+     console.log(jobStatus);
+
+
+
+} catch (err) {
+     console.log(`ERROR in dataload : ${err}`);
+   }
+ 
+}
+
+// here we run it
+dataload('input.csv');
+
+
+
+```
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="Results" duration="1">
+<div id='results-md' class='md' data-trim='false'>
+## Results on the cli (console)
+```
+
+$ node index.js 
+=== CREATE JOB === 
+{ id: '7503h000000RcUEAA0',
+  operation: 'insert',
+  object: 'Case',
+  createdById: '0053h000000IJFeAAO',
+  createdDate: '2020-03-18T04:23:56.000+0000',
+  systemModstamp: '2020-03-18T04:23:56.000+0000',
+  state: 'Open',
+  concurrencyMode: 'Parallel',
+  contentType: 'CSV',
+  apiVersion: 46,
+  contentUrl: 'services/data/v46.0/jobs/ingest/7503h000000RcUEAA0/batches',
+  lineEnding: 'LF',
+  columnDelimiter: 'COMMA' }
+jobId: 7503h000000RcUEAA0
+=== JOB STATUS === 
+=== JOB STATUS for job: 7503h000000RcUEAA0 ===
+{ id: '7503h000000RcUEAA0',
+  operation: 'insert',
+  object: 'Case',
+  createdById: '0053h000000IJFeAAO',
+  createdDate: '2020-03-18T04:23:56.000+0000',
+  systemModstamp: '2020-03-18T04:23:56.000+0000',
+  state: 'Open',
+  concurrencyMode: 'Parallel',
+  contentType: 'CSV',
+  apiVersion: 46,
+  jobType: 'V2Ingest',
+  contentUrl: 'services/data/v46.0/jobs/ingest/7503h000000RcUEAA0/batches',
+  lineEnding: 'LF',
+  columnDelimiter: 'COMMA',
+  retries: 0,
+  totalProcessingTime: 0,
+  apiActiveProcessingTime: 0,
+  apexProcessingTime: 0 }
+=== PUT DATA === 
+result: status: 201, statusText: Created
+=== JOB STATUS === 
+=== JOB STATUS for job: 7503h000000RcUEAA0 ===
+{ id: '7503h000000RcUEAA0',
+  operation: 'insert',
+  object: 'Case',
+  createdById: '0053h000000IJFeAAO',
+  createdDate: '2020-03-18T04:23:56.000+0000',
+  systemModstamp: '2020-03-18T04:23:56.000+0000',
+  state: 'Open',
+  concurrencyMode: 'Parallel',
+  contentType: 'CSV',
+  apiVersion: 46,
+  jobType: 'V2Ingest',
+  contentUrl: 'services/data/v46.0/jobs/ingest/7503h000000RcUEAA0/batches',
+  lineEnding: 'LF',
+  columnDelimiter: 'COMMA',
+  numberRecordsProcessed: 0,
+  numberRecordsFailed: 0,
+  retries: 0,
+  totalProcessingTime: 0,
+  apiActiveProcessingTime: 0,
+  apexProcessingTime: 0 }
+=== PATCH STATAE === 
+{ id: '7503h000000RcUEAA0',
+  operation: 'insert',
+  object: 'Case',
+  createdById: '0053h000000IJFeAAO',
+  createdDate: '2020-03-18T04:23:56.000+0000',
+  systemModstamp: '2020-03-18T04:23:56.000+0000',
+  state: 'UploadComplete',
+  concurrencyMode: 'Parallel',
+  contentType: 'CSV',
+  apiVersion: 46 }
+=== JOB STATUS === 
+=== JOB STATUS for job: 7503h000000RcUEAA0 ===
+{ id: '7503h000000RcUEAA0',
+  operation: 'insert',
+  object: 'Case',
+  createdById: '0053h000000IJFeAAO',
+  createdDate: '2020-03-18T04:23:56.000+0000',
+  systemModstamp: '2020-03-18T04:23:58.000+0000',
+  state: 'InProgress',
+  concurrencyMode: 'Parallel',
+  contentType: 'CSV',
+  apiVersion: 46,
+  jobType: 'V2Ingest',
+  lineEnding: 'LF',
+  columnDelimiter: 'COMMA',
+  numberRecordsProcessed: 0,
+  numberRecordsFailed: 0,
+  retries: 0,
+  totalProcessingTime: 0,
+  apiActiveProcessingTime: 0,
+  apexProcessingTime: 0 }
+WAITING
+{ id: '7503h000000RcUEAA0',
+  operation: 'insert',
+  object: 'Case',
+  createdById: '0053h000000IJFeAAO',
+  createdDate: '2020-03-18T04:23:56.000+0000',
+  systemModstamp: '2020-03-18T04:23:59.000+0000',
+  state: 'JobComplete',
+  concurrencyMode: 'Parallel',
+  contentType: 'CSV',
+  apiVersion: 46,
+  jobType: 'V2Ingest',
+  lineEnding: 'LF',
+  columnDelimiter: 'COMMA',
+  numberRecordsProcessed: 2,
+  numberRecordsFailed: 0,
+  retries: 0,
+  totalProcessingTime: 134,
+  apiActiveProcessingTime: 47,
+  apexProcessingTime: 0 }
+=== JOB Failure STATUS === 
+=== JOB Failure STATUS for job: 7503h000000RcUEAA0 ===
+"sf__Id","sf__Error",Priority,Subject
+
+=== JOB getUnprocessedRecords STATUS === 
+=== JOB getUnprocessedRecords STATUS for job: 7503h000000RcUEAA0 ===
+Subject,Priority
+
+
+```
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="Case Records Created" duration="1">
+<div id='cases-md' class='md' data-trim='false'>
+![case records](img/case-created-1.png)
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="For Python Fans" duration="1">
+<div id='py-md' class='md' data-trim='false'>
+### Same package is available in python!
+![py medium doc](img/py-bulkapi-2.png)
+
+- More info at: [Salesforce Bulk API 2.0](https://medium.com/@mohan.chinnappan.n/salesforce-bulk-api-2-0-95a7a81b9bb9)
+</div>
+</google-codelab-step>
+
+
+
+
+<google-codelab-step label="Links and References" duration="1">
+<div id='links-md' class='md' data-trim='false'>
+- [Bulk API 2.0](https://developer.salesforce.com/docs/atlas.en-us.api_bulk_v2.meta/api_bulk_v2/get_job_info.htm)
+- [Salesforce Bulk API 2.0](https://medium.com/@mohan.chinnappan.n/salesforce-bulk-api-2-0-95a7a81b9bb9)
+
+</div>
+</google-codelab-step>
+
+
+    
+</google-codelab>
+
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/md2html.js?v=2"> </script> 
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/native-shim.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/custom-elements.min.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/codelab-elements.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/prettify.js"></script>
+
+</body>
+</html>
+
