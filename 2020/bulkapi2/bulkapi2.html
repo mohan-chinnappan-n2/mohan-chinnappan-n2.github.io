@@ -401,6 +401,17 @@ print(res.json())
  'totalProcessingTime': 168}
 
 """
+
+## check the failure status
+failure_res = sfba2.get_failure_status(job_id=job_id)
+print(failure_res.content)
+
+
+## you will see something like this:
+"""
+b'"sf__Id","sf__Error",Priority,Subject\n'
+
+"""
 ```
 
 
