@@ -69,7 +69,7 @@ added 2 packages from 2 contributors and audited 2 packages in 1.653s
 found 0 vulnerabilities
 
 ```
-### Now you are all set with the setup
+### Now you are all set with the setup.
 <div>
 </google-codelab-step>
 
@@ -321,9 +321,96 @@ Subject,Priority
 ![py medium doc](img/py-bulkapi-2.png)
 
 - More info at: [Salesforce Bulk API 2.0](https://medium.com/@mohan.chinnappan.n/salesforce-bulk-api-2-0-95a7a81b9bb9)
+
+```
+
+"""
+bulkapi2-usage
+author: mohan chinnappan (mar-18-2020)
+
+pip install sfbulk2
+pip install Faker
+
+
+"""
+
+instance_url = 'https://mohansun-fsc-21.my.salesforce.com'
+##  access_token can come from env var
+access_token = '00D3hmangledDC8N!ARcAQFAqd7iOlatMgWpfXmjfk0YRgtfnU0ntLE3OBZjJgn3Shqe9ssq7ZowsmoEhoAn_nHpjoIwVB40gBpmFbwx4sZR6b9RE'
+
+## let us import SFBulk2
+from sfbulk2 import SFBulk2
+sfba2 = SFBulk2(api_version='v47.0', instance_url=instance_url, access_token=access_token)
+
+## create bulkapi2 job
+job_id  = sfba2.create_job(operation='insert', obj='Case')
+print ('job_id: {}'.format(job_id))
+
+## let us look at the job status
+res = sfba2.get_job_status(job_id=job_id, optype='ingest')
+print (res.json())
+contentUrl = res.json()['contentUrl']
+print(contentUrl)
+
+## Insert Data 
+### you can read it from the database (Postgres, Spanner, MySQL...) and create this file
+data ="""Subject,Priority
+VPN2 Issues,High
+Proxy Server2 Issues,Low
+HVD2 Issues,High
+"""
+print (data)
+
+## let us upload the data
+put_res = sfba2.put_data(data=data, contentUrl=contentUrl)
+print (put_res.content)
+
+## get the job status
+res = sfba2.get_job_status(job_id=job_id, optype='ingest')
+print(res.json())
+
+## set the state to 'UploadComplete' 
+patch_res = sfba2.patch_state(job_id=job_id, state="UploadComplete")
+print(patch_res.json())
+
+## get the job status
+res = sfba2.get_job_status(job_id=job_id, optype='ingest')
+print(res.json())
+
+
+## you will see the  something like this
+"""
+{'apexProcessingTime': 0,
+ 'apiActiveProcessingTime': 60,
+ 'apiVersion': 47.0,
+ 'columnDelimiter': 'COMMA',
+ 'concurrencyMode': 'Parallel',
+ 'contentType': 'CSV',
+ 'createdById': '0053h000000IJFeAAO',
+ 'createdDate': '2020-03-18T12:16:32.000+0000',
+ 'id': '7503h000000RdYUAA0',
+ 'jobType': 'V2Ingest',
+ 'lineEnding': 'LF',
+ 'numberRecordsFailed': 0,
+ 'numberRecordsProcessed': 3,
+ 'object': 'Case',
+ 'operation': 'insert',
+ 'retries': 0,
+ 'state': 'JobComplete',
+ 'systemModstamp': '2020-03-18T12:21:50.000+0000',
+ 'totalProcessingTime': 168}
+
+"""
+```
+
+
 </div>
 </google-codelab-step>
 
+<google-codelab-step label="Python Results" duration="1">
+<div id='py-results-md' class='md' data-trim='false'>
+![py-results](img/cases-py-1.png)
+</div>
 
 
 
