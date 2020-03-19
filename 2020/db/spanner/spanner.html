@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Spanner DB</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/codelab-elements.css">
+  <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n2.github.io/favicon.ico">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/app.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+</head>
+<body>
+<google-codelab id="Cloud Spanner" title="Cloud Spanner" environment="web" > 
+
+<google-codelab-step label="Overview" duration="1">
+<div id='ov-md' class='md' data-trim='false'>
+- Cloud Spanner is a 
+    - fully managed
+    - mission-critical
+    - **relational database service**
+- Offers transactional consistency at global scale, schemas, SQL (ANSI 2011 with extensions), and automatic, synchronous replication for high availability.
+
+![Spanner](img/spanner-0.png)
+
+### TrueTime
+![Spanner box](img/spanner-1.png)
+
+
+
+</div>
+
+</google-codelab-step>
+ 
+<google-codelab-step label="Architecture" duration="1">
+<div id='arch-md' class='md' data-trim='false'>
+
+![Spanner Arch](img/spanner-arch.png)
+
+### Life of a write
+
+- Client lands on the load-balancers
+- Then lands on Span Front-end
+- Span Front-end takes the clients to the very first  Span Server
+- Span server stores slices of the data (Paxos Groups) 
+    - Paxos is a family of protocols for solving consensus in a network of unreliable processors
+    - Paxos bring highly available participants
+        - you can trust the participants to hold locks
+        - building transaction with help of Paxos and TrueTime makes the Spanner unique
+        - External Consistency
+            - you can write to Spanner anywhere in the world
+            - spanner will have consistent data at any point in time 
+    - Data containers spread across multiple zones for availability
+    - Commits has to go to 2 out of 3 or 3 out of 5 or some number (say n) forms **quorum**
+        - Span Server in Zone-A takes the Write it gets, and will forward it to Zone-B and C
+        - Span Server in Zone-A will wait until 2 of them comes back (one local and one of the others) and return back to the client
+        - At this point it becomes **durable**
+- Fully synchronously replicated database
+    - Full copies of the data at least 3 availability zones
+    - Copies of the data are in Colossus file system (Storage)
+    - Data is always in the Storage layer
+- Span servers are the Compute units that act on the data, responsible for serving the data.
+    - If the request comes for the client, any of the compute unit can pick it up
+    - Paxos is used to figure out who is the leader. 
+    - Has no concept of master
+- Colossus is a big distributed file system
+- TrueTime is used to pickup a timestamp
+- Timestamp is used for ordering - being externally consistent
+    - If you 2 successive operations, they will get increasing timestamps
+- Internally 1000s of Span servers are used
+
+### Life of a read
+- Reads does not need to go the leader
+- Picks the timestamp ( NOW + epsilon) - time at which we know no writes have seen committed
+- Front-end passes into a Span server
+    - Span Server checks: Do I have all of the data up to that time?
+        - Yes, returns the data
+        - No, reaches out to the leader to get the data
+
+### Trusting Time
+- You can't trust time
+    - clock on your server is absolutely something you can't trust
+    - TrueTime provides the trusted time
+
+- Spanner trades off partition tolerance for availability
+- Has multi-tenancy support built in
+- Horizontal scaling 
+- 1000s databases running and competing for the same resources
+</div>
+
+</google-codelab-step>
+    
+<google-codelab-step label="Videos" duration="1">
+
+<iframe width="700" height="400" src="https://www.youtube.com/embed/nvlt0dA7rsQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="700" height="400" src="https://www.youtube.com/embed/zy-rcR4MoN4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</google-codelab-step>
+
+
+<google-codelab-step label="Links and References" duration="1">
+<div id='links-md' class='md' data-trim='false'>
+- [Spanner: Google’s Globally-Distributed Database](https://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf)
+- [Paxos](https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf)
+- [CAP theorm](https://en.wikipedia.org/wiki/CAP_theorem)
+- [Inside Cloud Spanner and the CAP Theorem](https://cloud.google.com/blog/products/gcp/inside-cloud-spanner-and-the-cap-theorem)
+</div>
+</google-codelab-step>
+
+
+    
+</google-codelab>
+
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/md2html.js?v=2"> </script> 
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/native-shim.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/custom-elements.min.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/codelab-elements.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/prettify.js"></script>
+
+</body>
+</html>
+
