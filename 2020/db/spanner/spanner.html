@@ -18,23 +18,57 @@
 
 <google-codelab-step label="Overview" duration="1">
 <div id='ov-md' class='md' data-trim='false'>
-- Cloud Spanner is a 
-    - fully managed
-    - mission-critical
-    - **relational database service**
+
+### Challenges
+- *Building systems that manage **globally distributed data**, provide **data consistency** and are also **highly available** is really hard*. (Eric Brewer)
+
+- The CAP theorem says that a database can only have two of the three following desirable properties:
+    - C: consistency, which implies a single value for shared data
+    - A: 100% availability, for both reads and updates
+    - P: tolerance to network partitions
+    - This leads to three kinds of systems: CA, CP and AP
+    -  If you believe that partitions are inevitable, any distributed system must be prepared to forfeit either consistency (AP) or availability (CP)
+        - The original point of the CAP theorem was to get designers to take this tradeoff seriously
+
+
+### Spanner is Google’s highly available, global **SQL** database. 
+- It manages replicated data at great scale, both in terms of size of data and volume of **transactions**. 
+- It assigns **globally consistent real-time timestamps** to every datum written to it, and clients can do globally consistent reads across the entire database **without locking**.
+- In terms of CAP, Spanner claims to be **both consistent and highly available despite operating over a wide area**, which many find surprising or even unlikely.
+- During **some partitions**, Spanner chooses C and forfeits A. It is **technically a CP system**.
+- Spanner offers  more than five 9s of availability (less than one failure in 10^5).
+
+### Cloud Spanner  
+- fully managed
+- mission-critical
+- **relational database service**
 - Offers transactional consistency at global scale, schemas, SQL (ANSI 2011 with extensions), and automatic, synchronous replication for high availability.
+
 
 ![Spanner](img/spanner-0.png)
 
 ### TrueTime
 ![Spanner box](img/spanner-1.png)
-
+ -  TrueTime is a service that enables the use of globally synchronized clocks
 
 
 </div>
 
 </google-codelab-step>
+
+
+<google-codelab-step label="Inside Spanner" duration="1">
+<div id='is-md' class='md' data-trim='false'>
+### How Spanner, which is technically a CP system can acheive five 9s of A?
+-  Spanner runs on Google’s private network.
+    - Google controls the entire network and thus can ensure redundancy of hardware and paths, and can also control upgrades and operations in general.
+    - Fibers will still be cut, and equipment will fail, but the overall system remains quite robust.
+    - Network contributed less than 10% of Spanner’s already rare outages. 
+- *Building systems that can manage data that spans the globe, provide data consistency and are also highly available (five 9s) is possible; it’s just really hard.*
  
+</div>
+</google-codelab-step>
+
 <google-codelab-step label="Architecture" duration="1">
 <div id='arch-md' class='md' data-trim='false'>
 
@@ -108,6 +142,9 @@
 - [CAP theorm](https://en.wikipedia.org/wiki/CAP_theorem)
 - [Inside Cloud Spanner and the CAP Theorem](https://cloud.google.com/blog/products/gcp/inside-cloud-spanner-and-the-cap-theorem)
 - [Dr. Codd - A Relational Model of Data for Large Shared Data Banks ](https://www.seas.upenn.edu/~zives/03f/cis550/codd.pdf)
+- [Mike Stonebraker](https://cacm.acm.org/blogs/blog-cacm/99512-why-enterprises-are-uninterested-in-nosql/fulltext)
+- [Spanner, TrueTime & The CAP Theorem](https://storage.googleapis.com/pub-tools-public-publication-data/pdf/45855.pdf)
+- [Spanner: Becoming a SQL System](https://storage.googleapis.com/pub-tools-public-publication-data/pdf/acac3b090a577348a7106d09c051c493298ccb1d.pdf)
 </div>
 </google-codelab-step>
 
