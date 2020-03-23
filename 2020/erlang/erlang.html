@@ -17,8 +17,14 @@
 
 <google-codelab-step label="Overview" duration="1">
 <div id='ov-md' class='md' data-trim='false'>
-- Overview here
-
+- Erlang is a general-purpose programming language and runtime environment.
+- Erlang has built-in support for concurrency, distribution and fault tolerance.
+- Erlang is used in several large telecommunication systems from Ericsson.
+- WhatsApp server is almost completely implemented in Erlang
+    - WhatsApp server has started from ejabberd – famous open source Jabber server written in Erlang.
+- CouchDB is built on the Erlang OTP platform, a functional, concurrent programming language and development platform.
+    - CouchDB is designed for lock-free concurrency, in the conceptual model and the actual Erlang implementation
+    - CouchDB is built from the start with a consistent vision of a distributed document database system
 </div>
 
 </google-codelab-step>
@@ -40,12 +46,55 @@
 
 </google-codelab-step>
  
+
+<google-codelab-step label="Hello World" duration="1">
+<div id='hw-md' class='md' data-trim='false'>
+
+- hello.erl
+
+```
+-module(hello).
+-export([hello_world/0]).
+
+hello_world() -> io:fwrite("hello, world from Erlang in the memory of Joe Armstrong!\n").
+
+```
+- running in  erl EShell
+```erl
+$ erl
+Erlang/OTP 21 [erts-10.0.4] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [hipe] [dtrace]
+Eshell V10.0.4  (abort with ^G)
+1> c(hello).
+{ok,hello}
+2> hello:hello_world().
+hello, world from Erlang in the memory of Joe Armstrong!
+ok
+
+
+```
+</div>
+</google-codelab-step>
+ 
+<google-codelab-step label="WhatsApp" duration="1">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WgAtBTpm6Xk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xbYprCoLsvY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+</google-codelab-step>
+
 <google-codelab-step label="Links and References" duration="1">
 <div id='links-md' class='md' data-trim='false'>
 - [erlang/](https://www.erlang.org/)
 - [armstrong on software](http://armstrongonsoftware.blogspot.com/)
 - [A Tribute to Joe Armstrong, Father of Erlang ](http://blog.2600hz.com/a-tribute-to-joe-armstrong-father-of-erlang)
 - [Story of Erlang](https://www.ericsson.com/en/news/2014/12/inside-erlang--creator-joe-armstrong-tells-his-story)
+- [An interview with Eugene Fooksman #erlang](https://pdincau.wordpress.com/2013/03/27/an-interview-with-eugene-fooksman-erlang/)
+- [WhatsApp Arch](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
+- [WhatsApp Scaling](http://www.erlang-factory.com/upload/presentations/558/efsf2012-whatsapp-scaling.pdf)
+- [Jan Koum](https://en.wikipedia.org/wiki/Jan_Koum)
+- [Martin Fowler -Software Architecture Guide](https://martinfowler.com/architecture/)
+- [Apache CouchDB](https://couchdb.apache.org)
+
 </div>
 </google-codelab-step>
 
