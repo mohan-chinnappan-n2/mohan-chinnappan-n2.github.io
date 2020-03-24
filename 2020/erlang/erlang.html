@@ -43,6 +43,10 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bo5WL5IQAd0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4elY_RuyBhQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IEhwc2q1zG4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 </google-codelab-step>
  
@@ -53,10 +57,30 @@
 - hello.erl
 
 ```
+% load the file hello.erl
 -module(hello).
+% export function hello_world, which takes no args
 -export([hello_world/0]).
+% export function double, which takes one arg
+-export([double/1]).
+
+-export([fac/1]).
+-export([convert/2]).
+
 
 hello_world() -> io:fwrite("hello, world from Erlang in the memory of Joe Armstrong!\n").
+
+double(X) -> 2 * X.
+
+
+fac(1) -> 1; 
+fac(N) -> N * fac(N - 1).
+
+
+convert(M, inch) -> M / 2.54;
+convert(N, centimeter) -> N * 2.54.
+
+
 
 ```
 - running in  erl EShell
@@ -64,12 +88,23 @@ hello_world() -> io:fwrite("hello, world from Erlang in the memory of Joe Armstr
 $ erl
 Erlang/OTP 21 [erts-10.0.4] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [hipe] [dtrace]
 Eshell V10.0.4  (abort with ^G)
+% compile hello.erl
 1> c(hello).
 {ok,hello}
 2> hello:hello_world().
 hello, world from Erlang in the memory of Joe Armstrong!
 ok
+3>hello:double(100).  
+200
+4>hello:fac(10).
+3628800
 
+5> hello:convert(2.5, centimeter).
+6.35
+6> hello:convert(2.5, inch).      
+0.984251968503937
+
+halt().
 
 ```
 </div>
@@ -80,11 +115,14 @@ ok
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xbYprCoLsvY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+
+
 </google-codelab-step>
 
 <google-codelab-step label="Links and References" duration="1">
 <div id='links-md' class='md' data-trim='false'>
-- [erlang/](https://www.erlang.org/)
+- [erlang](https://www.erlang.org/)
+- [erlang tutorial](http://erlang.org/download/getting_started-5.4.pdf)
 - [armstrong on software](http://armstrongonsoftware.blogspot.com/)
 - [A Tribute to Joe Armstrong, Father of Erlang ](http://blog.2600hz.com/a-tribute-to-joe-armstrong-father-of-erlang)
 - [Story of Erlang](https://www.ericsson.com/en/news/2014/12/inside-erlang--creator-joe-armstrong-tells-his-story)
@@ -94,6 +132,7 @@ ok
 - [Jan Koum](https://en.wikipedia.org/wiki/Jan_Koum)
 - [Martin Fowler -Software Architecture Guide](https://martinfowler.com/architecture/)
 - [Apache CouchDB](https://couchdb.apache.org)
+- [Wings 3D](https://github.com/bjorng/wings)
 
 </div>
 </google-codelab-step>
