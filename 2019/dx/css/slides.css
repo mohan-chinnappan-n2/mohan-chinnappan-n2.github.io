@@ -56,3 +56,27 @@ img {
     font-size: 16px;
 }
 
+
+ @keyframes demo {
+      from {background-color: #99ffcc;color:black;  transform: rotate(-1deg)}
+      to {background-color: ##337ab7;color:white;  transform: rotate(+1deg)}
+  }
+
+  .demo {
+      animation-name: demo;
+      animation-duration: 10s;
+      animation:demo 5s linear 2s infinite alternate;
+  }
+  .center {
+    text-align: center;
+  }
+  img {
+    border-radius: 20px;
+  }
+  .reflink {
+    width:600px;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+
