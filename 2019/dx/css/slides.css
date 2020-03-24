@@ -6,8 +6,10 @@ author: mohan chinnappan
 img {
     border-radius: 20px;
     align-content: center;
-    color: transparent;
-  }
+    width:800px;
+    padding-left:30px;
+} 
+ 
 
   .slide {
     margin-top:30px;
