@@ -1,3 +1,8 @@
+/* slides.css 
+
+author: mohan chinnappan
+*/
+
 img {
     border-radius: 20px;
     align-content: center;
@@ -79,4 +84,13 @@ img {
     font-size: 18px;
   }
 
-
+/* md li */
+    div.md > ul > li {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    font-size: 20px;
+    }
