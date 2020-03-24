@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>FAQs - Covid-19</title>
+    <title>MS Teams and Tel Medicine</title>
+    <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n2.github.io/favicon.ico">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -36,7 +37,7 @@ img {
         <button
           type="button"
           class="navbar-toggle"
-          data-toggle="collapse"
+          data-toggle="collpse"
           data-target="#bs-example-navbar-collapse-1"
         >
           <span class="sr-only">Toggle navigation</span>
@@ -44,7 +45,7 @@ img {
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="javascript:void(0)">FAQ - Covid-19</a>
+        <a class="navbar-brand" href="javascript:void(0)">MS Teams and TeleMedicine</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -80,21 +81,36 @@ img {
 
 
 <!-- Slides content starts here -->
-<div class="slide" id='What is Covid-19 virus'>
-<h3 class='center'>What is Covid-19 virus?</h3>
-<div id='ov-md' class='md' data-trim='false'>
-- In COVID-19, 'CO' stands for 'corona,' 'VI' for 'virus,' and 'D' for disease. 
-- Formerly, this disease was referred to as “2019 novel coronavirus” or “2019-nCoV”. 
-- There are many types of human coronaviruses including some that commonly cause mild upper-respiratory tract illnesses.
-- Researchers have used cryogenic electron microscopy to show that coronaviruses enter human cells through an interaction with angiotensin-converting enzyme 2 (ACE2).
-![covid](https://dp9bxf2pat5uz.cloudfront.net/wp-content/uploads/coronavirus-targets-image-750x500.jpg)
+<div class="slide" id='MS Teams Architecture'>
+<h3 class='center'>MS Teams Architecture</h3>
+<div id='arch-md' class='md' data-trim='false'>
+- Teams is built on Office 365 groups, Microsoft Graph, and the same enterprise-level security, compliance, and manageability as the rest of Office 365. 
+- Teams leverages identities stored in Azure Active Directory (Azure AD). 
+- Teams keeps working even when you're offline or experiencing spotty network conditions.
+
+- A client interface on top of other services that provides agile, real-time communication and collaboration for teams. 
+- With Microsoft Teams connectors, you can integrate with third-party apps, bots, and add new tabs.
+![arch](https://i0.wp.com/blogs.perficient.com/files/2019/02/TeamsArchitecture.png?w=1186&ssl=1)
 </div>
 </div>
 
-<div class="slide" id='Symptoms'>
-<h3 class='center'>Symptoms</h3>
-<div id='sym-md' class='md' data-trim='false'>
-![Symptoms](https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Symptoms_of_coronavirus_disease_2019_2.0.svg/2560px-Symptoms_of_coronavirus_disease_2019_2.0.svg.png)
+<div class="slide" id='Use Cases'>
+<h3 class='center'>Use Cases</h3>
+<div id='uc-md' class='md' data-trim='false'>
+
+- Project-oriented teams to have a conversation, work together in files, call, and meet right where the work is happening.
+- Teams can be public (open to anyone in your organization) or private (managed membership).
+- Use the rich security and compliance capabilities in Microsoft 365 to govern content created through Microsoft Teams.
+
+</div>
+</div>
+
+<div class="slide" id='TeleHealth'>
+<h3 class='center'>TeleHealth</h3>
+<div id='th-md' class='md' data-trim='false'>
+
+![MS Telehealth](https://docs.microsoft.com/en-us/azure/architecture/example-scenario/apps/media/architecture-telehealth-system.png)
+
 </div>
 </div>
 
@@ -103,12 +119,17 @@ img {
 <h3 class='center'>Links</h3>
 <hr/>
   <div id='links-md' class='md' data-trim='false'>
-- [CDC's Coronavirus Self-Checker HealthBot](https://covid19healthbot.cdc.gov/?source=cdc-chat-bot-button-with-text)
-- [COVID-19 risk screening and testing](https://www.projectbaseline.com/study/covid-19/)
-- [Confirmed cases around the world](https://google.org/crisisresponse/covid19-map)
-- [WHO situation reports](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports)
-- [Covid-19](https://en.wikipedia.org/wiki/Coronavirus_disease_2019)
+- [MS Team Docs](https://docs.microsoft.com/en-us/microsoftteams/teams-overview)
+- [Teams Core Components](https://blogs.perficient.com/2019/03/06/core-components-of-microsoft-teams-part-1-architecture/)
+- [Microsoft Teams IT architecture and telephony solutions posters](https://docs.microsoft.com/en-us/microsoftteams/teams-architecture-solutions-posters)
+- [Telehealth](https://en.wikipedia.org/wiki/Telehealth)
+- [Building a telehealth system on Azure](https://docs.microsoft.com/en-us/azure/architecture/example-scenario/apps/telehealth-system)
+- [Tele Medicine WebRTC](img/telemed-webrtc.pdf) 
   </div>
+<object width="1200" height="900" data="img/msft-m365-teams-logical-architecture.pdf"></object>
+<object width="1200" height="900" data="img/telemed-webrtc.pdf"></object>
+
+
 </div>
 <!-- end slides -->
 
