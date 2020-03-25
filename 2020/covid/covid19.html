@@ -59,9 +59,9 @@
     </nav>
 
     <div class="split split-horizontal" id="menu">
-      <span style="display:none">
-        <button class="btn btn-success" onclick="prevSlide()">Prev</button>
-        <button class="btn btn-success" onclick="nextSlide()">Next</button>
+      <span style="display:none2; z-index:100;">
+        <button class="btn btn-primary" onclick="prevSlide()">< Prev</button>
+        <button class="btn btn-warning" onclick="nextSlide()">Next ></button>
       </span>
       <select style="display:none;margin-top:10px;" id='outline2'> </select>
       <ol class="list-group" id='mitems'> </ol>
@@ -87,15 +87,87 @@
 <div class="slide" id='Symptoms'>
 <h3 class='center'>Symptoms</h3>
 <div id='sym-md' class='md' data-trim='false'>
-![Symptoms](https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Symptoms_of_coronavirus_disease_2019_2.0.svg/2560px-Symptoms_of_coronavirus_disease_2019_2.0.svg.png)
+![Symptoms](img/Clinical_Presentations_of_Patients_with_Covid-19.jpg)
 </div>
+</div>
+<div class="slide" id='Structure'>
+<h3 class='center'>Structure</h3>
+<div id='struct-md' class='md' data-trim='false'>
+![Structure](img/SARS-CoV_2_Structure.jpg)
+</div>
+</div>
+
+<div class="slide" id='Transmission'>
+<h3 class='center'>Transmission</h3>
+<div id='trans-md' class='md' data-trim='false'>
+![Transmission](img/Transmission_Cycle_of_SARS_CoV_2.jpg)
+</div>
+</div>
+
+
+<div class="slide" id='Replication'>
+<h3 class='center'>Replication</h3>
+<div id='rep-md' class='md' data-trim='false'>
+![Replication](img/Covid_Replication.jpg)
+</div>
+</div>
+
+<div class="slide" id='Genome'>
+<h3 class='center'>Genome</h3>
+<div id='genome-md' class='md' data-trim='false'>
+![Genome](img/Single_Stranded_RNA_SARS.jpg)
+</div>
+</div>
+
+<div class="slide" id='Genome 30k'>
+<h3 class='center'>Genome 30k</h3>
+<div id='genome2-md' class='md' data-trim='false'>
+![Genome](https://cdn.arstechnica.net/wp-content/uploads/2020/03/F1.large_-1.jpg)
+</div>
+</div>
+
+
+
+<div class="slide" id='Challenges'>
+<h3 class='center'>Challenges</h3>
+<div id='chall-md' class='md' data-trim='false'>
+- A basic challenge confronts all viral therapies: most viruses have just a handful of genes
+- They rely on proteins in the cells they infect (host cells) to perform many of the functions needed to reproduce.
+- But therapies that target host cell proteins run the risk of killing uninfected cells, making matters worse.
+- So antiviral therapies usually target something **unique** about the virus—something important enough that a few mutations in the virus won't make the therapy ineffective.
+</div>
+</div>
+
+<div class="slide" id='Making copies of RNA virus'>
+<h3 class='center'>Making copies of RNA virus</h3>
+<div id='rnacp-md' class='md' data-trim='false'>
+#### Protein Building
+- Genetic information is carried by DNA
+- When a protein needs to be built, the relevant bit of DNA is read and the cell makes a temporary copy of the information using a very similar chemical called RNA.
+- This piece of RNA is then translated into a **sequence of amino acids**, which form the protein.
+- Exceptions
+    - Many RNAs perform important functions without ever being translated into proteins—all RNA in our cells is made by transcribing a DNA sequence.
+- Many viruses, including HIV and the influenza virus, use RNA for their basic genetic material. 
+- The coronavirus is also an RNA virus; it consists of a single, 30,000-base-long RNA molecule.
+- The **host cells** it infects only have proteins that **copy DNA, not RNA**, so how can more copies of the virus get made?
+    - This virus carries its own solution with it to solve this problem
+    - When virus' RNA genome first enters a cell, it interacts with the host's **protein-making machinery**
+        -  Uses it to make proteins that can copy RNA molecules.(RNA-copying proteins, called "polymerases)
+    -  DNA and RNA are so closely related that it can be difficult to make a drug that affects only one type of polymerase. 
+</div>
+</div>
+
+
+<div class="slide" id='Podcasts'>
+<h3 class='center'>Podcasts</h3>
+<iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/13643078/height/90/theme/custom/thumbnail/yes/direction/backward/render-playlist/no/custom-color/166899/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+
 </div>
 
 
 <div class="slide" id='Links'>
 <h3 class='center'>Links</h3>
-<hr/>
-  <div id='links-md' class='md' data-trim='false'>
+<div id='links-md' class='md' data-trim='false'>
 - [CDC's Coronavirus Self-Checker HealthBot](https://covid19healthbot.cdc.gov/?source=cdc-chat-bot-button-with-text)
 - [COVID-19 risk screening and testing](https://www.projectbaseline.com/study/covid-19/)
 - [Confirmed cases around the world](https://google.org/crisisresponse/covid19-map)
@@ -104,7 +176,8 @@
 - [Tableau: Access and analyze trusted COVID-19 (Coronavirus) global data](https://www.tableau.com/covid-19-coronavirus-data-resources)
 - [Marc Benioff Twitter feed](https://twitter.com/Benioff?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
 - [Information About Coronavirus  from Stony Brook Medicine](https://www.stonybrookmedicine.edu/patientcare/coronavirus)
- 
+- [DNA vs RNA](https://www.thoughtco.com/dna-versus-rna-608191)
+- [COVID-19: the biology of an effective therapy](https://arstechnica.com/science/2020/03/covid-19-the-biology-of-an-effective-therapy/) 
   </div>
 </div>
 <!-- end slides -->
