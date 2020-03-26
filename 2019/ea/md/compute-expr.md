@@ -69,3 +69,6 @@ s = foreach s generate fruit,  toDate(max(date_sec_epoch)) as m_date,
 ### Dashboard
 
 ![ce db](img/ce-db-1.png)
+
+
+
