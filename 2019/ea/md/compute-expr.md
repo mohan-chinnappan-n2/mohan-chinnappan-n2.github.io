@@ -20,7 +20,40 @@ peach,03/09/2019,266
 - Compute Expression
 ![df-cexpr](img/df-ce-2.png)
 
-
+- Dataflow JSON
+```
+{
+  "getFruitYied": {
+    "action": "edgemart",
+    "parameters": {
+      "alias": "fruit_yield2"
+    }
+  },
+  "num_yieds": {
+    "action": "computeExpression",
+    "parameters": {
+      "mergeWithSource": true,
+      "source": "getFruitYied",
+      "computedFields": [
+        {
+          "type": "Numeric",
+          "saqlExpression": "1",
+          "name": "num_yields",
+          "label": "num_yields"
+        }
+      ]
+    }
+  },
+  "regFruitYield": {
+    "action": "sfdcRegister",
+    "parameters": {
+      "source": "num_yieds",
+      "alias": "regFruitYield",
+      "name": "regFruitYield"
+    }
+  }
+}
+```
 ###  Lens
 
 ![ce-soql](img/ce-soql-1.png)
