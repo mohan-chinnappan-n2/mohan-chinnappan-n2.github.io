@@ -1,0 +1,24 @@
+{
+  "name": "wrtc",
+  "main": "index.js",
+  "version": "0.0.1",
+  "authors": [
+    "mohan chinnappan"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.11.1",
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.2.0",
+    "eventEmitter": "~4.2.7",
+    "peerjs": "~0.3.9"
+  }
+}
