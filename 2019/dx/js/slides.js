@@ -112,6 +112,14 @@ $(function () {
     $('#help').tooltip({ placement: 'bottom', width: "300px"});
 });
 
+// pdf print
 
+ document.getElementById('printpdf').addEventListener('click', () => {
+        console.log('pdf print click');
+        const activeSlideId = document.querySelector('ol#mitems.list-group>li.list-group-item.tocactive>a').innerText;
+        const element = document.getElementById(activeSlideId);
+        console.log(element);
+        html2pdf(element);
+   });
 
 
