@@ -8,9 +8,10 @@
 
 
 const sampleInvoiceData = {
+    invNum : 343,
+    
     currency: '$',
     logoUrl: 'https://mohan-chinnappan-n2.github.io/2020/forms/img/logo-s.png',
-    invNum : 343,
     dueDateDaysFromNow : 30,
 
     fromAddress : `
@@ -28,9 +29,9 @@ const sampleInvoiceData = {
     payment: { method: 'Check', details: '' },
 
     items:  [ 
-    {name: 'Website Design', amount:300 } ,
-    {name: 'Hosting (3 months)', amount:75 } ,
-    {name: 'Domain Name (1 year)', amount:15 },
+    {name: 'Solution Design', amount:300 } ,
+    {name: 'Wireframe Design', amount:175 } ,
+    {name: 'Web Site Design', amount:200 },
     {name: 'Graphics Design', amount:120 },
     ]
 
