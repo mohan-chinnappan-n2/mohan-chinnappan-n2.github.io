@@ -11,20 +11,12 @@ const sampleInvoiceData = {
     invNum : 343,
     
     currency: '$',
-    logoUrl: 'https://mohan-chinnappan-n2.github.io/2020/forms/img/logo-s.png',
     dueDateDaysFromNow : 30,
 
-    fromAddress : `
-    GreenWorld, Inc.<br>
-    12345 Sunny Road<br>
-    Manchester, NH 12345
-    `,
-
-    toAddress : `
-    ABC Corp.<br>
-    John Doe<br>
-    john@example.com
-    `,
+    logoUrl: 'https://mohan-chinnappan-n2.github.io/2020/forms/img/logo-s.png',
+    
+    fromAddress : `GreenWorld, Inc.<br>12345 Sunny Road<br> Manchester, NH 12345 `,
+    toAddress : `ABC Corp.<br> John Doe<br> john@example.com `,
 
     payment: { method: 'Check', details: '' },
 
