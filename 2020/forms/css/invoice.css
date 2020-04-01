@@ -1,7 +1,26 @@
 /* invoice.css 
 
  source: https://github.com/sparksuite/simple-html-invoice-template/blob/master/invoice.html
+
+ modifications: mohan chinnappan
+
 */
+
+    #data {
+        font-family:  Monaco,'Courier New', Courier, monospace;
+        background-color:black;
+        color:#eee;
+        border-radius: 10px;
+        font-size: smaller;
+    }
+
+   .logo {
+        width:100%; 
+        max-width:200px;
+        border-radius:30px;
+   }
+
+   /*     invoice specific   */
 
     .invoice-box {
         max-width: 800px;

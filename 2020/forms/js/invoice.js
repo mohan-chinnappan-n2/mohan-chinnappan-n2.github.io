@@ -7,6 +7,45 @@
 // jshint esversion: 6 
 
 
+const invoiceBox = `
+<div class="invoice-box" id='invoice-box'>
+    <table cellpadding="0" cellspacing="0" id='invoice-tbl'>
+        <tr class="top">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td class="title">
+                            <img id='logo' class='logo'>
+                        </td>
+                        <td id='invMeta'> </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <tr class="information">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td id='fromAddress'> </td> 
+                        <td id='toAddress'> </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <tr class="heading"> <td> Payment Method </td> <td> </tr>
+        <tr class="details"> <td id='paymentMethod'></td> <td id='paymentDetails'></td> </tr>
+        <tr class="heading"> <td> Item </td> <td> Price </td> </tr>
+    </table>
+</div>
+`;
+
+
+const initInvoiceBox = (markup, id) => {
+  document.getElementById(id).innerHTML = markup;
+};
+
 
 const  addRow = (tableID, name, amount, cssClass) => {
     // Get a reference to the table
@@ -34,7 +73,8 @@ const addDays = (date, days) => {
     return copy;
 };
 
-const renderInvoice  = (pd) => {
+const renderInvoice  = (markup, pd, id) => {
+    initInvoiceBox(markup,id);
     const today = new Date();
     const dueDate = addDays(today, pd.newDateDaysFromNow)
     const invMeta = `
@@ -43,6 +83,8 @@ const renderInvoice  = (pd) => {
     Due: ${dueDate.toLocaleString('default', { month: 'long' }) } ${dueDate.getDate()} ${dueDate.getFullYear()}
     `;
     document.getElementById('invMeta').innerHTML =invMeta;
+
+    document.getElementById('logo').src =pd.logoUrl;
     
     document.getElementById('fromAddress').innerHTML = pd.fromAddress;
     document.getElementById('toAddress').innerHTML = pd.toAddress;

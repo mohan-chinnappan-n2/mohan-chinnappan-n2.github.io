@@ -2,56 +2,70 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Invoice</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/> 
+    <title>Form Generator</title>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/css/navbar-blue.css" />
     <script src="https://mohan-chinnappan-n2.github.io/2020/pdf/js/html2pdf.bundle.min.js"></script>
     <script src="js/invoice.js"></script>
+
+    <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
 
     <link rel="stylesheet" href="css/invoice.css">    
 </head>
 <body>
-<hr>
-    <div class="invoice-box" id='invoice-box'>
-        <table cellpadding="0" cellspacing="0" id='invoice-tbl'>
-            <tr class="top">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td class="title">
-                                <img src="img/logo-s.png" style="width:100%; max-width:200px;border-radius:30px;">
-                            </td>
-                            <td id='invMeta'> </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            
-            <tr class="information">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td id='fromAddress'> </td> 
-                            <td id='toAddress'> </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            
-            <tr class="heading"> <td> Payment Method </td> <td> </tr>
-            <tr class="details"> <td id='paymentMethod'></td> <td id='paymentDetails'></td> </tr>
-            <tr class="heading"> <td> Item </td> <td> Price </td> </tr>
-        </table>
-    </div>
-<hr>
 
-<div class='container'>
-     <button class=' btn btn-success' id='printpdf'>Print</button>
-</div>
+    <nav
+      class="navbar navbar-default"
+      role="navigation"
+      style="margin-bottom:0px;"
+    >
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)">Form Generator</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#/home">Home</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+
+ <div class="split split-horizontal" id="menu">
+     <textarea  id="data" cols="60" rows="30"> </textarea>
+     <div class='container'>
+        <button class=' btn btn-primary' id='renderForm'>Render Form</button>
+        <button class=' btn btn-success' id='printpdf'>Print</button>
+   </div>
+ </div>
+ <div class="split split-horizontal" id="content">
+ </div>
+
+
 
 <script>
 
+
 const sampleInvoiceData = {
     currency: '$',
+    logoUrl: 'https://mohan-chinnappan-n2.github.io/2020/forms/img/logo-s.png',
     invNum : 343,
     newDateDaysFromNow : 30,
 
@@ -78,7 +92,14 @@ const sampleInvoiceData = {
 
 };
 
-renderInvoice(sampleInvoiceData);
+document.getElementById('data').textContent = JSON.stringify(sampleInvoiceData, null, 4);
+
+
+
+document.getElementById('renderForm').addEventListener('click', () => {
+    const data = JSON.parse( document.getElementById('data').value);
+    renderInvoice(invoiceBox, data,'content');
+});
 
 
 // printing to pdf
@@ -88,8 +109,11 @@ document.getElementById('printpdf').addEventListener('click', () => {
 });
 
 
+// splitter
+Split(["#menu", "#content"], { sizes: [40, 60] }); 
 
 </script>
+
 </body>
 </html>
 
