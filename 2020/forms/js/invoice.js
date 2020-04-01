@@ -11,7 +11,7 @@ const sampleInvoiceData = {
     currency: '$',
     logoUrl: 'https://mohan-chinnappan-n2.github.io/2020/forms/img/logo-s.png',
     invNum : 343,
-    newDateDaysFromNow : 30,
+    dueDateDaysFromNow : 30,
 
     fromAddress : `
     GreenWorld, Inc.<br>
@@ -105,7 +105,7 @@ const addDays = (date, days) => {
 const renderInvoice  = (markup, pd, id) => {
     initInvoiceBox(markup,id);
     const today = new Date();
-    const dueDate = addDays(today, pd.newDateDaysFromNow)
+    const dueDate = addDays(today, pd.dueDateDaysFromNow);
     const invMeta = `
     Invoice #: ${pd.invNum}<br>
     Created: ${today.toLocaleString('default', { month: 'long' })}  ${today.getDate()} ${today.getFullYear()}<br>
