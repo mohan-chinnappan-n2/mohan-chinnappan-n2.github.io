@@ -7,6 +7,35 @@
 // jshint esversion: 6 
 
 
+const sampleInvoiceData = {
+    currency: '$',
+    logoUrl: 'https://mohan-chinnappan-n2.github.io/2020/forms/img/logo-s.png',
+    invNum : 343,
+    newDateDaysFromNow : 30,
+
+    fromAddress : `
+    GreenWorld, Inc.<br>
+    12345 Sunny Road<br>
+    Manchester, NH 12345
+    `,
+
+    toAddress : `
+    ABC Corp.<br>
+    John Doe<br>
+    john@example.com
+    `,
+
+    payment: { method: 'Check', details: '' },
+
+    items:  [ 
+    {name: 'Website Design', amount:300 } ,
+    {name: 'Hosting (3 months)', amount:75 } ,
+    {name: 'Domain Name (1 year)', amount:15 },
+    {name: 'Graphics Design', amount:120 },
+    ]
+
+};
+
 const invoiceBox = `
 <div class="invoice-box" id='invoice-box'>
     <table cellpadding="0" cellspacing="0" id='invoice-tbl'>
