@@ -1,0 +1,11 @@
+{
+  "name": "riotest",
+  "version": "0.0.1",
+  "description": "riot js test",
+  "main": "index.js",
+  "author": "mohan chinnappan",
+  "license": "MIT",
+  "dependencies": {
+    "riot": "^4.11.1"
+  }
+}
