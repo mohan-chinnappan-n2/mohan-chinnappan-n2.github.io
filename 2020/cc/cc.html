@@ -35,12 +35,30 @@ mycompany.com                                         A  12.33.3.33
 </div>
 
 </google-codelab-step>
+
+ <google-codelab-step label="Importance TTL" duration="1">
+<div id='ttl-md' class='md' data-trim='false'>
+-  TTL (Time to Live) is a setting for each DNS record that specifies how long a resolver is supposed to cache (or remember) the DNS query before the query expires and a new one needs to be done.
+- Benefit
+    -  it’s a lot faster to check your local resolver’s cache then having to look up a DNS record that isn’t already cached. 
+- Drawback
+    - When you hear someone mentioning they are waiting for DNS to propagate, they are waiting for cached DNS records to expire at all of the different resolvers that previously looked it up. If you have a 1-day TTL on a record, that means it would take a full day for any change to propagate around the world.
+
+- Balance
+    - You want to strike the best balance between having a low TTL (enabling fast changes when needed) and high TTLs (taking advantage of DNS caching).
+    - For very critical records that can change often or need to change in an emergency, you can set TTLs as low as 30 seconds
+    -  A good rule of thumb is never have any TTL higher than 1 day as the benefits of DNS caching really diminish after that point and it makes propagation waits extremely long.
+    -  TTL changes also need propagate out just like any other DNS change.
+</div>
+
+</google-codelab-step>
     
 
 <google-codelab-step label="Links and References" duration="1">
 <div id='links-md' class='md' data-trim='false'>
 - [Run your Salesforce Community under a custom domain](https://help.salesforce.com/articleView?amp;language=en_US&id=000336819&type=1&mode=1)
 - [CNAME](https://en.wikipedia.org/wiki/CNAME_record)
+- [TTL](https://dyn.com/blog/dyn-tech-everything-you-ever-wanted-to-know-about-ttls/)
 </div>
 </google-codelab-step>
 
