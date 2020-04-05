@@ -17,14 +17,90 @@
 
 <google-codelab-step label="Overview" duration="1">
 <div id='ov-md' class='md' data-trim='false'>
+- Chatbots are on the rise, and companies are choosing to delegate routine tasks to chatbots rather than humans, thus providing huge labor cost savings. - Unlike humans, chatbots are capable of processing multiple user requests at a time and are always available.
+- Types
+    - Rule based
+        - Relies on predefined commands and templates
+        -  Each of these commands should be written by a chatbot developer using regular expressions and textual data analysis
+    - Data Driven
+        -  Rely on machine learning models pre-trained on dialogue data 
+- Dialogue systems
+![Dialogue sys](https://1.bp.blogspot.com/-avNxLnd2DcY/XbdbGVzFv9I/AAAAAAAAARE/CwBkJyfQSI8OJJO-u1lsnR4yp_Rb9KwrQCNcBGAsYHQ/s1600/2.png)
+- The Natural Language Understanding (NLU) module translates a user query from natural language into a labeled semantic representation.
+- For example, the utterance “Please set an alarm for 8am” will be translated into a machine-understandable form like set_alarm(8 am). 
+- Then the bot has to decide what is expected of it. The Dialogue Manager (DM) keeps track of the dialogue state and decides what to answer to the user.
+- At the last stage, the Natural Language Generator (NLG) translates a semantic representation back into human language
+- ```rent_price(Atlanta)=3000 USD``` translates to ```“The rent price in Atlanta is around $3,000.”``` 
 </div>
 
 </google-codelab-step>
+
+
+ <google-codelab-step label="DeepPavlov" duration="1">
+<div id='DeepPavlov-md' class='md' data-trim='false'>
+- Models are defined in separate configuration files under the config folder. 
+- A config file consists of five main sections: dataset_reader, dataset_iterator, chainer, train, and metadata.
+- dataset_reader Defines the dataset’s location and format. 
+- After loading, the data is split between the train, validation, and test sets according to the dataset_iterator settings.
+- The chainer section of the configuration files consists of three subsections. 
+    - The **in** and **out** sections define input and output to the **chainer**,
+    - The **pipe** section defines a pipeline of the required components to interact with the models
+    - The **metadata** section describes the model requirements along with the model variables.
+- You can interact with the models defined in the configuration files via the command-line interface (CLI). 
+- Install
+    - ```python -m deeppavlov install <config_path>```
+- Predictions - get from a model interactively through CLI
+    - ```python -m deeppavlov interact <config_path> [-d]```
+- Train: You can train a model by running it with the train parameter.
+    - ```python -m deeppavlov train <config_path>```
+- Allows you to test all the available models on your data to identify the one that performs best. 
+- Test: To test a model, specify the dataset split along with the split fields in the dataset_iterator section of the configuration file.
+    - ```python -m deeppavlov test <config_path>```
+- REST API: you can run a server with API access to a model by executing DeepPavlov with the riseapi command:
+    - ```python -m deeppavlov riseapi <config_path>```
+
+</div>
+</google-codelab-step>
+
+ <google-codelab-step label="Tensorflow" duration="1">
+<div id='tf-md' class='md' data-trim='false'>
+- Most text classification models of DeepPavlov have been implemented by using Keras abstractions.
+-  Keras provides us with fast prototyping techniques for quickly trying various neural network architectures and tuning hyperparameters.
+- Sequence tagging and question answering.
+    - Seamless integration with the BERT-based models
+    - BERT-based English and multilingual models for text classification, named entity recognition, and question answering 
+    - TensorBoard allows us to inspect models and make appropriate changes while debugging them.
+    - State-of-the-art results in many tasks have been achieved by applying BERT-based models.
+    - Integrated BERT into three downstream tasks: 
+        - text classification, 
+        - named entity recognition (and sequence tagging in general), and 
+        - question answering
+ 
+</div>
+</google-codelab-step>
+
+ <google-codelab-step label="BERT" duration="1">
+<div id='bert-md' class='md' data-trim='false'>
+- Bidirectional Encoder Representations from Transformers (BERT)
+- BERT makes use of Transformer, an attention mechanism that learns contextual relations between words (or sub-words) in a text. 
+    - As opposed to directional models, which read the text input sequentially (left-to-right or right-to-left), the Transformer encoder reads the entire sequence of words at once. 
+ - This allows the model to learn the **context** of a word based on all of its surroundings (left and right of the word).
+- Attention — the simple idea of focussing on salient parts of input by taking a weighted average of them, has proven to be the key factor in a wide class of neural net models.
+-  Multihead attention — which is essentially “multiple attention heads attending to different sections of input in parallel”
+- A trained BERT model takes as input a sentence and outputs vectors for each word of the sentence.
+- The vector it outputs for a word is dependent on the context in which it occurs.
+    - The vector for the word cell in the sentence “He died in a prison cell” would be different for the word cell in “The blood cell samples were contaminated”
+    - Also the vector for the word “cell” in the first sentence is likely to be closer (cosine distance) to the vector for the word incarceration, whereas the word cell in the second sentence would be closer to the vector for gene
+
+</div>
+</google-codelab-step>
+
 
  <google-codelab-step label="Chatbot" duration="1">
 <div id='chatbot-md' class='md' data-trim='false'>
 </div>
 <iframe width="912" height="513" class="doc_embedded_video" src="//play.vidyard.com/aBpvZm8A8n8naSWHzxeh1W" frameborder="0" allowfullscreen="1" webkitallowfullscreen="1" mozallowfullscreen="1"></iframe>
+
 - NLU (natural language understanding)  is the technology that makes Salesforce Einstein, well, smart.
 - Salesforce Einstein is an NLU technology that trains chatbots to create a learning model.
 - The learning model helps chatbots created with Salesforce understand customer interactions in a chat window. 
@@ -34,7 +110,13 @@
 <google-codelab-step label="Links and References" duration="1">
 <div id='links-md' class='md' data-trim='false'>
 - [DeepPavLov](https://blog.tensorflow.org/2019/09/deeppavlov-open-source-library-for-end.html)
+- [DeepPavlov colab](https://colab.research.google.com/github/deepmipt/dp_notebooks/blob/master/DP_tf.ipynb)
+- [DeepPavlov - github](https://github.com/deepmipt/DeepPavlov)
+- [DeepPavlov - demo](https://demo.deeppavlov.ai/#/en/textqa)
 - [A Transformer Chatbot Tutorial with TensorFlow 2.0](https://blog.tensorflow.org/2019/05/transformer-chatbot-tutorial-with-tensorflow-2.html)
+- [BERT Explained: State of the art language model for NLP](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
+- [BERT based models](https://towardsdatascience.com/a-review-of-bert-based-models-4ffdc0f15d58)
+
 </div>
 </google-codelab-step>
 
