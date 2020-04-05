@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>AI in Contact centers </title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/codelab-elements.css">
+  <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n2.github.io/favicon.ico">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/app.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+</head>
+<body>
+<google-codelab id="AI in Contact Centers" title="AI in Contact Centers" environment="web" > 
+
+<google-codelab-step label="Overview" duration="1">
+<div id='ov-md' class='md' data-trim='false'>
+-  Important way the  businesses respond to and meet customer needs.
+-  Provide personalized, intuitive customer care
+-  Features
+    - Intents
+    - Entities
+    - Training
+    - Integrations
+    - Analytics
+    - Fulfillment
+</div>
+
+</google-codelab-step>
+
+ <google-codelab-step label="Chatbot" duration="1">
+<div id='chatbot-md' class='md' data-trim='false'>
+- Chatbot is an application that simulates human conversation, either aloud or via text message
+- Through typing or talking, a chatbot can connect with a customer. It can influence a customer relationship.
+- Bots can answer the same straightforward questions over and over again, leaving customer service reps more time to help customers with more complex questions or problems.
+- Simple items like:
+    - Password reset requests, order status, and store locations and hours.
+- Consequently, fewer cases get logged for support agents to resolve.
+- Customers spend less time waiting “in the queue.” 
+
+![AI bots](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/service_bots_basics/learn-about-einstein-bots/images/5e7739dd71b964a1f319698d192e50ab_service_cloud_setup_process_ai.png)
+ 
+</div>
+<iframe width="912" height="513" class="doc_embedded_video" src="//play.vidyard.com/aBpvZm8A8n8naSWHzxeh1W" frameborder="0" allowfullscreen="1" webkitallowfullscreen="1" mozallowfullscreen="1"></iframe>
+- NLU (natural language understanding)  is the technology that makes Salesforce Einstein, well, smart.
+- Salesforce Einstein is an NLU technology that trains chatbots to create a learning model.
+- The learning model helps chatbots created with Salesforce understand customer interactions in a chat window. 
+</google-codelab-step>
+
+
+ <google-codelab-step label="Einstein bot Terminology" duration="1">
+<div id='chatbot-term--md' class='md' data-trim='false'>
+- Dialog
+    - Dialogs are conversation snippets that control what a bot can do. Each dialog includes a dialog intent, which is optionally available for NLU training to understand different kinds of customer responses.
+
+    - Bot moves between several different dialogs. Each dialog handles a portion of the conversation. 
+        - For example, Welcome, Main Menu, Order Status, Location and Hours, and Transfer to Agent are individual dialogs that a customer might experience as part of a single conversation with a bot.
+ - Dialog Intent
+    - Actions and generally start with verbs, such as buy, return, find, look up, cancel, edit, etc. 
+- Entity
+    - Entities are a type of data that you want to collect from a customer.
+        - Salesforce provides the following system entities: Text, DateTime, Date, Money, Number, Person, Location, Organization, Percent, Boolean, and Object (standard Salesforce or custom). 
+    - ![entity](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/write-bot-conversations-using-slots-and-entities/images/7c4566f7c8938267433cf20ba5534c93_new_entity.png)
+- Variable
+    - Container that stores a specific piece of data collected from a customer
+    - You must associate each variable with an entity.
+    - ![var](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/write-bot-conversations-using-slots-and-entities/images/62632dcb88574b0f041a0b60061080f1_bot-asks.png)
+    - ![var2](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/write-bot-conversations-using-slots-and-entities/images/1e4c083309d17d7a1f306c05ceb0d199_bot-says.png)
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="Prep" duration="1">
+<div id='prep-md' class='md' data-trim='false'>
+- most common customer service scenarios?
+-Opening a chat with a question—like “How can I help you?”—gets down to business right away.
+- Closings “Thank you” can end a chat. Customers may indicate they are ready to leave the conversation with words like “OK,” “Well,” and “All right.”
+- Response Delays Super-short pauses—say, less than one second—between conversation snippets can seem artificial. The average human pause time in text chats is approximately two to four seconds.
+- Emojis and Emoticons
+
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="Prerequisites" duration="1">
+<div id='pr-md' class='md' data-trim='false'>
+- Since bots work as a customer channel, offer articles from a knowledge base, process information with Einstein, and gather metrics to gauge customer service health, they span many areas of the Salesforce Platform 
+- Service Cloud license and Chat license
+- ![Sample Settings](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/prep-for-einstein-bots/images/411a87e457938bc8f27eb23344e6d0ea_chat_url_settings.png)
+- ![CSP](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/prep-for-einstein-bots/images/ed69891e542a7e17c4cbf050ff450462_content_security_allow_inline.png)
+- ![Builder](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/prep-for-einstein-bots/images/d15c6d1bc92da39ce0dc5bb0044c0ccd_snap-in_footer.png) 
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="Bot Creation" duration="1">
+<div id='bot-creation-md' class='md' data-trim='false'>
+- ![Bot creation](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/set-up-an-einstein-bot/images/069bf5a034991a95748fa277f199d750_cjksd-2-t-57000-i-0-t-6-rnv-7-puli-8.jpg)
+- ![Greeting](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/set-up-an-einstein-bot/images/b36b8e0c8ef9036980ee056426ec7a10_cjksd-2-t-59000-j-0-t-6-r-8-u-91-bkf-2.jpg)
+- ![Builder](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/set-up-an-einstein-bot/images/316df09123bad6d4ff45c24d228275f2_bot_builder_overview_v2.png)
+
+- ![Dialogs, Entities, Vars](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/set-up-an-einstein-bot/images/fa4f47914e534a6f46484e496ad694fa_cjksd-2-t-5-g-000-m-0-t-6-rb-7-nixtse.jpg)
+- ![Dialog](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/set-up-an-einstein-bot/images/06e7a6ed3ab80428b24b7e728504acc2_screen_breakdown.png)
+- ![Dialog2](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/set-up-an-einstein-bot/images/43862ae3b664ac5ddf0fbcc2e9b527fd_menu.png)
+- ![Next Step](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/add-prebuilt-dialogs-and-customize-the-options-menu/images/0fd393dffac64643b7314ee43344cc46_bot_builder_main_show_menu.png)
+- ![bot menu](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/add-prebuilt-dialogs-and-customize-the-options-menu/images/23ed84e5d95208f1edcceeceecbcf429_chat_test.png)
+
+- ![submenu](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/create-a-dialog-submenu-and-dialog-group/images/7265be915c6f79da8b7538beac945954_order_related_test.png)
+- ![submenu2](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/build-an-einstein-bot/create-a-dialog-submenu-and-dialog-group/images/cc481ab98026e3a74a51fdf86d807f1e_order_related_sub.png)
+
+</div>
+</google-codelab-step>
+
+
+<google-codelab-step label="Links and References" duration="1">
+<div id='links-md' class='md' data-trim='false'>
+- [Einstein Bots Basics](https://trailhead.salesforce.com/content/learn/modules/service_bots_basics)
+- [Einstein Bot](https://trailhead.salesforce.com/content/learn/projects/build-an-einstein-bot/prep-for-einstein-bots)
+- [Google Contact Center AI](https://cloud.google.com/blog/products/ai-machine-learning/contact-center-ai-now-ga
+- [Compare Salesforce Einstein vs Dialogflow](https://comparisons.financesonline.com/salesforce-einstein-vs-dialogflow)
+- [(Empowering Salesforce customers with Google Cloud AI](https://cloud.google.com/blog/topics/partners/empowering-salesforce-customers-with-google-cloud-ai)
+</div>
+</google-codelab-step>
+
+
+    
+</google-codelab>
+
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/md2html.js?v=2"> </script> 
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/native-shim.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/custom-elements.min.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/codelab-elements.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/prettify.js"></script>
+
+</body>
+</html>
+

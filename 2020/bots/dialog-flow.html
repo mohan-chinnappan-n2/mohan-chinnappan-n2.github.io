@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>DialogFlow</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/codelab-elements.css">
+  <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n2.github.io/favicon.ico">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/app.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+</head>
+<body>
+<google-codelab id="DialogFlow" title="DialogFlow" environment="web" > 
+
+<google-codelab-step label="Overview" duration="1">
+<div id='ov-md' class='md' data-trim='false'>
+- Overview here
+</div>
+<iframe width="720" height="400" src="https://www.youtube.com/embed/9aHusGxntPw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="720" height="400" src="https://www.youtube.com/embed/kzdL6GxJ_WY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="720" height="400" src="https://www.youtube.com/embed/-tOamKtmxdY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+</google-codelab-step>
+    
+<google-codelab-step label="Intent" duration="1">
+<div id='Intent-md' class='md' data-trim='false'>
+-  Create **intent** for anything user might ask
+    - say: Check prices, Book a repair appointment, Operating hours
+- For each **intent** we provide various ways the user might communicate
+    - For this intent: Book a repair appointment, the might ask in following ways
+        - I'd like to get my equipment fixed this week
+        - My equipment is broken
+        - Can you fix my equipment this week? 
+- Dialog flow uses this info to train a ML model to understand not these examples only, but also numerous other phrases meaning the same/similar intent
+    - Like: My equipment's display unit needs to repaired
+- So when users says something, our Model will matches the intent which is the good fit for the user ask
+- For intent, we specify how our app will respond
+    - No, problem, we have an opening this afternoon to this intent:  I'd like to get my equipment fixed this week
+![df-intent-1](img/df-intent-1.png)
+![df-intent-2](img/df-intent-2.png)
+
+<div>
+
+</google-codelab-step>
+
+
+ <google-codelab-step label="Entity" duration="1">
+<div id='entity-md' class='md' data-trim='false'>
+- Entity Extraction
+    - Identify the things the user mentions
+        - My **mountain bike** is broken, how I can get it fixed  **tomorrow** 
+        - These entities are extracted. It has built-in system entities and developer's custom entities
+            - Dates
+            - Places
+            - Amount
+- Example for bike repair shop
+    - one entity for **@bike-type** 
+        - Road Bike
+        - Mountain Bike
+        - Racing Bike
+        - Fixed Gear Bike
+    - another entity for **@service-option** 
+        - Tune-up
+        - Repair
+        - Tire change
+        - Upgrade
+
+![df-sys-entity](img/df-sys-entity-1.png)
+![df-dev-entity](img/df-dev-entity-0.png)
+![df-dev-entity](img/df-dev-entity-1.png)
+![df-userentity](img/df-user-entity.png)
+
+
+
+
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="Dialog" duration="1">
+<div id='dialog-md' class='md' data-trim='false'>
+-  2 speakers negotiate meaning and understanding of what they say back and forth
+    - that back and forth is called dialog
+- Linear Dialog
+    - Type of services
+    - Date
+    - Time
+
+![dl-linear](img/df-linear-dl.png)
+- Non-Linear Dialog
+    - Closer to real conversations
+ ![dl-nlinear](img/df-nlinear-dl.png)
+- Slotting filling
+![dl-slot-filling](img/df-slot-filling-1.png)
+- Dialog asks for the will for the missing  intent
+![dl-slot-filling](img/df-slot-filling-2.png)
+
+
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="Context" duration="1">
+<div id='context-md' class='md' data-trim='false'>
+- Understand with question is being asked
+    - Where in the conversion we are in?
+- For each intent you can define multiple input and output **contexts**
+
+![context](img/dl-contest-1.png) 
+![context](img/dl-context-0.png) 
+
+
+</div>
+</google-codelab-step>
+
+
+
+<google-codelab-step label="Links and References" duration="1">
+<div id='links-md' class='md' data-trim='false'>
+- [dialogflow](https://dialogflow.com/)
+
+</div>
+</google-codelab-step>
+
+
+    
+</google-codelab>
+
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/md2html.js?v=2"> </script> 
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/native-shim.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/custom-elements.min.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/codelab-elements.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/prettify.js"></script>
+
+</body>
+</html>
+
