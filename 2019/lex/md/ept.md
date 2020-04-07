@@ -1,8 +1,11 @@
 ##  Experienced Page Time (EPT)
+-
+ Measures how long it takes for a page to load into a state that a user can meaningfully interact with.
+- The EPT is measured as the time from the page start to when no more activity occurs for at least two frames (~33 ms). The two extra frames help to avoid false positives due to asynchronous calls. These calls include any XHR activity, any storage activity, or any user interaction or client-side work of any kind in the main JavaScript thread
 
 - With Winter ‘19, we have exposed Experienced Page Time (EPT) to everyone on the Salesforce Platform. This EPT metric, better understood as Page Load time, can be explored through the Lightning Usage App which highlights the performance at both a browser and page level.
 
-- add eptVisible parameter as:  https://<example>.lightning.force.com/one/one.app?eptVisible=1
+- Add eptVisible parameter as:  https://<example>.lightning.force.com/one/one.app?eptVisible=1
 
 ![ept1](img/ept1.png)
 ![ept0](img/ept0.png)
