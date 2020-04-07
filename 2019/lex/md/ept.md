@@ -10,6 +10,15 @@
 ![ept1](img/ept1.png)
 ![ept0](img/ept0.png)
 
+
+### What factors affects EPT
+
+- Component implementation details, errors, and caching can all negatively impact EPT. 
+- External factors such as the following can impact EPT:
+    - network quality 
+    - browser performance 
+    - user interactions with the page while it’s loading
+
 ### Browser Performance Info
 ![Lex usage app](https://d259t2jj6zp7qm.cloudfront.net/images/c_scale%2Cf_png%2Cw_600-216_lightning_usage_browser_performance_txgatq.png)
 
