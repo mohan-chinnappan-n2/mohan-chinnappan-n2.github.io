@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head> 
+
+<style>
+.pad  {
+  border:1px solid steelblue;
+  border-radius: 10px;
+  background-color:#eef;
+}
+
+</style>
+
+</head>
+
+
+<body>
+    <canvas onmousemove="getPos(event)" class='pad' id="Canvas1" width="600", height="400"></canvas>
+
+
+<script type="text/javascript">
+let x = null;
+let y = null;
+let c = null;
+let ctx = null;
+
+let getPos = e => {
+   //if it is the first time the event listener is called then set x and y to the new mouse coordinate
+    if(x == null) {
+       x=e.clientX;
+       y=e.clientY;
+    }
+     //otherwise draw from the previous point (x, y) to the new coordinates (e.clientX, e.clientY).
+      ctx.beginPath();
+      ctx.moveTo(x,y);
+      ctx.lineTo(e.clientX,e.clientY);
+      ctx.stroke();
+      x=e.clientX;
+      y=e.clientY;
+}
+     
+ 
+window.onload = () =>{
+       c=document.getElementById("Canvas1");
+       ctx=c.getContext("2d");
+}
+</script>
+
+</body>
+</html>

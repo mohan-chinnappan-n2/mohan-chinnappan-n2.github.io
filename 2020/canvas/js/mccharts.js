@@ -1,13 +1,4 @@
-const canvas  = document.getElementById("chart");
-const chart = canvas.getContext("2d");
 
-const canvas2 = document.getElementById("chart2");
-const ctx2 = canvas2.getContext("2d");
-
-const canvas3 = document.getElementById("chart3");
-const ctx3 = canvas2.getContext("2d");
-
-const chart3Legend = document.getElementById("chart3Legend");
 
 //ref: https://code.tutsplus.com/tutorials/how-to-draw-a-pie-chart-and-doughnut-chart-using-javascript-and-html5-canvas--cms-27197
 let  getRandomColor = () =>{
@@ -51,9 +42,10 @@ let drawPieSlice = (ctx,centerX, centerY, radius, startAngle, endAngle, color ) 
 
 var Piechart = function(options){
     this.options = options;
-    this.canvas = options.canvas;
+    this.canvas = document.getElementById(options.canvas);
     this.ctx = this.canvas.getContext("2d");
     this.colors = getRandomColors(Object.keys(this.options.data).length); 
+    console.log(this.colors);
     this.draw = function() {
         var total_value = 0;
         var color_index = 0;
@@ -127,67 +119,20 @@ var Piechart = function(options){
     }
 }
 
-
-var drawDountChart = function(canvas)  {
-    this.x , this.y , this.radius , this.lineWidth , this.strockStyle , this.from , this.to = null;
-
-    this.set = function( x, y, radius, from, to, lineWidth, strockStyle) {
-        this.x = x;
-        this.y = y;
-        this.radius = radius;
-        this.from=from;
-        this.to= to;
-        this.lineWidth = lineWidth;
-        this.strockStyle = strockStyle; 
-    }
-
-    this.draw = function(data) {
-        const parts = data.parts.pt;
-        const sum = parts.reduce((a, b) => a + b, 0);
-        canvas.beginPath();
-        canvas.lineWidth = this.lineWidth;
-        canvas.strokeStyle = this.strockStyle;
-        canvas.arc(this.x , this.y , this.radius , this.from , this.to);
-        canvas.stroke();
-        let df = 0;
-        parts.forEach( part => { 
-            const pv = part/sum;
-            canvas.beginPath();
-            canvas.strokeStyle = getRandomColor();
-            canvas.arc(this.x, this.y, this.radius, df, df + (Math.PI * 2) * (pv));
-            canvas.stroke();
-            df += (Math.PI * 2) * (pv);
-        });
-    }
-}
-
-const data = { 
-    parts:{"pt": [10,20,15,15,40,30,60,50 ]}
-};
-
-const drawDount = new drawDountChart(chart);
-drawDount.set(150, 150, 100, 0, Math.PI, 60, "white");
-drawDount.draw(data);
-
-// testing
-
-drawLine(ctx2,100,100,200,200);
-drawArc(ctx2, 150,150,150, 0, Math.PI/3);
-drawPieSlice(ctx2, 150,150,150, Math.PI/2, Math.PI/2 + Math.PI/4, 'steelblue');
-
 // pie chart
 
 const pieData =  {
     "Apples": 10,
     "Mangos": 14,
-    "Peaches": 2,
-    "Plums": 12
+    "Peaches": 20,
+    "Plums": 12,
+    "Oranges": 25
 };
 
 const pieChart1 = new Piechart( {
-        canvas:canvas3,
+        canvas:'chart3',
         data: pieData,
-        doughnutHoleSize:0.5,
+        doughnutHoleSize:0.4,
         legend:chart3Legend 
     }
 );

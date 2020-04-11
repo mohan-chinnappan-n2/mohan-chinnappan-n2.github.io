@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .graph{
+    height: 500px;
+    width: 500px;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+
+<div class="graph">
+    <canvas id="ctx"></canvas>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="OCA" autocomplete="off"> Test OCA
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="OCB" autocomplete="off"> Test OCB
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="OCBA" autocomplete="off"> Test OCBA
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="OCG" autocomplete="off"> Test OCG
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="OCP" autocomplete="off"> Test OCP
+        </label>
+    </div>
+</div>
+    <script type="text/javascript">
+        Chart.pluginService.register({
+    beforeRender: function (chart) {
+        if (!!chart.config.options.showMyTooltips && chart.config.options.showMyTooltips.trim().length != 0) {
+            chart.pluginTooltips = [];
+            chart.config.options.showMyTooltips.trim().split(',').forEach(function (ele, idx) {
+                var sector = chart.getDatasetMeta(0).data[ele];
+                chart.pluginTooltips.push(new Chart.Tooltip({
+                    _chart: chart.chart,
+                    _chartInstance: chart,
+                    _data: chart.data,
+                    _options: chart.options.tooltips,
+                    _active: [sector]
+                }, chart));
+            });
+        }
+    },
+    afterDraw: function (chart, easing) {
+        if (chart.config.options.showMyTooltips) {
+            // we don't want the permanent tooltips to animate, so don't do anything till the animation runs atleast once
+            if (!chart.allTooltipsOnce) {
+                if (easing !== 1)
+                    return;
+                chart.allTooltipsOnce = true;
+            }
+            Chart.helpers.each(chart.pluginTooltips, function (tooltip) {
+                tooltip.initialize();
+                tooltip.update();
+                // we don't actually need this since we are not animating tooltips
+                tooltip.pivot();
+                tooltip.transition(easing).draw();
+            });
+        }
+    }
+});
+
+var ctx = document.getElementById('ctx').getContext('2d');
+var ocacolor = '#EE8B54',
+        ocbcolor = '#C2B49B',
+        ocbacolor = '#AECF86',
+        ocgcolor = '#E97676',
+        ocpcolor = '#088DA5';
+var backgroundcolor = [ocacolor, ocbcolor, ocbacolor, ocgcolor, ocpcolor]
+
+data = {
+    datasets: [{
+        data: [5, 2, 3, 9, 2],
+        backgroundColor: backgroundcolor
+    }],
+    labels: [
+        'OCA',
+        'OCB',
+        'OCBA',
+        'OCG',
+        'OCP'
+    ]
+};
+//CREATING CHART
+var myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: data,
+    options: {
+        legend: {
+            display: false
+        },
+        showMyTooltips: '',
+        onClick: function (evt, dataset) {
+            //I GET THE LABEL TEXT OF THE CLICKED ITEM
+            console.log(dataset[0]._model.label);
+        }
+    }
+});
+
+$(":radio").on('change', function (e) {
+    myDoughnutChart.options.showMyTooltips = myDoughnutChart.data.labels.indexOf(this.id).toString();
+    myDoughnutChart.update(true);
+})
+    </script>
+</body>
+</html>
