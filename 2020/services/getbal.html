@@ -17,6 +17,6 @@ let faObj = function(id,name) {
 }
 
 let faList = Array();
-faList.push(new faObj(qp.id, 200000));
+faList.push(new faObj(qp.id, (parseFloat(qp.amount)*1.1).toFixed(2)) );
 document.write(JSON.stringify(faList));
 </script>
