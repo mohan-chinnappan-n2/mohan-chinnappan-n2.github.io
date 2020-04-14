@@ -1,0 +1,22 @@
+<script>
+// query param parser
+ let getQueryParams = () => {
+  const query = location.search.substr(1);
+  let result = {};
+  query.split("&").forEach(function(part) {
+       const item = part.split("=");
+       result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+ };
+
+const qp = getQueryParams();
+let faObj = function(id,name) {
+            this.id = id;
+            this.name = name;
+}
+
+let faList = Array();
+faList.push(new faObj(qp.id, 200000));
+document.write(JSON.stringify(faList));
+</script>
