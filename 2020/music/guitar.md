@@ -1,0 +1,3 @@
+- [The Great Guitarist Sri Chandrasekhar Ji on "Ilaya Nila Pozhigirathu" song recording](https://www.youtube.com/watch?v=eMFRGUnjvj0)
+- [Interview with Senior Guitarist "S .Sadanandam" at Muzik Lounge](https://www.youtube.com/watch?v=Ixt3qcN1-jI)
+- [Humming 'Ilaiya nila'](https://www.thehindu.com/features/friday-review/music/Humming-Ilaiya-nila/article14564100.ece)
