@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My App</title>
+</head>
+<body>
+   
+
+<script>
+
+const data = [
+     {"account": {"name": "Bob's credit", "type": "credit", "id": "1"}},
+     {"account": {"name": "savings", "type": "savings", "id": "2"}},
+     {"account": {"name": "vacation savings", "type": "savings", "id": "3"}},
+     {"account": {"name": "son's savings", "type": "savings", "id": "4"}},
+     {"account": {"name": "wife's credit card", "type": "savings", "id": "5"}}
+];
+
+const res = data.reduce((acc, curr) => {
+  if(!acc[curr.account.type]) acc[curr.account.type] = []; //If this type wasn't previously stored
+  acc[curr.account.type].push(curr);
+  return acc;
+},{});
+
+console.log(res);
+
+</script>
+</body>
+</html>
+

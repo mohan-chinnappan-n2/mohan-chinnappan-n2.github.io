@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6 experiments</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class='container'>
+    <h3>ES6 experiments</h3>
+<div class="row">
+    <div class="col-sm">
+        <textarea id="input" name="" cols="60" rows="30"></textarea>
+    </div>
+    <div class="col-sm">
+        <textarea id="results" name="" cols="60" rows="30"></textarea>
+    </div>
+</div>
+
+<div id="gtotal"></div>
+<script>
+
+const data = [
+     {"name": "Bob's credit", "type": "credit", "id": "1", bal:120},
+     {"name": "savings", "type": "savings", "id": "2", bal:250},
+     {"name": "vacation savings", "type": "savings", "id": "3", bal:200},
+     {"name": "son's savings", "type": "savings", "id": "4", bal:200},
+     {"name": "wife's credit card", "type": "savings", "id": "5", bal:200}
+];
+
+const gby = data.reduce((acc, curr) => {
+  if(!acc[curr.type]) acc[curr.type] = []; //If this type wasn't previously stored
+  acc[curr.type].push(curr);
+  return acc;
+},{});
+
+// console.log(gby);
+
+const keys = Object.keys(gby);
+console.log(keys);
+const sums = []
+keys.forEach(key => {
+ let amounts = []; 
+ gby[key].forEach(item => amounts.push(item.bal));
+ sums.push ({type:key, tbal: amounts.reduce( (a,b) => a+b, 0)});
+
+});
+console.log(sums);
+let totals = []; 
+sums.forEach(item => totals.push(item.tbal));
+let gtotal = totals.reduce( (a,b) => a+b, 0);
+
+
+sums.push({type:'gtotal', tbal: gtotal});
+
+document.getElementById('input').value = JSON.stringify(data,null,4);
+document.getElementById('results').value = JSON.stringify(sums,null,4);
+document.getElementById('gtotal').innerHTML =  `grand total: ${gtotal}`;
+
+
+
+</script>
+</body>
+</html>
