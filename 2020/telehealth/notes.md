@@ -5,5 +5,7 @@
 - [XMPP](https://en.wikipedia.org/wiki/Ejabberd)
     - [github](https://github.com/processone/ejabberd)
 
-- [ejabberd Massive Scalability: 1 Node — 2+ Million Concurrent Users(https://www.process-one.net/blog/ejabberd-massive-scalability-1node-2-million-concurrent-users/)
+- [ejabberd Massive Scalability: 1 Node — 2+ Million Concurrent Users](https://www.process-one.net/blog/ejabberd-massive-scalability-1node-2-million-concurrent-users/)
 - [docker ejabberd](https://hub.docker.com/r/ejabberd/ecs/)
+- [Best 5 open source alternatives to WhatsApp](https://www.how2shout.com/apps/best-5-open-source-alternatives-to-whatsapp.html)
+- [Best 5 open source alternatives to WhatsApp](https://blog.savoirfairelinux.com/en-ca/2015/ring-opendht-a-distributed-hash-table/)
