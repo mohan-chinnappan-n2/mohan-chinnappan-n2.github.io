@@ -1,0 +1,5 @@
+- [ clojure-simple-http](https://github.com/divyum/clojure-simple-http/blob/master/src/clojure_simple_http/core.clj)
+- [video clojure for java programmers](https://www.youtube.com/watch?v=P76Vbsk_3J0)
+- [clojure in colab](https://github.com/gigasquid/colab-iclojure)
+- [IClojure](https://github.com/HCADatalab/IClojure)
+- [Kaggle colab](https://medium.com/@erdemalpkaya/run-kaggle-kernel-on-google-colab-1a71803460a9)

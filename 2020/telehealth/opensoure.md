@@ -1,0 +1,4 @@
+- [10 opensource telemed software](https://www.goodfirms.co/blog/the-best-10-free-and-open-source-telemedicine-software)
+- [intelhealth](https://github.com/Intelehealth)
+- [doxy.me](https://doxy.me/)
+    - [github doxy.me](https://github.com/doxyme)

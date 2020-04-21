@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My App</title>
+</head>
+<body>
+   
+
+
+<script>
+
+const openMediaDevices = async (constriants) => {
+  return await navigator.mediaDevices.getUserMedia(constriants); 
+  // The call to getUserMedia() will trigger a permissions request
+  // If the user accepts the permission, the promise is resolved with a MediaStream containing one video and one audio track. 
+  // If the permission is denied, a PermissionDeniedError is thrown. 
+}
+try {
+   openMediaDevices( {'video':true, 'audio': true})
+   .then ( mediaStream => {
+        console.log(`got MediaStream:`, mediaStream);
+   });
+}
+catch (error) {
+   console.error(`Error accessing media devices: ${error}`);
+}
+
+// querying for the media devices
+
+async function getConnectedDevices(type) {
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    return devices.filter(device => device.kind === type)
+}
+
+getConnectedDevices('videoinput')
+.then (videoCameras => {
+    console.log(videoCameras);
+});
+
+</script>
+</body>
+</html>
