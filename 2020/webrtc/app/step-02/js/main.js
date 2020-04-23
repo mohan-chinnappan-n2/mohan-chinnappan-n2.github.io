@@ -23,6 +23,7 @@ const remoteVideo = document.getElementById('remoteVideo');
 let localStream;
 let remoteStream;
 
+// peer connections
 let localPeerConnection;
 let remotePeerConnection;
 

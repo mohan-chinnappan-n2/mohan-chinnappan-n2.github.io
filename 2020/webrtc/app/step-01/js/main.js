@@ -41,6 +41,13 @@ document.getElementById('stop').addEventListener('click', (event) => {
 
 /*
 
+localStream.getTracks()
+(2) [MediaStreamTrack, MediaStreamTrack]
+0: MediaStreamTrack {kind: "audio", id: "5415b07e-3de0-405e-b724-ff8363ae3370", label: "External Microphone (Built-in)", enabled: true, muted: false, …}
+1: MediaStreamTrack {kind: "video", id: "42c2a094-e547-423b-8aef-20eeb86706a8", label: "FaceTime HD Camera", enabled: true, muted: false, …}
+length: 2
+__proto__: Array(0)
+
 localStream.getVideoTracks()[0]
 =>
 
@@ -116,6 +123,22 @@ __proto__: NamedNodeMap
 // changing the video of the localVideo via JS
 
 localVideo.style.width = '100px';
+
+
+// get settings
+
+localStream.getVideoTracks()[0].getSettings()
+
+
+{aspectRatio: 1.3333333333333333, deviceId: "57bc4846ad7c237022ae2868cb7cc8685b47e83dfba9433427a65734356f8df6", frameRate: 30, groupId: "c606462c8e4579f24ce3633b38a3f457fd1903ae30042fffe4e4ebb9a488bea2", height: 480, …}
+aspectRatio: 1.3333333333333333
+deviceId: "57bc4846ad7c237022ae2868cb7cc8685b47e83dfba9433427a65734356f8df6"
+frameRate: 30
+groupId: "c606462c8e4579f24ce3633b38a3f457fd1903ae30042fffe4e4ebb9a488bea2"
+height: 480
+resizeMode: "none"
+width: 640
+__proto__: Object
 
 
 

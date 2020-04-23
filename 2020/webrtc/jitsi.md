@@ -1,0 +1,5 @@
+- [Jitsi Meet Mobile Tutorial](https://www.youtube.com/watch?v=diVcB_YRRiM)
+- [Jitsi video conferencing](https://www.youtube.com/watch?v=PFyHxQSsocI)
+- [Jitsi video conf](https://www.youtube.com/watch?v=5D_VbhkKIPM)
+- [Jitsi scaling](https://www.youtube.com/watch?v=Jj8a6ZRgehI)
+- [A walk through of installing Synapse+Riot+Jitsi from scratch on Debian](https://www.youtube.com/watch?v=dDddKmdLEdg)

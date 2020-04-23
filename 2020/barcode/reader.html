@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@7.3.0-v4/dist/dbr.js" data-productKeys="PRODUCT-KEYS"></script>
+    <script>
+        let scanner = null;
+        (async()=>{
+            scanner = await Dynamsoft.BarcodeScanner.createInstance();
+            scanner.onFrameRead = results => {console.log(results);};
+            scanner.onUnduplicatedRead = (txt, result) => {alert(txt);};
+            await scanner.show();
+        })();
+    </script>
+</body>
+</html>

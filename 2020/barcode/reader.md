@@ -1,0 +1,3 @@
+- [USING THE ZBAR BARCODE SCANNING SUITE IN THE BROWSER WITH WEBASSEMBLY ](https://barkeywolf.consulting/posts/barcode-scanner-webassembly/)
+- [quaggaJS](https://serratus.github.io/quaggaJS/)
+- [C++ port of ZXing](https://github.com/nu-book/zxing-cpp)
