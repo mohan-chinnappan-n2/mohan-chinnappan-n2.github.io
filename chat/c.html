@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Conference</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="https://meet.jit.si/external_api.js"></script>
+</head>
+<body>
+
+<script>
+// query param parser
+ let getQueryParams = () => {
+  const query = location.search.substr(1);
+  let result = {};
+  query.split("&").forEach(function(part) {
+       const item = part.split("=");
+       result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+ };
+// https://github.com/jitsi/jitsi-meet/blob/master/doc/api.md
+// const domain = "meet.jit.si";
+const qp = getQueryParams();
+const domain =  qp.d || 'meet.jit.si'; 
+const meetingName = qp.m || 'awesomeMeeting' 
+const width =  parseInt(qp.w) || 800;
+const height =  parseInt(qp.h) || 600;
+
+document.addEventListener("DOMContentLoaded", () =>{
+        const opts = {
+                roomName: meetingName,
+                width:width, height: height,
+                parentNode: document.getElementById('meet')
+        } 
+       let api = new JitsiMeetExternalAPI(domain, opts);
+});
+
+</script>
+  <div id="meet"></div>
+</body>
+</html>
+
