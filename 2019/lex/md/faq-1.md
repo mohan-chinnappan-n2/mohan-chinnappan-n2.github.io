@@ -81,6 +81,9 @@ Use  Chrome Task Manager to find the memory footprint of the tabs:
     - Debug Mode: On 
     - Component Caching: Off
 
+![component caching off](img/disable-caching-1.png)
+
+
 - [Lightning Components Performance Best Practices](https://developer.salesforce.com/blogs/developer-relations/2017/04/lightning-components-performance-best-practices.html)
 
 
