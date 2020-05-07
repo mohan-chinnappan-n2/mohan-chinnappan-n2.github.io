@@ -6,8 +6,8 @@
         - action.setBackground();
 - 3. Set read only actions as cacheable
         - @AuraEnabled(cacheable=true)
-- 4. Using the urlEvent for navigation preserves the app state, but if <a> tag is used, the app state is lost,  
-    ```
+- 4. Using the urlEvent for navigation preserves the app state, but if anchor tag is used, the app state is lost,  
+```
  var urlEvent = $A.get(“e.force:navigateToURL”);
  urlEvent.setParams({
    “url”: ‘/pageName' 
