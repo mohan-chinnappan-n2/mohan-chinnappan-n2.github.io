@@ -1,0 +1,69 @@
+<template>
+
+	<div class='slds-grid'>
+		<div class='slds-col'>
+			<lightning-card title="Fruits">
+				<lightning-combobox name="fruits" label="Your Favourite" 
+        value={fruitValue} placeholder="Select a Fruit" options={fruits}
+				 onchange={handleFruitChange}>
+				</lightning-combobox>
+			</lightning-card>
+
+		</div>
+		<div class='slds-col'>
+			<lightning-button variant="brand" label="Mango" title="Looks like a link" onclick={handleClick} class="slds-m-left-x-small">
+			</lightning-button>
+		</div>
+		<div class='slds-col'>
+			<lightning-button variant="brand" label="Jackfruit" title="Looks like a link" onclick={handleClick}>
+
+			</lightning-button>
+		</div>
+
+		<div class='slds-col'>
+			<lightning-button variant="brand" label="Apple" title="Looks like a link" onclick={handleClick}>
+
+			</lightning-button>
+		</div>
+
+
+
+		<div class='slds-col'>
+			<lightning-button-icon icon-name="utility:search" variant="brand" alternative-text="Search" title="Search">
+			</lightning-button-icon>
+
+		</div>
+	</div>
+  <div class='slds-row'>
+
+    <lightning-dual-listbox name="favFruits"
+                            label="Select Fruits"
+                            source-label="Available Fruits"
+                            selected-label="Selected Fruits"
+                            field-level-help="Select your preferred Fruits"
+                            options={fruits}
+                            onchange={handleFruitChange}>
+    </lightning-dual-listbox>
+
+
+
+
+
+	</div>
+
+<div class="slds-box" >
+    <p>Selected values are: {selectedFruits}</p>
+</div>
+
+<div class="slds-box" >
+  <div style="height: 300px;">
+<lightning-datatable
+                key-field="id"
+                data={fruitsData}
+                columns={furitCols}>
+</lightning-datatable>
+  </div>
+</div>
+
+
+</template>

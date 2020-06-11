@@ -1,0 +1,153 @@
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+ 
+ 
+import {LightningElement,track} from 'lwc';
+import getAccountList from '@salesforce/apex/AccountClass.getAccountList';
+const columns = [{
+        label: 'Name',
+        fieldName: 'Name'
+    },
+    {
+        label: 'Phone',
+        fieldName: 'Phone',
+        type: 'Phone'
+    },
+];
+ 
+export default class dataTablePagination extends LightningElement {
+    data = [];
+    @track page = 1;
+    perpage = 5;
+    @track pages = [];
+    set_size = 5;
+    columns = columns
+    renderedCallback() {
+        this.renderButtons();
+    }
+    renderButtons = () => {
+        this.template.querySelectorAll('button').forEach((but) => {
+            but.style.backgroundColor = this.page === parseInt(but.dataset.id, 10) ? 'dodgerblue' : 'white';
+            but.style.color = this.page === parseInt(but.dataset.id, 10) ? 'white' : 'black';
+        });
+    }
+    get pagesList() {
+        let mid = Math.floor(this.set_size / 2) + 1;
+        if (this.page > mid) {
+            return this.pages.slice(this.page - mid, this.page + mid - 1);
+        }
+        return this.pages.slice(0, this.set_size);
+    }
+    async connectedCallback() {
+        this.data = await getAccountList();
+        this.setPages(this.data);
+    }
+    pageData = () => {
+        let page = this.page;
+        let perpage = this.perpage;
+        let startIndex = (page * perpage) - perpage;
+        let endIndex = (page * perpage);
+        return this.data.slice(startIndex, endIndex);
+    }
+    setPages = (data) => {
+        let numberOfPages = Math.ceil(data.length / this.perpage);
+        for (let index = 1; index <= numberOfPages; index++) {
+            this.pages.push(index);
+        }
+    }
+    get hasPrev() {
+        return this.page > 1;
+    }
+    get hasNext() {
+        return this.page < this.pages.length
+    }
+    onNext = () => {
+        ++this.page;
+    }
+    onPrev = () => {
+        --this.page;
+    }
+    onPageClick = (e) => {
+        this.page = parseInt(e.target.dataset.id, 10);
+    }
+    get currentPageData() {
+        return this.pageData();
+    }
+}
+ 
+ 

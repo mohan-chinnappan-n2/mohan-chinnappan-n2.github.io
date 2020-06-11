@@ -1,0 +1,1 @@
+- [pagination](https://sfdcmonkey.com/2020/01/16/javascript-datatable-pagination-lwc/)
