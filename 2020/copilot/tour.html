@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Introjs</title>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.js"
+        integrity="sha256-SPZP/x8QDPEhRlpJjet4AD5X4ergPWcxjhMn73SwyOE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.min.css"
+        integrity="sha256-/oZ7h/Jkj6AfibN/zTWrCoba0L+QhP9Tf/ZSgyZJCnY=" crossorigin="anonymous" />
+
+</head>
+
+<body class='container'>
+    <h3>Topics</h3>
+    <button class="btn btn-info" id='tour'>Take a Tour</button>
+    <ul class="list-group">
+        <li class="list-group-item">
+
+            <a target='_new' href="https://mohan-chinnappan-n.github.io/"
+                data-intro='Entrance to Ocean of Knowledge'>Home Page</a>
+        </li>
+        <li class="list-group-item">
+
+        <a target='_new' href="https://mohan-chinnappan-n.github.io/sfdc/fs-cloud/model-sfdc.html"
+            data-intro='Salesforce Data Model. Has the details about the sales cloud, service cloud data model info in an interactive format'>
+            Financial Service Cloud
+            Data Model</a>
+        </li>
+
+        <li class="list-group-item">
+
+            <a target='_new' href="https://mohan-chinnappan-n.github.io/sfdc/fs-cloud/model-fsc-224.html"
+                data-intro='Financial Services Cloud Data Model. Has the details about Entities in FSC data model in an interactive format'>Salesforce
+                Data Model</a>
+            </li>
+
+
+        <li class="list-group-item">
+            <a target='_new' href="https://mohan-chinnappan-n2.github.io/2020/eac/eac.html#0"
+                data-intro='Notes About Einstein Activity Capture'>Einstein Activity Capture</a>
+        </li>
+        <li class="list-group-item">
+            <a target='_new' href="https://mohan-chinnappan-n2.github.io/2019/lex/perf.html"
+                data-intro='Notes about Lightning Performance'>Notes about Lightning Performance</a>
+        </li>
+        <li class="list-group-item">
+            <a target='_new' href="https://mohan-chinnappan-n2.github.io/2019/lex/perf.html"
+                data-intro='Explains how to use Platform Events and AWS Lambda to automate your business process connecting
+                multiple systems in the enterprise
+                '
+                
+                >Platform Envents and AWS Lambda</a>
+        </li>
+ 
+    </ul>
+
+    <script>
+        document.getElementById('tour').addEventListener('click', (event) => {
+            introJs().start();
+        })
+    </script>
+</body>
+
+</html>
