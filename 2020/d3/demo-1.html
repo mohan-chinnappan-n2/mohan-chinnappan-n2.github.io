@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 1</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js" integrity="sha256-Xb6SSzhH3wEPC4Vy3W70Lqh9Y3Du/3KxPqI2JHQSpTw=" crossorigin="anonymous"></script>
+</head>
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+#content li {
+	display: inline-block;
+	margin: 10px;
+	background-color: steelblue;
+	color: white;
+	padding: 30px;
+	width: 10px;
+	height: 10px;
+	text-align: center;
+}
+</style>
+<body>
+
+<ul id="content"> </ul>
+
+
+
+
+<script>
+ const data = [10,20,30];
+
+d3
+.select('#content')
+.selectAll('li')
+.data(data)
+
+.enter()
+.append('li');
+
+;
+
+</script>
+</body>
+</html>
