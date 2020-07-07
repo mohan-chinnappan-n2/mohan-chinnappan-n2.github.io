@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Customer 360</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/codelab-elements.css">
+  <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n2.github.io/favicon.ico">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/app.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+</head>
+<body>
+<google-codelab id="Customer 360" title="Customer 360" environment="web" > 
+
+<google-codelab-step label="Overview" duration="1">
+<div id='ov-md' class='md' data-trim='false'>
+-   What is Customer 360?
+    - Businesses are challenged by siloed data and systems. Fragmented data and systems makes it harder for businesses to get a 360 view of the customer. As a result, they aren't effectively and efficiently meeting customer expectations.
+- ![c360](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/salesforce-customer-360-quick-look/get-a-complete-view-of-your-customers/images/de0c7bbb1233caeb594deae98c726a23_salesforce-customer-360.png)
+    - Customer 360 gives you a single view of your customers, so you can provide the top-of-the-line experience they expect
+    - Using Salesforce applications, you can integrate data from anywhere to get a complete picture of each customer, allowing your business to meet their needs across sales, service, marketing, and commerce
+    - It is Customer Data Platform on Salesforce platform
+    - Build a complete view of your customers and deliver the seamless experiences they expect
+    - Phase-1
+        - Identity framework to help the customers to unlock the data within their different Salesforce applications
+    - Phase-2
+        1. Unified Profile data store 
+            - To store all the  events and attributes of the customer data
+        2. Segmentation Service and Activation Service in Salesforce Apps(Marketing, Sales, Service, Commerce)  or outside of Salesforce ecosystem
+        3. Provide insights from Einstein AI
+            - Next Best Action
+
+- How customers to connect to businesses ?
+    - Meet rising customer expectations with relevant and personalized interactions across all kinds of devices, channels, and in-store interactions.
+
+ 
+</div>
+
+</google-codelab-step>
+ <google-codelab-step label="Customer 360 Data Manager" duration="1">
+<div id='c360dm-md' class='md' data-trim='false'>
+- Customer 360 Data Manager (C360 DM)
+    - Lets users connect all customer data across the business - including multiple Salesforce orgs, Commerce Cloud B2C instances and even systems outside Salesforce.
+    - The hub of Salesforce orgs and instances is connected using a shared identity of the individual
+    - ![c360dm](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/customer-360-data-manager/get-to-know-customer-360-data-manager/images/cfc76c586339c894502bb402653d2999_01-home-page-2-x-25.png)
+
+- Features
+    - Shared data of the customer across departments and orgs built into Salesforce Customer 360
+    - A centralized hub where users can connect multiple data sources
+    - A **global customer identity** that ensures businesses are using accurate customer data and records to effectively help them
+    - Access to the **most up-to-date** customer data from connected systems
+    - Salesforce Information Model mapping that allows for a single representation of data across the connected instances and orgs
+    - Point-and-click features that reduces implementation time from months to weeks
+    - Hub and spoke architecture
+        - Register a data source (say Commerce cloud instance) authorizes C360 DM  to securely exchange data with all connected data sources
+- Data Mapping
+    - ![c360 DM Mapping](img/c360-dm-1.png)
+    - To control which data is shared between registered data sources using a common schema - Salesforce information model
+    - Salesforce Information Model
+        - Serves as translation layer between different data sources
+        - Used build Customer 360 customer global profile
+        - Customer Global profile includes
+            - Has information from all customer touch points
+- ![Global Profile](img/c360-dm-globalprofile-1.png)
+- ![Global Profile-Rules](img/c360-dm-globalprofile-2.png)
+- Data Jobs does the job of
+    - Extract the source data from the registered data sources
+    - Process into global profile
+
+- ![Global Profile-data-jobs](img/c360-dm-globalprofile-3.png)
+- ![Global Profile-data-db](img/c360-dm-globalprofile-db.png)
+- ![Global Profile-data-search](img/c360-dm-globalprofile-search.png)
+</div>
+</google-codelab-step>
+ 
+
+</div>
+</google-codelab-step>
+
+ <google-codelab-step label="Customer 360 Use Case " duration="1">
+<div id='c360flow-md' class='md' data-trim='false'>
+- When a service agent accesses the agent console, the console will provide a unified profile of the customer, giving the agent the most accurate and up-to-date information,  including orders placed and open cases
+- When the agent console appears and is queried for information on a customer, it will access data for that individual from connected systems based on the relationship created via the Customer 360 ID, the Salesforce Information Model and the metadata associated with it.
+    - Customer 360 Data Manager has pulled all this different information from various systems to give the agent her single view of the customer. Now the agent has an accurate snapshot of her customer and can use that to deliver better service.
+ 
+</div>
+</google-codelab-step>
+
+ <google-codelab-step label="Customer 360 Data Manger Setup " duration="1">
+<div id='c360dmsetup-md' class='md' data-trim='false'>
+### With Salesforce Customer 360 Data Manager, you only have to set it up once. After that, everything is automated.
+#### Steps
+1. Learn, plan, and get started: Get you and your stakeholders ready for Customer 360 Data Manager in your organization, understand how it works, and develop a plan to turn it on
+2. Register your cloud and orgs to Customer 360 Data Manager: Every customer is given an instance of Customer 360 Data Manager that houses metadata for each registered cloud and org
+3. Map, load, and resolve your data (data load): Admins configure which data objects to load into Customer 360 Data Manager and the rules used to match data so it’s generated as one customer identity. 
+4. Configure your update rules (data sync): Admins configure how to respond to change events from the data.
+5. Enable your use-cases: Admins enable cloud applications as per the desired use-case. 
+</div>
+</google-codelab-step>
+
+ <google-codelab-step label="Customer 360 Guide " duration="1">
+<div id='c360guide-md' class='md' data-trim='false'>
+### Guide Content
+1. Trailblazer Stories: Hear other customers’ approaches and success stories during their digital transformations.
+2. Thought Leadership: Tips, trends, and insights on transforming customer experiences, including strategies for customer data management.
+3. Change Management: Best practices to help you implement process changes and make the people and teams in your organization succeed.
+4. Industry Blueprint: Key product and industry-specific information that helps you build solutions and uncover opportunities for connecting with your customers.
+5. Architecture Diagrams: Visual representations of solutions and concepts within a system or solution design.
+6. Business Scenarios: Descriptions of common industry-specific scenarios and the related technology and processes.
+7. Solution Kits: Implementation guides containing reference materials aligned to common use cases.
+8. MuleSoft Accelerators: Prebuilt integration solutions that connect common back-end systems directly to Salesforce.
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="Links and References" duration="1">
+<div id='links-md' class='md' data-trim='false'>
+- [Build a complete view of your customers and deliver the seamless experiences they expect](https://www.salesforce.com/solutions/customer-360/)
+- [What is Customer 360](https://www.youtube.com/watch?v=tKdA3FAkuCI)
+- [Customer 360 Data Manager](https://www.youtube.com/watch?v=Sh9pCMUsE88)
+</div>
+</google-codelab-step>
+
+
+
+    
+</google-codelab>
+
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/md2html.js?v=2"> </script> 
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/native-shim.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/custom-elements.min.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/codelab-elements.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/prettify.js"></script>
+
+</body>
+</html>
+
