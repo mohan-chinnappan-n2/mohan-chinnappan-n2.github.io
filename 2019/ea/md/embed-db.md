@@ -3,7 +3,7 @@
 #### Demo
 ![db-embed demo](img/ea-db-embed-filter.gif)
 
-### Filter String
+### Filter String using Filter Builder
 ``` 
 
 {
