@@ -59,7 +59,7 @@
 ```xml
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
   <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-    <aura:attribute name="myDashboardId" type="String" default="0FK3h0000001zObGAI"/>
+  <aura:attribute name="myDashboardId" type="String" default="0FK3h0000001zObGAI"/>
   <aura:attribute name="myFilter" type="String" default="{
   'datasets': {
     'fruit_yield_acct': [
