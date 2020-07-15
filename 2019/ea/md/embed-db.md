@@ -51,6 +51,55 @@
                                     
 />
 </aura:component>
+
+```
+
+### Using component attributes
+#### Component markup
+```xml
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="myDashboardId" type="String" default="0FK3h0000001zObGAI"/>
+  <aura:attribute name="myFilter" type="String" default="{
+  'datasets': {
+    'fruit_yield_acct': [
+      {
+        'fields': [
+          'act'
+        ],
+        'filter': {
+          'operator': 'in',
+          'values': [
+            'Abbott372 Inc'
+          ]
+        }
+      }
+    ]
+  }
+}"/>
+    <wave:waveDashboard dashboardId="{!v.myDashboardId}"
+                        filter="{!v.myFilter}" />
+                                    
+</aura:component>
+```
+
+
+
+#### Controller
+```js
+({
+	doInit : function(cmp, event, helper) {
+        const dbId = "0FK3h0000001zObGAI"
+        const accountName = 'Abbott358 Inc';
+        
+        let filter ="{ 'datasets': { 'fruit_yield_acct': [ { 'fields': [ 'act' ], 'filter': { 'operator': 'in', 'values': [ '" + 
+            accountName + "' ] } } ] } }";
+        cmp.set("v.myFilter",  filter);
+        cmp.set("v.myDashboardId", dbId);
+		
+	}
+})
+
 ```
 ### Demo of using this component (FilterTest)
 
