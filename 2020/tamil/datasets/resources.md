@@ -1,0 +1,1 @@
+- [Download Tamil Wiki Dump and Extract all articles to local disk¶](https://github.com/goru001/nlp-for-tamil/blob/master/dataset-preparation/Tamil%20Wikipedia%20Downloader%20and%20Article%20Extractor.ipynb)
