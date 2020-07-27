@@ -12,3 +12,4 @@
     - Set up your preferred type of app distribution (Google or Apple).
     - Approve your branded app and Salesforce submits it to Google and Apple. The store approval process can take from one day to two weeks depending on the app.
     - See your branded app listed in Google Play and the Apple App Store
+- ![5 steps](img/five-steps.png)
