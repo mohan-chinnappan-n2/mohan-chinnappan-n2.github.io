@@ -1,4 +1,4 @@
-## Setup
+## Setup (step-3)
 
 1. Install the [Apple TestFlight app] (https://apps.apple.com/us/app/testflight/id899247664) from the App Store onto each test device
 - <img src="img/tf.png" alt="Apple TestFlight" height="600">
