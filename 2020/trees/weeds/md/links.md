@@ -6,4 +6,8 @@
 - [Trees with Don Leopold - tree-of-heaven](https://www.youtube.com/watch?v=1fi_o81QaIg)
 - [Tree of Heaven - Invasive Plant in Maryland](https://www.youtube.com/watch?v=0mSyXFpomPk)
 
+### Herbicides
+
+- [triclopyr](http://www.npic.orst.edu/factsheets/triclogen.pdf)
+
 
