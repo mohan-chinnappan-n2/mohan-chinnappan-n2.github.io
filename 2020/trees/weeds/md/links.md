@@ -9,5 +9,5 @@
 ### Herbicides
 
 - [triclopyr](http://www.npic.orst.edu/factsheets/triclogen.pdf)
-
-- [Bonide 274 728639280241 Vine & Stump Killer,](https://www.amazon.com/Bonide-Stump-Killer-Applicator-Concentrate/dp/B00XNM535Y)0
+- [Bonide 274 728639280241 Vine & Stump Killer,](https://www.amazon.com/Bonide-Stump-Killer-Applicator-Concentrate/dp/B00XNM535Y)
+- [32 oz. Brush Killer with Triclopyr](https://www.homedepot.com/p/Brushtox-32-oz-Brush-Killer-with-Triclopyr-75260/206737316) 
