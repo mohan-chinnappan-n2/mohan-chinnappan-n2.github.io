@@ -21,7 +21,7 @@
 
 <iframe width="800" height="315" src="https://www.youtube.com/embed/p8c-rMYl23w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- Organic way
+- **Organic way**
 <iframe width="800" height="315" src="https://www.youtube.com/embed/iD3h-4BlbYE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  - [Simple Method for Organic Control of Ailanthus PDF ](https://www.blueowlgarden.com/SARE/Ailanthus_mushroom_handout.pdf)
 - [ Oyster Mushroom Mycelium Plug Spawn - 100 Count - Grow Edible Gourmet & Medicinal Fungi On Trees & Logs ](https://www.amazon.com/Oyster-Mushroom-Mycelium-Plug-Spawn/dp/B01I05DSFA/ref=sr_1_3?camp=1789&creative=9325&dchild=1&keywords=oyster+mushroom+plugs&linkCode=as2&linkId=WMG45XOIPAHJT2GB&qid=1596548730&sr=8-3&tag=newdepmed-20)
