@@ -5,6 +5,7 @@
 - [Is Tree Of Heaven A Weed: Tips On Stink Tree Control](https://www.gardeningknowhow.com/plant-problems/weeds/tree-of-heaven-weed-control.htm)
 - [Trees with Don Leopold - tree-of-heaven](https://www.youtube.com/watch?v=1fi_o81QaIg)
 - [Tree of Heaven - Invasive Plant in Maryland](https://www.youtube.com/watch?v=0mSyXFpomPk)
+- [Wikipedia: one of the worst invasive plant species in Europe and North America](https://en.wikipedia.org/wiki/Ailanthus_altissima)
 
 ### Herbicides
 
