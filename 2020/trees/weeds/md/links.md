@@ -9,6 +9,7 @@
 - [Trees with Don Leopold - tree-of-heaven](https://www.youtube.com/watch?v=1fi_o81QaIg)
 - [Tree of Heaven - Invasive Plant in Maryland](https://www.youtube.com/watch?v=0mSyXFpomPk)
 - [Wikipedia: one of the worst invasive plant species in Europe and North America](https://en.wikipedia.org/wiki/Ailanthus_altissima)
+- [(Ailanthus altissima](https://www.fs.fed.us/database/feis/plants/tree/ailalt/all.html)
 
 ### Herbicides
 
