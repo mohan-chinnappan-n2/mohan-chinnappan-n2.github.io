@@ -52,7 +52,7 @@
     - College education is too costly and not affordable
         - Human society **should not have profit making notion** in noble acts like
             - education
-            - taking care of **health** of the society members
+            - healthcare
             - Currently, colleges are like **profit making business machinery**
                 - Investing lavishly in things which do not build the correct foundations for our students 
         - We should figure out ways to provide free education to all and pay the costs involved with valuable goods produced by the students and teachers while they are in the college. This will free the minds of the students and teachers. **Free mind and health body are key ingredients to the innovators!** 
