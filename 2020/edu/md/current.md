@@ -1,4 +1,4 @@
-## Paint Points of current system (oEdu) to be fixed in new (nEdu) system
+## Pain Points of current system (oEdu) to be fixed in new (nEdu) system
 
 - Students do not know what they are going to get out of oEdu
 - oEdu is a too **long** process to give fruits to the students as well to the society
