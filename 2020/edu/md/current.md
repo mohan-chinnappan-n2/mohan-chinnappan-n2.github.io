@@ -47,12 +47,12 @@
         - Fundamentals of the electricity is not taught at early stages. It is viewed a black box or magical power to many students. This need to be changed, knowing how to fix and build electrical circuits is must to have. This will take the students to new innovation paths.
 
     - Memory based education has to go!
-        - We need to make students learn things by providing contexts (where it is used, benefits of learning it) while teaching a subject teachers need to put anchors in student's mind about the subject. This way, we can retire current memory based testing used in oEdu for the testing the students knowledge in the subject.
+        - We need to make students learn things by providing contexts (where it is used, benefits of learning it) while teaching a subject teachers need to put anchors in student's mind about the subject. This way, we can retire current memory based testing used in oEdu for the testing the student's knowledge in the subject.
 
     - College education is too costly and not affordable
         - Human society **should not have profit making notion** in noble acts like
             - education
-            - take care of **health** of the society members
+            - taking care of **health** of the society members
             - Currently, colleges are like **profit making business machinery**
                 - Investing lavishly in things which do not build the correct foundations for our students 
         - We should figure out ways to provide free education to all and pay the costs involved with valuable goods produced by the students and teachers while they are in the college. This will free the minds of the students and teachers. **Free mind and health body are key ingredients to the innovators!** 
