@@ -1,4 +1,4 @@
-## Paint Points of oEdu to be fixed in nEdu
+## Paint Points of current (oEdu) to be fixed in new (nEdu)
 
 - Students do not know what they are going to get out of oEdu
 - oEdu is too **long** process to give fruits to students as well to the society
