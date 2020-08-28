@@ -13,7 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
 </head>
 <body>
-<google-codelab id="EA S3 Connection Demo " title="EA S3 Connection Demo" environment="web" > 
+<google-codelab id="EA S3 Connection Demo and Steps " title="EA S3 Connection Demo and Steps" environment="web" > 
 
 <google-codelab-step label="Overview" duration="1">
 <div id='ov-md' class='md' data-trim='false'>
@@ -38,13 +38,108 @@
 </google-codelab-step>
 
 
-<google-codelab-step label="Screenshots showing steps" duration="10">
+<google-codelab-step label="Step-by-Step" duration="10">
 <div id='ss-md' class='md' data-trim='false'>
-## Create Bucket
+# S3 side
+## Create Bucket in AWS S3
 - ![create bucket 1](img/create-bucket.png)
 - ![create bucket 2](img/create-bucket-2.png)
-- Public access (this is for demo, you should block public access)
+
+- Note: Public access (this is for demo, you should block public access)
 - ![create bucket 3](img/create-bucket-3.png)
+- Created s3 bucket (bucketea1)
+- ![create bucket 4](img/create-bucket-4.png)
+- ![make public](img/make-public-1.png)
+
+## Create folder (ea_folder1) 
+- ![create folder 1](img/create-folder-1.png)
+- ![create folder 2](img/create-folder-2.png)
+
+
+## Upload  data and schema to S3 bucket
+```
+$ fruits-yield.csv 
+fruit,date,qty
+apple,01/01/2020,30
+mango,01/05/2020,78
+jackfruit,02/20/2020,70
+peach,03/11/2020,2222
+apple,01/07/2019,130
+mango,01/09/2019,278
+jackfruit,02/11/2019,270
+peach,03/09/2019,266
+
+
+$ cat fruits-yield_schema.csv 
+fruit,date,qty
+apple,01/01/2020,30
+```
+
+- ![upload data 1](img/upload-data-1.png)
+- ![upload data 2](img/upload-data-2.png)
+
+### Upload Schema
+- ![upload schema](img/upload-schema-1.png)
+
+## Set encryption to AES-256
+
+- ![set enc](img/set-enc-1.png)
+- ![set enc2](img/set-enc-2.png)
+
+## Preview the data and schema
+- ![preview data](img/preview-upload-0.png)
+- ![preview schema](img/preview-upload-1.png)
+
+## Create Access key (aws My Security Credentials)
+- ![create access key](img/create-access-key-1.png)
+### Make sure to save Key file 
+ - These two values 
+  - AWSAccessKeyId (AWS Access Key ID	in EA S3 Connection Settings)
+  - AWSSecretKey  (Secret Key	in EA S3 connection settings)
+### Example key file and its content
+```
+$ cat rootkey.csv 
+AWSAccessKeyId=AKIAI2JUNK
+AWSSecretKey=D+phSG+flTVThX4cM7+24difd38JUNK
+
+```
+# EA side
+
+## Use S3 Connection to make data connection
+- ![s3 connect 0](img/ea-s3-connect-0.png)
+- ![s3 connect 1](img/s3-connect-1.png)
+- Fields in the EA S3 connection setting dialog 
+  - ![s3 connect fields](img/s3-connect-fields.png)
+- ![s3 connect success](img/s3-connect-success.png)
+- ![s3 connect 2](img/s3-connect-2.png)
+## Error - missing schema file
+- ![s3 connect error](img/s3-connect-err.png)
+  - Fix the error by renaming fruits-yield_schema.csv  to schema_sample.csv
+  - ![schema rename](img/schema-rename.png)
+  - ![schema rename2](img/schema-rename-2.png)
+
+  ## Select Fields from the S3 connection
+  - ![sel fields-1](img/sel-fields-1.png)
+  - ![sel fields-2](img/sel-fields-2.png)
+
+  ## Use the Connect resource
+  - ![use connect resource](img/connect-resource-1.png)
+  - Run 
+   - ![use connect resource](img/connect-resource-2.png)
+
+   ### Recipe
+   - Run Recipe
+    - ![Recipe](img/recipe-1.png)
+    - ![run recipe2](img/connect-run-rec-1.png)
+    - ![run recipe](img/run-rec-1.png)
+   - ![created recipe](img/created-rec-1.png)
+   
+
+
+
+
+
+
 
 
 
