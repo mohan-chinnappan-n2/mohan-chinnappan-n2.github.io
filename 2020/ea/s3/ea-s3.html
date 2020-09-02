@@ -32,7 +32,7 @@
 </google-codelab-step>
 
 
-<google-codelab-step label="Step-by-Step" duration="10">
+<google-codelab-step label="Step-by-Step public bucket" duration="10">
 <div id='ss-md' class='md' data-trim='false'>
 # S3 side
 ## Create Bucket in AWS S3
@@ -144,7 +144,65 @@ AWSSecretKey=D+phSG+flTVThX4cM7+24difd38JUNK
 
 
 
+<google-codelab-step label="Step-by-Step private bucket" duration="10">
+<div id='ssprivate-md' class='md' data-trim='false'>
+## S3 Side
+- Create a private S3 Private Bucket (bucketea2)
+  ![ea-s3-bk2-1](img/ea-s3-bk2-1.png)
+  ![ea-s3-bk2-2](img/ea-s3-bk2-2.png)
+  ![ea-s3-bk2-3](img/ea-s3-bk2-3.png)
+- Create a folder (ea_folder2)
+  ![ea-s3-bk2-4](img/ea-s3-bk2-4.png)
+  ![ea-s3-bk2-5](img/ea-s3-bk2-5.png)
 
+- Upload data and schema files
+  ![ea-s3-bk2-6](img/ea-s3-bk2-6.png)
+  ![ea-s3-bk2-7](img/ea-s3-bk2-7.png)
+  ![ea-s3-bk2-8](img/ea-s3-bk2-8.png)
+
+- Set the encryption to AES-256
+
+  ![ea-s3-bk2-9](img/ea-s3-bk2-9.png)
+  ![ea-s3-bk2-10](img/ea-s3-bk2-10.png)
+- Preview the data file and schema file
+  ![ea-s3-bk2-11](img/ea-s3-bk2-11.png)
+  ![ea-s3-bk2-12](img/ea-s3-bk2-12.png)
+
+- Make sure you have the Access key (see the last section in this section about this)
+  ![ea-s3-bk2-13](img/ea-s3-bk2-13.png)
+
+## EA Side
+- Edit the S3 connection to connect to **bucketea2** - *private* bucket
+  ![ea-s3-bk2-14](img/ea-s3-bk2-14.png)
+  ![ea-s3-bk2-15](img/ea-s3-bk2-15.png)
+- Test the connection
+  ![ea-s3-bk2-16](img/ea-s3-bk2-16.png)
+- Enable the connection
+  ![ea-s3-bk2-17](img/ea-s3-bk2-17.png)
+  ![ea-s3-bk2-18](img/ea-s3-bk2-18.png)
+  ![ea-s3-bk2-19](img/ea-s3-bk2-19.png)
+- Run Data Sync
+  ![ea-s3-bk2-20](img/ea-s3-bk2-20.png)
+- Monitor the Data Sync
+  ![ea-s3-bk2-21](img/ea-s3-bk2-21.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</google-codelab-step>
  
 <google-codelab-step label="Links and References" duration="1">
 <div id='links-md' class='md' data-trim='false'>
