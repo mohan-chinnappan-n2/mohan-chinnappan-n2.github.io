@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Salesforce Edge and Express Connect</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/codelab-elements.css">
+  <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n2.github.io/favicon.ico">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/app.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+</head>
+<body>
+<google-codelab id="Salesforce Edge and Express Connect" title="Salesforce Edge and Express Connect" environment="web" > 
+
+<google-codelab-step label="Overview" duration="1">
+<div id='ov-md' class='md' data-trim='true'>
+
+- As business becomes more global, your users are accessing your data through Salesforce from **all over the world**. Users want information faster and available at all times. Salesforce Edge Network delivers a consistent user experience **regardless of a user's location**.
+
+### Salesforce Edge Network delivers
+- an enhanced user experience
+- consistent quality content delivery,  
+- improved download times for users from across the globe. 
+
+### How it does this? 
+- By redirecting requests to the **closest Salesforce location** where **Salesforce Edge Network** is deployed. 
+- It provides a range of services  like:
+-  TLS termination
+-  Static Caching
+-  TCP optimizations. 
+
+- The application delivers data using the Salesforce infrastructure which protects, uses, and processes data appropriately and in accordance with the law. 
+- With **Salesforce Edge Network**, you can continue to get the same trusted infrastructure while also receiving **these improved benefits**.
+
+
+
+</div>
+
+
+</google-codelab-step>
+
+
+ <google-codelab-step label="What it brings?" duration="1">
+<div id='change-md' class='md' data-trim='true'>
+ - Salesforce Edge Network brings Salesforce Services **closer to the user** on the trusted Salesforce infrastructure. It ensures requests land sooner to the trusted Salesforce infrastructure and can take advantage of the caching and transport optimizations that Salesforce Edge Network provides on the dedicated high-bandwidth links between Salesforce locations. 
+
+Caching is limited to only the content with http headers marked as **cacheable** by either the core app or by customer integrations—this is typically content such as JavaScript and CSS files.
+
+</google-codelab-step>
+
+ <google-codelab-step label="Who can move?" duration="1">
+<div id='who-md' class='md' data-trim='true'>
+- Sales and Service Cloud customer orgs that enabled **My Domain** 
+</google-codelab-step>
+
+ <google-codelab-step label="What Actions required?" duration="1">
+<div id='whatactions-md' class='md' data-trim='true'>
+### End Users
+- Move is seamless for your end users and no actions are required from them. They keep using the same URLs to access your org, Salesforce Sites, or Communities. 
+### Administrators of Salesforce orgs
+- Ensure your org is using a **My Domain**
+- When setting a **My Domain name**, please use the same My Domain name between your production org and its sandbox orgs. Salesforce does not enforce this naming consistency today, but it may in a future release.
+- If your corporate network settings or email security filters restrict access to IP ranges or addresses, please ensure that you include our current ranges. All of our current IP ranges are available in the article [What are the Salesforce IP Addresses & Domains to whitelist?](https://help.salesforce.com/articleView?id=000321501&type=1)
+- Activate these critical updates **if needed**:
+1. [Stabilize URLs for Visualforce, Experience Builder, Site.com Studio, and Content Files (Update, Postponed)](https://releasenotes.docs.salesforce.com/en-us/summer20/release-notes/rn_security_domains_stabilize_vf_urls.htm)
+2. [Stabilize the Hostname for My Domain URLs in Sandboxes (Update, Enforced)](https://releasenotes.docs.salesforce.com/en-us/summer20/release-notes/rn_security_domains_stabilize_mydomain_cruc.htm) 
+
+
+</google-codelab-step>
+
+<google-codelab-step label="Salesforce Express Connect" duration="1">
+<div id='sec-md' class='md' data-trim='false'>
+
+- Get more cost-effective connectivity with higher throughput and lower latency by using **Salesforce Express Connect** (SEC). Thanks to our partnerships with multiple global telecom service providers, you can boost performance, increase application reliability, as well as meet industry regulatory and compliance demands by establishing a **direct, private connection** from your data center to the Salesforce infrastructure.
+- Boost network performance -  Deliver predictable, reliable network performance with a dedicated connection that boosts capacity.
+- Easily manage your connectivity -  Simplify network management for real-time connectivity monitoring from end-to-end.
+- Expand your infrastructure options -  Choose from an array of global partners, pricing, capacity, and SLA options to meet your dynamic network needs.
+![ sec partners](img/sec-partners.png)
+- Increase network reliability - Remove those unpredictable public Internet bottlenecks from your mission-critical applications.
+</div>
+
+</google-codelab-step>
+
+
+
+<google-codelab-step label="Links and References" duration="1">
+<div id='links-md' class='md' data-trim='false'>
+
+- [What is Salesforce Edge Network? - Knowledge Article ](https://help.salesforce.com/articleView?id=000350511&language=en_US&type=1&mode=1)
+- [What are the Salesforce IP Addresses & Domains to whitelist?](https://help.salesforce.com/articleView?id=000321501&type=1)
+- [Get a faster, more reliable connection to your Salesforce data and services](https://www.salesforce.com/campaign/salesforce-express-connect/)
+
+</div>
+
+</google-codelab-step>
+
+
+    
+</google-codelab>
+
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/md2html.js?v=2"> </script> 
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/native-shim.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/custom-elements.min.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/codelab-elements.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/prettify.js"></script>
+
+</body>
+</html>
+
