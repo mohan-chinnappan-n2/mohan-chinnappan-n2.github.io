@@ -129,6 +129,48 @@
     </div>
  </google-codelab-step>
 
+<google-codelab-step label="Write Your Einstein Analytics Datasets to Snowflake from Recipes" duration="1">
+  <div id='ea-sf-r-md' class='md' data-trim='false'>
+- Helps to push your prepared data from Analytics into Snowflake when you use Data Prep recipes.
+- Design powerful Data Prep recipes that combine data from multiple sources, add formula fields, and transform data into datasets tailored to your business needs. 
+- With the EA connector for Snowflake, datasets are written as a table for you without the need to rebuild relationships and business logic. 
+- On the Connect tab of the Data Manager, click Connect to Data. Add a connection on the Output Connections tab and configure it with your Snowflake account information.
+- ![r sf out](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/release_notes/images/rn_bi_connect_snowflake.png)
+- Build your recipe with Data Prep. In an Output node, select to write to the Output Connection (1). Choose the Snowflake connection to push data to (2) and the Snowflake object that receives the data (3). Map recipe columns to their equivalent external object columns (4).
+- ![r sf out2](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/release_notes/images/rn_bi_recipe_output_node_snowflake.png)
+- Save the recipe. When the recipe runs, Analytics writes the outcome to Snowflake.
+
+    </div>
+ </google-codelab-step>
+
+<google-codelab-step label="Prepare Data with the Next Generation of Data Prep" duration="1">
+  <div id='ea-dp-r-md' class='md' data-trim='false'>
+-  New intuitive, visual interface that allows you to build recipes with clicks.
+- Use the new graphical view of a recipe to see at a glance where data comes from, how it flows through the recipe, and where the results are written.
+- Validate the recipe as you build, preview how raw data is transformed every step of the way. 
+- The new version of Data Prep is called Data Prep and the old version is called Data Prep Classic. 
+- Shows only inputs (source data), appends, aggregates, filters, joins, and the outputs
+- ![new ui](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/release_notes/images/bi_integrate_recipe_large.png)
+- Each object shown in the graph is called a node. A recipe can have multiple Input, Aggregate, Append, Filter, Join, Transform, and Output nodes.
+- Although the graph doesn’t show individual data transformations, you can select a Transform node (1) in the graph to see its transformations in the details area (2).
+- ![transfer node](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/release_notes/images/bi_integrate_recipe_transform_details.png)
+- As in Data Prep Classic, you can select a transformation step in the left panel to preview the results of that transformation in the Preview tab. And you can select any node in the graph to preview the results of that node.
+- ![ previews](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/release_notes/images/bi_integrate_transformation_step_preview.png)
+- To create a Data Prep recipe, click Create Recipe in the Recipes tab of Data Manager.
+- ![Create](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/release_notes/images/bi_integrate_recipeCreate.png)
+ 
+    </div>
+ </google-codelab-step>
+
+<google-codelab-step label="Stay Productive with Financial Services Cloud Lightning Components for Mobile" duration="1">
+<div id='ea-mobile-md' class='md' data-trim='false'>
+- Boost remote user productivity by including Financial Services Cloud Lightning Components in the Salesforce mobile app.
+![ea-hh-mobile](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/release_notes/images/rn_fsc_mobile_component_example.png)
+![ea mobile enabled](img/ea-mobile-enabled-1.png)
+  </div>
+</google-codelab-step>
+
+
 
 
 
@@ -145,6 +187,11 @@
   - [Introducing Collaboration and Chat Embedded into Salesforce with the Salesforce Anywhere App
 ](https://www.salesforce.com/company/news-press/stories/2020/6/salesforce-anywhere-app/)
 - [Interactively Create Engaging Email Templates](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/rn_sales_productivity_email_ETB.htm)
+- [Prepare Data with the Next Generation of Data Prep (Generally Available)](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/rn_bi_integrate_data_prep.htm)
+- [Stay Productive with Financial Services Cloud Lightning Components for Mobile](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/rn_fsc_mobile_components.htm)
+- [New and Changed Financial Services Cloud Metadata Types](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/rn_fsc_changed_metadata_types.htm)
+- [New and Changed Financial Services Cloud Object Fields](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/rn_fsc_changed_objects.htm)
+- [Financial Services Cloud REST API includes enhanced calls](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/rn_fsc_api_rest.htm)
 
 </div>
 
