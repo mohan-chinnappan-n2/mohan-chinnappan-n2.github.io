@@ -95,6 +95,41 @@
     </div>
  </google-codelab-step>
 
+  <google-codelab-step label="Subscribe to Lenses and Dashboard Widgets for Timely Email Updates" duration="1">
+  <div id='ea-sub-md' class='md' data-trim='false'>
+- You can subscribe to lenses as well as dashboard widgets
+- Widget subscription is based on a snapshot of your query, a lens subscription is dynamic 
+- First save it in explorer. Then click the Show Subscriptions icon [Subscribe action icon](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/help/images/bi_subscriptions_icon.png) to open the Subscription panel, and click Subscribe. 
+- ![Subscribe](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/help/images/bi_subscription_lens.png)
+- ![Old](img/ea-lens-1.png)
+- You can subscribe to any lens that is saved in SAQL format in the explorer. If you must convert a lens to SAQL, we let you know when you try to subscribe. To convert to SAQL, open Query Mode, click Run Query, and then save the lens
+- ![Run Query](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/help/images/bi_lens_save_as_saql.png)
+    </div>
+ </google-codelab-step>
+
+<google-codelab-step label="Salesforce Data in Snowflake with Sync Out (Beta)" duration="1">
+  <div id='ea-sf-md' class='md' data-trim='false'>
+-  Sync Out for Snowflake exports your raw local Salesforce data via Analytics to Snowflake using the Einstein Analytics connector for Snowflake. 
+-  Keep your Salesforce data in Snowflake up-to-date using scheduled Data Sync without the need for a third-party ETL tool.
+- Contact your Salesforce account representative to enable Sync Out for Snowflake.
+- Turn on Sync Out for Snowflake in Analytics Setup
+-  On the Connect tab of the Data Manager, click Connect to Data. Add a connection on the Output Connections tab and configure it with your **Snowflake account information**.
+- ![output connections](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/release_notes/images/rn_bi_create_output_connection.png) 
+- ![ old](img/ea-op-1.png)
+- Back on the Connect tab, find the local Salesforce connection with data you want to export to Snowflake. For our example, this local connection includes the account object. Select the down arrow (Down arrow.) next to the connection and click Sync Out.
+
+- ![sf synout  connect](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/release_notes/images/rn_bi_sync_out.png)
+- Back on the Connect tab, find the local Salesforce connection with data you want to export to Snowflake. For our example, this local connection includes the account object. Select the down arrow (Down arrow.) next to the connection and click Sync Out.
+
+- ![sync out](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/release_notes/images/rn_bi_sync_out.png)
+- Sync Out runs as the data sync completes for each local object. For our example, after Data Sync pulls data from the account object into Analytics, Sync Out would then push the same account data to Snowflake.
+
+
+
+    </div>
+ </google-codelab-step>
+
+
 
 
  
