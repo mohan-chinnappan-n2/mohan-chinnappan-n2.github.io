@@ -161,6 +161,46 @@ Here we will discuss about new and upgraded features coming in Winter 21 in
     </div>
  </google-codelab-step>
 
+<google-codelab-step label="Einstein Analytics Direct for Snowflake" duration="1">
+  <div id='eadsf-md' class='md' data-trim='false'>
+- With EA Direct, non-CRM data can remain in Snowflake and does not need to be moved into EA. 
+- Instead, EA will directly query Snowflake allowing high-performance real-time exploration and insight delivery without waiting for data to complete a sync process.
+- EA also has a high-performance, high-volume Snowflake connector that allows you to ingest, transform & enrich data. In general, we recommend bringing data into EA to allow for deeper integration but there are many scenarios where Snowflake Direct can help
+
+### Use cases
+- **Live insights**. Each time you open a dashboard or lens powered by one or more Snowflake direct queries, we send those queries straight to Snowflake. This allows for near real-time freshness on fast-changing data. It is also a good alternative if your EA data flows take a while to run.
+- **Keep your EA data pipelines clutter-free**. By offloading to EA Direct where possible, you minimize the number of data flows to run ensuring your critical data flows get the resources they need.
+- Want to **analyze semi-structured data (JSON, Parquet, XML)** from modern data sources? Snowflake provides native support for semi-structured data and EA Direct can help you query it.
+- [More here](https://www.salesforceblogger.com/2020/09/01/live-customer-360-insights-using-snowflake-direct/)
+
+### Steps
+- 1. Create live connection 
+- Live connections are optimized for live querying and separate from standard connections that are optimized for ETL.
+![Live connection](https://i0.wp.com/www.salesforceblogger.com/wp-content/uploads/2020/08/image-1.png?w=1276&ssl=1)
+- 2. Create one or more live datasets
+- You will find ‘live datasets’ resemble EA datasets in many ways. In fact, ‘live dataset’ are the same as EA datasets with one major difference – **data remains** in the external data source and we are simply pointing to it. Each ‘live dataset’ can be added to an EA App to allow table-level access control.
+
+![live datasets](https://i1.wp.com/www.salesforceblogger.com/wp-content/uploads/2020/08/image-4.png?w=1276&ssl=1)
+- 3. Expore
+- Exploration should feel just like exploring an EA dataset. You can group/filter/aggregate fields, change visualizations, apply formatting & save the exploration or clip it to a dashboard.
+![Explore](https://i1.wp.com/www.salesforceblogger.com/wp-content/uploads/2020/08/image-2.png?w=1276&ssl=1)
+
+
+### Dashboards with live datasets
+- Winter ’21 also adds direct query support for data source linking so you can connect fields from live datasets with fields from EA datasets to add interactivity with a few clicks.
+![Live metrics](https://i1.wp.com/www.salesforceblogger.com/wp-content/uploads/2020/08/image-5.png?w=1276&ssl=1)
+- Above EA dashboard contains **live case metrics powered by Salesforce Direct**, order metrics using **Snowflake Direct** & **historical metrics** using queries running against EA datasets all in the same dashboard.
+
+### Coming up
+- More querying capabilities so that users can answer a broad range of questions on their external data. The ability to **execute custom SQL queries right within Explorer** will allow analysts and power users to leverage the full power of their **data warehouse** to answer any question, ad-hoc or curated. We also plan to support advanced querying such as formulas & joins using clicks not code to enable easier exploration.
+- Extended metadata (XMD) support to allow for custom field labels & types.
+- Actions, Subscriptions, Notifications & Watchlists on direct queries to drive engagement & actionability across your user base.
+
+- For example in Wealth Management, if the Account Under Management (AUM) hits lower or higher threshold, the subscription/notification on this event to our direct query will notify the Rep to take actions. All we need will be a direct query to the source system via EA Direct (to Snowflake for example) and setting up Notifications/Subscriptions to capture and handle this event.
+ 
+  </div>
+ </google-codelab-step>
+
 <google-codelab-step label="Stay Productive with Financial Services Cloud Lightning Components for Mobile" duration="1">
 <div id='ea-mobile-md' class='md' data-trim='false'>
 - Boost remote user productivity by including Financial Services Cloud Lightning Components in the Salesforce mobile app.
@@ -214,7 +254,7 @@ Here we will discuss about new and upgraded features coming in Winter 21 in
 - [New and Changed Financial Services Cloud Metadata Types](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/rn_fsc_changed_metadata_types.htm)
 - [New and Changed Financial Services Cloud Object Fields](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/rn_fsc_changed_objects.htm)
 - [Financial Services Cloud REST API includes enhanced calls](https://releasenotes.docs.salesforce.com/en-us/winter21/release-notes/rn_fsc_api_rest.htm)
-
+- [Live Customer 360 Insights Using Snowflake Direct](https://www.salesforceblogger.com/2020/09/01/live-customer-360-insights-using-snowflake-direct/)
 </div>
 
 <iframe width="700" height="350" src="https://www.youtube.com/embed/8mMxTUtcohM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
