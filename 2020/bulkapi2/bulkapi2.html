@@ -433,6 +433,26 @@ b'"sf__Id","sf__Error",Priority,Subject\n'
 </div>
 </google-codelab-step>
 
+<google-codelab-step label="Limits" duration="1">
+<div id='limits-md' class='md' data-trim='false'>
+- Maximum number of records uploaded per rolling 24-hour period	
+    - **150,000,000**
+- Maximum number of times a batch can be retried. [See How Requests Are Processed](https://developer.salesforce.com/docs/atlas.en-us.api_bulk_v2.meta/api_bulk_v2/how_requests_are_processed.htm).
+    - **The API automatically handles retries. If you receive a message that the API retried more than 10 times, use a smaller upload file and try again.**
+- Maximum file size	
+    - **150 MB**
+- Maximum number of characters in a field
+	- **32,000**
+- Maximum number of fields in a record
+	- **5,000**
+- Maximum number of characters in a record	
+    - **400,000**
+
+
+- [Refer: Bulk API 2.0 Limits](https://developer.salesforce.com/docs/atlas.en-us.api_bulk_v2.meta/api_bulk_v2/bulk_api_2_limits.htm)
+</div>
+</google-codelab-step>
+
 
     
 </google-codelab>
