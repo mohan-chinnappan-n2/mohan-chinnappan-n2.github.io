@@ -315,6 +315,143 @@ Subject,Priority
 </div>
 </google-codelab-step>
 
+
+<google-codelab-step label="Using in AWS Lamda" duration="1">
+<div id='aws-md' class='md' data-trim='false'>
+- Create node js project with the following code in index.js
+```
+//------------------------------------------------------------------
+// Code for the aws lambda function using Salesforce BulkAPI 2.0
+// Mohan Chinnappan (mar-21-2020)
+//------------------------------------------------------------------
+
+const sfb2 = require('sfbulk2js'); 
+
+const AT = '00D3h000007R1Lu!AR0AQGyDeGEGhToyawRbG9rrc006T6.3Gi7V5JEU6X88ED7io7IUtzYDjhaLuQLQ_Ylp2TKux560e6rGzbQ8vAP7zd_hsYpy';
+ //AT can be read from env or from JWT flow (ref: https://github.com/mohan-chinnappan-n/bulkapi2-dx/blob/master/jwt.md)
+
+const opts = {
+     instanceUrl: 'https://mohansun-ea-02-dev-ed.my.salesforce.com', // can be read from env
+     apiVersion: 'v49.0',
+     accessToken: `${AT}`,
+     contentType: 'CSV',
+     lineEnding: 'LF'
+};
+
+const waitTimeMs = 3000; // adjust it as required
+
+exports.handler = async (event) => {
+
+// TODO: read the s3 bucket data here (max size: 150 MB)  into fdata
+let fdata = 
+` Subject,Priority
+Engine cylinder has knocking,High
+Wiper Blade needs replacement,Low
+`;
+
+    await data(fdata, 'Case', opts);
+    return { statusCode: 200, body: "Ok"};
+};
+
+
+
+function sleep(ms) {
+  //console.log('WAITING');
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function dataload(fdata, sobj, cji) {
+ try {
+
+     console.log(`=== CREATE JOB === `);
+     const job = await sfb2.createJob(cji.instanceUrl, cji.apiVersion, cji.accessToken, 'insert', sobj, cji.contentType,  cji.lineEnding );
+     console.log(job);
+     console.log(`jobId: ${job.id}`);
+
+     console.log(`=== JOB STATUS === `);
+     let jobStatus = await sfb2.getJobStatus(cji.instanceUrl, cji.apiVersion, cji.accessToken, 'ingest', job.id );
+     console.log(`=== JOB STATUS for job: ${job.id} ===`);
+     console.log(jobStatus);
+
+
+     console.log(`=== PUT DATA === `);
+
+     const putDataStatus  = await sfb2.putData(cji.instanceUrl, cji.accessToken, job.contentUrl, fdata );
+
+     console.log(`=== JOB STATUS === `);
+     jobStatus = await sfb2.getJobStatus(cji.instanceUrl, cji.apiVersion, cji.accessToken, 'ingest', job.id );
+     console.log(`=== JOB STATUS for job: ${job.id} ===`);
+     console.log(jobStatus);
+
+     console.log(`=== PATCH STATAE === `);
+     const patchDataStatus  = await sfb2.patchState(cji.instanceUrl, cji.apiVersion, cji.accessToken,  job.id, 'UploadComplete' );
+     console.log(patchDataStatus);
+
+     console.log(`=== JOB STATUS === `);
+     jobStatus = await sfb2.getJobStatus(cji.instanceUrl, cji.apiVersion, cji.accessToken, 'ingest', job.id );
+     console.log(`=== JOB STATUS for job: ${job.id} ===`);
+     console.log(jobStatus);
+
+     while (jobStatus.state === 'InProgress') { // wait for it 
+        await sleep(waitTimeMs);
+        jobStatus = await sfb2.getJobStatus(cji.instanceUrl, cji.apiVersion, cji.accessToken, 'ingest', job.id );
+        console.log(jobStatus);
+     }
+
+     console.log(`=== JOB Failure STATUS === `);
+     jobStatus = await sfb2.getJobFailureStatus(cji.instanceUrl, cji.apiVersion, cji.accessToken,  job.id );
+     console.log(`=== JOB Failure STATUS for job: ${job.id} ===`);
+     console.log(jobStatus);
+
+     console.log(`=== JOB getUnprocessedRecords STATUS === `);
+     jobStatus = await sfb2.getUnprocessedRecords(cji.instanceUrl, cji.apiVersion, cji.accessToken,  job.id );
+     console.log(`=== JOB getUnprocessedRecords STATUS for job: ${job.id} ===`);
+     console.log(jobStatus);
+
+
+
+} catch (err) {
+     console.log(`ERROR in dataload : ${err}`);
+   }
+
+}
+
+
+```
+
+</div>
+</google-codelab-step>
+
+<google-codelab-step label="Lamda Function" duration="1">
+<div id='func-md' class='md' data-trim='false'>
+- Function Code
+![Function Code](img/bulkapi2-aws-lambda-1.png)
+- package.json
+```json
+
+{
+  "name": "aws-bulkapi2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mohan Chinnappan",
+  "license": "MIT",
+  "dependencies": {
+    "sfbulk2js": "0.0.1"
+  }
+}
+```
+</google-codelab>
+
+<google-codelab-step label="Lamda Function Results" duration="1">
+<div id='func-results-md' class='md' data-trim='false'>
+![Function Code Results](img/bulk-case-creation-2.png)
+</google-codelab>
+
 <google-codelab-step label="For Python Fans" duration="1">
 <div id='py-md' class='md' data-trim='false'>
 ### Same package is available in python!
@@ -423,8 +560,6 @@ b'"sf__Id","sf__Error",Priority,Subject\n'
 ![py-results](img/cases-py-1.png)
 </div>
 
-
-
 <google-codelab-step label="Links and References" duration="1">
 <div id='links-md' class='md' data-trim='false'>
 - [Bulk API 2.0](https://developer.salesforce.com/docs/atlas.en-us.api_bulk_v2.meta/api_bulk_v2/get_job_info.htm)
@@ -454,8 +589,6 @@ b'"sf__Id","sf__Error",Priority,Subject\n'
 </google-codelab-step>
 
 
-    
-</google-codelab>
 
   <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/md2html.js?v=2"> </script> 
   <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/native-shim.js"></script>
