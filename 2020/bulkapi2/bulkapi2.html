@@ -13,7 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
 </head>
 <body>
-<google-codelab id="Bulk API 2.0 NPM" title="Salesforce Bulk API 2.0 NPM" environment="web" > 
+<google-codelab id="Bulk API 2.0 NPM" title="Salesforce Bulk API 2.0 NPM and AWS Lambda Function" environment="web" > 
 <google-codelab-step label="Overview" duration="1">
 <div id='ov-md' class='md' data-trim='false'>
  In this doc, we explain how we can use  the npm package **sfbulk2js** to load data into Salesforce using BulkAPI 2.0 
@@ -316,7 +316,7 @@ Subject,Priority
 </google-codelab-step>
 
 
-<google-codelab-step label="Using in AWS Lamda" duration="1">
+<google-codelab-step label="Using in AWS Lambda" duration="1">
 <div id='aws-md' class='md' data-trim='false'>
 - Create node js project with the following code in index.js
 ```
@@ -422,7 +422,7 @@ async function dataload(fdata, sobj, cji) {
 </div>
 </google-codelab-step>
 
-<google-codelab-step label="Lamda Function" duration="1">
+<google-codelab-step label="Lambda Function" duration="1">
 <div id='func-md' class='md' data-trim='false'>
 - Function Code
 ![Function Code](img/bulkapi2-aws-lambda-1.png)
@@ -447,7 +447,7 @@ async function dataload(fdata, sobj, cji) {
 ```
 </google-codelab>
 
-<google-codelab-step label="Lamda Function Results" duration="1">
+<google-codelab-step label="Lambda Function Results" duration="1">
 <div id='func-results-md' class='md' data-trim='false'>
 ![Function Code Results](img/bulk-case-creation-2.png)
 </google-codelab>
