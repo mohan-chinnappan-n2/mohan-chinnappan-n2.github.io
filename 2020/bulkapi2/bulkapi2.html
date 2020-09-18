@@ -392,6 +392,8 @@ async function dataload(fdata, sobj, cji) {
      console.log(`=== JOB STATUS for job: ${job.id} ===`);
      console.log(jobStatus);
 
+     // TODO: This waiting may not required for lambda function to avoid lambda timeout
+     //       Modify it as needed 
      while (jobStatus.state === 'InProgress') { // wait for it 
         await sleep(waitTimeMs);
         jobStatus = await sfb2.getJobStatus(cji.instanceUrl, cji.apiVersion, cji.accessToken, 'ingest', job.id );
