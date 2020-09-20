@@ -1,0 +1,2 @@
+ - [Use 'InsightsExternalData' Object in Einstein Analytics](https://help.salesforce.com/articleView?id=000322065&type=1&mode=1)
+- [Create Datasets Programmatically from CSV Files Using the External Data API](https://help.salesforce.com/articleView?id=bi_integrate_upload_csv_external_data_api.htm&type=5)
