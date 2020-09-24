@@ -1,6 +1,7 @@
 ## Edge Effect
 
 ### Round Trip Time (RTT) without Edge
+- NOTE:  the route drawn here are shown as over the land, but the actual route is over the sea 
 - ![without edge](img/woEdge2.png)
 - ![without edge](img/woEdge0.png)
 - ![without edge](img/woEdge.png)

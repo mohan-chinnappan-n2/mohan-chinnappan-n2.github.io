@@ -1,5 +1,4 @@
 ## What is Salesforce Edge Network?
-![about Edge](img/aboutEdge.png)
  - Salesforce Edge Network is a network technology that improves the network experience for customers around the globe. Customers get benefits such as faster download times no matter where their org is hosted in Salesforce’s data centers. 
 - How does Salesforce Edge Network work?
     - Salesforce Edge Network directs customer requests to the closest Salesforce location **where Salesforce Edge Network** is deployed. 
@@ -18,8 +17,8 @@
         - Customers heavily customize their experience, so our pages see a lot of variety
 
 
-3. **Intelligent routing** of user requests to the closest data center—Salesforce automatically sends the users to the most **optimal point of presence** based on its network data. Different at different time of the data, WiFi/cellular...
-            - Edge will the fastest route for you at that moment in time
+3. **Intelligent routing** (part of Edge Mobile) of user requests to the closest data center—Salesforce automatically sends the users to the most **optimal point of presence** based on its network data. Different at different time of the data, WiFi/cellular...
+            - Edge will find the fastest route for you at that moment in time
 
 4. **TCP optimizations**:  help data move more quickly and efficiently across the network.
             - Congestion control - for example, slow and steady with less pocket drops,less retry, less reconnects...
@@ -27,3 +26,8 @@
 
 ### Providing these four services **closer to the customer** *reduces* the round-trip time for **certain requests**. 
 - Salesforce Edge Network **delivers data quickly** using the Salesforce trusted infrastructure, which protects, uses, and processes data appropriately and in accordance with the law.
+
+### What is Edge Mobile and Edge V2?
+- Edge mobile is integrated into Salesforce1 mobile app and focusses on content delivery optimizations for mobile customers and has been live since Q2 2018
+- Edge V2 is for non mobile users
+
