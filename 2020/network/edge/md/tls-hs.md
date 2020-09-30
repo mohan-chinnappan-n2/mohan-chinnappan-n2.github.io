@@ -35,7 +35,9 @@
 ### Data bulk encryption
 - Server and Client use this agreed Symmetric Key (SK) for the bulk encryption of the data
 
+![TLS hs](img/tls-hs-1.png)
 ### Video
 - [Breaking Down the TLS Handshake](https://www.youtube.com/watch?v=cuR05y_2Gxc)    
+- [How does HTTPS work? What's a CA? What's a self-signed Certificate?](https://www.youtube.com/watch?v=T4Df5_cojAs)
 - [Secret Key Exchange (Diffie-Hellman) - Computerphile](https://www.youtube.com/watch?v=NmM9HA2MQGI)
 
