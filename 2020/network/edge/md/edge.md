@@ -11,12 +11,6 @@
 
 2. **Caching of static content**:  Caching is limited to only the content with HTTP headers marked as cacheable by either the core app or by customer integrations. The static ontent is cached at closer to the user.
             - this is typically publicly available content such as JavaScript and CSS files.  
-
-    - Customized for Dynamic Authenticated content
-        - Salesforce content is >70+% dynamic & access usually requires authentication e.g. API responses, database queries etc.
-        - Customers heavily customize their experience, so our pages see a lot of variety
-
-
 3. **Intelligent routing** (part of Edge Mobile) of user requests to the closest data center—Salesforce automatically sends the users to the most **optimal point of presence** based on its network data. Different at different time of the data, WiFi/cellular...
             - Edge will find the fastest route for you at that moment in time
 
