@@ -31,3 +31,6 @@
 - Edge mobile is integrated into Salesforce1 mobile app and focusses on content delivery optimizations for mobile customers and has been live since Q2 2018
 - Edge V2 is for non mobile users
 
+### Where is my instance running
+- [Search for your instance location](https://github.com/mohan-chinnappan-n/sf-network/blob/master/data/ds.csv)
+
