@@ -47,9 +47,6 @@
 ![ssc 0](img/ssc-0.png)
 ![ssc 1 ](img/ssc-1.png)
 
-### TLS 1.3
-![tls hs 1.3](img/tls-h2-13.png)
-
 ### Video
 - [Breaking Down the TLS Handshake](https://www.youtube.com/watch?v=cuR05y_2Gxc)    
 - [How does HTTPS work? What's a CA? What's a self-signed Certificate?](https://www.youtube.com/watch?v=T4Df5_cojAs)
