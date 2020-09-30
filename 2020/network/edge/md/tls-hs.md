@@ -40,6 +40,13 @@
 ### Certificate Signing Request (CSR)
 ![csr](img/csr-1.png)
 
+### Self-signed Certificate
+- At the cost of telling the user to trust this CA (you)
+![ssc 0](img/ssc-0.png)
+![ssc 1 ](img/ssc-1.png)
+
+
+
 ### Video
 - [Breaking Down the TLS Handshake](https://www.youtube.com/watch?v=cuR05y_2Gxc)    
 - [How does HTTPS work? What's a CA? What's a self-signed Certificate?](https://www.youtube.com/watch?v=T4Df5_cojAs)
