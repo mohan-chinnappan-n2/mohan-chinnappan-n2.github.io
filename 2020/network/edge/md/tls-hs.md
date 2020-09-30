@@ -33,7 +33,7 @@
 
 
 ### Data bulk encryption
-    - Server and Client use this agreed Symmetric Key (SK) for the bulk encryption of the data
+- Server and Client use this agreed Symmetric Key (SK) for the bulk encryption of the data
 
 ### Video
 - [Breaking Down the TLS Handshake](https://www.youtube.com/watch?v=cuR05y_2Gxc)    
