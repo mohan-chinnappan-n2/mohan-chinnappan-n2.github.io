@@ -4,4 +4,6 @@
 - [In Your Pocket And Fast: How Salesforce Optimizes Mobile Performance](https://www.salesforce.com/video/3637709/)
 - [SSL/TLS Termination, TLS Forward Proxy Pros and Cons](https://www.youtube.com/watch?v=H0bkLsUe3no)
 - [TLS 1.3 Handshake: Taking a Closer Look](https://www.thesslstore.com/blog/tls-1-3-handshake-tls-1-2/)
+- [Introduction to Varnish](https://varnish-cache.org/intro/)
+    - [What is Varnish Cache?](https://www.youtube.com/watch?v=fGD14ChpcL4)
 
