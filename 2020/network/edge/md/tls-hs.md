@@ -1,5 +1,7 @@
 ## TLS Handshake
 
+![tls hs 1.2](img/tls-hs-12.png)
+ 
 ### Trip 1
 - Client
     - "Hello"
@@ -45,7 +47,8 @@
 ![ssc 0](img/ssc-0.png)
 ![ssc 1 ](img/ssc-1.png)
 
-
+### TLS 1.3
+![tls hs 1.3](img/tls-h2-13.png)
 
 ### Video
 - [Breaking Down the TLS Handshake](https://www.youtube.com/watch?v=cuR05y_2Gxc)    
