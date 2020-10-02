@@ -20,7 +20,7 @@ $ dig  mohansun-ea-02-dev-ed.my.salesforce.com
 
 ;; ANSWER SECTION:
 mohansun-ea-02-dev-ed.my.salesforce.com. 10 IN CNAME na111.my.salesforce.com.
-;; If Edge is enables you will see a line similar to the following line
+;; If Edge is enabled you will see a line similar to the following line
 ;; na111.my.salesforce.com. 298 IN	CNAME	n.edge2.salesforce.com. <----------------------
 
 na111.my.salesforce.com. 10	IN	CNAME	na111-ia2.my.salesforce.com.
