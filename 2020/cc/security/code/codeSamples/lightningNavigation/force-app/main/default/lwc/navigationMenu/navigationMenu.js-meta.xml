@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- navigationMenu.js-meta.xml -->
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="navigationMenu">
+    <apiVersion>46.0</apiVersion>
+    <isExposed>true</isExposed>
+    <description>Custom Navigation Menu Test2</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="menuName" type="String" label="Navigation Menu Name"></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

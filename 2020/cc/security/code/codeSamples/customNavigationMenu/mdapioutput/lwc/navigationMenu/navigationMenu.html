@@ -1,0 +1,13 @@
+<template>
+    <div class="navbar slds-border_bottom">
+        <nav role="navigation" class="slds-align_absolute-center">
+           <ul class="slds-list_horizontal slds-has-dividers_right slds-has-block-links_space">
+               <template for:each={menuItems} for:item="item">
+                   <li key={item.id} class="slds-item">
+                       <c-navigation-item item={item}></c-navigation-item>
+                   </li>
+               </template>
+           </ul>
+       </nav>
+    </div>
+</template>

@@ -1,0 +1,20 @@
+:host {
+    padding: 15px;
+    float: right;
+    height: 50px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+button {
+    font-size: 14px;
+    color: rgb(225, 27, 34);
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.slds-button {
+    color: rgb(225, 27, 34);
+    background-color: #7f8de1;
+    border-color: #7f8de1;
+}

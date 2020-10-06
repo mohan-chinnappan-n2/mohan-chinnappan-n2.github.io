@@ -1,0 +1,39 @@
+<template>
+    <div class="theme-header navbar navbar-default navbar-fixed-top" style={generatedStyle}>
+        <div class="navbar-header">
+            <div class="navbar-logo-container">
+                <div class="logo-img" onclick={handleLogoClick}></div>
+            </div>
+
+            <div class="navbar-search-container">
+                <c-search-bar
+                    search-placeholder="Search..."
+                ></c-search-bar>
+            </div>
+
+            <div class="navbar-utils">
+                <div class="navbar-utils-container">
+                    <div class="navbar-util theme-notifications">
+                        <lightning-button-icon
+                            icon-name="utility:notification"
+                            variant="bare"
+                            alternative-text="Notifications"
+                            size="large"
+                            onclick={handleNotificationsClick}>
+                        </lightning-button-icon>
+                    </div>
+                    <div class="navbar-util theme-profile-menu">
+                        <lightning-button-icon
+                            icon-name="utility:user"
+                            variant="bare"
+                            alternative-text="Profile Menu"
+                            size="large"
+                            onclick={handleProfileMenuClick}>
+                        </lightning-button-icon>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</template>

@@ -56,6 +56,7 @@
     -  The contacts from the same household belong to the same account and can access to each others’ data in a community
 
 ## Use the Right Community License Type
+![License Type](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/community_rollout_impl/community_rollout_impl_sharing/images/8bebef459caf9be2a38e32a1f85ab5ed_community_licenses.png)
 - Community License types, like Customer Community Plus Licenses, automatically grant access to certain records
     - For example, with Customer Community Plus Licenses, Case Sharing is turned on by default. 
     - If your organization was using cases prior to enabling Communities and you’re using this license type, then your users will be able to see all of the cases that they’re a contact on in Community Cloud. 

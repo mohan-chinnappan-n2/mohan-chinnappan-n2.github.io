@@ -1,0 +1,19 @@
+<template>
+    <template if:true={state.isLoggedIn}>
+        <span style="padding-right: 4px;">{state.loggedInUserName}</span>
+        <lightning-button
+            variant="base"
+            label={state.logoutLabel}
+            title={state.logoutLabel}
+            onclick={handleLogout}
+        ></lightning-button>
+    </template>
+    <template if:false={state.isLoggedIn}>
+        <lightning-button
+            variant="base"
+            label={state.loginLabel}
+            title={state.loginLabel}
+            onclick={handleLogin}
+        ></lightning-button>
+    </template>
+</template>

@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+header {
+  background-color: var(--lwc-header-background-color);
+  min-height: 100px;
+}
+
+section {
+  min-height: calc(100vh);
+  background-color: var(--lwc-section-background-color);
+}
