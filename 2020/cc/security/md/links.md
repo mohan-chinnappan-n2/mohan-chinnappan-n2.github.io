@@ -1,4 +1,5 @@
 ## References
+- [Sharing CRM Data in a Portal or Community](https://help.salesforce.com/articleView?id=networks_sharing_CRM_data_cheatsheet.htm&type=5)
 - [Communities in Financial Services Cloud](https://trailhead.salesforce.com/content/learn/modules/communities-in-financial-services-cloud)
 - [Salesforce Security Guide](https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta/securityImplGuide/salesforce_security_guide.htm)
 - [Give Secure Access to Unauthenticated Users with the Guest User Profile](https://help.salesforce.com/articleView?id=networks_public_access.htm&type=5)
