@@ -1,4 +1,4 @@
-## SSO Provisioning Documentation 
+## SSO Provisioning 
 ### When Salesforce Identity is not the  IdP (e.g. PingIdentity)
 
 - 1. Request Support by creating a ticket to turn on the Business Rule SAML_SSO
