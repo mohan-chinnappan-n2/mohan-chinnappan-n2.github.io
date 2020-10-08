@@ -1,0 +1,10 @@
+Title: SSO via SAML 2.0
+
+User Browser->MC: Attempt to Login
+MC->User Browser:Redirect to IdP SSO URL
+User Browser->IdP: Request to Authenticate
+IdP->User Browser: Authenticate and provide  SAML Auth token
+User Browser->MC: Here is my authentication token 
+
+Note right of MC: authenticates the user\n and permits access to \nthe assigned account
+MC->User Browser: Here you go

@@ -1,5 +1,6 @@
 ## Enable Single Sign-On Authentication Via SAML 2.0
 
+![SSO flow](img/mc-sso-saml-1.png)
 
 - Marketing Cloud supports **identity providers(idP)** that utilize the SAML 2.0 specification, such as 
     - Salesforce Identity, 
@@ -38,9 +39,7 @@
  - Key descriptors define keys used for encryption and signing of SAML assertions. 
     - The Marketing Cloud requires that all SAML assertions are signed by an X.509 certificate. In metadata documents, this is defined with the **KeyDescriptor** tag.
  
-## References
-- [Enable Single Sign-On Authentication Via SAML 2.0](https://help.salesforce.com/articleView?id=mc_overview_enable_saml_task.htm&type=5)
-
+                                                     
 
 
 
