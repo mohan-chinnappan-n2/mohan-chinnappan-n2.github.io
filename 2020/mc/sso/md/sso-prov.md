@@ -19,7 +19,7 @@
 - 4 Create Key based on SSO Metadta as shown below
 ![SSO metadata key](img/mc-sso-key-setup.png)
     - Save 
-    - You will see the **Single Sign-On Settings** turned for the users
+    - You will see the **Single Sign-On Settings** option available for the users
     ![sso on](img/sso-on-1.png)
 - 5. Enable SSO for the users
     - To enable users, each user will need to be provided SSO Login access for each user :
