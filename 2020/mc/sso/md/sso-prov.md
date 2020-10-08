@@ -1,7 +1,7 @@
 ## SSO Provisioning 
 ### When Salesforce Identity is not the  IdP (e.g. PingIdentity)
 
-- 1. Request Support by creating a ticket to turn on the Business Rule SAML_SSO
+- 1. Request **Support by creating a ticket** to turn on the **Business Rule SAML_SSO**
     - With this is turned on you will see:
 ![sso metadata](img/mc-sso-metadata.png)
 - 2. Download the SAML metadata
