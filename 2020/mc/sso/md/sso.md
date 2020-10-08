@@ -1,6 +1,6 @@
 ## Enable Single Sign-On Authentication Via SAML 2.0
 
-![SSO flow](img/mc-sso-saml-1.png)
+![SSO flow](img/mc-sso-saml-2.png)
 
 - Marketing Cloud supports **identity providers(idP)** that utilize the SAML 2.0 specification, such as 
     - Salesforce Identity, 

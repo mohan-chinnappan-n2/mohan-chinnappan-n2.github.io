@@ -7,4 +7,4 @@ IdP->User Browser: Authenticate and provide  SAML Auth token
 User Browser->MC: Here is my authentication token 
 
 Note right of MC: authenticates the user\n and permits access to \nthe assigned account
-MC->User Browser: Here you go
+MC->User Browser: Here you go\n (If user has multiple accounts,\n a popup is provided to select the account)
