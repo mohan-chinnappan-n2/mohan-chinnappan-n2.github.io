@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Pickers</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Color Design</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+           </ul>
+       </div>
+      </nav>
+    <div class="container">
+      <div id="colors"></div>
+      <button class="btn btn-info" onclick="getColors()">
+        Get Color Values
+      </button>
+      <hr/>
+      <textarea id='output'>
+
+      </textarea>
+    </div>
+
+    <style>
+        #output {
+            width:800px;
+            height:400px;
+            background-color:black;
+            color:white;
+            font-family:Monaco
+        }
+    </style>
+    <script>
+      const nodes = [
+        "sfdcDigest",
+        "sfdcRegister",
+        "augment",
+        "computeExpression",
+        "append",
+        "filter",
+        "computeRelative",
+        "flatten",
+        "edgemart",
+        "sliceDataset",
+      ];
+
+      const init = () => {
+        let htmlStr = "";
+        const colors = document.getElementById("colors");
+        for (const node of nodes) {
+          htmlStr += `
+    <div>
+        <input   type="color" id="${node}" name="${node}" value="#e66465">
+        <label for="${node}">${node}</label>
+        <input type='text' style='display:none;' id="${node}out" length="10"/>
+    </div>
+        `;
+        }
+        colors.innerHTML = htmlStr;
+      };
+
+      const getColors = () => {
+        const selColors = {};
+        for (const node of nodes) {
+          const color = document.getElementById(node).value;
+          selColors[node] = color;
+          document.getElementById(`${node}out`).value = color;
+        }
+        console.log(selColors);
+        document.getElementById('output').value = JSON.stringify(selColors, null, 4);
+      };
+
+      // start
+
+      init();
+    </script>
+  </body>
+</html>
