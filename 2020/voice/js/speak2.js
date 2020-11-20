@@ -1,11 +1,58 @@
+// greeter mchinnappan (nov-2020)
+const queryInfo = () => {
+    const query = location.search.substr(1);
+    const qresult = {};
+    query.split("&").forEach( part => {
+        const item = part.split("=");
+        qresult[item[0]] = decodeURIComponent(item[1]);
+    });
+    return qresult;
+
+}
+
+const greetingMessages = {
+  "bd":  { msg: "Happy Birthday", audio:"https://raw.githubusercontent.com/mohan-chinnappan-n/thirukkural-songs/master/greetings/Happy_Birthday_To_You_C_Major.mp3"},
+  "gm":   { msg: "Greetings", audio:"https://raw.githubusercontent.com/mohan-chinnappan-n/thirukkural-songs/master/greetings/greet-1.mp3"}
+};
+
+
+const getGreetingMessage = () => {
+    const q = queryInfo();
+    if (q && q.m) {
+       const msg = greetingMessages[q.m];
+       if (msg) return msg;
+    }
+}
+
+const getName = () => {
+    const q = queryInfo();
+    if (q && q.n) {
+       return q.n;
+    }
+}
+
+
 document.addEventListener('DOMContentLoaded', (event) => {
-  console.log('ready');
+    const greet= getGreetingMessage();
+    if (greet) {
+        const msg =  `${greet.msg}${getName() ? ', ' +  getName() :'' }`;
+        document.getElementById('greetings').innerHTML =  msg;
+        document.getElementById('msgInput').value=  msg;
+       document.getElementById('mp3').src =  greet.audio;
+
+    } else {
+        const msg =  `${greetingMessages.gm.msg}${getName() ? ', ' +  getName() :'' }`;
+        document.getElementById('greetings').innerHTML =  msg;
+        document.getElementById('msgInput').value= msg;
+        document.getElementById('mp3').src =  greetingMessages.gm.audio;
+
+    }
+
 })
-console.log('test');
 var synth = window.speechSynthesis;
 
 var inputForm = document.querySelector('form');
-var inputTxt = document.querySelector('.txt');
+var inputTxt = document.getElementById('msgInput');
 var voiceSelect = document.querySelector('select');
 
 var pitch = document.querySelector('#pitch');
@@ -52,12 +99,12 @@ function speak(){
     if (inputTxt.value !== '') {
     var utterThis = new SpeechSynthesisUtterance(inputTxt.value);
     utterThis.onend = function (event) {
-        console.log('SpeechSynthesisUtterance.onend');
+        //console.log('SpeechSynthesisUtterance.onend');
     }
     utterThis.onerror = function (event) {
         console.error('SpeechSynthesisUtterance.onerror');
     }
-    var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
+    var selectedOption = voiceSelect.selectedOptions[0] ? voiceSelect.selectedOptions[0].getAttribute('data-name') : 'Alex';
     for(i = 0; i < voices.length ; i++) {
       if(voices[i].name === selectedOption) {
         utterThis.voice = voices[i];
