@@ -1,41 +1,49 @@
-
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Greetings</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>Greetings</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body> 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-info">
-  <a class="navbar-brand" href="#">Greetings!</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<body>
 
- </div>
-</nav>
-<div class='container'> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <a class="navbar-brand" href="#">Greetings!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    
+    </div>
+  </nav>
+  <div class='container'>
+
+
     <h3 id='greetings'>Greetings</h3>
-  <audio style='padding:10px;' id='mp3' controls src="https://raw.githubusercontent.com/mohan-chinnappan-n/thirukkural-songs/master/greetings/Happy_Birthday_To_You_C_Major.mp3"> </audio> 
+    <audio style='padding:10px;' id='mp3' controls
+      src="https://raw.githubusercontent.com/mohan-chinnappan-n/thirukkural-songs/master/greetings/Happy_Birthday_To_You_C_Major.mp3">
+    </audio>
     <form id='speechForm'>
-  <div class="form-group">
-    <input class="form-control" id='msgInput' type="text"  value='Greetings to you!' >
-    <div class='form-group'>
-      <label for="rate">Rate</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate"> <span class="rate-value">1</span>
-      <span class="clearfix"></span>
-      <label for="pitch">Pitch</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch"> <span class="pitch-value">1</span>
-      <span class="clearfix"></span>
-    <select class="form-control"> </select>
-    </div>
-    <div class="controls">
-      <button class='btn btn-info' id="play" type="submit">Play</button>
-    </div>
-</div>
+      <div class="form-group">
+        <input class="form-control" id='msgInput' type="text" value='Greetings to you!'>
+        <div class='form-group'>
+          <label for="rate">Rate</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate"> <span
+            class="rate-value">1</span>
+          <span class="clearfix"></span>
+          <label for="pitch">Pitch</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch"> <span
+            class="pitch-value">1</span>
+          <span class="clearfix"></span>
+          <select class="form-control"> </select>
+        </div>
+        <div class="controls">
+          <button class='btn btn-info' id="play" type="submit">Play</button>
+        </div>
+      </div>
     </form>
 
     <script src="js/speak2.js"></script>
-  </body>
+</body>
+
 </html>
