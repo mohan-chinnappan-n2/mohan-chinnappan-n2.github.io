@@ -79,3 +79,18 @@
 ![phc-4](img/phc-4.png)
 ![phc-5](img/phc-5.png)
 
+## Health Score
+- Run [Health Score](https://help.salesforce.com/articleView?id=security_health_check.htm&type=5)
+```
+90% and above = Excellent
+80%–89% = Very Good
+70%–79% = Good
+55%–69% = Poor
+54% and below = Very Poor
+```
+- Based on your org health score please take action as shown [here](https://help.salesforce.com/articleView?id=security_health_check_score.htm&type=5)
+
+## Optimizer report
+- Run [Salesforce Optimizer App](https://help.salesforce.com/articleView?id=optimizer_kick_off.htm&type=5) 
+- Consider running Salesforce Optimizer as part of your monthly maintenance, before installing a new app, before each Salesforce release, or at least once a quarter. 
+
