@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My App</title>
+</head>
+<body>
+   
+<div id='boo'></div>
+
+<script src="https://unpkg.com/vexflow/releases/vexflow-debug.js"></script>
+<script>
+const VF = Vex.Flow;
+
+// Create an SVG renderer and attach it to the DIV element named "boo".
+var vf = new VF.Factory({renderer: {elementId: 'boo'}});
+var score = vf.EasyScore();
+var system = vf.System();
+
+system.addStave({
+  voices: [score.voice(score.notes('C#5/q, B2, A4, G#4'))]
+}).addClef('treble').addTimeSignature('4/4');
+
+system.addStave({
+  voices: [score.voice(score.notes('C#5/q, B2, A4, G#4'))]
+});
+
+
+vf.draw();
+</script>
+</body>
+</html>
