@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Kaṇṇāṭi Playground</title>
+ 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" data-name="vs/editor/editor.main" href="package/dev/vs/editor/editor.main.css">
+    <link rel="stylesheet" href="css/editor.css">
+    
+</head>
+<body >
+    <h3>Kaṇṇāṭi (கண்ணாடி) Playground</h3>
+    <div class='row' >
+        <div class="col-lg">
+            <div id="editor"></div>
+       </div>
+        <div class="col-lg">
+            <iframe id="iFrame"></iframe>
+        </div>
+    </div>
+  
+    <input type="checkbox" value="checked" id="run">
+    <label class="form-check-label" for="run"> Run </label>
+
+<script>var require = { paths: { 'vs': 'package/dev/vs' } };</script>
+<script src="package/dev/vs/loader.js"></script>
+<script src="package/dev/vs/editor/editor.main.nls.js"></script>
+<script src="package/dev/vs/editor/editor.main.js"></script>
+
+<script src='js/editor.js'></script>
+
+
+</body>
+</html>
