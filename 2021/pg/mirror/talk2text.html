@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Speech to text</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class='container'>
+
+    <h3>Speech Recognition</h3>
+    <!-- Input area -->
+    <form class='form-group'>
+        <button onclick="record('EN')">Record</button>
+    <textarea  style='background-color:black; color:white;border-radius:10px;' 
+    rows="10" cols="80" name="" id="s2tEN" class='form-control'  >
+        Speak Something in English
+    </textarea>
+    <textarea  style='background-color:black; color:salmon;border-radius:10px;' rows="10" cols="80" name="" id="s2tTA" class='form-control' placeholder="Speak Something in Tamil" onclick="record('TA')">
+        Speak Something in Tamil
+
+    </textarea>
+    </form>
+
+    <!-- Below is the script for voice recognition and conversion to text-->
+    <script>
+
+
+        const record = (lang)  => {
+            const recognition = new webkitSpeechRecognition();
+            recognition.lang = lang;
+
+            recognition.onresult = event => {
+                document.getElementById(`s2t${lang}`).value = event.results[0][0].transcript;
+            }
+            recognition.start();
+
+        }
+
+         
+    </script>
+    <!-- end of script -->
+</body>
+</html>

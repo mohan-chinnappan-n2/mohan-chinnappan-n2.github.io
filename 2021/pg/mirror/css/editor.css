@@ -1,0 +1,14 @@
+/* editor.css */
+body {
+    padding:5px;
+}
+iframe {
+    width: 100%;
+    height: 600px;
+    border-radius: 10px;
+}
+#editor {
+    border-radius: 10px;
+    height: 600px;
+    width: 800px;
+}

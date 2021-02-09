@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>MediumEditor </title>
+    <link rel="stylesheet" href="css/demo.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/medium-editor/dist/css/medium-editor.css">
+    <link rel="stylesheet" href="bower_components/medium-editor/dist/css/themes/default.css" id="medium-editor-theme">
+    <link rel="stylesheet" href="bower_components/medium-editor-tables/dist/css/medium-editor-tables.css" />
+
+</head>
+<body>
+    <div id="container">
+        <h1>E = mc<sup>2</sup></h1>
+        <div class="editable">
+            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/E%3Dmc%C2%B2-explication.svg/440px-E%3Dmc%C2%B2-explication.svg.png'/>
+            <p>This is the time for all good men to go for the aid of the country</p>
+
+        </div>
+    </div>
+    <script src="bower_components/medium-editor/dist/js/medium-editor.js"></script>
+    <script type="text/javascript" src="bower_components/medium-editor-tables/dist/js/medium-editor-tables.js"></script>
+
+    <script>
+         const editor = new MediumEditor('.editable', {
+            buttonLabels: 'fontawesome',
+            toolbar: {
+              buttons: [
+                'bold',
+                'italic',
+                'underline',
+                'link',
+                'h2',
+                'h3',
+                'quote',
+                'table',
+                
+              ]
+            },
+            extensions: {
+              table: new MediumEditorTable()
+            }
+          });
+
+    </script>
+</body>
+</html>

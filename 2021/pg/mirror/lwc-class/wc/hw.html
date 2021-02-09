@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World Web Component</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="container">
+    <h3>Simple Web Component</h3>
+
+    <style>
+      img {
+        border-radius: 50%;
+        border: 1px solid #99ccff;
+      }
+    </style>
+    <img
+      width="200"
+      src="https://avatars.githubusercontent.com/u/5963194?s=460&v=4"
+    />
+
+    <script>
+      class HelloFarmingWorld extends HTMLElement {
+        constructor() {
+          // Always call super first in constructor
+          super();
+          // --  write element functionality in here
+          // Attach a shadow root to the element.
+          let shadowRoot = this.attachShadow({ mode: "open" });
+          shadowRoot.innerHTML = `<p>Hello Farming World!</p>
+          <p>Remembering Johnny Appleseed and G. Nammalvar!</p>
+
+           <img width="400"  src='https://img.apmcdn.org/5bb55eea8ffc20aef57401b38fdcea93acca15a8/widescreen/8864a0-20200529-johnny-appleseed-04.jpg'/>
+           <img with="400"   src='https://im.rediff.com/money/2010/mar/17nam4.jpg'/>
+           <hr/>
+          `;
+
+          const button = document.createElement("button");
+          button.setAttribute('class', 'btn-primary');
+          button.onclick = () => alert("Yes!");
+          button.innerText = "Farming Rules!";
+          shadowRoot.append(button);
+
+          // Create some CSS to apply to the shadow dom
+          const style = document.createElement('style');
+          style.textContent = `
+          img { border-radius: 50%; 
+            border: 3px solid #99ccff;
+
+           } 
+            
+
+           .btn-primary {
+            font-weight: 400;
+            text-align: center;
+            line-height: 1.5;
+            font-size: 1rem;
+            
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;  
+            border:1px solid #99ccff;
+            padding: 4px;
+          `;
+           // Attach the created elements to the shadow dom
+           shadowRoot.appendChild(style);
+
+
+        }
+      }
+      customElements.define("hello-farming-world", HelloFarmingWorld);
+    </script>
+
+    <hello-farming-world></hello-farming-world>
+  </body>
+</html>

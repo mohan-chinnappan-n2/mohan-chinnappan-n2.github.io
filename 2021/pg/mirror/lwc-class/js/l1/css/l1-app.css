@@ -1,0 +1,16 @@
+/* l1-app.css */
+
+textarea {
+    font-family: Monaco, Arial, Helvetica, sans-serif;
+}
+
+#code, #fakeData {
+    background-color: black;
+    color:whitesmoke;
+}
+
+#fakeData {
+    background-color: black;
+    color:whitesmoke;
+}
+

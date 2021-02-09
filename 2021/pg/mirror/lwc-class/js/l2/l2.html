@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2 </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="container">
+    <h3>Quotes for Today!</h3>
+
+    <style>
+        img { border-radius: 50%; 
+            border: 2px solid #ffcc99;
+       }
+    </style>
+    
+
+<template id="quote">
+    <style>
+        img { border-radius: 50%; 
+            border: 2px solid #99ccff;
+       }
+    </style>
+   <p>
+    
+    <span> <slot name="quote"> QUOTE MISSING</slot>
+           - <slot name="author"><span>AUTHOR MISSING</span></slot>
+           <slot name="image">
+            <img src='https://mohan-chinnappan-n.github.io/gandhi-mahatma-large.jpg' width="40"/>
+           </slot>
+    </span>
+    
+    <hr/>
+    </p>    
+</template>
+
+
+<script>
+
+    customElements.define('my-quote',
+    class extends HTMLElement {
+      constructor() {
+        super();
+        let template = document.getElementById('quote');
+        let templateContent = template.content;
+  
+        const shadowRoot = this.attachShadow({mode: 'open'});
+
+        // Create some CSS to apply to the shadow dom
+        const style = document.createElement('style');
+        style.textContent = `
+        img { border-radius: 50%; 
+             border: 2px solid #99ccff;
+        }
+        `;
+        // Attach the created elements to the shadow dom
+        // shadowRoot.appendChild(style); 
+        // note the above style comes from the template itself      
+
+        shadowRoot.appendChild(templateContent.cloneNode(true));
+
+      }
+    }
+  );
+
+
+ 
+
+</script>
+<my-quote>
+    <span slot="quote">An ounce of practice is worth more than tons of preaching.</span>
+    <span slot="author">Mohandas K Gandhi</span>
+    <span slot="image"> <img src='https://mohan-chinnappan-n.github.io/gandhi-mahatma-large.jpg' width="40"/>
+    </span>
+</my-quote>
+
+<my-quote>
+    <span slot="quote">Earth provides enough to satisfy every man's needs, but not every man's greed. </span>
+    <span slot="author">Mohandas K Gandhi</span>
+    <span slot="image"> <img src='https://mohan-chinnappan-n.github.io/gandhi-mahatma-large.jpg' width="40"/>
+    </span>
+</my-quote>
+
+<my-quote>
+    <span slot="quote">You have to dream before your dreams can come true.</span>
+    <span slot="author">A.P.J Abdul Kalam</span>
+    <span slot="image"> <img src='https://mohan-chinnappan-n.github.io/about/img/apj.png' width="40"/>
+    </span>
+</my-quote>
+
+<my-quote>
+    <span slot="quote">Our virtues and our failings are inseparable, like force and matter. When they separate, man is no more.</span>
+    <span slot="author">Nikola Tesla</span>
+    <span slot="image"> <img src='https://mohan-chinnappan-n.github.io/about/img/teslaN.jpg' width="40"/>
+    </span>
+</my-quote>
+
+<my-quote>
+</my-quote>
+
+
+
+</body>
+</html>
+

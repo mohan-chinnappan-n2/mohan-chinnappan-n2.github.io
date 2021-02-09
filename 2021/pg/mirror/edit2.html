@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Kaṇṇāṭi Playground</title>
+ 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" data-name="vs/editor/editor.main" href="package/dev/vs/editor/editor.main.css">
+    <link rel="stylesheet" href="css/editor.css">
+    <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />    
+</head>
+<body >
+    <h3 id='title'></h3>
+    <div class='split split-horizontal' id='code' >
+            <div id="editor">
+
+                <pre>
+                    this is the time for all good men to go 
+                    for the aid of the country
+                </pre>
+            </div>
+    </div>
+    <div class="split split-horizontal" id='content'>
+        <div>
+
+            <pre>
+                this is the time for all good men to go 
+                for the aid of the country
+            </pre>
+            
+        </div>
+    </div>
+
+    <script>
+        Split(["#code", "#content"], {
+            sizes: [55, 45]
+          });
+    </script>
+    
+  
+
+
+</body>
+</html>

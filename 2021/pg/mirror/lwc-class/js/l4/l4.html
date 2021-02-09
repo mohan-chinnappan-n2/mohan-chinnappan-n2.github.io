@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4 </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="container">
+    <h3>Let us build Counters</h3>
+
+    <style>
+        img { border-radius: 50%; 
+            border: 2px solid #ffcc99;
+       }
+    </style>
+    
+
+<template id="counter">
+
+    <style>
+        button { border-radius: 50%; 
+            border: 4px solid #99ccff;
+            background-color: steelblue;
+            color: white;
+            width: 4rem;
+            height: 4rem;
+       }
+    </style>
+    <button id="dec">-</button>
+    <span id="count"></span>
+    <button id="inc">+</button>
+</template>
+
+
+<script>
+
+    customElements.define('my-counter',
+    class extends HTMLElement {
+      constructor() {
+        super();
+        let template = document.getElementById('counter');
+        let templateContent = template.content;
+  
+        const shadowRoot = this.attachShadow({mode: 'open'});
+
+        shadowRoot.appendChild(templateContent.cloneNode(true));
+        this.count = 0;
+
+      }
+
+
+      connectedCallback() {
+        this.shadowRoot.getElementById("inc").onclick = () => this.inc();
+        this.shadowRoot.getElementById("dec").onclick = () => this.dec();
+        this.update(this.count);
+      }
+
+
+
+      inc() {
+        this.update(++this.count);
+      }
+    
+      dec() {
+        this.update(--this.count);
+      }
+    
+      update(count) {
+        this.shadowRoot.getElementById("count").innerHTML = count;
+      }
+
+
+    }
+  );
+
+
+ 
+
+</script>
+<my-counter></my-counter>
+<hr/>
+<my-counter></my-counter>
+
+
+
+
+</body>
+</html>
