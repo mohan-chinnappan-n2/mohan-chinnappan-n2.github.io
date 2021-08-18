@@ -12,6 +12,8 @@
 </head>
 <body class="container2">
 
+    <header>
+
     <nav class="nav navbar navbar-expand-md navbar-dark bg-info fixed-top">
 
         <a class="navbar-brand" href="#">UserMedia Applications</a>
@@ -38,8 +40,32 @@
           </ul>
         </div>
       </nav>
+      </header>
 
-      <p>User Nav bar to select the application</p> 
+      <footer style='margin-top:200px;border: 1px dotted'>
+        <p>To convert webm file to gif : </p>
+        <pre>
+            # install ffmpeg
+            $ brew install ffmpeg
+
+            # convert webm file to gif
+            $ ffmpeg -i input.webm -pix_fmt rgb24 input.webm.gif
+
+        </pre>
+
+        <p>To convert webm file to mp4 : </p>
+
+        <img src="https://blog.addpipe.com/content/images/2017/09/WebM-to-MP4-1.jpg" alt="">
+        <pre>
+            $ ffmpeg -i input.webm -crf 26  output.mp4
+        </pre>
+
+            <a href="https://blog.addpipe.com/converting-webm-to-mp4-with-ffmpeg/">Refer</a>
+
+
+       
+       </footer>
+
 
 
     
