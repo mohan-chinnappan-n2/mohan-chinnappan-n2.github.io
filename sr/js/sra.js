@@ -104,6 +104,7 @@ const handleMediaRecording = ({stream, mimeType}) => {
         //  - create an object url for that blob
         //  - hang that url to the download link
         //  - auto-click that download link
+        // https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/onstop
 
         // https://stackoverflow.com/questions/61975745/mediarecorder-api-recorder-wont-call-onstop-when-recording-multiple-tracks
         mediaRecorder.onstop =  () => {
