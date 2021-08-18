@@ -10,7 +10,7 @@
 const query = location.search.substr(1);
 var qresult = {};
 query.split("&").forEach(function(part) {
-        var item = part.split("=");
+        const item = part.split("=");
         qresult[item[0]] = decodeURIComponent(item[1]);
 });
 // ?f=filename is the format
@@ -88,12 +88,14 @@ const handleMediaRecording = ({stream, mimeType}) => {
             const blob = new Blob(recordedChunks, {
                 type: mimeType
             });
-            recordedChunks = []
+            recordedChunks = [] ; // reset it
+            // create object url for the blob we gathered so far
             const url = URL.createObjectURL(blob);
-            downloadLink.href = url;
+            downloadLink.href = url; // wire it to the anchor tag href
             downloadLink.download = outputFilename;
             // auto click the the link to start the download
             downloadLink.click();
+
             window.URL.revokeObjectURL(url); // cleanup
 
         };
