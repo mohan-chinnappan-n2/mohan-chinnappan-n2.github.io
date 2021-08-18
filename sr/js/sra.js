@@ -28,15 +28,16 @@ const displayMediaOptions = {
      //  display surface can be:
      //  - application, browser, monitor or window
 
-       video: { cursor: "motion"}, // it's only visible while the mouse is in motion
+       video: { cursor: "always"}, // it's only visible while the mouse is in motion
  
-       audio: { echoCancellation: true,  noiseSuppression: true} // https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/noiseSuppression
+       audio: { echoCancellation: true,  noiseSuppression: true,   sampleRate: 44100} // https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/noiseSuppression
 };
 
 const mimeType = 'video/webm';
+let stream = null;
+let mediaRecorder = null
 
 async function startCapture(displayMediaOptions) {
-  let captureStream = null;
   try {
       /*
 
@@ -48,8 +49,26 @@ async function startCapture(displayMediaOptions) {
     */
 
     // https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia
-    stream = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
-    handleMediaRecording({stream, mimeType});
+    const stream = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+    const [vtracks] = stream.getVideoTracks();
+
+    const audioStream = await navigator.mediaDevices.getUserMedia({audio: true});
+    const [atracks] = audioStream.getAudioTracks();
+
+    const stream2 = new MediaStream( [vtracks, atracks]);
+
+    // workaround in current w3c spec
+    // ref: https://stackoverflow.com/questions/61975745/mediarecorder-api-recorder-wont-call-onstop-when-recording-multiple-tracks
+    stream.getTracks().forEach((track) =>
+      track.addEventListener("ended", () => {
+        audioStream.getAudioTracks().forEach((audio) => audio.stop());
+        if (mediaRecorder) recorder.stop();
+        mediaRecorder = null;
+      })
+    ); 
+    
+
+    handleMediaRecording({stream: stream2, mimeType});
 
   } catch(err) {
     alert (err);
@@ -68,7 +87,8 @@ startButton.addEventListener('click', e => {
 
 const handleMediaRecording = ({stream, mimeType}) => {
         let recordedChunks = [];
-        const mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder = new MediaRecorder(stream);
+        // console.log(stream);
         mediaRecorder.start(200); // 200: The number of milliseconds to record into each Blob. 
        
         // event handling 
@@ -84,7 +104,10 @@ const handleMediaRecording = ({stream, mimeType}) => {
         //  - create an object url for that blob
         //  - hang that url to the download link
         //  - auto-click that download link
+
+        // https://stackoverflow.com/questions/61975745/mediarecorder-api-recorder-wont-call-onstop-when-recording-multiple-tracks
         mediaRecorder.onstop =  () => {
+          // alert ('stop');
             const blob = new Blob(recordedChunks, {
                 type: mimeType
             });
