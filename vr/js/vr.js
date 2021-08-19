@@ -37,8 +37,8 @@ let recordedChunks = [];  // we will collect blogs here
 // when the user clicks on start camera button
 cameraButton.addEventListener('click', async () => {
    	cameraStream = await navigator.mediaDevices.getUserMedia(
-        { video: { width, height }, 
-         audio: { echoCancellation: true,  noiseSuppression: true}
+        { video: { width, height },
+        audio: { echoCancellation: true,  noiseSuppression: true,   sampleRate: 44100}  
      });
     video.srcObject = cameraStream;
     
