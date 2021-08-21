@@ -406,18 +406,25 @@ function jsonTocsvbyjson(data, returnFlag) {
           // console.log(dtable);
           if (dtable) {
             dtable.clear().draw();
-            dtable.rows(dtData);
-            dtable.columns(columnsDef)
-            dtable.columns.adjust().draw();  
+           // dtable.rows(dtData);
+            // dtable.columns(columnsDef)
+
+            dtable =  $('#tbl').DataTable ({  
+              destroy: true, // we need to redraw! : https://datatables.net/manual/tech-notes/3
+              data: dtData, 
+              columns: columnsDef 
+            });
+            // dtable.columns.adjust().draw();  
 
 
-          }  
+          }  else {
          
             dtable =  $('#tbl').DataTable ({  
               destroy: true, // we need to redraw! : https://datatables.net/manual/tech-notes/3
               data: dtData, 
               columns: columnsDef 
             });
+          }
             
          
         
