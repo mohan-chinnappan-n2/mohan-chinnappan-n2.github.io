@@ -217,6 +217,7 @@ const sampleXML = `<?xml version="1.0" encoding="UTF-8"?>
 const xmlArea = document.getElementById('xmlArea');
 const convertToXmlBtn = document.getElementById('convertToXmlBtn');
 let dtable = null;
+let myHotTable = null;
 
 
 const init = (content) => {
@@ -363,28 +364,47 @@ function jsonTocsvbyjson(data, returnFlag) {
 
           const container = document.getElementById('hotTable');
           // console.log(container);
-          console.log(hotData);
+          // console.log(hotData);
 
+          if (myHotTable) {
+            myHotTable.updateSettings( //   we need to update with new data
+              {
+                data: hotData,
+                rowHeaders: true,
+                colHeaders: true,
+                columnSorting: true,
+              
+                dropdownMenu: true,
+                filters: true,
+                
+                licenseKey: 'non-commercial-and-evaluation'
+                
+              
+              
+              });
+          } else {
 
-          const hot = new Handsontable(container, {
-            data: hotData,
-            rowHeaders: true,
-            colHeaders: true,
-            columnSorting: true,
-          
-            dropdownMenu: true,
-            filters: true,
+            myHotTable = new Handsontable(container, {
+              data: hotData,
+              rowHeaders: true,
+              colHeaders: true,
+              columnSorting: true,
             
-            licenseKey: 'non-commercial-and-evaluation'
-            
-          });
-          
+              dropdownMenu: true,
+              filters: true,
+              
+              licenseKey: 'non-commercial-and-evaluation'
+              
+            });
+          }
+          // console.log(dtData);
       
            dtable =  $('#tbl').DataTable ({  
              destroy: true, // we need to redraw! : https://datatables.net/manual/tech-notes/3
              data: dtData, 
              columns: columnsDef 
           });
+          dtable.clear().draw();
           
          
         } catch (e) {
