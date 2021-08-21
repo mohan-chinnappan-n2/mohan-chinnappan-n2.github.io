@@ -381,9 +381,9 @@ function jsonTocsvbyjson(data, returnFlag) {
           
       
            dtable =  $('#tbl').DataTable ({  
-             destroy: true, // we need to redraw!
+             destroy: true, // we need to redraw! : https://datatables.net/manual/tech-notes/3
              data: dtData, 
-             columns: columnsDef, "order": [[ 3, "desc" ]]
+             columns: columnsDef 
           });
           
          
