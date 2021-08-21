@@ -213,28 +213,34 @@ const sampleXML = `<?xml version="1.0" encoding="UTF-8"?>
 
 const xmlArea = document.getElementById('xmlArea');
 const convertToXmlBtn = document.getElementById('convertToXmlBtn');
+let dtable = null;
 
 
 const init = (content) => {
     xmlArea.value = content;
-    convertToXmlBtn.click();
+    //  convertToXmlBtn.click();
 }
 init(sampleXML);
 
+//======================
 
 
 function xmlTocsv() {
     var data = $("#xmlArea").val();
+   
     var xml = "";
     if (data !== null && data.trim().length !== 0) {
         try {
             xml = $.parseXML(data);
         } catch (e) {
+            alert(e);
             throw e;
         }
 
         var x2js = new X2JS();
         data = x2js.xml2json(xml);
+        new JSONEditor(document.getElementById('results'), {mode: 'view'}, data);
+
         jsonTocsvbyjson(data);
         
     }
@@ -293,10 +299,64 @@ function jsonTocsvbyjson(data, returnFlag) {
 
     });
 
+    const columns = header.split(',');
+    const body  = content.split('\n');
+    let dtDataColumns = [];
+    let columnsDef = [];
+    let dtData = [];
+
+    const tbl = document.getElementById('tbl');
+    const thead = document.createElement('thead');
+
+
+    columns.forEach( (col, index) => {
+        dtDataColumns.push(col);
+        const th = document.createElement('th');
+        const text = document.createTextNode(col);
+        th.appendChild(text);
+        thead.appendChild(th);
+         
+        console.log(columnsDef);
+        columnsDef.push( {data: col});
+    });
+
+   
+
+
+    tbl.appendChild(thead);
+
+    body.forEach( (row, index) => {
+          if (row.trim().length !== 0)  {
+            const colData = row.split(',');
+            let rowData = {};
+            colData.forEach( (cd, index) => {
+                rowData[dtDataColumns[index]] = cd;
+            });
+            dtData.push(rowData);
+        }
+    });
+    console.log(dtData)
+    console.log(columnsDef);
+
+
+  
+
     if (returnFlag === undefined || !returnFlag) {
         $("#csvArea").val(header + "\n" + content);
+        console.log(columnsDef);
+        try {
+      
+           dtable =  $('#tbl').DataTable ({  destroy: true, // we need to redraw!
+             data: dtData, columns: columnsDef, "order": [[ 3, "desc" ]]});
+        } catch (e) {
+          alert (e);
+          console.log(e);
+        }
+
     } else {
+       
         return (header + "\n" + content);
+        
     }
 }
 
