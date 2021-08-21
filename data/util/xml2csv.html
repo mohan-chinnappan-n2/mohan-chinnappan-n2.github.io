@@ -14,6 +14,9 @@
 <script src='https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js'></script>
 <script src='https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js'></script>
 
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@latest/dist/handsontable.full.min.css">
+<script src='https://cdn.jsdelivr.net/npm/handsontable@9.0.2/dist/handsontable.full.min.js'></script>
+
 
 
 
@@ -30,29 +33,35 @@ textarea {
 .jsonEditor {
         height: 500px;
       }
+.row .col-lg .title {
+    font-weight: bold;
+}
 </style>
 <script type='text/javascript' src="https://cdn.rawgit.com/abdmob/x2js/master/xml2json.js"></script>
 </head>
 <body class='container'>
+
+
+
     <h3>xml2csv </h3>
     <button id="convertToXmlBtn" class='btn btn-info' onclick="xmlTocsv()">Convert</button>
   
     <div class="row">     
-        <div class='col-lg'>
-         XML   <textarea  id="xmlArea" cols="120" rows="15"></textarea>
+        <div class='col-lg'> <div class='title'>XML</div>  
+
+          <textarea  id="xmlArea" cols="120" rows="15"></textarea>
         </div>
     </div>
     <div class="row">
-        <div class='col-lg'> JSON<br/>
+            <div class='col-lg'> <div class='title'>JSON</div>  
             <div class='jsonEditor' id='results'> </div>
         </div>
 
     </div>
 
     <div class="row">
-        <div class='col-lg'>
-         CSV<br/>
-        <textarea id="csvArea" class='csv' cols="120" rows="15"></textarea>
+        <div class='col-lg'> <div class='title'>CSV</div>  
+        <textarea id="csvArea" readonly class='csv' cols="120" rows="15"></textarea>
        </div>
     </div>
     
@@ -61,17 +70,23 @@ textarea {
     
     
     <div class="row">
-        <div class='col-lg'>Table<br/> 
+            <div class='col-lg'> <div class='title'>Datatable</div> 
              <table id='tbl' class='table  table-stripped table-hover'></table>
          </div>
     </div>  
+
+    <div class="row">
+        <div class='col-lg'> <div class='title'>Spreadsheet</div> 
+            <div id="hotTable"></div>
+        </div>
+    </div> 
 
 
 
 
   
 
-    <script type="text/javascript" src="js/app.js?v=100"></script>
+    <script type="text/javascript" src="js/app.js?v=101"></script>
  
 </body>
 </html>

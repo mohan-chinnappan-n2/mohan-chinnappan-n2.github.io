@@ -211,6 +211,20 @@ const sampleXML = `<?xml version="1.0" encoding="UTF-8"?>
 </CATALOG>
 `;
 
+
+// handson table
+
+const carData = [
+  ['year', 'Tesla', 'Volvo', 'Toyota', 'Ford'],
+  ['2019', 10, 11, 12, 13],
+  ['2020', 20, 11, 14, 13],
+  ['2021', 30, 15, 12, 13]
+];
+
+
+
+
+
 const xmlArea = document.getElementById('xmlArea');
 const convertToXmlBtn = document.getElementById('convertToXmlBtn');
 let dtable = null;
@@ -239,7 +253,9 @@ function xmlTocsv() {
 
         var x2js = new X2JS();
         data = x2js.xml2json(xml);
-        new JSONEditor(document.getElementById('results'), {mode: 'view'}, data);
+        
+        document.getElementById("results").innerHTML = ""; // cleanup the json editor
+        new JSONEditor(document.getElementById('results'), {mode: 'code'}, data);
 
         jsonTocsvbyjson(data);
         
@@ -304,21 +320,28 @@ function jsonTocsvbyjson(data, returnFlag) {
     let dtDataColumns = [];
     let columnsDef = [];
     let dtData = [];
+    let hotData = [];
 
     const tbl = document.getElementById('tbl');
     const thead = document.createElement('thead');
 
 
+    let hotRow = [];
     columns.forEach( (col, index) => {
         dtDataColumns.push(col);
         const th = document.createElement('th');
         const text = document.createTextNode(col);
+
+        hotRow.push(col);
+
         th.appendChild(text);
         thead.appendChild(th);
          
-        console.log(columnsDef);
+        // console.log(columnsDef);
         columnsDef.push( {data: col});
     });
+
+    hotData.push(hotRow);
 
    
 
@@ -326,30 +349,57 @@ function jsonTocsvbyjson(data, returnFlag) {
     tbl.appendChild(thead);
 
     body.forEach( (row, index) => {
+          hotRow = [];
           if (row.trim().length !== 0)  {
             const colData = row.split(',');
             let rowData = {};
             colData.forEach( (cd, index) => {
                 rowData[dtDataColumns[index]] = cd;
+                hotRow.push(cd)
             });
             dtData.push(rowData);
+            hotData.push(hotRow);
         }
     });
-    console.log(dtData)
-    console.log(columnsDef);
+    // console.log(dtData)
+    // console.log(columnsDef);
 
 
   
 
     if (returnFlag === undefined || !returnFlag) {
         $("#csvArea").val(header + "\n" + content);
-        console.log(columnsDef);
+        // console.log(columnsDef);
         try {
+
+          const container = document.getElementById('hotTable');
+          // console.log(container);
+          console.log(hotData);
+
+
+          const hot = new Handsontable(container, {
+            data: hotData,
+            rowHeaders: true,
+            colHeaders: true,
+            columnSorting: true,
+          
+            dropdownMenu: true,
+            filters: true,
+            
+            licenseKey: 'non-commercial-and-evaluation'
+            
+          });
+          
       
-           dtable =  $('#tbl').DataTable ({  destroy: true, // we need to redraw!
-             data: dtData, columns: columnsDef, "order": [[ 3, "desc" ]]});
+           dtable =  $('#tbl').DataTable ({  
+             destroy: true, // we need to redraw!
+             data: dtData, 
+             columns: columnsDef, "order": [[ 3, "desc" ]]
+          });
+          
+         
         } catch (e) {
-          alert (e);
+          //alert (e);
           console.log(e);
         }
 
