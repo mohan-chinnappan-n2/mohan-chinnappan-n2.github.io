@@ -317,8 +317,7 @@ function jsonTocsvbyjson(data, returnFlag) {
     
     // clean up the thead and tbody
     tbl.removeChild(tbl.childNodes[0]);
-    tbl.removeChild(tbl.childNodes[1]);
-
+    tbl.removeChild(tbl.childNodes[1 ]);
     const thead = document.createElement('thead');
 
 
@@ -404,10 +403,11 @@ function jsonTocsvbyjson(data, returnFlag) {
             });
           }
           // console.log(dtData);
-          console.log(dtable);
+          // console.log(dtable);
           if (dtable) {
             dtable.clear().draw();
             dtable.rows(dtData);
+            dtable.columns(columnsDef)
             dtable.columns.adjust().draw();  
 
 
