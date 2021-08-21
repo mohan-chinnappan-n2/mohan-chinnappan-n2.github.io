@@ -313,6 +313,12 @@ function jsonTocsvbyjson(data, returnFlag) {
     let hotData = [];
 
     const tbl = document.getElementById('tbl');
+
+    
+    // clean up the thead and tbody
+    tbl.removeChild(tbl.childNodes[0]);
+    tbl.removeChild(tbl.childNodes[1]);
+
     const thead = document.createElement('thead');
 
 
@@ -360,7 +366,7 @@ function jsonTocsvbyjson(data, returnFlag) {
     if (returnFlag === undefined || !returnFlag) {
         $("#csvArea").val(header + "\n" + content);
         // console.log(columnsDef);
-        try {
+        
 
           const container = document.getElementById('hotTable');
           // console.log(container);
@@ -398,23 +404,23 @@ function jsonTocsvbyjson(data, returnFlag) {
             });
           }
           // console.log(dtData);
+          console.log(dtable);
           if (dtable) {
-            $('#tbl').DataTable(  {destroy: true, // we need to redraw! : https://datatables.net/manual/tech-notes/3
-              data: dtData, 
-              columns: columnsDef} ).ajax.reload();
-          } else {
+            dtable.clear().draw();
+            dtable.rows(dtData);
+            dtable.columns.adjust().draw();  
+
+
+          }  
+         
             dtable =  $('#tbl').DataTable ({  
               destroy: true, // we need to redraw! : https://datatables.net/manual/tech-notes/3
               data: dtData, 
               columns: columnsDef 
             });
-          }
-          
+            
          
-        } catch (e) {
-          //alert (e);
-          console.log(e);
-        }
+        
 
     } else {
        
