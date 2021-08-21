@@ -398,13 +398,17 @@ function jsonTocsvbyjson(data, returnFlag) {
             });
           }
           // console.log(dtData);
-      
-           dtable =  $('#tbl').DataTable ({  
-             destroy: true, // we need to redraw! : https://datatables.net/manual/tech-notes/3
-             data: dtData, 
-             columns: columnsDef 
-          });
-          dtable.clear().draw();
+          if (dtable) {
+            $('#tbl').DataTable(  {destroy: true, // we need to redraw! : https://datatables.net/manual/tech-notes/3
+              data: dtData, 
+              columns: columnsDef} ).ajax.reload();
+          } else {
+            dtable =  $('#tbl').DataTable ({  
+              destroy: true, // we need to redraw! : https://datatables.net/manual/tech-notes/3
+              data: dtData, 
+              columns: columnsDef 
+            });
+          }
           
          
         } catch (e) {
