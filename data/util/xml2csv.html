@@ -47,7 +47,7 @@ textarea {
     <button id="convertToXmlBtn" class='btn btn-info' onclick="xmlTocsv()">Convert</button>
   
     <div class="row">     
-        <div class='col-lg'> <div class='title'>XML</div>  <span>This is a sample XML, paste your xml content here...</span>
+        <div class='col-lg'> <div class='title'>XML</div>  <span>This is a sample XML, paste your xml content here... Once click the <b>Convert</b> button csv will be downladed</span>
 
           <textarea  id="xmlArea" cols="120" rows="15"></textarea>
         </div>
@@ -62,6 +62,7 @@ textarea {
     <div class="row">
         <div class='col-lg'> <div class='title'>CSV</div>  
         <textarea id="csvArea" readonly class='csv' cols="120" rows="15"></textarea>
+        <a id="download" style="display: none;"> </a>
        </div>
     </div>
     
