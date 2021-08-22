@@ -213,7 +213,9 @@ const sampleXML = `<?xml version="1.0" encoding="UTF-8"?>
 
 
 const downloadLink = document.getElementById('download');
-const outputFilename = 'output.csv';
+const outputFilename = 'output';
+const downloadJsonLink = document.getElementById('downloadJson');
+
 
 const xmlArea = document.getElementById('xmlArea');
 const convertToXmlBtn = document.getElementById('convertToXmlBtn');
@@ -247,6 +249,16 @@ function xmlTocsv() {
         
         document.getElementById("results").innerHTML = ""; // cleanup the json editor
         new JSONEditor(document.getElementById('results'), {mode: 'code'}, data);
+
+        /*  Downloading */
+        const blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
+        // create object url for the blob we gathered so far
+        const url = URL.createObjectURL(blob);
+        downloadJsonLink.href = url; // wire it to the anchor tag href
+        downloadJsonLink.download = outputFilename + '.json';
+        // auto click the the link to start the download
+        downloadJsonLink.click();
+
 
         jsonTocsvbyjson(data);
         
@@ -370,7 +382,7 @@ function jsonTocsvbyjson(data, returnFlag) {
       // create object url for the blob we gathered so far
       const url = URL.createObjectURL(blob);
       downloadLink.href = url; // wire it to the anchor tag href
-      downloadLink.download = outputFilename;
+      downloadLink.download = outputFilename + '.csv';
       // auto click the the link to start the download
       downloadLink.click();
 
