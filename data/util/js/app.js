@@ -222,7 +222,7 @@ let myHotTable = null;
 
 const init = (content) => {
     xmlArea.value = content;
-    //  convertToXmlBtn.click();
+    convertToXmlBtn.click();
 }
 init(sampleXML);
 
