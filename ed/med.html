@@ -26,40 +26,7 @@
     <a id="download" style="display: none"> </a>
 
     <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
-    <script> 
-    
-    const editor = new MediumEditor('.editable');
-    const outputFilename = 'editor';
-    
-    const editorToPrint = document.getElementById('editor');
-    const pdfBtn = document.getElementById('pdf-btn');
-
-    pdfBtn.addEventListener('click', event => {
-       html2pdf(editorToPrint);
-    });
-    
-    const htmlBtn = document.getElementById('html-btn');
-    const downloadLink = document.getElementById('download');
-
-
-    htmlBtn.addEventListener('click', event => {
-      const htmlContent =  editorToPrint.innerHTML;
-      const blob = new Blob([htmlContent], { type: 'text/html' });
-      // create object url for the blob we gathered so far
-      const url = URL.createObjectURL(blob);
-      downloadLink.href = url; // wire it to the anchor tag href
-      downloadLink.download = outputFilename + '.html';
-      // auto click the the link to start the download
-      downloadLink.click();
-
-
-    });
-
-
-
-
-
-     </script>
+    <script src='js/app.js'> </script>
 
 
 <label for="toggle">❔</label>
