@@ -136,13 +136,25 @@ label {
     border-radius: 10px;
   }
 
-  button {
+  .info-btn {
     font-size: 1.5rem;
     top: 2px;
     right: 3px;
     z-index: 5;
     cursor: pointer;
     background-color: steelblue;
+    border-radius: 10px;
+    color:white;
+    margin-right:10px;
+
+  }
+  .success-btn {
+    font-size: 1.5rem;
+    top: 2px;
+    right: 3px;
+    z-index: 5;
+    cursor: pointer;
+    background-color: green;
     border-radius: 10px;
     color:white;
 
