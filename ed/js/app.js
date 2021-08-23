@@ -7,6 +7,7 @@
     const outputFilename = 'editor';
     
     const editorToPrint = document.getElementById('editor');
+    editorToPrint.focus({preventScroll:true});
     const pdfBtn = document.getElementById('pdf-btn');
 
     pdfBtn.addEventListener('click', event => {
