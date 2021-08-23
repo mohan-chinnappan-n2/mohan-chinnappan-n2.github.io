@@ -6,18 +6,61 @@
     <link rel="stylesheet" href="css/demo.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
 <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+   
+<script src="js/html2pdf.bundle.js"></script>
+
+ 
+
 <link id='medium-editor-theme' rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
 </head>
 <body>
     <div id="container">
+        <button id='pdf-btn' style="float:right" >PDF</button>
         <h3>Simple Editor</h3>
-        <div class="editable">
+        <div class="editable" id='editor'>
             <p>This is the time for all good men to go for the aid of the country!</p>
              <p> All <b>truly great</b> things are simple!</p> 
         </div>
     </div>
     <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
-    <script> const editor = new MediumEditor('.editable'); </script>
+    <script> const editor = new MediumEditor('.editable');
+    
+    const editorToPrint = document.getElementById('editor');
+    const pdfBtn = document.getElementById('pdf-btn');
+
+    pdfBtn.addEventListener('click', event => {
+       html2pdf(editorToPrint);
+    }) 
+
+
+     </script>
+
+
+<label for="toggle">❔</label>
+<input type="checkbox" id="toggle">
+<aside>
+  <p>
+
+   FAQ: How I can make PDF of any website?</a>
+  </p>
+  <pre>
+
+   1. Open your browser’s console (instructions for different browsers here).
+   2.  Paste in this code:
+ const  addScript = url => {
+     var script = document.createElement('script');
+     script.type = 'application/javascript';
+     script.src = url;
+     document.head.appendChild(script);
+ }
+ addScript('https://mohan-chinnappan-n2.github.io/ed/js/html2pdf.bundle.js');
+ html2pdf(document.body);
+
+ // thanks to: https://ekoopmans.github.io/html2pdf.jsß
+</pre>
+</aside>
+
+
 </body>
 </html>
 
