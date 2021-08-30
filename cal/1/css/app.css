@@ -11,3 +11,7 @@ html, body {
     background-color:#fff;
     border-radius: 30px;
   }
+
+  #pdf-btn {
+    margin-left: 20px;
+  }

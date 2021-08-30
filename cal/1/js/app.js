@@ -8,6 +8,17 @@ const formatDate = (dt,sep) => {
     return output;
 }
 
+
+const pdfBtn = document.getElementById('pdf-btn');
+const calendarEl = document.getElementById('calendar');
+
+
+pdfBtn.addEventListener('click', event => {
+   html2pdf(calendarEl);
+});
+
+
+
 const events =  [
   {
     title: 'All Day Event',
@@ -77,7 +88,6 @@ const renderCal = (el, initialDate, events) => {
 document.addEventListener('DOMContentLoaded', function() {
     // fetch date from the input
     const startEl = document.getElementById('start');
-    const calendarEl = document.getElementById('calendar');
     const dt = formatDate(new Date(), '-');
     startEl.value = dt;
     renderCal(calendarEl, startEl.value, events);
