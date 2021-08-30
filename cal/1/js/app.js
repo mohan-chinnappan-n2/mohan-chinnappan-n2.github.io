@@ -57,6 +57,21 @@ const events =  [
   }
 ];
 
+
+const renderCal = (el, initialDate, events) => {
+  const calendar = new FullCalendar.Calendar(el, {
+    initialView: 'dayGridMonth',
+    initialDate,
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay'
+    },
+    events
+  });
+ calendar.render();
+}
+
 // dom is ready
 document.addEventListener('DOMContentLoaded', function() {
     // fetch date from the input
@@ -64,20 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const calendarEl = document.getElementById('calendar');
     const dt = formatDate(new Date(), '-');
     startEl.value = dt;
-
+    renderCal(calendarEl, startEl.value, events);
     startEl.addEventListener('change', (event) => {
-      const calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        initialDate: startEl.value,
-        headerToolbar: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay'
-        },
-        events
-      });
-     calendar.render();
-
+      renderCal(calendarEl, startEl.value, events);
     });
 
 
