@@ -14,9 +14,9 @@ const events =  [
     start: '2021-08-01'
   },
   {
-    title: 'Long Event',
+    title: 'Work on Whitepapers',
     start: '2021-08-08',
-    end: '2021-08-10'
+    end: '2021-08-09'
   },
   {
     groupId: '999',
@@ -47,12 +47,13 @@ const events =  [
     start: '2021-08-12T14:30:00'
   },
   {
-    title: 'Birthday Party',
-    start: '2021-08-13T07:00:00'
+    title: 'Update Media Apps',
+    url: 'https://mohan-chinnappan-n2.github.io/media-app.html',
+    start: '2021-08-14T07:00:00'
   },
   {
-    title: 'Click for Google',
-    url: 'http://google.com/',
+    title: 'Click for home page',
+    url: 'https://mohan-chinnappan-n.github.io/',
     start: '2021-08-28'
   }
 ];
