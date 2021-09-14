@@ -1,109 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grid Template Columns</title>
 
     <style>
-
-
-    :root {  
+      :root {
         --ff-title: bungee, sans-serif;
-        --ff-grid-item:  canada-type-gibson,sans-serif;
+        --ff-grid-item: canada-type-gibson, sans-serif;
+      }
 
+      body {
+        border: 1px solid steelblue;
+        height: 100%;
+        padding: 10px;
+      }
 
-    }
+      .grid-item {
+        width: 75%;
+        background-color: #99ccff;
+        border: 1px solid red;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
 
-    body {
-            border: 1px solid steelblue;
-            height: 100%;
-            padding: 10px;
-        }
+        font-family: var(--ff-title);
+      }
 
+      .title {
+        font-family: var(--ff-title);
+      }
 
-        .grid-item {
-            width: 75%;
-            background-color: #99ccff;
-            border: 1px solid red;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
+      .grid-container {
+        width: 50%;
+        border: 2px solid #ccff99;
+        display: grid;
+        grid-auto-flow: row;
+      }
 
-            font-family: var(--ff-title);
-        }
-
-        .title {
-            font-family: var(--ff-title);
-        }
-
-
+      @media (min-width: 80em) {
         .grid-container {
-            width: 50%;
-            border: 2px solid #ccff99;
-            display: grid;
-            grid-auto-flow:row;
-
- }
-
-
-@media (min-width: 80em) {
-       
-        .grid-container {
-            width: 50%;
-            border: 2px solid #ccff99;
-            display: grid;
-            grid-auto-flow:column;
-
+          width: 50%;
+          border: 2px solid #ccff99;
+          display: grid;
+          grid-auto-flow: column;
         }
-
-}
-
-
+      }
     </style>
-</head>
-<body>
-    <h3 class='title'>Grid Layout</h3>
+  </head>
+  <body>
+    <h3 class="title">Grid Layout</h3>
     <div class="grid-container">
-        <div class="grid-item">
-            This is the time for all good men to go for the aid of the country!
-        </div>
-        <div class="grid-item">
-            All truely great things are simple!
-        </div>
+      <div class="grid-item">
+        This is the time for all good men to go for the aid of the country!
+      </div>
+      <div class="grid-item">All truely great things are simple!</div>
 
-        <div class="grid-item">
-            There is no substitute for hard work.
-        </div>
-        <div class="grid-item">
+      <div class="grid-item">There is no substitute for hard work.</div>
+      <div class="grid-item">
         Never get discouraged if you fail. Learn from it. Keep trying.
-        </div>
-        
-
-
-
+      </div>
     </div>
 
-    <h3> Demos</h3>
+    <h3>Demos</h3>
 
     <ul>
-        <li>
+      <li>
+        <img src="img/grid-1.webm.gif" width="80%" alt="" />
+      </li>
 
-             <img src="img/grid-1.webm.gif" width="80%" alt="">
+      <li>
+        <hr />
+        <img src="img/grid-2.webm.gif" width="60%" alt="" />
+      </li>
 
-        </li>
-
-        <li>
- <hr/>
-            <img src="img/grid-2.webm.gif" width="60%" alt="">
-
-       </li>
-
-      
-
+      <li>
+        <hr />
+        <a href="https://codepen.io/kevinpowell/pen/RwpKgNb"
+          >Grid Made Simple</a
+        >
+      </li>
     </ul>
-    
-
-    
-</body>
+  </body>
 </html>
