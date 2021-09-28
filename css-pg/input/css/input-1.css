@@ -1,0 +1,27 @@
+/* input-1.css */
+
+body {
+    padding: 2rem;
+    font-size: 1.5rem;
+  }
+  main {
+    display:grid;
+    gap: 3rem;
+    /*  1 part of the available space : 1fr */
+    grid-template-columns:min-content 1fr;
+  }
+
+  :root {
+    --clr-accent: #99ccff;
+  }
+
+  input {
+    accent-color: var(--clr-accent);
+  }
+  footer {
+      padding-top: 100px;
+      font-size: 15px;
+  }
+
+ 
+
