@@ -1,4 +1,3 @@
-// md.js
 // mohan chinnappan
 // md content renderer
 
@@ -39,6 +38,28 @@ mdContent.then ( (mdTxt) => {
   });
 
 
+// read file
+const readSingleFile = e => {
+  var file = e.target.files[0];
+  if (!file) {
+    return;
+  }
+  let contents = "";
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    contents = e.target.result;
+    const html = converter.makeHtml(contents);
+    mdEle.innerHTML = html;
 
+  };
+  reader.readAsText(file);
+}
+
+document.getElementById('file-input').onchange = function(e) {
+  readSingleFile(e);
+}
+document.getElementById('file-input').onclick = function(e) {
+  readSingleFile(e);
+}
 
 
