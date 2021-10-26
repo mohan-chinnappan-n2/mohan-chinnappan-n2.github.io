@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIDI</title>
+
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.22.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.4.0"></script>
+
+</head>
+<body>
+
+<midi-player id='player'
+  sound-font visualizer="#myVisualizer">
+</midi-player>
+<midi-visualizer type="piano-roll" id="myVisualizer"></midi-visualizer>
+
+
+<script>
+// read params
+const query = location.search.substr(1);
+    var qresult = {};
+    query.split("&").forEach(function(part) {
+          var item = part.split("=");
+          qresult[item[0]] = decodeURIComponent(item[1]);
+    });
+ 
+
+const url = qresult.f || './for_elise_by_beethoven.mid';
+
+document.getElementById('player').src = url;
+
+</script>
+
+
+    
+</body>
+</html>
