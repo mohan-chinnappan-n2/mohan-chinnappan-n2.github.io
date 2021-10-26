@@ -6,14 +6,65 @@
     <title>MIDI</title>
 
     <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.22.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.4.0"></script>
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+    <style>
 
+
+        midi-visualizer[type=piano-roll] {
+            background:#6c6779;
+            border: 2px solid black;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            margin: 4px;
+            margin-top: 10;
+            overflow: auto;
+            color:white;
+          }
+
+          midi-visualizer[type=staff] {
+            background: white;
+            border: 2px solid black;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            margin: 4px;
+            margin-top: 10;
+            overflow: auto;
+          }
+
+
+    </style>
 </head>
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">MIDI Player</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+               
+               </ul>
+          </div>
+        </div>
+      </nav>
+
 
 <midi-player id='player'
   sound-font visualizer="#myVisualizer">
 </midi-player>
-<midi-visualizer type="piano-roll" id="myVisualizer"></midi-visualizer>
+<midi-visualizer type="piano-roll" type="piano-roll"  id="myVisualizer"></midi-visualizer>
+<midi-visualizer type="staff" type="piano-roll" id="myVisualizer"></midi-visualizer>
+
 
 
 <script>
