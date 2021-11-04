@@ -17,20 +17,38 @@
 
   
     <style>
-        h2 {
+        h2, h3 {
             display: inline-block;
-            margin: 0 0.5rem;
-            font-size: 12vw;
-            padding-top:20%;
+            margin-left: 0 0.5rem;
+            font-size: 8vw;
+            
             font-family: "Sofia", sans-serif;
+            padding-top:5%;
+
 
 
 
           
             animation: bounce; /* referring directly to the animation's @keyframe declaration */
             animation-duration: 2s; /* don't forget to set a duration! */
-            color: #eeff44;
+            color:#eeff44;
+            
+
+            font-weight:bold;
+            opacity:1.0;
           }
+        h3 {
+          font-size: 7vw;
+
+
+        }
+        .container2 {
+          background: url(https://lh5.googleusercontent.com/proxy/owBXi3UucltQJdWdxVaQoTFrucn8LHjX5pdHnY7SUiFuSLbJjPNpR1fPMLbBtcXAkHgDr6q_plWhGAcODuD1oVlKLcKxsKM3Vu4qY19RbZ7fal67zzaLfxm5yy3U3yjuzXlp_LbjVy38bnouxBjhEOm-612Ady1cIS2a4t1M23c5SYURVDC6_A8Xj3Kk1fYxpQR3hxYetO-6Qj5V6Iw11MAC2G2a2jJrC-udOUG9YG-GBXYAXEOotliE0xoQk0zwly3n5B8=s1920-w1920-h1080-fcrop64=1,00000000ffffda2d-k-no-nd-mv);
+          background-blend-mode:lighten;
+          height: 1000px;
+          opacity:0.9;
+        }
+        
           
     </style>
 </head>
@@ -51,8 +69,7 @@
         </div>
       </nav>
   
-<div class="container2" style='height:1000px;background: url(https://lh5.googleusercontent.com/proxy/owBXi3UucltQJdWdxVaQoTFrucn8LHjX5pdHnY7SUiFuSLbJjPNpR1fPMLbBtcXAkHgDr6q_plWhGAcODuD1oVlKLcKxsKM3Vu4qY19RbZ7fal67zzaLfxm5yy3U3yjuzXlp_LbjVy38bnouxBjhEOm-612Ady1cIS2a4t1M23c5SYURVDC6_A8Xj3Kk1fYxpQR3hxYetO-6Qj5V6Iw11MAC2G2a2jJrC-udOUG9YG-GBXYAXEOotliE0xoQk0zwly3n5B8=s1920-w1920-h1080-fcrop64=1,00000000ffffda2d-k-no-nd-mv)'
->
+<div class="container2">
     <div class='row' >
        <div class="col-lg-4">
               <audio controls autoplay loop class='greet2'> <source id="mp3player" src="mp3/deepavali-2021-2.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
@@ -60,6 +77,8 @@
     </div>
     <div class='row' >
     <h2  class="animate__backInDown animate__bounce animate__shakeX">Happy Deepawali!</h2>
+    <h3  class="animate__backInDown animate__bounce animate__shakeX">இனிய தீபாவளி வாழ்த்துகள்!</h3>
+
     </div>
 </div>
     
