@@ -1,53 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
-*
-{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Cedarville+Cursive';
-}
-body
-{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	background: url(https://lh5.googleusercontent.com/proxy/COzbxHVtqGif_83uCNXBKX_J2gjgYRj50wy7lQhCUDd4aS3H8QGVkO_zLiE3RtQ5h-NYEFIfWmjzQUPPXuTAbbMnL5qzdZCs6Ms9DeWlw-1TOcbEWI3WJV6rl_3q2VUBNLMw5AhkbXOy2GOFhdRhI4vlshJSU10x8SLIXSFRfJGh4EC_DlTa9aou54YgxyHLw29nJftYMafeNZ_AIJmk0OTsESM6QOpfE3Dk3PmILU8sODyMUSZcJ_NWtHVy0ViFIj_0V07nLUYc8_cdrxpk2r3rX9FQLBcIRQ=s1920-w1920-h1080-fcrop64=1,00001999ffe4f3b0-k-no-nd-mv)
+h2, h3 {
+    display: inline-block;
+    margin-left: 0 0.5rem;
+    font-size: 8vw;
+    
+    font-family: "Sofia", sans-serif;
+    padding-top:5%;
+
+
+
+
+  
+    animation: bounce; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+    color:#eeff44;
+    
+
+    font-weight:bold;
+    opacity:1.0;
+  }
+h3 {
+  font-size: 7vw;
+
 
 }
-h2
-{
-	position: relative;
-	font-size: 12vw;
-	color: #ccff99;
-	-webkit-text-stroke:0.5vw #383d52;
-	text-transform: titlecase;
+.container2 {
+  background: url(https://lh5.googleusercontent.com/proxy/owBXi3UucltQJdWdxVaQoTFrucn8LHjX5pdHnY7SUiFuSLbJjPNpR1fPMLbBtcXAkHgDr6q_plWhGAcODuD1oVlKLcKxsKM3Vu4qY19RbZ7fal67zzaLfxm5yy3U3yjuzXlp_LbjVy38bnouxBjhEOm-612Ady1cIS2a4t1M23c5SYURVDC6_A8Xj3Kk1fYxpQR3hxYetO-6Qj5V6Iw11MAC2G2a2jJrC-udOUG9YG-GBXYAXEOotliE0xoQk0zwly3n5B8=s1920-w1920-h1080-fcrop64=1,00000000ffffda2d-k-no-nd-mv);
+  background-blend-mode:lighten;
+  height: 1000px;
+  opacity:0.9;
+}
 
+midi-visualizer[type=piano-roll] {
+  background:#6c6779;
+  border: 2px solid black;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  margin: 4px;
+  margin-top: 10;
+  overflow: auto;
+  color:white;
 }
-h2::before
-{
-	content: attr(data-text);
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	color: #99ccff;
-	-webkit-text-stroke:0vw #383d52;
-	border-right: 2px black s;
-	overflow: hidden;
-	animation: animate 6s linear infinite;
- 
-}
-@keyframes animate 
-{
-	0%,100%,100%
-	{
-		width: 0;
-   
-	}
-	90%,100%
-	{
-		width: 100%;
-	}
+
+midi-visualizer[type=staff] {
+  background: white;
+  border: 2px solid black;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  margin: 4px;
+  margin-top: 10;
+  overflow: auto;
 }
