@@ -81,12 +81,16 @@
 # In-App Walkthrough Licensing
 - Bundled with myTrailhead
 - With **Summer ‘21**, you can now activate up to **3** walkthroughs for free so you can kick the tires with full functionality.  
-- ![iag wt](img/iag-2.png)
+- ![wt](img/iag-2.png)
 
 # In-App Guidance Limits
 - Prompts created in your org	: **500**
 - Walkthroughs created in your org	: **500**
 - Number of steps in a walkthrough: **10** floating, targeted, or docked prompts 
 
+# In-App-Gudiance in TCRM dashboard
+- ![TCRM Demo](img/iag-1.gif)
 # References
+- [Increase Business Process Adoption with In-App Guidance Walkthroughs](https://trailhead.salesforce.com/live/videos/a2r3k000001n2cH/increase-business-process-adoption-with-in-app-guidance-walkthroughs/)
+- [In-App Guidance in Lightning Experience](https://help.salesforce.com/s/articleView?id=customhelp_lexguid.htm&language=en_US)
 - [Considerations for In-App Guidance in Lightning Experience](https://help.salesforce.com/s/articleView?id=sf.customhelp_lex_prompt_consider.htm&type=5)
