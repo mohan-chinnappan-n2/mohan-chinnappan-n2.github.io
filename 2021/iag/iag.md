@@ -44,6 +44,10 @@
 - Managed by an admin (or In-App Guidance author)
 - And it’s fully Reportable, Translatable, and Packageable
 
+# Browser Extension based example
+- Performance issue
+	- Intercepts the renderer process of the page 
+- [Demo - Browser Extension](img/browser-ext-1.webm)
 # Single Prompt
 - ![iag-sp](img/iag-1.png)
 ## 3 Types
