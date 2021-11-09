@@ -78,6 +78,12 @@
 	- For additional walkthroughs, signup for **myTrailhead**
 - [![walkthrough](img/walkthroughs.png)](img/wt-1.webm)
 	- *click on the image to run the demo* 
+
+# Insights
+- Manage and Track Engagement
+- Know exactly how users are interacting with your guidance
+- [Dashboards](img/iag-dashboards-1.webm)
+- [In-App Guidance Dashboard: Walkthrough Engagement](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3u00000OMqLUEA1)
 # In-App Walkthrough Licensing
 - Bundled with myTrailhead
 - With **Summer ‘21**, you can now activate up to **3** walkthroughs for free so you can kick the tires with full functionality.  
