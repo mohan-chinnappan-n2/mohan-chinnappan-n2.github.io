@@ -48,6 +48,11 @@
 - Performance issue
 	- Intercepts the renderer process of the page 
 - [Demo - Browser Extension](img/browser-ext-1.webm)
+
+# Field Usage Extension for TCRM
+- ![Demo - Field Usage](https://mohan-chinnappan-n2.github.io/2019/ea/img/dbrd/fruits-ea-field-usage-0.gif)
+
+- ![Demo - Field Usage](https://mohan-chinnappan-n2.github.io/2019/ea/img/dbrd/fruits-ea-field-usage.gif)
 # Single Prompt
 - ![iag-sp](img/iag-1.png)
 ## 3 Types
