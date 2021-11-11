@@ -1,0 +1,18 @@
+/* app.css */
+
+textarea {
+    margin-top:10px;
+    background-color:black;
+    color:bisque;
+    border-radius:10px;
+    font-family:Monaco, Arial, Helvetica, sans-serif;
+
+}
+
+#output {
+    background-color:#efefef;
+    color:black;
+    border-radius:10px;
+
+}
+
