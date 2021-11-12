@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart to PDF</title>
+</head>
+<body>
+
+<div id="chartContainer" style="height: 360px; width: 100%;"></div>
+<button id="exportButton" type="button">Export as PDF</button>
+
+
+
+<script>
+    var chart = new CanvasJS.Chart("chartContainer", {
+		title: {
+			text: "Exporting chart using jsPDF & toDataurl"
+		},
+		data: [
+		{
+			type: "spline",
+			dataPoints: [ 
+				{ x: 10, y: 4 }, 
+				{ x: 20, y: 7 },
+				{ x: 30, y: 2 },
+				{ x: 40, y: 3 },
+				{ x: 50, y: 5 }
+			]
+		}
+		]
+});
+chart.render();
+
+var canvas = $("#chartContainer .canvasjs-chart-canvas").get(0);
+
+$("#exportButton").click(function(){
+		var dataURL = canvas.toDataURL();
+    var pdf = new jsPDF();
+    pdf.addImage(dataURL, 'JPEG', 20, 20, 170, 80); //addImage(image, format, x-coordinate, y-coordinate, width, height)
+    pdf.save("download.pdf");
+});
+
+
+</script>
+</body>
+</html>
