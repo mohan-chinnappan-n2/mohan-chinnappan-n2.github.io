@@ -124,6 +124,25 @@
 - This drug can be used alone or along with a monoclonal antibody, such as rituximab. 
 - It's taken as a pill once a day.
 
+
+# Autoimmune Hemolytic Anemia (AIHA)
+-  When you have anemia, your bone marrow **doesn't make enough red blood cells**. Or these cells don't work as well as they should.
+- Red blood cells carry oxygen to your body. When you have too few red blood cells, your body can't get enough oxygen, leaving you feeling tired or short of breath.
+
+- Red blood cells are made in the spongy material called bone marrow deep inside your bones. These blood cells normally live for about 120 days.
+
+
+- If you have autoimmune hemolytic anemia, your body’s immune system attacks and destroys red blood cells faster than your bone marrow can make new ones. Sometimes these red blood cells live for only a few days.
+
+## Treatment for AIHA
+- Doctors usually first prescribe steroids, such as hydrocortisone or prednisone, to stop your immune system from attacking your red blood cells. A medicine called rituximab may make steroids work even better.
+- Other medicines such as azathioprine (Imuran) and cyclophosphamide (Cytoxan) can be used to suppress the immune system.
+
+
+
+
+
+
 # References
 - [What Is Chronic Lymphocytic Leukemia?](https://www.cancer.org/cancer/chronic-lymphocytic-leukemia/about/what-is-cll.html)
 - [Normal Bone Marrow, Blood, and Lymphoid Tissue](https://www.cancer.org/cancer/chronic-lymphocytic-leukemia/about/normal-tissue.html)
