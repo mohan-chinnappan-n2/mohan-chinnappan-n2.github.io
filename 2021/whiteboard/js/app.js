@@ -5,12 +5,18 @@
 // refer: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
 // refer: https://www.youtube.com/watch?v=wCwKkT1P7vY
 
+// refer: https://github.com/TomHumphries/InfiniteCanvasWhiteboard/blob/master/index.html
+
 // CANVAS GEOMETRY
-const widthPercent = 0.8;
+
+// these 2 can be read from url param
+const widthPercent = 1.0;
+const heightFactor = 2;
+
 
 const canvas = document.getElementById("canvas");
 canvas.width = window.innerWidth * widthPercent;
-canvas.height = window.innerHeight;
+canvas.height = window.innerHeight * heightFactor;
 
 // CONTEXT
 

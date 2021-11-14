@@ -38,30 +38,31 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container2">
 
       <div class="tools">
-        <button id="clear" class="btn btn-warning">Clear</button>
-        <button id="undo" class="btn btn-primary">Undo</button>
-        <a id="save" class="btn btn-success" href='#'>Save</a>
+        <button id="clear" title='Clear the drawing' class="btn btn-warning">Clear</button>
+        <button id="undo" title='Undo the last step' class="btn btn-primary">Undo</button>
+        <a id="save" title='Save into PNG file'      class="btn btn-success" href='#'>Save</a>
         &nbsp;&nbsp;
 
         <span class='shapes'>
-          <button id="rect" class="btn btn-info">rect</button>
-          <button id="freehand" class="btn btn-info">freehand</button>
-          <button id="circle" class="btn btn-info">circle</button>
+          <button title='freehand drawing' id="freehand" class="btn btn-info">freehand</button>
+          <button title='draw rectangle'   id="rect"     class="btn btn-info">rect</button>
+          <button title='draw circle'      id="circle"   class="btn btn-info">circle</button>
         </span>
 
 
+        <span class='colors'>
+          <div title='pick red color' class="color color-red" data-color="#ff0000"></div>
+          <div title='pick green color'  class="color color-green" data-color="green"></div>
+          <div title='pick blue color' class="color color-blue" data-color="blue"></div>
+          <div title='pick yellow color'  class="color color-yellow" data-color="yellow"></div>
 
+          <input title='pick color from color picker' class="color-sel" id="color-sel" type="color" />
+        </span>
 
-        <div class="color color-red" data-color="#ff0000"></div>
-        <div class="color color-green" data-color="green"></div>
-        <div class="color color-blue" data-color="blue"></div>
-        <div class="color color-yellow" data-color="yellow"></div>
-
-        <input class="color-sel" id="color-sel" type="color" />
-        <input
+        <input title='select pen thickness'
           class="pen-thick"
           id="pen-thick"
           type="range"
