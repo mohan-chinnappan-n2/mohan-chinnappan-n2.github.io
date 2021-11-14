@@ -1,0 +1,68 @@
+/* app.css */
+
+ 
+
+.tools {
+    display:flex;
+    justify-content: center;
+    box-sizing: border-box;
+
+    flex-direction: row;
+    margin-top: 15px;
+    border:2px solid #ccff99;
+    box-shadow: -3px 2px 9px 6px red;
+
+}
+
+.tools .color {
+    display:inline-block;
+    align-self: center;
+}
+
+.color {
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    cursor:pointer;
+    border: 2px solid #99ccff;
+ 
+}
+
+/*
+
+this is not yet supported:
+
+.color[data-color] {
+    background-color: attr(data-color color, red);
+
+
+}
+
+*/
+
+.color-red {
+    background-color:red;
+}
+.color-green {
+    background-color:green;
+}
+
+.color-blue {
+    background-color:blue;
+}
+.color-yellow{
+    background-color:yellow;
+}
+
+.color-sel {
+    height: 50px;
+}
+
+/* canvas */
+
+#canvas {
+    margin-top:20px;
+    box-shadow: -3px 2px 9px 6px #99ccff;
+    cursor:pointer;
+
+}
