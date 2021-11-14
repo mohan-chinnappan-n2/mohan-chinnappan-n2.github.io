@@ -93,4 +93,12 @@ this is not yet supported:
 
 }
 
+#text-input {
+    margin-left:10px;
+    padding:10px;
+    font-family: Monaco, serif;
+    box-shadow: -3px 2px 9px 6px #99ccff;
+
+}
+
 

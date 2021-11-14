@@ -43,6 +43,8 @@ const getLocation = (event) => {
   return [event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop];
 };
 
+const textInputEle = document.getElementById('text-input');
+
 const start = (event) => {
   isDrawing = true;
   context.beginPath();
@@ -67,14 +69,14 @@ const draw = (event) => {
     context.lineJoin = "round";
 
     context.stroke();
-  }
+  } 
   event.preventDefault();
 };
 
 const stop = (event) => {
   const loc = getLocation(event);
   if (isDrawing) {
-    if (shapeSelected === "rect" || shapeSelected === 'circle') {
+    if (shapeSelected === "rect" || shapeSelected === 'circle' || shapeSelected === 'text') {
       const width = loc[0] - startX;
       const height = loc[1] - startY;
 
@@ -95,9 +97,12 @@ const stop = (event) => {
         const endAngle = 2 * Math.PI;
         context.arc(startX, startY, width, startAngle, endAngle);
         context.stroke();
-
-
-      }  
+      } 
+      else if (shapeSelected === 'text') {
+        context.font = '30px Monaco';
+        const text = textInputEle.value;
+        context.strokeText(text, loc[0], loc[1]);
+      } 
        
     } else {
       context.stroke();
@@ -217,4 +222,11 @@ freehandBtn.addEventListener("click", (event) => {
 const circleBtn = document.getElementById("circle");
 circleBtn.addEventListener("click", (event) => {
   shapeSelected = "circle";
+});
+
+
+// text
+const textBtn = document.getElementById("text");
+textBtn.addEventListener("click", (event) => {
+  shapeSelected = "text";
 });
