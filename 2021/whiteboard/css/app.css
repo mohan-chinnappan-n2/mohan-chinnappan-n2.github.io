@@ -10,7 +10,7 @@
     flex-direction: row;
     margin-top: 15px;
     border:2px solid #ccff99;
-    box-shadow: -3px 2px 9px 6px red;
+    box-shadow: -3px 2px 9px 6px #99ccff;
 
 }
 
@@ -66,3 +66,5 @@ this is not yet supported:
     cursor:pointer;
 
 }
+
+
