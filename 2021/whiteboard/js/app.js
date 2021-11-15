@@ -230,3 +230,16 @@ const textBtn = document.getElementById("text");
 textBtn.addEventListener("click", (event) => {
   shapeSelected = "text";
 });
+
+// image loading
+const fileInputBtn = document.getElementById('file-input');
+fileInputBtn.addEventListener("change", (event) => {
+  const url = window.URL.createObjectURL(event.target.files[0]);
+  console.log(url);
+  const img = new Image();
+  img.src = url;
+  img.onload = () => {
+    context.drawImage(img, 0, 0, img.width, img.height);
+  }
+
+});
