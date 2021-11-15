@@ -7,6 +7,9 @@
 
 // refer: https://github.com/TomHumphries/InfiniteCanvasWhiteboard/blob/master/index.html
 
+// refer: https://codeboxsystems.com/tutorials/en/how-to-drag-and-drop-objects-javascript-canvas/
+
+
 // CANVAS GEOMETRY
 
 // these 2 can be read from url param
