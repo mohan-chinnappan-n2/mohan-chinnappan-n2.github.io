@@ -31,6 +31,7 @@ let remoteAnswerEle = document.getElementById('remoteAnswer');
 // post into our messages area
 const postMessage = msg => {
     messagesEle.value = msg; 
+}
 
 // CONNECTION Object
 
