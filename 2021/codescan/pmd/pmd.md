@@ -31,7 +31,7 @@ public class PMD {
 
 
 - [Analyze the files. Either single threaded or multi-threaded parallel](https://github.com/pmd/pmd/blob/master/pmd-core/src/main/java/net/sourceforge/pmd/processor/PmdRunnable.java#L31)
-    - Create input stream (https://github.com/pmd/pmd/blob/master/pmd-core/src/main/java/net/sourceforge/pmd/processor/PmdRunnable.java#L83)
+    - [Create input stream](https://github.com/pmd/pmd/blob/master/pmd-core/src/main/java/net/sourceforge/pmd/processor/PmdRunnable.java#L83)
     - Call SourcCodeProcessor
         - Determine the language
         - Check whether the file is already analyzed and a result is available from the analysis cache
