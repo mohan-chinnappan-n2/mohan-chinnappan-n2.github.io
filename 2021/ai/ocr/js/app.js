@@ -20,14 +20,23 @@ var lang_demo_images = {
   eng: "img/eng_bw.png",
   tam: "img/tam.png",
   kan: "img/kan.png",
-  hin: "img/hin.png"
+  hin: "img/hin.png",
+  ori: "img/ori.png",
+  urd: "img/urd.png",
+  mal: "img/mal.png",
+  tel: "img/tel.png"
 };
 
 var lang_drop_instructions = {
   eng: "an English",
   tam: "a Tamil",
   kan: "a Kannada",
-  hin: "a Hindi"
+  hin: "a Hindi",
+
+  ori: "a Oryia",
+  urd: "a Urdu",
+  mal: "a Malayalam",
+  tel: "a Telugu"
 };
 
 var worker = new Tesseract.createWorker({

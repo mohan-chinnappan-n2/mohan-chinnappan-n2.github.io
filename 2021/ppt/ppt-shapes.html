@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/pptxgenjs@3.8.0/dist/pptxgen.bundle.js"></script>
+
+    <title>PPT</title>
+  </head>
+  <body>
+    <script>
+      // 1. Create a new Presentation
+      let pres = new PptxGenJS();
+
+      // 2. Add a Slide
+      let slide = pres.addSlide();
+      // Shapes without text
+      // Shapes without text
+      slide.addShape(pres.ShapeType.rect, { fill: { color: "FF0000" } });
+      slide.addShape(pres.ShapeType.ellipse, {
+        fill: { type: "solid", color: "0088CC" },
+      });
+      slide.addShape(pres.ShapeType.line, {
+        line: { color: "FF0000", width: 1 },
+      });
+
+      // Shapes with text
+      slide.addText("ShapeType.rect", {
+        shape: pres.ShapeType.rect,
+        fill: { color: "FF0000" },
+      });
+      slide.addText("ShapeType.ellipse", {
+        shape: pres.ShapeType.ellipse,
+        fill: { color: "FF0000" },
+      });
+      slide.addText("ShapeType.line", {
+        shape: pres.ShapeType.line,
+        line: { color: "FF0000", width: 1, dashType: "lgDash" },
+      }); // 4. Save the Presentation
+      pres.writeFile();
+    </script>
+  </body>
+</html>
