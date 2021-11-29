@@ -16,15 +16,31 @@
 
     <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
     <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
-
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Estonia&family=Patrick+Hand&display=swap" rel="stylesheet">
     <style>
         textarea {
-            background-color:black;
+            background-color:#101010;
             color:blanchedalmond;
+            font-size:larger;
             border-radius:10px;
+            margin:10px;
             padding:10px;
-            
-        }
+            opacity:.9;
+         }
+
+         #wc {
+             margin:20px;
+             border-radius:10px;
+             border:1px solid #101010;
+
+
+         }
+         #draw {
+             margin-left:50px;
+         }
     </style>
 </head>
 <body>
@@ -50,70 +66,6 @@
         <div class="col-lg">
             <div class='split split-horizontal' id='pcontent'>
                 <textarea name="content" id="content" cols="80" rows="30">
-
-
-        V2MOM - Vision Values Methods Obstacles Measures
-
-        VISION (What do you want to achieve?):
-        
-        Let us make a greener and cleaner world together with equality to all!
-        
-        - Equality is the blood which can fuel our developments.
-        - We should see development in all the fundamentals of our lives: 
-            * food (organic and healthy food)
-            * shelter (passive homes, net-zero, carbon-neutral homes)
-            * education to provide all the skills we need to achieve our goals
-            * healthcare education should start from our homes covering:
-            - what to eat 
-            - how to eat
-        
-        - Our agriculture should be organic one, which can feed everyone in this world.
-        - Our homes should be built with things we learned so far in all the disciplines.
-        
-        VALUES (What’s important to you?):
-        
-        - Greener, Carbon-Free and Renewable energy based world
-        - Healthier and Sustainable world
-        - Our agricultural land is protected for the future generations to come
-        - We will leave a better world to the next generations to come
-        
-        METHODS (How do you get it?):
-        
-        - Use all the knowledge we gained to develop tools and methods to build Greener, Carbon-Free and Renewable energy based world
-        - Our schools curriculum should be based on these goals
-        * Carbon-Zero World
-        * Healthier World
-        * Use all the methods we know including AI/Deep Learning in solving hard to cure diseases
-        * Organic food production, preserving our agricultural land fertility
-        
-        OBSTACLES (What is preventing you from being successful?):
-        
-        - Outdated schools curriculum, we need to update it to meet our goals
-        - Lack of larger training and incentive programs to promote best practices which can help to meet the goals
-        
-        MEASURES (How do you know you have it?):
-        
-        - Everyone in this world is properly provided 
-            * correct education
-            * cleaner and carbon-free environment
-        - Everyone in this world is properly provided 
-            * healthier food 
-            * healthcare
-        - All our new homes are passive/net-zero and older homes are upgraded with help from the community
-        
-            
-            
-                
-                    
-                    
-                    
-                                   
-                                       
-                    
-                    
-
-
-               
                    </textarea>
                    <hr/>
                    <button class='btn btn-info' id="draw">Draw Word Cloud</button>
@@ -123,7 +75,7 @@
 
             </div>
             <div class="split split-horizontal" id='pwc'>
-                <div id="wc"></div>
+                <div  id="wc"></div>
 
                 
             </div>
@@ -164,8 +116,8 @@
     {
         "$schema": "https://vega.github.io/schema/vega/v5.json",
         "description": "A word cloud visualization",
-        "width": 1200,
-        "height": 600,
+        "width": 800,
+        "height": 400,
         "padding": 0,
       
         "data": [
@@ -240,9 +192,27 @@
       const contentEle = document.getElementById('content');
       const drawEle = document.getElementById('draw');
 
+      async function getContent(url) {
+           const response =  await fetch(url); 
+           if (!response.ok) {
+            const message = `An error has occured: ${response.status}`;
+            throw new Error(message);
+          }
+          const result = await response.text();
+          return result;
+      };
+
+       getContent('./2021/v2mom.txt').then(content => {
+        contentEle.value = content;
+        drawEle.click();
+
+
+       });
+
+
       const paintWC = event => {
         const content = contentEle.value.trim().split('\n');
-        console.log(wcSpec);
+        // console.log(wcSpec);
         wcSpec.data[0].values = content;
         vegaEmbed('#wc', wcSpec).then(function(result) { }).catch(console.error);
 
@@ -252,7 +222,6 @@
           paintWC(event);
       });
 
-      drawEle.click();
 
       
          
