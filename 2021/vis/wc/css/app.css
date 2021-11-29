@@ -1,0 +1,26 @@
+/* app.css */
+/* mohan chinnappan */
+textarea {
+    background-color:#101010;
+    color:blanchedalmond;
+    font-size:larger;
+    border-radius:10px;
+    margin:10px;
+    padding:10px;
+    opacity:.9;
+ }
+
+ #wc {
+     margin:20px;
+     border-radius:10px;
+     border:1px solid #101010;
+
+
+ }
+ #draw {
+     margin-left:50px;
+ }
+ #content-html {
+     display:none;
+ }
+ 
