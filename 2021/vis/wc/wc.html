@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Cloud</title>
+
+    <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n2.github.io/favicon.ico">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+    <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
+
+    <style>
+        textarea {
+            background-color:black;
+            color:blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Word Cloud</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+               
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="row">
+        <div class="col-lg">
+            <div class='split split-horizontal' id='pcontent'>
+                <textarea name="content" id="content" cols="80" rows="20">
+
+VISON:
+
+Let us make a greener and cleaner world together with equality to all!
+
+- Equality is the blood which can fuel our developments.
+- We should see development in all the fundamentals of our lives: 
+ * food (organic and healthy food)
+ * shelter (passive homes, net-zero, carbon-neutral homes)
+ * education to provide all the skills we need to acheive our goals
+ * healthcare eductation should start from our homes covering:
+    - what to eat 
+    - how to eat
+
+- Our agriculture should be the organic one, which can feed eveyone in this world.
+- Our homes should be built with things we learned so far in all the disciplines.
+
+               
+                   </textarea>
+                   <hr/>
+                   <button class='btn btn-info' id="draw">Draw Word Cloud</button>
+                   <hr/>
+
+                   <iframe width="700" height="400" src="https://www.youtube.com/embed/YkgkThdzX-8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            </div>
+            <div class="split split-horizontal" id='pwc'>
+                <div id="wc"></div>
+
+                
+            </div>
+        </div>
+    </div>
+    
+
+    
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+  <script type="text/javascript">
+
+    Split([ "#pcontent", "#pwc"], { sizes: [45, 55] });
+
+   
+
+    let wcSpec =
+    {
+        "$schema": "https://vega.github.io/schema/vega/v5.json",
+        "description": "A word cloud visualization",
+        "width": 1200,
+        "height": 600,
+        "padding": 0,
+      
+        "data": [
+          {
+            "name": "table",
+            "values": ["All great things are simple." ],
+            "transform": [
+              {
+                "type": "countpattern",
+                "field": "data",
+                "case": "upper",
+                "pattern": "[\\w']{3,}",
+                "stopwords": "(i|me|my|myself|we|us|our|ours|ourselves|you|your|yours|yourself|yourselves|he|him|his|himself|she|her|hers|herself|it|its|itself|they|them|their|theirs|themselves|what|which|who|whom|whose|this|that|these|those|am|is|are|was|were|be|been|being|have|has|had|having|do|does|did|doing|will|would|should|can|could|ought|i'm|you're|he's|she's|it's|we're|they're|i've|you've|we've|they've|i'd|you'd|he'd|she'd|we'd|they'd|i'll|you'll|he'll|she'll|we'll|they'll|isn't|aren't|wasn't|weren't|hasn't|haven't|hadn't|doesn't|don't|didn't|won't|wouldn't|shan't|shouldn't|can't|cannot|couldn't|mustn't|let's|that's|who's|what's|here's|there's|when's|where's|why's|how's|a|an|the|and|but|if|or|because|as|until|while|of|at|by|for|with|about|against|between|into|through|during|before|after|above|below|to|from|up|upon|down|in|out|on|off|over|under|again|further|then|once|here|there|when|where|why|how|all|any|both|each|few|more|most|other|some|such|no|nor|not|only|own|same|so|than|too|very|say|says|said|shall)"
+              },
+              {
+                "type": "formula", "as": "angle",
+                "expr": "[-45, 0, 45][~~(random() * 3)]"
+              },
+              {
+                "type": "formula", "as": "weight",
+                "expr": "if(datum.text=='VEGA', 600, 300)"
+              }
+            ]
+          }
+        ],
+      
+        "scales": [
+          {
+            "name": "color",
+            "type": "ordinal",
+            "domain": {"data": "table", "field": "text"},
+            "range": ["#d5a928", "#652c90", "#939597"]
+          }
+        ],
+      
+        "marks": [
+          {
+            "type": "text",
+            "from": {"data": "table"},
+            "encode": {
+              "enter": {
+                "text": {"field": "text"},
+                "align": {"value": "center"},
+                "baseline": {"value": "alphabetic"},
+                "fill": {"scale": "color", "field": "text"}
+              },
+              "update": {
+                "fillOpacity": {"value": 1}
+              },
+              "hover": {
+                "fillOpacity": {"value": 0.5}
+              }
+            },
+            "transform": [
+              {
+                "type": "wordcloud",
+                "size": [800, 400],
+                "text": {"field": "text"},
+                "rotate": {"field": "datum.angle"},
+                "font": "Helvetica Neue, Arial",
+                "fontSize": {"field": "datum.count"},
+                "fontWeight": {"field": "datum.weight"},
+                "fontSizeRange": [12, 56],
+                "padding": 2
+              }
+            ]
+          }
+        ]
+      };
+
+
+      const contentEle = document.getElementById('content');
+      const drawEle = document.getElementById('draw');
+
+      const paintWC = event => {
+        const content = contentEle.value.trim().split('\n');
+        console.log(wcSpec);
+        wcSpec.data[0].values = content;
+        vegaEmbed('#wc', wcSpec).then(function(result) { }).catch(console.error);
+
+      }
+
+      drawEle.addEventListener('click', event => {
+          paintWC(event);
+      });
+
+      
+         
+      </script>
+
+
+</body>
+</html>
