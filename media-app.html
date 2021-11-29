@@ -25,10 +25,13 @@
 </head>
 <body class="container" >
 
+<div class='row'>
+<div class='col-sm'> <audio src="mp3/mc-guitar-1.mp3" controls></audio> </div>
+<div class='col-sm'> <audio src='mp3/ode-to-joy.mp3' controls></audio> </div>
+</div>
     <header>
 
          <h3>Video, Audio, Screen Recording and Music Apps</h3>
-      
           <ul class="navbar-nav mr-auto  btn-light">
            
             <li class="nav-item dropdown">
@@ -73,8 +76,9 @@
        
       </header>
 
+ 
       <p style="margin-top:50%;color:yellow;font-weight: normal bold;">Best, when viewed on Chrome and Firefox!</p>
-
+<div id='vis'></div>
       <label for="toggle">❔</label>
       <input type="checkbox" id="toggle">
       <aside>
@@ -84,7 +88,16 @@
         </p>
       </aside>
 
-      <script>
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+  <script type="text/javascript">
+   var spec = "https://raw.githubusercontent.com/mohan-chinnappan-n/thirukkural-songs/master/viz/clock.json";
+    vegaEmbed('#vis', spec).then(function(result) {
+    
+    }).catch(console.error);
+
+
         const menu = document.getElementById('menu');
         menu.click();
       </script>
