@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple jQuery Drawing App</title>
+    <link rel="stylesheet" href="css/jquery.simplePaint.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.simplePaint.js"></script>
+    <style>
+        .main {
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        .main h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h2>Simple jQuery Drawing App</h2>
+        <div id="canvasDiv"></div>
+    </div>
+    <script type="text/javascript">
+        $("#canvasDiv").simplePaint({
+            width: "600px",
+            height: "450px"
+
+        })
+    </script>
+</body>
+
+</html>

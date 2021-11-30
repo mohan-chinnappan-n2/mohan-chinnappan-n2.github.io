@@ -1,0 +1,297 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #0b0f19;
+  font-family: sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  touch-action: none;
+}
+
+#saved-song-list {
+  flex-shrink: 1;
+  flex-grow: 1;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: 20px;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+
+  /* Avoid notch area when fullscreen on mobile */
+  margin-top:  env(safe-area-inset-top);
+  margin-left: env(safe-area-inset-left);
+}
+#saved-song-list li {
+  width: 400px;
+  height: 30px;
+  padding: 0 5px 0 45px;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  background: no-repeat left url('data:image/svg+xml,\
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">\
+      <path fill="white" d="M8 4v11.1H6c-2.2.6-4 2.5-4 4.4 0 1.8 1.8 2.9 4 2.4 2.1-.5 3.9-2.4 4-4.2v-11l9-1.4v7.8h-2c-2.2.6-4 2.5-4 4.4 0 1.8 1.8 2.9 4 2.4 2.1-.5 3.9-2.4 4-4.2V2L8 4z"/>\
+    </svg>\
+  ');
+}
+#saved-song-list li .title {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-bottom: 1px solid #fff;
+}
+#saved-song-list li .time {
+  font-weight: bold;
+  font-family: monospace;
+  padding: 0 10px;
+}
+#saved-song-list li .play-button {
+  height: 30px;
+  width: 70px;
+  flex-shrink: 0;
+  background-image: url('data:image/svg+xml,\
+    <svg viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">\
+      <path fill="white" d="m1.276 0v17.01l14.74-8.511z"/>\
+    </svg>\
+  ');
+  background-position: 10px center;
+  background-size: 14px;
+  padding-left: 22px;
+}
+#saved-song-list li .delete-button {
+  width:  30px;
+  height: 30px;
+  margin-left: 10px;
+  background: transparent no-repeat center/18px url('data:image/svg+xml,\
+    <svg viewBox="0 0 16.9 16.1" xmlns="http://www.w3.org/2000/svg">\
+      <path fill="white"\
+        d="M6 0a1 1 0 0 0-1 1H2.1c-.4 0-.8.4-.8.9v1c0 .4.4.8.8.8H3v10.7c0 1 .8 1.6 1.7 1.6h8c.9 0 1.6-.7 1.6-1.6V3.7h.8c.4 0 .8-.4.8-.8v-1c0-.5-.4-.8-.8-.8h-2.8V1c0-.6-.4-1-1-1z"/>\
+      <path stroke="black" stroke-width="1.8" stroke-linecap="round" fill="none"\
+        d="M5.3 5.5v8M8.6 5.5v8M11.8 5.5v8"/>\
+    </svg>\
+  ');
+}
+#saved-song-list li .delete-button:hover {
+  background-color: grey;
+}
+@media (max-width: 500px) {
+  #saved-song-list {
+    flex-wrap: nowrap;
+  }
+  #saved-song-list li {
+    width: auto;
+  }
+}
+
+#current-song {
+  flex-shrink: 0;
+  flex-grow: 0;
+  height: 50px;
+  display: flex;
+  background: #131827;
+  color: #fff;
+  padding: 5px;
+
+  /* Avoid notch area when fullscreen on mobile */
+  margin-left:  env(safe-area-inset-left);
+  margin-right: env(safe-area-inset-right);
+}
+#current-song-title {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  flex-grow: 1;
+  min-width: 60px;
+}
+#current-song-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  font-family: monospace;
+  font-size: 16px;
+}
+#current-song button {
+  width: 100px;
+  margin-left: 5px;
+}
+
+button {
+  background-color: #eb7f00;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  background-repeat: no-repeat;
+  -webkit-tap-highlight-color: transparent;
+}
+button:hover {
+  background-color: #ff9e2b;
+}
+button:focus {
+  outline: none;
+}
+button:active {
+  transform: translate(3px, 3px);
+}
+button[disabled] {
+  background-color: grey;
+  cursor: not-allowed;
+}
+button::-moz-focus-inner {
+  border: 0;
+}
+
+#record-button {
+  background-image: url('data:image/svg+xml,\
+    <svg viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">\
+      <circle cx="0.5" cy="0.5" r="0.5" fill="white"/>\
+    </svg>\
+  ');
+  background-position: 10px center;
+  background-size: 20px;
+  padding-left: 30px;
+}
+
+#play-button {
+  background-image: url('data:image/svg+xml,\
+    <svg viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">\
+      <path d="M 0.1,0 v 1 L 0.9, 0.5 z" fill="white"/>\
+    </svg>\
+  ');
+  background-position: 10px center;
+  background-size: 20px;
+  padding-left: 22px;
+}
+
+#save-button {
+  background-image: url('data:image/svg+xml,\
+    <svg viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">\
+      <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.646" fill="none"\
+        d="m1.335 5.6v9.927h14.25v-9.927"/>\
+      <path fill="white"\
+        d="m6.584 .1v5.781h-2.321l4.135 5.245 4.135-5.245h-2.321v-5.781z"/>\
+    </svg>\
+  ');
+  background-position: 10px center;
+  background-size: 20px;
+  padding-left: 22px;
+}
+
+#record-button::after { content: 'Record' }
+body[data-mode='recording'] #record-button::after { content: 'Stop'; }
+body[data-mode='recording'] #record-button {
+  /* Stop icon */
+  background-image: url('data:image/svg+xml,\
+    <svg viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">\
+      <rect width="1" height="1" fill="white"/>\
+    </svg>\
+  ');
+}
+
+#play-button::after { content: 'Play' }
+body[data-mode='playing'] #play-button::after { content: 'Stop'; }
+body[data-mode='playing'] #play-button {
+  /* Stop icon */
+  background-image: url('data:image/svg+xml,\
+    <svg viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">\
+      <rect width="1" height="1" fill="white"/>\
+    </svg>\
+  ');
+}
+
+body[data-mode='recording'] #current-song-time {
+  font-weight: bold;
+  animation: 0.5s flash-current-song-time infinite linear alternate;
+}
+
+@keyframes flash-current-song-time {
+  from { color: white; }
+  to   { color: red; }
+}
+
+/* Hide button text labels on narrow screens */
+@media (max-width: 640px) {
+  #current-song button {
+    font-size: 0;
+    width: 64px;
+    background-position: center;
+  }
+}
+
+#piano {
+  height: 20vw;
+  max-height: 50vh;
+  min-height: 20vh;
+  position: relative;
+  display: flex;
+}
+#piano button {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px;
+}
+#piano button:hover {
+  background: #ccc;
+}
+#accidentals button:hover {
+  background: #777;
+}
+#piano button:active {
+  transform: none;
+}
+#piano button.pressed {
+  background-color: #3ac8da;
+  border-top: 1px solid #3ac8da;
+}
+#piano > button {
+  width: 100%;
+  background-color: #f6f5f3;
+  border: 1px solid #888;
+  border-radius: 0 0 6px 6px;
+  color: #888;
+  font-weight: bold;
+}
+#piano button {
+  font-size: 0;
+}
+.keyboard-enabled #piano button {
+  font-size: 2vmax;
+}
+
+#accidentals {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  pointer-events: none; /* So clicks/touches in the gaps between accidentals get through to the button underneath */
+}
+#accidentals button {
+  width: 5.9%;
+  background-color: #555;
+  color: #f8e8d5;
+  border: 1px solid #fff;
+  border-top: 1px solid transparent;
+  border-radius: 0 0 4px 4px;
+  pointer-events: auto;
+}
+#accidentals button[data-key="w"] { transform: translateX(  20%); }
+#accidentals button[data-key="e"] { transform: translateX( -40%); }
+#accidentals button[data-key="t"] { transform: translateX(   0%); }
+#accidentals button[data-key="y"] { transform: translateX( -76%); }
+#accidentals button[data-key="u"] { transform: translateX(-153%); }
+#accidentals button[data-key="o"] { transform: translateX(-110%); }
+#accidentals button[data-key="p"] { transform: translateX(-173%); }
