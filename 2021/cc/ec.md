@@ -30,6 +30,8 @@
 ## VExperience Cloud Sites and Users in Your Salesforce Org
 [Video](https://salesforce.vidyard.com/watch/5kixavmXPC372dCZ37Z2dv)
 
+
+
 ## 5 Tiers of Licenses
 - External Apps - B2C use cases
     - minimal interaction with Salesforce records
