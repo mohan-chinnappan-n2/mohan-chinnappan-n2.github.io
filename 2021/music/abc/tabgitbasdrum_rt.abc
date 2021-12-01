@@ -1,0 +1,214 @@
+%%beginsvg
+<defs>
+<text id="x" x="-3" y="0">&#xe263;</text>
+<text id="x-" x="-3" y="0">&#xe263;</text>
+<text id="x+" x="-3" y="0">&#xe263;</text>
+<text id="normal" x="-3.7" y="0">&#xe0a3;</text>
+<text id="normal-" x="-3.7" y="0">&#xe0a3;</text>
+<text id="normal+" x="-3.7" y="0">&#xe0a4;</text>
+<g id="circle-x"><text x="-3" y="0">&#xe263;</text><circle r="4" class="stroke"></circle></g>
+<g id="circle-x-"><text x="-3" y="0">&#xe263;</text><circle r="4" class="stroke"></circle></g>
+<path id="triangle" d="m-4 -3.2l4 6.4 4 -6.4z" class="stroke" style="stroke-width:1.4"></path>
+<path id="triangle-" d="m-4 -3.2l4 6.4 4 -6.4z" class="stroke" style="stroke-width:1.4"></path>
+<path id="triangle+" d="m-4 -3.2l4 6.4 4 -6.4z" class="stroke" style="fill:#000"></path>
+<path id="square" d="m-3.5 3l0 -6.2 7.2 0 0 6.2z" class="stroke" style="stroke-width:1.4"></path>
+<path id="square-" d="m-3.5 3l0 -6.2 7.2 0 0 6.2z" class="stroke" style="stroke-width:1.4"></path>
+<path id="square+" d="m-3.5 3l0 -6.2 7.2 0 0 6.2z" class="stroke" style="fill:#000"></path>
+<path id="diamond" d="m0 -3l4.2 3.2 -4.2 3.2 -4.2 -3.2z" class="stroke" style="stroke-width:1.4"></path>
+<path id="diamond-" d="m0 -3l4.2 3.2 -4.2 3.2 -4.2 -3.2z" class="stroke" style="stroke-width:1.4"></path>
+<path id="diamond+" d="m0 -3l4.2 3.2 -4.2 3.2 -4.2 -3.2z" class="stroke" style="fill:#000"></path>
+</defs>
+%%endsvg
+%%map perc6 ^g print=g midi=42 heads=x
+%%map perc7 E print=E midi=35 heads=square+,square
+%%map perc7 _c print=c midi=37 heads=triangle+,triangle
+%%beginsvg
+<style type="text/css">
+.bf {font-family:sans-serif; font-size:7px}
+</style>
+<defs>
+<rect id="clr" x="-3" y="-1" width="6" height="5" fill="white"></rect>
+<rect id="clr2" x="-3" y="-1" width="11" height="5" fill="white"></rect>
+<g id="kop0" class="bf"><use xlink:href="#clr"></use><text x="-2" y="3">0</text></g>
+<g id="kop1" class="bf"><use xlink:href="#clr"></use><text x="-2" y="3">1</text></g>
+<g id="kop10" class="bf"><use xlink:href="#clr2"></use><text x="-2" y="3">10</text></g>
+<g id="kop11" class="bf"><use xlink:href="#clr2"></use><text x="-2" y="3">11</text></g>
+<g id="kop2" class="bf"><use xlink:href="#clr"></use><text x="-2" y="3">2</text></g>
+<g id="kop3" class="bf"><use xlink:href="#clr"></use><text x="-2" y="3">3</text></g>
+<g id="kop4" class="bf"><use xlink:href="#clr"></use><text x="-2" y="3">4</text></g>
+<g id="kop5" class="bf"><use xlink:href="#clr"></use><text x="-2" y="3">5</text></g>
+<g id="kop6" class="bf"><use xlink:href="#clr"></use><text x="-2" y="3">6</text></g>
+<g id="kop7" class="bf"><use xlink:href="#clr"></use><text x="-2" y="3">7</text></g>
+<g id="kop8" class="bf"><use xlink:href="#clr"></use><text x="-2" y="3">8</text></g>
+</defs>
+%%endsvg
+X:1
+T:Geneva Old Style
+C:Wim&Wim, 1987
+%%measurenb 0
+%%score ( 1 2 3 4 ) 5 ( 6 7 )
+L:1/8
+Q:1/4=90.00
+M:4/4
+I:linebreak $
+K:C
+U:s=!stemless!
+%%map tab1 =A print=a heads=kop5
+%%map tab1 =C print=d heads=kop5
+%%map tab1 =D print=d heads=kop7
+%%map tab1 =F print=f heads=kop6
+%%map tab1 =G print=f heads=kop8
+%%map tab1 =G, print=B heads=kop5
+%%map tab1 =c print=a heads=kop8
+%%map tab1 =d print=a heads=kop10
+%%map tab1 ^A print=a heads=kop6
+%%map tab1 ^D print=d heads=kop8
+%%map tab1 ^d print=a heads=kop11
+%%map tab1 _B print=f heads=kop11
+%%map tab2 =A, print=B heads=kop7
+%%map tab2 =A,, print=E heads=kop5
+%%map tab2 =C print=d heads=kop5
+%%map tab2 =D print=d heads=kop7
+%%map tab2 =F print=d heads=kop10
+%%map tab2 =F, print=G heads=kop8
+%%map tab2 =G print=f heads=kop8
+%%map tab2 =G, print=B heads=kop5
+%%map tab2 ^A, print=B heads=kop8
+%%map tab2 ^A,, print=E heads=kop6
+%%map tab2 ^D print=d heads=kop8
+%%map tab2 ^D, print=G heads=kop6
+%%map tab2 _E print=f heads=kop4
+%%map tab3 ^A,, print=E heads=kop6
+%%map tab4 =C print=d heads=kop5
+%%map tab4 =F print=d heads=kop10
+%%map tab4 =G, print=B heads=kop5
+%%map tab4 ^A, print=B heads=kop8
+%%map tab4 ^B, print=B heads=kop10
+%%map tab5 =A,, print=d heads=kop2
+%%map tab5 =A,,, print=G heads=kop0
+%%map tab5 =C, print=d heads=kop5
+%%map tab5 =C,, print=G heads=kop3
+%%map tab5 =D, print=d heads=kop7
+%%map tab5 =D,, print=B heads=kop0
+%%map tab5 =F,, print=B heads=kop3
+%%map tab5 =G,, print=d heads=kop0
+%%map tab5 =G,,, print=E heads=kop3
+%%map tab5 ^A,, print=d heads=kop3
+%%map tab5 ^A,,, print=G heads=kop1
+%%map tab5 ^D, print=d heads=kop8
+%%map tab5 ^D,, print=B heads=kop1
+V:1 tab stafflines=6 strings=E2,A2,D3,G3,B3,E4 nostems nm="Guitar"
+%%voicemap tab1
+K:none
+M:none
+%%clef none
+%%staffscale 1.6
+%%flatbeams true
+%%stemdir down
+%%MIDI program 25
+%%MIDI control 7 100
+%%MIDI control 10 127
+V:2 tab stafflines=6 strings=E2,A2,D3,G3,B3,E4 nostems 
+%%voicemap tab2
+K:none
+M:none
+%%clef none
+%%staffscale 1.6
+%%flatbeams true
+%%stemdir down
+%%MIDI program 25
+%%MIDI control 7 100
+%%MIDI control 10 32
+V:3 tab stafflines=6 strings=E2,A2,D3,G3,B3,E4 nostems 
+%%voicemap tab3
+K:none
+M:none
+%%clef none
+%%staffscale 1.6
+%%flatbeams true
+%%stemdir down
+%%MIDI program 25
+%%MIDI control 7 100
+%%MIDI control 10 16
+L:1/4
+V:4 tab stafflines=6 strings=E2,A2,D3,G3,B3,E4 nostems 
+%%voicemap tab4
+K:none
+M:none
+%%clef none
+%%staffscale 1.6
+%%flatbeams true
+%%stemdir down
+%%MIDI program 25
+%%MIDI control 7 100
+%%MIDI control 10 80
+V:5 tab stafflines=4 strings=E1,A1,D2,G2 nm="Bass"
+%%voicemap tab5
+K:none
+M:none
+%%clef none
+%%staffscale 1.6
+%%flatbeams true
+%%stemdir down
+%%MIDI program 36
+%%MIDI control 7 100
+%%MIDI control 10 64
+V:6 perc nm="Drum"
+K:none
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI control 7 100
+%%MIDI control 10 111
+%%MIDI drummap ^g 42
+%%voicemap perc6
+V:7 perc 
+K:none
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI control 7 80
+%%MIDI control 10 16
+%%MIDI drummap E 35
+%%MIDI drummap _c 37
+%%voicemap perc7
+V:1
+ x4 s[=G=D]3 s[=G^D] | s[=G^D] s[=G=C] s[=G=C] s[=G=C]- s[=G-=C] s[=G=D] s[=G-=D] s[=G=C] | %2
+ x4 s=G2 s=A s=G | s=G s=A s=G- s=G- s=G s=A s=G- s=G | x2 s=G,2- s[=G=G,]3 s[=A=F] |$ %5
+ s[=A=F] s^A s[^A=F] s[^A=F]- s[^A=F-] s[=A-=F] s[=A=F]2 | x4 s[=G=D]3 s[=G^D] | %7
+ s[=G^D] s[=G=C] s[=G=C] s[=G=C]- s[=G-=C] s[=G=D] s[=G-=D] s[=G=C] | x4 s[=G=D]3 s[=G^D] | %9
+ s[=G^D] s[=F^D] s[=F^D] s[=G^D] s[=G^D] s[=c=G] s[=c=G]2 |$ x4 s[=c=F]3 s[=d_B] | %11
+ s[=d_B] s[^d_B] s[^d_B] s[^d_B]- s[^d_B] s=d- s[=d_B]- s[=d_B] | x4 s[=c=F]3 s[^d_B] | %13
+ s[^d_B] s[=d_B] s[=d_B] s[=d_B]- s[=d_B] s=c- s=c2 | x4 s[=G^D]3 s[=A=F] |$ %15
+ s[=A=F] s[^A=F] s[^A=F] s[^A=F]- s[^A=F-] s[=A-=F] s[=A=F]2 :| x4 s[=G=D]4 |] %17
+V:2
+ x2 s=G,2- s=G,3 s[^A,^D,] | %1
+ s[^A,^D,] s[=G,=A,,] s[=G,=A,,] s[=G,=A,,]- s[=G,-=A,,] s[=G,^A,,] s[=G,-^A,,] s[=G,=A,,] | %2
+ x2 s=G,2- s[=D=G,]4 | s[=D=G,^A,,]3 s[=C=G,=A,,] s[=D=G,-^A,,-]3 s[=D=G,^A,,] | s^D,6 s=F,2 |$ %5
+ s[=C=F,] s=G, s[=C=G,] s[=C=F,]- s[=C=F,-]3 s[=C=F,] | x2 s=G,2- s=G,3 s[^A,^D,] | %7
+ s[^A,^D,] s[=G,=A,,] s[=G,=A,,] s[=G,=A,,]- s[=G,-=A,,] s[=G,^A,,] s[=G,-^A,,] s[=G,=A,,] | %8
+ x2 s=G,2- s=G,3 s^A, | s^A, s=A, s=A, s^A, s^A, s[^D=A,] s[^D=A,] s[_E=G,] |$ s=A,8 | %11
+ s=F s=F s=F s=F- s=F x x s=F | s=A,8 | s=F s=F s=F s=F- s=F2 s=G s^D | s^D,8 |$ %15
+ s=C s=C s=C s=C- s=C x x s=C :| s^A,,8 |] %17
+V:3
+ s^A,,4 | x4 | s^A,,4 | x4 | x4 |$ x4 | s^A,,4 | x4 | s^A,,4 | x4 |$ x4 | x4 | x4 | x4 | x4 |$ %15
+ x4 :| x4 |] %17
+V:4
+ x8 | x8 | x8 | x8 | x4 s=C2- s=C s=C |$ x8 | x8 | x8 | x8 | x8 |$ x2 s=C2 s^B,3 s=F | x8 | %12
+ x2 s=C2 s^B,3 s=F | x8 | x2 s^A,2- s^A,3 s=C |$ x8 :| x2 s=G,2- s=G,4 |] %17
+V:5
+ ^A,,,6 =A,,,/^A,,,/=C,, | =D,,^D,, =F,,^D,, =D,,=C,, ^A,,,=A,,, | ^A,,,6 =A,,,/^A,,,/=C,, | %3
+ =D,,^D,, =F,,^D,, =D,,=C,, ^A,,,=A,,, | ^D,,6 =G,,/=A,,/^A,, |$ %5
+ =A,,=G,, =F,,^D,, =D,,=C,, ^A,,,=A,,, | ^A,,,6 =A,,,/^A,,,/=C,, | %7
+ =D,,^D,, =F,,^D,, =D,,=C,, ^A,,,=A,,, | ^A,,,6 =A,,/=G,,/=F,, | %9
+ ^D,,=D,, =C,,^A,,, =C,,^A,,, =A,,,=G,,, |$ =A,,,4 =A,,2 =G,,/=A,,/^A,, | %11
+ =C,=D, ^D,=D, =C,^A,, =A,,=G,, | =A,,6 =C,/=D,/^D, | =D,=C, ^A,,=A,, =G,,=F,, ^D,,=D,, | %14
+ ^D,,6 =G,,/=A,,/^A,, |$ =A,,=G,, =F,,^D,, =D,,=C,, ^A,,,=A,,, :| ^A,,,8 |] %17
+V:6
+ xx x ^g xx x ^g | xx x ^g xx x ^g | xx x ^g xx x ^g | xx x ^g xx x ^g | xx x ^g xx x ^g | %5
+ xx x ^g xx x ^g | xx x ^g xx x ^g | xx x ^g xx x ^g | xx x ^g xx x ^g | xx x ^g xx x ^g | %10
+ xx x ^g xx x ^g | xx x ^g xx x ^g | xx x ^g xx x ^g | xx x ^g xx x ^g | xx x ^g xx x ^g | %15
+ xx x ^g xx x ^g :| xx x ^g xx x ^g |] %17
+V:7
+ EE _c x EE _c x | EE _c x EE _c x | EE _c x EE _c x | EE _c x EE _c x | EE _c x EE _c x | %5
+ EE _c x EE _c x | EE _c x EE _c x | EE _c x EE _c x | EE _c x EE _c x | EE _c x EE _c x | %10
+ EE _c x EE _c x | EE _c x EE _c x | EE _c x EE _c x | EE _c x EE _c x | EE _c x EE _c x | %15
+ EE _c x EE _c x :| EE _c x EE _c x |] %17

@@ -1,0 +1,60 @@
+//########################################
+//# This page contains score data, timing data and the media file path. Save it as a text file in
+//# the same folder as abcweb.html. Abcweb preloads score and media when it is opened with the
+//# file name as parameter in the url, for example: http://your.domain.org/abcweb.html?file_name
+//# Also works locally with file:///path/to/abcweb.html?file_name
+//# **** You have to correct the path to the media file below! (media_file="...";) ****
+//########################################
+//#
+media_file = "../svgParse/gadma_2.webm";
+msc_credits = ["Fragment copied from<br>","<a href=\"https://www.youtube.com/watch?v=qx-ymShyfIk\">this video</a> on youtube."];
+offset_js = 1.22;
+opt = {"jump":0,"no_menu":0,"nospd":true,"repufld":0,"noplyr":0,"nocsr":0,"media_height":"","btns":0,"autscl":0,"ctrmed":0,"ctrnot":0,"lncsr":0,"opacity":0.2,"synbox":0,"speed":1,"top_margin":0,"yubvid":""};
+times_arr = [[0.00,1.36,2.70,4.04,5.22,6.50,7.90,9.42,10.34,11.84],
+[11.84,13.16,14.40,15.64,16.88,18.36,20.04,21.00,22.40,23.48,24.56],
+[24.56,26.40,27.48,28.56,30.24,31.50,32.92,34.28,35.64,37.00,38.36],
+[38.36,39.56,40.76,43.04,44.44,45.52,46.60,47.68,48.86,50.04,51.36],
+[51.36,52.50,53.64,54.82,55.90,56.98,58.38,59.50,60.62,61.74]];
+abc_arr = ["X:1",
+"T:Gadma Gözal",
+"C:Aziza Mustafa Zadeh",
+"C:Transcription: Wim Vree",
+"%%scale 0.76",
+"%%pagewidth 25.00cm",
+"%%score { 1 | 2 }",
+"L:1/4",
+"Q:1/4=130",
+"M:3/4",
+"I:linebreak $",
+"K:Ab",
+"V:1 treble ",
+"%%MIDI program 0",
+"L:1/8",
+"V:2 bass ",
+"%%MIDI program 0",
+"V:1",
+"\"^Allergro\" AB cd c/d/c/d/ | c/d/B/c/ B/c/B/c/ A2 |{Ac} B- B2 B b2 | B2 [Bb]2 B2 | AB cd c/d/c/d/ | %5",
+" c/d/B/c/ B/c/B/c/ A2 |{Ac} B- B2 B b2 | B2 [Bb]2 B2 |$ F_G =G/A/_G =G/A/_G | %9",
+" G/A/_G (6:4:6B/G/B/G/B/G/ F2 |{Ac} BA BA Bc | A/=A/_G/B/ F4 | F_G =G/A/_G =G/A/_G | %13",
+" G/A/B/_G/ (6:4:6B/G/B/G/B/G/ FG |$ F2 z2 [B,CE]2 | z2 [B,CEF]4 | AB cd c/d/c/d/ | %17",
+" c/d/B/c/ B/c/B/c/ A2 |{Ac} B- B2 B b2 | B2 [Bb]2 B2 | AB cd c/d/c/d/ | c/d/B/c/ B/c/B/c/ A2 | %22",
+"{Ac} B- B2 B b2 |$ B2 [Bb]2 B2 | F_G =G/A/_G =G/A/_G | G/A/_G (6:4:6B/G/B/G/B/G/ F2 | %26",
+"{Ac} BA BA Bc | A/=A/_G/B/ F4 | F_G =G/A/_G =G/A/_G |$ G/A/B/_G/ (6:4:6B/G/B/G/B/G/ FG | %30",
+" Ff e/f/d/f/ c/d/B/c/ |[Q:1/4=90] A/=A/_G/B/ F/G/E/F/ G/F/G/E/ |[M:4/4][Q:1/4=200] B2 BA BABc | %33",
+" (3A=A_A (3_GBG FFGA |$ BBBA BABc | (3ABA (3_GAG F2 (3FG=G | AGAG AGAB | (3GBG (3BG_G F2 (3FG=G | %38",
+" AGAG AGAB | _G/B/G/B/ G/B/G/B/ FFGA |$ B2 BA BABc | (3A=A_A (3_GBG FFGA | BBBA BABc | %43",
+" (3ABA (3_GAG F2 (3FG=G | AGAG AGAB | (3GBG (3BG_G F2 (3FG=G |$ AGAG AGAB | %47",
+" _G/B/G/B/ G/B/G/B/ FFGA |] %48",
+"V:2",
+" F,, F, F | F, E E | F,/ F F,/ =D | D [F,D] B,, | F,, F, F | F, E E | F,/ F F,/ =D | D [F,D] B,, |$ %8",
+" F,3/2 C/ C | E C C | =D, B, F | ^C, [B,E] [B,E] | F,3/2 C/ C | F,3/2 [B,D]/- [B,D] |$ %14",
+" F,,/C,/ E,/F,/ C,/F,/ | F,, F,2 | F,, F, F | F, E E | F,/ F F,/ =D | D [F,D] B,, | F,, F, F | %21",
+" F, E E | F,/ F F,/ =D |$ D [F,D] B,, | F,3/2 C/ C | E C C | =D, B, F | ^C, [B,E] [B,E] | %28",
+" F,3/2 C/ C |$ F,3/2 [B,D]/- [B,D] | F,,3/2 F,/ [CE] |[Q:1/4=90] [F,,F,] [CE]2 | %32",
+"[M:4/4][Q:1/4=200][K:treble] [FB]3/2 [FB]/ [FB] [FB] | [FB]3/2 [FB]/ [FB] [FB] |$ %34",
+" [EFB]3/2 [EFB]/ [EFB] [EFB] | [EFB]3/2 [EFB]/ [EFB] [EFB] | [=DF]3/2 [DF]/ [DF] [DF] | %37",
+" [=DF]3/2 [DF]/ [DF] [DF] | [DF]3/2 [DF]/ [DF] [DF] | [F,CF]3/2 [F,CF]/ [F,CF] [F,CF] |$ %40",
+" [FB]3/2 [FB]/ [FB] [FB] | [FB]3/2 [FB]/ [FB] [FB] | [EFB]3/2 [EFB]/ [EFB] [EFB] | %43",
+" [EFB]3/2 [EFB]/ [EFB] [EFB] | [=DF]3/2 [DF]/ [DF] [DF] | [=DF]3/2 [DF]/ [DF] [DF] |$ %46",
+" [DF]3/2 [DF]/ [DF] [DF] | [F,CF]3/2 [F,CF]/ [F,CF] [F,CF] |] %48",
+""];

@@ -1,0 +1,124 @@
+<!DOCTYPE HTML><html><head><meta charset="utf-8"></head>
+<body><pre>2021-04-24
+
+	* Revision: 197
+	- make compilescript similar to the one for follow.js
+	- make scale computation similar to the one in follow.js
+
+2021-04-23
+
+	* Revision: 196
+	- bug: array check in scale computation
+	- changed test for extra bar line at start of a staff (eoln -&gt; soln)
+	- updated the translation of percussion maps (perc2map)
+
+2020-10-10
+
+	* Revision: 195
+	- updated the docs with the new short cut keys (space, arrows)
+	- do not use timeupdate event anymore, but our own timer (dummyplayer)
+	timeupdate is much too slow (250ms) for the note cursor
+
+2020-05-27
+
+	* Revision: 194
+	- readme changes
+
+2019-07-05
+
+	* Revision: 193
+	- accept a playlist when opened with the browse button.
+
+2019-07-04
+
+	* Revision: 192
+	- better positioning of media when a start time is given in the options
+	- implementation of a playlist
+
+2019-06-15
+
+	* Revision: 191
+	- added measure numbers (option mnum of xml2abc-js) at the start of each
+	system
+
+2019-06-12
+
+	* Revision: 190
+	- new key shorcuts: spacebar (play/pause), arrow left and arrow right (move
+	cursor).
+
+2019-06-11
+
+	* Revision: 189
+	- use CSS parameter scroll-behavior for smooth scrolling, when supported.
+	- otherwise fall back to jquery animation
+	- perform both horizontal and vertical scrolling in separate function
+
+	* Revision: 188
+	- use function parameter noAnim in stead of class variable this.noAnim
+
+2019-06-08
+
+	* Revision: 187
+	- bug: set the y-offset of the dotted line when loading a preload file
+	- bug: set default values for newer options not present in older preload files
+
+2019-06-06
+
+	* Revision: 186
+	- scrolling to the next music line is animated (smooth scroll)
+	- setline can scroll with or without animation
+	- alignCursor gets parameter to disable animation
+	- msc_resize and lijn_shift always disable animation
+
+	* Revision: 185
+	- moved all logic to draw, scroll and align the measure/note cursor to one
+	function (alignCursor).
+	- invalidate isvgPrev to force insertion of note cursors into the currenr
+	music line (in alignCursor)
+
+	* Revision: 184
+	- add white space area below score for better dotted line scrolling
+	- simpler calculation of bottom y-coordinate of score
+	- force setline and redraw cursor in centerPlayer (called when window resized)
+
+2019-06-05
+
+	* Revision: 183
+	- various changes suggested by JSHint, included a couple of undeclared vars
+
+	* Revision: 182
+	- new menu checkbox "dotted line" that toggles between (the old) page wise
+	scrolling and "dotted line" scrolling.
+	- implementation of the same "dotted line" scrolling as in pdfweb and xmlplay
+
+2019-05-21
+
+	* Revision: 181
+	- css changes for the menu
+
+2019-05-19
+
+	* Revision: 180
+	- make mapping from time index to measure index for note cursor
+	- filter x coordinate of barlines returned by abc2svg and reject values close
+	than 15 (avoids a problem in abc2svg with repeat brackets in eacht voice)
+	- append a dummy note with start time just beyond the last note (otherwise the
+	last note is never highlighted)
+
+2019-05-18
+
+	* Revision: 179
+	- bug: menu should not overlap scrollbars when menu is collapsed
+	- bug: exclude video element from resizing handler, otherwise video controls
+	do not work.
+	- do not exclude the credits from resizing (when present)
+
+2019-05-17
+
+	* Revision: 178
+	- implementation of the note cursor. The note cursor highlights notes in
+	each voice with a different color. The note cursor replaces the line cursor.
+	- bug: wrong calculation of score offset when score is centered.
+
+</pre></body></html>
