@@ -1,0 +1,8 @@
+osascript -e 'display notification "calculation completed"'
+
+osascript -i 
+tell app "Keynote" to close every window
+tell app "Safari" to make new document with properties { url: "https://salesforce.com"}
+tell app "Safari" to email contents of the front document
+
+tell app "Safari" to make new document with properties { url: "https://login.salesforce.com"}
