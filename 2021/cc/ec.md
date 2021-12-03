@@ -122,8 +122,21 @@
     - Setup > Company Information
 
 
+# Hitting limits
+ hitting limits:
+
+- If you allocate all your licenses of any given type, the system will stop you from creating more users on that license type. That’s true for all Salesforce licenses.
+
+- For users on **login-based licenses**
+    - if you **exceed your monthly quota of daily unique logins**, the platform **will not prevent users from logging in**, as daily unique logins are a **soft limit**, enforced only by contract.
+    -  What might happen is that you’d get a call from your **Account Executive**, 
+        - letting you know that you’re going over your limit and opening a discussion on how to best meet your **rising login needs**.
+
+
+
 
 
 ## References
 - [Experience Cloud User Licenses ](https://help.salesforce.com/s/articleView?id=sf.users_license_types_communities.htm&type=5)
+- [Experience Cloud Login SKU Utilization - Demystified](https://www.learnexperiencecloud.com/s/news/community-cloud-login-sku-utilization-demystified-MC4GWWIN5SQZBNXG3NXVX3OQGOQE)
 

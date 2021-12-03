@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppleScripts</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    
+     
+<style>
+    textarea {
+        background-color:#101010;
+        color:blanchedalmond;
+        font-size:larger;
+        border-radius:10px;
+        margin:10px;
+        padding:10px;
+        opacity:.9;
+        font-family: 'Monaco';
+    }
+</style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">MacOS Scripting</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+               
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div style='padding-left:20px;'>
+
+      <nav>
+        <div class="nav nav-pills mb-3" id="nav-tab" role="tablist">
+          <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-keynote" role="tab" aria-controls="nav-home" aria-selected="true">Keynote</a>
+          <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-pages" role="tab" aria-controls="nav-profile" aria-selected="false">Pages</a>
+          <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-numbers" role="tab" aria-controls="nav-profile" aria-selected="false">Numbers</a>
+
+          <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-finder" role="tab" aria-controls="nav-contact" aria-selected="false">Finder</a>
+          <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-help" role="tab" aria-controls="nav-contact" aria-selected="false">Help</a>
+
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-keynote" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="row"> 
+                <div class="col-sm-3">
+                    <select id='script-list'> 
+                        <option value='none'>-- Select Script to Run -- </option>
+                    </select>
+                    
+                    <br/>
+                    <a  style='margin-top:30px;display:none;'id='execute' class='btn btn-info' href="#"></a>
+            
+                </div>
+        
+                <div class="col-sm-9">
+                    <textarea id='script' rows='24' cols='80'> </textarea>
+                </div>
+        
+            </div>
+x`
+
+
+        </div>
+        <div class="tab-pane fade" id="nav-pages" role="tabpanel" aria-labelledby="nav-profile-tab">Pages</div>
+        <div class="tab-pane fade" id="nav-numbers" role="tabpanel" aria-labelledby="nav-profile-tab">Numbers</div>
+
+        <div class="tab-pane fade" id="nav-finder" role="tabpanel" aria-labelledby="nav-contact-tab">Finder</div>
+
+        <div class="tab-pane fade" id="nav-help" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+            <h3>Resources</h3>
+            <ul class="list-grouo">
+
+                <li class="list-group-item">
+                    <a href='https://iworkautomation.com/keynote/'>Keynote and AppleScript</a>
+                </li>
+            </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  
+
+ 
+
+
+    <script>
+
+        const selectEle = document.getElementById('script-list');
+        const scriptEle = document.getElementById('script');
+        const executeEle = document.getElementById('execute');
+
+        const protocol = 'applescript://com.apple.scripteditor?';
+
+        const folder= './scripts/keynote';
+        const ascripts = [
+            {
+                name: 'Get All The Theme Names',
+            },
+            {
+                name: 'New Document with Chosen Theme'
+            },
+            {
+                name: 'Make And Save New Document'
+            },
+            {
+                name: 'Make A New Slide'
+            },
+            {
+                name: 'Add Slides'
+            }
+
+        ];
+
+        for (ascript of ascripts) {
+            const option = document.createElement('option');
+            option.innerText = ascript.name;
+            option.value = ascript.name; 
+            // option.value = `${folder}/${ascript.name}.applescript`;
+            selectEle.appendChild(option);
+        }
+
+        selectEle.addEventListener('change', event => {
+            const name = event.target.value;
+            executeEle.style.display = 'none';
+
+            if (name === 'none') return;
+            const uri = `${folder}/${name.replace(/ /g,'')}.applescript`;
+            
+            fetchScript(uri).then(script => {
+                scriptEle.value = script;
+                const encUri =  `action=new&name=${name}&script=${encodeURIComponent(script)}`;
+                const url = `${protocol}${encUri}`;
+                console.log(decodeURIComponent(url));
+                executeEle.href = url;
+                executeEle.innerText = `RUN`;
+                executeEle.style.display = 'block';
+            });
+        })
+
+        async function fetchScript(uri) {
+            const response = await fetch(`${uri}?v=${(new Date()).getTime()}`);
+            const script = await response.text();
+            return script;
+          }
+
+
+
+    </script>
+
+  
+</body>
+
+</html>
