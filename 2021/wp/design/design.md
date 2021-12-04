@@ -291,26 +291,31 @@ think about how to integrate their computers and devices.
 
 - Google Cloud Platform (GCP) is an application that I love and use almost every day
 - Every time in the GCP UI, I feel it can be better and Human Centered Design (HCD) can used to improve this great application.
-- Looks it is a one giant Angular application written by various sub-teams 
+- Looks it is a one giant Angular application written by various sub-teams
+- Lacks the **progressive disclosure principle**
+- Kitchen-sink or **showing org-chart** UI 
 - Sub-systems are not **integrated** in a seamless way!
 	- Makes to remember Steve's idea of **removing on-off button** in iPods
 	- Usual outcome if the sub-teams are *not properly coordinated*
 - To fix this GCP team has to write large volume of help guides and documentation 
+
+[GCP-3](img/gcd-3.png)
 	- This is hard to maintain and sustain
-- Sometimes, I feel GCP does follow the follow this rule:
+- Sometimes, I feel GCP does not follow the follow this rule:
 	-  **Do not start from data 0**
+- This will end up in poor customer satisfaction (CSAT)
 
 ### How is AWS console doing in this area?
 - I love this application also
 
 - AWS console uses progressive disclosure in the main page
 ![aws-1](img/aws-1.png)
-- But it falls back to kitchen-sink or "showing org-chart" 
+- But it falls back to kitchen-sink or **showing org-chart**
 ![aws-2](img/aws-2.png)
 
 ### How is Apple Store connect doing in this area?
 - Another great application
-- It is not perfect yet, but made not of progress in Human Centered Design Area
+- It is not perfect yet, but made lot of progress in Human Centered Design Area (HCD)
 ![Apple Store connect](img/apple-store-connect-1.png)
 
 
