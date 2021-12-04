@@ -1,30 +1,120 @@
 # Topics
+
+
+```
+
+“The people who are crazy enough to think they can change the world 
+are the ones who do.”
+
+— Apple’s “Think Different” commercial, 1997
+ 
+```
+
+```
+When something is important enough, you do it even if the odds
+are not in your favour. 
+
+- Elon Musk
+
+```
+
 -  Design Principles
 -  Integrated Design Management
 
 # Design Principles
-- How things work
-- Design with sense of future in mind
-- It is not how they look
 
-- We can achieve we are really Focused
-- Process brings efficency
-- Process is the content/innovation? No
-- Without the best content, the process can't get you much!
-- People with great content may be hard to manage
+## Key Concepts
 
-- Do not build products with does match:
-	- Culture/Image of the company
-	- Distribution channel of the company
-	- Current Customers and future customers
+![Jobs on Design](img/jobs1.png)
+- Design is about how things work not how they look
+- Always design with the customer experience and the sense of future in mind
+- Making products just functionally adequate is **not good enough**, they should **great!**
+- We can achieve what we want when we are **laser focused**
 
-- Integrate customer experience into the design and development 
-	- Beautiful Elegant products
-	- Superior functionalities
+### Laser Focus
+```
+Steve Jobs advice to Larry Page:
 
-- Make product to evolve
-	- Motivation to continued innovaton
-# Apple Way
+Figure out what Google wants to be when it grows up.
+What are the five products you want to focus on? 
+Get rid of the rest, because they’re dragging you down.
+
+
+```
+
+## Process vs Content and Innovation
+
+```
+Apple is a very disciplined company, and we have great processes. 
+But that's not what it's about. 
+Process makes you more efficient.
+
+- Steve Jobs
+```
+
+- Process gets you efficiency
+- Process is not the content and innovation
+- Without the **best content and innovation**, the process can't get you much!
+- Hire people with content and innovative mind to make your efforts successful!
+
+ 
+## Simplicity
+- Simplicity is the ultimate sophistication
+- Simplify things by zeroing in on their **essence** and eliminating unnecessary components.
+- **Sony Walkman vs iPod**
+
+
+![ipod-walkman](img/ipad-walkman.png)
+
+- It usually takes a lot of **hard work** to make something **simple** to:
+	-  truly understand the underlying challenges 
+	-  come up with elegant solutions
+```
+- IPod Design:
+
+At one point Jobs made the simplest of all suggestions: 
+
+Let’s get rid of the on/off button. At first the team members were taken aback, 
+but then they realized the button was unnecessary. 
+The device would gradually power down if it wasn’t being used and
+would spring to life when reengaged.
+
+- Tony Fadell, iPod team lead
+
+
+```
+
+- Design with simplicity in the integration as well
+
+```
+
+People are busy.
+They have other things to do than 
+think about how to integrate their computers and devices.
+
+- Steve Jobs
+```
+
+- Everyone will agree that:
+	- Television needs this kind of simplicity:
+		- Have you able to watch the content you like to watch with few clicks on a simple device?
+
+ 
+
+## Do not build products with does not match:
+
+- Culture/Image of the company
+- Distribution channel of the company
+- Current and future customers
+
+- Integrate customer experience into the design and development to build:
+
+	- **Beautiful, elegant and simple-to-use products** providing superior functionalities
+
+- **Make product to evolve**
+	- This provides motivation for *continued innovation*
+		- Like Salesforce delivering 3 times in a year:
+			- With hundreds of **innovative features** to the customers with 3 times a year during  seasonal releases: **Spring, Summer, and Winter**
 
 # Design Thinking
 - User Desirability, Technology Capabilities, Market Viability
@@ -39,23 +129,24 @@
 	- find the key underlying principle of the problem we are solving
 - This simplicity is the ultimate sophistication
 
-
-
 # Integrated Design Management
+
+## Covers
 - Design
 - Engineering
 - Business
+
 ## Produces products
 - Desirable
 - Feasible
 - Viable
-- Sustinable
+- Sustainable
 
 # Key ways to understand customer requirements
 - Human centered approach - connect with people we are trying to serve
 	- Make persona for the customers interviewed
 - Understand customers to create meaningful value
-- Observe,empathise and get into their world and see the world in their eyes
+- Observe, empathize and get into their world and see the world in their eyes
 
 - Creativity thrives in free environment
 
@@ -73,12 +164,12 @@
 - Delight our users
 
 - Take a busy screen
-	- lack organisation
+	- lack organization
 	- customer don't read most of the UI
 		- Trim it down
 		- Add headings
 		- Use lists
-		- Priortise with colors/fonts
+		- Prioritize with colors/fonts
 - Speak human
 
 - Details are not the details
@@ -92,15 +183,15 @@
 ![Microinterations](img/Microinteractions.png)
 
 - Bring Data forward
-	- progressive discolsure
+	- progressive disclosure
 		- do not throw every piece of data at the user
-		- allow them to disover it over time
+		- allow them to discover it over time
 			- Example a badge on the icon to show how many message you have now!
 			- showing what is important data
 		- what info is available
 			- in what increments
 			- when we can present them?
-				- all these info is important at differenct times
+				- all these info is important at different times
 				- align the information delivery with when the user needs them
 			- within what context making it appropriate?
 		
@@ -124,8 +215,12 @@
 
 	- User Behavior
 		- 
-- Remove and absorbe complexity
+- Remove and absorb complexity
 - Speak human
 - Prevent human error
+
+
+# Resources
+- [Harvard Busines Review: The Real Leadership Lessons of Steve Jobs](https://hbr.org/2012/04/the-real-leadership-lessons-of-steve-jobs)
 
 
