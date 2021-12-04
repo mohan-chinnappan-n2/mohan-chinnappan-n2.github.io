@@ -1,7 +1,9 @@
-# Topics
+# Introduction
+
+## Quotes which can inspire us
 
 ```
- Design is a way of changing life and influencing the future
+ Design is a way of changing life and influencing the future.
 
  - Sir Ernest Hall
 
@@ -24,6 +26,8 @@ are not in your favour.
 
 ```
 
+## We discuss the following in this document:
+
 -  Design Principles
 -  Integrated Design Management
 
@@ -37,6 +41,10 @@ are not in your favour.
 - Making products just functionally adequate is **not good enough**, they should **great!**
 - We can achieve what we want when we are **laser focused**
 
+### Steve on Design
+
+[![Steve Jobs on Design (2002)](img/steve-on-design-1.png)](https://www.youtube.com/watch?v=Ddjy_hTO7Tc)
+
 ### Laser Focus
 ```
 Steve Jobs advice to Larry Page:
@@ -44,6 +52,7 @@ Steve Jobs advice to Larry Page:
 Figure out what Google wants to be when it grows up.
 What are the five products you want to focus on? 
 Get rid of the rest, because they’re dragging you down.
+   
 
 
 ```
@@ -57,6 +66,10 @@ Process makes you more efficient.
 
 - Steve Jobs
 ```
+
+### Steve Jobs Content vs Process (Video)
+[![Steve Jobs Content vs Process](img/job-process-1.png)](https://www.youtube.com/watch?v=l4dCJJFuMsE)
+
 
 - Process gets you efficiency
 - Process is not the content and innovation
@@ -310,7 +323,7 @@ think about how to integrate their computers and devices.
 - GCP can have feedback feature, where users like me can provide suggestions like AWS has for the beta versions of the AWS console
 - Follow Human Centered Design (HCD) like **MIT and Altitude done for Elderly Walker** as in this video:
 
-[![Design Thinking Video from MIT & Altitude](https://img.youtube.com/vi/kq2kd3CXi1o/0.jpg)](https://www.youtube.com/watch?v=kq2kd3CXi1o)
+[![Design Thinking Video from MIT & Altitude](img/mit-hcd-1.png)](https://www.youtube.com/watch?v=kq2kd3CXi1o)
 
 ### How is AWS console doing in this area?
 - I love this application too!
@@ -365,10 +378,20 @@ enter it at any time. Please choose from the following options:
 
 
 # Resources
+
+## Articles, Videos and sites
 - [Harvard Busines Review: The Real Leadership Lessons of Steve Jobs](https://hbr.org/2012/04/the-real-leadership-lessons-of-steve-jobs)
+
+
+
 - [IDEO - human-centered design](https://www.ideo.org/tools)
 - [Google Design](https://design.google/library/simulating-intelligence/)
 - [Google Design best of 2020](https://design.google/library/google-design-2020/)
 - [Human Interface Guidelines](https://developer.apple.com/design/)
 - [inVision: Human-centered design](https://www.invisionapp.com/defined/human-centered-design)
+
+## Videos about "Make product to evolve"
+[![Elon Musk Interview: 1-on-1 with Sandy Munro](img/elon-1.png)](https://www.youtube.com/watch?v=YAtLTLiqNwg)
+
+
 
