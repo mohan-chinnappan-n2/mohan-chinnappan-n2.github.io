@@ -287,7 +287,7 @@ think about how to integrate their computers and devices.
 # Case Study - Google Cloud Platform
 
 ## Background
-![GC-1](img/gcd-2.png)
+[![GC-1](img/gcd-2.png)](https://console.cloud.google.com/)
 
 - Google Cloud Platform (GCP) is an application that I love and use almost every day
 - Every time in the GCP UI, I feel it can be better and Human Centered Design (HCD) can used to improve this great application.
@@ -298,26 +298,68 @@ think about how to integrate their computers and devices.
 	- Makes to remember Steve's idea of **removing on-off button** in iPods
 	- Usual outcome if the sub-teams are *not properly coordinated*
 - To fix this GCP team has to write large volume of help guides and documentation 
-
-[GCP-3](img/gcd-3.png)
+- [![GCP-3](img/gcp-3.png)](https://console.cloud.google.com/)
 	- This is hard to maintain and sustain
+	- [GCP : Documentation](https://cloud.google.com/docs/)
 - Sometimes, I feel GCP does not follow the follow this rule:
-	-  **Do not start from data 0**
+	-  **Do not start from zero**
 - This will end up in poor customer satisfaction (CSAT)
 
+### How to fix this?
+
+- GCP can have feedback feature, where users like me can provide suggestions like AWS has for the beta versions of the AWS console
+- Follow Human Centered Design (HCD) like **MIT and Altitude done for Elderly Walker** as in this video:
+
+[![Design Thinking Video from MIT & Altitude](https://img.youtube.com/vi/kq2kd3CXi1o/0.jpg)](https://www.youtube.com/watch?v=kq2kd3CXi1o)
+
 ### How is AWS console doing in this area?
-- I love this application also
+- I love this application too!
 
 - AWS console uses progressive disclosure in the main page
-![aws-1](img/aws-1.png)
+[![aws-1](img/aws-1.png)](https://aws.amazon.com/console/)
 - But it falls back to kitchen-sink or **showing org-chart**
-![aws-2](img/aws-2.png)
+[![aws-2](img/aws-2.png)](https://aws.amazon.com/console/)
 
 ### How is Apple Store connect doing in this area?
 - Another great application
 - It is not perfect yet, but made lot of progress in Human Centered Design Area (HCD)
-![Apple Store connect](img/apple-store-connect-1.png)
+[![Apple Store connect](img/apple-store-connect-1.png)](https://appstoreconnect.apple.com/)
 
+### What is "Do not start from zero"?
+- The product should try to know the user as much as possible
+- With that information provide correct choices and navigation to the user
+```
+Example of a poor Experience with a home internet provider who is suffering from 
+- "Do not start from zero" 
+
+Use case:
+- You have to change the cable modem and you need to call tech support of the cable company
+
+Your action:
+- Call the tech support of the cable company (say XYZ)
+	- You land on Interactive Voice Response (IVR)
+	- You press 2 to service department
+		- you provide all the information to this service rep
+		- service rep says, you need to call another number for model replacement
+			- rep transfers to you another number, that number goes to voice mail
+		- you try again and get another service rep
+			- you provide your details to the this service rep again! 
+			- this time rep transfers to you another number, you got transferred correctly
+				- this new rep asks the same details you have provided already two times!
+				- you feel like: how can I change the cable company!!! 
+
+
+```
+
+### Typical IVR menu
+
+- Thank you for calling XYZ Corporation. If you know your party’s extension, you may
+enter it at any time. Please choose from the following options:
+	- For our sales department, press 1
+	- For our service department, press 2
+	- For our billing department, press 3
+	- For all other matters, press 0
+ 
 
 
 
