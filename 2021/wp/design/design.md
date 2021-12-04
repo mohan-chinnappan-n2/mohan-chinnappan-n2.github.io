@@ -1,5 +1,11 @@
 # Topics
 
+```
+ Design is a way of changing life and influencing the future
+
+ - Sir Ernest Hall
+
+```
 
 ```
 
@@ -117,6 +123,65 @@ think about how to integrate their computers and devices.
 			- With hundreds of **innovative features** to the customers with 3 times a year during  seasonal releases: **Spring, Summer, and Winter**
 
 # Design Thinking
+
+- User Centered approach to problem solving
+
+![Design Thinking](img/Design-Thinking.png)
+
+## Empathize 
+- Foundation of human centered 
+- Uncover needs that customer have which they may or may not be aware of
+- Guide innovation efforts
+- Identify right user  to design for
+- Discover the emotions that guide behaviors
+
+## Define
+- Scope a specific and meaningful challenge
+- Explicitly explains the problem we are solve 
+
+## Ideate
+- Generate radical design alternatives
+- Going wide in terms of concepts and outcomes
+- Step beyond obvious solutions
+- Harness collective perspectives
+- Get obvious solutions out of your heads
+
+## Prototype
+- Getting ideas and explorations out of your head into  the physical world
+- Learn
+- Solve disagreements
+- Fail quickly and cheaply
+
+## Testing
+- Getting feedback on the solutions
+- Refine solutions to make them better
+- Continue to know about the customers
+
+
+
+#  Human-centered design (HCD)
+- Puts the customers first, resulting in useful and usable products and services
+- Keeps customers at the heart of the product development process
+- End with tailor-made solutions that satisfy customers needs
+- Involves co-designing and collaboration
+	- Build empathy with your customers so that you’re more confident in your solutions.
+	- Engage with users to uncover as many problems as possible, then narrow your focus on one of these problems.
+- Failure is a learning experience
+
+## Phases
+- Define
+	- immerse yourself in your users’ lives to gain a better understanding of who they are.
+	- Observe and ask questions to see things from their point of view. 
+	- Identify your biases and assumptions so you can deviate from them if they don’t align with your users’ reality
+
+- Ideate
+	- 
+- Prototype and test
+- Implement
+
+
+
+
 - User Desirability, Technology Capabilities, Market Viability
 - Product will be the  Heart and soul of the Design Team
 - Start with Design
@@ -222,5 +287,8 @@ think about how to integrate their computers and devices.
 
 # Resources
 - [Harvard Busines Review: The Real Leadership Lessons of Steve Jobs](https://hbr.org/2012/04/the-real-leadership-lessons-of-steve-jobs)
-
+- [IDEO - human-centered design](https://www.ideo.org/tools)
+- [Google Design](https://design.google/library/simulating-intelligence/)
+- [Google Design best of 2020](https://design.google/library/google-design-2020/)
+- [inVision: Human-centered design](https://www.invisionapp.com/defined/human-centered-design)
 
