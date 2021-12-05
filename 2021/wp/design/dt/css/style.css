@@ -53,6 +53,8 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  zoom:120%;
+
 }
 
 /* A elements that don't have a class get default styles */
@@ -100,6 +102,7 @@ body {
   font-weight: var(--fw-400);
 
   background-color: hsl(var(--clr-neutral-200));
+  
 }
 
 h1,
