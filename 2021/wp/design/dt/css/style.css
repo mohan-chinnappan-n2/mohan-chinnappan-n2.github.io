@@ -63,7 +63,7 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
+  max-width: 200px;
   display: block;
 }
 
@@ -215,14 +215,16 @@ h3 {
 }
 
 .testimonial .name {
-  font-size: var(--fs-400);
+  /* font-size: var(--fs-400);*/
   font-weight: var(--fw-400);
-  line-height: 1;
+  line-height: 3;
+  text-transform: uppercase;
+  font-size: 30px;
 }
 
 .testimonial .position {
-  font-size: var(--fs-300);
-  opacity: 0.5;
+  font-size: var(--fs-500);
+  opacity: 1;
 }
 
 .testimonial > p:first-of-type {
