@@ -33,7 +33,7 @@
             - quick prototype with PVC pipes (IDEATION)
             ![cybex-1](img/cybex-1.png)
             - Bill's Manager's feedback was not great! Bill believed in it
-                - went on and made better and rough prototype to validate his ideas
+                - went on and made better and rough low resolution prototype to validate his ideas
                 - put that prototype in use with the users (TEST)
                 - took this to a hotel gym and measured how many users preferred his prototype (VALIDATION) 
                 - used this data to put this modified product into market

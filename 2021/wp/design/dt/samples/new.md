@@ -24,3 +24,5 @@
 
 - ![prob-sol-3](img/prob-sol-3.png )
 
+## References
+- [Stanford D School - Webinar - Design Thinking: What is it and why should I care?](https://www.youtube.com/watch?v=GeUXQ_L-35M)
