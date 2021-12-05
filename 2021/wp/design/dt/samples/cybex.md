@@ -1,4 +1,7 @@
-# Cybex
+# Cybex - Treadmills
+
+## Obstacle  (O in V2MOM)
+- Bill Pacheco's Manager did not find the need for this value add
 
 ## Competitors
 - TechnoGym
