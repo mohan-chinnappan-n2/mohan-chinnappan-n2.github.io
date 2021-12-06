@@ -1,0 +1,91 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>macOS App Development</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/codelab-elements.css">
+  <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n2.github.io/favicon.ico">
+  <link rel="stylesheet" href="https://mohan-chinnappan-n2.github.io/2020/cust-ele/css/app.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+</head>
+<body>
+<google-codelab id="macOS App Development" title="macOS App Development" environment="web" >
+
+<google-codelab-step label=' Creating MacOS Application'>
+<div id='s0-md' class='md' data-trim='false'>
+  
+- File > New > Target > [macOS] > App
+
+- [Creating a macOS App](https://developer.apple.com/tutorials/swiftui/creating-a-macos-app)
+
+
+![macos app](img/macos-app-1.png)
+![macos app](img/macos-app-2.png)
+
+![macos app](img/macos-app-3.png)
+
+## MacLandmarksApp.swift
+```swift
+import SwiftUI
+
+@main
+struct MacLandmarksApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
+```
+
+## ContentView.swift
+
+```swift
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        Text("Hello, world!")
+            .padding()
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+```
+
+
+</div>
+</google-codelab-step>
+<google-codelab-step label=' Creation'>
+<div id='s1-md' class='md' data-trim='false'>
+  
+```bash
+sfdx mohanc:slides:gen -i app.md -o app.md.html -t 'macOS App Development'
+```
+
+
+
+
+
+
+</div>
+</google-codelab-step>
+</google-codelab>
+
+  <script src="https://mohan-chinnappan-n2.github.io/2019/stats/js/md2html.js?v=2"> </script> 
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/native-shim.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/custom-elements.min.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/codelab-elements.js"></script>
+  <script src="https://mohan-chinnappan-n2.github.io/2020/cust-ele/js/prettify.js"></script>
+
+</body>
+</html>
