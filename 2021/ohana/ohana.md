@@ -148,6 +148,6 @@
 # Creation
 - Script
 ```
-sfdx mohanc:slides:gen -i ohana.md -o ohana.md.html -t 'ART, ENGINEERING AND MEDICINE'
+sfdx mohanc:slides:gen -i ohana.md -o ohana.md.html -t 'Design Thinking in ART, ENGINEERING AND MEDICINE'
 ```
 
