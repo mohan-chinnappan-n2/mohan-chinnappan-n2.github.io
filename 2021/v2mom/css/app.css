@@ -1,6 +1,17 @@
 /* app.css */
 /* mohan chinnappan */
 
+:root {
+     
+    --ff-primary: "Barlow Semi Condensed", sans-serif;
+    
+    
+  }
+body {
+font-family: var(--ff-primary);
+}
+
+
 textarea {
     background-color:#101010;
     color:blanchedalmond;
@@ -9,5 +20,6 @@ textarea {
     margin:10px;
     padding:10px;
     opacity:.9;
-    font-family: 'Architects Daughter', cursive;
+    font-family: var(--ff-primary);
+    /* font-family: 'Architects Daughter', cursive;*/
 }
