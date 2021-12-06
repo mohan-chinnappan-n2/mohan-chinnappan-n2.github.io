@@ -140,7 +140,10 @@
 
 
 # References
+- [Notes on Design](https://mohan-chinnappan-n2.github.io/2021/wp/design/design.md.html#0)
+- [Design Thinking](https://mohan-chinnappan-n2.github.io/2021/wp/design/dt/dt.html)
 - [Github](https://github.com/mohan-chinnappan-n)
+
 
 # Creation
 - Script
