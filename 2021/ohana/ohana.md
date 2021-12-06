@@ -36,15 +36,15 @@
             ![jaibhim](img/jaiBhim-1.jpg)
             - Many more to come in this area!
     - Engineering
-        - Helped Semi-automatic Weaving machines (loom) to have better safety mechanism
+        - Helped Semi-automatic Weaving machines (loom) to have a better safety mechanism
             - Protecting operators from shuttle fly-out incidents in loom
             ![loom shuttle](img/weaving-shuttle-1.png)
-        - Helped in Financial Service Cloud (FSC) UI for discoverablity and feedback and created Interactive Data Model Application, which is used by many of FSC customers and consulting teams:
+        - Helped in **Financial Service Cloud (FSC)** UI for discoverablity and feedback and created Interactive Data Model Application, which is used by many of FSC customers and consulting teams:
         [![FSC](img/fsc-data-model-1.png)](https://mohan-chinnappan-n.github.io/sfdc/fs-cloud/model-fsc-224.html)
         ![FSC-data-model-2](img/fsc-data-model-2.png)
         - Helped in improving [Oracle WebCenter](https://www.oracle.com/middleware/technologies/webcenter.html) using Design Thinking principles.
         ![Ora webcenter](img/ora-webcenter.png)
-        - Currently working on IDA (Intelligent Document Automation) for Apple Computers
+        - Currently working on **IDA (Intelligent Document Automation)** for Apple Computers
             - [Apple - IDA - Current Work](https://mohan-chinnappan-n2.github.io/2021/automation/macos/ascripts.html?3#nav-keynote)
         
 
