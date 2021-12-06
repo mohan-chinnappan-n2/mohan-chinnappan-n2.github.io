@@ -1,6 +1,6 @@
 # Contributions
 
-- Notes about our Family's  contribution to Art, Engineering and Medicine
+- Notes about our Ohana's  contribution to Art, Engineering and Medicine
 
 # Introduction
 
