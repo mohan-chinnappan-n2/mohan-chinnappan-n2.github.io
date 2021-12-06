@@ -144,6 +144,6 @@
 # Creation
 - Script
 ```
-sfdx mohanc:slides:gen -i family.md -o family.md.html -t 'ART, ENGINEERING AND MEDICINE'
+sfdx mohanc:slides:gen -i ohana.md -o ohana.md.html -t 'ART, ENGINEERING AND MEDICINE'
 ```
 
