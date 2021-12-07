@@ -13,7 +13,7 @@ set posix_path to POSIX path of path_to_desktop as text
 --display dialog posix_path
 
 
-display dialog "Type your resource URL" default answer resource_url buttons {"OK", "Cancel"} default button 1
+display dialog "Type your resource URL" default answer sf_url buttons {"OK", "Cancel"} default button 1
 
 
 
