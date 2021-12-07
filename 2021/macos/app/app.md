@@ -3,6 +3,7 @@
 - File > New > Target > [macOS] > App
 
 - [Creating a macOS App](https://developer.apple.com/tutorials/swiftui/creating-a-macos-app)
+- [SwiftUI: Build macOS App (2021, Xcode 12, SwiftUI 2) - macOS Development for Beginners](https://www.youtube.com/watch?v=6Qa-SspgRMM)
 
 
 ![macos app](img/macos-app-1.png)
@@ -14,9 +15,18 @@
 ```swift
 import SwiftUI
 
-@main
-struct MacLandmarksApp: App {
-    var body: some Scene {
+/*
+An app that uses the SwiftUI app life cycle has a structure that conforms to the App protocol. The structure’s body property returns one or more scenes, which in turn provide content for display. 
+
+The @main attribute identifies the app’s entry point
+
+App > Scenes > View
+
+*/
+
+@main // App's entry point
+struct MacLandmarksApp: App { // App protocol
+    var body: some Scene { // returns Scenes
         WindowGroup {
             ContentView()
         }
@@ -29,10 +39,12 @@ struct MacLandmarksApp: App {
 ```swift
 import SwiftUI
 
-struct ContentView: View {
+// swift view
+
+struct ContentView: View { // conforms to View Protocol
     var body: some View {
         Text("Hello, world!")
-            .padding()
+            .padding() // modifier
     }
 }
 
