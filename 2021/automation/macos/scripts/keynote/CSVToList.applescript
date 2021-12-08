@@ -1,4 +1,7 @@
 -- CSV To List
+
+-- tell (current date) to set theMonday to it - ((its weekday) - 2) * days
+
 on csvToList(csvText, implementation)
 	-- The 'implementation' parameter is a record with optional properties specifying the field separator character and/or trimming state. The defaults are: {separator:",", trimming:false}.
 	set {separator:separator, trimming:trimming} to (implementation & {separator:",", trimming:false})
