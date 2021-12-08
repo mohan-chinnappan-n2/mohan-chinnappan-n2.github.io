@@ -1,6 +1,4 @@
--- sfdx mohanc:ea:dataset:export -e 0Px3h000000bnh9CAA -u mohan.chinnappan.n_ea2@gmail.com
-
--- run sfdx
+-- SFDX TCRM Dataset Export 
 
 set user to "mohan.chinnappan.n_ea2@gmail.com"
 set cmd to "mohanc:ea:dataset:export" 
