@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Quick Introduction</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Basic Linear Algebra needed</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_2-ref.html"><strong aria-hidden="true">2.1.</strong> References</a></li></ol></li><li class="chapter-item expanded "><a href="ml_models.html"><strong aria-hidden="true">3.</strong> ML Models</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">4.</strong> Transformers</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bert.html"><strong aria-hidden="true">4.1.</strong> BERT</a></li><li class="chapter-item expanded "><a href="GPT.html"><strong aria-hidden="true">4.2.</strong> GPT</a></li><li class="chapter-item expanded "><a href="T5.html"><strong aria-hidden="true">4.3.</strong> T5</a></li><li class="chapter-item expanded "><a href="copilot.html"><strong aria-hidden="true">4.4.</strong> GitHub Copilot</a></li><li class="chapter-item expanded "><a href="chapter_7_ref.html"><strong aria-hidden="true">4.5.</strong> References</a></li></ol></li><li class="chapter-item expanded "><a href="tools.html"><strong aria-hidden="true">5.</strong> Tools</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Quick Introduction</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Basic Linear Algebra needed</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_2-ref.html"><strong aria-hidden="true">2.1.</strong> References</a></li></ol></li><li class="chapter-item expanded "><a href="ml_models.html"><strong aria-hidden="true">3.</strong> ML Models</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">4.</strong> Transformers</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bert.html"><strong aria-hidden="true">4.1.</strong> BERT</a></li><li class="chapter-item expanded "><a href="GPT.html"><strong aria-hidden="true">4.2.</strong> GPT</a></li><li class="chapter-item expanded "><a href="T5.html"><strong aria-hidden="true">4.3.</strong> T5</a></li><li class="chapter-item expanded "><a href="copilot.html"><strong aria-hidden="true">4.4.</strong> GitHub Copilot</a></li><li class="chapter-item expanded "><a href="chapter_7_ref.html"><strong aria-hidden="true">4.5.</strong> References</a></li></ol></li><li class="chapter-item expanded "><a href="speedup.html"><strong aria-hidden="true">5.</strong> Speedup</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="jax.html"><strong aria-hidden="true">5.1.</strong> JAX</a></li><li class="chapter-item expanded "><a href="jax_ref.html"><strong aria-hidden="true">5.2.</strong> References</a></li></ol></li><li class="chapter-item expanded "><a href="tools.html"><strong aria-hidden="true">6.</strong> Tools</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -507,6 +507,109 @@ function calculateDaysBetweenDates(date1, date2) {
 </ul>
 <h2 id="matplotlib"><a class="header" href="#matplotlib">Matplotlib</a></h2>
 <p><a href="https://scriptverse.academy/tutorials/python-matplotlib-plot-function.html">Matplotlib: Plot a Function y=f(x) </a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="12-speedup"><a class="header" href="#12-speedup">12. Speedup</a></h1>
+<p>In this chapter we will see the ways to speed up Machine Learning</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="12-jax"><a class="header" href="#12-jax">12. JAX</a></h1>
+<p><a href="https://github.com/google/jax">JAX</a> is a new library from <a href="https://research.google/">Google Research</a>. 
+JAX can automatically differentiate native Python and Numpy functions.</p>
+<ul>
+<li>Loops</li>
+<li>Branches</li>
+<li>Recursion </li>
+<li>Closures</li>
+</ul>
+<h2 id="python-decorators"><a class="header" href="#python-decorators">Python Decorators</a></h2>
+<ul>
+<li><a href="https://www.programiz.com/python-programming/decorator">Refer</a></li>
+</ul>
+<p>A decorator takes in a function, adds some functionality and returns it. </p>
+<pre><code class="language-py">#  a decorator takes in a function, adds some functionality and returns it.
+
+# takes in function to be decorated
+def make_pretty(func):
+    def inner():
+        print(&quot;I got decorated&quot;) # getting decorated
+        func() # back to the given function
+    return inner
+
+
+def ordinary():
+    print(&quot;I am ordinary&quot;)
+
+</code></pre>
+<pre><code class="language-py"># will print:  I am ordinary
+
+ordinary()
+
+</code></pre>
+<pre><code class="language-py">decorated = make_pretty(ordinary)
+decorated() 
+&quot;&quot;&quot; will print: 
+    I got decorated
+    I am ordinary
+&quot;&quot;&quot;
+
+# decorator function (make_pretty) has added
+##  some new functionality to the original function (ordinary)
+
+</code></pre>
+<pre><code class="language-py"># annoation way
+@make_pretty # syntactic sugar
+def ordinary():
+    print(&quot;I am ordinary&quot;)
+
+</code></pre>
+<pre><code class="language-py">iam_special = ordinary()
+&quot;&quot;&quot; will print: 
+    I got decorated
+    I am ordinary
+&quot;&quot;&quot;
+
+</code></pre>
+<h3 id="decorating-functions-with-parameters"><a class="header" href="#decorating-functions-with-parameters">Decorating functions with parameters</a></h3>
+<pre><code class="language-py"># Decorating functions with parameters
+
+def smart_divide(func):
+    def inner(a, b):
+        print(&quot;I am going to divide&quot;, a, &quot;and&quot;, b)
+        if b == 0:
+            print(&quot;Whoops! cannot divide by zero&quot;)
+            return
+
+        return func(a, b)
+    return inner
+
+
+@smart_divide
+def divide(a, b):
+    print(a/b)
+</code></pre>
+<pre><code class="language-py">
+divide(10,2)
+
+&quot;&quot;&quot; will print: 
+    I am going to divide 10 and 2
+    5.0
+&quot;&quot;&quot;
+</code></pre>
+<pre><code class="language-py">
+divide(10,0)
+
+&quot;&quot;&quot; will print: 
+    I am going to divide 10 and 0
+    Whoops! cannot divide by zero
+&quot;&quot;&quot;
+
+</code></pre>
+<h2 id="xla"><a class="header" href="#xla">XLA</a></h2>
+<p><a href="https://www.tensorflow.org/xla">XLA</a> is Accelerated Linear Algebra. It is a <strong>domain-specific compiler</strong> for <strong>linear algebra</strong> that can <strong>accelerate TensorFlow models</strong> with potentially <strong>no source code changes</strong>.</p>
+<h2 id="autograd"><a class="header" href="#autograd">Autograd</a></h2>
+<p>Autograd (https://github.com/hips/autograd) can automatically differentiate native <strong>Python and Numpy</strong> code.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="references-1"><a class="header" href="#references-1">References</a></h1>
+<iframe width="720" height="480" src="https://www.youtube.com/embed/0mVmRHMaOJ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<ul>
+<li><a href="https://realpython.com/primer-on-python-decorators/">Primer on Python Decorators</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="20-tools"><a class="header" href="#20-tools">20. Tools</a></h1>
 <ul>
 <li><a href="tablesgenerator.com/markdown_tables">Markdown Table Generator</a></li>
@@ -529,20 +632,6 @@ function calculateDaysBetweenDates(date1, date2) {
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3000/__livereload");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

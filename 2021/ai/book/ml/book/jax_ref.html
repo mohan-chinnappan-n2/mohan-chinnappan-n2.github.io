@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>3. ML Models - Machine Learning for Everyone!</title>
+        <title>References - Machine Learning for Everyone!</title>
 
 
         <!-- Custom HTML head -->
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Quick Introduction</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Basic Linear Algebra needed</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_2-ref.html"><strong aria-hidden="true">2.1.</strong> References</a></li></ol></li><li class="chapter-item expanded "><a href="ml_models.html" class="active"><strong aria-hidden="true">3.</strong> ML Models</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">4.</strong> Transformers</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bert.html"><strong aria-hidden="true">4.1.</strong> BERT</a></li><li class="chapter-item expanded "><a href="GPT.html"><strong aria-hidden="true">4.2.</strong> GPT</a></li><li class="chapter-item expanded "><a href="T5.html"><strong aria-hidden="true">4.3.</strong> T5</a></li><li class="chapter-item expanded "><a href="copilot.html"><strong aria-hidden="true">4.4.</strong> GitHub Copilot</a></li><li class="chapter-item expanded "><a href="chapter_7_ref.html"><strong aria-hidden="true">4.5.</strong> References</a></li></ol></li><li class="chapter-item expanded "><a href="speedup.html"><strong aria-hidden="true">5.</strong> Speedup</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="jax.html"><strong aria-hidden="true">5.1.</strong> JAX</a></li><li class="chapter-item expanded "><a href="jax_ref.html"><strong aria-hidden="true">5.2.</strong> References</a></li></ol></li><li class="chapter-item expanded "><a href="tools.html"><strong aria-hidden="true">6.</strong> Tools</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Quick Introduction</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Basic Linear Algebra needed</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_2-ref.html"><strong aria-hidden="true">2.1.</strong> References</a></li></ol></li><li class="chapter-item expanded "><a href="ml_models.html"><strong aria-hidden="true">3.</strong> ML Models</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">4.</strong> Transformers</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bert.html"><strong aria-hidden="true">4.1.</strong> BERT</a></li><li class="chapter-item expanded "><a href="GPT.html"><strong aria-hidden="true">4.2.</strong> GPT</a></li><li class="chapter-item expanded "><a href="T5.html"><strong aria-hidden="true">4.3.</strong> T5</a></li><li class="chapter-item expanded "><a href="copilot.html"><strong aria-hidden="true">4.4.</strong> GitHub Copilot</a></li><li class="chapter-item expanded "><a href="chapter_7_ref.html"><strong aria-hidden="true">4.5.</strong> References</a></li></ol></li><li class="chapter-item expanded "><a href="speedup.html"><strong aria-hidden="true">5.</strong> Speedup</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="jax.html"><strong aria-hidden="true">5.1.</strong> JAX</a></li><li class="chapter-item expanded "><a href="jax_ref.html" class="active"><strong aria-hidden="true">5.2.</strong> References</a></li></ol></li><li class="chapter-item expanded "><a href="tools.html"><strong aria-hidden="true">6.</strong> Tools</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -144,89 +144,21 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="3-ml-models"><a class="header" href="#3-ml-models">3. ML Models</a></h1>
-<h2 id="simple-model"><a class="header" href="#simple-model">Simple model</a></h2>
-<p>\( y = mx + b \)</p>
-<pre><code> where
- m = slope (gradient)
- b = y-intercept
-
-x is the independent variable
-y is the dependent variable depends on m and b
-
-</code></pre>
-<h3 id="plotting-the-equation"><a class="header" href="#plotting-the-equation">Plotting the equation</a></h3>
-<p>\( y = x*2 + 1 \)</p>
-<p><img src="img/models/eqn-plotting-0.png" alt="ML Model plotting" /></p>
-<pre><code class="language-py">import matplotlib.pyplot as plt
-import numpy as np
-
-# setup the plot size 10 inches by 10 inches
-fig = plt.figure(figsize=(10,10))
-
-# 1 row, 1 col, and index is 1
-ax = fig.add_subplot(111)
-
-# put grid in the plot
-plt.grid()
-
-# let us generate x values start from -5 to 5  with 100 samples
-x = np.linspace(-5,5,100)
-print ('Number of samples = {}' .format(len(x)))
-
-ax.spines['left'].set_position('center')
-ax.spines['bottom'].set_position('center')
-
-ax.spines['right'].set_color('none')
-ax.spines['top'].set_color('none')
-
-# we need ticks at bottom and left
-ax.xaxis.set_ticks_position('bottom')
-ax.yaxis.set_ticks_position('left')
-
-## our plot function
-def plot_eqn(eqn,  color, label):
-  plt.plot(x, eqn, color, label=label)
-  # put legend at upper left cornor
-  plt.legend(loc='upper left')
-
-plot_eqn( x*2 + 1, '-r', 'eqn for x*2 + 1')
-#plot_eqn( x*2 - 1, '-b', 'eqn for x*2 - 1')
-#plot_eqn( x*2 - 3, ':b', 'eqn for x*2 - 3')
-#plot_eqn( x*2 + 3, '--m', 'eqn for x*2 + 3')
-
-## show our plot
-plt.show()
-
-
-</code></pre>
-<h2 id="what-happens-when-we-train-a-ml-model-for-this-equation"><a class="header" href="#what-happens-when-we-train-a-ml-model-for-this-equation">What happens when we train a ML model for this equation?</a></h2>
+                        <h1 id="references"><a class="header" href="#references">References</a></h1>
+<iframe width="720" height="480" src="https://www.youtube.com/embed/0mVmRHMaOJ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <ul>
-<li>We provide a training dataset with values for <strong>x</strong> and <strong>y</strong></li>
+<li><a href="https://realpython.com/primer-on-python-decorators/">Primer on Python Decorators</a></li>
 </ul>
-<table><thead><tr><th>x</th><th>y</th></tr></thead><tbody>
-<tr><td>2</td><td>5</td></tr>
-<tr><td>1</td><td>3</td></tr>
-<tr><td>7</td><td>15</td></tr>
-<tr><td>...</td><td>...</td></tr>
-</tbody></table>
-<ul>
-<li>During the training ML Model calculates the optimum value for <strong>m</strong> and <strong>b</strong> variables based on the training dataset we have provided</li>
-<li>Once training completed, ML model is ready for predicting value for <strong>y</strong> for the given <strong>x</strong></li>
-</ul>
-<pre><code> You:   Hey, model my x value is 2, can you predict the value of y?
- Model: Sure, it is 5
-</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="chapter_2-ref.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="jax.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="chapter_7.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="tools.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -236,11 +168,11 @@ plt.show()
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="chapter_2-ref.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="jax.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="chapter_7.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="tools.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

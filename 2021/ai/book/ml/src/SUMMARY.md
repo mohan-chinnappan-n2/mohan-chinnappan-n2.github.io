@@ -10,5 +10,8 @@
     - [T5](T5.md)
     - [GitHub Copilot](copilot.md)
     - [References](chapter_7_ref.md)
+- [12. Speedup](speedup.md)
+    - [JAX](jax.md)
+    - [References](jax_ref.md)
 - [20. Tools](tools.md)
 
