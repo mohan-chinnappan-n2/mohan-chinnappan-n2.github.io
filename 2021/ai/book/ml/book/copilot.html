@@ -144,7 +144,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="github-copilot"><a class="header" href="#github-copilot">GitHub Copilot</a></h1>
+                        <h1 id="github-copilot"><a class="header" href="#github-copilot"><a href="https://copilot.github.com/">GitHub Copilot</a></a></h1>
 <p>When we type this:</p>
 <pre><code class="language-js">function calculateDaysBetweenDates(date1, date2) {
 
@@ -195,6 +195,20 @@ function calculateDaysBetweenDates(date1, date2) {
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

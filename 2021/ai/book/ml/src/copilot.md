@@ -1,4 +1,4 @@
-# GitHub Copilot
+# [GitHub Copilot](https://copilot.github.com/)
 
 When we type this:
 ```js
