@@ -1,6 +1,3 @@
 # Translate
 
-
-<video controls width="100%" height="100%">
-    <source src="img/openai/openAI-translate-en-fr-1.webm" type="video/webm">
-</video>
+![OpenAI chat](https://raw.githubusercontent.com/mohan-chinnappan-n/ml-book-assets/master/openAI/openAI-translate-en-fr-1.webm.gif)
