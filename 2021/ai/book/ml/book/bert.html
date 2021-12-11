@@ -145,6 +145,17 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="bert"><a class="header" href="#bert">BERT</a></h1>
+<p>BERT, which stands for Bidirectional Encoder Representations from Transformers, is based on <strong>Transformers</strong>, a deep learning model in which every output element is connected to every input element, and the weightings between them are dynamically calculated based upon their <strong>connection</strong>.</p>
+<p>BERT is a technology to generate <strong>contextualized</strong> word embeddings/vectors, which is its biggest advantage but also it's biggest disadvantage as it is <strong>very compute-intensive at inference time</strong>, meaning that if you want to use it in production at scale, it can become costly.</p>
+<ul>
+<li><a href="https://arxiv.org/pdf/1706.03762.pdf">Paper: Attention Is All You Need</a></li>
+</ul>
+<p><strong>Transformer encoder</strong> reads the entire sequence of words at once. Therefore it is considered bidirectional, though it would be more accurate to say that it’s non-directional. This characteristic allows the model to learn the context of a word based on all of its surroundings (left and right of the word)</p>
+<ul>
+<li><a href="https://arxiv.org/pdf/1810.04805.pdf">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a></li>
+<li><a href="https://jalammar.github.io/illustrated-bert/">The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)</a></li>
+<li><a href="https://huggingface.co/docs/transformers/model_doc/bert">Hugging face - BERT</a></li>
+</ul>
 
                     </main>
 
