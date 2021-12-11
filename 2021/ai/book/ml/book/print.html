@@ -464,6 +464,50 @@ plt.show()
 <iframe width="720" height="480" src="https://www.youtube.com/embed/tIeHLnjs5U8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="5-tensorflow"><a class="header" href="#5-tensorflow">5. Tensorflow</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tensorflowjs"><a class="header" href="#tensorflowjs">TensorFlow.js</a></h1>
+<p>TensorFlow.js (TFJS) is a library for machine learning in JavaScript.
+Using TFJS you can develop ML models in JavaScript, and use ML directly in the browser or in Node.js.</p>
+<h2 id="browser"><a class="header" href="#browser">Browser</a></h2>
+<pre><code class="language-js">
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js&quot;&gt;&lt;/script&gt;
+
+</code></pre>
+<h2 id="nodejs"><a class="header" href="#nodejs">Node.js</a></h2>
+<pre><code class="language-bash">
+# install TensorFlow.js. using npm or yarn
+yarn add @tensorflow/tfjs
+
+# Install TensorFlow.js with native C++ bindings.
+yarn add @tensorflow/tfjs-node
+
+# if your system has a NVIDIA® GPU with CUDA support, use the GPU package even for higher performance.
+yarn add @tensorflow/tfjs-node-gpu
+
+
+</code></pre>
+<pre><code class="language-js">
+const tf = require('@tensorflow/tfjs');
+
+// Optional Load the binding:
+// Use '@tensorflow/tfjs-node-gpu' if running with GPU.
+require('@tensorflow/tfjs-node');
+
+// Train a simple model:
+const model = tf.sequential();
+model.add(tf.layers.dense({units: 100, activation: 'relu', inputShape: [10]}));
+model.add(tf.layers.dense({units: 1, activation: 'linear'}));
+model.compile({optimizer: 'sgd', loss: 'meanSquaredError'});
+
+const xs = tf.randomNormal([100, 10]);
+const ys = tf.randomNormal([100, 1]);
+
+model.fit(xs, ys, {
+  epochs: 100,
+  callbacks: {
+    onEpochEnd: (epoch, log) =&gt; console.log(`Epoch ${epoch}: loss = ${log.loss}`)
+  }
+});
+  
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="6-pytorch"><a class="header" href="#6-pytorch">6. PyTorch</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="7-transformers"><a class="header" href="#7-transformers">7. Transformers</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bert"><a class="header" href="#bert">BERT</a></h1>
