@@ -54,6 +54,7 @@
     - [TLDR](openai-tldr.md)
     - [Translate](open-translate.md)
     - [Codex](openai-codex.md)
+- [14. Inspirations](inspire.md)
 
 - [20. Tools](tools.md)
 
