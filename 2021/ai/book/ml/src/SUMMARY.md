@@ -25,9 +25,14 @@
     - [GitHub Copilot](copilot.md)
     - [References](chapter_7_ref.md)
 
-- [9. Salesforce Einstein](sf_e.md)
+- [8. Salesforce Einstein](sf_e.md)
 
-- [10. Google Cloud Platform](gcp.md)
+- [9. Google Cloud Platform](gcp.md)
+
+- [10. Processing Units](pu.md)
+    - [CPU](cpu.md)
+    - [GPU](gpu.md)
+    - [TPU](tpu.md)
 
 - [11. ML Pipelines](ml_pl.md)
     - [TensorFlow Serving](tfs.md)
@@ -41,6 +46,11 @@
     - [JAX](jax.md)
     - [Closures and Decorators](closure.md)
     - [References](jax_ref.md)
+
+- [13. OpenAI](openai.md)
+    - [API](openai-api.md)
+    - [Chat](openai-chat.md)
+    - [Summarize](openai-summarize.md)
 
 - [20. Tools](tools.md)
 
