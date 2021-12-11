@@ -145,6 +145,36 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="7-transformers"><a class="header" href="#7-transformers">7. Transformers</a></h1>
+<p>A <a href="https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)">transformer</a> is a deep learning model that adopts the mechanism of <strong>self-attention</strong>, <strong>differentially weighting the significance</strong> of each part of the input data.</p>
+<p>Like recurrent neural networks (RNNs), transformers are designed to <strong>handle sequential input data</strong>, such as natural language, for tasks such as <strong>translation and text summarization</strong>. 
+However, unlike RNNs, transformers do not necessarily process the data in order. Instead the attention mechanism provides <strong>context for any position</strong> in the input sequence. </p>
+<p>For example, if the input data is a natural language sentence, the transformer <strong>does not need to process the beginning of the sentence before the end</strong>. Rather, it identifies the <strong>context</strong> that confers <strong>meaning</strong> to each word in the sentence. 
+This feature allows for more parallelization than RNNs and therefore reduces training times.</p>
+<p>Before transformers, most state-of-the-art NLP systems relied on gated RNNs, such as LSTM and gated recurrent units (GRUs), with <strong>added attention</strong> mechanisms. </p>
+<p>Transformers are built <strong>on these attention</strong> technologies without using an RNN structure, highlighting the fact that <strong>attention mechanisms alone can match the performance</strong> of RNNs with attention.</p>
+<p>Gated RNNs process tokens sequentially, maintaining <strong>a state vector</strong> that contains a representation of the data seen after every token.</p>
+<p>To process the <em>n</em>th token, the model combines the state representing the sentence up to token <em>n-1</em> with the information of the new token to create a <strong>new state</strong>, representing the sentence up to token <em>n</em>. </p>
+<p><strong>Theoretically</strong>, the information from one token can propagate arbitrarily far down the sequence, if at every point the state continues to encode contextual information about the token. </p>
+<p><strong>In practice</strong> this mechanism is flawed: the <strong>vanishing gradient problem</strong> leaves the model's state at the end of a long sentence <strong>without precise, extractable information about preceding tokens</strong>.</p>
+<p>This problem was addressed by <strong>attention mechanisms</strong>. Attention mechanisms let a model draw from the state at any preceding point along the sequence. </p>
+<p>The attention layer can access <strong>all previous states and weigh them according to a learned measure of relevancy</strong>, providing relevant information about far-away tokens.</p>
+<p>A clear example of the value of attention is in <strong>language translation</strong>, where <strong>context is essential</strong> to assign the meaning of a word in a sentence. 
+In an English-to-French translation system, the first word of the French output most probably depends heavily on the <strong>first few words of the English input</strong>. 
+However, in a classic LSTM model, in order to produce the first word of the French output, the model is <strong>given only the state vector of the last English word</strong>. 
+Theoretically, this vector can encode information about the whole English sentence, giving the model all necessary knowledge. 
+In practice, this information is often <strong>poorly preserved by the LSTM</strong>. 
+An <em>attention mechanism can be added to address this problem</em>: 
+- the decoder is given <em>access to the state vectors of every English input word, not just the last</em>, and can learn attention weights that dictate how much to attend to each English input state vector.</p>
+<p>Transformers use an attention mechanism <strong>without an RNN</strong></p>
+<ul>
+<li>processing all tokens at the same time </li>
+<li>calculating attention weights between them in <strong>successive layers</strong>.</li>
+</ul>
+<h3 id="vanishing-gradient-problem"><a class="header" href="#vanishing-gradient-problem"><a href="https://en.wikipedia.org/wiki/Vanishing_gradient_problem">Vanishing Gradient problem</a></a></h3>
+<p>In machine learning, the vanishing gradient problem is encountered when training artificial neural networks with <em>gradient-based learning methods and backpropagation</em>.
+- In such methods, each of the neural network's <strong>weights</strong> receives an update proportional to the <strong>partial derivative</strong> of the error function with respect to the current weight in each iteration of training.
+- The problem is that in some cases, the <strong>gradient will be vanishingly small</strong>, effectively <strong>preventing the weight from changing its value</strong>
+- In the worst case, this may completely <strong>stop</strong> the neural network from further training</p>
 
                     </main>
 
@@ -175,20 +205,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3000/__livereload");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
