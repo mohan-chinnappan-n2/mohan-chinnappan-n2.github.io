@@ -51,6 +51,7 @@
     - [API](openai-api.md)
     - [Chat](openai-chat.md)
     - [Summarize](openai-summarize.md)
+    - [TLDR](openai-tldr.md)
 
 - [20. Tools](tools.md)
 
