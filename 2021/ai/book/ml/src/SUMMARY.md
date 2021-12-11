@@ -26,6 +26,9 @@
     - [References](chapter_7_ref.md)
 
 - [8. Salesforce Einstein](sf_e.md)
+    - [Machine Learning](sf_ml.md)
+    - [Natural Language Processing](sf_nlp.md)
+    - [Computer Vision](sf_cv.md)
 
 - [9. Google Cloud Platform](gcp.md)
 
