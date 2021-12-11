@@ -52,6 +52,7 @@
     - [Chat](openai-chat.md)
     - [Summarize](openai-summarize.md)
     - [TLDR](openai-tldr.md)
+    - [Translate](open-translate.md)
 
 - [20. Tools](tools.md)
 
