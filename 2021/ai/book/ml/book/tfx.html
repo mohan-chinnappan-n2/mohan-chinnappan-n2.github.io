@@ -144,7 +144,9 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="tensorflow-extended"><a class="header" href="#tensorflow-extended">TensorFlow Extended</a></h1>
+                        <h1 id="tensorflow-extended-tfx"><a class="header" href="#tensorflow-extended-tfx">TensorFlow Extended (TFX)</a></h1>
+<p>TFX is a Google-production-scale machine learning (ML) platform based on TensorFlow. </p>
+<p>It provides a configuration framework and shared libraries to integrate common components needed to define, launch, and monitor your machine learning system.</p>
 
                     </main>
 
@@ -175,6 +177,20 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

@@ -147,6 +147,10 @@
                         <h1 id="kubeflow"><a class="header" href="#kubeflow">Kubeflow</a></h1>
 <p>The Kubeflow project is dedicated to making <strong>deployments of machine learning (ML) workflows</strong> on <strong>Kubernetes</strong> simple, portable and scalable.</p>
 <p><img src="img/kubeflow/kubeflow-arch-1.svg" alt="Kubeflow Arch" /></p>
+<p>Kubeflow is an open source ML platform dedicated to making deployments of machine learning (ML) workflows on Kubernetes simple, portable and scalable. </p>
+<p>Kubeflow Pipelines is part of the <strong>Kubeflow platform</strong> that enables composition and execution of reproducible workflows on Kubeflow, integrated with experimentation and notebook based experiences. </p>
+<p>Kubeflow Pipelines services on Kubernetes include the hosted Metadata store, container based orchestration engine, notebook server, and UI to help users develop, run, and manage complex ML pipelines at scale. </p>
+<p>The Kubeflow Pipelines SDK allows for creation and sharing of components and composition and of pipelines programmatically.</p>
 <h2 id="kubernetes"><a class="header" href="#kubernetes">Kubernetes</a></h2>
 <p>Kubernetes is an open-source <strong>container-orchestration system</strong> for automating computer application </p>
 <ul>
@@ -189,6 +193,20 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

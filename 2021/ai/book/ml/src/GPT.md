@@ -19,6 +19,12 @@ GPT-2 is trained with a simple objective:
 
 
 [GPT-2 code](https://github.com/openai/gpt-2)
+[Notebook](https://colab.research.google.com/github/ilopezfr/gpt-2/blob/master/gpt-2-playground_.ipynb)
+
+
+### Zero-shot learning 
+Zero-shot learning (ZSL) is a problem setup in machine learning, where **at test time**, a learner observes samples from classes that **were not observed during training**, and needs to predict the class they belong to.
+
 
 ## [GPT-3](https://github.com/openai/gpt-3)
 Generative Pre-trained Transformer 3 is an **autoregressive language model** that uses deep learning to produce human-like text. 

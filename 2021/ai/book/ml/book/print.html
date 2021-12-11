@@ -544,7 +544,10 @@ GPT-2 is trained with a simple objective: </p>
 <li>GPT-2 is a direct scale-up of GPT, with more than <strong>10X the parameters</strong> and trained on more than 10X the amount of data.</li>
 </ul>
 <p>&quot; We (OpenAI) created a new dataset which emphasizes diversity of content, by scraping content from the Internet. In order to preserve document quality, we used only pages which have been <strong>curated/filtered by humans—specifically</strong>, we used outbound links from Reddit which received at least 3 karma. This can be thought of as a heuristic indicator for whether other users found the link interesting (whether educational or funny), leading to higher data quality than other similar datasets, such as CommonCrawl.&quot;</p>
-<p><a href="https://github.com/openai/gpt-2">GPT-2 code</a></p>
+<p><a href="https://github.com/openai/gpt-2">GPT-2 code</a>
+<a href="https://colab.research.google.com/github/ilopezfr/gpt-2/blob/master/gpt-2-playground_.ipynb">Notebook</a></p>
+<h3 id="zero-shot-learning"><a class="header" href="#zero-shot-learning">Zero-shot learning</a></h3>
+<p>Zero-shot learning (ZSL) is a problem setup in machine learning, where <strong>at test time</strong>, a learner observes samples from classes that <strong>were not observed during training</strong>, and needs to predict the class they belong to.</p>
 <h2 id="gpt-3"><a class="header" href="#gpt-3"><a href="https://github.com/openai/gpt-3">GPT-3</a></a></h2>
 <p>Generative Pre-trained Transformer 3 is an <strong>autoregressive language model</strong> that uses deep learning to produce human-like text. </p>
 <p>It is the third-generation language prediction model in the <em>GPT-n</em> series created by OpenAI.</p>
@@ -664,16 +667,41 @@ The CPU is also important in determining how fast programs can run, from surfing
 <p><img src="https://cloud.google.com/tpu/docs/images/tpu-v3-layout.png" alt="TPU architecture" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="11-ml-pipelines"><a class="header" href="#11-ml-pipelines">11. ML Pipelines</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tensorflow-serving"><a class="header" href="#tensorflow-serving">TensorFlow Serving</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="tensorflow-extended"><a class="header" href="#tensorflow-extended">TensorFlow Extended</a></h1>
+<p>TensorFlow Serving is a flexible, <strong>high-performance serving system</strong> for machine learning models, designed for <strong>production environments</strong>. </p>
+<p>TensorFlow Serving makes it easy to <strong>deploy new algorithms and experiments</strong>, while keeping the same server architecture and APIs. </p>
+<p><a href="https://www.tensorflow.org/tfx/serving/architecture">TensorFlow Serving</a> provides out-of-the-box integration with TensorFlow models, but can be easily extended to serve <strong>other types of models and data</strong>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tensorflow-extended-tfx"><a class="header" href="#tensorflow-extended-tfx">TensorFlow Extended (TFX)</a></h1>
+<p>TFX is a Google-production-scale machine learning (ML) platform based on TensorFlow. </p>
+<p>It provides a configuration framework and shared libraries to integrate common components needed to define, launch, and monitor your machine learning system.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="apache-airflow"><a class="header" href="#apache-airflow">Apache Airflow</a></h1>
-<p>Airflow is a platform to programmatically author, schedule and monitor workflows.</p>
+<p>Apache Airflow is a platform to programmatically author, schedule and monitor workflows. 
+TFX (TensorFlow Extended) uses <strong>Airflow</strong> to author workflows as directed acyclic graphs (<a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">DAGs</a>) of tasks. </p>
+<p>The Airflow <strong>scheduler executes tasks</strong> on an array of workers while following the specified dependencies. </p>
+<p>Rich command line utilities (CLI) make performing complex surgeries on DAGs a snap. 
+The rich user interface (UI) makes it easy to:</p>
+<ul>
+<li><strong>visualize pipelines</strong> running in production, </li>
+<li><strong>monitor progress</strong>, </li>
+<li><strong>troubleshoot issues</strong> when needed. </li>
+</ul>
+<p>When workflows are <strong>defined as code</strong>, they become more maintainable, versionable, testable, and collaborative.</p>
+<h3 id="dag"><a class="header" href="#dag">DAG</a></h3>
+<p>DAG (directed acyclic graph) is a directed graph with no directed cycles. That is, it consists of vertices and edges, with each edge directed from one vertex to another, such that following those directions will <strong>never form a closed loop</strong>. </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="apache-beam"><a class="header" href="#apache-beam">Apache Beam</a></h1>
 <p>Apache Bean help us to implement <strong>batch and streaming data processing jobs</strong> that run on any execution engine.</p>
+<p>Several TFX (TensorFlow Extended) components rely on Beam for <strong>distributed data processing</strong>. 
+In addition, TFX can use Apache Beam to orchestrate and execute the pipeline DAG. </p>
+<p>Beam orchestrator uses a different <strong>BeamRunner</strong> than the one which is used for component data processing. 
+With the default <strong>DirectRunner</strong> setup the Beam orchestrator can be used for local debugging without incurring the extra <strong>Airflow or Kubeflow dependencies</strong>, which simplifies system configuration.</p>
 <p><img src="img/apachebeam/beam-1.webp" alt="Apache Beam" /></p>
 <iframe width="720" height="480" src="https://www.youtube.com/embed/udKgN1_eThs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="kubeflow"><a class="header" href="#kubeflow">Kubeflow</a></h1>
 <p>The Kubeflow project is dedicated to making <strong>deployments of machine learning (ML) workflows</strong> on <strong>Kubernetes</strong> simple, portable and scalable.</p>
 <p><img src="img/kubeflow/kubeflow-arch-1.svg" alt="Kubeflow Arch" /></p>
+<p>Kubeflow is an open source ML platform dedicated to making deployments of machine learning (ML) workflows on Kubernetes simple, portable and scalable. </p>
+<p>Kubeflow Pipelines is part of the <strong>Kubeflow platform</strong> that enables composition and execution of reproducible workflows on Kubeflow, integrated with experimentation and notebook based experiences. </p>
+<p>Kubeflow Pipelines services on Kubernetes include the hosted Metadata store, container based orchestration engine, notebook server, and UI to help users develop, run, and manage complex ML pipelines at scale. </p>
+<p>The Kubeflow Pipelines SDK allows for creation and sharing of components and composition and of pipelines programmatically.</p>
 <h2 id="kubernetes"><a class="header" href="#kubernetes">Kubernetes</a></h2>
 <p>Kubernetes is an open-source <strong>container-orchestration system</strong> for automating computer application </p>
 <ul>
@@ -1269,6 +1297,20 @@ curl https://api.openai.com/v1/files/file-XjGxS3KTG0uNmNOK362iJua3/content \
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

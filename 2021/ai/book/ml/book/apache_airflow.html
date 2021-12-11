@@ -145,7 +145,19 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="apache-airflow"><a class="header" href="#apache-airflow">Apache Airflow</a></h1>
-<p>Airflow is a platform to programmatically author, schedule and monitor workflows.</p>
+<p>Apache Airflow is a platform to programmatically author, schedule and monitor workflows. 
+TFX (TensorFlow Extended) uses <strong>Airflow</strong> to author workflows as directed acyclic graphs (<a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">DAGs</a>) of tasks. </p>
+<p>The Airflow <strong>scheduler executes tasks</strong> on an array of workers while following the specified dependencies. </p>
+<p>Rich command line utilities (CLI) make performing complex surgeries on DAGs a snap. 
+The rich user interface (UI) makes it easy to:</p>
+<ul>
+<li><strong>visualize pipelines</strong> running in production, </li>
+<li><strong>monitor progress</strong>, </li>
+<li><strong>troubleshoot issues</strong> when needed. </li>
+</ul>
+<p>When workflows are <strong>defined as code</strong>, they become more maintainable, versionable, testable, and collaborative.</p>
+<h3 id="dag"><a class="header" href="#dag">DAG</a></h3>
+<p>DAG (directed acyclic graph) is a directed graph with no directed cycles. That is, it consists of vertices and edges, with each edge directed from one vertex to another, such that following those directions will <strong>never form a closed loop</strong>. </p>
 
                     </main>
 
@@ -176,6 +188,20 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
