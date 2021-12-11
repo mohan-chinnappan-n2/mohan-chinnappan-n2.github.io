@@ -145,6 +145,16 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="kubeflow"><a class="header" href="#kubeflow">Kubeflow</a></h1>
+<p>The Kubeflow project is dedicated to making <strong>deployments of machine learning (ML) workflows</strong> on <strong>Kubernetes</strong> simple, portable and scalable.</p>
+<p><img src="img/kubeflow/kubeflow-arch-1.svg" alt="Kubeflow Arch" /></p>
+<h2 id="kubernetes"><a class="header" href="#kubernetes">Kubernetes</a></h2>
+<p>Kubernetes is an open-source <strong>container-orchestration system</strong> for automating computer application </p>
+<ul>
+<li>deployment</li>
+<li>scaling</li>
+<li>management</li>
+</ul>
+<p>It was originally designed by Google and is now maintained by the Cloud Native Computing Foundation.</p>
 
                     </main>
 
@@ -175,6 +185,20 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

@@ -466,6 +466,7 @@ plt.show()
 <div style="break-before: page; page-break-before: always;"></div><h1 id="7-transformers"><a class="header" href="#7-transformers">7. Transformers</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bert"><a class="header" href="#bert">BERT</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="gpt"><a class="header" href="#gpt">GPT</a></h1>
+<p>Generative Pre-trained Transformer (GPT)</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="t5"><a class="header" href="#t5">T5</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="github-copilot"><a class="header" href="#github-copilot">GitHub Copilot</a></h1>
 <p>When we type this:</p>
@@ -521,6 +522,9 @@ function calculateDaysBetweenDates(date1, date2) {
 <p><a href="https://scriptverse.academy/tutorials/python-matplotlib-plot-function.html">Matplotlib: Plot a Function y=f(x) </a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="9-salesforce-einstein"><a class="header" href="#9-salesforce-einstein">9. Salesforce Einstein</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="10-google-cloud-platform"><a class="header" href="#10-google-cloud-platform">10. Google Cloud Platform</a></h1>
+<h2 id="dataflow"><a class="header" href="#dataflow">Dataflow</a></h2>
+<p><img src="img/gcp/gcp-df-1.png" alt="GCP Dataflow" /></p>
+<iframe width="720" height="480" src="https://www.youtube.com/embed/udKgN1_eThs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="11-processing-units"><a class="header" href="#11-processing-units">11. Processing Units</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cpu"><a class="header" href="#cpu">CPU</a></h1>
 <p>CPU is constructed from millions of transistors.
@@ -574,8 +578,22 @@ The CPU is also important in determining how fast programs can run, from surfing
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tensorflow-serving"><a class="header" href="#tensorflow-serving">TensorFlow Serving</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tensorflow-extended"><a class="header" href="#tensorflow-extended">TensorFlow Extended</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="apache-airflow"><a class="header" href="#apache-airflow">Apache Airflow</a></h1>
+<p>Airflow is a platform to programmatically author, schedule and monitor workflows.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="apache-beam"><a class="header" href="#apache-beam">Apache Beam</a></h1>
+<p>Apache Bean help us to implement <strong>batch and streaming data processing jobs</strong> that run on any execution engine.</p>
+<p><img src="img/apachebeam/beam-1.webp" alt="Apache Beam" /></p>
+<iframe width="720" height="480" src="https://www.youtube.com/embed/udKgN1_eThs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="kubeflow"><a class="header" href="#kubeflow">Kubeflow</a></h1>
+<p>The Kubeflow project is dedicated to making <strong>deployments of machine learning (ML) workflows</strong> on <strong>Kubernetes</strong> simple, portable and scalable.</p>
+<p><img src="img/kubeflow/kubeflow-arch-1.svg" alt="Kubeflow Arch" /></p>
+<h2 id="kubernetes"><a class="header" href="#kubernetes">Kubernetes</a></h2>
+<p>Kubernetes is an open-source <strong>container-orchestration system</strong> for automating computer application </p>
+<ul>
+<li>deployment</li>
+<li>scaling</li>
+<li>management</li>
+</ul>
+<p>It was originally designed by Google and is now maintained by the Cloud Native Computing Foundation.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="automl"><a class="header" href="#automl">AutoML</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="12-speedup"><a class="header" href="#12-speedup">12. Speedup</a></h1>
 <p>In this chapter we will see the ways to speed up Machine Learning</p>
@@ -1143,6 +1161,20 @@ curl https://api.openai.com/v1/files/file-XjGxS3KTG0uNmNOK362iJua3/content \
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
