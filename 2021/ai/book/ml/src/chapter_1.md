@@ -6,10 +6,14 @@ As shown in the demo below, user provides a image of the cat, the application pr
 
 ![Image Recognition - 1 ](img/1/img-rec-1.mov.webm.gif)
 
-To build this kind of solution using traditional programming, we may have to write too many rules or sometimes this problem is not easily solvable by our traditional programming. Here comes our hero Machine Learning to our rescue us!
+To build this kind of solution using traditional programming, we may have to write too many rules or sometimes this problem is not easily solvable by our traditional programming. Here comes our hero **Machine Learning** to our rescue us!
 
 
 ## What is special about Machine Learning ?
+
+How long it will take to write the code for **Solving Rubik’s Cube with a single Robot Hand** using our traditional programming? 
+
+<iframe width="720" height="480" src="https://www.youtube.com/embed/kVmp0uGtShk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 

@@ -53,6 +53,7 @@
     - [Summarize](openai-summarize.md)
     - [TLDR](openai-tldr.md)
     - [Translate](open-translate.md)
+    - [Codex](openai-codex.md)
 
 - [20. Tools](tools.md)
 
