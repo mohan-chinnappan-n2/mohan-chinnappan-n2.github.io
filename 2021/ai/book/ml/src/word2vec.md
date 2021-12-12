@@ -47,6 +47,7 @@ The window size determines the *span of words on either side of a target_word* (
 ![prob](https://tensorflow.org/tutorials/text/images/word2vec_skipgram_objective.png)
 
 ### Notebooks
+- [word2vec](https://colab.research.google.com/drive/1oSx0wd2lC4B15KWDinOjqptZtytqRkhk?usp=sharing)
 - [Understanding word vectors](https://gist.github.com/aparrish/2f562e3737544cf29aaf1af30362f469#file-understanding-word-vectors-ipynb)
 
 - [Word2Vec - TensorFlow](https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/text/word2vec.ipynb)
@@ -56,6 +57,8 @@ The window size determines the *span of words on either side of a target_word* (
 
 
 <iframe width="720" height="480" src="https://www.youtube.com/embed/L3D0JEA1Jdc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="720" height="480" src="https://www.youtube.com/embed/mI23bDF0VRI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
  ##  Word embedding 

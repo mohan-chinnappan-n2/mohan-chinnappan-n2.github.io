@@ -145,6 +145,93 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="gradient-descent"><a class="header" href="#gradient-descent">Gradient descent</a></h1>
+<p><a href="https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html">Gradient descent</a> is an optimization algorithm used to:</p>
+<ul>
+<li>minimize some function (cost function) by iteratively moving in the <strong>direction of steepest descent</strong> as defined by the negative of the gradient. </li>
+</ul>
+<p>In machine learning, we use gradient descent to update the parameters (weights) of our model.</p>
+<p><img src="https://ml-cheatsheet.readthedocs.io/en/latest/_images/gradient_descent_demystified.png" alt="grad descent" /></p>
+<ul>
+<li>Starting at the top of the mountain, we take our first step <em>downhill</em> in the direction specified by the <em>negative gradient</em>. </li>
+<li>Next we recalculate the negative gradient (passing in the coordinates of our new point) and take another step in the direction it specifies. </li>
+<li>We continue this process iteratively until we get to the <em>bottom of our graph</em>, or to a point where we can no longer move downhill.</li>
+</ul>
+<h2 id="learning-rate"><a class="header" href="#learning-rate">Learning Rate</a></h2>
+<p>The size of these steps is called the <strong>learning rate</strong>.</p>
+<p>With a <strong>high learning rate</strong> we can cover more ground each step, but we risk overshooting the lowest point since the slope of the hill is constantly changing.</p>
+<p>With a <strong>very low learning rate</strong>, we can confidently move in the direction of the negative gradient since we are recalculating it so frequently. A low learning rate is more precise, but calculating the gradient is time-consuming, so it will take us a very long time to get to the bottom.</p>
+<h2 id="cost-function"><a class="header" href="#cost-function">Cost function</a></h2>
+<ul>
+<li>
+<p>It is a loss function. </p>
+</li>
+<li>
+<p>It is a measure of how far we are away from the target:</p>
+<ul>
+<li>\(y - (mx + b)\)</li>
+<li>Cost function :
+<ul>
+<li>\[ f(m,b) = \frac{1}{N} \sum_{i=0}^n (y_i - (mx_i + b))^2 \]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>This tells us <strong>how good</strong> our model is at making predictions for a given set of parameters. </p>
+</li>
+</ul>
+<p>The cost function has its own curve and its own gradients. The slope of this curve tells us how to update our parameters (weight) to make the model more accurate.</p>
+<p>We run gradient descent using our cost function.</p>
+<ul>
+<li>Calculate the partial derivatives of the cost function \( f(m,b)    \) with respect to each parameter( m and b) and store the results in a gradient.</li>
+<li>This new gradient tells us the slope of our cost function at our current position (current parameter values) and the direction we should move to update our parameters (m and b).</li>
+</ul>
+<h3 id="partial-derivative"><a class="header" href="#partial-derivative">Partial derivative</a></h3>
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Partial_derivative">Partial derivative</a> of a function of several variables (in our case m and b) its derivative with respect to one of those variables.</p>
+</li>
+<li>
+<p>\( \frac{df}{dm}\)</p>
+<ul>
+<li>-2x(y - (mx + b))</li>
+<li>\[  \frac{1}{N} \sum_{i=0}^n -2x_i(y_i - (mx_i + b)) \]</li>
+</ul>
+</li>
+<li>
+<p>\( \frac{df}{db}\)</p>
+<ul>
+<li>-2(y - (mx + b))</li>
+<li>\[  \frac{1}{N} \sum_{i=0}^n -2(y_i - (mx_i + b)) \] </li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-py">
+
+# Y is target for the given input X
+# mx + b is predicted
+# learning_rate is size of the steps
+
+def update_weights(m, b, X, Y, learning_rate):
+    m_deriv = 0
+    b_deriv = 0
+    N = len(X)
+    for i in range(N):
+        # Calculate partial derivatives
+
+        # -2x(y - (mx + b))
+        m_deriv += -2*X[i] * (Y[i] - (m*X[i] + b))
+
+        # -2(y - (mx + b))
+        b_deriv += -2*(Y[i] - (m*X[i] + b))
+
+    # We subtract because the derivatives point in direction of steepest ascent
+    m -= (m_deriv / float(N)) * learning_rate
+    b -= (b_deriv / float(N)) * learning_rate
+
+    return m, b
+
+</code></pre>
 <iframe width="720" height="480" src="https://www.youtube.com/embed/IHZwWFHWa-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                     </main>
