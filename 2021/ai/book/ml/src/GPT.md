@@ -15,7 +15,7 @@ GPT-2 is trained with a simple objective:
 
 
 
-
+GPT-2 algorithm was trained on the task of language modeling--- which tests a program's ability to predict the next word in a given sentence--by ingesting huge numbers of articles, blogs, and websites. By using just this data it achieved state-of-the-art scores on a number of unseen language tests, an achievement known as **zero-shot learning**. It can also perform other writing-related tasks, like translating text from one language to another, summarizing long articles, and answering trivia questions.
 
 
 [GPT-2 code](https://github.com/openai/gpt-2)

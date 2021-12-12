@@ -13,6 +13,11 @@
     - [Gradient descent](grad_descent.md)
     - [Back Propagation](back_propagation.md)
         - [Calculus](bp_calc.md)
+    - [Activation Function](act_func.md)
+    - [Convolutional Neural Networks](cnn.md)
+    - [Recurrent Neural Networks](rnn.md)
+        - [MNIST](mnist.md)
+
 
 - [5. Tensorflow](tf.md)
     - [TensorFlow.js](tfjs.md)

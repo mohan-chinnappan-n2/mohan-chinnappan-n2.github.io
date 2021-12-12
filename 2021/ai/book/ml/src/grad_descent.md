@@ -3,7 +3,7 @@
 [Gradient descent](https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html) is an optimization algorithm used to:
  - minimize some function (cost function) by iteratively moving in the **direction of steepest descent** as defined by the negative of the gradient. 
  
- In machine learning, we use gradient descent to update the parameters (weights) of our model.
+ In machine learning, we use gradient descent to update the parameters (weights and biases) of our model.
 
  ![grad descent](https://ml-cheatsheet.readthedocs.io/en/latest/_images/gradient_descent_demystified.png)
 
@@ -50,17 +50,21 @@ The slope of the tangent line is equal to the derivative of the function at the 
 - [Partial derivative](https://en.wikipedia.org/wiki/Partial_derivative) of a function of several variables (in our case m and b)  is:
     -  its [derivative](https://en.wikipedia.org/wiki/Derivative) with respect to one of those variables.
 
-- with respect to m: \\( \frac{df}{dm}\\)
+- with respect to m (weight): \\( \frac{df}{dm}\\)
     - -2x(y - (mx + b))
     -   \\[  \frac{1}{N} \sum_{i=0}^n -2x_i(y_i - (mx_i + b)) \\]
 
 
-- with respect to b: \\( \frac{df}{db}\\)
+- with respect to b (bias): \\( \frac{df}{db}\\)
     - -2(y - (mx + b))
     -  \\[  \frac{1}{N} \sum_{i=0}^n -2(y_i - (mx_i + b)) \\] 
 
 
 <iframe width="720" height="480" src="https://www.youtube.com/embed/HaHsqDjWMLU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<iframe width="720" height="480" src="https://www.youtube.com/embed/tIeHLnjs5U8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ```py
 
@@ -90,5 +94,39 @@ def update_weights(m, b, X, Y, learning_rate):
 
 ```
 
+## Sigmoid function
+A sigmoid function is a mathematical function having a characteristic "S"-shaped curve or sigmoid curve.
+
+![Sigmoid](img/1/sigmoid-1.png)
+
+
+-   \\( \frac{1}{1 + e^{-x}}\\)
+
+```py
+
+import math
+import matplotlib.pyplot as plt
+import numpy as np
+
+def sigmoid(x):
+    a = []
+    for item in x:
+        a.append(1/(1 + math.exp(-item)))
+    return a
+
+x = np.arange(-10., 10., 0.2)
+sig = sigmoid(x)
+
+# plot sig
+plt.plot(x,sig)
+plt.show()
+
+```
+
+
+
 
 <iframe width="720" height="480" src="https://www.youtube.com/embed/IHZwWFHWa-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
