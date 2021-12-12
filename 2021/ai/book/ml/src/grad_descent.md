@@ -59,6 +59,9 @@ The slope of the tangent line is equal to the derivative of the function at the 
     - -2(y - (mx + b))
     -  \\[  \frac{1}{N} \sum_{i=0}^n -2(y_i - (mx_i + b)) \\] 
 
+
+<iframe width="720" height="480" src="https://www.youtube.com/embed/HaHsqDjWMLU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ```py
 
 
