@@ -94,35 +94,6 @@ def update_weights(m, b, X, Y, learning_rate):
 
 ```
 
-## Sigmoid function
-A sigmoid function is a mathematical function having a characteristic "S"-shaped curve or sigmoid curve.
-
-![Sigmoid](img/1/sigmoid-1.png)
-- \\( \sigma(x) =  \frac{1}{1 + e^{-x}}\\)
-
-```py
-
-import math
-import matplotlib.pyplot as plt
-import numpy as np
-
-def sigmoid(x):
-    a = []
-    for item in x:
-        a.append(1/(1 + math.exp(-item)))
-    return a
-
-x = np.arange(-10., 10., 0.2)
-sig = sigmoid(x)
-
-# plot sig
-plt.plot(x,sig)
-plt.show()
-
-```
-
-
-
 
 <iframe width="720" height="480" src="https://www.youtube.com/embed/IHZwWFHWa-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
