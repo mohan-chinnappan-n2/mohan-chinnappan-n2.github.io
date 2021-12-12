@@ -21,13 +21,14 @@ With a **very low learning rate**, we can confidently move in the direction of t
 
 ## Cost function
 - It is a loss function. 
+- It is a measure of how wrong the model is in terms of its ability to estimate the relationship between x and y 
 - It is a measure of how far we are away from the target:
     - \\(y - (mx + b)\\)
     - Cost function :
         - \\[ f(m,b) = \frac{1}{N} \sum_{i=0}^n (y_i - (mx_i + b))^2 \\]
  
 
-- This tells us **how good** our model is at making predictions for a given set of parameters. 
+- This tells us **how bad** our model is at making predictions for a given set of parameters. 
 
 The cost function has its own curve and its own gradients. The slope of this curve tells us how to update our parameters (weight) to make the model more accurate.
 
@@ -36,15 +37,25 @@ We run gradient descent using our cost function.
 - Calculate the partial derivatives of the cost function \\( f(m,b)    \\) with respect to each parameter( m and b) and store the results in a gradient.
 - This new gradient tells us the slope of our cost function at our current position (current parameter values) and the direction we should move to update our parameters (m and b).
 
-### Partial derivative
-- [Partial derivative](https://en.wikipedia.org/wiki/Partial_derivative) of a function of several variables (in our case m and b) its derivative with respect to one of those variables.
+### Derivative
+[Derivative](https://en.wikipedia.org/wiki/Derivative) of a function of a real variable measures the sensitivity to change of the function value (output value) with respect to a change in its argument (input value).
 
-- \\( \frac{df}{dm}\\)
+![derivative](https://upload.wikimedia.org/wikipedia/commons/0/0f/Tangent_to_a_curve.svg)
+
+The slope of the tangent line is equal to the derivative of the function at the marked point.   
+
+
+
+### Partial derivative
+- [Partial derivative](https://en.wikipedia.org/wiki/Partial_derivative) of a function of several variables (in our case m and b)  is:
+    -  its [derivative](https://en.wikipedia.org/wiki/Derivative) with respect to one of those variables.
+
+- with respect to m: \\( \frac{df}{dm}\\)
     - -2x(y - (mx + b))
     -   \\[  \frac{1}{N} \sum_{i=0}^n -2x_i(y_i - (mx_i + b)) \\]
 
 
-- \\( \frac{df}{db}\\)
+- with respect to b: \\( \frac{df}{db}\\)
     - -2(y - (mx + b))
     -  \\[  \frac{1}{N} \sum_{i=0}^n -2(y_i - (mx_i + b)) \\] 
 

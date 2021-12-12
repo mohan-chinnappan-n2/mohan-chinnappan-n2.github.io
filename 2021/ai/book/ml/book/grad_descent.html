@@ -166,6 +166,9 @@
 <p>It is a loss function. </p>
 </li>
 <li>
+<p>It is a measure of how wrong the model is in terms of its ability to estimate the relationship between x and y </p>
+</li>
+<li>
 <p>It is a measure of how far we are away from the target:</p>
 <ul>
 <li>\(y - (mx + b)\)</li>
@@ -177,7 +180,7 @@
 </ul>
 </li>
 <li>
-<p>This tells us <strong>how good</strong> our model is at making predictions for a given set of parameters. </p>
+<p>This tells us <strong>how bad</strong> our model is at making predictions for a given set of parameters. </p>
 </li>
 </ul>
 <p>The cost function has its own curve and its own gradients. The slope of this curve tells us how to update our parameters (weight) to make the model more accurate.</p>
@@ -186,20 +189,27 @@
 <li>Calculate the partial derivatives of the cost function \( f(m,b)    \) with respect to each parameter( m and b) and store the results in a gradient.</li>
 <li>This new gradient tells us the slope of our cost function at our current position (current parameter values) and the direction we should move to update our parameters (m and b).</li>
 </ul>
+<h3 id="derivative"><a class="header" href="#derivative">Derivative</a></h3>
+<p><a href="https://en.wikipedia.org/wiki/Derivative">Derivative</a> of a function of a real variable measures the sensitivity to change of the function value (output value) with respect to a change in its argument (input value).</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Tangent_to_a_curve.svg" alt="derivative" /></p>
+<p>The slope of the tangent line is equal to the derivative of the function at the marked point.</p>
 <h3 id="partial-derivative"><a class="header" href="#partial-derivative">Partial derivative</a></h3>
 <ul>
 <li>
-<p><a href="https://en.wikipedia.org/wiki/Partial_derivative">Partial derivative</a> of a function of several variables (in our case m and b) its derivative with respect to one of those variables.</p>
+<p><a href="https://en.wikipedia.org/wiki/Partial_derivative">Partial derivative</a> of a function of several variables (in our case m and b)  is:</p>
+<ul>
+<li>its <a href="https://en.wikipedia.org/wiki/Derivative">derivative</a> with respect to one of those variables.</li>
+</ul>
 </li>
 <li>
-<p>\( \frac{df}{dm}\)</p>
+<p>with respect to m: \( \frac{df}{dm}\)</p>
 <ul>
 <li>-2x(y - (mx + b))</li>
 <li>\[  \frac{1}{N} \sum_{i=0}^n -2x_i(y_i - (mx_i + b)) \]</li>
 </ul>
 </li>
 <li>
-<p>\( \frac{df}{db}\)</p>
+<p>with respect to b: \( \frac{df}{db}\)</p>
 <ul>
 <li>-2(y - (mx + b))</li>
 <li>\[  \frac{1}{N} \sum_{i=0}^n -2(y_i - (mx_i + b)) \] </li>
@@ -263,6 +273,20 @@ def update_weights(m, b, X, Y, learning_rate):
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
