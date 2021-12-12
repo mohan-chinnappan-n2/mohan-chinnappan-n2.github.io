@@ -6,6 +6,7 @@
     - [References](chapter_2-ref.md)
 
 - [3. ML Models](ml_models.md)
+    - [Word2Vec](word2vec.md)
 
 - [4. Deep Learning](dl.md)
     - [Neural Network](nn.md)
