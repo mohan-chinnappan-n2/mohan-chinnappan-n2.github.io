@@ -98,9 +98,7 @@ def update_weights(m, b, X, Y, learning_rate):
 A sigmoid function is a mathematical function having a characteristic "S"-shaped curve or sigmoid curve.
 
 ![Sigmoid](img/1/sigmoid-1.png)
-
-
--   \\( \frac{1}{1 + e^{-x}}\\)
+- \\( \sigma(x) =  \frac{1}{1 + e^{-x}}\\)
 
 ```py
 

@@ -248,7 +248,7 @@ def update_weights(m, b, X, Y, learning_rate):
 <p>A sigmoid function is a mathematical function having a characteristic &quot;S&quot;-shaped curve or sigmoid curve.</p>
 <p><img src="img/1/sigmoid-1.png" alt="Sigmoid" /></p>
 <ul>
-<li>\( \frac{1}{1 + e^{-x}}\)</li>
+<li>\( \sigma(x) =  \frac{1}{1 + e^{-x}}\)</li>
 </ul>
 <pre><code class="language-py">
 import math
@@ -300,6 +300,20 @@ plt.show()
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
