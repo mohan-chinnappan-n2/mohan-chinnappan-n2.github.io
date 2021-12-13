@@ -209,8 +209,31 @@ kmeans.labels_
 
 ```
 
+```
+
+[['70' '200']
+ ['73' '210']
+ ['78' '265']
+ ['71' '190']
+ ['78' '275']
+ ['77' '335']
+ ['73' '310']
+ ['77' '305']
+ ['76' '305']]
+array([1, 1, 0, 1, 0, 0, 0, 0, 0], dtype=int32)
+
+```
+
+As we the first 2 items and 4th item are in one cluster while all others in the second cluster
+
+```
+plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5);
+
+```
+![KMeans with 2 clusters](img/1/kmeans-bp-1.png)
+
+
 ### K-Means
 - [Introducing k-Means](https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html)
-
 
 
