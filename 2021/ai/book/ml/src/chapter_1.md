@@ -127,8 +127,90 @@ Power here is we can predict the values for the given input with our Model
 
 <iframe width="780" height="420" src="https://www.youtube.com/embed/nKW8Ndu7Mjw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
+<iframe width="780" height="420" src="https://www.youtube.com/embed/h0e2HAPTGF4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 - [Simple House Price Predictor using ML through TensorFlow in Python](https://towardsdatascience.com/simple-house-price-predictor-using-ml-through-tensorflow-in-python-cbd2b637904b)
 
+
+## Supervised
+- Given a set of feature/label pairs
+- Find a model predicts the label associated with a previously unseen input
+
+## Unsupervised
+- Given a set of feature vectors (without labels)
+- Group them into **natural clusters** or create labels for groups
+
+```
+Here are some data on the New England Patriots
+
+Features:
+ Name, height, weight
+ 
+ Labeled by type of position
+
+Receivers: (label)
+ edelman = ['edelman’, 70, 200]  <---- Feature vector
+ hogan = ['hogan', 73, 210]
+ gronkowski = ['gronkowski', 78, 265]
+ amendola = ['amendola’, 71, 190]
+ bennett = ['bennett’, 78, 275]
+
+Linemen: (label)
+cannon = ['cannon’, 77, 335]
+mason = ['mason’, 73, 310]
+thuney = ['thuney', 77, 305]
+karras = ['karras', 76, 305]
+
+```
+
+```py
+
+# r: receiver, l: linemen
+ne_fb_players = [["edelman", 70, 200, "r"],
+                 ["hogan", 73, 210, "r"],  
+                 ["gronkowski", 78, 265, "r"], 
+                 ["amendola", 71, 190, "r"], 
+                 ["bennett", 78, 275, "r"],
+
+                 ["cannon", 77, 335, "l"],
+                 ["mason", 73, 310, "l"],
+                 ["thuney", 77, 305, "l"],
+                 ["karras", 76, 305, "l"]
+                 
+                 ]
+
+import numpy as np
+import matplotlib.pyplot as plt
+nep_dataset = np.array(ne_fb_players)
+
+
+plt.scatter( nep_dataset[:, 1], nep_dataset[:, 2])
+
+plt.xlabel("Height")
+plt.ylabel("Weight")
+
+plt.grid()
+plt.show()
+
+
+
+
+```
+![nep dataset plot](img/1/nep_data-1.png)
+
+```py
+
+X = nep_dataset[:, 1:3]
+print (X)
+kmeans = KMeans(n_clusters=2, random_state=0).fit(X)
+kmeans.labels_
+
+```
+
+### K-Means
+- [Introducing k-Means](https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html)
 
 
 
