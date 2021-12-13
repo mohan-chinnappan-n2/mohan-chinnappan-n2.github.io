@@ -127,7 +127,7 @@ Power here is we can predict the values for the given input with our Model
 
 <iframe width="780" height="420" src="https://www.youtube.com/embed/nKW8Ndu7Mjw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+- [Simple House Price Predictor using ML through TensorFlow in Python](https://towardsdatascience.com/simple-house-price-predictor-using-ml-through-tensorflow-in-python-cbd2b637904b)
 
 
 
