@@ -328,6 +328,7 @@ ne_fb_players = [[&quot;edelman&quot;, 70, 200, &quot;r&quot;],
                  [&quot;bennett&quot;, 78, 275, &quot;r&quot;],
 
                  [&quot;cannon&quot;, 77, 335, &quot;l&quot;],
+                 [&quot;solder&quot;, 80, 325, &quot;l&quot;],
                  [&quot;mason&quot;, 73, 310, &quot;l&quot;],
                  [&quot;thuney&quot;, 77, 305, &quot;l&quot;],
                  [&quot;karras&quot;, 76, 305, &quot;l&quot;]
@@ -366,17 +367,23 @@ kmeans.labels_
  ['71' '190']
  ['78' '275']
  ['77' '335']
+ ['80' '325']
  ['73' '310']
  ['77' '305']
  ['76' '305']]
-array([1, 1, 0, 1, 0, 0, 0, 0, 0], dtype=int32)
+array([1, 1, 0, 1, 0, 0, 0, 0, 0, 0], dtype=int32)
 
 </code></pre>
 <p>As we the first 2 items and 4th item are in one cluster while all others in the second cluster</p>
-<pre><code>plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5);
+<pre><code class="language-py">plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap='viridis')
+
+# colormap viridis: https://matplotlib.org/stable/tutorials/colors/colormaps.html
+ 
+plt.grid()
+plt.show()
 
 </code></pre>
-<p><img src="img/1/kmeans-bp-1.png" alt="KMeans with 2 clusters" /></p>
+<p><img src="img/1/kmeans-nep-1.png" alt="KMeans with 2 clusters" /></p>
 <h3 id="k-means"><a class="header" href="#k-means">K-Means</a></h3>
 <ul>
 <li><a href="https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html">Introducing k-Means</a></li>

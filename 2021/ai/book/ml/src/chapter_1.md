@@ -175,6 +175,7 @@ ne_fb_players = [["edelman", 70, 200, "r"],
                  ["bennett", 78, 275, "r"],
 
                  ["cannon", 77, 335, "l"],
+                 ["solder", 80, 325, "l"],
                  ["mason", 73, 310, "l"],
                  ["thuney", 77, 305, "l"],
                  ["karras", 76, 305, "l"]
@@ -217,20 +218,26 @@ kmeans.labels_
  ['71' '190']
  ['78' '275']
  ['77' '335']
+ ['80' '325']
  ['73' '310']
  ['77' '305']
  ['76' '305']]
-array([1, 1, 0, 1, 0, 0, 0, 0, 0], dtype=int32)
+array([1, 1, 0, 1, 0, 0, 0, 0, 0, 0], dtype=int32)
 
 ```
 
 As we the first 2 items and 4th item are in one cluster while all others in the second cluster
 
-```
-plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5);
+```py
+plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap='viridis')
+
+# colormap viridis: https://matplotlib.org/stable/tutorials/colors/colormaps.html
+ 
+plt.grid()
+plt.show()
 
 ```
-![KMeans with 2 clusters](img/1/kmeans-bp-1.png)
+![KMeans with 2 clusters](img/1/kmeans-nep-1.png)
 
 
 ### K-Means
