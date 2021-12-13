@@ -155,6 +155,136 @@
 <h2 id="what-is-special-about-machine-learning-"><a class="header" href="#what-is-special-about-machine-learning-">What is special about Machine Learning ?</a></h2>
 <p>How long it will take to write the code for <strong>Solving Rubik’s Cube with a single Robot Hand</strong> using our traditional programming? </p>
 <iframe width="720" height="480" src="https://www.youtube.com/embed/kVmp0uGtShk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2 id="steps-in-the-ml"><a class="header" href="#steps-in-the-ml">Steps in the ML</a></h2>
+<h3 id="goal--create-an-accurate-model-that-answers-our-questions-most-of-time"><a class="header" href="#goal--create-an-accurate-model-that-answers-our-questions-most-of-time">Goal:  Create an accurate Model that answers our questions most of time</a></h3>
+<h3 id="step-1---gathering-data"><a class="header" href="#step-1---gathering-data">Step-1 - Gathering Data</a></h3>
+<ul>
+<li>To train a Model we need to
+<ul>
+<li>Collect data to train on</li>
+</ul>
+</li>
+<li>For our example let us get the data of <a href="https://www.cs.toronto.edu/%7Edelve/data/boston/bostonDetail.html">Boston House prices</a>
+<ul>
+<li><a href="https://raw.githubusercontent.com/mohan-chinnappan-n/ml-book-assets/master/BostonHousing.csv">Boston House Price Dataset</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="step-2---data-preparation"><a class="header" href="#step-2---data-preparation">Step-2 - Data Preparation</a></h3>
+<ul>
+<li>Load the data and visualize it</li>
+<li>Check for data errors and data imbalances</li>
+<li>Split the data into 2 parts
+<ul>
+<li>
+<ol>
+<li>Training Data (80%)</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Testing Data (20%)</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-py">
+import pandas as pd
+
+url=&quot;https://raw.githubusercontent.com/mohan-chinnappan-n/ml-book-assets/master/BostonHousing.csv&quot;
+df = pd.read_csv(url)
+df.head()
+
+</code></pre>
+<p><img src="img/1/boston-house-price-1.png" alt="Boston House Price" />
+<img src="img/1/boston-house-price-2.png" alt="Boston House Price" /></p>
+<p>There are 14 attributes (<strong>features</strong>) in each case of the dataset. They are:</p>
+<pre><code>CRIM - per capita crime rate by town
+ZN - proportion of residential land zoned for lots over 25,000 sq.ft.
+INDUS - proportion of non-retail business acres per town.
+CHAS - Charles River dummy variable (1 if tract bounds river; 0 otherwise)
+NOX - nitric oxides concentration (parts per 10 million)
+RM - average number of rooms per dwelling
+AGE - proportion of owner-occupied units built prior to 1940
+DIS - weighted distances to five Boston employment centres
+RAD - index of accessibility to radial highways
+TAX - full-value property-tax rate per $10,000
+PTRATIO - pupil-teacher ratio by town
+B - 1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town
+LSTAT - % lower status of the population
+MEDV - Median value of owner-occupied homes in $1000's
+
+</code></pre>
+<h3 id="step-3---choosing-a-model"><a class="header" href="#step-3---choosing-a-model">Step-3 - Choosing a Model</a></h3>
+<p>In our case, we can use a linear model.</p>
+<h3 id="step-4---training-the-model"><a class="header" href="#step-4---training-the-model">Step-4 - Training the Model</a></h3>
+<p>Model </p>
+<ul>
+<li>
+<p>\(y = mx + b\)</p>
+</li>
+<li>
+<p>\(x\) is the input</p>
+</li>
+<li>
+<p>\(y\) is the output (prediction)</p>
+</li>
+</ul>
+<p>The values we are to going to adjust the training are:</p>
+<ul>
+<li>
+<p>\(m\) (weight) and \(b\) (bias)</p>
+</li>
+<li>
+<p>Start the training by initializing  \(m\) (weight) and \(b\) (bias) with some random values</p>
+</li>
+<li>
+<p>At the beginning, the Model will perform very poorly</p>
+<ul>
+<li>We compare the model's output \(y\) with what it should have produced (target value of y)</li>
+<li>We will adjust values of \(m\) (weight) and \(b\) (bias) so that we get more accurate predictions on the next time around</li>
+<li>This error correction repeats...
+<ul>
+<li>Each iteration updates \(m\) (weight) and \(b\) (bias) - called <em>one training step</em></li>
+</ul>
+</li>
+<li>We will stop the training once we got the good accuracy (low error)</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-5---evaluating-the-model"><a class="header" href="#step-5---evaluating-the-model">Step-5 - Evaluating the Model</a></h3>
+<ul>
+<li>We can check the fitness of our Model using Evaluation</li>
+<li>We test our Model against the <strong>Testing Data</strong> we created in Step-2
+<ul>
+<li>We are testing the model against data the Model has not seen yet (simulating the real-world situation)</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-6---parameter-tuning"><a class="header" href="#step-6---parameter-tuning">Step-6 - Parameter Tuning</a></h3>
+<p>Parameters (AKA hyper-parameters) we can tune:</p>
+<ul>
+<li>How many times we run through the training dataset?</li>
+<li>Learning Rate
+<ul>
+<li>How far we did the error correction based on the information from the previous training step</li>
+</ul>
+</li>
+</ul>
+<p>These parameters determine:</p>
+<ul>
+<li>Accuracy of our Model</li>
+<li>How long it takes to train the Model</li>
+</ul>
+<p>How we initialized the Model affects the Model training time
+- Random values or
+- Zero values</p>
+<h3 id="step-7---predicationinference"><a class="header" href="#step-7---predicationinference">Step-7 - Predication/Inference</a></h3>
+<p>We can use our Model to predict the values for the given input.
+Power here is we can predict the values for the given input with our Model
+- not by human judgement and manual rules</p>
+<iframe width="780" height="420" src="https://www.youtube.com/embed/nKW8Ndu7Mjw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-2---basic-linear-algebra-needed-for-ml"><a class="header" href="#chapter-2---basic-linear-algebra-needed-for-ml">Chapter 2 - Basic Linear Algebra needed for ML</a></h1>
 <p>As we know computer are comfortable in dealing with numbers and perform fast operations on those numbers to provide us the results we are interested in. But in our real world we deal with <strong>things</strong> like <em>words, sentences and images</em>. This creates an <em>impedance mismatch</em>. So obvious solution will be to solve this mismatch is by representing our <strong>things</strong> in numbers, let us call this as <strong>Data Representations</strong>.</p>
 <p><strong>Linear Algebra</strong> what we learned in our high school math class comes to save us here!</p>
@@ -803,6 +933,7 @@ pyplot.show()
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="mnist"><a class="header" href="#mnist">MNIST</a></h1>
 <p>The MNIST database <em>Modified National Institute of Standards and Technology database</em> is a large database of <strong>handwritten digits</strong> that is commonly used for training various image processing systems.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png" alt="MNIST" /></p>
 <h2 id="sample-application-for-handwritten-digit-recognition"><a class="header" href="#sample-application-for-handwritten-digit-recognition">Sample Application for handwritten digit recognition</a></h2>
 <iframe src='https://mohan-chinnappan-n2.github.io/2021/ai/mnist/minst.html' 
 width="860" height="400">
@@ -1711,20 +1842,6 @@ curl https://api.openai.com/v1/files/file-XjGxS3KTG0uNmNOK362iJua3/content \
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3000/__livereload");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
