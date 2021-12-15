@@ -17,6 +17,7 @@
 - [CNN](http://cs231n.stanford.edu/slides/2021/lecture_5.pdf)
 
 - [Hardware and Software][http://cs231n.stanford.edu/slides/2021/lecture_6.pdf]
+- [CNN Architectures](http://cs231n.stanford.edu/slides/2021/lecture_9.pdf)
 
 
 

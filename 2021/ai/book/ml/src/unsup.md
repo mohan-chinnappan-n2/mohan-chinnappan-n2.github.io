@@ -115,6 +115,5 @@ kmeans = KMeans(n_clusters=3, random_state=0).fit(X)
 
 
 ### K-Means
-- [Introducing k-Means](https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html)
 
-
+<a href="https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.11-K-Means.ipynb"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"> - Introducing k-Means</a>

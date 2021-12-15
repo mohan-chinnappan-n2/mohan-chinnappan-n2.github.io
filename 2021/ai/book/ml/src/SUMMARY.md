@@ -67,5 +67,14 @@
     - [Codex](openai-codex.md)
 - [14. Inspirations](inspire.md)
 
+- [15. Datasets](datasets.md)
+    - [Boston Housing](datasets/boston.md)
+
+- [16. Building ML for Industries](industry/ml-industry.md)
+    - [Lost-Found Item Management](industry/lfitem-magmt.md)
+
+- [17.Hardware](hardware/hardware.md)
+    - [Raspberry Pi](hardware/raspi.md)
+
 - [20. Tools](tools.md)
 
