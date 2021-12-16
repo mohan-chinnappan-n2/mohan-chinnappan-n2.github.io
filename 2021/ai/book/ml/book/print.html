@@ -1915,6 +1915,11 @@ curl https://api.openai.com/v1/files/file-XjGxS3KTG0uNmNOK362iJua3/content \
 <div style="break-before: page; page-break-before: always;"></div><h1 id="translate-1"><a class="header" href="#translate-1">Translate</a></h1>
 <p><img src="https://raw.githubusercontent.com/mohan-chinnappan-n/ml-book-assets/master/openAI/openAI-translate-en-fr-1.webm.gif" alt="OpenAI chat" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="codex-1"><a class="header" href="#codex-1">Codex</a></h1>
+<iframe src='https://mohan-chinnappan-n2.github.io/2021/ai/openai/codex/1.html' 
+width="860" height="400">
+</iframe>
+<h2 id="demo-javascript-code-writing-with-codex"><a class="header" href="#demo-javascript-code-writing-with-codex"><a href="https://mohan-chinnappan-n2.github.io/2021/ai/openai/codex/img/1.webm">Demo: Javascript code writing with Codex</a></a></h2>
+<h2 id="videos-1"><a class="header" href="#videos-1">Videos</a></h2>
 <iframe width="720" height="480" src="https://www.youtube.com/embed/SGUCcjHTmGY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="720" height="480" src="https://www.youtube.com/embed/Zm9B-DvwOgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ru5fQZ714x8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    <div style="break-before: page; page-break-before: always;"></div><h1 id="14-inspirations"><a class="header" href="#14-inspirations">14. Inspirations</a></h1>
@@ -2073,6 +2078,20 @@ pi@raspberrypi:~$
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
