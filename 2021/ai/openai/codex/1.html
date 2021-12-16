@@ -1,0 +1,140 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+document.body.style.backgroundColor = 'black';
+
+var circle = document.createElement('div');
+circle.style.width = '100px';
+circle.style.height = '100px';
+circle.style.borderRadius = '50px';
+circle.style.backgroundColor = 'white';
+circle.style.position = 'absolute';
+circle.style.left = '50px';
+circle.style.top = '50px';
+document.body.appendChild(circle);
+
+var x = 0;
+var y = 0;
+var dx = 1;
+var dy = 1;
+
+function move() {
+  x += dx;
+  y += dy;
+  if (x > document.body.clientWidth - 100) {
+    dx = -1;
+  }
+  if (x < 0) {
+    dx = 1;
+  }
+  if (y > document.body.clientHeight - 100) {
+    dy = -1;
+  }
+  if (y < 0) {
+    dy = 1;
+  }
+  circle.style.left = x + 'px';
+  circle.style.top = y + 'px';
+  setTimeout(move, 10);
+}
+
+move();
+
+var text = document.createElement('div');
+text.style.color = 'cyan';
+text.style.fontSize = '50px';
+text.style.position = 'absolute';
+text.style.left = '50%';
+text.style.top = '50%';
+text.style.transform = 'translate(-50%, -50%)';
+text.innerHTML = 'To get great ideas, you need to have many ideas';
+document.body.appendChild(text);
+
+var circle2 = document.createElement('div');
+circle2.style.width = '100px';
+circle2.style.height = '100px';
+circle2.style.borderRadius = '50px';
+circle2.style.backgroundColor = 'yellow';
+circle2.style.position = 'absolute';
+circle2.style.left = '50px';
+circle2.style.top = '50px';
+document.body.appendChild(circle2);
+
+var x2 = 0;
+var y2 = 0;
+var dx2 = 1;
+var dy2 = 1;
+
+function move2() {
+  x2 += dx2;
+  y2 += dy2;
+  if (x2 > document.body.clientWidth - 100) {
+    dx2 = -1;
+  }
+  if (x2 < 0) {
+    dx2 = 1;
+  }
+  if (y2 > document.body.clientHeight - 100) {
+    dy2 = -1;
+  }
+  if (y2 < 0) {
+    dy2 = 1;
+  }
+  circle2.style.left = x2 + 'px';
+  circle2.style.top = y2 + 'px';
+  setTimeout(move2, 10);
+}
+
+move2();
+
+var rect = document.createElement('div');
+rect.style.width = '100px';
+rect.style.height = '100px';
+rect.style.borderRadius = '50px';
+rect.style.backgroundColor = 'cyan';
+rect.style.position = 'absolute';
+rect.style.right = '50px';
+rect.style.top = '50px';
+document.body.appendChild(rect);
+
+circle.style.width = '150px';
+circle.style.height = '150px';
+circle.style.borderRadius = '75px';
+
+var triangle = document.createElement('div');
+triangle.style.width = '100px';
+triangle.style.height = '100px';
+triangle.style.borderRadius = '50px';
+triangle.style.backgroundColor = 'cyan';
+triangle.style.position = 'absolute';
+triangle.style.left = '50px';
+triangle.style.top = '50px';
+document.body.appendChild(triangle);
+
+var text3 = document.createElement('div');
+text3.style.color = 'steelblue';
+text3.style.fontSize = '50px';
+text3.style.position = 'absolute';
+text3.style.left = '50%';
+text3.style.bottom = '50%';
+text3.style.transform = 'translate(-50%, -50%)';
+text3.innerHTML = 'I do not know about drawing in canvas yet!';
+document.body.appendChild(text3);
+
+text3.style.bottom = '30%';
+
+text3.style.bottom = '50%';
+
+text3.style.bottom = '80%';
+
+text3.style.bottom = '70%';
+});
+        </script>
+    </head>
+    <body style="margin: 0;">
+    <a  type='button' style='color:#ff99cc;font-size:50px;float:right' href='1_demo.html'>How it was created?</a>
+    </body>
+</html>
