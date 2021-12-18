@@ -46,6 +46,7 @@
     - [TPU](tpu.md)
 
 - [11. ML Pipelines](ml_pl.md)
+    - [ML ops](ml-ops.md)
     - [TensorFlow Serving](tfs.md)
     - [TensorFlow Extended](tfx.md)
         - [Apache Airflow](apache_airflow.md)

@@ -1,8 +1,10 @@
 # Chapter 1 : Quick Introduction
 
-- In traditional programming we start with **data** and **hard-coded rules** to apply on the data to get **answers**. This style of programming can't bring answers for problems predicting a type of cat in the cat picture.
+- In traditional programming we start with **data** and **hard-coded rules** to apply on the data to get **answers**. 
+- This style of programming can't bring  answers **easily** for problems like:
+    -  predicting a **type of a cat** in the given animal picture
 
-Assume you need to write a program find out the given fruit is apple or orange. Traditional way will be something like this:
+Assume you need to write a program find out the given animal is cat or dog. Traditional way will be something like this:
 
 ```py
 def detect_colors(image):
@@ -17,33 +19,42 @@ def analyze_shapes(image):
 def guess_texture(image):
 # lots of code
 
-def define_fruit():
+def define_animal():
 # lots of code
 
 def handle_probability():
 # lots of code
 ```
 
-It would be great if write a algorithm (say Classifier) which can figure out rules for us, so we do not have to write those rules by hand.
-
-- Input: Data (say fruit image)
-
-- Output: Predicted fruit
-
- 
-<iframe width="720" height="480" src="https://www.youtube.com/embed/cKxRvEZd3Mw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+So, we will be writing lot of **hard-corded** rules!
 
 
-As shown in the demo below, user provides a image of the cat, the application predicts type of the cat in that image with a confidence (probability) with help of Machine Learning.
+It would be great if write a algorithm (say **Classifier**) which can figure out rules for us based on the data we provided (**data-driven rules**), so we **do not have** to write those rules by hand.
+
+So it is trained on the Data and rules are written based on the provided data
+
+So when we provide:
+- Input: Data (say cat's image) : *cat image*
+
+- The program takes in the given the cat image
+
+- Output: Predicted animal name - *Persian Cat with probability 89.178%*
+
+As shown in the demo below, the user provides a image of the cat, the application predicts type of the cat in that image with a confidence (probability) with help of a Machine Learning Model. 
+
+Cool?
 
 ![Image Recognition - 1 ](img/1/img-rec-1.mov.webm.gif)
 
 To build this kind of solution using traditional programming, we may have to write too many rules or sometimes this problem is not easily solvable by our traditional programming. Here comes our hero **Machine Learning** to our rescue us!
 
 
+
+
 ## What is special about Machine Learning ?
 
-How long it will take to write the code for **Solving Rubik’s Cube with a single Robot Hand** using our traditional programming? 
+How long it will take to write the code based on hard-coded rules for this task:
+- **Solving Rubik’s Cube with a single Robot Hand** using our traditional programming? 
 
 <iframe width="720" height="480" src="https://www.youtube.com/embed/kVmp0uGtShk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -53,7 +64,7 @@ How long it will take to write the code for **Solving Rubik’s Cube with a sing
 **Goal:  Create an accurate Model that answers our questions most of time**
 
 ### Step-1 - Gathering Data
--   To train a Model we need to
+-   To train a ML Model we need to:
     - Collect data to train on
 
 
@@ -119,13 +130,19 @@ Power here is we can predict the values for the given input with our Model
     - not by human judgement and manual rules
 
 
+
+
+ 
+## Videos
+
+ 
+<iframe width="720" height="480" src="https://www.youtube.com/embed/cKxRvEZd3Mw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <iframe width="780" height="420" src="https://www.youtube.com/embed/nKW8Ndu7Mjw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 <iframe width="780" height="420" src="https://www.youtube.com/embed/h0e2HAPTGF4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
-- [Simple House Price Predictor using ML through TensorFlow in Python](https://towardsdatascience.com/simple-house-price-predictor-using-ml-through-tensorflow-in-python-cbd2b637904b)
 
 
 
