@@ -1331,8 +1331,108 @@ The General Purpose GPU (GPGPU) plays a vital role in the deep learning and para
 <p>A <a href="https://cloud.google.com/tpu/docs/system-architecture-tpu-vm">TPU v3</a> board contains four TPU chips and 32 GiB of HBM. Each TPU chip contains two cores. Each core has a MXU, a vector unit, and a scalar unit.</p>
 <p><img src="https://cloud.google.com/tpu/docs/images/tpu-v3-layout.png" alt="TPU architecture" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="11-ml-pipelines"><a class="header" href="#11-ml-pipelines">11. ML Pipelines</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ml-ops"><a class="header" href="#ml-ops">ML ops</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ml-ops-or-mlops"><a class="header" href="#ml-ops-or-mlops">ML ops or MLOps</a></h1>
+<p>Set of practices that aims to deploy and maintain machine learning models in <strong>production reliably and efficiently</strong>.</p>
+<p>The word <strong>MLOps</strong> is a compound of <em>machine learning</em> and the continuous development practice of <em>DevOps</em> in the software field. </p>
+<ul>
+<li>Machine learning models are tested and developed in isolated experimental systems.</li>
+<li>When an algorithm is ready to be launched, MLOps is practiced between Data Scientists, DevOps, and Machine Learning engineers to transition the algorithm to production systems.</li>
+<li>MLOps seeks to increase automation and improve the quality of production models, while also focusing on business and regulatory requirements.</li>
+</ul>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/ML_Ops_Venn_Diagram.svg" alt="MLOps Wiki" />
+<img src="https://ml-ops.org/img/mlops-loop-en.jpg" alt="MlOps" /></p>
 <iframe width="800" height="420" src="https://www.youtube.com/embed/Ta14KpeZJok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2 id="papers-1"><a class="header" href="#papers-1">Papers</a></h2>
+<ul>
+<li><a href="https://proceedings.neurips.cc/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf">Hidden Technical Debt in Machine Learning Systems</a></li>
+</ul>
+<h2 id="salesforce-transmogrifai"><a class="header" href="#salesforce-transmogrifai">Salesforce TransmogrifAI</a></h2>
+<ul>
+<li>AutoML library for building modular, reusable, strongly typed machine learning workflows on Apache Spark with minimal hand-tuning</li>
+<li>Transmogrification as the process of transforming, often in a surprising or magical manner, which is what TransmogrifAI does for Salesforce 
+<ul>
+<li>enabling data science teams to transform customer data into meaningful, actionable predictions</li>
+<li>thousands of <strong>customer-specific machine learning models</strong> have been deployed across the platform, powering more than 3 billion predictions every day.</li>
+</ul>
+</li>
+</ul>
+<p>TransmogrifAI is a library built on Scala and SparkML that does precisely this. </p>
+<p>With just a few lines of code, a data scientist can automate data cleansing, feature engineering, and model selection to arrive at a performant model from which she can explore and iterate further.</p>
+<p><img src="https://miro.medium.com/max/5280/1*nRxOm1irE_aNB-UweA7IXA.png" alt="TransmogrifAI" /></p>
+<p>Type Safety: The TransmogrifAI Feature type hierarchy</p>
+<p><img src="https://miro.medium.com/max/1540/1*vkrbLrOyIinhonrPCGHivA.png" alt="Type Safety" /></p>
+<p>Transmogrification
+These transformations are not just about getting the data into a format which algorithms can use, TransmogrifAI also optimizes the transformations to make it easier for machine learning algorithms to learn from the data.</p>
+<ul>
+<li>For example, it might transform a numeric feature like age into the most appropriate age buckets for a particular problem — age buckets for the fashion industry might differ from wealth management age buckets.</li>
+</ul>
+<p>TransgmogrifAI has algorithms that perform automatic feature validation to remove features with little to <em>no predictive power</em>.
+- Example: <em>Closed Deal Amount</em></p>
+<p>The TransmogrifAI <em>Model Selector</em> runs a tournament of several different machine learning algorithms on the data and uses the average validation error to automatically choose the best one</p>
+<p>TransmogrifAI comes with some techniques for automatically tuning these hyperparameters and a framework to extend to more advanced tuning techniques.</p>
+<pre><code class="language-scala">
+// Read the Deal data
+val dealData = DataReaders.Simple.csvCase[Deal](path = pathToData).readDataset().toDF()
+
+// Extract response and predictor Features
+val (isClosed, predictors) = FeatureBuilder.fromDataFrame[RealNN](dealData, response = &quot;isClosed&quot;)
+
+// Automated feature engineering
+val featureVector = predictors.transmogrify()
+
+// Automated feature validation
+val cleanFeatures = isClosed.sanityCheck(featureVector, removeBadFeatures = true)
+
+// Automated model selection
+val (pred, raw, prob) = BinaryClassificationModelSelector().setInput(isClosed, cleanFeatures).getOutput()
+
+// Setting up the workflow and training the model
+val model = new OpWorkflow().setInputDataset(dealData).setResultFeatures(pred).train()
+
+</code></pre>
+<p>TransmogrifAI is built  on top of Apache Spark</p>
+<ul>
+<li>
+<p>Able to handle large variation in the size of the data</p>
+<ul>
+<li>Some use cases involve tens of millions of records that need to be aggregated or joined, others depend on a few thousands of records.</li>
+</ul>
+</li>
+<li>
+<p>Spark has primitives for dealing with distributed joins and aggregates on big data </p>
+</li>
+<li>
+<p>Able to serve our machine learning models in both a batch and streaming (Spark Streaming) setting</p>
+</li>
+<li>
+<p>Transmogrification, Feature Validation, and Model Selection above, are all powered by Estimators)</p>
+<ul>
+<li>A Feature is essentially a type-safe pointer to a column in a DataFrame and contains all the information about that column — its name, the type of data it contains, as well as lineage information about how it was derived.</li>
+</ul>
+</li>
+<li>
+<p>TransmogrifAI provides the ability to easily define features that are the result of complex time-series aggregates and joins</p>
+</li>
+<li>
+<p>Features are strongly typed. This allows TransmogrifAI to do type checks on the entire machine learning workflow, and ensure that <em>errors are caught as early on as possible</em> instead of hours into a running pipeline</p>
+</li>
+<li>
+<p>Developers can easily specify custom transformers and estimators to be used in the pipeline</p>
+</li>
+</ul>
+<pre><code class="language-scala">val lowerCaseText = textFeature.map[Text](_.value.map(_.toLowerCase).toText)
+</code></pre>
+<h3 id="scale-and-performance"><a class="header" href="#scale-and-performance">Scale and performance</a></h3>
+<ul>
+<li>With automated feature engineering, data scientists can easily <em>blow up the feature space</em>, and end up with wide DataFrames that are hard for Spark to deal with. </li>
+<li>TransmogrifAI workflows address this by inferring the entire DAG of transformations that are needed to materialize features, and optimize the execution of this DAG by collapsing all transformations that occur at the same level of the DAG into a single operation.</li>
+</ul>
+<h3 id="summary"><a class="header" href="#summary">Summary</a></h3>
+<p>TransmogrifAI enables our data scientists to deploy thousands of models in production with minimal hand tuning and reducing the average turn-around time for training a performant model from weeks to just a couple of hours.</p>
+<p><a href="https://github.com/salesforce/TransmogrifAI">TransmogrifAI</a></p>
+<ul>
+<li><a href="https://engineering.salesforce.com/open-sourcing-transmogrifai-4e5d0e098da2">Open Sourcing TransmogrifAI</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tensorflow-serving"><a class="header" href="#tensorflow-serving">TensorFlow Serving</a></h1>
 <p>TensorFlow Serving is a flexible, <strong>high-performance serving system</strong> for machine learning models, designed for <strong>production environments</strong>. </p>
 <p>TensorFlow Serving makes it easy to <strong>deploy new algorithms and experiments</strong>, while keeping the same server architecture and APIs. </p>
@@ -1384,6 +1484,8 @@ With the default <strong>DirectRunner</strong> setup the Beam orchestrator can b
 <div style="break-before: page; page-break-before: always;"></div><h1 id="automl"><a class="header" href="#automl">AutoML</a></h1>
 <p>AutoML makes the power of machine learning available to you even if you have limited knowledge of machine learning.</p>
 <p>You can use AutoML to build on Google's machine learning capabilities to <strong>create your own custom machine learning models that are tailored to your business needs</strong>, and then integrate those models into your applications and web sites.</p>
+<iframe width="800" height="420" src="https://www.youtube.com/embed/93vsqjfGPCw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" height="420" src="https://www.youtube.com/embed/PKTvo9X9Sjg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="12-speedup"><a class="header" href="#12-speedup">12. Speedup</a></h1>
 <p>In this chapter we will see the ways to speed up Machine Learning</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="12-jax"><a class="header" href="#12-jax">12. JAX</a></h1>
@@ -2093,20 +2195,6 @@ pi@raspberrypi:~$
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3000/__livereload");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
