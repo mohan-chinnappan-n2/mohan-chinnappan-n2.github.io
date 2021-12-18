@@ -48,7 +48,6 @@ Cool?
 
 To build this kind of solution using traditional programming, we may have to write too many rules or sometimes this problem is not easily solvable by our traditional programming. Here comes our hero **Machine Learning** to our rescue us!
 
-
 ## What is special about Machine Learning ?
 
 How long it will take to write the code based on hard-coded rules for this task:
