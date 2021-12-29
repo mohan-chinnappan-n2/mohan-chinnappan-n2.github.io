@@ -51,7 +51,7 @@ fileHtmls.forEach( (id) => {
 
 
 
-const converter = new showdown.Converter();
+const converter = new showdown.Converter( {tables: true });
 
 let md2html = (id) => {
   const mdEle = document.getElementById(id);
