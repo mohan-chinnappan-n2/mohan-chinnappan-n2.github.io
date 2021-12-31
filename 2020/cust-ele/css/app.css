@@ -52,4 +52,19 @@ background:#efefef;
 } 
 
 
+/* tables */
+table   {
+    border:3px solid #99ccff;
+    border-radius:10px;
+    padding:10px;
+  }
 
+  th, td  {
+    border:1px solid #99ccff;
+    border-radius:2px;
+    padding:10px;
+  }
+
+  th {
+    font-size: larger;
+  }
