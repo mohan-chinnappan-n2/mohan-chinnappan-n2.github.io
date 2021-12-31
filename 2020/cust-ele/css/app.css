@@ -68,3 +68,6 @@ table   {
   th {
     font-size: larger;
   }
+/* zoom */
+ body { zoom:120%; }
+
