@@ -68,6 +68,20 @@ table   {
   th {
     font-size: larger;
   }
+
+tbody tr:nth-child(odd) {
+	background: #efffff;
+}
+
+tbody tr:hover {
+      background: #eee;
+}
+img {
+      border-radius: 2%;
+}
+
+
+
 /* zoom */
  body { zoom:120%; }
 
