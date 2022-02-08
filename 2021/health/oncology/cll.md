@@ -139,9 +139,16 @@
 - Other medicines such as azathioprine (Imuran) and cyclophosphamide (Cytoxan) can be used to suppress the immune system.
 
 
+# Gene therapy
+- Gene therapy  transformes some of blood cells into cancer killers
+- CAR-T cell therapy, can attack cancer immediately, then stay inside the body for years and evolve there to keep the disease at bay.Such so-called “living drugs” are now used by thousands around the world to treat certain blood cancers.
 
+```
+Based on the 10-year results, “we can now conclude that CAR-T cells can actually cure patients of leukemia,” said Dr. Carl June, one of the authors of the study.
+```
 
-
+## Refer
+[Doctors: Cancer patients cured a decade after gene therapy](https://japantoday.com/category/features/health/doctors-long-lasting-cell-treatment-cured-leukemia-patients) 
 
 # References
 - [What Is Chronic Lymphocytic Leukemia?](https://www.cancer.org/cancer/chronic-lymphocytic-leukemia/about/what-is-cll.html)
