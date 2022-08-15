@@ -16,16 +16,22 @@
   return result;
  };
 
- let params = getQueryParams();
-    console.log(params.f);
+     
+
+
+ let params = getQueryParams()
+ const url =  params.f || './seqs/farming.seq.txt';
+ // console.log(url);
+
+ let getFile = async (name)  => {
+  let response = await fetch(name);
+  return await response.text();
+}
+
+    // console.log(params.f);
     //const url =  params.f ;
-    const url =  params.f || './seqs/farming.seq.txt';
     //console.log(`url: ${url}`);
-    
-    let getFile = async (name)  => {
-      let response = await fetch(name);
-      return await response.text();
-    }
+
     
   
 
@@ -47,9 +53,14 @@
       editor.getSession().setMode("ace/mode/asciidoc");
       editor.getSession().on('change', _.debounce(on_change, 100));
 
-      let data = getFile(url).then( data => {
-       editor.setValue(data);
-     });
+      if (params.d) {
+        editor.setValue(atob(params.d));
+      }
+      else if (url) {
+        let data = getFile(url).then( data => {
+          editor.setValue(data);
+        });
+      }
 
       download_link.onclick = function (ev) {
         var svg = document.getElementsByTagName('svg')[0];
