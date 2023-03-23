@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
     <title>MD Renderer</title>
+    <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n5.github.io/dfv/img/mc_favIcon.ico" />
+
 
     <link
       rel="stylesheet"
@@ -12,6 +14,17 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <style>
+      table, th, td {
+        border: 2px solid gray;
+        padding: 5px;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      } 
+      tr:hover {background-color: lightblue;}
+
+    </style>
     
 </head>
 <body>
@@ -20,7 +33,7 @@
 
 
 <div id='content' class="container"> </div>
-<script src="js/md.js"></script>
+<script  type='module' src="js/md.js"></script>
 </body>
 </html>
 
