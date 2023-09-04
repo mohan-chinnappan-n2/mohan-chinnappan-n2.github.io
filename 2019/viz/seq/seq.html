@@ -21,6 +21,18 @@
   <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
   <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css" />
   <link rel="stylesheet" href="css/seq-app.css?v=3" />
+
+  <script src="https://mohan-chinnappan-n5.github.io/pkg/js/lib/autocomplete.min.js"></script>
+  <link rel="stylesheet" href="https://mohan-chinnappan-n5.github.io/pkg/css/lib/autocomplete.css">
+
+  <style>
+    .autoComplete_wrapper > input {
+      width: 40rem;
+      height: 50px;
+      font-size: larger;
+  }
+  </style>
+
 </head>
 
 <body>
@@ -43,9 +55,12 @@
 
 
   <div class="split split-horizontal" id="menu">
+    <input type="text" autocomplete="off" id="autoCompleteMtype">
+
     <div id="diagram"></div>
   </div>
   <div class="split split-horizontal" id="content">
+
     <div id="editor"> </div>
 
     <div class="row">

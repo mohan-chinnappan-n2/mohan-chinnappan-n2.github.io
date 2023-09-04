@@ -4,6 +4,74 @@
      mohan chinnappan
      based on work by: Andrew Brampton
  */
+     async function fetchText(url) {
+      const response = await fetch(url);
+      const content = await response.text();
+      return content;
+    }
+    
+
+    const diagram_div = document.getElementById('diagram');
+    const download_link = document.getElementById('download');
+    const editorEl = document.getElementById('editor');
+
+    const theme_div = document.getElementById('theme');
+    const scale_div = document.getElementById('scale');
+
+     const editor = ace.edit(editorEl);
+
+     const acConfigMtype = {
+      placeHolder: "Search for Sample Docs...",
+      selector: "#autoCompleteMtype",
+      data: {
+         src: ['farming', 'Kafka-controller', 'leaflet']
+        // src:XMLTypes.getSupported(),
+      },
+      resultItem: {
+        highlight: true,
+      },
+    
+      resultsList: {
+        element: (list, data) => {
+          const info = document.createElement("p");
+          if (data.results.length) {
+            info.innerHTML = `Displaying <strong>${data.results.length}</strong> out of <strong>${data.matches.length}</strong> results`;
+          } else {
+            info.innerHTML = `Found <strong>${data.matches.length}</strong> matching results for <strong>"${data.query}"</strong>`;
+          }
+          list.prepend(info);
+        },
+    
+        noResults: true,
+        maxResults: 15,
+        tabSelect: true,
+      },
+    
+      events: {
+        input: {
+          selection: async (event) => {
+            const selection = event.detail.selection.value;
+            autoCompleteJSMtype.input.value = selection;
+            await loadData(selection);
+    
+    
+          },
+        },
+      },
+    };
+    const autoCompleteJSMtype = new autoComplete(acConfigMtype);
+
+    async function loadData(selection) {
+      const docUrl =
+      `https://raw.githubusercontent.com/mohan-chinnappan-n/xml-xslt/main/seqs/${selection}.seq.txt`;
+      console.log(docUrl);
+    
+      const docData = await fetchText(docUrl);
+      editor.setValue( docData);
+    
+    }
+
+
 
  // query parm parser
  let getQueryParams = () => {
@@ -38,13 +106,6 @@
   //========================
 
 
-    const diagram_div = document.getElementById('diagram');
-    const download_link = document.getElementById('download');
-    const editorEl = document.getElementById('editor');
-    const editor = ace.edit(editorEl);
-
-    const theme_div = document.getElementById('theme');
-    const scale_div = document.getElementById('scale');
 
 
     function setup_editor() {
@@ -94,7 +155,7 @@
           theme: theme,
           scale: scale
         };
-        console.log(options);
+        //console.log(options);
 
         // Draw
         diagram.drawSVG('diagram', options);
