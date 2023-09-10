@@ -127,10 +127,46 @@
     <button id="downloadButton" class='btn btn-success'>Download as SVG</button>
   </div>
  
-    <script>
+    <script type='module'>
+         // mchinnappan, sept-2023
         const getEle = id => document.getElementById(id);
         const taSpec = getEle('spec');
         const btnDraw = getEle('draw');
+
+        let input;
+        let params = (new URL(document.location)).searchParams;
+         //------- via clipboard
+         let c = params.get('c');
+
+         async function readClipboardText() {
+             try {
+            // Check if the clipboard API is available in the browser
+            if (!navigator.clipboard) {
+                throw new Error("Clipboard API is not available in this browser.");
+            }
+
+            // Attempt to read text from the clipboard
+            const text = await navigator.clipboard.readText();
+
+            // Do something with the text from the clipboard
+            //console.log("Text from clipboard:", text);
+
+            // Return the text if needed
+            return text;
+        } catch (err) {
+            // Handle any errors
+            console.error("Error reading text from clipboard:", err);
+            return null; // Return null or another value to indicate failure
+        }
+    }
+
+
+        if (c !== null)  {
+                input = await readClipboardText();
+                taSpec.value = input;
+                //console.log(input);
+        }
+
         const width = 800;
         const height = 400;
         const svg = d3.select('svg')
@@ -167,7 +203,7 @@
             .data(root.descendants())
             .enter()
             .append('text')
-            .attr('x', (d) => d.x + 10)
+            .attr('x', (d) => d.x + 5)
             .attr('y', (d) => d.y + 4)
             .text((d) => d.data.name);
         }
@@ -176,7 +212,8 @@
         btnDraw.addEventListener('click', event => {
             // Clear existing content within the SVG (remove all child elements)
             svg.selectAll('*').remove();
-            drawHierarchy(JSON.parse(taSpec.value));         
+            //console.log(taSpec.value);
+            if (taSpec.value != null) drawHierarchy(JSON.parse(taSpec.value));         
         })
         btnDraw.click();
 

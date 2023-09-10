@@ -94,13 +94,48 @@
   </div>
 
 
-    <script>
+    <script type='module'>
+         // mchinnappan, sept-2023
         const getEle = id => document.getElementById(id);
         const taSprints = getEle('sprints');
         const btnDraw = getEle('draw');
         const downloadButton = getEle('downloadButton');
 
         Split([ "#content", "#graph"], { sizes: [20, 80] });
+
+        let input;
+        let params = (new URL(document.location)).searchParams;
+         //------- via clipboard
+         let c = params.get('c');
+
+         async function readClipboardText() {
+             try {
+            // Check if the clipboard API is available in the browser
+            if (!navigator.clipboard) {
+                throw new Error("Clipboard API is not available in this browser.");
+            }
+
+            // Attempt to read text from the clipboard
+            const text = await navigator.clipboard.readText();
+
+            // Do something with the text from the clipboard
+            //console.log("Text from clipboard:", text);
+
+            // Return the text if needed
+            return text;
+        } catch (err) {
+            // Handle any errors
+            console.error("Error reading text from clipboard:", err);
+            return null; // Return null or another value to indicate failure
+        }
+    }
+
+     if (c !== null)  {
+                input = await readClipboardText();
+                taSprints.value = input;
+                //console.log(input);
+     }
+
 
 
         function createSprintChart(chartTitle, sprintData, svgWidth, svgHeight, barLength) {
@@ -122,7 +157,7 @@
                 return points;
             }, []).sort((a, b) => a - b);
 
-           console.log(storyPoints); 
+           //console.log(storyPoints); 
             const xScale = d3.scaleBand()
                 .domain(storyPoints.map(d => d.toString()))
                 .range([0, width])
@@ -183,7 +218,7 @@
                     .attr('class', 'subgraph')
                     .attr('transform', `translate(0, ${yScale(d.sprint)})`);
 
-                console.log(d.totalPoints)
+                //console.log(d.totalPoints)
                 averageVelocity = d.averageVelocity;
                 subgraph.selectAll('.story-bar')
                     .data(d.stories)
