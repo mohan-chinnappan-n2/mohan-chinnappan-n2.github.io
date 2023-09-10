@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRMA Recipe Schedule </title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.27.0/min/vs/editor/editor.main.min.css">
+  <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n5.github.io/editor/img/favicon.ico" />
+  <link rel="stylesheet" href="https://mohan-chinnappan-n5.github.io/delta/style.css">
+  <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+  <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css">
+
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        .bar {
+            opacity: 0.7;
+        }
+
+        .grid line {
+            stroke: lightgray;
+            stroke-opacity: 0.7;
+        }
+
+        .duration-text {
+            font-size: 12px;
+            fill: black;
+            text-anchor: middle;
+        }
+
+        .chart-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-anchor: middle;
+        }
+
+    body {
+      min-height: 75rem;
+      padding-top: 4.5rem;
+    }
+    #dropArea {
+      border: 2px dashed #ccc;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+    }
+    #dropArea:hover {
+      background-color: #f5f5f5;
+    }
+
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">&nbsp;CRMA Recipe Schedule </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="split split-horizontal" id="content">
+<textarea rows='20' cols='80' id='jobs'>
+ [
+{ "job": "job1", "startTime": 0, "duration": 15, "repeatsEvery": 180, "height": 10 },
+{ "job": "job2", "startTime": 60, "duration": 30, "repeatsEvery": 240, "height": 10 },
+{ "job": "job3", "startTime": 120, "duration": 60, "repeatsEvery": 300, "height": 10 },
+{ "job": "job4", "startTime": 80, "duration": 60, "repeatsEvery": 360, "height": 10 },
+{ "job": "job5", "startTime": 90, "duration": 60, "repeatsEvery": 420, "height": 10 },
+{ "job": "job6", "startTime": 0, "duration": 60, "repeatsEvery": 480, "height": 10 }
+
+]
+
+      </textarea>
+      <button id='draw' class='btn btn-primary'>Draw</button>
+</div>
+  <div class="split split-horizontal" id="graph">
+    <svg id="chart"></svg>
+   <button id="downloadButton" disabled class='btn btn-success'>Download as SVG</button>
+
+  </div>
+
+
+
+    <script>
+
+        const getEle = id => document.getElementById(id);
+        const taJobs = getEle('jobs');
+        const btnDraw = getEle('draw');
+
+        Split([ "#content", "#graph"], { sizes: [20, 80] });
+
+
+        function createGanttChart(chartTitle, jobsData, svgWidth, svgHeight) {
+            const svg = d3.select('#chart')
+                .attr('width', svgWidth)
+                .attr('height', svgHeight);
+
+            const margin = { top: 40, right: 30, bottom: 30, left: 40 };
+            const width = svgWidth - margin.left - margin.right;
+            const height = svgHeight - margin.top - margin.bottom;
+
+            const xScale = d3.scaleLinear()
+                .domain([0, 24 * 60]) // 24 hours in minutes
+                .range([0, width]);
+
+            const yScale = d3.scaleBand()
+                .domain(jobsData.map(d => d.job))
+                .range([0, height])
+                .padding(0.1);
+
+        // Define a custom color scale with an array of colors
+        const customColors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"];
+        const colorScale = d3.scaleOrdinal().range(customColors);
+
+ 
+            const g = svg.append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
+
+            // Add chart title
+            g.append('text')
+                .attr('class', 'chart-title')
+                .attr('x', width / 2)
+                .attr('y', -margin.top / 2)
+                .text(chartTitle);
+
+              // Add horizontal grid lines for jobs
+            g.selectAll('.job-line')
+                .data(jobsData.map(d => d.job))
+                .enter()
+                .append('line')
+                .attr('class', 'job-line')
+                .attr('x1', 0)
+                .attr('x2', width)
+                .attr('y1', d => yScale(d) + yScale.bandwidth() / 2)
+                .attr('y2', d => yScale(d) + yScale.bandwidth() / 2)
+                .style('stroke', '#99ccff')
+                .style('stroke-opacity', 0.7);
+
+            // Add gridlines
+            g.selectAll('.grid-line')
+                .data(xScale.ticks(24))
+                .enter()
+                .append('line')
+                .attr('class', 'grid-line')
+                .attr('x1', d => xScale(d))
+                .attr('x2', d => xScale(d))
+                .attr('y1', 0)
+                .attr('y2', height)
+                .style('stroke', '#99ccff')
+                .style('stroke-opacity', 0.7);
+
+            jobsData.forEach(d => {
+                const repetitions = Math.floor((24 * 60 - d.startTime) / d.repeatsEvery);
+                for (let i = 0; i < repetitions; i++) {
+                    const xPosition = xScale(d.startTime + i * d.repeatsEvery);
+                    const yPosition = yScale(d.job);
+                    const durationText = `${d.duration} min`;
+
+                    // Add the job duration text below the job block
+                    g.append('text')
+                        .attr('class', 'duration-text')
+                        .attr('x', xPosition + xScale(d.duration) / 2) // Center text horizontally within the job block
+                        .attr('y', yPosition + d.height + 15) // Position text below the job block
+                        .text(durationText);
+
+                    g.append('rect')
+                        .attr('class', 'bar')
+                        .attr('x', xPosition)
+                        .attr('y', yPosition)
+                        .attr('width', xScale(d.duration))
+                        .attr('height', d.height) // Height is configurable for each job
+                        .style('fill', colorScale(d.job)); // Use color from the colorScale
+                }
+            });
+
+            g.append('g')
+                .attr('class', 'x-axis')
+                .attr('transform', `translate(0, ${height})`)
+                .call(d3.axisBottom(xScale).tickFormat(d => `${Math.floor(d / 60)}:${d % 60}`));
+
+            g.append('g')
+                .attr('class', 'y-axis')
+                .call(d3.axisLeft(yScale));
+        }
+
+       // Example usage:
+        const chartTitle = "Bernoulli Chart";
+ 
+        function saveSvg() {
+            const svgEl = getEle('chart');
+           
+            svgEl.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+            var svgData = svgEl.outerHTML;
+            var preface = '<?xml version="1.0" standalone="no"?>\r\n';
+            var svgBlob = new Blob([preface, svgData], {type:"image/svg+xml;charset=utf-8"});
+            var svgUrl = URL.createObjectURL(svgBlob);
+            var downloadLink = document.createElement("a");
+            downloadLink.href = svgUrl;
+            downloadLink.download = `${chartTitle.replace(' ','')}.svg`;
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        }
+
+
+       let jobsData =  JSON.parse(taJobs.value); 
+        const svgWidth = 1600; // Set the desired SVG width
+        const svgHeight = 600; // Set the desired SVG height
+
+
+        // Add event listener to the download button
+        getEle("downloadButton").addEventListener("click", saveSvg);
+
+
+        //createGanttChart(chartTitle, jobsData, svgWidth, svgHeight);
+
+        btnDraw.addEventListener('click', event => {
+           // Clear existing content within the SVG (remove all child elements)
+           const svg = d3.select('#chart');
+           svg.selectAll('*').remove();
+          jobsData =  JSON.parse(taJobs.value); 
+          createGanttChart(chartTitle, jobsData, svgWidth, svgHeight);
+          getEle('downloadButton').disabled = false;
+        });
+        btnDraw.click();
+
+    </script>
+</body>
+</html>
+

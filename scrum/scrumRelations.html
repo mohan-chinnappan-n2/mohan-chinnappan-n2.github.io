@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrum Seleatoinship Chart</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+	 <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n5.github.io/dfv/img/mc_favIcon.ico" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.27.0/min/vs/editor/editor.main.min.css">
+  <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n5.github.io/editor/img/favicon.ico" />
+
+
+  <link rel="stylesheet" href="https://mohan-chinnappan-n5.github.io/delta/style.css">
+  <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+  <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css">
+
+    <style>
+        circle {
+            fill: #ff99cc;
+        }
+
+        line {
+            stroke: #ff99cc ;
+            stroke-width: 3;
+        }
+
+        text {
+            font-size: 12px;
+        }
+         body { min-height: 75rem; padding-top: 4.5rem; }
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">&nbsp;Scrum Relationship</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<div class="split split-horizontal" id="content">
+<textarea rows='20' cols='80' id='spec'>
+{
+    "name": "Initiative 1",
+    "children": [
+        {
+            "name": "Epic 1",
+            "children": [
+                {
+                    "name": "Sprint 1",
+                    "children": [
+                        {
+                            "name": "Story 1"
+                        },
+                        {
+                            "name": "Story 2"
+                        }
+                    ]
+                },
+                {
+                    "name": "Sprint 2",
+                    "children": [
+                        {
+                            "name": "Story 1"
+                        },
+                        {
+                            "name": "Story 2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Epic 2",
+            "children": [
+                {
+                    "name": "Sprint 3",
+                    "children": [
+                        {
+                            "name": "Story 1"
+                        },
+                        {
+                            "name": "Story 2"
+                        },
+                        {
+                            "name": "Story 3"
+                        }
+                    ]
+                },
+                {
+                    "name": "Sprint 4",
+                    "children": [
+                        {
+                            "name": "Story 1"
+                        },
+                        {
+                            "name": "Story 2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+</textarea>
+      <button id='draw' class='btn btn-primary'>Draw</button>
+</div>
+
+  <div class="split split-horizontal" id="graph">
+    <svg id='chart' width="800" height="400"></svg>
+    <hr/>
+    <button id="downloadButton" class='btn btn-success'>Download as SVG</button>
+  </div>
+ 
+    <script>
+        const getEle = id => document.getElementById(id);
+        const taSpec = getEle('spec');
+        const btnDraw = getEle('draw');
+        const width = 800;
+        const height = 400;
+        const svg = d3.select('svg')
+            .attr('width', width)
+            .attr('height', height);
+
+        Split([ "#content", "#graph"], { sizes: [20, 80] });
+
+        function drawHierarchy(data) {
+               const g = svg.append('g').attr('transform', 'translate(50,50)');
+                const root = d3.hierarchy(data);
+
+        const treeLayout = d3.tree().size([width - 100, height - 100]);
+        treeLayout(root);
+
+        const nodes = g.selectAll('circle')
+            .data(root.descendants())
+            .enter()
+            .append('circle')
+            .attr('cx', (d) => d.x)
+            .attr('cy', (d) => d.y)
+            .attr('r', 5);
+
+        const links = g.selectAll('line')
+            .data(root.links())
+            .enter()
+            .append('line')
+            .attr('x1', (d) => d.source.x)
+            .attr('y1', (d) => d.source.y)
+            .attr('x2', (d) => d.target.x)
+            .attr('y2', (d) => d.target.y);
+
+        const labels = g.selectAll('text')
+            .data(root.descendants())
+            .enter()
+            .append('text')
+            .attr('x', (d) => d.x + 10)
+            .attr('y', (d) => d.y + 4)
+            .text((d) => d.data.name);
+        }
+        // use the function
+
+        btnDraw.addEventListener('click', event => {
+            // Clear existing content within the SVG (remove all child elements)
+            svg.selectAll('*').remove();
+            drawHierarchy(JSON.parse(taSpec.value));         
+        })
+        btnDraw.click();
+
+
+        const chartTitle = "Scrum Relationships"; 
+        function saveSvg() {
+            const svgEl = getEle('chart');
+
+            svgEl.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+            var svgData = svgEl.outerHTML;
+            var preface = '<?xml version="1.0" standalone="no"?>\r\n';
+            var svgBlob = new Blob([preface, svgData], {type:"image/svg+xml;charset=utf-8"});
+            var svgUrl = URL.createObjectURL(svgBlob);
+            var downloadLink = document.createElement("a");
+            downloadLink.href = svgUrl;
+            downloadLink.download = `${chartTitle.substring(0,64)}.svg`;
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        }
+
+         // Add event listener to the download button
+        getEle("downloadButton").addEventListener("click", saveSvg);
+
+
+        </script>
+</body>
+</html>
+

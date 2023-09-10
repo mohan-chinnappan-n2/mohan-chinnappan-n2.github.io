@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrum Story Points Chart - Committed vs Completed</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+		 <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n5.github.io/dfv/img/mc_favIcon.ico" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.27.0/min/vs/editor/editor.main.min.css">
+  <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n5.github.io/editor/img/favicon.ico" />
+
+
+  <link rel="stylesheet" href="https://mohan-chinnappan-n5.github.io/delta/style.css">
+  <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+  <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css">
+
+
+		 <style>
+        .bar {
+            opacity: 0.7;
+        }
+
+        .grid line {
+            stroke: lightgray;
+            stroke-opacity: 0.7;
+        }
+
+        .story-line {
+            stroke: lightgray;
+            stroke-opacity: 0.7;
+        }
+
+        .story-text {
+            font-size: 12px;
+            fill: black;
+            text-anchor: middle;
+        }
+
+        .chart-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-anchor: middle;
+        }
+
+     body {
+      min-height: 75rem;
+      padding-top: 4.5rem;
+    }
+
+</style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">&nbsp;Scrum Story Points Chart - Committed vs Completed</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<div class="split split-horizontal" id="content">
+<textarea rows='20' cols='80' id='spec'>
+[
+    { "story": "Story 1", "commitment": 10, "completedEstimates": 8 },
+    { "story": "Story 2", "commitment": 15, "completedEstimates": 12 },
+    { "story": "Story 3", "commitment": 9, "completedEstimates": 8 }
+]
+</textarea>
+      <button id='draw' class='btn btn-primary'>Draw</button>
+</div>
+
+  <div class="split split-horizontal" id="graph">
+    <svg id="chart"></svg>
+    <button id="downloadButton" class='btn btn-success'>Download as SVG</button>
+  </div>
+    <script>
+
+        const getEle = id => document.getElementById(id);
+        const taSpec = getEle('spec');
+        const btnDraw = getEle('draw');
+
+        Split([ "#content", "#graph"], { sizes: [20, 80] });
+        function createScrumChart(chartTitle, storyData, svgWidth, svgHeight, barHeight, yOffset) {
+            const svg = d3.select('#chart')
+                .attr('width', svgWidth)
+                .attr('height', svgHeight);
+
+            const margin = { top: 40, right: 30, bottom: 50, left: 60 };
+            const width = svgWidth - margin.left - margin.right;
+            const height = svgHeight - margin.top - margin.bottom;
+
+            const xScale = d3.scaleLinear()
+                .domain([0, d3.max(storyData, d => Math.max(d.commitment, d.completedEstimates))])
+                .range([0, width]);
+
+            const yScale = d3.scaleBand()
+                .domain(storyData.map(d => d.story))
+                .range([0, height])
+                .padding(0.1);
+
+            // Define color scale
+            const commitmentColor = "#99ccff"; // Blue color for commitment
+            // const completedColor = "#99ffcc"; // Green color for completed estimates
+            const customColors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"];
+            const colorScale = d3.scaleOrdinal().range(customColors);
+
+            const g = svg.append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
+
+            // Add chart title
+            g.append('text')
+                .attr('class', 'chart-title')
+                .attr('x', width / 2)
+                .attr('y', -margin.top / 2)
+                .text(chartTitle);
+
+            // Add horizontal grid lines for stories
+            g.selectAll('.story-line')
+                .data(storyData.map(d => d.story))
+                .enter()
+                .append('line')
+                .attr('class', 'story-line')
+                .attr('x1', 0)
+                .attr('x2', width)
+                .attr('y1', d => yScale(d) + yScale.bandwidth() / 2)
+                .attr('y2', d => yScale(d) + yScale.bandwidth() / 2)
+                .style('stroke', 'lightgray')
+                .style('stroke-opacity', 0.7);
+
+            // Add gridlines
+            g.selectAll('.grid-line')
+                .data(xScale.ticks(10))
+                .enter()
+                .append('line')
+                .attr('class', 'grid-line')
+                .attr('x1', d => xScale(d))
+                .attr('x2', d => xScale(d))
+                .attr('y1', 0)
+                .attr('y2', height)
+                .style('stroke', 'lightgray')
+                .style('stroke-opacity', 0.7);
+
+            storyData.forEach(d => {
+                const xPosition = 0;
+                const yPosition = yScale(d.story);
+                const commitmentText = `Committed: ${d.commitment} points`; // Centered text
+                const completedText = `Completed: ${d.completedEstimates} points`; // Centered text
+
+                // Add the commitment bar with a y offset
+                g.append('rect')
+                    .attr('class', 'commitment-bar')
+                    .attr('x', xPosition)
+                    .attr('y', yPosition + yOffset) // Offset with the configurable yOffset
+                    .attr('width', xScale(d.commitment))
+                    .attr('height', barHeight)
+                    .style('fill', commitmentColor);
+
+                // Add the completed estimates bar parallel to the commitment bar with a y offset
+                g.append('rect')
+                    .attr('class', 'completed-bar')
+                    .attr('x', xPosition) // Set x offset to 0 for both bars
+                    .attr('y', yPosition)
+                    .attr('width', xScale(d.completedEstimates))
+                    .attr('height', barHeight)
+                    .style('fill', colorScale(d.story));
+
+                // Add the commitment text (centered)
+                g.append('text')
+                    .attr('class', 'commitment-text')
+                    .attr('x', xPosition + xScale(d.commitment) / 2)
+                    .attr('y', yPosition + barHeight / 2 + yOffset) // Offset with the configurable yOffset
+                    .attr('dy', '0.35em')
+                    .style('text-anchor', 'middle')
+                    .style('font-weight', 'bold')
+                    .text(commitmentText);
+
+                // Add completed estimates text (centered)
+                g.append('text')
+                    .attr('class', 'completed-text')
+                    .attr('x', xPosition + xScale(d.completedEstimates) / 2)
+                    .attr('y', yPosition + barHeight / 2)
+                    .attr('dy', '0.35em')
+                    .style('text-anchor', 'middle')
+                    .style('font-weight', 'bold')
+                    .text(completedText);
+            });
+
+            // Add x-axis label
+            g.append('text')
+                .attr('class', 'x-axis-label')
+                .attr('x', width / 2)
+                .attr('y', height + margin.bottom - 10) // Adjust the position for the label
+                .style('text-anchor', 'middle')
+                .style('font-weight', 'bold')
+                .text('Story Points'); // X-axis label
+
+            g.append('g')
+                .attr('class', 'x-axis')
+                .attr('transform', `translate(0, ${height})`)
+                .call(d3.axisBottom(xScale));
+
+            g.append('g')
+                .attr('class', 'y-axis')
+                .call(d3.axisLeft(yScale));
+
+        }
+
+        const chartTitle = "Scrum Story Points - Committed vs Completed  Chart";
+        function saveSvg() {
+            const svgEl = getEle('chart');
+
+            svgEl.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+            var svgData = svgEl.outerHTML;
+            var preface = '<?xml version="1.0" standalone="no"?>\r\n';
+            var svgBlob = new Blob([preface, svgData], {type:"image/svg+xml;charset=utf-8"});
+            var svgUrl = URL.createObjectURL(svgBlob);
+            var downloadLink = document.createElement("a");
+            downloadLink.href = svgUrl;
+            downloadLink.download = `${chartTitle.substring(0,64)}.svg`;
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        }
+
+         // Add event listener to the download button
+        getEle("downloadButton").addEventListener("click", saveSvg);
+
+
+
+
+        btnDraw.addEventListener('click', event => {
+          // Clear existing content within the SVG (remove all child elements)
+          const svg = d3.select('#chart');
+          svg.selectAll('*').remove();
+         createScrumChart(chartTitle, JSON.parse(taSpec.value), 1200, 600, 30, 30);
+        });
+        btnDraw.click();
+        // Example usage:
+        //const initialStoryData =  JSON.parse(taSpec.value);
+        // Initialize the chart with initial data, custom bar height, Y offset (e.g., 20), and an x-axis label
+        // createScrumChart("Scrum Story Points - Committed vs Completed  Chart", initialStoryData, 1200, 600, 30, 30);
+    </script>
+</body>
+</html>
+
