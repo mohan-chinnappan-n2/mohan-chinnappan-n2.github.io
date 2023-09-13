@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Gen</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Monaco Editor CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs/editor/editor.main.min.css">
+
+      <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n5.github.io/editor/img/favicon.ico" />
+    <style>
+        /* Set dimensions for editor containers */
+        #editor-container {
+            height: 500px; /* Adjust the desired height */
+        }
+
+        #editor-left, #editor-middle, #editor-right {
+            flex: 1;
+            border: 1px solid #ccc;
+        }
+    </style>
+
+   <script src="https://mohan-chinnappan-n.github.io/sfdc/gs/js/split.js"></script>
+  <link rel="stylesheet" href="https://mohan-chinnappan-n.github.io/sfdc/gs/css/split.css">
+
+</head>
+<body>
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Prompt Gen</a>
+    </nav>
+
+    <!-- Editor Container -->
+    <div id="editor-container">
+            <div class="split split-horizontal" id="editor-left"></div>
+             <div  class="split split-horizontal" id="editor-middle"></div>
+             <div class="split split-horizontal" id="editor-right"></div>
+    </div>
+
+    <!-- Fill Button -->
+    <div class="text-center mt-3">
+        <button id="fill-button" class="btn btn-primary">Fill Template</button>
+    </div>
+
+    <!-- Bootstrap and Monaco Editor Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs/loader.js"></script>
+    <script>
+Split([ "#editor-left", "#editor-middle", '#editor-right'], { sizes: [33, 33, 34] });
+
+
+function fillInTemplates(templates, data) {
+  const regex = /\{([^{}]+)\}/g;
+  return templates.map((template) => {
+    return template.replace(regex, (match, key) => {
+      const keys = key.split('.');
+      let value = data;
+      for (const k of keys) {
+        if (value.hasOwnProperty(k)) {
+          value = value[k];
+        } else {
+          return match; // Return the original placeholder if key not found
+        }
+      }
+      return value;
+    });
+  });
+}
+
+// Example data object
+const exampleJSON  = 
+  {
+    "Sender": {
+        "Name": "John Doe",
+        "CompanyName": "ABC Inc."
+    },
+    "Recipient": {
+        "FirstName": "Alice",
+        "Company": "Joe and Bros"
+    },
+    "Organization": {
+        "Name": "MakeGreep Inc"
+    }
+
+
+};
+
+
+const exampleData =
+[
+    "The email will be sent from {Sender.Name} who works for {Sender.CompanyName}",
+    "Describe how {Organization.Name} will benefit {Recipient.FirstName}'s company {Recipient.Company}"
+];
+const filledTemplates = fillInTemplates(exampleData, exampleJSON);
+
+console.log(filledTemplates);
+
+        require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs' } });
+
+        require(['vs/editor/editor.main'], function() {
+            const editorLeft = monaco.editor.create(document.getElementById('editor-left'), {
+                value: '',
+                language: 'json',
+                theme: 'vs-dark',
+                automaticLayout: true, // Ensures proper layout even when resizing
+            });
+
+            const editorMiddle = monaco.editor.create(document.getElementById('editor-middle'), {
+                value: '',
+                language: 'json',
+                theme: 'vs-dark',
+                automaticLayout: true, // Ensures proper layout even when resizing
+            });
+
+            const editorRight = monaco.editor.create(document.getElementById('editor-right'), {
+                value: '',
+                language: 'json',
+                theme: 'vs-dark',
+                automaticLayout: true, // Ensures proper layout even when resizing
+                readOnly: true,
+            });
+
+
+            editorLeft.setValue(JSON.stringify(exampleData, null,4));
+            editorMiddle.setValue(JSON.stringify(exampleJSON,null, 4));
+            editorRight.setValue(''); // Initialize with an empty result
+
+            // Function to fill in templates and update the result editor
+            function fillTemplates() {
+                const templateData = editorLeft.getValue(); // Get template data from the left editor
+                const jsonData = editorMiddle.getValue(); // Get JSON data from the middle editor
+                try {
+                    const data = JSON.parse(jsonData);
+                    const templateDataJSON = JSON.parse(templateData);
+                    console.log(templateDataJSON);
+                    const filledTemplates = fillInTemplates(templateDataJSON,data)
+                    editorRight.setValue(JSON.stringify(filledTemplates,null,4)); // Update the right editor with the filled template
+                } catch (error) {
+                    // Handle JSON parsing error
+                    console.error('Error parsing JSON:', error);
+                }
+            }
+
+            // Attach the function to the "Fill" button click event
+            const fillButton = document.getElementById('fill-button');
+            fillButton.addEventListener('click', fillTemplates);
+        });
+    </script>
+</body>
+</html>
+
